@@ -1,0 +1,466 @@
+/*
+ * layout.css
+ * アプリ全体の共通レイアウト・ヘッダー・ボトムナビゲーションを定義する
+ * すべての画面で共有されるベースレイアウト
+ */
+
+/* ===================================================
+   body・ルートレイアウト
+   =================================================== */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  /* スクロールバーを常に非表示（スマホライクな外観） */
+  overflow-x: hidden;
+  /* iPhoneのゴムバウンドを抑制 */
+  overscroll-behavior-y: none;
+}
+
+/* アプリの最大幅を制限し、中央寄せにする（デスクトップ閲覧時の対応） */
+#app-wrapper {
+  position: relative;
+  max-width: var(--app-max-width);
+  min-height: 100dvh; /* dvh = Dynamic Viewport Height（アドレスバー高さを除く） */
+  margin: 0 auto;
+  background-color: var(--color-bg-base);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1); /* デスクトップ時に輪郭を表示 */
+}
+
+/* ===================================================
+   ヘッダー（画面上部の固定バー）
+   =================================================== */
+#app-header {
+  position: fixed;
+  top: 0;
+  left: 50%; /* 中央に固定 */
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--app-max-width);
+  height: var(--header-height);
+  background-color: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-md);
+  z-index: var(--z-header);
+  /* スクロール時の背景透過を滑らかにするため */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ヘッダー内：戻るボタン */
+.header-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  margin-left: calc(var(--space-sm) * -1); /* 左端の余白を調整 */
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.header-back-btn:active {
+  background-color: var(--color-primary-light);
+}
+
+/* ヘッダー内：タイトル */
+.header-title {
+  flex: 1;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-align: center;
+  /* 長いタイトルを省略 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 var(--space-sm);
+}
+
+/* ヘッダー内：右側アクション（ブックマークボタンなど） */
+.header-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  margin-right: calc(var(--space-sm) * -1);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.header-action-btn:active {
+  background-color: var(--color-bg-surface);
+}
+
+/* ===================================================
+   メインコンテンツエリア
+   ヘッダーとボトムナビの間に収まるスクロール可能な領域
+   =================================================== */
+#main-content {
+  padding-top: var(--header-height);    /* ヘッダー分の余白 */
+  padding-bottom: var(--nav-height);    /* ボトムナビ分の余白 */
+  min-height: 100dvh;
+  /* スクロールの慣性を維持（iOS Safariでスクロールが固まるのを防ぐ） */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===================================================
+   ボトムナビゲーション
+   画面下部に固定された5タブナビゲーション
+   =================================================== */
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--app-max-width);
+  height: var(--nav-height);
+  background-color: var(--color-nav-bg);
+  box-shadow: var(--shadow-nav);
+  display: flex;
+  align-items: stretch;
+  z-index: var(--z-nav);
+  /* iPhoneのホームバー領域を考慮した安全マージン */
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ボトムナビの各タブ */
+.nav-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  /* タップターゲット最低44px確保 */
+  min-height: var(--tap-target-min);
+  padding: var(--space-xs) 0;
+  color: var(--color-nav-inactive);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  /* タップ時のハイライトを消す */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  position: relative;
+}
+
+/* アクティブなタブのスタイル */
+.nav-tab.is-active {
+  color: var(--color-nav-active);
+}
+
+/* タップ時のリップルエフェクト用 */
+.nav-tab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-tab:active::after {
+  opacity: 0.08;
+}
+
+/* タブのアイコン（SVGまたは絵文字） */
+.nav-tab-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  /* アクティブ時に少し拡大するアニメーション */
+  transition: transform var(--transition-fast);
+}
+
+.nav-tab.is-active .nav-tab-icon {
+  transform: scale(1.1);
+}
+
+/* タブのラベル */
+/* Apple Human Interface Guidelines 推奨の11pt（≒15px）以上にするため
+   --font-size-xs（1.1rem = 11px）から1.3remに引き上げる */
+.nav-tab-label {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+}
+
+/* ===================================================
+   共通カードコンポーネント
+   コンテンツを囲む角丸・影付きカード
+   =================================================== */
+.card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+/* カードのヘッダー部分 */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+/* カードタイトル */
+.card-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+/* カードのサブタイトル */
+.card-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+/* ===================================================
+   プログレスバー（進捗表示用）
+   =================================================== */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+/* ===================================================
+   バッジ（ラベル表示用）
+   =================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+/* 出題頻度バッジ */
+.badge-freq-high {
+  background-color: var(--color-freq-high);
+  color: #fff;
+}
+
+.badge-freq-medium {
+  background-color: var(--color-freq-medium);
+  color: #000;
+}
+
+.badge-freq-low {
+  background-color: var(--color-freq-low);
+  color: #fff;
+}
+
+/* 分野バッジ */
+.badge-strategy {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.badge-management {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+.badge-technology {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+/* ===================================================
+   空状態プレースホルダー
+   データがない場合に表示する
+   =================================================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+  color: var(--color-text-disabled);
+}
+
+.empty-state-icon {
+  font-size: 4.8rem;
+  margin-bottom: var(--space-md);
+}
+
+.empty-state-text {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+}
+
+/* ===================================================
+   ローディングインジケーター
+   =================================================== */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===================================================
+   トースト通知
+   画面上部に表示される一時的なメッセージ
+   =================================================== */
+#toast-container {
+  position: fixed;
+  top: calc(var(--header-height) + var(--space-md));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - var(--space-lg) * 2);
+  max-width: calc(var(--app-max-width) - var(--space-lg) * 2);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  pointer-events: none;
+}
+
+.toast {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  border-left: 4px solid var(--color-primary);
+  /* スライドインアニメーション */
+  animation: toast-in var(--transition-base) ease forwards;
+  pointer-events: auto;
+}
+
+.toast.toast-success { border-left-color: var(--color-success); }
+.toast.toast-error   { border-left-color: var(--color-error); }
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================================
+   パンくずリスト（教科書モードのナビゲーション）
+   =================================================== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-surface);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.breadcrumb-item {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.breadcrumb-item:last-child {
+  color: var(--color-text-primary);
+  cursor: default;
+  font-weight: var(--font-weight-medium);
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-disabled);
+}
+
+/* ===================================================
+   フォーカスリング（アクセシビリティ対応）
+   reset.css の outline: none をキーボード操作時のみ上書きする。
+   マウス操作では表示されず、Tab/Shift+Tab でのキーボード操作時のみ
+   アウトラインを表示することで、視覚的な支援を提供する。
+   =================================================== */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  /* プライマリカラーの2pxアウトラインでフォーカス位置を明示 */
+  outline: 2px solid var(--color-primary);
+  /* ボタン枠とアウトラインの間に2pxの余白を設けて見やすくする */
+  outline-offset: 2px;
+  /* 角丸を維持してデザインと馴染ませる */
+  border-radius: var(--radius-sm);
+}
+
+/* ===================================================
+   ユーティリティクラス
+   =================================================== */
+
+/* コンテンツのパディング（各画面で使用） */
+.screen-content {
+  padding: var(--space-md);
+}
+
+/* テキスト省略 */
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* フレックスセンター */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* スクリーン間の区切り線 */
+.divider {
+  height: 1px;
+  background-color: var(--color-divider);
+  margin: var(--space-md) 0;
+}

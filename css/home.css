@@ -1,0 +1,468 @@
+/*
+ * home.css
+ * ホーム画面（ダッシュボード）のスタイルを定義する
+ * 学習進捗・分野別統計・クイックアクセスを表示する
+ */
+
+/* ===================================================
+   ダッシュボード全体
+   =================================================== */
+.home-screen {
+  padding-bottom: var(--space-lg);
+}
+
+/* ===================================================
+   ウェルカムバナー
+   アプリ上部のグリーティングカード
+   =================================================== */
+.home-welcome {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-text-on-primary);
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+/* アプリ名タイトル */
+.home-app-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xs);
+}
+
+/* サブテキスト */
+.home-welcome-sub {
+  font-size: var(--font-size-sm);
+  opacity: 0.85;
+  margin-bottom: var(--space-lg);
+}
+
+/* ===================================================
+   全体進捗サマリー
+   =================================================== */
+.home-progress-summary {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+/* 進捗数値の大きな表示 */
+.home-progress-number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.home-progress-label {
+  font-size: var(--font-size-sm);
+  opacity: 0.85;
+  margin-bottom: var(--space-sm);
+}
+
+/* 全体進捗バー（白色バージョン） */
+.home-progress-bar {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.home-progress-bar-fill {
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+/* ===================================================
+   スタッツグリッド（学習日数・正答率）
+   =================================================== */
+.home-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+/* スタッツカード1枚 */
+.stat-card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.stat-card-value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.stat-card-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ===================================================
+   分野別進捗セクション
+   =================================================== */
+.home-section {
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.home-section-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* 分野別進捗カード */
+.section-progress-card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.section-progress-card:active {
+  box-shadow: var(--shadow-sm);
+  transform: scale(0.99);
+}
+
+/* 分野名と進捗率の行 */
+.section-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-progress-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.section-progress-pct {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* 出題比率バッジ */
+.section-exam-ratio {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ===================================================
+   クイックアクションボタン
+   各モードへの直接アクセスボタン
+   =================================================== */
+.home-quick-actions {
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.quick-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+/* クイックアクションボタン1つ */
+.quick-action-btn {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  /* タップターゲット確保 */
+  min-height: var(--tap-target-min);
+}
+
+.quick-action-btn:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.quick-action-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.quick-action-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.quick-action-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-tight);
+}
+
+/* ===================================================
+   苦手分野アラートカード
+   正答率が低い分野を表示して演習を促す
+   =================================================== */
+.home-weak-alert {
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.weak-alert-card {
+  background-color: var(--color-error-light);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.weak-alert-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.weak-alert-icon {
+  font-size: 2.0rem;
+}
+
+.weak-alert-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-error);
+}
+
+.weak-alert-body {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+/* 演習を始めるボタン */
+.weak-alert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--color-error);
+  color: #fff;
+  border-radius: var(--radius-full);
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  min-height: var(--tap-target-min);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.weak-alert-btn:active {
+  opacity: 0.85;
+}
+
+/* ===================================================
+   最近の学習履歴（セクション）
+   =================================================== */
+.home-recent {
+  padding: 0 var(--space-md);
+}
+
+.recent-session-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.recent-session-item:last-child {
+  border-bottom: none;
+}
+
+.recent-session-score {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.recent-session-info {
+  flex: 1;
+}
+
+.recent-session-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
+}
+
+.recent-session-detail {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+/* ===================================================
+   初回オンボーディングカード
+   初めてアプリを開いたユーザーに使い方を案内する
+   progress.pages_read が空の場合のみ表示される
+   =================================================== */
+.onboarding-card {
+  margin: var(--space-md);
+  margin-bottom: 0;
+  background: linear-gradient(135deg, #E8F0FE 0%, #EDE7F6 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  border: 1px solid #C5CAE9;
+}
+
+[data-theme="dark"] .onboarding-card {
+  /* ダークテーマでも視認性を確保するため背景色を調整する */
+  background: linear-gradient(135deg, #1A237E30 0%, #311B9230 100%);
+  border-color: #3949AB50;
+}
+
+/* カードのヘッダー部分 */
+.onboarding-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* 星アイコン */
+.onboarding-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* タイトルテキストグループ */
+.onboarding-title-group {
+  flex: 1;
+}
+
+.onboarding-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.onboarding-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* 3ステップのリスト */
+.onboarding-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.onboarding-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+/* ステップ番号バッジ */
+.onboarding-step-num {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ステップ説明テキスト */
+.onboarding-step-text {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+}
+
+/* ボタングループ */
+.onboarding-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* 「教科書から始める」メインボタン */
+.onboarding-btn-primary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.onboarding-btn-primary:active {
+  opacity: 0.85;
+}
+
+/* 「問題から始める」サブボタン */
+.onboarding-btn-secondary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.onboarding-btn-secondary:active {
+  background-color: var(--color-primary-light);
+}

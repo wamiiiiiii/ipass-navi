@@ -1,0 +1,175 @@
+/*
+ * reset.css
+ * ブラウザごとのデフォルトスタイル差異をリセットする
+ * すべてのスタイルの基盤となるファイル
+ */
+
+/* ボックスモデルを border-box に統一する（パディングがwidthに含まれる） */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ブラウザのデフォルトマージン・パディングをリセット */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+details,
+footer,
+header,
+main,
+nav,
+section,
+summary,
+time {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5のセマンティック要素をブロック要素として認識させる */
+article,
+aside,
+details,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* 文字サイズの基準を設定。62.5%でrem計算が容易になる（1rem = 10px） */
+html {
+  font-size: 62.5%;
+  /* iOSでフォントサイズの自動調整を防ぐ */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* body のベーススタイル */
+body {
+  line-height: 1;
+  /* スクロール時のバウンスを制御 */
+  overscroll-behavior: none;
+}
+
+/* リストのスタイルをリセット */
+ol,
+ul {
+  list-style: none;
+}
+
+/* 引用符のリセット */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+/* テーブルのボーダー設定をリセット */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ボタンのデフォルトスタイルをリセット（クリックしやすくするための基盤） */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  /* タップ時のハイライトを制御 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* リンクのデフォルト装飾をリセット */
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 画像をブロック要素として扱い、余白を消す */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* フォームのリセット */
+input,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* テキストエリアのリサイズを縦のみに制限 */
+textarea {
+  resize: vertical;
+}

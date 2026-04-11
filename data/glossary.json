@@ -1,0 +1,116 @@
+{
+  "version": "6.5",
+  "updated_at": "2026-04-01",
+  "terms": [
+    {
+      "term_id": "G-001",
+      "term": "経営資源",
+      "reading": "けいえいしげん",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "企業が事業活動を行うために必要な資源のこと。ヒト・モノ・カネ・情報の4つに分類される。近年は「情報」の重要性が特に高まっている。",
+      "related_terms": ["ヒト・モノ・カネ・情報", "コアコンピタンス", "無形資産"],
+      "exam_frequency": "high",
+      "related_question_ids": ["Q-S-001"]
+    },
+    {
+      "term_id": "G-002",
+      "term": "損益分岐点",
+      "reading": "そんえきぶんきてん",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "売上高と総費用（固定費＋変動費）が等しくなる売上高のこと。この点を下回ると赤字、上回ると黒字になる。計算式：固定費 ÷（1 − 変動費率）",
+      "related_terms": ["固定費", "変動費", "変動費率"],
+      "exam_frequency": "high",
+      "related_question_ids": ["Q-S-002", "Q-S-005"]
+    },
+    {
+      "term_id": "G-003",
+      "term": "固定費",
+      "reading": "こていひ",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "売上高の増減に関係なく一定額が発生するコストのこと。例：家賃・正社員の給与・減価償却費・保険料など。",
+      "related_terms": ["変動費", "損益分岐点"],
+      "exam_frequency": "high",
+      "related_question_ids": ["Q-S-002", "Q-S-005"]
+    },
+    {
+      "term_id": "G-004",
+      "term": "変動費",
+      "reading": "へんどうひ",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "売上高の増減に比例して変化するコストのこと。例：材料費・仕入原価・外注費・販売手数料など。変動費率 ＝ 変動費 ÷ 売上高",
+      "related_terms": ["固定費", "損益分岐点", "変動費率"],
+      "exam_frequency": "high",
+      "related_question_ids": ["Q-S-002", "Q-S-005"]
+    },
+    {
+      "term_id": "G-005",
+      "term": "貸借対照表",
+      "reading": "たいしゃくたいしょうひょう",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "ある時点での企業の財産・負債・純資産の状況を示す財務諸表。英語でBalance Sheet（B/S）。左側（借方）に資産、右側（貸方）に負債と純資産を記載。資産＝負債＋純資産の等式が常に成立する。",
+      "related_terms": ["損益計算書", "キャッシュフロー計算書", "財務諸表"],
+      "exam_frequency": "high",
+      "related_question_ids": ["Q-S-003"]
+    },
+    {
+      "term_id": "G-006",
+      "term": "損益計算書",
+      "reading": "そんえきけいさんしょ",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "一定期間における企業の収益・費用・利益の状況を示す財務諸表。英語でProfit and Loss Statement（P/L）。売上高から各費用を差し引いて当期純利益を算出する。",
+      "related_terms": ["貸借対照表", "キャッシュフロー計算書", "財務諸表"],
+      "exam_frequency": "high",
+      "related_question_ids": ["Q-S-003"]
+    },
+    {
+      "term_id": "G-007",
+      "term": "キャッシュフロー計算書",
+      "reading": "きゃっしゅふろーけいさんしょ",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "一定期間における現金の流れを示す財務諸表。英語でCash Flow Statement（C/F）。営業活動・投資活動・財務活動の3区分で現金の増減を表示する。",
+      "related_terms": ["貸借対照表", "損益計算書", "財務諸表"],
+      "exam_frequency": "medium",
+      "related_question_ids": ["Q-S-003"]
+    },
+    {
+      "term_id": "G-008",
+      "term": "事業部制組織",
+      "reading": "じぎょうぶせいそしき",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "製品・サービス・地域ごとに独立した事業部を設ける組織形態。各事業部が損益責任（プロフィットセンター）を持ち、意思決定が迅速になるメリットがある。一方で各事業部が独自の機能を持つため重複コストが発生しやすい。",
+      "related_terms": ["機能別組織", "マトリックス組織", "プロジェクト組織"],
+      "exam_frequency": "medium",
+      "related_question_ids": ["Q-S-004"]
+    },
+    {
+      "term_id": "G-009",
+      "term": "機能別組織",
+      "reading": "きのうべつそしき",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "営業・製造・開発・人事・経理などの業務機能ごとに部門を分ける最も一般的な組織形態。専門性が高まりやすい一方、部門間の横断的な連携（コミュニケーション）が難しくなる傾向がある。",
+      "related_terms": ["事業部制組織", "マトリックス組織", "プロジェクト組織"],
+      "exam_frequency": "medium",
+      "related_question_ids": ["Q-S-004"]
+    },
+    {
+      "term_id": "G-010",
+      "term": "マトリックス組織",
+      "reading": "まとりっくすそしき",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "機能別組織と事業部制組織を組み合わせた組織形態。各メンバーは機能部門の上司と事業部門の上司の2つの命令系統に属する。専門性と事業横断の両立が可能だが、指揮命令系統が複雑になりやすい。",
+      "related_terms": ["機能別組織", "事業部制組織", "プロジェクト組織"],
+      "exam_frequency": "medium",
+      "related_question_ids": ["Q-S-004"]
+    }
+  ]
+}

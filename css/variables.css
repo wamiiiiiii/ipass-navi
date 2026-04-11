@@ -1,0 +1,212 @@
+/*
+ * variables.css
+ * アプリ全体で使用するCSS変数（カスタムプロパティ）を定義する
+ * テーマ切り替えはこのファイルの変数を書き換えるだけで対応できる
+ */
+
+/* ===================================================
+   ライトテーマ（デフォルト）
+   data-theme 属性が "light" または未設定のとき適用
+   =================================================== */
+:root,
+[data-theme="light"] {
+  /* --- メインカラー --- */
+  --color-primary: #1A73E8;        /* ブランドカラー：青 */
+  --color-primary-dark: #1557B0;   /* 押下時・ホバー時の濃い青 */
+  --color-primary-light: #E8F0FE;  /* 薄い青（バッジ背景など） */
+
+  /* --- 背景色 --- */
+  --color-bg-base: #FFFFFF;        /* ページ全体の背景 */
+  --color-bg-surface: #F5F5F5;     /* カード・パネルの背景 */
+  --color-bg-elevated: #FFFFFF;    /* フローティング要素の背景 */
+  --color-bg-overlay: rgba(0, 0, 0, 0.4); /* モーダル背景 */
+
+  /* --- テキスト色 --- */
+  --color-text-primary: #202124;   /* 本文・見出し */
+  --color-text-secondary: #5F6368; /* サブテキスト・補足情報 */
+  --color-text-disabled: #9AA0A6;  /* 無効状態のテキスト */
+  --color-text-on-primary: #FFFFFF; /* プライマリ色背景上のテキスト */
+
+  /* --- ボーダー・区切り線 --- */
+  --color-border: #DADCE0;         /* カードやセクションの枠線 */
+  --color-divider: #E8EAED;        /* セクション区切り線 */
+
+  /* --- セマンティックカラー --- */
+  --color-success: #34A853;        /* 正解・成功 */
+  --color-success-light: #E6F4EA; /* 正解時の背景 */
+  --color-error: #EA4335;          /* 不正解・エラー */
+  --color-error-light: #FCE8E6;   /* 不正解時の背景 */
+  --color-warning: #FBBC04;        /* 警告・注意 */
+  --color-warning-light: #FEF7E0; /* 警告時の背景 */
+  --color-info: #1A73E8;           /* 情報 */
+  --color-info-light: #E8F0FE;    /* 情報時の背景 */
+
+  /* --- 出題頻度バッジ色 --- */
+  --color-freq-high: #EA4335;      /* 頻出：赤 */
+  --color-freq-medium: #FBBC04;    /* 中：黄 */
+  --color-freq-low: #34A853;       /* 低頻出：緑 */
+
+  /* --- シャドウ --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);   /* 小さな影 */
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);   /* カード標準 */
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.16);  /* 大きなカード */
+  --shadow-nav: 0 -2px 8px rgba(0, 0, 0, 0.08); /* ボトムナビ上の影 */
+
+  /* --- ナビゲーション --- */
+  --color-nav-bg: #FFFFFF;         /* ボトムナビの背景 */
+  --color-nav-active: #1A73E8;     /* アクティブタブのアイコン色 */
+  --color-nav-inactive: #9AA0A6;   /* 非アクティブタブのアイコン色 */
+}
+
+/* ===================================================
+   ダークテーマ
+   data-theme 属性が "dark" のとき適用
+   =================================================== */
+[data-theme="dark"] {
+  /* --- メインカラー --- */
+  --color-primary: #4A90E2;        /* ダーク時は少し明るい青 */
+  --color-primary-dark: #2D7DD2;
+  --color-primary-light: #1A2A3E;  /* 薄い青の暗いバージョン */
+
+  /* --- 背景色 --- */
+  --color-bg-base: #1a1a2e;        /* ページ全体の背景（ダーク） */
+  --color-bg-surface: #16213e;     /* カード・パネルの背景 */
+  --color-bg-elevated: #0f3460;    /* フローティング要素の背景 */
+  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+
+  /* --- テキスト色 --- */
+  --color-text-primary: #e0e0e0;   /* 本文・見出し */
+  --color-text-secondary: #9AA0A6; /* サブテキスト */
+  --color-text-disabled: #5F6368;  /* 無効状態 */
+  --color-text-on-primary: #FFFFFF;
+
+  /* --- ボーダー・区切り線 --- */
+  --color-border: #2D3748;
+  --color-divider: #1E2A3A;
+
+  /* --- セマンティックカラー --- */
+  --color-success: #4CAF50;
+  --color-success-light: #1B2F1E;
+  --color-error: #F44336;
+  --color-error-light: #2F1B1B;
+  --color-warning: #FF9800;
+  --color-warning-light: #2F2010;
+  --color-info: #4A90E2;
+  --color-info-light: #1A2A3E;
+
+  /* --- 出題頻度バッジ色 --- */
+  --color-freq-high: #F44336;
+  --color-freq-medium: #FF9800;
+  --color-freq-low: #4CAF50;
+
+  /* --- シャドウ --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-nav: 0 -2px 8px rgba(0, 0, 0, 0.4);
+
+  /* --- ナビゲーション --- */
+  --color-nav-bg: #16213e;
+  --color-nav-active: #4A90E2;
+  --color-nav-inactive: #5F6368;
+}
+
+/* ===================================================
+   フォント設定
+   端末のシステムフォントを優先使用する（外部読込なし）
+   =================================================== */
+:root {
+  /* --- フォントファミリー --- */
+  --font-family-base:
+    -apple-system,          /* iOS/macOS のシステムフォント */
+    BlinkMacSystemFont,     /* Chrome on macOS */
+    'Hiragino Kaku Gothic ProN', /* Mac の日本語フォント */
+    'Hiragino Sans',
+    'Noto Sans JP',         /* Android の日本語フォント */
+    'Yu Gothic Medium',     /* Windows の日本語フォント */
+    sans-serif;
+
+  /* --- フォントサイズ（文字サイズ変更機能に対応） */
+  /* 設定画面でbody の data-font-size を変更することで3段階切り替え */
+  --font-size-xs: 1.1rem;   /* 11px 相当：補足テキスト */
+  --font-size-sm: 1.3rem;   /* 13px 相当：キャプション・バッジ */
+  --font-size-base: 1.6rem; /* 16px 相当：本文（最小基準） */
+  --font-size-md: 1.8rem;   /* 18px 相当：強調テキスト */
+  --font-size-lg: 2.0rem;   /* 20px 相当：小見出し */
+  --font-size-xl: 2.4rem;   /* 24px 相当：見出し */
+  --font-size-2xl: 2.8rem;  /* 28px 相当：大見出し */
+
+  /* --- 行間 --- */
+  --line-height-tight: 1.3;   /* 見出し */
+  --line-height-base: 1.7;    /* 本文（読みやすさ重視） */
+  --line-height-loose: 2.0;   /* 学習コンテンツ */
+
+  /* --- フォントウェイト --- */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+/* 文字サイズ「小」設定時（設定画面で変更可能） */
+[data-font-size="small"] {
+  --font-size-xs: 1.0rem;
+  --font-size-sm: 1.2rem;
+  --font-size-base: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-lg: 1.8rem;
+  --font-size-xl: 2.0rem;
+  --font-size-2xl: 2.4rem;
+}
+
+/* 文字サイズ「大」設定時（設定画面で変更可能） */
+[data-font-size="large"] {
+  --font-size-xs: 1.3rem;
+  --font-size-sm: 1.5rem;
+  --font-size-base: 1.8rem;
+  --font-size-md: 2.0rem;
+  --font-size-lg: 2.2rem;
+  --font-size-xl: 2.6rem;
+  --font-size-2xl: 3.2rem;
+}
+
+/* ===================================================
+   スペーシング・サイズ定数
+   一貫したレイアウトを実現するための基準値
+   =================================================== */
+:root {
+  /* --- スペーシング --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* --- 角丸 --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px; /* 完全な丸 */
+
+  /* --- レイアウト基準 --- */
+  --app-max-width: 430px;  /* スマホ最大幅（iPhone 16 Plus基準） */
+  --nav-height: 64px;      /* ボトムナビの高さ */
+  --header-height: 56px;   /* ヘッダーの高さ */
+
+  /* --- タップターゲット最小サイズ（アクセシビリティ基準：44px以上） --- */
+  --tap-target-min: 44px;
+
+  /* --- アニメーション速度 --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* --- z-index 管理 --- */
+  --z-base: 0;
+  --z-card: 10;
+  --z-header: 100;
+  --z-nav: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+}

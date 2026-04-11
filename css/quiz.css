@@ -1,0 +1,532 @@
+/*
+ * quiz.css
+ * 問題演習モードのスタイルを定義する
+ * モード選択 → 問題 → 解説 → 結果サマリーの4画面
+ */
+
+/* ===================================================
+   モード選択画面
+   =================================================== */
+.quiz-mode-screen {
+  padding: var(--space-md);
+}
+
+.quiz-mode-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.quiz-mode-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* モード選択カードのグリッド */
+.quiz-mode-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* モードカード1枚 */
+.quiz-mode-card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  min-height: var(--tap-target-min);
+}
+
+.quiz-mode-card.is-selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.quiz-mode-card:active {
+  transform: scale(0.98);
+}
+
+.quiz-mode-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.quiz-mode-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.quiz-mode-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+}
+
+/* 分野フィルターセクション */
+.quiz-filter-section {
+  margin-bottom: var(--space-lg);
+}
+
+.quiz-filter-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.quiz-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* フィルターチップ（分野・難易度選択） */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  min-height: var(--tap-target-min);
+  transition: all var(--transition-fast);
+}
+
+.filter-chip.is-selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* 演習開始ボタン */
+.quiz-start-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.quiz-start-btn:active {
+  opacity: 0.85;
+}
+
+/* ===================================================
+   問題画面
+   =================================================== */
+.quiz-question-screen {
+  padding: var(--space-md);
+}
+
+/* 進捗バー（問題 X / Y 分） */
+.quiz-progress-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.quiz-progress-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.quiz-progress-bar {
+  flex: 1;
+  height: 6px;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+/* 問題文カード */
+.question-card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+/* 難易度・分野バッジ */
+.question-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+/* 問題文 */
+.question-text {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+}
+
+/* ===================================================
+   選択肢ボタン（大きなタップ領域を確保）
+   =================================================== */
+.choices-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* 選択肢ボタン1つ */
+.choice-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-md);
+  min-height: 56px; /* 選択肢は少し大きめに */
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  /* タップ時のハイライトを消す */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.choice-btn:active {
+  transform: scale(0.99);
+}
+
+/* 選択肢の記号（ア・イ・ウ・エ または a・b・c・d） */
+.choice-id {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.choice-text {
+  flex: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+}
+
+/* 選択済み状態 */
+.choice-btn.is-selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.choice-btn.is-selected .choice-id {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* 正解表示（解説フェーズ） */
+.choice-btn.is-correct {
+  border-color: var(--color-success);
+  background-color: var(--color-success-light);
+}
+
+.choice-btn.is-correct .choice-id {
+  background-color: var(--color-success);
+  color: #fff;
+}
+
+/* 不正解表示（解説フェーズ） */
+.choice-btn.is-wrong {
+  border-color: var(--color-error);
+  background-color: var(--color-error-light);
+}
+
+.choice-btn.is-wrong .choice-id {
+  background-color: var(--color-error);
+  color: #fff;
+}
+
+/* 回答済み後のロック状態 */
+.choice-btn:disabled {
+  cursor: default;
+  transform: none;
+}
+
+/* 正誤テキストラベル（色だけでなくテキストでも正誤を伝える・色覚多様性対応）
+   選択肢の右端に「✓ 正解」「✗ 不正解」と表示する */
+.choice-result-label {
+  margin-left: auto;  /* 右端に寄せる */
+  flex-shrink: 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* 正解ラベルのカラー */
+.choice-result-correct {
+  color: var(--color-success);
+  background-color: var(--color-success-light);
+}
+
+/* 不正解ラベルのカラー */
+.choice-result-wrong {
+  color: var(--color-error);
+  background-color: var(--color-error-light);
+}
+
+/* ===================================================
+   解説画面
+   =================================================== */
+.explanation-card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+/* 正解の解説 */
+.explanation-card.is-correct {
+  background-color: var(--color-success-light);
+  border-left: 4px solid var(--color-success);
+}
+
+/* 不正解の解説 */
+.explanation-card.is-wrong {
+  background-color: var(--color-error-light);
+  border-left: 4px solid var(--color-error);
+}
+
+.explanation-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.explanation-result.is-correct {
+  color: var(--color-success);
+}
+
+.explanation-result.is-wrong {
+  color: var(--color-error);
+}
+
+.explanation-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-loose);
+  white-space: pre-line;
+}
+
+/* 「教科書で復習する」リンクボタン */
+.review-textbook-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  margin-bottom: var(--space-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.review-textbook-btn:active {
+  opacity: 0.75;
+}
+
+/* 次の問題へボタン */
+.next-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.next-question-btn:active {
+  opacity: 0.85;
+}
+
+/* ===================================================
+   結果サマリー画面
+   =================================================== */
+.quiz-result-screen {
+  padding: var(--space-md);
+}
+
+/* スコア大表示 */
+.result-score-card {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--color-text-on-primary);
+  margin-bottom: var(--space-md);
+}
+
+.result-score-number {
+  font-size: 6rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.result-score-label {
+  font-size: var(--font-size-md);
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+}
+
+/* 正解数テキスト */
+.result-correct-count {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+/* 分野別スコア */
+.result-category-scores {
+  margin-bottom: var(--space-md);
+}
+
+.result-category-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.result-category-item:last-child {
+  border-bottom: none;
+}
+
+.result-category-name {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.result-category-score {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  min-width: 60px;
+  text-align: right;
+}
+
+/* アクションボタングループ */
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.result-retry-btn {
+  width: 100%;
+  padding: var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.result-retry-btn:active {
+  opacity: 0.85;
+}
+
+.result-home-btn {
+  width: 100%;
+  padding: var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.result-home-btn:active {
+  opacity: 0.75;
+}
+
+/* 難易度表示（星アイコン） */
+.difficulty-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.difficulty-star {
+  font-size: 1.2rem;
+  color: var(--color-warning);
+}
+
+.difficulty-star.is-empty {
+  color: var(--color-border);
+}

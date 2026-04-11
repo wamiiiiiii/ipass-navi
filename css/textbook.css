@@ -1,0 +1,487 @@
+/*
+ * textbook.css
+ * 教科書モードのスタイルを定義する
+ * 分野一覧 → 章一覧 → 節コンテンツの3階層ナビゲーション
+ */
+
+/* ===================================================
+   分野一覧画面（テキストブックのトップ）
+   =================================================== */
+.textbook-screen {
+  padding-bottom: var(--space-lg);
+}
+
+/* 分野選択タイトル */
+.textbook-intro {
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ===================================================
+   分野カード（ストラテジ・マネジメント・テクノロジ）
+   =================================================== */
+.section-card {
+  margin: 0 var(--space-md) var(--space-md);
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.section-card:active {
+  transform: scale(0.99);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 分野カードのヘッダー（カラーバー） */
+.section-card-header {
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ストラテジ系：青 */
+.section-card.strategy .section-card-header {
+  background: linear-gradient(135deg, #1A73E8, #1557B0);
+  color: #fff;
+}
+
+/* マネジメント系：オレンジ */
+.section-card.management .section-card-header {
+  background: linear-gradient(135deg, #E65100, #BF360C);
+  color: #fff;
+}
+
+/* テクノロジ系：緑 */
+.section-card.technology .section-card-header {
+  background: linear-gradient(135deg, #2E7D32, #1B5E20);
+  color: #fff;
+}
+
+.section-card-icon {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.section-card-info {
+  flex: 1;
+}
+
+.section-card-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xs);
+}
+
+.section-card-ratio {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+/* 分野カードのフッター（進捗表示） */
+.section-card-footer {
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.section-card-progress-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.section-card-progress-bar {
+  flex: 1;
+  height: 6px;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.section-card-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.section-card.strategy .section-card-progress-fill {
+  background-color: var(--color-primary);
+}
+
+.section-card.management .section-card-progress-fill {
+  background-color: #E65100;
+}
+
+.section-card.technology .section-card-progress-fill {
+  background-color: #2E7D32;
+}
+
+/* ===================================================
+   章一覧画面
+   =================================================== */
+.chapter-list {
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* 章リストアイテム */
+.chapter-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-divider);
+  cursor: pointer;
+  min-height: var(--tap-target-min);
+  transition: background-color var(--transition-fast);
+}
+
+.chapter-item:last-child {
+  border-bottom: none;
+}
+
+.chapter-item:active {
+  background-color: var(--color-bg-surface);
+}
+
+/* 章IDバッジ */
+.chapter-id-badge {
+  min-width: 44px;
+  height: 44px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+/* 章情報 */
+.chapter-info {
+  flex: 1;
+  min-width: 0; /* text-ellipsis のために必要 */
+}
+
+.chapter-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.chapter-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 章の進捗表示 */
+.chapter-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.chapter-progress-pct {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* 完了チェックマーク */
+.chapter-completed-icon {
+  font-size: 1.8rem;
+  color: var(--color-success);
+}
+
+/* ===================================================
+   節コンテンツ画面
+   =================================================== */
+.page-content-screen {
+  padding: var(--space-md);
+}
+
+/* 節タイトル */
+.page-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-md);
+}
+
+/* コンテンツカード */
+.content-card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+/* 本文テキスト */
+.content-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-loose);
+  color: var(--color-text-primary);
+  /* 段落の改行を保持 */
+  white-space: pre-line;
+}
+
+/* キーワードハイライト（用語辞書と連動） */
+.keyword-highlight {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  border-bottom: 2px solid var(--color-primary-light);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  /* タップしやすくするため少しパディングを追加 */
+  padding: 1px 2px;
+  border-radius: 3px;
+}
+
+.keyword-highlight:active {
+  background-color: var(--color-primary-light);
+}
+
+/* ===================================================
+   ポイントまとめカード（章末）
+   =================================================== */
+.summary-card {
+  background-color: var(--color-primary-light);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.summary-card-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ポイントリスト */
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.summary-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+}
+
+/* チェックマークアイコン */
+.summary-list-item::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ===================================================
+   章末ナビゲーション
+   =================================================== */
+.page-navigation {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+/* 前のページ・次のページボタン */
+.page-nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--tap-target-min);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.page-nav-btn-prev {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.page-nav-btn-next {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.page-nav-btn:active {
+  opacity: 0.8;
+}
+
+.page-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 「この章の問題を解く」ボタン */
+.chapter-quiz-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-success);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  margin-bottom: var(--space-md);
+}
+
+.chapter-quiz-btn:active {
+  opacity: 0.85;
+}
+
+/* ===================================================
+   既読バー（節の進捗インジケーター）
+   =================================================== */
+.page-progress-bar {
+  padding: var(--space-xs) var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.page-progress-dots {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.page-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+  transition: background-color var(--transition-base);
+}
+
+.page-progress-dot.is-read {
+  background-color: var(--color-primary);
+}
+
+.page-progress-dot.is-current {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* ===================================================
+   用語辞書ポップアップ（キーワードタップ時）
+   =================================================== */
+.glossary-popup {
+  position: fixed;
+  bottom: calc(var(--nav-height) + var(--space-md));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - var(--space-lg) * 2);
+  max-width: calc(var(--app-max-width) - var(--space-lg) * 2);
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-md);
+  z-index: var(--z-modal);
+  animation: popup-in var(--transition-base) ease;
+}
+
+.glossary-popup-term {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.glossary-popup-def {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-sm);
+}
+
+.glossary-popup-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.glossary-popup-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: var(--tap-target-min);
+  height: var(--tap-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  border-radius: var(--radius-full);
+}
+
+/* ポップアップのオーバーレイ背景 */
+.glossary-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-overlay);
+  z-index: calc(var(--z-modal) - 1);
+  animation: fade-in var(--transition-fast) ease;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
