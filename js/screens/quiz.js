@@ -2,6 +2,12 @@
  * quiz.js
  * 問題演習モードの描画ロジックとスコア計算
  * モード選択 → 問題 → 解説 → 結果サマリーの4フェーズ
+ *
+ * 【模擬試験モード（exam）の追加仕様】
+ * - ストラテジ35問・マネジメント20問・テクノロジ45問の計100問をランダム出題
+ * - 120分のカウントダウンタイマーを画面上部に表示
+ * - 解説は問題ごとに表示せず、全問終了後の結果画面でまとめて表示
+ * - 合否判定：総合60%以上かつ各分野30%以上を合格とする
  */
 
 import { getWeakQuestions, saveQuizSession, recordQuestionAnswer } from '../store.js';
@@ -26,6 +32,36 @@ import { getWeakQuestionIds } from '../utils/progress.js';
 
 /** 現在の演習セッションの状態（イミュータブルに管理） */
 let _session = null;
+
+// ===================================================
+// 模擬試験モードの定数
+// ===================================================
+
+/** 模擬試験の分野別出題数定義 */
+const EXAM_QUESTION_COUNTS = {
+  strategy:   35, // ストラテジ系
+  management: 20, // マネジメント系
+  technology: 45, // テクノロジ系
+};
+
+/** 模擬試験の制限時間（秒）：120分 = 7200秒 */
+const EXAM_TIME_LIMIT_SEC = 120 * 60;
+
+/** タイマー警告開始の残り秒数：残り10分 */
+const EXAM_TIMER_WARNING_SEC = 10 * 60;
+
+/** 合格に必要な総合正答率（60%） */
+const EXAM_PASS_RATE_TOTAL = 0.6;
+
+/** 合格に必要な各分野の正答率（30%・足切りライン） */
+const EXAM_PASS_RATE_CATEGORY = 0.3;
+
+/** 分野名の日本語マッピング */
+const CATEGORY_NAMES = {
+  strategy:   'ストラテジ系',
+  management: 'マネジメント系',
+  technology: 'テクノロジ系',
+};
 
 /**
  * 問題演習モードを描画する
@@ -102,6 +138,8 @@ function renderModeSelect(container, query) {
     { id: 'flashcard', icon: '🃏', name: '一問一答',       desc: '手軽に確認したいとき' },
     { id: 'weak',      icon: '🎯', name: '苦手問題のみ',   desc: '誤答率50%以上を集中' },
     { id: 'shuffle',   icon: '🔀', name: 'シャッフル',    desc: 'ランダム順で出題' },
+    // 模擬試験モード：本番と同じ100問・120分形式
+    { id: 'exam',      icon: '🏆', name: '模擬試験',       desc: '本番形式 100問・120分' },
   ];
 
   const modeGrid = createElement('div', { classes: ['quiz-mode-grid'] });
@@ -200,6 +238,12 @@ async function startSession(container, mode, category) {
       questions = filterWeakQuestions(questionsData, weakIds);
     }
 
+    // 模擬試験モードは専用の問題選出ロジックを使用する
+    if (mode === 'exam') {
+      await startExamSession(container, questionsData);
+      return;
+    }
+
     if (questions.length === 0) {
       renderInto(container, [createEmptyState('🎯', 'この条件に一致する問題がありません')]);
       return;
@@ -227,6 +271,147 @@ async function startSession(container, mode, category) {
     console.error('[Quiz] セッション開始に失敗しました:', error);
     renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
   }
+}
+
+/**
+ * 模擬試験セッションを開始する
+ * 分野別に規定数の問題をランダム選出して100問セットを構成する
+ * @param {HTMLElement} container - 描画先のコンテナ
+ * @param {Object} questionsData - questions.jsonのデータ
+ */
+async function startExamSession(container, questionsData) {
+  try {
+    // 分野別に問題をシャッフルして規定数を選出する（イミュータブル）
+    const selectedQuestions = Object.entries(EXAM_QUESTION_COUNTS).flatMap(
+      ([category, count]) => {
+        // 該当分野の問題をすべて取得してシャッフル
+        const categoryQuestions = filterQuestionsByCategory(questionsData, category);
+        const shuffled = shuffleQuestions(categoryQuestions);
+
+        // 問題数が不足している場合は何問あるかを記録する
+        if (shuffled.length < count) {
+          return shuffled; // 不足分はそのまま（後でチェック）
+        }
+
+        // 規定数だけ取り出す（sliceで新しい配列を返す・イミュータブル）
+        return shuffled.slice(0, count);
+      }
+    );
+
+    // 各分野の問題数が揃っているか確認する
+    const totalRequired = Object.values(EXAM_QUESTION_COUNTS).reduce((sum, n) => sum + n, 0);
+    if (selectedQuestions.length < totalRequired) {
+      // 問題数が不足している場合は開始を拒否してエラーメッセージを表示する
+      const shortage = totalRequired - selectedQuestions.length;
+      renderInto(container, [
+        createEmptyState(
+          '📋',
+          `問題数が不足しています。あと ${shortage} 問追加してください。\n` +
+          `（必要：ストラテジ35問・マネジメント20問・テクノロジ45問）`
+        ),
+      ]);
+      return;
+    }
+
+    // 全100問を分野が混在するようにシャッフルする
+    const shuffledAll = shuffleQuestions(selectedQuestions);
+
+    // タイマーを開始する（1秒ごとにカウントダウン）
+    const timerId = startExamTimer(container);
+
+    // セッション状態を新しいオブジェクトとして初期化（イミュータブル）
+    _session = {
+      isActive:       true,
+      phase:          'question',
+      mode:           'exam',
+      category:       'all',
+      questions:      shuffledAll,
+      currentIdx:     0,
+      results:        [],
+      startedAt:      new Date().toISOString(),
+      container,
+      // 模擬試験専用プロパティ
+      timerId,                                // clearIntervalで停止するためIDを保持
+      remainingSec:   EXAM_TIME_LIMIT_SEC,    // 残り秒数（1秒ごとに更新）
+    };
+
+    renderQuestionScreen(container);
+
+  } catch (error) {
+    console.error('[Quiz] 模擬試験セッション開始に失敗しました:', error);
+    renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
+  }
+}
+
+/**
+ * 模擬試験のカウントダウンタイマーを開始する
+ * 残り時間が0になったら自動で試験を終了する
+ * @param {HTMLElement} container - 描画先のコンテナ
+ * @returns {number} setIntervalのタイマーID（停止時に使用）
+ */
+function startExamTimer(container) {
+  // 1秒ごとに実行するインターバル処理
+  const timerId = setInterval(() => {
+    // セッションが存在しない、または模擬試験でない場合は停止する
+    if (!_session || _session.mode !== 'exam') {
+      clearInterval(timerId);
+      return;
+    }
+
+    // 残り秒数を1秒減らす（イミュータブルに更新）
+    const newRemaining = _session.remainingSec - 1;
+    _session = { ..._session, remainingSec: newRemaining };
+
+    // タイマー表示を更新する
+    updateTimerDisplay(newRemaining);
+
+    // 残り時間が0になったら時間切れとして自動終了する
+    if (newRemaining <= 0) {
+      clearInterval(timerId);
+      showToast('時間切れです。試験を終了します。', 'info');
+      finishSession(container);
+    }
+  }, 1000);
+
+  return timerId;
+}
+
+/**
+ * 画面上のタイマー表示要素を更新する
+ * @param {number} remainingSec - 残り秒数
+ */
+function updateTimerDisplay(remainingSec) {
+  const timerEl = document.querySelector('.exam-timer-value');
+  if (!timerEl) return;
+
+  // 秒数を「MM:SS」形式に変換する
+  const formattedTime = formatSeconds(remainingSec);
+  timerEl.textContent = formattedTime;
+
+  // 残り10分を切ったら警告色（赤）に変更する
+  const timerBar = document.querySelector('.exam-timer-bar');
+  if (timerBar) {
+    if (remainingSec <= EXAM_TIMER_WARNING_SEC) {
+      timerBar.classList.add('is-warning');
+    } else {
+      timerBar.classList.remove('is-warning');
+    }
+  }
+}
+
+/**
+ * 秒数を「MM:SS」形式の文字列に変換する
+ * @param {number} totalSeconds - 変換する秒数
+ * @returns {string} 「MM:SS」形式の文字列（例: '119:59'）
+ */
+function formatSeconds(totalSeconds) {
+  // 負の値は0として扱う
+  const safeSeconds = Math.max(0, totalSeconds);
+  const minutes = Math.floor(safeSeconds / 60);
+  const seconds = safeSeconds % 60;
+  // 秒数が1桁の場合は「0」でパディングする
+  const paddedSeconds = String(seconds).padStart(2, '0');
+  return `${minutes}:${paddedSeconds}`;
 }
 
 /**
@@ -293,6 +478,37 @@ function renderQuestionScreen(container) {
 
   const screen = createElement('div', { classes: ['quiz-question-screen'] });
 
+  // 模擬試験モードの場合はタイマーバーを画面最上部に表示する
+  if (_session.mode === 'exam') {
+    const timerBar = createElement('div', {
+      classes: [
+        'exam-timer-bar',
+        // 開始時点で残り10分未満の場合（残り問題数が多い等の異常状態）は警告色を付ける
+        _session.remainingSec <= EXAM_TIMER_WARNING_SEC ? 'is-warning' : '',
+      ],
+    });
+
+    // 時計アイコン
+    timerBar.appendChild(createElement('span', {
+      classes: ['exam-timer-icon'],
+      text: '⏱',
+    }));
+
+    // ラベル
+    timerBar.appendChild(createElement('span', {
+      classes: ['exam-timer-label'],
+      text: '残り時間',
+    }));
+
+    // 残り時間の数値（updateTimerDisplayで1秒ごとに更新される）
+    timerBar.appendChild(createElement('span', {
+      classes: ['exam-timer-value'],
+      text: formatSeconds(_session.remainingSec),
+    }));
+
+    screen.appendChild(timerBar);
+  }
+
   // 進捗バーヘッダー
   const progressHeader = createElement('div', { classes: ['quiz-progress-header'] });
   progressHeader.appendChild(createElement('span', {
@@ -306,6 +522,24 @@ function renderQuestionScreen(container) {
     attrs: { style: `width: ${progressPct}%` },
   }));
   progressHeader.appendChild(bar);
+
+  // 中断ボタン（進捗バーの右端に配置）
+  const quitBtn = createElement('button', {
+    classes: ['quiz-quit-btn'],
+    text: '✕',
+    attrs: { 'aria-label': '演習を中断する' },
+  });
+  quitBtn.addEventListener('click', () => {
+    // 模擬試験モードの場合はタイマーを停止する
+    if (_session && _session.timerId) {
+      clearInterval(_session.timerId);
+    }
+    // セッションをクリアしてモード選択に戻る
+    _session = null;
+    navigate('quiz');
+  });
+  progressHeader.appendChild(quitBtn);
+
   screen.appendChild(progressHeader);
 
   // 問題カード
@@ -349,11 +583,14 @@ function renderQuestionScreen(container) {
       const isCorrect = choice.id === current.correct_answer;
 
       // セッション結果を更新（イミュータブルに新しい結果配列を作成）
+      // 模擬試験モードでは解説表示のためquestion・answeredId・も保持する
       const newResult = {
-        question_id:   current.question_id,
-        answered:      choice.id,
-        correct:       isCorrect,
+        question_id:    current.question_id,
+        answered:       choice.id,
+        correct:        isCorrect,
         time_spent_sec: timeSpent,
+        // 模擬試験モードの結果画面で解説を表示するために問題データを保持する
+        questionData:   _session.mode === 'exam' ? current : null,
       };
 
       _session = {
@@ -366,7 +603,28 @@ function renderQuestionScreen(container) {
       // 苦手問題統計に記録
       recordQuestionAnswer(current.question_id, isCorrect);
 
-      // 解説フェーズへ
+      // 模擬試験モードでは解説画面をスキップして次の問題へ直接進む
+      if (_session.mode === 'exam') {
+        const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
+        if (isLastQuestion) {
+          // 全問解答完了：タイマーを停止してセッションを終了する
+          if (_session.timerId) {
+            clearInterval(_session.timerId);
+          }
+          finishSession(container);
+        } else {
+          // 次の問題へ（解説なし）
+          _session = {
+            ..._session,
+            phase:      'question',
+            currentIdx: _session.currentIdx + 1,
+          };
+          renderQuestionScreen(container);
+        }
+        return;
+      }
+
+      // 通常モード：解説フェーズへ
       renderExplanationScreen(container);
     });
 
@@ -528,6 +786,11 @@ function renderExplanationScreen(container) {
 function finishSession(container) {
   if (!_session || !_session.isActive) return;
 
+  // 模擬試験モードのタイマーが残っていれば確実に停止する
+  if (_session.timerId) {
+    clearInterval(_session.timerId);
+  }
+
   // スコアを計算
   const totalCorrect = _session.results.filter((r) => r.correct).length;
   const total = _session.results.length;
@@ -565,31 +828,109 @@ function finishSession(container) {
     },
   };
 
-  // localStorageに保存
+  // localStorageに保存（模擬試験は保存しない仕様：ブラウザを閉じるとセッションは失われる）
+  // ただし演習記録として統計に残すため saveQuizSession は呼び出す
   saveQuizSession(sessionRecord);
 
-  // セッション状態を結果フェーズに更新
+  // 模擬試験モードの合否判定を計算する
+  let examJudgment = null;
+  if (_session.mode === 'exam') {
+    examJudgment = calcExamJudgment(totalCorrect, total, byCategoryTotals);
+  }
+
+  // セッション状態を結果フェーズに更新（イミュータブル）
   _session = {
     ..._session,
-    isActive: false,
-    phase:    'result',
-    score:    { scorePct, totalCorrect, total, byCategoryTotals },
+    isActive:      false,
+    phase:         'result',
+    score:         { scorePct, totalCorrect, total, byCategoryTotals },
+    examJudgment,  // 模擬試験モードのみ設定される（通常モードはnull）
   };
 
   renderResultScreen(container);
 }
 
 /**
+ * 模擬試験の合否判定を計算する
+ * 合格条件：総合60%以上、かつ各分野30%以上
+ * @param {number} totalCorrect - 総合正解数
+ * @param {number} total - 総問題数
+ * @param {Object} byCategoryTotals - 分野別スコアオブジェクト
+ * @returns {Object} 合否判定結果
+ */
+function calcExamJudgment(totalCorrect, total, byCategoryTotals) {
+  // 総合正答率を計算する
+  const totalRate = total > 0 ? totalCorrect / total : 0;
+  const isPassTotal = totalRate >= EXAM_PASS_RATE_TOTAL;
+
+  // 分野別足切り判定を計算する（各分野30%以上が必要）
+  const categoryJudgments = Object.entries(byCategoryTotals).map(([cat, catScore]) => {
+    const catRate = catScore.total > 0 ? catScore.correct / catScore.total : 0;
+    const isPassCategory = catRate >= EXAM_PASS_RATE_CATEGORY;
+    return {
+      category:  cat,
+      name:      CATEGORY_NAMES[cat] || cat,
+      correct:   catScore.correct,
+      total:     catScore.total,
+      rate:      catRate,
+      isPassed:  isPassCategory,
+    };
+  });
+
+  // 全分野の足切りをパスしているか確認する
+  const isPassAllCategories = categoryJudgments.every((j) => j.isPassed);
+
+  // 最終合否：総合かつ全分野の両方を満たす必要がある
+  const isPassed = isPassTotal && isPassAllCategories;
+
+  return {
+    isPassed,
+    isPassTotal,
+    isPassAllCategories,
+    totalRate,
+    categoryJudgments,
+  };
+}
+
+/**
  * 結果サマリー画面を描画する
+ * 模擬試験モードの場合は合否判定・分野別足切り・間違え一覧も表示する
  * @param {HTMLElement} container - 描画先のコンテナ
  */
 function renderResultScreen(container) {
-  const { score } = _session;
+  const { score, mode, examJudgment } = _session;
   const { scorePct, totalCorrect, total, byCategoryTotals } = score;
+  const isExamMode = mode === 'exam';
 
   const screen = createElement('div', { classes: ['quiz-result-screen'] });
 
-  // スコア大表示カード
+  // ===== 模擬試験モード：合否判定を大きく表示する =====
+  if (isExamMode && examJudgment) {
+    const judgmentBanner = createElement('div', {
+      classes: [
+        'exam-judgment-banner',
+        examJudgment.isPassed ? 'is-pass' : 'is-fail',
+      ],
+    });
+
+    // 合格／不合格のテキスト（大きく表示）
+    judgmentBanner.appendChild(createElement('div', {
+      classes: ['exam-judgment-label'],
+      text: examJudgment.isPassed ? '合格' : '不合格',
+    }));
+
+    // 合否のコメント
+    judgmentBanner.appendChild(createElement('div', {
+      classes: ['exam-judgment-comment'],
+      text: examJudgment.isPassed
+        ? '合格ラインを超えました！本番も自信を持って臨みましょう。'
+        : '惜しい！苦手分野を復習してもう一度挑戦しましょう。',
+    }));
+
+    screen.appendChild(judgmentBanner);
+  }
+
+  // ===== スコア大表示カード =====
   const scoreCard = createElement('div', { classes: ['result-score-card'] });
 
   scoreCard.appendChild(createElement('div', {
@@ -609,7 +950,7 @@ function renderResultScreen(container) {
 
   screen.appendChild(scoreCard);
 
-  // 分野別スコア
+  // ===== 分野別スコア =====
   if (Object.keys(byCategoryTotals).length > 0) {
     const catSection = createElement('div', {
       classes: ['card', 'result-category-scores'],
@@ -617,23 +958,41 @@ function renderResultScreen(container) {
 
     catSection.appendChild(createElement('div', {
       classes: ['card-title'],
-      text: '分野別スコア',
+      text: isExamMode ? '分野別スコア（足切り判定）' : '分野別スコア',
     }));
 
-    const categoryNames = {
-      strategy:   'ストラテジ系',
-      management: 'マネジメント系',
-      technology: 'テクノロジ系',
-    };
+    // 模擬試験モードでは足切り判定をcategoryJudgmentsから取得する
+    const judgmentMap = isExamMode && examJudgment
+      ? Object.fromEntries(examJudgment.categoryJudgments.map((j) => [j.category, j]))
+      : {};
 
     Object.entries(byCategoryTotals).forEach(([cat, catScore]) => {
       const pct = Math.round((catScore.correct / catScore.total) * 100);
-      const item = createElement('div', { classes: ['result-category-item'] });
+      const judgment = judgmentMap[cat];
+
+      const item = createElement('div', {
+        classes: [
+          'result-category-item',
+          // 模擬試験モードで足切りの場合は視覚的に強調する
+          isExamMode && judgment && !judgment.isPassed ? 'is-failed-category' : '',
+        ],
+      });
 
       item.appendChild(createElement('span', {
         classes: ['result-category-name'],
-        text: categoryNames[cat] || cat,
+        text: CATEGORY_NAMES[cat] || cat,
       }));
+
+      // 模擬試験モードでは足切りOK/NGのバッジを表示する
+      if (isExamMode && judgment) {
+        item.appendChild(createElement('span', {
+          classes: [
+            'result-category-cutoff-badge',
+            judgment.isPassed ? 'is-pass' : 'is-fail',
+          ],
+          text: judgment.isPassed ? '足切りOK' : '足切りNG',
+        }));
+      }
 
       item.appendChild(createElement('span', {
         classes: ['result-category-score'],
@@ -646,15 +1005,129 @@ function renderResultScreen(container) {
     screen.appendChild(catSection);
   }
 
-  // アクションボタン
+  // ===== 模擬試験モード：間違えた問題の一覧を表示する =====
+  if (isExamMode) {
+    const wrongResults = _session.results.filter((r) => !r.correct);
+
+    if (wrongResults.length > 0) {
+      const wrongSection = createElement('div', {
+        classes: ['card', 'exam-wrong-list'],
+      });
+
+      // セクションヘッダー（折りたたみ可能なデザイン）
+      const wrongHeader = createElement('button', {
+        classes: ['exam-wrong-list-header'],
+        attrs: { 'aria-expanded': 'false' },
+      });
+
+      wrongHeader.appendChild(createElement('span', {
+        classes: ['card-title'],
+        text: `間違えた問題 (${wrongResults.length}問)`,
+      }));
+
+      // 展開・折りたたみの矢印アイコン
+      const toggleIcon = createElement('span', {
+        classes: ['exam-wrong-toggle-icon'],
+        text: '▼',
+      });
+      wrongHeader.appendChild(toggleIcon);
+
+      const wrongBody = createElement('div', {
+        classes: ['exam-wrong-list-body'],
+        attrs: { 'aria-hidden': 'true' },
+      });
+      // 初期状態は折りたたみ（styleで非表示）
+      wrongBody.style.display = 'none';
+
+      // 折りたたみのトグル処理
+      wrongHeader.addEventListener('click', () => {
+        const isExpanded = wrongHeader.getAttribute('aria-expanded') === 'true';
+        const newExpanded = !isExpanded;
+
+        wrongHeader.setAttribute('aria-expanded', String(newExpanded));
+        wrongBody.setAttribute('aria-hidden', String(!newExpanded));
+        wrongBody.style.display = newExpanded ? 'block' : 'none';
+        toggleIcon.textContent = newExpanded ? '▲' : '▼';
+      });
+
+      // 間違えた問題を1問ずつ描画する
+      wrongResults.forEach((result, idx) => {
+        // resultDataには問題データが保持されている（questionDataプロパティ）
+        const questionData = result.questionData;
+        if (!questionData) return;
+
+        const item = createElement('div', { classes: ['exam-wrong-item'] });
+
+        // 問題番号
+        item.appendChild(createElement('div', {
+          classes: ['exam-wrong-item-number'],
+          text: `問${idx + 1}`,
+        }));
+
+        // 問題文
+        item.appendChild(createElement('p', {
+          classes: ['exam-wrong-item-question'],
+          text: questionData.question_text,
+        }));
+
+        // 選択した回答と正解を表示する
+        const answerRow = createElement('div', { classes: ['exam-wrong-item-answers'] });
+
+        // 自分の回答
+        const myAnswer = questionData.choices.find((c) => c.id === result.answered);
+        answerRow.appendChild(createElement('div', {
+          classes: ['exam-wrong-your-answer'],
+          text: `あなたの回答：${result.answered}. ${myAnswer ? myAnswer.text : '不明'}`,
+        }));
+
+        // 正解
+        const correctAnswer = questionData.choices.find((c) => c.id === questionData.correct_answer);
+        answerRow.appendChild(createElement('div', {
+          classes: ['exam-wrong-correct-answer'],
+          text: `正解：${questionData.correct_answer}. ${correctAnswer ? correctAnswer.text : '不明'}`,
+        }));
+
+        item.appendChild(answerRow);
+
+        // 解説
+        item.appendChild(createElement('p', {
+          classes: ['exam-wrong-item-explanation'],
+          text: questionData.explanation,
+        }));
+
+        wrongBody.appendChild(item);
+      });
+
+      wrongSection.appendChild(wrongHeader);
+      wrongSection.appendChild(wrongBody);
+      screen.appendChild(wrongSection);
+    } else {
+      // 全問正解の場合は祝福メッセージを表示する
+      const perfectMsg = createElement('div', {
+        classes: ['card', 'exam-perfect-message'],
+      });
+      perfectMsg.appendChild(createElement('div', {
+        text: '全問正解！素晴らしいです！',
+        classes: ['exam-perfect-text'],
+      }));
+      screen.appendChild(perfectMsg);
+    }
+  }
+
+  // ===== アクションボタン =====
   const actions = createElement('div', { classes: ['result-actions'] });
 
-  // 再挑戦ボタン
+  // 再挑戦ボタン（模擬試験は「もう一度受験する」に変える）
   const retryBtn = createElement('button', {
     classes: ['result-retry-btn'],
-    text: '🔄 もう一度挑戦する',
+    text: isExamMode ? '🏆 もう一度受験する' : '🔄 もう一度挑戦する',
   });
   retryBtn.addEventListener('click', () => {
+    // タイマーが残っている場合は停止する（念のため）
+    if (_session && _session.timerId) {
+      clearInterval(_session.timerId);
+    }
+    _session = null; // セッションをクリアしてから画面遷移
     navigate('quiz');
   });
   actions.appendChild(retryBtn);
@@ -665,6 +1138,10 @@ function renderResultScreen(container) {
     text: 'ホームへ戻る',
   });
   homeBtn.addEventListener('click', () => {
+    // タイマーが残っている場合は停止する（念のため）
+    if (_session && _session.timerId) {
+      clearInterval(_session.timerId);
+    }
     _session = null; // セッションをクリア
     navigate('home');
   });

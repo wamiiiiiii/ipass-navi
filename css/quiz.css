@@ -150,6 +150,30 @@
   margin-bottom: var(--space-md);
 }
 
+/* 中断ボタン（進捗バー右端） */
+.quiz-quit-btn {
+  background: none;
+  border: 1.5px solid var(--color-text-tertiary, #aaa);
+  color: var(--color-text-secondary);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.quiz-quit-btn:active {
+  background: var(--color-danger, #e74c3c);
+  color: #fff;
+  border-color: var(--color-danger, #e74c3c);
+}
+
 .quiz-progress-text {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
@@ -529,4 +553,238 @@
 
 .difficulty-star.is-empty {
   color: var(--color-border);
+}
+
+/* ===================================================
+   模擬試験モード専用スタイル
+   =================================================== */
+
+/* ---- タイマーバー（画面最上部に常時表示） ---- */
+.exam-timer-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-elevated);
+  border-bottom: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  /* タイマーは常に目立つ位置に固定する */
+  position: sticky;
+  top: 0;
+  z-index: var(--z-card);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 残り10分を切ったときに警告色（赤）に変える */
+.exam-timer-bar.is-warning {
+  background-color: var(--color-error-light);
+  border-color: var(--color-error);
+}
+
+.exam-timer-icon {
+  font-size: var(--font-size-md);
+  flex-shrink: 0;
+}
+
+.exam-timer-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+/* 残り時間の数値（大きく・太字で表示する） */
+.exam-timer-value {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums; /* 数字が動いても幅が変わらないように */
+  letter-spacing: 0.05em;
+}
+
+/* 警告時は数値も赤にする */
+.exam-timer-bar.is-warning .exam-timer-value {
+  color: var(--color-error);
+}
+
+/* ---- 合否判定バナー（結果画面の最上部に表示） ---- */
+.exam-judgment-banner {
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+/* 合格時：緑系 */
+.exam-judgment-banner.is-pass {
+  background: linear-gradient(135deg, var(--color-success) 0%, #2E8B5A 100%);
+  color: #FFFFFF;
+}
+
+/* 不合格時：赤系 */
+.exam-judgment-banner.is-fail {
+  background: linear-gradient(135deg, var(--color-error) 0%, #C0392B 100%);
+  color: #FFFFFF;
+}
+
+/* 合格・不合格の大テキスト */
+.exam-judgment-label {
+  font-size: 5.6rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.1em;
+}
+
+/* 合否コメント */
+.exam-judgment-comment {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  line-height: var(--line-height-base);
+}
+
+/* ---- 分野別足切りバッジ ---- */
+.result-category-cutoff-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 足切りOKバッジ */
+.result-category-cutoff-badge.is-pass {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+/* 足切りNGバッジ */
+.result-category-cutoff-badge.is-fail {
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+}
+
+/* 足切りNGの分野行は薄い赤背景で強調する */
+.result-category-item.is-failed-category {
+  background-color: var(--color-error-light);
+  border-radius: var(--radius-sm);
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  margin: 0 calc(-1 * var(--space-sm));
+}
+
+/* ---- 間違えた問題一覧（展開/折りたたみ） ---- */
+.exam-wrong-list {
+  margin-bottom: var(--space-md);
+  overflow: hidden; /* 角丸の内側に収める */
+}
+
+/* ヘッダーボタン（タップで展開・折りたたみ） */
+.exam-wrong-list-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  min-height: var(--tap-target-min);
+}
+
+.exam-wrong-list-header:active {
+  background-color: var(--color-bg-surface);
+}
+
+/* 展開・折りたたみの矢印アイコン */
+.exam-wrong-toggle-icon {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+/* 間違えた問題リストの本体（展開時に表示） */
+.exam-wrong-list-body {
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+/* 1問ごとのアイテム */
+.exam-wrong-item {
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.exam-wrong-item:first-child {
+  border-top: none;
+  margin-top: 0;
+}
+
+/* 問題番号（例：「問1」） */
+.exam-wrong-item-number {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+/* 問題文 */
+.exam-wrong-item-question {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-sm);
+}
+
+/* 自分の回答・正解を表示するエリア */
+.exam-wrong-item-answers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+/* 自分の回答（赤系） */
+.exam-wrong-your-answer {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-error-light);
+  border-radius: var(--radius-sm);
+  line-height: var(--line-height-base);
+}
+
+/* 正解（緑系） */
+.exam-wrong-correct-answer {
+  font-size: var(--font-size-xs);
+  color: var(--color-success);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-success-light);
+  border-radius: var(--radius-sm);
+  line-height: var(--line-height-base);
+}
+
+/* 解説文 */
+.exam-wrong-item-explanation {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-loose);
+  white-space: pre-line;
+  border-left: 3px solid var(--color-border);
+  padding-left: var(--space-sm);
+}
+
+/* ---- 全問正解時のメッセージ ---- */
+.exam-perfect-message {
+  text-align: center;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.exam-perfect-text {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-success);
 }
