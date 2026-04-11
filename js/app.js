@@ -55,9 +55,22 @@ async function initApp() {
   setupBottomNavigation();
 
   // 6b. ヘッダーの戻るボタンにイベントを設定する
+  // 教科書内では階層ベースで戻る（節→章一覧→分野一覧→教科書トップ）
   const backBtn = document.getElementById('header-back-btn');
   if (backBtn) {
-    backBtn.addEventListener('click', () => goBack());
+    backBtn.addEventListener('click', () => {
+      const hash = window.location.hash.slice(1);
+      if (hash.includes('?page=')) {
+        // 節コンテンツ → 章一覧に戻る（クエリパラメータを除去）
+        const basePath = hash.split('?')[0];
+        navigate(basePath);
+      } else if (hash.startsWith('textbook/')) {
+        // 章一覧 → 分野一覧に戻る
+        navigate('textbook');
+      } else {
+        goBack();
+      }
+    });
   }
 
   // 7. システムのカラースキーム変更を監視する
