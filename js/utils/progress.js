@@ -199,6 +199,25 @@ export function calcStudyDays(readingTimeData, quizResults) {
 }
 
 /**
+ * 開始日からの経過日数を計算する
+ * @param {string} studyStartDate - 開始日（YYYY-MM-DD形式）
+ * @returns {number} 経過日数（最低1日）
+ */
+export function calcElapsedDays(studyStartDate) {
+  if (!studyStartDate) {
+    return 1;
+  }
+
+  const start = new Date(studyStartDate);
+  const now = new Date();
+  const startMidnight = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+  const nowMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const diffDays = Math.floor((nowMidnight - startMidnight) / (1000 * 60 * 60 * 24));
+
+  return Math.max(1, diffDays + 1);
+}
+
+/**
  * 今日の演習セッション時間（秒）を合計する
  * @param {Object} quizResults - ipass_quiz_resultsのlocalStorageデータ
  * @param {string} [today] - 今日の日付（YYYY-MM-DD形式・省略時は現在日時）

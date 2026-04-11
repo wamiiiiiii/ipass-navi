@@ -19,6 +19,7 @@ import {
   calcSectionProgress,
   calcTotalAccuracy,
   calcStudyDays,
+  calcElapsedDays,
   formatStudyTime,
   calcTodayStudySeconds,
   getRecentSessions,
@@ -47,6 +48,7 @@ export async function renderHome(container) {
     const overallPct = calcOverallProgress(progress.pages_read, chaptersData);
     const readingTime = getReadingTime();
     const studyDays  = calcStudyDays(readingTime, results);
+    const elapsedDays = calcElapsedDays(settings.study_start_date);
     const accuracy   = calcTotalAccuracy(results);
     const todaySecs  = calcTodayStudySeconds(results) + getTodayReadingSeconds();
     const recentSessions = getRecentSessions(results, 3);
@@ -99,8 +101,8 @@ function buildHomeScreen({ overallPct, studyDays, accuracy, todaySecs, sectionPr
     screen.appendChild(buildOnboardingCard());
   }
 
-  // スタッツグリッド（学習日数・正答率・今日の学習時間）
-  screen.appendChild(buildStatsGrid(studyDays, accuracy, todaySecs));
+  // スタッツグリッド（学習日数・経過日数・正答率・今日の学習時間・学習率）
+  screen.appendChild(buildStatsGrid(studyDays, elapsedDays, accuracy, todaySecs));
 
   // クイックアクションボタン
   screen.appendChild(buildQuickActions());
@@ -237,11 +239,11 @@ function buildWelcomeBanner(overallPct) {
  * @param {number} todaySecs - 今日の学習時間（秒）
  * @returns {HTMLElement} スタッツグリッド要素
  */
-function buildStatsGrid(studyDays, accuracy, todaySecs) {
+function buildStatsGrid(studyDays, elapsedDays, accuracy, todaySecs) {
   const grid = createElement('div', { classes: ['home-stats-grid'] });
 
-  // 学習日数カード
-  grid.appendChild(buildStatCard(`${studyDays}日目`, '学習継続'));
+  // 学習日数カード（実際に学習した日 / 経過日数）
+  grid.appendChild(buildStatCard(`${studyDays}日`, `学習日数（${elapsedDays}日中）`));
 
   // 正答率カード
   const accuracyText = accuracy > 0 ? `${accuracy}%` : '---';
@@ -251,8 +253,9 @@ function buildStatsGrid(studyDays, accuracy, todaySecs) {
   const timeText = todaySecs > 0 ? formatStudyTime(todaySecs) : '---';
   grid.appendChild(buildStatCard(timeText, '今日の学習時間'));
 
-  // 空のカード（4つ目のスペース）
-  grid.appendChild(createElement('div', { classes: ['stat-card'] }));
+  // 学習率カード（何日中何日やったか）
+  const studyRate = elapsedDays > 0 ? Math.round((studyDays / elapsedDays) * 100) : 0;
+  grid.appendChild(buildStatCard(`${studyRate}%`, '学習率'));
 
   return grid;
 }
