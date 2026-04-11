@@ -87,24 +87,34 @@ export async function loadGlossary() {
 }
 
 /**
+ * 図解データを取得する
+ * diagrams.json に page_id をキーとした図解定義が格納されている
+ * @returns {Promise<Object>} diagrams.jsonのデータ
+ */
+export async function loadDiagrams() {
+  return fetchJson('./data/diagrams.json');
+}
+
+/**
  * すべてのデータを並行して事前読み込みする
  * アプリ起動時に呼び出してキャッシュを温める
- * @returns {Promise<{chapters: Object, questions: Object, glossary: Object}>}
+ * @returns {Promise<{chapters: Object, questions: Object, glossary: Object, diagrams: Object}>}
  */
 export async function preloadAllData() {
   try {
     // Promise.allで並行読み込み（直列より高速）
-    const [chapters, questions, glossary] = await Promise.all([
+    const [chapters, questions, glossary, diagrams] = await Promise.all([
       loadChapters(),
       loadQuestions(),
       loadGlossary(),
+      loadDiagrams(),
     ]);
 
-    return { chapters, questions, glossary };
+    return { chapters, questions, glossary, diagrams };
   } catch (error) {
     console.error('[DataLoader] データの事前読み込みに失敗しました:', error.message);
     // 失敗しても個別の読み込みは続けられるようにnullを返す（例外は投げない）
-    return { chapters: null, questions: null, glossary: null };
+    return { chapters: null, questions: null, glossary: null, diagrams: null };
   }
 }
 

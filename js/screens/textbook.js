@@ -5,8 +5,9 @@
  */
 
 import { getProgress, markPageAsRead, markChapterCompleted, recordReadingTime } from '../store.js';
-import { loadChapters, loadGlossary, findTermByName } from '../dataLoader.js';
+import { loadChapters, loadGlossary, loadDiagrams, findTermByName } from '../dataLoader.js';
 import { navigate, goBack } from '../router.js';
+import { renderDiagram } from '../utils/diagram.js';
 import {
   createElement,
   renderInto,
@@ -55,8 +56,12 @@ export async function renderTextbook(container, params = {}, query = {}) {
       renderChapterList(container, section, progress);
     } else if (query.page) {
       // 節コンテンツ画面を表示
-      const glossaryData = await loadGlossary();
-      renderPageContent(container, chaptersData, progress, query.page, glossaryData);
+      // 用語辞書と図解データを並行読み込みして効率化する
+      const [glossaryData, diagramsData] = await Promise.all([
+        loadGlossary(),
+        loadDiagrams(),
+      ]);
+      renderPageContent(container, chaptersData, progress, query.page, glossaryData, diagramsData);
     } else {
       // chapterIdのみ指定 → 章の最初の節を表示
       navigate(`textbook/${params.id}?page=${params.id}-01`, false);
@@ -239,8 +244,9 @@ function renderChapterList(container, section, progress) {
  * @param {Object} progress - 進捗データ
  * @param {string} pageId - 表示する節のID（例: 'S-01-01'）
  * @param {Object} glossaryData - 用語辞書データ
+ * @param {Object} [diagramsData] - 図解データ（diagrams.json の内容。省略可）
  */
-function renderPageContent(container, chaptersData, progress, pageId, glossaryData) {
+function renderPageContent(container, chaptersData, progress, pageId, glossaryData, diagramsData) {
   // 節データを検索
   const { page, chapter, section } = findPageData(pageId, chaptersData);
 
@@ -287,6 +293,19 @@ function renderPageContent(container, chaptersData, progress, pageId, glossaryDa
   bodyEl.appendChild(highlighted);
   contentCard.appendChild(bodyEl);
   screen.appendChild(contentCard);
+
+  // 図解レンダリング：この節に対応する図解データがあれば本文の下に表示する
+  // diagramsData.diagrams は { [page_id]: diagramData } の形式で格納されている
+  if (diagramsData && diagramsData.diagrams) {
+    const diagramData = diagramsData.diagrams[pageId];
+    if (diagramData) {
+      // 対応する図解が定義されている場合のみDOMを生成して挿入する
+      const diagramEl = renderDiagram(diagramData);
+      if (diagramEl) {
+        screen.appendChild(diagramEl);
+      }
+    }
+  }
 
   // 節のポイントまとめ（summary_pointsがある場合）
   if (page.summary_points && page.summary_points.length > 0) {
