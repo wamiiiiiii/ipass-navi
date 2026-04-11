@@ -140,6 +140,8 @@ function renderModeSelect(container, query) {
     { id: 'shuffle',   icon: '🔀', name: 'シャッフル',    desc: 'ランダム順で出題' },
     // 模擬試験モード：本番と同じ100問・120分形式
     { id: 'exam',      icon: '🏆', name: '模擬試験',       desc: '本番形式 100問・120分' },
+    // 過去問演習モード：年度別の公開問題を選択して演習する
+    { id: 'past',      icon: '📚', name: '過去問演習',     desc: '年度別の公開問題' },
   ];
 
   const modeGrid = createElement('div', { classes: ['quiz-mode-grid'] });
@@ -208,6 +210,12 @@ function renderModeSelect(container, query) {
   });
 
   startBtn.addEventListener('click', async () => {
+    // 過去問モードは年度選択画面を表示する（演習開始はしない）
+    if (selectedMode === 'past') {
+      renderInto(container, [createLoadingSpinner()]);
+      await renderPastYearSelect(container);
+      return;
+    }
     renderInto(container, [createLoadingSpinner()]);
     await startSession(container, selectedMode, selectedCategory);
   });
@@ -215,6 +223,166 @@ function renderModeSelect(container, query) {
   screen.appendChild(startBtn);
 
   renderInto(container, [screen]);
+}
+
+// ===================================================
+// 過去問モードの定数
+// ===================================================
+
+/**
+ * 過去問の年度定義
+ * source: questions.json の source フィールドと一致させる
+ * label : 画面や解説バッジに表示する日本語名
+ */
+const PAST_YEAR_OPTIONS = [
+  { source: 'past_R06_spring', label: '令和6年度 公開問題', count: 100 },
+  { source: 'past_R05_spring', label: '令和5年度 公開問題', count: 100 },
+  { source: 'past_R04_spring', label: '令和4年度 公開問題', count: 100 },
+  { source: 'past_R03_spring', label: '令和3年度 公開問題', count: 100 },
+  { source: 'past_R02_autumn', label: '令和2年度 秋期',     count: 100 },
+  // 全年度シャッフル：source = 'all' として特別処理する
+  { source: 'all',             label: '全年度シャッフル',   count: null },
+];
+
+// ===================================================
+// 過去問年度選択画面
+// ===================================================
+
+/**
+ * 過去問演習の年度選択画面を描画する
+ * 年度ごとにカード表示し、タップすると該当年度の問題セッションを開始する
+ * @param {HTMLElement} container - 描画先のコンテナ
+ */
+async function renderPastYearSelect(container) {
+  // 事前に全問題データを読み込み、各年度の実在数を確認する
+  let questionsData;
+  try {
+    questionsData = await loadQuestions();
+  } catch (error) {
+    console.error('[Quiz] 過去問データの読み込みに失敗しました:', error);
+    renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
+    return;
+  }
+
+  const screen = createElement('div', { classes: ['quiz-mode-screen'] });
+
+  // 戻るボタン（モード選択に戻る）
+  const backBtn = createElement('button', {
+    classes: ['past-year-back-btn'],
+    text: '← 戻る',
+  });
+  backBtn.addEventListener('click', () => {
+    renderModeSelect(container, {});
+  });
+  screen.appendChild(backBtn);
+
+  screen.appendChild(createElement('h1', {
+    classes: ['quiz-mode-title'],
+    text: '過去問演習',
+  }));
+  screen.appendChild(createElement('p', {
+    classes: ['quiz-mode-subtitle'],
+    text: '演習する年度を選んでください',
+  }));
+
+  // 年度カードの一覧
+  const yearGrid = createElement('div', { classes: ['past-year-grid'] });
+
+  PAST_YEAR_OPTIONS.forEach((option) => {
+    // 全年度シャッフル以外は実在する問題数を確認する
+    const actualCount = option.source === 'all'
+      ? questionsData.questions.filter((q) => q.source && q.source.startsWith('past_')).length
+      : questionsData.questions.filter((q) => q.source === option.source).length;
+
+    // 問題が0件の場合は「データなし」として表示する（タップ不可）
+    const isEmpty = actualCount === 0;
+
+    const card = createElement('div', {
+      classes: [
+        'past-year-card',
+        isEmpty ? 'is-empty' : '',
+        // 全年度シャッフルは視覚的にアクセントカラーを付ける
+        option.source === 'all' ? 'is-shuffle' : '',
+      ],
+    });
+
+    // 年度ラベル
+    card.appendChild(createElement('span', {
+      classes: ['past-year-label'],
+      text: option.label,
+    }));
+
+    // 問題数バッジ（実在数を表示する）
+    const countText = isEmpty
+      ? '過去問データがありません'
+      : `${actualCount}問`;
+
+    card.appendChild(createElement('span', {
+      classes: ['past-year-count', isEmpty ? 'is-empty' : ''],
+      text: countText,
+    }));
+
+    // 問題が存在する場合のみクリックで演習開始できる
+    if (!isEmpty) {
+      card.addEventListener('click', async () => {
+        renderInto(container, [createLoadingSpinner()]);
+        await startPastYearSession(container, option.source, option.label, questionsData);
+      });
+    }
+
+    yearGrid.appendChild(card);
+  });
+
+  screen.appendChild(yearGrid);
+  renderInto(container, [screen]);
+}
+
+/**
+ * 過去問演習セッションを開始する
+ * @param {HTMLElement} container - 描画先のコンテナ
+ * @param {string} source - 年度識別子（'past_R06_spring' 等、または 'all'）
+ * @param {string} sourceLabel - 表示用ラベル（例：'令和6年度 公開問題'）
+ * @param {Object} questionsData - questions.json のデータ（事前読み込み済み）
+ */
+async function startPastYearSession(container, source, sourceLabel, questionsData) {
+  try {
+    // 年度で問題をフィルタリングする（イミュータブル：元の配列は変更しない）
+    const filtered = source === 'all'
+      // 全年度シャッフル：source が 'past_' で始まる問題をすべて対象にする
+      ? questionsData.questions.filter((q) => q.source && q.source.startsWith('past_'))
+      // 特定年度：source フィールドが完全一致するものだけを抽出する
+      : questionsData.questions.filter((q) => q.source === source);
+
+    if (filtered.length === 0) {
+      renderInto(container, [createEmptyState('📚', '過去問データがありません')]);
+      return;
+    }
+
+    // 問題をシャッフルして新しい配列を作成する（イミュータブル）
+    const shuffled = shuffleQuestions(filtered);
+
+    // セッション状態を初期化する（イミュータブルに新規オブジェクトを作成）
+    _session = {
+      isActive:        true,
+      phase:           'question',
+      mode:            'past',     // 過去問モードを示す識別子
+      category:        'all',
+      questions:       shuffled,
+      currentIdx:      0,
+      results:         [],
+      startedAt:       new Date().toISOString(),
+      container,
+      // 過去問モード専用プロパティ
+      pastSource:      source,      // 年度識別子（フィルタリングに使用）
+      pastSourceLabel: sourceLabel, // 表示用ラベル（解説バッジに使用）
+    };
+
+    renderQuestionScreen(container);
+
+  } catch (error) {
+    console.error('[Quiz] 過去問セッション開始に失敗しました:', error);
+    renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
+  }
 }
 
 // ===================================================
@@ -728,6 +896,18 @@ function renderExplanationScreen(container) {
     text: isCorrect ? '✓ 正解！' : '✗ 不正解',
   });
   explanationCard.appendChild(resultEl);
+
+  // 過去問モードの場合：出典バッジ（年度ラベル）を解説カードに表示する
+  // current.source_label（問題データに含まれる場合）または セッションの pastSourceLabel を使用する
+  if (_session && _session.mode === 'past') {
+    const sourceLabel = current.source_label || _session.pastSourceLabel || null;
+    if (sourceLabel) {
+      explanationCard.appendChild(createElement('span', {
+        classes: ['past-source-badge'],
+        text: `出典：${sourceLabel}`,
+      }));
+    }
+  }
 
   explanationCard.appendChild(createElement('p', {
     classes: ['explanation-text'],

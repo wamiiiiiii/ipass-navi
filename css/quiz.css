@@ -788,3 +788,117 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-success);
 }
+
+/* ===================================================
+   過去問演習モード専用スタイル
+   =================================================== */
+
+/* ---- 戻るボタン（年度選択画面の左上） ---- */
+.past-year-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  margin-bottom: var(--space-md);
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  min-height: var(--tap-target-min);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.past-year-back-btn:active {
+  background-color: var(--color-primary-light);
+}
+
+/* ---- 年度選択カードのグリッド ---- */
+/* 1列レイアウト：年度ラベルが長いため1カラムで見やすく表示する */
+.past-year-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* 年度カード1枚 */
+.past-year-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.past-year-card:not(.is-empty):active {
+  transform: scale(0.99);
+  border-color: var(--color-primary);
+}
+
+/* データなし状態：タップできないことを視覚的に示す */
+.past-year-card.is-empty {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* 全年度シャッフルカード：アクセントカラーで差別化する */
+.past-year-card.is-shuffle {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.past-year-card.is-shuffle .past-year-label {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* 年度名テキスト */
+.past-year-label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+/* 問題数バッジ */
+.past-year-count {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* データなし状態の問題数バッジ */
+.past-year-count.is-empty {
+  color: var(--color-text-tertiary, #aaa);
+  background-color: var(--color-bg-surface);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ---- 解説画面の出典バッジ ---- */
+/* 過去問の解説カード内に年度名を小さく表示する */
+.past-source-badge {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+  margin-bottom: var(--space-sm);
+}
