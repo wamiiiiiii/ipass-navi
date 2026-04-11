@@ -6421,6 +6421,1506 @@
       ],
       "exam_frequency": "medium",
       "related_question_ids": []
+    },
+    {
+      "term_id": "G-400",
+      "term": "ユニットテスト",
+      "reading": "ゆにっとてすと",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "プログラムの最小構成単位（関数やメソッド）を個別にテストする手法。開発者自身が実施することが多く、早期にバグを発見するために行う。",
+      "related_terms": [
+        "回帰テスト",
+        "テスト駆動開発",
+        "結合テスト"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-401",
+      "term": "統合テスト",
+      "reading": "とうごうてすと",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "複数のモジュールやコンポーネントを組み合わせたときに、それらが正しく連携して動作するかを確認するテスト工程。",
+      "related_terms": [
+        "単体テスト",
+        "システムテスト",
+        "結合テスト"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-402",
+      "term": "デバッグ",
+      "reading": "でばっぐ",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "プログラムのバグ（不具合）を発見し、修正する作業のこと。テストで検出された欠陥の原因を追跡し取り除くプロセス。",
+      "related_terms": [
+        "テスト駆動開発",
+        "ユニットテスト",
+        "障害管理"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-403",
+      "term": "スパイラルモデル",
+      "reading": "すぱいらるもでる",
+      "category": "management",
+      "chapter_id": "PM-02",
+      "definition": "ソフトウェア開発において、計画・リスク分析・開発・評価のサイクルを螺旋状に繰り返し、段階的に完成度を高めていく開発モデル。",
+      "related_terms": [
+        "ウォーターフォールモデル",
+        "プロトタイピング",
+        "アジャイル開発"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-404",
+      "term": "V字モデル",
+      "reading": "ぶいじもでる",
+      "category": "management",
+      "chapter_id": "PM-02",
+      "definition": "ウォーターフォール開発の各設計工程とテスト工程を対応づけたモデル。要件定義は受入テスト、基本設計はシステムテストに対応する。",
+      "related_terms": [
+        "ウォーターフォールモデル",
+        "システムテスト",
+        "受入テスト"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-405",
+      "term": "リグレッションテスト",
+      "reading": "りぐれっしょんてすと",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "ソフトウェアの修正や機能追加を行った後、既存機能に影響が出ていないかを確認するテスト。退行テストとも呼ばれる。",
+      "related_terms": [
+        "回帰テスト",
+        "単体テスト",
+        "継続的統合"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-406",
+      "term": "ユーザーストーリー",
+      "reading": "ゆーざーすとーりー",
+      "category": "management",
+      "chapter_id": "PM-03",
+      "definition": "アジャイル開発でユーザーの要求を「誰が・何を・なぜ必要か」という形式で簡潔に記述したもの。プロダクトバックログの基本単位となる。",
+      "related_terms": [
+        "プロダクトバックログ",
+        "スプリント",
+        "スクラム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-407",
+      "term": "テストカバレッジ",
+      "reading": "てすとかばれっじ",
+      "category": "technology",
+      "chapter_id": "PM-06",
+      "definition": "テストによってプログラムのどの程度のコードや分岐が実行されたかを示す指標。網羅率とも呼ばれ、テストの充実度を表す。",
+      "related_terms": [
+        "ブラックボックステスト",
+        "ホワイトボックステスト",
+        "品質保証"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-408",
+      "term": "境界値分析",
+      "reading": "きょうかいちぶんせき",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "テスト技法の一つで、入力値の境界（最小値・最大値・その前後）に着目してテストケースを設計する手法。バグが起きやすい境界付近を重点的にテストする。",
+      "related_terms": [
+        "同値分割",
+        "ブラックボックステスト",
+        "テストカバレッジ"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-409",
+      "term": "同値分割",
+      "reading": "どうちぶんかつ",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "テスト技法の一つで、入力データを同じ動作をするグループに分類し、各グループから代表値を選んでテストする手法。テストの効率化を図る。",
+      "related_terms": [
+        "境界値分析",
+        "ブラックボックステスト",
+        "テストケース"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-410",
+      "term": "負荷テスト",
+      "reading": "ふかてすと",
+      "category": "technology",
+      "chapter_id": "PM-06",
+      "definition": "システムに大量のリクエストや処理を与え、性能・応答時間・安定性を検証するテスト。ピーク時の挙動やボトルネックを特定するために実施する。",
+      "related_terms": [
+        "可用性管理",
+        "キャパシティ管理",
+        "システムテスト"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-411",
+      "term": "インスペクション",
+      "reading": "いんすぺくしょん",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "ソフトウェアの設計書やコードを複数の検査員が役割を持って詳細に調べる静的テスト技法。モデレータ・作成者・検査員などの役割がある。",
+      "related_terms": [
+        "ウォークスルー",
+        "コードレビュー",
+        "品質保証"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-412",
+      "term": "ウォークスルー",
+      "reading": "うぉーくすろー",
+      "category": "management",
+      "chapter_id": "PM-06",
+      "definition": "ソフトウェアの設計書やコードを作成者自身が説明しながら、参加者が確認・指摘するレビュー手法。インスペクションより非公式に実施されることが多い。",
+      "related_terms": [
+        "インスペクション",
+        "コードレビュー",
+        "レビュー"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-413",
+      "term": "ポストモーテム",
+      "reading": "ぽすともーてむ",
+      "category": "management",
+      "chapter_id": "PM-05",
+      "definition": "障害やインシデント発生後に、原因・影響・対応内容・再発防止策を文書化して振り返るプロセス。blame-freeな文化で行うことが推奨される。",
+      "related_terms": [
+        "インシデント管理",
+        "問題管理",
+        "問題の根本原因分析"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-414",
+      "term": "継続的デリバリー",
+      "reading": "けいぞくてきでりばりー",
+      "category": "management",
+      "chapter_id": "PM-03",
+      "definition": "ソフトウェアをいつでもリリース可能な状態に保ち、品質検証を自動化して手動操作のみで本番環境へデプロイできるようにする開発手法。CD（Continuous Delivery）とも呼ばれる。",
+      "related_terms": [
+        "CI/CD",
+        "DevOps",
+        "デプロイ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-415",
+      "term": "スモークテスト",
+      "reading": "すもーくてすと",
+      "category": "technology",
+      "chapter_id": "PM-06",
+      "definition": "ビルド後やデプロイ直後に基本的な機能が動作するかを素早く確認するテスト。詳細なテストに進む前にシステムが正常に起動するかを検証する。",
+      "related_terms": [
+        "回帰テスト",
+        "統合テスト",
+        "デプロイ"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-416",
+      "term": "テストケース",
+      "reading": "てすとけーす",
+      "category": "technology",
+      "chapter_id": "PM-06",
+      "definition": "テストを実施するための入力データ・実行条件・期待結果を定義した個別の試験項目。テスト計画に基づいて作成し、テスト管理ツールで管理することが多い。",
+      "related_terms": [
+        "境界値分析",
+        "同値分割",
+        "テストカバレッジ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-417",
+      "term": "リーン開発",
+      "reading": "りーんかいはつ",
+      "category": "management",
+      "chapter_id": "PM-03",
+      "definition": "トヨタ生産方式の考え方をソフトウェア開発に応用した手法。無駄を排除し、価値を素早く届けることを重視する。かんばんやジャスト・イン・タイムの概念を活用する。",
+      "related_terms": [
+        "カンバン",
+        "アジャイル開発",
+        "DevOps"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-418",
+      "term": "エピック",
+      "reading": "えぴっく",
+      "category": "management",
+      "chapter_id": "PM-03",
+      "definition": "アジャイル開発において、複数のユーザーストーリーをまとめた大きな機能単位。スプリントをまたいで実装される大きな作業の塊を表す。",
+      "related_terms": [
+        "ユーザーストーリー",
+        "プロダクトバックログ",
+        "スプリント"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-419",
+      "term": "ロードマップ",
+      "reading": "ろーどまっぷ",
+      "category": "management",
+      "chapter_id": "PM-01",
+      "definition": "プロジェクトや製品の将来的な方向性・計画・マイルストーンを時系列で示した計画図。目標達成に向けた優先順位と時期を関係者に示すために使用する。",
+      "related_terms": [
+        "マイルストーン",
+        "プロダクトバックログ",
+        "WBS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-420",
+      "term": "ソーシャルエンジニアリング",
+      "reading": "そーしゃるえんじにありんぐ",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "技術的な手段を使わず、人間の心理的な隙や行動を利用して機密情報を不正に入手する攻撃手法。なりすまし・電話・対話などが手段として使われる。",
+      "related_terms": [
+        "フィッシング",
+        "不正アクセス禁止法",
+        "マルウェア"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-421",
+      "term": "ICMP",
+      "reading": "あいしーえむぴー",
+      "category": "technology",
+      "chapter_id": "TC-07",
+      "definition": "インターネット制御メッセージプロトコル。ネットワーク機器間でエラー通知や状態確認を行うプロトコル。pingコマンドはICMPを使って通信確認を行う。",
+      "related_terms": [
+        "TCP/IP",
+        "IPアドレス",
+        "DNS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-422",
+      "term": "ルーティング",
+      "reading": "るーてぃんぐ",
+      "category": "technology",
+      "chapter_id": "TC-07",
+      "definition": "ネットワーク上でデータパケットを宛先IPアドレスに基づいて適切な経路に転送する処理。ルータがルーティングテーブルを参照して経路を決定する。",
+      "related_terms": [
+        "IPアドレス",
+        "TCP/IP",
+        "VLAN"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-423",
+      "term": "パケット",
+      "reading": "ぱけっと",
+      "category": "technology",
+      "chapter_id": "TC-07",
+      "definition": "ネットワークで転送されるデータの単位。送信データを分割したもので、ヘッダ（宛先・送信元情報）とペイロード（実データ）から構成される。",
+      "related_terms": [
+        "TCP/IP",
+        "ルーティング",
+        "ICMP"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-424",
+      "term": "QoS",
+      "reading": "きゅーおーえす",
+      "category": "technology",
+      "chapter_id": "TC-07",
+      "definition": "Quality of Service（サービス品質）の略。ネットワーク上で音声や動画など遅延に敏感なトラフィックを優先的に転送する技術・概念。帯域保証にも使われる。",
+      "related_terms": [
+        "VPN",
+        "LAN",
+        "WAN"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-425",
+      "term": "トランザクション",
+      "reading": "とらんざくしょん",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "データベースにおいて、一連の処理を一つのまとまりとして扱う単位。ACID特性を満たし、全て成功するか全て失敗するかのどちらかになる。",
+      "related_terms": [
+        "ACID",
+        "コミット",
+        "ロールバック"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-426",
+      "term": "コミット",
+      "reading": "こみっと",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "データベースのトランザクションにおいて、全ての処理が正常に完了したことを確定し、変更内容を永続化する操作。失敗した場合はロールバックを行う。",
+      "related_terms": [
+        "トランザクション",
+        "ロールバック",
+        "ACID"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-427",
+      "term": "ロールバック",
+      "reading": "ろーるばっく",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "データベースのトランザクションにおいて、処理中にエラーが発生した場合にトランザクション開始前の状態に戻す操作。データの整合性を保つために行う。",
+      "related_terms": [
+        "トランザクション",
+        "コミット",
+        "ACID"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-428",
+      "term": "スキーマ",
+      "reading": "すきーま",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "データベースの構造定義。テーブル名・列名・データ型・制約などを定義したもの。外部スキーマ・概念スキーマ・内部スキーマの3層構造で表される。",
+      "related_terms": [
+        "データベース",
+        "ER図",
+        "正規化"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-429",
+      "term": "ER図",
+      "reading": "いーあーるず",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "エンティティ関連図（Entity-Relationship Diagram）。データベース設計でエンティティ（実体）とその関連を視覚的に表した図。システム設計の初期段階で作成する。",
+      "related_terms": [
+        "スキーマ",
+        "データベース",
+        "正規化"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-430",
+      "term": "データウェアハウス",
+      "reading": "でーたうぇあはうす",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "意思決定支援のために、様々な業務システムから収集したデータを統合・蓄積したデータベース。時系列データの分析や経営判断に活用される。",
+      "related_terms": [
+        "ETL",
+        "OLAP",
+        "データマート"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-431",
+      "term": "ETL",
+      "reading": "いーてぃーえる",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "Extract（抽出）・Transform（変換）・Load（ロード）の略。複数のデータソースからデータを抽出し、変換・整形してデータウェアハウスに格納するプロセス。",
+      "related_terms": [
+        "データウェアハウス",
+        "データマート",
+        "データレイク"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-432",
+      "term": "データレイク",
+      "reading": "でーたれいく",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "構造化・非構造化を問わず、あらゆる形式の生データを大量に保存しておくストレージ。分析時に必要な形式に変換して利用するELTアプローチで使用される。",
+      "related_terms": [
+        "データウェアハウス",
+        "ETL",
+        "ビッグデータ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-433",
+      "term": "OLAP",
+      "reading": "おーらっぷ",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "Online Analytical Processingの略。大量のデータを多次元的に集計・分析するための処理方式。売上分析や経営報告などのビジネスインテリジェンスに活用される。",
+      "related_terms": [
+        "データウェアハウス",
+        "データマート",
+        "ETL"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-434",
+      "term": "CVE",
+      "reading": "しーぶいいー",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "Common Vulnerabilities and Exposuresの略。公開されたセキュリティ脆弱性を一意のIDで管理する国際的なデータベース。CVE-2021-44228のように命名される。",
+      "related_terms": [
+        "CVSS",
+        "脆弱性診断",
+        "パッチ管理"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-435",
+      "term": "CVSS",
+      "reading": "しーぶいえすえす",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "Common Vulnerability Scoring Systemの略。脆弱性の深刻度を0〜10のスコアで評価する国際標準の指標。スコアが高いほど緊急性が高い脆弱性を示す。",
+      "related_terms": [
+        "CVE",
+        "脆弱性診断",
+        "パッチ管理"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-436",
+      "term": "パッチ管理",
+      "reading": "ぱっちかんり",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "OSやソフトウェアのセキュリティ更新プログラム（パッチ）を計画的に適用・管理する業務。脆弱性を放置しないためのセキュリティ対策の基本。",
+      "related_terms": [
+        "CVE",
+        "CVSS",
+        "脆弱性診断"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-437",
+      "term": "デジタル証明書",
+      "reading": "でじたるしょうめいしょ",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "認証局（CA）が発行する電子的な証明書。公開鍵と所有者情報を含み、通信相手の正当性を証明するために使用される。HTTPS通信での本人確認に利用される。",
+      "related_terms": [
+        "認証局",
+        "PKI",
+        "公開鍵暗号"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-438",
+      "term": "認証局",
+      "reading": "にんしょうきょく",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "電子証明書を発行・管理する第三者機関。CA（Certificate Authority）とも呼ばれる。公開鍵の正当性を保証し、デジタル証明書に電子署名を付与する。",
+      "related_terms": [
+        "デジタル証明書",
+        "PKI",
+        "電子署名"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-439",
+      "term": "OTP",
+      "reading": "わんたいむぱすわーど",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "One-Time Password（ワンタイムパスワード）の略。1回限り有効なパスワードを使って認証する方式。SMSや認証アプリで生成したコードを利用する多要素認証の一種。",
+      "related_terms": [
+        "多要素認証",
+        "認証局",
+        "暗号化"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-440",
+      "term": "アンサンブル学習",
+      "reading": "あんさんぶるがくしゅう",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "複数の機械学習モデルを組み合わせて予測精度を向上させる手法。ランダムフォレストやブースティングが代表的。単一モデルより汎化性能が高くなる傾向がある。",
+      "related_terms": [
+        "機械学習",
+        "ディープラーニング",
+        "過学習"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-441",
+      "term": "クラスタリング",
+      "reading": "くらすたりんぐ",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "教師なし学習の一種で、データを類似した特徴を持つグループ（クラスタ）に自動的に分類する手法。顧客セグメンテーションや異常検知に活用される。",
+      "related_terms": [
+        "教師なし学習",
+        "機械学習",
+        "ビッグデータ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-442",
+      "term": "回帰分析",
+      "reading": "かいきぶんせき",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "変数間の関係を数式モデルで表現し、将来値を予測する統計手法。売上予測や需要予測に広く利用される。単回帰・重回帰・ロジスティック回帰などがある。",
+      "related_terms": [
+        "機械学習",
+        "教師あり学習",
+        "ビッグデータ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-443",
+      "term": "損失関数",
+      "reading": "そんしつかんすう",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "機械学習において、モデルの予測値と正解値のずれを数値化する関数。学習ではこの損失を最小化するようにパラメータを調整する。誤差関数とも呼ばれる。",
+      "related_terms": [
+        "ディープラーニング",
+        "勾配降下法",
+        "過学習"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-444",
+      "term": "勾配降下法",
+      "reading": "こうばいこうかほう",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "機械学習モデルの学習アルゴリズムの一つ。損失関数の傾き（勾配）を利用してパラメータを少しずつ最適値に近づけていく最適化手法。",
+      "related_terms": [
+        "損失関数",
+        "ディープラーニング",
+        "ニューラルネットワーク"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-445",
+      "term": "マルチコア",
+      "reading": "まるちこあ",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "一つのCPUチップの中に複数の処理コアを搭載した設計。複数の処理を並列実行できるため、シングルコアより高いパフォーマンスを実現する。",
+      "related_terms": [
+        "CPU",
+        "スレッド",
+        "OS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-446",
+      "term": "スレッド",
+      "reading": "すれっど",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "プロセス内で並行して実行できる処理の単位。一つのプロセスが複数のスレッドを持ち、同時に異なる処理を行うことでプログラムの応答性や効率を高める。",
+      "related_terms": [
+        "プロセス",
+        "マルチコア",
+        "OS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-447",
+      "term": "プロセス",
+      "reading": "ぷろせす",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "OSが管理する実行中のプログラムのインスタンス。CPU・メモリ・ファイルなどのリソースを割り当てられて動作する。複数のプロセスが並行して動作するマルチプロセス処理も可能。",
+      "related_terms": [
+        "スレッド",
+        "OS",
+        "スケジューリング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-448",
+      "term": "セマフォ",
+      "reading": "せまふぉ",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "複数のプロセスやスレッドが共有リソースに同時アクセスするのを制御するための同期機構。カウンタで資源の使用可能数を管理し、並行処理の競合を防ぐ。",
+      "related_terms": [
+        "排他制御",
+        "デッドロック",
+        "プロセス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-449",
+      "term": "デバイスドライバ",
+      "reading": "でばいすどらいば",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "OSとハードウェアデバイスを仲介するソフトウェア。プリンタ・マウス・ネットワークカードなどのハードウェアをOSが制御するために必要なプログラム。",
+      "related_terms": [
+        "OS",
+        "ファームウェア",
+        "エンベデッドシステム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-450",
+      "term": "ファームウェア",
+      "reading": "ふぁーむうぇあ",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "ハードウェアに組み込まれたソフトウェア。機器の基本動作を制御するプログラムで、フラッシュメモリなどに記録されている。ルータやプリンタにも搭載される。",
+      "related_terms": [
+        "UEFI",
+        "デバイスドライバ",
+        "エンベデッドシステム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-451",
+      "term": "UEFI",
+      "reading": "ゆーいーえふあい",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "Unified Extensible Firmware Interfaceの略。従来のBIOSを置き換える次世代ファームウェア規格。大容量ディスクの起動対応・セキュアブート機能・高速起動などの特徴を持つ。",
+      "related_terms": [
+        "ファームウェア",
+        "OS",
+        "デバイスドライバ"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-452",
+      "term": "スケジューリング",
+      "reading": "すけじゅーりんぐ",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "OSが複数のプロセスやスレッドにCPU時間を割り当てる処理。ラウンドロビン・優先度ベース・最短ジョブ優先などのアルゴリズムが存在する。",
+      "related_terms": [
+        "プロセス",
+        "スレッド",
+        "OS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-453",
+      "term": "エンベデッドシステム",
+      "reading": "えんべでっどしすてむ",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "特定の機能を実現するために機器に組み込まれたコンピュータシステム。家電・自動車・医療機器などに搭載されており、リアルタイム性や信頼性が求められる。",
+      "related_terms": [
+        "ファームウェア",
+        "CPU",
+        "OS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-454",
+      "term": "Transformer",
+      "reading": "とらんすふぉーまー",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "自己注意機構（Self-Attention）を使ったディープラーニングのアーキテクチャ。自然言語処理で革命をもたらし、生成AIや大規模言語モデルの基盤となっている。",
+      "related_terms": [
+        "ディープラーニング",
+        "自然言語処理",
+        "RAG"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-455",
+      "term": "RAG",
+      "reading": "らぐ",
+      "category": "technology",
+      "chapter_id": "TC-11",
+      "definition": "Retrieval-Augmented Generation（検索拡張生成）の略。AIが回答を生成する際に外部ナレッジベースから関連情報を検索して利用する手法。ハルシネーションを減らす効果がある。",
+      "related_terms": [
+        "ハルシネーション",
+        "自然言語処理",
+        "Transformer"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-456",
+      "term": "ミューテックス",
+      "reading": "みゅーてっくす",
+      "category": "technology",
+      "chapter_id": "TC-05",
+      "definition": "Mutual Exclusion（相互排除）の略。ある時点で一つのスレッドだけが共有リソースにアクセスできるよう制御する同期機構。セマフォの特殊なケースとして扱われる。",
+      "related_terms": [
+        "セマフォ",
+        "排他制御",
+        "デッドロック"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-457",
+      "term": "データマート",
+      "reading": "でーたまーと",
+      "category": "technology",
+      "chapter_id": "TC-06",
+      "definition": "データウェアハウスから特定の部門や用途向けに抽出したデータの集合体。営業部門向け・マーケティング向けなど目的別に最適化されたデータを提供する。",
+      "related_terms": [
+        "データウェアハウス",
+        "OLAP",
+        "ETL"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-458",
+      "term": "リスクアセスメント",
+      "reading": "りすくあせすめんと",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "情報資産に対するリスクを識別・分析・評価するプロセス。脅威の発生可能性と影響度を組み合わせてリスク値を算出し、対策の優先順位を決定する。",
+      "related_terms": [
+        "リスク管理",
+        "ISMS",
+        "情報セキュリティポリシー"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-459",
+      "term": "ログ管理",
+      "reading": "ろぐかんり",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "システムやアプリケーションが出力する操作・エラー・アクセス記録を収集・保存・分析する管理業務。不正アクセスの検知や原因調査に活用される。",
+      "related_terms": [
+        "SIEM",
+        "監査証跡",
+        "システム監査"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-460",
+      "term": "タイムスタンプ",
+      "reading": "たいむすたんぷ",
+      "category": "technology",
+      "chapter_id": "TC-09",
+      "definition": "電子データが特定の時刻に存在したことを第三者機関が証明する技術。電子文書の作成・変更時刻の改ざんを防止し、法的な証拠能力を持たせるために利用される。",
+      "related_terms": [
+        "電子署名",
+        "デジタル証明書",
+        "電子契約法"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-461",
+      "term": "4P分析",
+      "reading": "よんぴーぶんせき",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "マーケティングミックスのフレームワーク。Product（製品）・Price（価格）・Place（流通）・Promotion（販促）の4要素を整合させて市場戦略を立案する。",
+      "related_terms": [
+        "マーケティングミックス",
+        "STP",
+        "4C分析"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-462",
+      "term": "4C分析",
+      "reading": "よんしーぶんせき",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "顧客視点のマーケティングフレームワーク。Customer Value（顧客価値）・Cost（顧客コスト）・Convenience（利便性）・Communication（コミュニケーション）の4要素で構成される。",
+      "related_terms": [
+        "4P分析",
+        "STP",
+        "マーケティングミックス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-463",
+      "term": "インバウンドマーケティング",
+      "reading": "いんばうんどまーけてぃんぐ",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "見込み顧客が自ら企業に興味を持って接触するよう、コンテンツやSEOを活用して引き付けるマーケティング手法。コスト効率が高く長期的な顧客関係を構築できる。",
+      "related_terms": [
+        "コンテンツマーケティング",
+        "SEO",
+        "コンバージョン率"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-464",
+      "term": "コンテンツマーケティング",
+      "reading": "こんてんつまーけてぃんぐ",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "ターゲット顧客にとって有益なコンテンツを継続的に提供することで、信頼関係を構築し購買につなげるマーケティング手法。ブログ・動画・SNSなどが主なチャネル。",
+      "related_terms": [
+        "インバウンドマーケティング",
+        "SEO",
+        "LTV"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-465",
+      "term": "ダイナミックプライシング",
+      "reading": "だいなみっくぷらいしんぐ",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "需要・供給・時期・競合状況などに応じてリアルタイムで価格を変動させる価格戦略。航空会社やホテル・ライドシェアサービスで広く活用されている。",
+      "related_terms": [
+        "マーケティングミックス",
+        "プロダクトライフサイクル",
+        "ビッグデータ"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-466",
+      "term": "シナリオプランニング",
+      "reading": "しなりおぷらんにんぐ",
+      "category": "strategy",
+      "chapter_id": "ST-03",
+      "definition": "不確実な未来に備えるため、複数の将来シナリオを想定して各シナリオへの対応策を立案する戦略手法。リスクへの備えと機会の発掘を両立させる。",
+      "related_terms": [
+        "PEST分析",
+        "リスク対応戦略",
+        "BCP"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-467",
+      "term": "BSC",
+      "reading": "びーえすしー",
+      "category": "strategy",
+      "chapter_id": "ST-03",
+      "definition": "バランススコアカード（Balanced Scorecard）の略。財務・顧客・業務プロセス・学習と成長の4つの視点から組織の業績を総合的に評価・管理する経営管理手法。",
+      "related_terms": [
+        "バランススコアカード",
+        "KPI",
+        "OKR"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-468",
+      "term": "PMI",
+      "reading": "ぴーえむあい",
+      "category": "strategy",
+      "chapter_id": "ST-03",
+      "definition": "Post-Merger Integration（合併後統合）の略。M&Aや合併後に2つの組織を統合するプロセス全体を指す。システム・組織・文化・業務プロセスの統合が主な課題となる。",
+      "related_terms": [
+        "M&A",
+        "TOB",
+        "コーポレートガバナンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-469",
+      "term": "スピンオフ",
+      "reading": "すぴんおふ",
+      "category": "strategy",
+      "chapter_id": "ST-03",
+      "definition": "親会社が事業の一部を切り離して独立した会社として設立する企業分割の手法。コア事業に集中するための選択と集中の手段として活用される。",
+      "related_terms": [
+        "M&A",
+        "持株会社",
+        "コアコンピタンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-470",
+      "term": "ティール組織",
+      "reading": "てぃーるそしき",
+      "category": "strategy",
+      "chapter_id": "ST-05",
+      "definition": "階層構造を排除し、従業員が自律的に意思決定する次世代型の組織形態。上司の指示を待たずに各自が判断して行動し、組織の目的に基づいて自己管理する。",
+      "related_terms": [
+        "マトリックス組織",
+        "事業部制組織",
+        "OKR"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-471",
+      "term": "HRM",
+      "reading": "えいちあーるえむ",
+      "category": "management",
+      "chapter_id": "ST-05",
+      "definition": "Human Resource Management（人的資源管理）の略。採用・育成・評価・報酬・配置など人材に関する施策を戦略的に管理する経営機能。人材を競争優位の源泉と捉える。",
+      "related_terms": [
+        "タレントマネジメント",
+        "目標管理制度",
+        "OKR"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-472",
+      "term": "タレントマネジメント",
+      "reading": "たれんとまねじめんと",
+      "category": "strategy",
+      "chapter_id": "ST-05",
+      "definition": "組織の戦略目標達成に向けて、優秀な人材の採用・育成・定着・活用を統合的に行う人材管理手法。スキルマップや後継者計画も含む。",
+      "related_terms": [
+        "HRM",
+        "目標管理制度",
+        "エンゲージメント"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-473",
+      "term": "エンゲージメント",
+      "reading": "えんげーじめんと",
+      "category": "strategy",
+      "chapter_id": "ST-05",
+      "definition": "従業員が仕事や組織に対して感じる熱意・没頭・貢献意欲の度合い。エンゲージメントが高い従業員は生産性や顧客満足度への貢献が高くなる傾向がある。",
+      "related_terms": [
+        "タレントマネジメント",
+        "HRM",
+        "心理的安全性"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-474",
+      "term": "心理的安全性",
+      "reading": "しんりてきあんぜんせい",
+      "category": "strategy",
+      "chapter_id": "ST-05",
+      "definition": "チームの中で発言・失敗・質問・提案に対して否定されない安心感が共有されている状態。Googleのリサーチで高いチームパフォーマンスの最重要因子と示された概念。",
+      "related_terms": [
+        "エンゲージメント",
+        "ポストモーテム",
+        "リーン開発"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-475",
+      "term": "独占禁止法",
+      "reading": "どくせんきんしほう",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "市場の公正な競争を維持するために、独占・寡占・不当な取引制限・不公正な取引方法を規制する法律。公正取引委員会が執行する。カルテルや入札談合が典型的な違反行為。",
+      "related_terms": [
+        "コンプライアンス",
+        "下請法",
+        "M&A"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-476",
+      "term": "景品表示法",
+      "reading": "けいひんひょうじほう",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "消費者が適正な商品・サービスを選択できるよう、不当な表示（優良誤認・有利誤認）や過大な景品を規制する法律。誇大広告や偽りの値引き表示が対象となる。",
+      "related_terms": [
+        "コンプライアンス",
+        "消費者契約法",
+        "特定商取引法"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-477",
+      "term": "製造物責任法",
+      "reading": "せいぞうぶつせきにんほう",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "製品の欠陥により生命・身体・財産に損害を受けた場合、製造業者が過失の有無に関わらず賠償責任を負うことを定めた法律。PL法とも呼ばれる。",
+      "related_terms": [
+        "コンプライアンス",
+        "リスク管理",
+        "知的財産権"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-478",
+      "term": "電子帳簿保存法",
+      "reading": "でんしちょうぼほぞんほう",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "税務関係書類を電子データで保存することを認める法律。2022年の改正により電子取引データの電子保存が義務化された。インボイス制度と合わせて企業のDX推進を促す。",
+      "related_terms": [
+        "e-文書法",
+        "電子契約法",
+        "DX"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-479",
+      "term": "インボイス制度",
+      "reading": "いんぼいすせいど",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "適格請求書等保存方式のこと。消費税の仕入税額控除に適格請求書（インボイス）の保存を要件とする制度。2023年10月から開始され、フリーランスや中小企業に大きな影響を与えた。",
+      "related_terms": [
+        "電子帳簿保存法",
+        "電子契約法",
+        "e-文書法"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-480",
+      "term": "CCPA",
+      "reading": "しーしーぴーえー",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "カリフォルニア州消費者プライバシー法（California Consumer Privacy Act）の略。消費者の個人情報へのアクセス権・削除権・オプトアウト権などを保護する米国の法律。GDPRと並ぶ主要なプライバシー規制。",
+      "related_terms": [
+        "GDPR",
+        "個人情報保護法",
+        "プライバシーポリシー"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-481",
+      "term": "ソーシャルメディアマーケティング",
+      "reading": "そーしゃるめでぃあまーけてぃんぐ",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "X（旧Twitter）・Instagram・FacebookなどSNSプラットフォームを活用して商品・サービスを認知させ、顧客との関係構築を図るマーケティング手法の総称。",
+      "related_terms": [
+        "コンテンツマーケティング",
+        "インバウンドマーケティング",
+        "LTV"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-482",
+      "term": "パーミッションマーケティング",
+      "reading": "ぱーみっしょんまーけてぃんぐ",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "顧客の明示的な同意（許可）を得た上でマーケティング情報を届ける手法。メルマガ登録・プッシュ通知許可などが典型例。スパム規制強化の背景もあり重要性が増している。",
+      "related_terms": [
+        "コンテンツマーケティング",
+        "GDPR",
+        "個人情報保護法"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-483",
+      "term": "管理会計",
+      "reading": "かんりかいけい",
+      "category": "management",
+      "chapter_id": "ST-02",
+      "definition": "経営者の意思決定を支援するために行う内部向けの会計。部門別収益・原価計算・予算管理・差異分析などを行う。財務会計（外部報告）と対比される。",
+      "related_terms": [
+        "財務諸表分析",
+        "損益計算書",
+        "バランススコアカード"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-484",
+      "term": "目標管理制度",
+      "reading": "もくひょうかんりせいど",
+      "category": "management",
+      "chapter_id": "ST-05",
+      "definition": "MBO（Management By Objectives）に基づき、従業員が上司と一緒に目標を設定し、達成度合いを評価する人事制度。自律的な行動を促し組織目標と個人目標を連動させる。",
+      "related_terms": [
+        "OKR",
+        "HRM",
+        "タレントマネジメント"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-485",
+      "term": "360度評価",
+      "reading": "さんびゃくろくじゅうどひょうか",
+      "category": "management",
+      "chapter_id": "ST-05",
+      "definition": "上司だけでなく、同僚・部下・場合によっては取引先など多方向から評価を受ける人事評価手法。360度フィードバックとも呼ばれ、多角的な成長機会を提供する。",
+      "related_terms": [
+        "目標管理制度",
+        "HRM",
+        "エンゲージメント"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-486",
+      "term": "バーティカル統合",
+      "reading": "ばーてぃかるとうごう",
+      "category": "strategy",
+      "chapter_id": "ST-03",
+      "definition": "自社の事業領域を原材料・製造・販売など供給チェーンの上流または下流に拡張する垂直統合戦略。コスト削減・品質管理・供給安定などを目的として行われる。",
+      "related_terms": [
+        "M&A",
+        "バリューチェーン",
+        "コアコンピタンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-487",
+      "term": "ホリゾンタル統合",
+      "reading": "ほりぞんたるとうごう",
+      "category": "strategy",
+      "chapter_id": "ST-03",
+      "definition": "同業他社や同じ供給チェーン上の同レベルにある企業を買収・合併する水平統合戦略。市場シェア拡大・競合排除・規模の経済実現を目的として行われる。",
+      "related_terms": [
+        "M&A",
+        "マーケットシェア",
+        "コアコンピタンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-488",
+      "term": "消費者契約法",
+      "reading": "しょうひしゃけいやくほう",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "事業者と消費者の契約において、不当な勧誘行為（不実告知・断定的判断の提供など）による契約を取り消せる権利や、不当な契約条項の無効を定めた法律。",
+      "related_terms": [
+        "コンプライアンス",
+        "景品表示法",
+        "特定商取引法"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-489",
+      "term": "Web3",
+      "reading": "うぇぶすりー",
+      "category": "strategy",
+      "chapter_id": "ST-01",
+      "definition": "ブロックチェーン技術を基盤とした分散型インターネットの概念。特定の企業・プラットフォームに依存せず、ユーザーがデータや資産を自律的に管理できる次世代のウェブを指す。",
+      "related_terms": [
+        "ブロックチェーン",
+        "DX",
+        "フィンテック"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-490",
+      "term": "NFT",
+      "reading": "えぬえふてぃー",
+      "category": "strategy",
+      "chapter_id": "ST-01",
+      "definition": "Non-Fungible Token（非代替性トークン）の略。ブロックチェーン技術を使ってデジタルコンテンツの所有権・唯一性を証明する技術。デジタルアート・ゲームアイテムなどに活用される。",
+      "related_terms": [
+        "ブロックチェーン",
+        "Web3",
+        "デジタルツイン"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-491",
+      "term": "インパクト投資",
+      "reading": "いんぱくととうし",
+      "category": "strategy",
+      "chapter_id": "ST-02",
+      "definition": "財務的リターンと並んで社会的・環境的なポジティブな影響（インパクト）も目的とする投資スタイル。SDGsやESG経営との親和性が高く、機関投資家の関心が高まっている。",
+      "related_terms": [
+        "ESG",
+        "SDGs",
+        "CSR"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-492",
+      "term": "クロスボーダーEC",
+      "reading": "くろすぼーだーいーこまーす",
+      "category": "strategy",
+      "chapter_id": "ST-04",
+      "definition": "国境を越えて行う電子商取引。海外の消費者に向けてオンラインで商品・サービスを販売する形態。物流・税関・決済・言語対応などが国内ECと異なる課題となる。",
+      "related_terms": [
+        "EC",
+        "D2C",
+        "SCM"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-493",
+      "term": "流動比率",
+      "reading": "りゅうどうひりつ",
+      "category": "strategy",
+      "chapter_id": "ST-02",
+      "definition": "企業の短期的な支払い能力を示す財務指標。流動資産÷流動負債×100で計算し、一般的に200%以上が健全とされる。現金・売掛金など短期間に換金できる資産で負債を賄えるかを示す。",
+      "related_terms": [
+        "貸借対照表",
+        "自己資本比率",
+        "損益計算書"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-494",
+      "term": "自己資本比率",
+      "reading": "じこしほんひりつ",
+      "category": "strategy",
+      "chapter_id": "ST-02",
+      "definition": "総資本（負債＋純資産）に占める自己資本（純資産）の割合。高いほど財務健全性が高く、借入依存度が低いことを示す。一般的に40%以上が安全とされる。",
+      "related_terms": [
+        "貸借対照表",
+        "流動比率",
+        "損益計算書"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-495",
+      "term": "EPS",
+      "reading": "いーぴーえす",
+      "category": "strategy",
+      "chapter_id": "ST-02",
+      "definition": "1株当たり利益（Earnings Per Share）の略。当期純利益を発行済み株式数で割った値。株価収益率（PER）算出の基礎となり、投資家が企業の収益力を判断する指標として使われる。",
+      "related_terms": [
+        "PER",
+        "ROE",
+        "損益計算書"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-496",
+      "term": "PER",
+      "reading": "ぴーいーあーる",
+      "category": "strategy",
+      "chapter_id": "ST-02",
+      "definition": "株価収益率（Price Earnings Ratio）の略。株価÷EPSで計算し、投資家が1株の利益の何倍まで支払うかを示す。同業他社比較や成長性の判断に使われる株式投資の基本指標。",
+      "related_terms": [
+        "EPS",
+        "ROE",
+        "損益計算書"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-497",
+      "term": "下請法",
+      "reading": "したうけほう",
+      "category": "strategy",
+      "chapter_id": "ST-06",
+      "definition": "下請取引における親事業者の優越的地位の濫用を防止するための法律。受領拒否・代金の減額・返品・買いたたきなどの不当行為を禁止する。中小企業保護に重要な法律。",
+      "related_terms": [
+        "独占禁止法",
+        "コンプライアンス",
+        "営業秘密"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-498",
+      "term": "メタバース",
+      "reading": "めたばーす",
+      "category": "strategy",
+      "chapter_id": "ST-01",
+      "definition": "VR・AR技術などを用いたインターネット上の仮想三次元空間。アバターで活動し、コミュニケーション・経済活動・エンターテインメントを行う次世代デジタル環境。ビジネス活用も拡大中。",
+      "related_terms": [
+        "Society 5.0",
+        "DX",
+        "Web3"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-499",
+      "term": "財務諸表分析",
+      "reading": "ざいむしょひょうぶんせき",
+      "category": "strategy",
+      "chapter_id": "ST-02",
+      "definition": "損益計算書・貸借対照表・キャッシュフロー計算書などを用いて企業の収益性・安全性・効率性・成長性を評価する分析手法。投資家・経営者・銀行が企業評価に利用する。",
+      "related_terms": [
+        "損益計算書",
+        "貸借対照表",
+        "管理会計"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
     }
   ]
 }
