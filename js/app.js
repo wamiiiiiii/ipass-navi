@@ -4,7 +4,7 @@
  * このファイルがアプリのエントリポイント（最初に実行される）
  */
 
-import { initRouter, registerRoute, navigate } from './router.js';
+import { initRouter, registerRoute, navigate, goBack } from './router.js';
 import { preloadAllData } from './dataLoader.js';
 import { getSettings } from './store.js';
 import { applyTheme, applyFontSize } from './screens/settings.js';
@@ -53,6 +53,12 @@ async function initApp() {
 
   // 6. ボトムナビゲーションのイベントを設定する
   setupBottomNavigation();
+
+  // 6b. ヘッダーの戻るボタンにイベントを設定する
+  const backBtn = document.getElementById('header-back-btn');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => goBack());
+  }
 
   // 7. システムのカラースキーム変更を監視する
   watchSystemColorScheme(settings.theme);

@@ -37,6 +37,9 @@ export async function renderTextbook(container, params = {}, query = {}) {
   // 前の節の閲覧時間を記録する（画面遷移時に実行）
   saveCurrentPageReadingTime();
 
+  // ページ遷移時にスクロール位置をトップに戻す
+  window.scrollTo(0, 0);
+
   renderInto(container, [createLoadingSpinner()]);
 
   try {
