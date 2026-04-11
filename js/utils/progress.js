@@ -162,23 +162,40 @@ export function getWeakQuestionIds(weakData, threshold = 0.5) {
  * @param {string} [today] - 今日の日付（テスト用・省略時は現在日時を使用）
  * @returns {number} 継続日数（1以上）
  */
-export function calcStudyDays(studyStartDate, today = null) {
-  if (!studyStartDate) {
-    return 1;
+/**
+ * 実際に学習した日数を計算する
+ * 教科書閲覧または演習を行った日だけをカウントする
+ * @param {Object} readingTimeData - ipass_reading_timeのデータ（daily_secondsを参照）
+ * @param {Object} quizResults - ipass_quiz_resultsのデータ（sessionsを参照）
+ * @returns {number} 実際に学習した日数（最低1日）
+ */
+export function calcStudyDays(readingTimeData, quizResults) {
+  const activeDays = new Set();
+
+  // 教科書閲覧があった日を追加
+  if (readingTimeData && readingTimeData.daily_seconds) {
+    Object.keys(readingTimeData.daily_seconds).forEach((date) => {
+      if (readingTimeData.daily_seconds[date] > 0) {
+        activeDays.add(date);
+      }
+    });
   }
 
-  const start = new Date(studyStartDate);
-  const current = today ? new Date(today) : new Date();
+  // 演習セッションがあった日を追加
+  if (quizResults && quizResults.sessions) {
+    quizResults.sessions.forEach((session) => {
+      if (session.started_at) {
+        const date = session.started_at.slice(0, 10);
+        activeDays.add(date);
+      }
+    });
+  }
 
-  // 時刻を無視して日付だけで計算
-  const startMidnight = new Date(start.getFullYear(), start.getMonth(), start.getDate());
-  const nowMidnight   = new Date(current.getFullYear(), current.getMonth(), current.getDate());
+  // 今日アプリを開いていれば1日としてカウント
+  const today = new Date().toISOString().slice(0, 10);
+  activeDays.add(today);
 
-  const diffMs = nowMidnight - startMidnight;
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-  // 最低1日（開始日当日は「1日目」）
-  return Math.max(1, diffDays + 1);
+  return Math.max(1, activeDays.size);
 }
 
 /**

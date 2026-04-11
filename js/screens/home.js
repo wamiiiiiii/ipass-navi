@@ -4,7 +4,7 @@
  * 学習進捗・分野別統計・クイックアクセスを表示する
  */
 
-import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds } from '../store.js';
+import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds, getReadingTime } from '../store.js';
 import { loadChapters } from '../dataLoader.js';
 import { navigate } from '../router.js';
 import {
@@ -45,7 +45,8 @@ export async function renderHome(container) {
 
     // 各種統計を計算（純粋関数で計算・副作用なし）
     const overallPct = calcOverallProgress(progress.pages_read, chaptersData);
-    const studyDays  = calcStudyDays(settings.study_start_date);
+    const readingTime = getReadingTime();
+    const studyDays  = calcStudyDays(readingTime, results);
     const accuracy   = calcTotalAccuracy(results);
     const todaySecs  = calcTodayStudySeconds(results) + getTodayReadingSeconds();
     const recentSessions = getRecentSessions(results, 3);
