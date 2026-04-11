@@ -173,7 +173,7 @@
       "reading": "ちょさくけん",
       "category": "strategy",
       "chapter_id": "S-02",
-      "definition": "小説・プログラム・音楽などの創作物を作った人が持つ権利。創作した時点で自動的に発生し、登録不要。著作権法で保護される。",
+      "definition": "小説・プログラム・音楽などの創作物を作った人が持つ権利。創作した時点で自動的に発生し、登録不要。著作権法で保護される。保護期間は著作者の死後70年（法人著作の場合は公表後70年）。",
       "related_terms": [
         "特許権",
         "商標権",
@@ -323,7 +323,7 @@
       "reading": "ちゅうしょうじゅたくとりひきてきせいかほう",
       "category": "strategy",
       "chapter_id": "S-02",
-      "definition": "下請取引において、発注元が下請け業者に対して不当な取引条件を押しつけることを禁止した法律。下請法とも呼ばれる。",
+      "definition": "下請取引において、発注元が下請け業者に対して不当な取引条件を押しつけることを禁止した法律。旧称は下請法。2026年1月施行の法改正によりシラバスVer.6.5から現在の名称で記載されている。",
       "related_terms": [
         "コンプライアンス",
         "RFP",
@@ -2273,7 +2273,7 @@
       "reading": "あしっど",
       "category": "technology",
       "chapter_id": "T-09",
-      "definition": "データベーストランザクションが満たすべき4つの特性の頭文字。原子性（Atomicity）・一貫性（Consistency）・独立性（Isolation）・永続性（Durability）のこと。",
+      "definition": "データベーストランザクションが満たすべき4つの特性の頭文字。原子性（Atomicity）・一貫性（Consistency）・独立性（Isolation）・耐久性（Durability）のこと。",
       "related_terms": [
         "DBMS",
         "SQL",
@@ -2999,6 +2999,28 @@
         "WBS",
         "リスク管理"
       ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-212",
+      "term": "ハルシネーション",
+      "reading": "はるしねーしょん",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "AIが事実と異なる情報をあたかも正しいかのように生成する現象。生成AIの出力を鵜呑みにせず、必ず事実確認を行う必要がある。",
+      "related_terms": ["生成AI", "プロンプトインジェクション", "敵対的サンプル"],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-213",
+      "term": "敵対的サンプル",
+      "reading": "てきたいてきさんぷる",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "AIの判断を意図的に誤らせるために加工された入力データ。人間には判別できない微小な変化を加えることで、AIに誤った認識をさせる攻撃手法である。",
+      "related_terms": ["AI", "機械学習", "プロンプトインジェクション"],
       "exam_frequency": "medium",
       "related_question_ids": []
     }
