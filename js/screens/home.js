@@ -20,6 +20,8 @@ import {
   calcTotalAccuracy,
   calcStudyDays,
   calcElapsedDays,
+  calcRecentAccuracy,
+  calcPassPrediction,
   formatStudyTime,
   calcTodayStudySeconds,
   getRecentSessions,
@@ -46,9 +48,11 @@ export async function renderHome(container) {
 
     // 各種統計を計算（純粋関数で計算・副作用なし）
     const overallPct = calcOverallProgress(progress.pages_read, chaptersData);
-    const readingTime = getReadingTime();
-    const studyDays  = calcStudyDays(readingTime, results);
-    const elapsedDays = calcElapsedDays(settings.study_start_date);
+    const readingTime  = getReadingTime();
+    const studyDays    = calcStudyDays(readingTime, results);
+    const elapsedDays  = calcElapsedDays(settings.study_start_date);
+    const recentAcc    = calcRecentAccuracy(results, 3);
+    const passPred     = calcPassPrediction(results);
     const accuracy   = calcTotalAccuracy(results);
     const todaySecs  = calcTodayStudySeconds(results) + getTodayReadingSeconds();
     const recentSessions = getRecentSessions(results, 3);
@@ -101,8 +105,8 @@ function buildHomeScreen({ overallPct, studyDays, accuracy, todaySecs, sectionPr
     screen.appendChild(buildOnboardingCard());
   }
 
-  // スタッツグリッド（学習日数・経過日数・正答率・今日の学習時間・学習率）
-  screen.appendChild(buildStatsGrid(studyDays, elapsedDays, accuracy, todaySecs));
+  // スタッツグリッド
+  screen.appendChild(buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred));
 
   // クイックアクションボタン
   screen.appendChild(buildQuickActions());
@@ -239,25 +243,46 @@ function buildWelcomeBanner(overallPct) {
  * @param {number} todaySecs - 今日の学習時間（秒）
  * @returns {HTMLElement} スタッツグリッド要素
  */
-function buildStatsGrid(studyDays, elapsedDays, accuracy, todaySecs) {
+function buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred) {
   const grid = createElement('div', { classes: ['home-stats-grid'] });
 
-  // 学習日数カード（実際に学習した日 / 経過日数）
-  grid.appendChild(buildStatCard(`${studyDays}日`, `学習日数（${elapsedDays}日中）`));
-
-  // 正答率カード
-  const accuracyText = accuracy > 0 ? `${accuracy}%` : '---';
-  grid.appendChild(buildStatCard(accuracyText, '累計正答率'));
+  // 学習日数カード（実際に学習した日 / 開始からの経過日数）
+  grid.appendChild(buildStatCard(
+    `${studyDays} / ${elapsedDays}日`,
+    '学習した日 / 経過日数'
+  ));
 
   // 今日の学習時間カード
   const timeText = todaySecs > 0 ? formatStudyTime(todaySecs) : '---';
   grid.appendChild(buildStatCard(timeText, '今日の学習時間'));
 
-  // 学習率カード（何日中何日やったか）
-  const studyRate = elapsedDays > 0 ? Math.round((studyDays / elapsedDays) * 100) : 0;
-  grid.appendChild(buildStatCard(`${studyRate}%`, '学習率'));
+  // 正答率カード（累計 + 直近3日）
+  const accText = accuracy > 0 ? `${accuracy}%` : '---';
+  const recentText = recentAcc >= 0 ? `${recentAcc}%` : '---';
+  grid.appendChild(buildDualStatCard(accText, '累計正答率', recentText, '直近3日間'));
+
+  // 合格判定カード
+  const predCard = createElement('div', { classes: ['stat-card', `stat-card-${passPred.color}`] });
+  predCard.appendChild(createElement('div', { classes: ['stat-card-value'], text: passPred.label }));
+  predCard.appendChild(createElement('div', { classes: ['stat-card-label'], text: '合格判定' }));
+  grid.appendChild(predCard);
 
   return grid;
+}
+
+/**
+ * 2段表示のスタッツカードを構築する（上段メイン・下段サブ）
+ */
+function buildDualStatCard(mainValue, mainLabel, subValue, subLabel) {
+  const card = createElement('div', { classes: ['stat-card'] });
+  card.appendChild(createElement('div', { classes: ['stat-card-value'], text: mainValue }));
+  card.appendChild(createElement('div', { classes: ['stat-card-label'], text: mainLabel }));
+  // サブ情報（直近3日間）
+  const sub = createElement('div', { classes: ['stat-card-sub'] });
+  sub.appendChild(createElement('span', { classes: ['stat-card-sub-value'], text: subValue }));
+  sub.appendChild(createElement('span', { classes: ['stat-card-sub-label'], text: ` ${subLabel}` }));
+  card.appendChild(sub);
+  return card;
 }
 
 /**

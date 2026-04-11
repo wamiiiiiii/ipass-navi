@@ -106,6 +106,44 @@
   color: var(--color-text-secondary);
 }
 
+/* スタッツカードのサブ情報（2段目） */
+.stat-card-sub {
+  margin-top: var(--space-xs);
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+}
+
+.stat-card-sub-value {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.stat-card-sub-label {
+  color: var(--color-text-tertiary, #999);
+}
+
+/* 合格判定カードの色分け */
+.stat-card-green .stat-card-value {
+  color: var(--color-success, #27ae60);
+}
+
+.stat-card-orange .stat-card-value {
+  color: #e67e22;
+}
+
+.stat-card-yellow .stat-card-value {
+  color: #f1c40f;
+}
+
+.stat-card-red .stat-card-value {
+  color: var(--color-danger, #e74c3c);
+}
+
+.stat-card-gray .stat-card-value {
+  color: var(--color-text-tertiary, #999);
+}
+
 /* ===================================================
    分野別進捗セクション
    =================================================== */

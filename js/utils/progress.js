@@ -243,23 +243,126 @@ export function calcTodayStudySeconds(quizResults, today = null) {
 }
 
 /**
- * 秒数を「X分Y秒」形式の文字列に変換する
+ * 秒数を分単位の文字列に変換する
  * @param {number} seconds - 変換する秒数
  * @returns {string} 表示用の時間文字列
  */
 export function formatStudyTime(seconds) {
   if (seconds < 60) {
-    return `${seconds}秒`;
+    return '1分未満';
   }
 
   const minutes = Math.floor(seconds / 60);
-  const remainingSecs = seconds % 60;
+  const hours = Math.floor(minutes / 60);
+  const remainingMin = minutes % 60;
 
-  if (remainingSecs === 0) {
-    return `${minutes}分`;
+  if (hours > 0) {
+    return remainingMin > 0 ? `${hours}時間${remainingMin}分` : `${hours}時間`;
   }
 
-  return `${minutes}分${remainingSecs}秒`;
+  return `${minutes}分`;
+}
+
+/**
+ * 直近N日間の正答率を計算する
+ * @param {Object} quizResults - ipass_quiz_resultsのデータ
+ * @param {number} days - 直近何日分を対象にするか
+ * @returns {number} 正答率（0〜100）。セッションがなければ-1
+ */
+export function calcRecentAccuracy(quizResults, days = 3) {
+  if (!quizResults || !quizResults.sessions || quizResults.sessions.length === 0) {
+    return -1;
+  }
+
+  // N日前の日付を計算
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - days);
+  const cutoffStr = cutoff.toISOString().slice(0, 10);
+
+  // 直近N日間のセッションを抽出
+  const recentSessions = quizResults.sessions.filter(
+    (s) => s.started_at && s.started_at.slice(0, 10) >= cutoffStr
+  );
+
+  if (recentSessions.length === 0) {
+    return -1;
+  }
+
+  // 正答数と全問題数を集計
+  let total = 0;
+  let correct = 0;
+  recentSessions.forEach((s) => {
+    if (s.score) {
+      total += s.score.total || 0;
+      correct += s.score.correct || 0;
+    }
+  });
+
+  return total > 0 ? Math.round((correct / total) * 100) : -1;
+}
+
+/**
+ * 合格可能性を判定する
+ * 直近の演習結果から合格ラインとの距離を判定
+ * @param {Object} quizResults - ipass_quiz_resultsのデータ
+ * @returns {{ level: string, label: string, color: string }} 判定結果
+ */
+export function calcPassPrediction(quizResults) {
+  if (!quizResults || !quizResults.sessions || quizResults.sessions.length < 3) {
+    return { level: 'unknown', label: 'データ不足', color: 'gray' };
+  }
+
+  // 直近10セッションの正答率を計算
+  const recent = [...quizResults.sessions]
+    .sort((a, b) => new Date(b.started_at) - new Date(a.started_at))
+    .slice(0, 10);
+
+  let total = 0;
+  let correct = 0;
+  const categoryScores = {};
+
+  recent.forEach((s) => {
+    if (s.score) {
+      total += s.score.total || 0;
+      correct += s.score.correct || 0;
+
+      // 分野別集計
+      if (s.score.by_category) {
+        Object.entries(s.score.by_category).forEach(([cat, catScore]) => {
+          if (!categoryScores[cat]) {
+            categoryScores[cat] = { total: 0, correct: 0 };
+          }
+          categoryScores[cat].total += catScore.total || 0;
+          categoryScores[cat].correct += catScore.correct || 0;
+        });
+      }
+    }
+  });
+
+  if (total === 0) {
+    return { level: 'unknown', label: 'データ不足', color: 'gray' };
+  }
+
+  const overallRate = (correct / total) * 100;
+
+  // 分野別足切りチェック（各分野30%以上必要）
+  let hasWeakCategory = false;
+  Object.values(categoryScores).forEach((cs) => {
+    if (cs.total > 0 && (cs.correct / cs.total) < 0.3) {
+      hasWeakCategory = true;
+    }
+  });
+
+  // 判定
+  if (overallRate >= 75 && !hasWeakCategory) {
+    return { level: 'high', label: '合格圏内', color: 'green' };
+  } else if (overallRate >= 60 && !hasWeakCategory) {
+    return { level: 'borderline', label: 'あと一歩', color: 'orange' };
+  } else if (overallRate >= 45) {
+    return { level: 'effort', label: 'もう少し頑張ろう', color: 'yellow' };
+  } else {
+    return { level: 'low', label: '基礎固めから', color: 'red' };
+  }
 }
 
 /**
