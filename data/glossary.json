@@ -1,6 +1,6 @@
 {
   "version": "6.5",
-  "updated_at": "2026-04-01",
+  "updated_at": "2026-04-11",
   "terms": [
     {
       "term_id": "G-001",
@@ -9,9 +9,13 @@
       "category": "strategy",
       "chapter_id": "S-01",
       "definition": "企業が事業活動を行うために必要な資源のこと。ヒト・モノ・カネ・情報の4つに分類される。近年は「情報」の重要性が特に高まっている。",
-      "related_terms": ["ヒト・モノ・カネ・情報", "コアコンピタンス", "無形資産"],
+      "related_terms": [
+        "損益分岐点",
+        "ERP",
+        "コアコンピタンス"
+      ],
       "exam_frequency": "high",
-      "related_question_ids": ["Q-S-001"]
+      "related_question_ids": []
     },
     {
       "term_id": "G-002",
@@ -19,10 +23,14 @@
       "reading": "そんえきぶんきてん",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "売上高と総費用（固定費＋変動費）が等しくなる売上高のこと。この点を下回ると赤字、上回ると黒字になる。計算式：固定費 ÷（1 − 変動費率）",
-      "related_terms": ["固定費", "変動費", "変動費率"],
+      "definition": "売上高と総費用（固定費＋変動費）が等しくなる売上高のこと。この点を下回ると赤字、上回ると黒字になる。計算式：固定費÷（1－変動費率）",
+      "related_terms": [
+        "固定費",
+        "変動費",
+        "損益計算書"
+      ],
       "exam_frequency": "high",
-      "related_question_ids": ["Q-S-002", "Q-S-005"]
+      "related_question_ids": []
     },
     {
       "term_id": "G-003",
@@ -30,10 +38,14 @@
       "reading": "こていひ",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "売上高の増減に関係なく一定額が発生するコストのこと。例：家賃・正社員の給与・減価償却費・保険料など。",
-      "related_terms": ["変動費", "損益分岐点"],
+      "definition": "売上高に関係なく一定額がかかる費用のこと。家賃・設備費・役員報酬などが代表例。売上がゼロでも発生する。",
+      "related_terms": [
+        "変動費",
+        "損益分岐点",
+        "損益計算書"
+      ],
       "exam_frequency": "high",
-      "related_question_ids": ["Q-S-002", "Q-S-005"]
+      "related_question_ids": []
     },
     {
       "term_id": "G-004",
@@ -41,10 +53,14 @@
       "reading": "へんどうひ",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "売上高の増減に比例して変化するコストのこと。例：材料費・仕入原価・外注費・販売手数料など。変動費率 ＝ 変動費 ÷ 売上高",
-      "related_terms": ["固定費", "損益分岐点", "変動費率"],
+      "definition": "売上高や生産量に比例して増減する費用のこと。材料費・仕入れ費・販売手数料などが代表例。",
+      "related_terms": [
+        "固定費",
+        "損益分岐点",
+        "損益計算書"
+      ],
       "exam_frequency": "high",
-      "related_question_ids": ["Q-S-002", "Q-S-005"]
+      "related_question_ids": []
     },
     {
       "term_id": "G-005",
@@ -52,10 +68,14 @@
       "reading": "たいしゃくたいしょうひょう",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "ある時点での企業の財産・負債・純資産の状況を示す財務諸表。英語でBalance Sheet（B/S）。左側（借方）に資産、右側（貸方）に負債と純資産を記載。資産＝負債＋純資産の等式が常に成立する。",
-      "related_terms": ["損益計算書", "キャッシュフロー計算書", "財務諸表"],
-      "exam_frequency": "high",
-      "related_question_ids": ["Q-S-003"]
+      "definition": "ある時点における企業の財務状態を示す表。左側（借方）に資産、右側（貸方）に負債と純資産が記載される。バランスシートとも呼ばれる。",
+      "related_terms": [
+        "損益計算書",
+        "キャッシュフロー計算書",
+        "ROI"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
     },
     {
       "term_id": "G-006",
@@ -63,10 +83,14 @@
       "reading": "そんえきけいさんしょ",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "一定期間における企業の収益・費用・利益の状況を示す財務諸表。英語でProfit and Loss Statement（P/L）。売上高から各費用を差し引いて当期純利益を算出する。",
-      "related_terms": ["貸借対照表", "キャッシュフロー計算書", "財務諸表"],
-      "exam_frequency": "high",
-      "related_question_ids": ["Q-S-003"]
+      "definition": "一定期間の企業の経営成績を示す表。売上高から各種費用を引いて最終的な利益（純利益）を算出する。P/Lとも呼ばれる。",
+      "related_terms": [
+        "貸借対照表",
+        "キャッシュフロー計算書",
+        "固定費"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
     },
     {
       "term_id": "G-007",
@@ -74,43 +98,2909 @@
       "reading": "きゃっしゅふろーけいさんしょ",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "一定期間における現金の流れを示す財務諸表。英語でCash Flow Statement（C/F）。営業活動・投資活動・財務活動の3区分で現金の増減を表示する。",
-      "related_terms": ["貸借対照表", "損益計算書", "財務諸表"],
-      "exam_frequency": "medium",
-      "related_question_ids": ["Q-S-003"]
+      "definition": "一定期間における現金の流れを示す財務諸表。営業・投資・財務の3つの活動に分けて現金の増減を記録する。",
+      "related_terms": [
+        "貸借対照表",
+        "損益計算書",
+        "ROI"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
     },
     {
       "term_id": "G-008",
+      "term": "QC七つ道具",
+      "reading": "きゅーしーななつどうぐ",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "品質管理（QC）でよく使われる7種類の手法の総称。パレート図・特性要因図・ヒストグラム・散布図・管理図・チェックシート・層別が含まれる。",
+      "related_terms": [
+        "パレート図",
+        "PDCA",
+        "品質管理"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-009",
+      "term": "パレート図",
+      "reading": "ぱれーとず",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "問題の原因や不良品の種類を件数の多い順に棒グラフで並べ、累積比率を折れ線グラフで示した図。重要な問題を絞り込むのに使う。",
+      "related_terms": [
+        "QC七つ道具",
+        "特性要因図",
+        "品質管理"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-010",
       "term": "事業部制組織",
       "reading": "じぎょうぶせいそしき",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "製品・サービス・地域ごとに独立した事業部を設ける組織形態。各事業部が損益責任（プロフィットセンター）を持ち、意思決定が迅速になるメリットがある。一方で各事業部が独自の機能を持つため重複コストが発生しやすい。",
-      "related_terms": ["機能別組織", "マトリックス組織", "プロジェクト組織"],
-      "exam_frequency": "medium",
-      "related_question_ids": ["Q-S-004"]
+      "definition": "製品・地域・顧客などの単位で会社を複数の事業部に分け、各事業部が独立して経営判断できるようにした組織形態。",
+      "related_terms": [
+        "マトリックス組織",
+        "コーポレートガバナンス",
+        "BPR"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
     },
     {
-      "term_id": "G-009",
-      "term": "機能別組織",
-      "reading": "きのうべつそしき",
-      "category": "strategy",
-      "chapter_id": "S-01",
-      "definition": "営業・製造・開発・人事・経理などの業務機能ごとに部門を分ける最も一般的な組織形態。専門性が高まりやすい一方、部門間の横断的な連携（コミュニケーション）が難しくなる傾向がある。",
-      "related_terms": ["事業部制組織", "マトリックス組織", "プロジェクト組織"],
-      "exam_frequency": "medium",
-      "related_question_ids": ["Q-S-004"]
-    },
-    {
-      "term_id": "G-010",
+      "term_id": "G-011",
       "term": "マトリックス組織",
       "reading": "まとりっくすそしき",
       "category": "strategy",
       "chapter_id": "S-01",
-      "definition": "機能別組織と事業部制組織を組み合わせた組織形態。各メンバーは機能部門の上司と事業部門の上司の2つの命令系統に属する。専門性と事業横断の両立が可能だが、指揮命令系統が複雑になりやすい。",
-      "related_terms": ["機能別組織", "事業部制組織", "プロジェクト組織"],
+      "definition": "職能別組織とプロジェクト別組織を組み合わせた組織形態。社員が機能部門とプロジェクト両方の上司に報告する二重指揮命令系統を持つ。",
+      "related_terms": [
+        "事業部制組織",
+        "WBS",
+        "コーポレートガバナンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-012",
+      "term": "著作権",
+      "reading": "ちょさくけん",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "小説・プログラム・音楽などの創作物を作った人が持つ権利。創作した時点で自動的に発生し、登録不要。著作権法で保護される。",
+      "related_terms": [
+        "特許権",
+        "商標権",
+        "知的財産権"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-013",
+      "term": "特許権",
+      "reading": "とっきょけん",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "新しい発明に対して国が与える独占的な権利。特許庁に出願・審査を経て登録される。保護期間は出願から20年。",
+      "related_terms": [
+        "著作権",
+        "商標権",
+        "意匠権"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-014",
+      "term": "商標権",
+      "reading": "しょうひょうけん",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "商品やサービスに使う名前・ロゴなどのマークを独占的に使用できる権利。特許庁への登録が必要で、10年ごとに更新できる。",
+      "related_terms": [
+        "特許権",
+        "著作権",
+        "意匠権"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-015",
+      "term": "意匠権",
+      "reading": "いしょうけん",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "製品の形・模様・色など外観デザインに与えられる独占的な権利。特許庁への登録が必要で、保護期間は登録から25年。",
+      "related_terms": [
+        "特許権",
+        "商標権",
+        "著作権"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-016",
+      "term": "不正アクセス禁止法",
+      "reading": "ふせいあくせすきんしほう",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "他人のIDやパスワードを無断で使ってコンピュータシステムに侵入する行為を禁止した法律。違反した場合は刑事罰の対象となる。",
+      "related_terms": [
+        "個人情報保護法",
+        "サイバー攻撃",
+        "マルウェア"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-017",
+      "term": "個人情報保護法",
+      "reading": "こじんじょうほうほごほう",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "個人を特定できる情報（氏名・住所・生年月日など）の取り扱いに関するルールを定めた法律。企業は個人情報を適切に管理・保護する義務がある。",
+      "related_terms": [
+        "不正アクセス禁止法",
+        "プライバシーポリシー",
+        "ISMS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-018",
+      "term": "コンプライアンス",
+      "reading": "こんぷらいあんす",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "企業が法律・規制・社会的ルールを守って事業を行うこと。「法令遵守」とも訳される。CSRとともに企業の信頼性を高める重要な概念。",
+      "related_terms": [
+        "CSR",
+        "ITガバナンス",
+        "個人情報保護法"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-019",
+      "term": "CSR",
+      "reading": "しーえすあーる",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "企業の社会的責任（Corporate Social Responsibility）のこと。利益追求だけでなく、環境保護・社会貢献・適切な労働環境なども企業の責務であるという考え方。",
+      "related_terms": [
+        "コンプライアンス",
+        "コーポレートガバナンス",
+        "ISO"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-020",
+      "term": "ISO",
+      "reading": "あいえすおー",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "国際標準化機構（International Organization for Standardization）が定める国際規格。品質管理（ISO 9001）・環境管理（ISO 14001）・情報セキュリティ（ISO 27001）などがある。",
+      "related_terms": [
+        "JIS",
+        "ISMS",
+        "CSR"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-021",
+      "term": "JIS",
+      "reading": "じす",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "日本産業規格（Japanese Industrial Standards）のこと。日本国内の製品・サービス・技術の品質や安全性を統一するために定められた規格。",
+      "related_terms": [
+        "ISO",
+        "標準化",
+        "品質管理"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-022",
+      "term": "中小受託取引適正化法",
+      "reading": "ちゅうしょうじゅたくとりひきてきせいかほう",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "下請取引において、発注元が下請け業者に対して不当な取引条件を押しつけることを禁止した法律。下請法とも呼ばれる。",
+      "related_terms": [
+        "コンプライアンス",
+        "RFP",
+        "TCO"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-023",
+      "term": "SWOT分析",
+      "reading": "すわっとぶんせき",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "企業の状況を「強み（Strength）・弱み（Weakness）・機会（Opportunity）・脅威（Threat）」の4つの視点で整理する分析手法。内部環境と外部環境を同時に把握できる。",
+      "related_terms": [
+        "PPM",
+        "バランススコアカード",
+        "コーポレートガバナンス"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-024",
+      "term": "PPM",
+      "reading": "ぴーぴーえむ",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "製品・事業を市場成長率と市場シェアの2軸で評価し、「花形・金のなる木・問題児・負け犬」の4象限に分類する経営分析手法。",
+      "related_terms": [
+        "SWOT分析",
+        "バランススコアカード",
+        "マーケティングミックス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-025",
+      "term": "バランススコアカード",
+      "reading": "ばらんすすこあかーど",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "財務・顧客・業務プロセス・学習と成長の4つの視点から企業の業績を総合的に評価する戦略管理ツール。財務指標だけに偏らない評価ができる。",
+      "related_terms": [
+        "SWOT分析",
+        "PPM",
+        "KPI"
+      ],
       "exam_frequency": "medium",
-      "related_question_ids": ["Q-S-004"]
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-026",
+      "term": "マーケティングミックス",
+      "reading": "まーけてぃんぐみっくす",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "製品（Product）・価格（Price）・流通（Place）・販促（Promotion）の4Pを組み合わせてマーケティング戦略を立案する考え方。",
+      "related_terms": [
+        "CRM",
+        "STP",
+        "PPM"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-027",
+      "term": "CRM",
+      "reading": "しーあーるえむ",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "顧客関係管理（Customer Relationship Management）のこと。顧客情報を一元管理し、顧客との長期的な関係を築くことで売上向上を図る経営手法。",
+      "related_terms": [
+        "マーケティングミックス",
+        "STP",
+        "ERP"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-028",
+      "term": "STP",
+      "reading": "えすてぃーぴー",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "市場をセグメント（Segmentation）で分け、ターゲット（Targeting）を絞り、独自の位置づけ（Positioning）を決めるマーケティング戦略の手順。",
+      "related_terms": [
+        "マーケティングミックス",
+        "CRM",
+        "PPM"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-029",
+      "term": "コーポレートガバナンス",
+      "reading": "こーぽれーとがばなんす",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "企業が株主・社会・従業員などの利害関係者のために適切に経営されるよう監視・管理する仕組みのこと。企業統治とも呼ばれる。",
+      "related_terms": [
+        "CSR",
+        "コンプライアンス",
+        "ITガバナンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-030",
+      "term": "MOT",
+      "reading": "えむおーてぃー",
+      "category": "strategy",
+      "chapter_id": "S-04",
+      "definition": "技術経営（Management of Technology）のこと。技術を競争優位の源泉として捉え、技術の開発・活用・管理を経営戦略と結びつける考え方。",
+      "related_terms": [
+        "技術ロードマップ",
+        "オープンイノベーション",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-031",
+      "term": "技術ロードマップ",
+      "reading": "ぎじゅつろーどまっぷ",
+      "category": "strategy",
+      "chapter_id": "S-04",
+      "definition": "将来の技術開発の方向性や時系列を図で示したもの。どの技術をいつまでに開発・導入するかを計画し、研究開発投資の判断に活用する。",
+      "related_terms": [
+        "MOT",
+        "オープンイノベーション",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-032",
+      "term": "オープンイノベーション",
+      "reading": "おーぷんいのべーしょん",
+      "category": "strategy",
+      "chapter_id": "S-04",
+      "definition": "自社だけでなく、大学・スタートアップ・他企業など外部の知識や技術を取り込んで新しい製品やサービスを開発する手法。",
+      "related_terms": [
+        "MOT",
+        "技術ロードマップ",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-033",
+      "term": "IoT",
+      "reading": "あいおーてぃー",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "モノのインターネット（Internet of Things）のこと。家電・センサー・機械など様々なものがインターネットに接続され、データを収集・活用できる仕組み。",
+      "related_terms": [
+        "AI",
+        "ビッグデータ",
+        "DX"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-034",
+      "term": "ビッグデータ",
+      "reading": "びっぐでーた",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "従来のデータベースでは処理が難しいほど大量かつ多様なデータのこと。SNS・センサー・購買履歴などから収集し、分析することで新たな価値を生み出す。",
+      "related_terms": [
+        "IoT",
+        "AI",
+        "DX"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-035",
+      "term": "FinTech",
+      "reading": "ふぃんてっく",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "金融（Finance）と技術（Technology）を組み合わせた造語。スマホ決済・ネット銀行・仮想通貨など、ITを活用した新しい金融サービスの総称。",
+      "related_terms": [
+        "ブロックチェーン",
+        "EC",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-036",
+      "term": "ブロックチェーン",
+      "reading": "ぶろっくちぇーん",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "取引データをブロックに記録し、鎖のようにつなげて管理する分散型台帳技術。特定の管理者なしに改ざん困難な記録が維持できる。仮想通貨の基盤技術として有名。",
+      "related_terms": [
+        "FinTech",
+        "暗号技術",
+        "分散システム"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-037",
+      "term": "SCM",
+      "reading": "えすしーえむ",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "サプライチェーン管理（Supply Chain Management）のこと。原材料の調達から製造・物流・販売まで、一連の流れを効率的に管理して在庫削減・コスト低減を図る手法。",
+      "related_terms": [
+        "ERP",
+        "CRM",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-038",
+      "term": "ERP",
+      "reading": "いーあーるぴー",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "統合基幹業務システム（Enterprise Resource Planning）のこと。会計・在庫・人事・生産などの業務データを一元管理するシステム。情報の共有と業務効率化を実現する。",
+      "related_terms": [
+        "SCM",
+        "CRM",
+        "BPR"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-039",
+      "term": "EC",
+      "reading": "いーしー",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "電子商取引（Electronic Commerce）のこと。インターネットを通じて商品やサービスを売買すること。BtoB（企業間）・BtoC（企業対消費者）など様々な形態がある。",
+      "related_terms": [
+        "EDI",
+        "FinTech",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-040",
+      "term": "EDI",
+      "reading": "いーでぃーあい",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "電子データ交換（Electronic Data Interchange）のこと。企業間で注文書・請求書などのビジネス文書を標準化されたフォーマットで電子的に交換する仕組み。",
+      "related_terms": [
+        "EC",
+        "ERP",
+        "SCM"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-041",
+      "term": "DX",
+      "reading": "でぃーえっくす",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "デジタルトランスフォーメーション（Digital Transformation）のこと。ITを活用してビジネスモデルや業務プロセス・組織文化を根本から変革し、競争優位を確立すること。",
+      "related_terms": [
+        "IoT",
+        "AI",
+        "ビッグデータ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-042",
+      "term": "Society 5.0",
+      "reading": "そさえてぃふぁいぶぽいんとぜろ",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "狩猟・農耕・工業・情報社会に続く5番目の社会として日本が提唱する概念。サイバー空間と現実空間を高度に融合させ、経済発展と社会課題解決を両立する社会を目指す。",
+      "related_terms": [
+        "DX",
+        "IoT",
+        "AI"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-043",
+      "term": "EA",
+      "reading": "いーえー",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "エンタープライズアーキテクチャ（Enterprise Architecture）のこと。組織全体のITシステムと業務プロセスを体系的に設計・管理するフレームワーク。",
+      "related_terms": [
+        "BPR",
+        "SaaS",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-044",
+      "term": "BPR",
+      "reading": "びーぴーあーる",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "業務プロセス再設計（Business Process Reengineering）のこと。既存の業務プロセスを根本から見直し、コスト・品質・スピードを大幅に改善する経営改革手法。",
+      "related_terms": [
+        "ERP",
+        "EA",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-045",
+      "term": "SaaS",
+      "reading": "さーす",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "ソフトウェア・アズ・ア・サービス（Software as a Service）のこと。インターネット経由でソフトウェアを利用できるサービス形態。メールソフト・グループウェアなどが代表例。",
+      "related_terms": [
+        "PaaS",
+        "IaaS",
+        "クラウドコンピューティング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-046",
+      "term": "PaaS",
+      "reading": "ぱーす",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "プラットフォーム・アズ・ア・サービス（Platform as a Service）のこと。アプリケーション開発に必要な実行環境・開発ツールをインターネット経由で提供するサービス形態。",
+      "related_terms": [
+        "SaaS",
+        "IaaS",
+        "クラウドコンピューティング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-047",
+      "term": "IaaS",
+      "reading": "いあーす",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "インフラストラクチャ・アズ・ア・サービス（Infrastructure as a Service）のこと。サーバ・ストレージ・ネットワークなどのITインフラをインターネット経由で提供するサービス形態。",
+      "related_terms": [
+        "SaaS",
+        "PaaS",
+        "クラウドコンピューティング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-048",
+      "term": "クラウドコンピューティング",
+      "reading": "くらうどこんぴゅーてぃんぐ",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "インターネット経由でコンピュータ資源（サーバ・ストレージ・ソフトウェアなど）を必要な時に必要な分だけ利用できるサービス形態。初期投資を抑えられる点が特徴。",
+      "related_terms": [
+        "SaaS",
+        "PaaS",
+        "IaaS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-049",
+      "term": "SLA",
+      "reading": "えすえるえー",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "サービスレベル合意（Service Level Agreement）のこと。サービス提供者と利用者の間で、提供するサービスの品質・可用性・対応時間などを契約で定めたもの。",
+      "related_terms": [
+        "ITIL",
+        "インシデント管理",
+        "クラウドコンピューティング"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-050",
+      "term": "RFP",
+      "reading": "あーるえふぴー",
+      "category": "strategy",
+      "chapter_id": "S-07",
+      "definition": "提案依頼書（Request for Proposal）のこと。システム開発などを外部に発注する際、要件・条件・評価基準などをまとめてベンダーに提示する文書。",
+      "related_terms": [
+        "RFI",
+        "TCO",
+        "SLA"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-051",
+      "term": "RFI",
+      "reading": "あーるえふあい",
+      "category": "strategy",
+      "chapter_id": "S-07",
+      "definition": "情報提供依頼書（Request for Information）のこと。システム調達の初期段階で、ベンダーの製品・技術・実績などの情報提供を求める文書。RFPの前段階として使われる。",
+      "related_terms": [
+        "RFP",
+        "TCO",
+        "SLA"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-052",
+      "term": "TCO",
+      "reading": "てぃーしーおー",
+      "category": "strategy",
+      "chapter_id": "S-07",
+      "definition": "総所有コスト（Total Cost of Ownership）のこと。システムの購入費だけでなく、導入・運用・保守・廃棄までを含めたすべての費用の合計。意思決定時の重要な指標。",
+      "related_terms": [
+        "ROI",
+        "RFP",
+        "SLA"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-053",
+      "term": "ROI",
+      "reading": "あーるおーあい",
+      "category": "strategy",
+      "chapter_id": "S-07",
+      "definition": "投資対効果（Return on Investment）のこと。投資額に対してどれだけの利益が得られたかを示す指標。計算式：（利益÷投資額）×100（%）",
+      "related_terms": [
+        "TCO",
+        "バランススコアカード",
+        "損益分岐点"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-054",
+      "term": "コアコンピタンス",
+      "reading": "こあこんぴたんす",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "企業が競合他社に対して特に優れた競争優位の源泉となる中核的な能力のこと。他社が簡単に模倣できない独自の強みを指す。",
+      "related_terms": [
+        "SWOT分析",
+        "PPM",
+        "経営資源"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-055",
+      "term": "KPI",
+      "reading": "けーぴーあい",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "重要業績評価指標（Key Performance Indicator）のこと。目標達成度を測定するための定量的な指標。「月間売上100万円」「顧客満足度90%以上」などが例として挙げられる。",
+      "related_terms": [
+        "バランススコアカード",
+        "PDCA",
+        "ROI"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-056",
+      "term": "PDCA",
+      "reading": "ぴーでぃーしーえー",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "計画（Plan）→実行（Do）→評価（Check）→改善（Act）の4段階を繰り返すことで、業務を継続的に改善するフレームワーク。品質管理や経営改善に広く使われる。",
+      "related_terms": [
+        "QC七つ道具",
+        "KPI",
+        "アジャイル開発"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-057",
+      "term": "アウトソーシング",
+      "reading": "あうとそーしんぐ",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "自社で行っていた業務の一部を外部の専門業者に委託すること。コスト削減・専門性の活用・コアビジネスへの集中が目的となる。",
+      "related_terms": [
+        "BPR",
+        "SLA",
+        "TCO"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-058",
+      "term": "グリーンIT",
+      "reading": "ぐりーんあいてぃー",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "情報技術（IT）を活用して環境負荷を低減する取り組みのこと。省電力サーバの導入やペーパーレス化など、ITそのものの省エネとITによる他分野の省エネの両方を指す。",
+      "related_terms": [
+        "CSR",
+        "IoT",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-059",
+      "term": "ベンチマーキング",
+      "reading": "べんちまーきんぐ",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "業界のトップ企業や優良企業の製品・サービス・業務プロセスを調査・分析し、自社の改善目標や参考にする手法。自社の強みと弱みを客観的に把握できる。",
+      "related_terms": [
+        "SWOT分析",
+        "KPI",
+        "BPR"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-060",
+      "term": "プロダクトライフサイクル",
+      "reading": "ぷろだくとらいふさいくる",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "製品が市場に投入されてから撤退するまでの過程を「導入期・成長期・成熟期・衰退期」の4段階で示したもの。各段階で最適なマーケティング戦略が異なる。",
+      "related_terms": [
+        "PPM",
+        "マーケティングミックス",
+        "STP"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-061",
+      "term": "eラーニング",
+      "reading": "いーらーにんぐ",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "インターネットやコンピュータを活用して学習を行う形態のこと。場所・時間を問わず学習できる柔軟性が特徴で、企業内研修や資格取得学習に広く使われる。",
+      "related_terms": [
+        "DX",
+        "クラウドコンピューティング",
+        "SaaS"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-062",
+      "term": "テレワーク",
+      "reading": "てれわーく",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "ICTを活用して場所や時間に縛られずに働く勤務形態のこと。在宅勤務・サテライトオフィス勤務・モバイルワークなどの形態がある。DXの一環として普及が進む。",
+      "related_terms": [
+        "DX",
+        "クラウドコンピューティング",
+        "IoT"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-063",
+      "term": "シェアリングエコノミー",
+      "reading": "しぇありんぐえこのみー",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "個人が保有する資産やスキルをインターネット経由で他者と共有・貸し借りする経済モデル。配車サービス・民泊・スキルシェアなどが代表例。",
+      "related_terms": [
+        "EC",
+        "FinTech",
+        "DX"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-064",
+      "term": "API",
+      "reading": "えーぴーあい",
+      "category": "strategy",
+      "chapter_id": "S-06",
+      "definition": "アプリケーション・プログラミング・インターフェース（Application Programming Interface）のこと。ソフトウェア同士が機能を呼び出し合うための仕組み。外部サービスとの連携に使われる。",
+      "related_terms": [
+        "SaaS",
+        "EC",
+        "クラウドコンピューティング"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-065",
+      "term": "サブスクリプション",
+      "reading": "さぶすくりぷしょん",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "一定期間（月・年など）ごとに料金を支払い、製品やサービスを継続利用するビジネスモデル。音楽配信・動画配信・ソフトウェアなど様々な分野で普及している。",
+      "related_terms": [
+        "SaaS",
+        "EC",
+        "クラウドコンピューティング"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-066",
+      "term": "ロングテール",
+      "reading": "ろんぐてーる",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "インターネット販売において、売れ筋商品だけでなく、少量しか売れないニッチな商品も多数取り扱うことで大きな利益を生み出すビジネスモデル。",
+      "related_terms": [
+        "EC",
+        "マーケティングミックス",
+        "STP"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-067",
+      "term": "プラットフォームビジネス",
+      "reading": "ぷらっとふぉーむびじねす",
+      "category": "strategy",
+      "chapter_id": "S-05",
+      "definition": "売り手と買い手、サービス提供者と利用者など複数のグループをつなぐ場（プラットフォーム）を提供するビジネスモデル。AmazonやUberが代表例。",
+      "related_terms": [
+        "EC",
+        "シェアリングエコノミー",
+        "API"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-068",
+      "term": "情報リテラシー",
+      "reading": "じょうほうりてらしー",
+      "category": "strategy",
+      "chapter_id": "S-02",
+      "definition": "情報を適切に収集・評価・活用する能力のこと。インターネット上の情報の真偽を見極める力や、個人情報を適切に扱う意識なども含まれる。",
+      "related_terms": [
+        "個人情報保護法",
+        "コンプライアンス",
+        "不正アクセス禁止法"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-069",
+      "term": "ナレッジマネジメント",
+      "reading": "なれっじまねじめんと",
+      "category": "strategy",
+      "chapter_id": "S-01",
+      "definition": "組織内の個人が持つ知識や経験（暗黙知）を形式知として共有・活用する管理手法。従業員の退職による知識流出を防ぎ、組織全体の能力向上を図る。",
+      "related_terms": [
+        "経営資源",
+        "BPR",
+        "ERP"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-070",
+      "term": "ステークホルダー",
+      "reading": "すてーくほるだー",
+      "category": "strategy",
+      "chapter_id": "S-03",
+      "definition": "企業の活動に利害関係を持つすべての関係者のこと。株主・従業員・顧客・取引先・地域社会・政府機関などが含まれる。",
+      "related_terms": [
+        "CSR",
+        "コーポレートガバナンス",
+        "コンプライアンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-071",
+      "term": "ウォーターフォールモデル",
+      "reading": "うぉーたーふぉーるもでる",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "システム開発を「要件定義→設計→実装→テスト→運用」の順に段階的に進める手法。前の工程が完了してから次の工程に進む。手戻りが少ない反面、仕様変更への対応が難しい。",
+      "related_terms": [
+        "アジャイル開発",
+        "プロトタイピング",
+        "PMBOK"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-072",
+      "term": "アジャイル開発",
+      "reading": "あじゃいるかいはつ",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "短い開発サイクル（スプリント）を繰り返しながら機能を段階的にリリースするソフトウェア開発手法。変化する要件への柔軟な対応が特徴。スクラムが代表的な手法。",
+      "related_terms": [
+        "スクラム",
+        "ウォーターフォールモデル",
+        "DevOps"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-073",
+      "term": "スクラム",
+      "reading": "すくらむ",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "アジャイル開発の代表的な手法。2〜4週間のスプリントを繰り返し、プロダクトオーナー・スクラムマスター・開発チームの3役割が協力して製品を完成させる。",
+      "related_terms": [
+        "アジャイル開発",
+        "DevOps",
+        "CI/CD"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-074",
+      "term": "プロトタイピング",
+      "reading": "ぷろとたいぴんぐ",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "開発の早い段階で試作品（プロトタイプ）を作成し、利用者に確認してもらいながら開発を進める手法。要件のあいまいさをなくし、利用者の要求を正確に把握できる。",
+      "related_terms": [
+        "アジャイル開発",
+        "ウォーターフォールモデル",
+        "UML"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-075",
+      "term": "単体テスト",
+      "reading": "たんたいてすと",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "プログラムの最小単位（モジュール・関数）が正しく動作するかを個別に確認するテスト。開発者が自分のコードを確認する最初のテスト工程。",
+      "related_terms": [
+        "結合テスト",
+        "システムテスト",
+        "CI/CD"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-076",
+      "term": "結合テスト",
+      "reading": "けつごうてすと",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "複数のモジュールを組み合わせて連携が正しく動作するかを確認するテスト。単体テストの後に実施され、モジュール間のインターフェースの不具合を検出する。",
+      "related_terms": [
+        "単体テスト",
+        "システムテスト",
+        "ウォーターフォールモデル"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-077",
+      "term": "システムテスト",
+      "reading": "しすてむてすと",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "システム全体が要件を満たしているかを確認する総合的なテスト。結合テストの後に実施され、性能・負荷・セキュリティなども含めて検証する。",
+      "related_terms": [
+        "単体テスト",
+        "結合テスト",
+        "PMBOK"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-078",
+      "term": "UML",
+      "reading": "ゆーえむえる",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "統一モデリング言語（Unified Modeling Language）のこと。ソフトウェアの設計を図で表現するための記法の標準。ユースケース図・クラス図・シーケンス図などがある。",
+      "related_terms": [
+        "ユースケース図",
+        "オブジェクト指向",
+        "プロトタイピング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-079",
+      "term": "ユースケース図",
+      "reading": "ゆーすけーすず",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "システムの利用者（アクター）とシステムの機能（ユースケース）の関係を示す図。誰が何の機能を使うかを視覚的に整理するのに使う。UMLの代表的な図の一つ。",
+      "related_terms": [
+        "UML",
+        "オブジェクト指向",
+        "プロトタイピング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-080",
+      "term": "DevOps",
+      "reading": "でぶおぷす",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "開発（Development）と運用（Operations）チームが緊密に連携し、ソフトウェアの開発・テスト・リリースを自動化・高速化する考え方と実践のこと。",
+      "related_terms": [
+        "アジャイル開発",
+        "CI/CD",
+        "スクラム"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-081",
+      "term": "CMMI",
+      "reading": "しーえむえむあい",
+      "category": "management",
+      "chapter_id": "M-02",
+      "definition": "能力成熟度モデル統合（Capability Maturity Model Integration）のこと。組織のソフトウェア開発プロセスの成熟度を5段階で評価するフレームワーク。",
+      "related_terms": [
+        "DevOps",
+        "ISO",
+        "PMBOK"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-083",
+      "term": "CI/CD",
+      "reading": "しーあいしーでぃー",
+      "category": "management",
+      "chapter_id": "M-02",
+      "definition": "継続的インテグレーション（CI）と継続的デリバリー（CD）のこと。コードの変更を自動でビルド・テスト・リリースする仕組み。開発の速度と品質を両立させる。",
+      "related_terms": [
+        "DevOps",
+        "バージョン管理",
+        "アジャイル開発"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-084",
+      "term": "バージョン管理",
+      "reading": "ばーじょんかんり",
+      "category": "management",
+      "chapter_id": "M-02",
+      "definition": "ファイルの変更履歴を記録・管理する仕組み。過去の状態に戻したり、複数人が同時に作業したりすることができる。GitやSubversionが代表的なツール。",
+      "related_terms": [
+        "CI/CD",
+        "DevOps",
+        "IDE"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-085",
+      "term": "PMBOK",
+      "reading": "ぴんぼっく",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "プロジェクトマネジメント知識体系（Project Management Body of Knowledge）のこと。プロジェクト管理の国際標準ガイドライン。立上げ・計画・実行・監視・終結の5プロセス群で構成される。",
+      "related_terms": [
+        "WBS",
+        "ガントチャート",
+        "クリティカルパス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-086",
+      "term": "WBS",
+      "reading": "だぶりゅーびーえす",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "作業分解構成図（Work Breakdown Structure）のこと。プロジェクトの作業を階層的に細分化して整理した図。全体像の把握・担当者の割り当て・スケジュール作成に活用される。",
+      "related_terms": [
+        "PMBOK",
+        "ガントチャート",
+        "クリティカルパス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-087",
+      "term": "ガントチャート",
+      "reading": "がんとちゃーと",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "作業の予定期間を横棒で示したスケジュール管理の図。各作業の開始日・終了日・担当者が一目でわかる。プロジェクト管理で最もよく使われる図の一つ。",
+      "related_terms": [
+        "WBS",
+        "PMBOK",
+        "クリティカルパス"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-088",
+      "term": "クリティカルパス",
+      "reading": "くりてぃかるぱす",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "プロジェクト全体の完了までに必要な最長の作業経路のこと。この経路上の作業が遅れるとプロジェクト全体が遅延する。スケジュール管理の重要な概念。",
+      "related_terms": [
+        "ガントチャート",
+        "WBS",
+        "PMBOK"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-089",
+      "term": "EVM",
+      "reading": "いーぶいえむ",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "アーンドバリューマネジメント（Earned Value Management）のこと。予算・進捗・コストの3つを数値化し、プロジェクトの進捗状況とコスト効率を客観的に評価する手法。",
+      "related_terms": [
+        "PMBOK",
+        "WBS",
+        "ガントチャート"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-090",
+      "term": "リスク管理",
+      "reading": "りすくかんり",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "プロジェクトや業務において起こりうる問題（リスク）を事前に識別・分析し、発生を防ぐ対策や発生時の対応策を準備しておくこと。PMBOKの重要なプロセスの一つ。",
+      "related_terms": [
+        "PMBOK",
+        "インシデント管理",
+        "システム監査"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-091",
+      "term": "ITIL",
+      "reading": "あいてぃーあいえる",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "ITサービスマネジメントのベストプラクティス集（IT Infrastructure Library）のこと。ITサービスの設計・提供・改善に関する手順や考え方をまとめた国際的なフレームワーク。",
+      "related_terms": [
+        "インシデント管理",
+        "問題管理",
+        "変更管理"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-092",
+      "term": "インシデント管理",
+      "reading": "いんしでんとかんり",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "ITサービスの中断や品質低下（インシデント）が発生した際に、できるだけ早くサービスを回復させるための管理プロセス。ITILの主要なプロセスの一つ。",
+      "related_terms": [
+        "ITIL",
+        "問題管理",
+        "変更管理"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-093",
+      "term": "問題管理",
+      "reading": "もんだいかんり",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "インシデントの根本原因を調査・分析し、再発を防ぐための管理プロセス。インシデント管理が「すぐに直す」ことを目標とするのに対し、問題管理は「根本から直す」ことを目標とする。",
+      "related_terms": [
+        "ITIL",
+        "インシデント管理",
+        "変更管理"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-094",
+      "term": "変更管理",
+      "reading": "へんこうかんり",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "ITシステムへの変更（設定変更・ソフトウェア更新など）を計画的かつ安全に実施するための管理プロセス。変更によるサービス障害リスクを最小化することが目的。",
+      "related_terms": [
+        "ITIL",
+        "インシデント管理",
+        "問題管理"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-095",
+      "term": "UPS",
+      "reading": "ゆーぴーえす",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "無停電電源装置（Uninterruptible Power Supply）のこと。停電や電力不安定な状況でも一時的に電力を供給し続ける装置。サーバなどの重要機器に接続して突然のシャットダウンを防ぐ。",
+      "related_terms": [
+        "ファシリティマネジメント",
+        "稼働率",
+        "MTBF"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-096",
+      "term": "ファシリティマネジメント",
+      "reading": "ふぁしりてぃまねじめんと",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "コンピュータや通信機器が設置されている施設（データセンターなど）の電源・空調・セキュリティなどの設備を適切に管理・維持すること。",
+      "related_terms": [
+        "UPS",
+        "ITIL",
+        "稼働率"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-097",
+      "term": "システム監査",
+      "reading": "しすてむかんさ",
+      "category": "management",
+      "chapter_id": "M-05",
+      "definition": "情報システムが適切に管理・運用されているかを独立した立場から点検・評価すること。リスクの発見・改善提案を行い、システムの信頼性向上に貢献する。",
+      "related_terms": [
+        "内部統制",
+        "ITガバナンス",
+        "ISMS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-098",
+      "term": "内部統制",
+      "reading": "ないぶとうせい",
+      "category": "management",
+      "chapter_id": "M-05",
+      "definition": "企業が業務を適切に実施するために自社内で構築する仕組みのこと。不正・ミス・法令違反などを防ぐためのルールや手続きを整備し、経営の有効性と信頼性を確保する。",
+      "related_terms": [
+        "システム監査",
+        "ITガバナンス",
+        "コンプライアンス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-099",
+      "term": "ITガバナンス",
+      "reading": "あいてぃーがばなんす",
+      "category": "management",
+      "chapter_id": "M-05",
+      "definition": "企業がITに関する意思決定・責任の枠組みを整備し、ITが経営目標の達成に貢献するよう管理・統制する仕組み。コーポレートガバナンスの一部。",
+      "related_terms": [
+        "コーポレートガバナンス",
+        "内部統制",
+        "システム監査"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-100",
+      "term": "ISMS",
+      "reading": "あいえすえむえす",
+      "category": "management",
+      "chapter_id": "M-05",
+      "definition": "情報セキュリティマネジメントシステム（Information Security Management System）のこと。組織の情報資産を守るための管理体制。ISO/IEC 27001として国際標準化されている。",
+      "related_terms": [
+        "個人情報保護法",
+        "システム監査",
+        "ITガバナンス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-101",
+      "term": "2進数",
+      "reading": "にしんすう",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "0と1の2種類の数字だけで数を表す記数法。コンピュータ内部では電流の「オン・オフ」に対応するため、すべてのデータを2進数で処理する。",
+      "related_terms": [
+        "16進数",
+        "ビット",
+        "バイト"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-102",
+      "term": "16進数",
+      "reading": "じゅうろくしんすう",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "0〜9とA〜F（10〜15）の16種類の記号で数を表す記数法。2進数を4桁ずつまとめて表現でき、コンピュータのメモリアドレスやカラーコードの表示に使われる。",
+      "related_terms": [
+        "2進数",
+        "ビット",
+        "バイト"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-103",
+      "term": "AND",
+      "reading": "あんど",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "論理演算の一つ。両方の入力が1（真）のときだけ出力が1になる演算。「かつ」を意味する。例：1 AND 1 = 1、1 AND 0 = 0",
+      "related_terms": [
+        "OR",
+        "NOT",
+        "XOR"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-104",
+      "term": "OR",
+      "reading": "おあ",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "論理演算の一つ。どちらか一方でも入力が1（真）であれば出力が1になる演算。「または」を意味する。例：1 OR 0 = 1、0 OR 0 = 0",
+      "related_terms": [
+        "AND",
+        "NOT",
+        "XOR"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-105",
+      "term": "NOT",
+      "reading": "のっと",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "論理演算の一つ。入力を反転させる演算。入力が1なら出力は0、入力が0なら出力は1になる。「否定」を意味する。",
+      "related_terms": [
+        "AND",
+        "OR",
+        "XOR"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-106",
+      "term": "XOR",
+      "reading": "えっくすおあ",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "排他的論理和演算のこと。入力が異なるときに1を出力する論理演算。例：1 XOR 0 = 1、1 XOR 1 = 0。暗号化や誤り検出に利用される。",
+      "related_terms": [
+        "AND",
+        "OR",
+        "NOT"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-107",
+      "term": "ビット",
+      "reading": "びっと",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "コンピュータが扱う情報の最小単位。0または1の2値を表す。英語のBInary digiTの略。8ビット=1バイトとなる。",
+      "related_terms": [
+        "バイト",
+        "2進数",
+        "メモリ"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-108",
+      "term": "バイト",
+      "reading": "ばいと",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "コンピュータの情報量の基本単位。8ビット=1バイト。1KB=1024バイト、1MB=1024KB、1GB=1024MB。文字や数値を表現する基本単位として使われる。",
+      "related_terms": [
+        "ビット",
+        "メモリ",
+        "HDD"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-109",
+      "term": "機械学習",
+      "reading": "きかいがくしゅう",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "コンピュータが大量のデータからルールやパターンを自動的に学習する技術。人間がルールを明示的にプログラムせずに、データから判断能力を習得させる。AIの中心的な技術。",
+      "related_terms": [
+        "AI",
+        "ディープラーニング",
+        "教師あり学習"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-110",
+      "term": "ディープラーニング",
+      "reading": "でぃーぷらーにんぐ",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "人間の神経回路を模した多層構造のニューラルネットワークを使った機械学習手法。画像認識・音声認識・自然言語処理など多くの分野で高い精度を実現している。",
+      "related_terms": [
+        "機械学習",
+        "AI",
+        "教師あり学習"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-111",
+      "term": "教師あり学習",
+      "reading": "きょうしありがくしゅう",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "正解ラベル付きのデータを使ってモデルを学習させる機械学習の手法。メール迷惑メール判定・画像分類・価格予測などに使われる。入力と出力のペアから法則を学ぶ。",
+      "related_terms": [
+        "機械学習",
+        "ディープラーニング",
+        "教師なし学習"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-112",
+      "term": "教師なし学習",
+      "reading": "きょうしなしがくしゅう",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "正解ラベルのないデータのみでパターンや構造を学習させる機械学習の手法。似たデータをグループ分けするクラスタリングや、データの特徴を圧縮する次元削減などに使われる。",
+      "related_terms": [
+        "機械学習",
+        "教師あり学習",
+        "ディープラーニング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-113",
+      "term": "アルゴリズム",
+      "reading": "あるごりずむ",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "問題を解くための手順や計算の方法を明確に定義したもの。同じ問題でも複数のアルゴリズムが存在し、処理速度やメモリ消費量が異なる。プログラムの基礎。",
+      "related_terms": [
+        "フローチャート",
+        "配列",
+        "オブジェクト指向"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-114",
+      "term": "フローチャート",
+      "reading": "ふろーちゃーと",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "処理の手順を図形と矢印で視覚的に表した図。開始・終了（楕円）・処理（四角）・判断（ひし形）などの記号を組み合わせてアルゴリズムを表現する。",
+      "related_terms": [
+        "アルゴリズム",
+        "UML",
+        "プロトタイピング"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-115",
+      "term": "配列",
+      "reading": "はいれつ",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "同じ種類のデータを連続したメモリ領域に並べて格納するデータ構造。インデックス（番号）を使って各要素に素早くアクセスできる。プログラミングの基本的なデータ構造。",
+      "related_terms": [
+        "スタック",
+        "キュー",
+        "木構造"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-116",
+      "term": "スタック",
+      "reading": "すたっく",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "後から入れたデータを先に取り出す「LIFO（Last In First Out）」方式のデータ構造。本の積み重ねをイメージするとわかりやすい。関数の呼び出し管理などに使われる。",
+      "related_terms": [
+        "キュー",
+        "配列",
+        "アルゴリズム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-117",
+      "term": "キュー",
+      "reading": "きゅー",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "最初に入れたデータを先に取り出す「FIFO（First In First Out）」方式のデータ構造。行列（待ち行列）をイメージするとわかりやすい。印刷待ちキューや処理待ちリストに使われる。",
+      "related_terms": [
+        "スタック",
+        "配列",
+        "アルゴリズム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-118",
+      "term": "木構造",
+      "reading": "きこうぞう",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "データを親子関係の階層で表したデータ構造。最上位をルート（根）、末端をリーフ（葉）と呼ぶ。ファイルシステムのフォルダ構造やデータベースの索引に使われる。",
+      "related_terms": [
+        "配列",
+        "スタック",
+        "データベース"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-119",
+      "term": "オブジェクト指向",
+      "reading": "おぶじぇくとしこう",
+      "category": "technology",
+      "chapter_id": "T-02",
+      "definition": "プログラムをデータと処理をまとめた「オブジェクト」の集まりとして設計する考え方。再利用性・保守性・拡張性が高く、現代のプログラミングの主流な手法。",
+      "related_terms": [
+        "UML",
+        "クラス",
+        "アルゴリズム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-120",
+      "term": "CPU",
+      "reading": "しーぴーゆー",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "中央処理装置（Central Processing Unit）のこと。コンピュータの「頭脳」にあたる部品。プログラムの命令を解釈・実行する。処理速度は主にクロック周波数とコア数で決まる。",
+      "related_terms": [
+        "メモリ",
+        "キャッシュメモリ",
+        "OS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-121",
+      "term": "メモリ",
+      "reading": "めもり",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "コンピュータが実行中のプログラムやデータを一時的に保管する場所。CPUが直接アクセスできる高速な記憶装置。電源を切るとデータが消える揮発性が特徴。",
+      "related_terms": [
+        "CPU",
+        "RAM",
+        "キャッシュメモリ"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-122",
+      "term": "RAM",
+      "reading": "らむ",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "ランダムアクセスメモリ（Random Access Memory）のこと。任意の場所に自由に読み書きできる揮発性メモリ。コンピュータの主記憶として使われる。容量が多いほど多くのアプリを同時に動かせる。",
+      "related_terms": [
+        "ROM",
+        "メモリ",
+        "CPU"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-123",
+      "term": "ROM",
+      "reading": "ろむ",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "読み取り専用メモリ（Read Only Memory）のこと。電源を切ってもデータが消えない不揮発性メモリ。コンピュータの起動プログラム（BIOS）やファームウェアの格納に使われる。",
+      "related_terms": [
+        "RAM",
+        "メモリ",
+        "CPU"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-124",
+      "term": "キャッシュメモリ",
+      "reading": "きゃっしゅめもり",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "CPUと主記憶（RAM）の間に置かれる高速な小容量メモリ。よく使うデータをキャッシュに保管することで、CPUの待ち時間を減らし処理速度を向上させる。",
+      "related_terms": [
+        "CPU",
+        "RAM",
+        "メモリ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-125",
+      "term": "HDD",
+      "reading": "えいちでぃーでぃー",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "ハードディスクドライブ（Hard Disk Drive）のこと。磁気ディスクにデータを記録する補助記憶装置。電源を切ってもデータが保持される不揮発性。SSDより安価だが読み書きが遅い。",
+      "related_terms": [
+        "SSD",
+        "メモリ",
+        "ファイルシステム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-126",
+      "term": "SSD",
+      "reading": "えすえすでぃー",
+      "category": "technology",
+      "chapter_id": "T-03",
+      "definition": "ソリッドステートドライブ（Solid State Drive）のこと。フラッシュメモリを使った補助記憶装置。HDDより高速・軽量・衝撃に強いが、価格が高い。近年ノートPCや高性能サーバに広く使われる。",
+      "related_terms": [
+        "HDD",
+        "メモリ",
+        "ファイルシステム"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-127",
+      "term": "クライアントサーバ",
+      "reading": "くらいあんとさーば",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "サービスを要求する側（クライアント）とサービスを提供する側（サーバ）が通信して処理を分担するシステム構成。Webブラウザ（クライアント）とWebサーバが代表例。",
+      "related_terms": [
+        "LAN",
+        "TCP/IP",
+        "仮想化"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-128",
+      "term": "仮想化",
+      "reading": "かそうか",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "物理的なハードウェア資源を論理的に分割・統合し、複数の仮想マシンやサービスとして利用できるようにする技術。1台のサーバで複数のOSを動かすことができ、資源の効率的な利用が可能。",
+      "related_terms": [
+        "クラウドコンピューティング",
+        "IaaS",
+        "OS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-129",
+      "term": "MTBF",
+      "reading": "えむてぃーびーえふ",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "平均故障間隔（Mean Time Between Failures）のこと。システムが故障してから修理され、次に故障するまでの平均時間。数値が大きいほど信頼性が高い。",
+      "related_terms": [
+        "MTTR",
+        "稼働率",
+        "UPS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-130",
+      "term": "MTTR",
+      "reading": "えむてぃーてぃーあーる",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "平均修理時間（Mean Time To Repair）のこと。システムが故障してから修理が完了するまでの平均時間。数値が小さいほど早く復旧できることを示す。",
+      "related_terms": [
+        "MTBF",
+        "稼働率",
+        "インシデント管理"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-131",
+      "term": "稼働率",
+      "reading": "かどうりつ",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "システムが正常に動いている時間の割合のこと。計算式：MTBF ÷（MTBF＋MTTR）。「99.9%」のように表現され、数値が高いほど安定して使えるシステムといえる。",
+      "related_terms": [
+        "MTBF",
+        "MTTR",
+        "デュアルシステム"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-132",
+      "term": "デュアルシステム",
+      "reading": "でゅあるしすてむ",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "同じ処理を2つのシステムで並行して実行し、結果を照合することで信頼性を高めるシステム構成。銀行の勘定系システムなど高い信頼性が求められる場面で使われる。",
+      "related_terms": [
+        "稼働率",
+        "MTBF",
+        "フォールトトレランス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-133",
+      "term": "OS",
+      "reading": "おーえす",
+      "category": "technology",
+      "chapter_id": "T-05",
+      "definition": "オペレーティングシステム（Operating System）のこと。ハードウェアを管理し、アプリケーションが動作するための基盤を提供するソフトウェア。WindowsやmacOS・Linuxが代表例。",
+      "related_terms": [
+        "CPU",
+        "ファイルシステム",
+        "仮想化"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-134",
+      "term": "ファイルシステム",
+      "reading": "ふぁいるしすてむ",
+      "category": "technology",
+      "chapter_id": "T-05",
+      "definition": "OS上でファイルやフォルダを管理するための仕組み。ファイルの保存場所・名前・属性を管理する。WindowsのNTFS、Linuxのext4などが代表的なファイルシステム。",
+      "related_terms": [
+        "OS",
+        "ディレクトリ",
+        "HDD"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-135",
+      "term": "OSS",
+      "reading": "おーえすえす",
+      "category": "technology",
+      "chapter_id": "T-05",
+      "definition": "オープンソースソフトウェア（Open Source Software）のこと。ソースコードが公開されており、誰でも自由に使用・改変・再配布できるソフトウェア。Linux・Apache・MySQL等が代表例。",
+      "related_terms": [
+        "OS",
+        "ライセンス",
+        "著作権"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-137",
+      "term": "USB",
+      "reading": "ゆーえすびー",
+      "category": "technology",
+      "chapter_id": "T-06",
+      "definition": "ユニバーサル・シリアル・バス（Universal Serial Bus）のこと。コンピュータとキーボード・マウス・外付けHDD等の周辺機器を接続する規格。電源供給もできる汎用インターフェース。",
+      "related_terms": [
+        "HDMI",
+        "Bluetooth",
+        "Wi-Fi"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-140",
+      "term": "Wi-Fi",
+      "reading": "わいふぁい",
+      "category": "technology",
+      "chapter_id": "T-06",
+      "definition": "無線LANの規格の一つ。家庭やオフィスでインターネットにケーブルなしに接続するために広く使われる。IEEE 802.11規格に基づき、現在はWi-Fi 6（802.11ax）が最新の主流規格。",
+      "related_terms": [
+        "Bluetooth",
+        "LAN",
+        "SSID"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-141",
+      "term": "GUI",
+      "reading": "じーゆーあい",
+      "category": "technology",
+      "chapter_id": "T-07",
+      "definition": "グラフィカルユーザインタフェース（Graphical User Interface）のこと。アイコン・ウィンドウ・メニューなど視覚的な要素をマウスで操作するインターフェース。CUIと対比される。",
+      "related_terms": [
+        "UX",
+        "アクセシビリティ",
+        "ユニバーサルデザイン"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-142",
+      "term": "UX",
+      "reading": "ゆーえっくす",
+      "category": "technology",
+      "chapter_id": "T-07",
+      "definition": "ユーザーエクスペリエンス（User Experience）のこと。製品やサービスを使う際の体験全体のこと。見た目のデザインだけでなく、使いやすさ・快適さ・満足感も含む広い概念。",
+      "related_terms": [
+        "GUI",
+        "アクセシビリティ",
+        "ユニバーサルデザイン"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-143",
+      "term": "アクセシビリティ",
+      "reading": "あくせしびりてぃ",
+      "category": "technology",
+      "chapter_id": "T-07",
+      "definition": "高齢者・障がい者を含む多様な人々が情報システムや製品を利用できるように配慮すること。Webの文字サイズ変更・色のコントラスト強調・音声読み上げ対応などが代表例。",
+      "related_terms": [
+        "ユニバーサルデザイン",
+        "GUI",
+        "UX"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-144",
+      "term": "ユニバーサルデザイン",
+      "reading": "ゆにばーさるでざいん",
+      "category": "technology",
+      "chapter_id": "T-07",
+      "definition": "年齢・性別・障がいの有無に関わらず、できるだけ多くの人が利用できるよう最初から設計する考え方。特別な改造なしに多様なユーザーが使えることを目指す。",
+      "related_terms": [
+        "アクセシビリティ",
+        "GUI",
+        "UX"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-145",
+      "term": "ラスタ画像",
+      "reading": "らすたがぞう",
+      "category": "technology",
+      "chapter_id": "T-08",
+      "definition": "画像をドット（画素）の集まりとして表現する形式。写真などに適しているが、拡大するとギザギザになる（ジャギー）。JPEG・PNGがラスタ形式の代表例。",
+      "related_terms": [
+        "ベクタ画像",
+        "解像度",
+        "JPEG"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-146",
+      "term": "ベクタ画像",
+      "reading": "べくたがぞう",
+      "category": "technology",
+      "chapter_id": "T-08",
+      "definition": "画像を点・線・曲線などの数式で表現する形式。拡大・縮小しても画質が劣化しない。ロゴ・イラスト・地図などに適している。SVGがベクタ形式の代表例。",
+      "related_terms": [
+        "ラスタ画像",
+        "解像度",
+        "PNG"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-147",
+      "term": "解像度",
+      "reading": "かいぞうど",
+      "category": "technology",
+      "chapter_id": "T-08",
+      "definition": "画像の細かさを表す指標のこと。単位面積あたりのドット数（dpi）や画像全体のピクセル数で表される。数値が高いほど細かく鮮明な画像になるが、ファイルサイズも大きくなる。",
+      "related_terms": [
+        "ラスタ画像",
+        "JPEG",
+        "PNG"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-149",
+      "term": "JPEG",
+      "reading": "じぇいぺぐ",
+      "category": "technology",
+      "chapter_id": "T-08",
+      "definition": "写真などの画像を圧縮して保存するファイル形式。圧縮率が高くファイルサイズを小さくできるが、非可逆圧縮のため画質が若干劣化する。Webや写真の保存に広く使われる。",
+      "related_terms": [
+        "PNG",
+        "ラスタ画像",
+        "解像度"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-150",
+      "term": "PNG",
+      "reading": "ぴんぐ",
+      "category": "technology",
+      "chapter_id": "T-08",
+      "definition": "画像を圧縮して保存するファイル形式。可逆圧縮のため画質が劣化しない。透明（透過）の設定が可能でロゴやアイコンに適している。JPEGよりファイルサイズが大きくなる場合がある。",
+      "related_terms": [
+        "JPEG",
+        "ラスタ画像",
+        "解像度"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-151",
+      "term": "データベース",
+      "reading": "でーたべーす",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "大量のデータを整理して保存し、必要なデータをすばやく検索・更新・削除できるようにした仕組み。顧客管理・在庫管理・会計システムなど多くの業務システムで利用される。",
+      "related_terms": [
+        "DBMS",
+        "SQL",
+        "正規化"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-152",
+      "term": "DBMS",
+      "reading": "でぃーびーえむえす",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "データベース管理システム（Database Management System）のこと。データベースを作成・管理・操作するためのソフトウェア。MySQL・Oracle・PostgreSQLなどが代表例。",
+      "related_terms": [
+        "データベース",
+        "SQL",
+        "ACID"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-153",
+      "term": "SQL",
+      "reading": "えすきゅーえる",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "リレーショナルデータベースを操作するための言語。SELECT（検索）・INSERT（追加）・UPDATE（更新）・DELETE（削除）の基本命令でデータを操作する。",
+      "related_terms": [
+        "データベース",
+        "DBMS",
+        "主キー"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-154",
+      "term": "主キー",
+      "reading": "しゅきー",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "テーブル内の各行を一意に識別するための列（フィールド）のこと。同じ値が存在せず、NULLも許可されない。顧客IDや社員番号が主キーとして使われることが多い。",
+      "related_terms": [
+        "外部キー",
+        "SQL",
+        "データベース"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-155",
+      "term": "外部キー",
+      "reading": "がいぶきー",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "あるテーブルの列が、別テーブルの主キーを参照する仕組みのこと。テーブル間のデータの整合性を保つために使われる。例：注文テーブルの顧客IDが顧客テーブルの主キーを参照。",
+      "related_terms": [
+        "主キー",
+        "SQL",
+        "正規化"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-156",
+      "term": "正規化",
+      "reading": "せいきか",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "データベース設計において、データの重複を排除し、更新時の矛盾が起きにくい形にテーブルを整理すること。第1〜第3正規形が基本的な正規化の段階として知られる。",
+      "related_terms": [
+        "データベース",
+        "主キー",
+        "外部キー"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-157",
+      "term": "ACID",
+      "reading": "あしっど",
+      "category": "technology",
+      "chapter_id": "T-09",
+      "definition": "データベーストランザクションが満たすべき4つの特性の頭文字。原子性（Atomicity）・一貫性（Consistency）・独立性（Isolation）・永続性（Durability）のこと。",
+      "related_terms": [
+        "DBMS",
+        "SQL",
+        "データベース"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-158",
+      "term": "LAN",
+      "reading": "らん",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "ローカルエリアネットワーク（Local Area Network）のこと。同一建物や敷地内などの限られた範囲のコンピュータを接続したネットワーク。有線と無線（Wi-Fi）の両方がある。",
+      "related_terms": [
+        "WAN",
+        "TCP/IP",
+        "Wi-Fi"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-159",
+      "term": "WAN",
+      "reading": "わん",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "ワイドエリアネットワーク（Wide Area Network）のこと。地理的に離れた場所のLAN同士を通信回線でつないだ広域ネットワーク。インターネットはWANの代表例。",
+      "related_terms": [
+        "LAN",
+        "TCP/IP",
+        "インターネット"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-160",
+      "term": "TCP/IP",
+      "reading": "てぃーしーぴーあいぴー",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "インターネット通信の基礎となるプロトコル群の総称。TCP（データを確実に届ける）とIP（宛先へのデータ転送）を組み合わせた通信規約。現代のネットワーク通信の共通言語。",
+      "related_terms": [
+        "IPアドレス",
+        "HTTP",
+        "DNS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-161",
+      "term": "IPアドレス",
+      "reading": "あいぴーあどれす",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "ネットワーク上のコンピュータを識別するための番号。住所に相当する。IPv4では「192.168.1.1」のような32ビットの数値で表され、IPv6では128ビットに拡張されている。",
+      "related_terms": [
+        "TCP/IP",
+        "DNS",
+        "DHCP"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-162",
+      "term": "DNS",
+      "reading": "でぃーえぬえす",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "ドメイン名をIPアドレスに変換する仕組み（Domain Name System）。「www.example.com」という名前を「203.0.113.1」のようなIPアドレスに変換する。インターネットの電話帳ともいえる。",
+      "related_terms": [
+        "IPアドレス",
+        "HTTP",
+        "DHCP"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-163",
+      "term": "DHCP",
+      "reading": "でぃーえいちしーぴー",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "ネットワークに接続した機器にIPアドレスを自動的に割り当てるプロトコル（Dynamic Host Configuration Protocol）。手動設定が不要になり、アドレスの重複も防げる。",
+      "related_terms": [
+        "IPアドレス",
+        "DNS",
+        "LAN"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-164",
+      "term": "HTTP",
+      "reading": "えいちてぃーてぃーぴー",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "Webブラウザとサーバ間でHTMLなどのデータをやり取りするための通信規約（HyperText Transfer Protocol）。URLの先頭部分に使われる。現在はHTTPSが標準となっている。",
+      "related_terms": [
+        "HTTPS",
+        "TCP/IP",
+        "DNS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-165",
+      "term": "HTTPS",
+      "reading": "えいちてぃーてぃーぴーえす",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "HTTPにSSL/TLSによる暗号化を加えたセキュアな通信規約。通信内容を暗号化するため、パスワードやクレジットカード番号などを安全に送受信できる。現在のWebの標準。",
+      "related_terms": [
+        "HTTP",
+        "SSL/TLS",
+        "TCP/IP"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-166",
+      "term": "SMTP",
+      "reading": "えすえむてぃーぴー",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "メールを送信するためのプロトコル（Simple Mail Transfer Protocol）。メールクライアントからメールサーバへの送信、メールサーバ間の転送に使われる。受信にはPOP3やIMAPが使われる。",
+      "related_terms": [
+        "HTTP",
+        "TCP/IP",
+        "DNS"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-167",
+      "term": "IPv4",
+      "reading": "あいぴーぶいよん",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "インターネットプロトコルのバージョン4のこと。32ビットでIPアドレスを表し、約43億個のアドレスを利用できる。アドレスの枯渇問題からIPv6への移行が進んでいる。",
+      "related_terms": [
+        "IPv6",
+        "IPアドレス",
+        "TCP/IP"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-168",
+      "term": "IPv6",
+      "reading": "あいぴーぶいろく",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "インターネットプロトコルのバージョン6のこと。128ビットでIPアドレスを表し、事実上無限に近いアドレス数を実現。IPv4のアドレス枯渇問題を解決する次世代プロトコル。",
+      "related_terms": [
+        "IPv4",
+        "IPアドレス",
+        "TCP/IP"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-169",
+      "term": "サブネットマスク",
+      "reading": "さぶねっとますく",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "IPアドレスのうち、ネットワーク部とホスト部を区別するために使うビットパターン。「255.255.255.0」のように表記し、同じネットワーク内の機器範囲を定義する。",
+      "related_terms": [
+        "IPアドレス",
+        "LAN",
+        "DHCP"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-170",
+      "term": "SSID",
+      "reading": "えすえすあいでぃー",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "無線LAN（Wi-Fi）のアクセスポイントを識別するための名前のこと（Service Set Identifier）。スマートフォンやPCでWi-Fiに接続する際に表示されるネットワーク名がSSIDにあたる。",
+      "related_terms": [
+        "Wi-Fi",
+        "LAN",
+        "IPアドレス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-171",
+      "term": "機密性",
+      "reading": "きみつせい",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "情報セキュリティの3要素の一つ。許可された者だけが情報にアクセスできる状態を確保すること。不正アクセスや情報漏えいから情報を守ることが目的。",
+      "related_terms": [
+        "完全性",
+        "可用性",
+        "ISMS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-172",
+      "term": "完全性",
+      "reading": "かんぜんせい",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "情報セキュリティの3要素の一つ。情報が正確かつ完全な状態に保たれていること。不正な改ざんや誤りがなく、データの正確性が保証されている状態を指す。",
+      "related_terms": [
+        "機密性",
+        "可用性",
+        "電子署名"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-173",
+      "term": "可用性",
+      "reading": "かようせい",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "情報セキュリティの3要素の一つ。許可された利用者が必要なときに情報やサービスを利用できる状態を確保すること。システムの稼働率向上や障害対策が可用性確保につながる。",
+      "related_terms": [
+        "機密性",
+        "完全性",
+        "稼働率"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-174",
+      "term": "マルウェア",
+      "reading": "まるうぇあ",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "悪意のあるソフトウェアの総称（Malicious Software）。コンピュータウイルス・ランサムウェア・スパイウェアなどが含まれる。感染するとデータの盗取・暗号化・システム破壊などの被害を受ける。",
+      "related_terms": [
+        "ランサムウェア",
+        "フィッシング",
+        "ファイアウォール"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-175",
+      "term": "ランサムウェア",
+      "reading": "らんさむうぇあ",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "感染したコンピュータのファイルを暗号化して使用不能にし、復元と引き換えに身代金（ransom）を要求するマルウェア。企業・病院・政府機関への被害が世界的に増加している。",
+      "related_terms": [
+        "マルウェア",
+        "バックアップ",
+        "ファイアウォール"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-176",
+      "term": "フィッシング",
+      "reading": "ふぃっしんぐ",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "銀行・通販サイト・行政機関などを装った偽のメールやWebサイトに誘導し、IDやパスワード・クレジットカード番号などを騙し取る詐欺行為。",
+      "related_terms": [
+        "マルウェア",
+        "不正アクセス禁止法",
+        "多要素認証"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-177",
+      "term": "公開鍵暗号",
+      "reading": "こうかいかぎあんごう",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "暗号化と復号に異なる鍵（公開鍵と秘密鍵）を使う暗号方式。公開鍵で暗号化したデータは対応する秘密鍵でしか復号できない。鍵を安全に配送しやすい特徴がある。",
+      "related_terms": [
+        "共通鍵暗号",
+        "電子署名",
+        "SSL/TLS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-178",
+      "term": "共通鍵暗号",
+      "reading": "きょうつうかぎあんごう",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "暗号化と復号に同じ鍵を使う暗号方式。処理速度が速いが、鍵を安全に相手に渡す方法が課題。AES・DESが代表的なアルゴリズム。公開鍵暗号と組み合わせて使われることが多い。",
+      "related_terms": [
+        "公開鍵暗号",
+        "SSL/TLS",
+        "電子署名"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-179",
+      "term": "SSL/TLS",
+      "reading": "えすえすえるてぃーえるえす",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "インターネット通信を暗号化するプロトコル。SSL（Secure Sockets Layer）の後継がTLS（Transport Layer Security）。HTTPSやメールなどの通信を暗号化して盗聴・改ざんを防ぐ。",
+      "related_terms": [
+        "HTTPS",
+        "公開鍵暗号",
+        "電子署名"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-180",
+      "term": "電子署名",
+      "reading": "でんししょめい",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "電子文書の作成者を証明し、文書が改ざんされていないことを確認する仕組み。送信者の秘密鍵で署名し、受信者が公開鍵で検証する。紙の印鑑・署名のデジタル版。",
+      "related_terms": [
+        "公開鍵暗号",
+        "完全性",
+        "SSL/TLS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-181",
+      "term": "ファイアウォール",
+      "reading": "ふぁいあうぉーる",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "ネットワークの出入り口に設置し、不正な通信を遮断するセキュリティの仕組み。通信の送受信先・ポート番号などに基づきルールを設定し、許可した通信のみを通す。",
+      "related_terms": [
+        "DMZ",
+        "IDS",
+        "IPS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-182",
+      "term": "DMZ",
+      "reading": "でぃーえむぜっと",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "非武装地帯（DeMilitarized Zone）のこと。インターネットと内部ネットワークの間に設ける中間ネットワーク領域。WebサーバやメールサーバをDMZに置くことで内部ネットワークを保護する。",
+      "related_terms": [
+        "ファイアウォール",
+        "IDS",
+        "IPS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-183",
+      "term": "IDS",
+      "reading": "あいでぃーえす",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "不正侵入検知システム（Intrusion Detection System）のこと。ネットワークやホストへの不正アクセスや攻撃を検知して管理者に通知するシステム。IPSと異なり、通信を遮断する機能は持たない。",
+      "related_terms": [
+        "IPS",
+        "ファイアウォール",
+        "DMZ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-184",
+      "term": "IPS",
+      "reading": "あいぴーえす",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "不正侵入防止システム（Intrusion Prevention System）のこと。不正アクセスを検知するだけでなく、自動的に通信を遮断する機能も持つ。IDSの進化版ともいえるセキュリティシステム。",
+      "related_terms": [
+        "IDS",
+        "ファイアウォール",
+        "DMZ"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-185",
+      "term": "多要素認証",
+      "reading": "たようそにんしょう",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "パスワードだけでなく、スマートフォンへのSMSコードや生体認証など複数の認証要素を組み合わせる本人確認の方法。1つの認証が突破されても不正ログインを防げる。",
+      "related_terms": [
+        "フィッシング",
+        "SSL/TLS",
+        "不正アクセス禁止法"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-186",
+      "term": "CSIRT",
+      "reading": "しーさーと",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "コンピュータセキュリティインシデント対応チーム（Computer Security Incident Response Team）のこと。サイバー攻撃やセキュリティ事故が発生した際に対応・調査・再発防止を行う専門組織。",
+      "related_terms": [
+        "ISMS",
+        "インシデント管理",
+        "マルウェア"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-187",
+      "term": "プロンプトインジェクション",
+      "reading": "ぷろんぷといんじぇくしょん",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "AIシステムへの入力（プロンプト）を悪意を持って細工し、AIに意図しない動作や情報漏えいをさせる攻撃手法。生成AIの普及とともに注目されるようになった新しいセキュリティ脅威。",
+      "related_terms": [
+        "AI",
+        "マルウェア",
+        "フィッシング"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-188",
+      "term": "AI",
+      "reading": "えーあい",
+      "category": "technology",
+      "chapter_id": "T-01",
+      "definition": "人工知能（Artificial Intelligence）のこと。人間の知的活動（学習・推論・判断・言語理解など）をコンピュータで実現する技術の総称。機械学習やディープラーニングが中心的な技術。",
+      "related_terms": [
+        "機械学習",
+        "ディープラーニング",
+        "IoT"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-189",
+      "term": "フォールトトレランス",
+      "reading": "ふぉーるととれらんす",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "システムの一部が故障しても全体の動作を継続できる設計思想・仕組みのこと。二重化・冗長構成・自動切り替えなどの技術が含まれる。耐障害性ともいう。",
+      "related_terms": [
+        "デュアルシステム",
+        "稼働率",
+        "MTBF"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-191",
+      "term": "無線LAN",
+      "reading": "むせんらん",
+      "category": "technology",
+      "chapter_id": "T-10",
+      "definition": "電波を使ってケーブルなしに接続するLANのこと。Wi-Fiが代表的な規格。アクセスポイントを経由して通信する。配線工事が不要で機器の移動が自由な反面、有線より通信が不安定になりやすい。",
+      "related_terms": [
+        "Wi-Fi",
+        "LAN",
+        "SSID"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-194",
+      "term": "VPN",
+      "reading": "ぶいぴーえぬ",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "仮想プライベートネットワーク（Virtual Private Network）のこと。インターネット上に暗号化された仮想トンネルを作り、安全に通信する技術。テレワーク時の社内ネットワーク接続に広く使われる。",
+      "related_terms": [
+        "SSL/TLS",
+        "ファイアウォール",
+        "テレワーク"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-195",
+      "term": "バックアップ",
+      "reading": "ばっくあっぷ",
+      "category": "technology",
+      "chapter_id": "T-04",
+      "definition": "データやシステムの複製を別の場所に保存しておくこと。ランサムウェア感染・ハードウェア故障・誤操作などによるデータ消失に備えて定期的に実施する重要な対策。",
+      "related_terms": [
+        "ランサムウェア",
+        "ファシリティマネジメント",
+        "MTTR"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-196",
+      "term": "暗号化",
+      "reading": "あんごうか",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "データを第三者には理解できない形式に変換して保護すること。公開鍵暗号・共通鍵暗号などの方式がある。通信の盗聴・ファイルの不正閲覧を防ぐセキュリティの基本技術。",
+      "related_terms": [
+        "公開鍵暗号",
+        "共通鍵暗号",
+        "SSL/TLS"
+      ],
+      "exam_frequency": "high",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-198",
+      "term": "ゼロデイ攻撃",
+      "reading": "ぜろでいこうげき",
+      "category": "technology",
+      "chapter_id": "T-11",
+      "definition": "ソフトウェアの脆弱性が公開される前（修正パッチが提供される前）に、その脆弱性を悪用するサイバー攻撃のこと。対策が間に合わないため被害が大きくなりやすい。",
+      "related_terms": [
+        "マルウェア",
+        "ファイアウォール",
+        "IPS"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-201",
+      "term": "レビュー",
+      "reading": "れびゅー",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "成果物（設計書・コード・テスト結果など）を関係者が確認し、問題点・改善点を指摘する品質確認活動のこと。早期に欠陥を発見してコストと手戻りを削減できる。",
+      "related_terms": [
+        "ウォーターフォールモデル",
+        "システム監査",
+        "CMMI"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-202",
+      "term": "ソフトウェア保守",
+      "reading": "そふとうぇあほしゅ",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "リリース後のソフトウェアに対して行う修正・改良・拡張作業の総称。バグ修正（是正保守）・機能追加（完全化保守）・環境変化への対応（適応保守）などがある。",
+      "related_terms": [
+        "ウォーターフォールモデル",
+        "バージョン管理",
+        "CI/CD"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-203",
+      "term": "テスト駆動開発",
+      "reading": "てすとくどうかいはつ",
+      "category": "management",
+      "chapter_id": "M-01",
+      "definition": "先にテストコードを書いてから、そのテストを通過するための実装を行う開発手法。テストが仕様書の役割を果たし、品質の高いコードを効率的に書ける。TDDとも呼ばれる。",
+      "related_terms": [
+        "アジャイル開発",
+        "CI/CD",
+        "単体テスト"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-204",
+      "term": "マイルストーン",
+      "reading": "まいるすとーん",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "プロジェクトの進行における重要な区切り・完了目標時点のこと。「設計完了」「テスト開始」などの節目を設定し、進捗確認や関係者への報告タイミングとして使う。",
+      "related_terms": [
+        "ガントチャート",
+        "WBS",
+        "PMBOK"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-205",
+      "term": "ステアリングコミッティ",
+      "reading": "すてありんぐこみってぃ",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "大規模プロジェクトにおいて、方向性・予算・優先順位を決定する最高意思決定機関のこと。経営層や主要ステークホルダーで構成され、プロジェクトの推進・停止・変更を承認する。",
+      "related_terms": [
+        "PMBOK",
+        "リスク管理",
+        "コーポレートガバナンス"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-206",
+      "term": "SLO",
+      "reading": "えすえるおー",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "サービスレベル目標（Service Level Objective）のこと。SLAで定めたサービス品質を達成するための具体的な目標値。稼働率99.9%・応答時間1秒以内などの内部指標として使われる。",
+      "related_terms": [
+        "SLA",
+        "ITIL",
+        "稼働率"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-207",
+      "term": "サービスデスク",
+      "reading": "さーびすですく",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "ITサービスの利用者からの問い合わせや障害報告を一元的に受け付け、解決や適切な担当者への引き継ぎを行う窓口のこと。ITILではヘルプデスクを発展させた機能として定義される。",
+      "related_terms": [
+        "ITIL",
+        "インシデント管理",
+        "SLA"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-208",
+      "term": "キャパシティ管理",
+      "reading": "きゃぱしてぃかんり",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "現在および将来のITサービス需要に対応できるよう、システムのリソース（CPU・メモリ・ストレージ・ネットワーク帯域など）を計画・管理する活動のこと。",
+      "related_terms": [
+        "ITIL",
+        "稼働率",
+        "ファシリティマネジメント"
+      ],
+      "exam_frequency": "low",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-209",
+      "term": "構成管理",
+      "reading": "こうせいかんり",
+      "category": "management",
+      "chapter_id": "M-04",
+      "definition": "ITインフラを構成するハードウェア・ソフトウェア・ネットワーク機器などの構成情報（CI：構成アイテム）を記録・管理すること。変更管理・インシデント管理との連携が重要。",
+      "related_terms": [
+        "ITIL",
+        "変更管理",
+        "バージョン管理"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-210",
+      "term": "情報セキュリティポリシー",
+      "reading": "じょうほうせきゅりてぃぽりしー",
+      "category": "management",
+      "chapter_id": "M-05",
+      "definition": "組織が情報資産を適切に保護するための基本方針・規則をまとめた文書のこと。経営層が承認し、全社員が遵守すべきルールを明文化する。ISMSの基礎となるドキュメント。",
+      "related_terms": [
+        "ISMS",
+        "内部統制",
+        "コンプライアンス"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
+    },
+    {
+      "term_id": "G-211",
+      "term": "スコープ管理",
+      "reading": "すこーぷかんり",
+      "category": "management",
+      "chapter_id": "M-03",
+      "definition": "プロジェクトで達成すべき作業範囲（スコープ）を定義・管理すること。スコープ外の作業が追加されるスコープクリープを防ぎ、プロジェクトを予定通り完了させるために重要。",
+      "related_terms": [
+        "PMBOK",
+        "WBS",
+        "リスク管理"
+      ],
+      "exam_frequency": "medium",
+      "related_question_ids": []
     }
   ]
 }
