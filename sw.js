@@ -10,8 +10,8 @@
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
 // v5: 図解レンダリングシステム追加（diagram.js / diagram.css / diagrams.json）
-const CACHE_NAME = 'ipass-navi-v5';
-const DATA_CACHE_NAME = 'ipass-navi-data-v5';
+const CACHE_NAME = 'ipass-navi-v6';
+const DATA_CACHE_NAME = 'ipass-navi-data-v6';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
