@@ -1,7 +1,7 @@
 /*
  * home.css
- * ホーム画面（ダッシュボード）のスタイルを定義する
- * 学習進捗・分野別統計・クイックアクセスを表示する
+ * ホーム画面（ダッシュボード）
+ * デザインコンセプト：クリーン × グラデーション
  */
 
 /* ===================================================
@@ -12,56 +12,82 @@
 }
 
 /* ===================================================
-   ウェルカムバナー
-   アプリ上部のグリーティングカード
+   ウェルカムバナー（グラデーション）
    =================================================== */
 .home-welcome {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: var(--color-primary-gradient);
   color: var(--color-text-on-primary);
-  padding: var(--space-lg) var(--space-md);
-  margin-bottom: var(--space-md);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  overflow: hidden;
 }
 
-/* アプリ名タイトル */
+/* 背景のアクセント装飾（控えめな幾何学模様） */
+.home-welcome::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.home-welcome::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .home-app-title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 2px;
+  letter-spacing: -0.02em;
+  position: relative;
 }
 
-/* サブテキスト */
 .home-welcome-sub {
   font-size: var(--font-size-sm);
-  opacity: 0.85;
+  opacity: 0.75;
   margin-bottom: var(--space-lg);
+  font-weight: var(--font-weight-normal);
+  position: relative;
 }
 
-/* ===================================================
-   全体進捗サマリー
-   =================================================== */
+/* 全体進捗サマリー */
 .home-progress-summary {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  position: relative;
 }
 
-/* 進捗数値の大きな表示 */
 .home-progress-number {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .home-progress-label {
-  font-size: var(--font-size-sm);
-  opacity: 0.85;
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
   margin-bottom: var(--space-sm);
+  font-weight: var(--font-weight-medium);
 }
 
-/* 全体進捗バー（白色バージョン） */
 .home-progress-bar {
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.3);
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -74,23 +100,24 @@
 }
 
 /* ===================================================
-   スタッツグリッド（学習日数・正答率）
+   スタッツグリッド
    =================================================== */
 .home-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-sm);
   padding: 0 var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
-/* スタッツカード1枚 */
 .stat-card {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   padding: var(--space-md);
   text-align: center;
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition-fast);
 }
 
 .stat-card-value {
@@ -99,18 +126,20 @@
   color: var(--color-primary);
   line-height: 1;
   margin-bottom: var(--space-xs);
+  letter-spacing: -0.02em;
 }
 
 .stat-card-label {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
 }
 
-/* スタッツカードのサブ情報（2段目） */
+/* サブ情報 */
 .stat-card-sub {
-  margin-top: var(--space-xs);
-  padding-top: var(--space-xs);
-  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-divider);
   font-size: var(--font-size-xs);
 }
 
@@ -120,50 +149,39 @@
 }
 
 .stat-card-sub-label {
-  color: var(--color-text-tertiary, #999);
+  color: var(--color-text-disabled);
 }
 
 /* 合格判定カードの色分け */
-.stat-card-green .stat-card-value {
-  color: var(--color-success, #27ae60);
-}
-
-.stat-card-orange .stat-card-value {
-  color: #e67e22;
-}
-
-.stat-card-yellow .stat-card-value {
-  color: #f1c40f;
-}
-
-.stat-card-red .stat-card-value {
-  color: var(--color-danger, #e74c3c);
-}
-
-.stat-card-gray .stat-card-value {
-  color: var(--color-text-tertiary, #999);
-}
+.stat-card-green .stat-card-value { color: var(--color-success); }
+.stat-card-orange .stat-card-value { color: #F97316; }
+.stat-card-yellow .stat-card-value { color: #EAB308; }
+.stat-card-red .stat-card-value { color: var(--color-error); }
+.stat-card-gray .stat-card-value { color: var(--color-text-disabled); }
 
 /* ===================================================
-   分野別進捗セクション
+   セクションタイトル
    =================================================== */
 .home-section {
   padding: 0 var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .home-section-title {
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: var(--space-sm);
+  letter-spacing: -0.01em;
 }
 
-/* 分野別進捗カード */
+/* ===================================================
+   分野別進捗カード
+   =================================================== */
 .section-progress-card {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
   padding: var(--space-md);
   margin-bottom: var(--space-sm);
   cursor: pointer;
@@ -174,11 +192,10 @@
 }
 
 .section-progress-card:active {
-  box-shadow: var(--shadow-sm);
   transform: scale(0.99);
+  box-shadow: var(--shadow-md);
 }
 
-/* 分野名と進捗率の行 */
 .section-progress-header {
   display: flex;
   align-items: center;
@@ -197,19 +214,17 @@
   color: var(--color-primary);
 }
 
-/* 出題比率バッジ */
 .section-exam-ratio {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
 }
 
 /* ===================================================
-   クイックアクションボタン
-   各モードへの直接アクセスボタン
+   クイックアクション
    =================================================== */
 .home-quick-actions {
   padding: 0 var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .quick-action-grid {
@@ -218,25 +233,23 @@
   gap: var(--space-sm);
 }
 
-/* クイックアクションボタン1つ */
 .quick-action-btn {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-xs);
+  gap: 6px;
   cursor: pointer;
   transition: box-shadow var(--transition-fast), transform var(--transition-fast);
-  /* タップターゲット確保 */
   min-height: var(--tap-target-min);
 }
 
 .quick-action-btn:active {
   transform: scale(0.98);
-  box-shadow: none;
+  box-shadow: var(--shadow-md);
 }
 
 .quick-action-icon {
@@ -246,7 +259,7 @@
 
 .quick-action-label {
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
 }
 
@@ -257,17 +270,16 @@
 }
 
 /* ===================================================
-   苦手分野アラートカード
-   正答率が低い分野を表示して演習を促す
+   苦手分野アラート
    =================================================== */
 .home-weak-alert {
   padding: 0 var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .weak-alert-card {
   background-color: var(--color-error-light);
-  border: 1px solid var(--color-error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
   border-radius: var(--radius-md);
   padding: var(--space-md);
 }
@@ -279,13 +291,11 @@
   margin-bottom: var(--space-sm);
 }
 
-.weak-alert-icon {
-  font-size: 2.0rem;
-}
+.weak-alert-icon { font-size: 2.0rem; }
 
 .weak-alert-title {
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-error);
 }
 
@@ -295,7 +305,6 @@
   margin-bottom: var(--space-sm);
 }
 
-/* 演習を始めるボタン */
 .weak-alert-btn {
   display: inline-flex;
   align-items: center;
@@ -305,18 +314,16 @@
   border-radius: var(--radius-full);
   padding: var(--space-xs) var(--space-md);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   min-height: var(--tap-target-min);
   cursor: pointer;
   transition: opacity var(--transition-fast);
 }
 
-.weak-alert-btn:active {
-  opacity: 0.85;
-}
+.weak-alert-btn:active { opacity: 0.85; }
 
 /* ===================================================
-   最近の学習履歴（セクション）
+   最近の学習履歴
    =================================================== */
 .home-recent {
   padding: 0 var(--space-md);
@@ -335,22 +342,20 @@
 }
 
 .recent-session-score {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-primary-light);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: #fff;
   flex-shrink: 0;
 }
 
-.recent-session-info {
-  flex: 1;
-}
+.recent-session-info { flex: 1; }
 
 .recent-session-date {
   font-size: var(--font-size-xs);
@@ -361,29 +366,25 @@
 .recent-session-detail {
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
 }
 
 /* ===================================================
    初回オンボーディングカード
-   初めてアプリを開いたユーザーに使い方を案内する
-   progress.pages_read が空の場合のみ表示される
    =================================================== */
 .onboarding-card {
-  margin: var(--space-md);
-  margin-bottom: 0;
-  background: linear-gradient(135deg, #E8F0FE 0%, #EDE7F6 100%);
-  border-radius: var(--radius-xl);
+  margin: 0 var(--space-md) var(--space-md);
+  background: linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
-  border: 1px solid #C5CAE9;
+  border: 1px solid rgba(99, 102, 241, 0.15);
 }
 
 [data-theme="dark"] .onboarding-card {
-  /* ダークテーマでも視認性を確保するため背景色を調整する */
-  background: linear-gradient(135deg, #1A237E30 0%, #311B9230 100%);
-  border-color: #3949AB50;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
-/* カードのヘッダー部分 */
 .onboarding-header {
   display: flex;
   align-items: center;
@@ -391,21 +392,17 @@
   margin-bottom: var(--space-md);
 }
 
-/* 星アイコン */
 .onboarding-icon {
   font-size: 2.8rem;
   line-height: 1;
   flex-shrink: 0;
 }
 
-/* タイトルテキストグループ */
-.onboarding-title-group {
-  flex: 1;
-}
+.onboarding-title-group { flex: 1; }
 
 .onboarding-title {
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: 2px;
 }
@@ -415,7 +412,6 @@
   color: var(--color-text-secondary);
 }
 
-/* 3ステップのリスト */
 .onboarding-steps {
   display: flex;
   flex-direction: column;
@@ -429,23 +425,20 @@
   gap: var(--space-sm);
 }
 
-/* ステップ番号バッジ */
 .onboarding-step-num {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background: var(--color-primary-gradient);
   color: var(--color-text-on-primary);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1px;
 }
 
-/* ステップ説明テキスト */
 .onboarding-step-text {
   flex: 1;
   font-size: var(--font-size-sm);
@@ -453,14 +446,12 @@
   line-height: var(--line-height-base);
 }
 
-/* ボタングループ */
 .onboarding-actions {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
-/* 「教科書から始める」メインボタン */
 .onboarding-btn-primary {
   width: 100%;
   display: flex;
@@ -469,20 +460,17 @@
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
   min-height: var(--tap-target-min);
-  background-color: var(--color-primary);
+  background: var(--color-primary-gradient);
   color: var(--color-text-on-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: opacity var(--transition-fast);
 }
 
-.onboarding-btn-primary:active {
-  opacity: 0.85;
-}
+.onboarding-btn-primary:active { opacity: 0.85; }
 
-/* 「問題から始める」サブボタン */
 .onboarding-btn-secondary {
   width: 100%;
   display: flex;
@@ -494,9 +482,9 @@
   background-color: transparent;
   color: var(--color-primary);
   border: 1.5px solid var(--color-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: background-color var(--transition-fast);
 }

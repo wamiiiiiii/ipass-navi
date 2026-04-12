@@ -1,153 +1,158 @@
 /*
  * variables.css
  * アプリ全体で使用するCSS変数（カスタムプロパティ）を定義する
- * テーマ切り替えはこのファイルの変数を書き換えるだけで対応できる
+ * デザインコンセプト：クリーン × グラデーション（Apple / Notion風ミニマル）
  */
 
 /* ===================================================
    ライトテーマ（デフォルト）
-   data-theme 属性が "light" または未設定のとき適用
    =================================================== */
 :root,
 [data-theme="light"] {
-  /* --- メインカラー --- */
-  --color-primary: #1A73E8;        /* ブランドカラー：青 */
-  --color-primary-dark: #1557B0;   /* 押下時・ホバー時の濃い青 */
-  --color-primary-light: #E8F0FE;  /* 薄い青（バッジ背景など） */
+  /* --- メインカラー（インディゴ → バイオレット グラデーション） --- */
+  --color-primary: #6366F1;
+  --color-primary-dark: #4F46E5;
+  --color-primary-light: #EEF2FF;
+  --color-primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
 
-  /* --- 背景色 --- */
-  --color-bg-base: #FFFFFF;        /* ページ全体の背景 */
-  --color-bg-surface: #F5F5F5;     /* カード・パネルの背景 */
-  --color-bg-elevated: #FFFFFF;    /* フローティング要素の背景 */
-  --color-bg-overlay: rgba(0, 0, 0, 0.4); /* モーダル背景 */
+  /* --- 背景色（極めて薄いウォームグレー） --- */
+  --color-bg-base: #F8FAFC;
+  --color-bg-surface: #F1F5F9;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-overlay: rgba(15, 23, 42, 0.4);
 
   /* --- テキスト色 --- */
-  --color-text-primary: #202124;   /* 本文・見出し */
-  --color-text-secondary: #5F6368; /* サブテキスト・補足情報 */
-  --color-text-disabled: #9AA0A6;  /* 無効状態のテキスト */
-  --color-text-on-primary: #FFFFFF; /* プライマリ色背景上のテキスト */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #64748B;
+  --color-text-disabled: #94A3B8;
+  --color-text-on-primary: #FFFFFF;
 
-  /* --- ボーダー・区切り線 --- */
-  --color-border: #DADCE0;         /* カードやセクションの枠線 */
-  --color-divider: #E8EAED;        /* セクション区切り線 */
+  /* --- ボーダー・区切り線（極めて控えめ） --- */
+  --color-border: #E2E8F0;
+  --color-divider: #F1F5F9;
 
   /* --- セマンティックカラー --- */
-  --color-success: #34A853;        /* 正解・成功 */
-  --color-success-light: #E6F4EA; /* 正解時の背景 */
-  --color-error: #EA4335;          /* 不正解・エラー */
-  --color-error-light: #FCE8E6;   /* 不正解時の背景 */
-  --color-warning: #FBBC04;        /* 警告・注意 */
-  --color-warning-light: #FEF7E0; /* 警告時の背景 */
-  --color-info: #1A73E8;           /* 情報 */
-  --color-info-light: #E8F0FE;    /* 情報時の背景 */
+  --color-success: #10B981;
+  --color-success-light: #ECFDF5;
+  --color-error: #EF4444;
+  --color-error-light: #FEF2F2;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FFFBEB;
+  --color-info: #6366F1;
+  --color-info-light: #EEF2FF;
 
   /* --- 出題頻度バッジ色 --- */
-  --color-freq-high: #EA4335;      /* 頻出：赤 */
-  --color-freq-medium: #FBBC04;    /* 中：黄 */
-  --color-freq-low: #34A853;       /* 低頻出：緑 */
+  --color-freq-high: #EF4444;
+  --color-freq-medium: #F59E0B;
+  --color-freq-low: #10B981;
 
-  /* --- シャドウ --- */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);   /* 小さな影 */
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);   /* カード標準 */
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.16);  /* 大きなカード */
-  --shadow-nav: 0 -2px 8px rgba(0, 0, 0, 0.08); /* ボトムナビ上の影 */
+  /* --- シャドウ（ソフトで広がりのあるスタイル） --- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-nav: 0 -1px 12px rgba(0, 0, 0, 0.04);
 
   /* --- ナビゲーション --- */
-  --color-nav-bg: #FFFFFF;         /* ボトムナビの背景 */
-  --color-nav-active: #1A73E8;     /* アクティブタブのアイコン色 */
-  --color-nav-inactive: #9AA0A6;   /* 非アクティブタブのアイコン色 */
+  --color-nav-bg: rgba(255, 255, 255, 0.85);
+  --color-nav-active: #6366F1;
+  --color-nav-inactive: #94A3B8;
+
+  /* --- 分野カラー --- */
+  --color-strategy: #6366F1;
+  --color-strategy-light: #EEF2FF;
+  --color-management: #F97316;
+  --color-management-light: #FFF7ED;
+  --color-technology: #10B981;
+  --color-technology-light: #ECFDF5;
 }
 
 /* ===================================================
    ダークテーマ
-   data-theme 属性が "dark" のとき適用
    =================================================== */
 [data-theme="dark"] {
-  /* --- メインカラー --- */
-  --color-primary: #4A90E2;        /* ダーク時は少し明るい青 */
-  --color-primary-dark: #2D7DD2;
-  --color-primary-light: #1A2A3E;  /* 薄い青の暗いバージョン */
+  --color-primary: #818CF8;
+  --color-primary-dark: #6366F1;
+  --color-primary-light: #1E1B4B;
+  --color-primary-gradient: linear-gradient(135deg, #818CF8 0%, #A78BFA 100%);
 
-  /* --- 背景色 --- */
-  --color-bg-base: #1a1a2e;        /* ページ全体の背景（ダーク） */
-  --color-bg-surface: #16213e;     /* カード・パネルの背景 */
-  --color-bg-elevated: #0f3460;    /* フローティング要素の背景 */
+  --color-bg-base: #0F172A;
+  --color-bg-surface: #1E293B;
+  --color-bg-elevated: #1E293B;
   --color-bg-overlay: rgba(0, 0, 0, 0.6);
 
-  /* --- テキスト色 --- */
-  --color-text-primary: #e0e0e0;   /* 本文・見出し */
-  --color-text-secondary: #9AA0A6; /* サブテキスト */
-  --color-text-disabled: #5F6368;  /* 無効状態 */
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-disabled: #475569;
   --color-text-on-primary: #FFFFFF;
 
-  /* --- ボーダー・区切り線 --- */
-  --color-border: #2D3748;
-  --color-divider: #1E2A3A;
+  --color-border: #334155;
+  --color-divider: #1E293B;
 
-  /* --- セマンティックカラー --- */
-  --color-success: #4CAF50;
-  --color-success-light: #1B2F1E;
-  --color-error: #F44336;
-  --color-error-light: #2F1B1B;
-  --color-warning: #FF9800;
-  --color-warning-light: #2F2010;
-  --color-info: #4A90E2;
-  --color-info-light: #1A2A3E;
+  --color-success: #34D399;
+  --color-success-light: #064E3B;
+  --color-error: #F87171;
+  --color-error-light: #450A0A;
+  --color-warning: #FBBF24;
+  --color-warning-light: #451A03;
+  --color-info: #818CF8;
+  --color-info-light: #1E1B4B;
 
-  /* --- 出題頻度バッジ色 --- */
-  --color-freq-high: #F44336;
-  --color-freq-medium: #FF9800;
-  --color-freq-low: #4CAF50;
+  --color-freq-high: #F87171;
+  --color-freq-medium: #FBBF24;
+  --color-freq-low: #34D399;
 
-  /* --- シャドウ --- */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-nav: 0 -2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-nav: 0 -1px 12px rgba(0, 0, 0, 0.3);
 
-  /* --- ナビゲーション --- */
-  --color-nav-bg: #16213e;
-  --color-nav-active: #4A90E2;
-  --color-nav-inactive: #5F6368;
+  --color-nav-bg: rgba(30, 41, 59, 0.9);
+  --color-nav-active: #818CF8;
+  --color-nav-inactive: #475569;
+
+  --color-strategy: #818CF8;
+  --color-strategy-light: #1E1B4B;
+  --color-management: #FB923C;
+  --color-management-light: #431407;
+  --color-technology: #34D399;
+  --color-technology-light: #064E3B;
 }
 
 /* ===================================================
    フォント設定
-   端末のシステムフォントを優先使用する（外部読込なし）
    =================================================== */
 :root {
-  /* --- フォントファミリー --- */
   --font-family-base:
-    -apple-system,          /* iOS/macOS のシステムフォント */
-    BlinkMacSystemFont,     /* Chrome on macOS */
-    'Hiragino Kaku Gothic ProN', /* Mac の日本語フォント */
+    -apple-system,
+    BlinkMacSystemFont,
+    'Hiragino Kaku Gothic ProN',
     'Hiragino Sans',
-    'Noto Sans JP',         /* Android の日本語フォント */
-    'Yu Gothic Medium',     /* Windows の日本語フォント */
+    'Noto Sans JP',
+    'Yu Gothic Medium',
     sans-serif;
 
-  /* --- フォントサイズ（文字サイズ変更機能に対応） */
-  /* 設定画面でbody の data-font-size を変更することで3段階切り替え */
-  --font-size-xs: 1.1rem;   /* 11px 相当：補足テキスト */
-  --font-size-sm: 1.3rem;   /* 13px 相当：キャプション・バッジ */
-  --font-size-base: 1.6rem; /* 16px 相当：本文（最小基準） */
-  --font-size-md: 1.8rem;   /* 18px 相当：強調テキスト */
-  --font-size-lg: 2.0rem;   /* 20px 相当：小見出し */
-  --font-size-xl: 2.4rem;   /* 24px 相当：見出し */
-  --font-size-2xl: 2.8rem;  /* 28px 相当：大見出し */
+  /* フォントサイズ（rem基準：1rem = 10px） */
+  --font-size-xs: 1.1rem;
+  --font-size-sm: 1.3rem;
+  --font-size-base: 1.5rem;
+  --font-size-md: 1.7rem;
+  --font-size-lg: 2.0rem;
+  --font-size-xl: 2.4rem;
+  --font-size-2xl: 3.0rem;
 
-  /* --- 行間 --- */
-  --line-height-tight: 1.3;   /* 見出し */
-  --line-height-base: 1.7;    /* 本文（読みやすさ重視） */
-  --line-height-loose: 2.0;   /* 学習コンテンツ */
+  /* 行間 */
+  --line-height-tight: 1.3;
+  --line-height-base: 1.65;
+  --line-height-loose: 1.9;
 
-  /* --- フォントウェイト --- */
+  /* フォントウェイト */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
 }
 
-/* 文字サイズ「小」設定時（設定画面で変更可能） */
+/* 文字サイズ「小」 */
 [data-font-size="small"] {
   --font-size-xs: 1.0rem;
   --font-size-sm: 1.2rem;
@@ -158,7 +163,7 @@
   --font-size-2xl: 2.4rem;
 }
 
-/* 文字サイズ「大」設定時（設定画面で変更可能） */
+/* 文字サイズ「大」 */
 [data-font-size="large"] {
   --font-size-xs: 1.3rem;
   --font-size-sm: 1.5rem;
@@ -171,10 +176,9 @@
 
 /* ===================================================
    スペーシング・サイズ定数
-   一貫したレイアウトを実現するための基準値
    =================================================== */
 :root {
-  /* --- スペーシング --- */
+  /* スペーシング */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -182,27 +186,27 @@
   --space-xl: 32px;
   --space-2xl: 48px;
 
-  /* --- 角丸 --- */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 9999px; /* 完全な丸 */
+  /* 角丸（大きめで柔らかい印象に） */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
 
-  /* --- レイアウト基準 --- */
-  --app-max-width: 430px;  /* スマホ最大幅（iPhone 16 Plus基準） */
-  --nav-height: 64px;      /* ボトムナビの高さ */
-  --header-height: 56px;   /* ヘッダーの高さ */
+  /* レイアウト基準 */
+  --app-max-width: 430px;
+  --nav-height: 64px;
+  --header-height: 56px;
 
-  /* --- タップターゲット最小サイズ（アクセシビリティ基準：44px以上） --- */
+  /* タップターゲット最小サイズ */
   --tap-target-min: 44px;
 
-  /* --- アニメーション速度 --- */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --transition-slow: 400ms ease;
+  /* アニメーション（Apple風のイージング） */
+  --transition-fast: 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-base: 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-slow: 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
-  /* --- z-index 管理 --- */
+  /* z-index */
   --z-base: 0;
   --z-card: 10;
   --z-header: 100;

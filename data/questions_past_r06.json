@@ -1,0 +1,3988 @@
+{
+  "questions": [
+    {
+      "question_id": "P-R06S-001",
+      "chapter_id": "S-01",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "生成AIを業務活用する際の「プロンプトエンジニアリング」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "AIモデル自体を再学習させて特定分野の精度を高める技術"
+        },
+        {
+          "id": "b",
+          "text": "AIに対する指示文（プロンプト）を工夫・最適化して望ましい出力を引き出す技術"
+        },
+        {
+          "id": "c",
+          "text": "AIが生成したコードを自動テストしてバグを除去する技術"
+        },
+        {
+          "id": "d",
+          "text": "AI処理をGPUに最適化して推論速度を向上させる技術"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "プロンプトエンジニアリングとは、生成AIに与える指示文（プロンプト）を設計・最適化することで、望ましい出力を引き出す技術です。モデル自体は変更せずに活用できる点が特徴で、ビジネス活用において重要なスキルです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "プロンプトエンジニアリング",
+        "生成AI",
+        "大規模言語モデル"
+      ],
+      "related_page_id": "S-01-03",
+      "tags": [
+        "生成AI",
+        "プロンプトエンジニアリング"
+      ]
+    },
+    {
+      "question_id": "P-R06S-002",
+      "chapter_id": "S-01",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "DX（デジタルトランスフォーメーション）の本質的な意味として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "社内の書類をすべて電子化してペーパーレスを実現すること"
+        },
+        {
+          "id": "b",
+          "text": "クラウドサービスを導入して社内ITコストを削減すること"
+        },
+        {
+          "id": "c",
+          "text": "デジタル技術を活用してビジネスモデルや組織文化を変革し、新たな価値を創出すること"
+        },
+        {
+          "id": "d",
+          "text": "AIを導入してすべての業務を自動化すること"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "DX（デジタルトランスフォーメーション）とは、デジタル技術を活用してビジネスモデル・プロセス・組織文化を根本から変革し、競争優位性を確立・新価値を創出することです。単なる業務効率化やIT化とは区別されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "DX",
+        "デジタルトランスフォーメーション",
+        "デジタル変革"
+      ],
+      "related_page_id": "S-01-02",
+      "tags": [
+        "DX",
+        "経営戦略"
+      ]
+    },
+    {
+      "question_id": "P-R06S-003",
+      "chapter_id": "S-06",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "下請代金支払遅延等防止法（下請法）の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "親事業者が下請事業者に対して不当な取扱いをすることを規制し、下請取引の適正化を図ること"
+        },
+        {
+          "id": "b",
+          "text": "中小企業が大企業と対等に交渉できるよう、価格交渉の手順を定めること"
+        },
+        {
+          "id": "c",
+          "text": "下請事業者が品質基準を満たさない製品を納品した場合の損害賠償手続きを定めること"
+        },
+        {
+          "id": "d",
+          "text": "製造業における外注先の選定基準と評価方法を統一すること"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "下請代金支払遅延等防止法（下請法）は、親事業者が下請事業者に対して代金の支払遅延・減額・返品などの不当な行為をすることを禁止し、下請取引の適正化を図ることを目的とします。中小受託取引適正化の観点で重要な法律です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "下請法",
+        "中小企業保護",
+        "下請取引適正化"
+      ],
+      "related_page_id": "S-06-02",
+      "tags": [
+        "法律",
+        "下請取引",
+        "中小企業"
+      ]
+    },
+    {
+      "question_id": "P-R06S-004",
+      "chapter_id": "S-02",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "SWOT分析において外部環境のプラス要因として分類されるものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "自社の技術者が業界で高く評価されていること"
+        },
+        {
+          "id": "b",
+          "text": "競合他社に対して価格競争力が低いこと"
+        },
+        {
+          "id": "c",
+          "text": "スマートフォン普及による新市場の出現"
+        },
+        {
+          "id": "d",
+          "text": "主要顧客企業の業績悪化による発注減少の可能性"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "SWOT分析の「機会（Opportunity）」は外部環境のプラス要因です。スマートフォン普及による新市場の出現は外部の好機（機会）に該当します。アは強み、イは弱み、エは脅威に分類されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SWOT分析",
+        "機会",
+        "外部環境"
+      ],
+      "related_page_id": "S-02-01",
+      "tags": [
+        "経営戦略",
+        "SWOT",
+        "環境分析"
+      ]
+    },
+    {
+      "question_id": "P-R06S-005",
+      "chapter_id": "S-02",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "バランススコアカード（BSC）の4つの視点として正しい組合せはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "財務・顧客・内部ビジネスプロセス・学習と成長"
+        },
+        {
+          "id": "b",
+          "text": "品質・コスト・納期・安全"
+        },
+        {
+          "id": "c",
+          "text": "人材・技術・市場・財務"
+        },
+        {
+          "id": "d",
+          "text": "戦略・戦術・業務・管理"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "バランススコアカード（BSC）は、財務・顧客・内部ビジネスプロセス・学習と成長の4視点から企業業績を多角的に評価する経営管理手法です。財務指標だけでなく非財務的指標も含めてバランスよく管理するのが特徴です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "バランススコアカード",
+        "BSC",
+        "KPI"
+      ],
+      "related_page_id": "S-02-02",
+      "tags": [
+        "経営管理",
+        "BSC",
+        "業績評価"
+      ]
+    },
+    {
+      "question_id": "P-R06S-006",
+      "chapter_id": "S-02",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "コアコンピタンス経営の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "すべての事業に均等にリソースを配分して多角化を進める経営"
+        },
+        {
+          "id": "b",
+          "text": "競合他社に模倣されにくい自社固有の中核的能力を特定し、それを軸に事業展開する経営"
+        },
+        {
+          "id": "c",
+          "text": "コスト削減を最優先として非中核業務をすべてアウトソーシングする経営"
+        },
+        {
+          "id": "d",
+          "text": "複数の事業ポートフォリオでリスク分散を図る経営"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "コアコンピタンス経営とは、競合他社が簡単に模倣できない自社固有の中核的能力（コアコンピタンス）を特定し、その強みを軸に戦略を組み立てる経営手法です。プラハラードとハメルが提唱しました。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "コアコンピタンス",
+        "競争優位",
+        "経営戦略"
+      ],
+      "related_page_id": "S-02-01",
+      "tags": [
+        "経営戦略",
+        "コアコンピタンス"
+      ]
+    },
+    {
+      "question_id": "P-R06S-007",
+      "chapter_id": "S-03",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "アジャイル開発の特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "要件定義・設計・開発・テストを順序立てて実施するウォーターフォール型の手法"
+        },
+        {
+          "id": "b",
+          "text": "開発工程を外部ベンダーに委託してコスト削減を図る手法"
+        },
+        {
+          "id": "c",
+          "text": "短い反復サイクルで開発を繰り返し、顧客との継続的な対話で変化に対応する手法"
+        },
+        {
+          "id": "d",
+          "text": "AIが自動でコードを生成して開発期間を短縮する手法"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "アジャイル開発とは、短い反復サイクル（イテレーション）で開発を繰り返しながら、顧客との継続的な対話を通じて変化する要件に柔軟に対応する開発手法です。スクラムやXPなどが代表的な手法です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "アジャイル開発",
+        "スクラム",
+        "イテレーション"
+      ],
+      "related_page_id": "S-03-01",
+      "tags": [
+        "開発手法",
+        "アジャイル"
+      ]
+    },
+    {
+      "question_id": "P-R06S-008",
+      "chapter_id": "S-03",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "RPA（Robotic Process Automation）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "工場の製造ラインにロボットアームを導入して生産を自動化する技術"
+        },
+        {
+          "id": "b",
+          "text": "AIが自律的に意思決定を行い、複雑な業務判断を代替する技術"
+        },
+        {
+          "id": "c",
+          "text": "複数サーバを仮想化してコンピューティングリソースを集約する技術"
+        },
+        {
+          "id": "d",
+          "text": "ソフトウェアロボットがPCの画面操作を模倣して定型業務を自動化する技術"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "RPA（Robotic Process Automation）とは、ソフトウェアロボットが人間のPC操作（クリック・入力・データ転記など）を記録・再生し、定型的な業務を自動化する技術です。プログラミング不要で導入できる製品も多くあります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "RPA",
+        "業務自動化",
+        "ソフトウェアロボット"
+      ],
+      "related_page_id": "S-03-02",
+      "tags": [
+        "RPA",
+        "業務自動化",
+        "DX"
+      ]
+    },
+    {
+      "question_id": "P-R06S-009",
+      "chapter_id": "S-03",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "生成AIが事実と異なる情報を正確そうに生成してしまう現象を何というか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ディープフェイク"
+        },
+        {
+          "id": "b",
+          "text": "オーバーフィッティング"
+        },
+        {
+          "id": "c",
+          "text": "ハルシネーション（幻覚）"
+        },
+        {
+          "id": "d",
+          "text": "バイアス増幅"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "ハルシネーション（Hallucination：幻覚）は、生成AIが存在しない情報や事実と異なる内容を、あたかも正確であるかのように生成してしまう現象です。業務利用では出力を必ず人間が検証する運用が不可欠です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ハルシネーション",
+        "生成AI",
+        "AIリスク"
+      ],
+      "related_page_id": "S-01-03",
+      "tags": [
+        "生成AI",
+        "ハルシネーション",
+        "AIリスク"
+      ]
+    },
+    {
+      "question_id": "P-R06S-010",
+      "chapter_id": "S-04",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ロングテールの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "売上上位20%の商品が全体の80%を占めるパレートの法則に基づく戦略"
+        },
+        {
+          "id": "b",
+          "text": "ECサイトなどで、個々には少量しか売れないニッチ商品の累積売上が主力商品を超える概念"
+        },
+        {
+          "id": "c",
+          "text": "人気商品に集中して在庫を持つことでキャッシュフローを改善する手法"
+        },
+        {
+          "id": "d",
+          "text": "配送時間を短縮するためにサプライチェーンを最適化する概念"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "ロングテールとは、ECサイトのように多品種販売が可能な環境において、個々の販売数は少ないニッチ商品群（グラフの長い尾）の累積売上が、売上上位の主力商品を超えるという概念です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ロングテール",
+        "EC",
+        "ニッチ市場"
+      ],
+      "related_page_id": "S-04-01",
+      "tags": [
+        "EC",
+        "ロングテール",
+        "ビジネスモデル"
+      ]
+    },
+    {
+      "question_id": "P-R06S-011",
+      "chapter_id": "S-04",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "SaaSの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ソフトウェアをパッケージとして購入し、自社サーバにインストールして利用する形態"
+        },
+        {
+          "id": "b",
+          "text": "インターネット経由でソフトウェアをサービスとして提供・利用するクラウドサービス形態"
+        },
+        {
+          "id": "c",
+          "text": "仮想マシンやストレージなどインフラをクラウドで提供するサービス形態"
+        },
+        {
+          "id": "d",
+          "text": "アプリ開発・実行環境をクラウドで提供するサービス形態"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "SaaS（Software as a Service）は、インターネット経由でソフトウェアをサービスとして利用するクラウドサービス形態です。ユーザーはインストール不要でブラウザからアクセスします。ウはIaaS、エはPaaSの説明です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SaaS",
+        "クラウドサービス",
+        "IaaS",
+        "PaaS"
+      ],
+      "related_page_id": "S-04-02",
+      "tags": [
+        "クラウド",
+        "SaaS",
+        "ITサービス"
+      ]
+    },
+    {
+      "question_id": "P-R06S-012",
+      "chapter_id": "S-04",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "フィンテック（FinTech）の事例として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "銀行の窓口業務を効率化するための新型ATM導入"
+        },
+        {
+          "id": "b",
+          "text": "企業の財務諸表を電子化してペーパーレス化するシステム"
+        },
+        {
+          "id": "c",
+          "text": "AIを活用して個人の資産運用を自動化するロボアドバイザー"
+        },
+        {
+          "id": "d",
+          "text": "会計ソフトウェアを使った経理処理の自動化"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "フィンテック（FinTech：Finance×Technology）は、ITを活用した革新的な金融サービスです。ロボアドバイザー・QRコード決済・仮想通貨・クラウドファンディングなどが代表例で、従来の金融サービスを変革する取り組みです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "フィンテック",
+        "ロボアドバイザー",
+        "キャッシュレス"
+      ],
+      "related_page_id": "S-04-03",
+      "tags": [
+        "フィンテック",
+        "金融",
+        "デジタル"
+      ]
+    },
+    {
+      "question_id": "P-R06S-013",
+      "chapter_id": "S-05",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "SCM（サプライチェーン管理）の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "顧客との関係を管理し、リピート購入を促進すること"
+        },
+        {
+          "id": "b",
+          "text": "企業内の会計・人事・製造などの基幹業務を統合管理すること"
+        },
+        {
+          "id": "c",
+          "text": "顧客からの問い合わせ対応を一元化すること"
+        },
+        {
+          "id": "d",
+          "text": "原材料調達から製造・物流・販売まで一連のプロセス全体を最適化すること"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "SCM（Supply Chain Management）は、原材料の調達から製造・物流・販売に至るサプライチェーン全体を可視化・最適化することで、コスト削減・在庫適正化・顧客満足度向上を図る経営手法です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SCM",
+        "サプライチェーン",
+        "物流最適化"
+      ],
+      "related_page_id": "S-05-01",
+      "tags": [
+        "SCM",
+        "サプライチェーン",
+        "物流"
+      ]
+    },
+    {
+      "question_id": "P-R06S-014",
+      "chapter_id": "S-05",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ERPシステムの主な目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "会計・人事・製造・販売など企業の基幹業務を統合し、情報をリアルタイムで共有すること"
+        },
+        {
+          "id": "b",
+          "text": "顧客の購買履歴を分析してパーソナライズドマーケティングを実施すること"
+        },
+        {
+          "id": "c",
+          "text": "製品の欠陥を自動検出する品質管理プロセスを構築すること"
+        },
+        {
+          "id": "d",
+          "text": "プロジェクトの進捗と予算を管理し、納期遵守率を向上させること"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "ERP（Enterprise Resource Planning：企業資源計画）は、会計・人事・製造・販売・在庫など企業の基幹業務を一元的に統合管理するシステムです。部門間でデータをリアルタイム共有できるため、経営判断の迅速化が図れます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ERP",
+        "基幹システム",
+        "統合管理"
+      ],
+      "related_page_id": "S-05-01",
+      "tags": [
+        "ERP",
+        "業務統合",
+        "経営システム"
+      ]
+    },
+    {
+      "question_id": "P-R06S-015",
+      "chapter_id": "S-05",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "CRM（顧客関係管理）の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "仕入先との価格交渉を効率化してコストを削減すること"
+        },
+        {
+          "id": "b",
+          "text": "顧客情報を一元管理し顧客との長期関係を強化することで顧客満足度・LTVを高めること"
+        },
+        {
+          "id": "c",
+          "text": "社内の人材情報を管理して適切な人員配置を実現すること"
+        },
+        {
+          "id": "d",
+          "text": "複数プロジェクトのリソース配分を最適化すること"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "CRM（Customer Relationship Management：顧客関係管理）は、顧客情報を一元的に管理・分析し、顧客との長期関係を構築することで顧客満足度や顧客生涯価値（LTV）を向上させる経営手法・システムです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "CRM",
+        "顧客管理",
+        "LTV"
+      ],
+      "related_page_id": "S-05-01",
+      "tags": [
+        "CRM",
+        "顧客管理",
+        "マーケティング"
+      ]
+    },
+    {
+      "question_id": "P-R06S-016",
+      "chapter_id": "S-05",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "データドリブン経営の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "経営者の直感・経験・勘を重視した意思決定を行う経営スタイル"
+        },
+        {
+          "id": "b",
+          "text": "財務データのみを分析してコスト最小化を追求する経営スタイル"
+        },
+        {
+          "id": "c",
+          "text": "競合他社のデータを収集分析して業界内地位向上を図る経営スタイル"
+        },
+        {
+          "id": "d",
+          "text": "データ収集・分析を中核に置き、客観的なデータに基づいて意思決定する経営スタイル"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "データドリブン経営とは、データ収集・分析を経営の中核に据え、勘や経験ではなく客観的なデータに基づいて意思決定を行う経営スタイルです。IoT・ビッグデータ・AIの普及によって実践しやすくなっています。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "データドリブン",
+        "ビッグデータ",
+        "データ分析"
+      ],
+      "related_page_id": "S-05-02",
+      "tags": [
+        "データドリブン",
+        "経営分析",
+        "DX"
+      ]
+    },
+    {
+      "question_id": "P-R06S-017",
+      "chapter_id": "S-06",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "著作権の発生に関する説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "著作権は特許庁へ登録申請することで保護が開始される"
+        },
+        {
+          "id": "b",
+          "text": "著作権は著作物を創作した時点で自動的に発生する（無方式主義）"
+        },
+        {
+          "id": "c",
+          "text": "著作権の保護期間は著作物の公表から10年間である"
+        },
+        {
+          "id": "d",
+          "text": "プログラムは著作権の保護対象外である"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "著作権は、著作物を創作した時点で自動的に発生します（無方式主義）。特許庁への登録は不要です。保護期間は著作者の死後70年（法人著作物は公表後70年）で、プログラムも著作権の保護対象となります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "著作権",
+        "知的財産権",
+        "無方式主義"
+      ],
+      "related_page_id": "S-06-01",
+      "tags": [
+        "著作権",
+        "知的財産",
+        "法律"
+      ]
+    },
+    {
+      "question_id": "P-R06S-018",
+      "chapter_id": "S-06",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "個人情報保護法における個人情報の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "氏名・住所・電話番号など特定の個人を識別できる情報"
+        },
+        {
+          "id": "b",
+          "text": "氏名と住所のみが個人情報でメールアドレスは含まれない"
+        },
+        {
+          "id": "c",
+          "text": "企業が保有するすべての顧客データが個人情報である"
+        },
+        {
+          "id": "d",
+          "text": "個人情報は書面に記録されたものに限定される"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "個人情報保護法における個人情報とは、氏名・住所・電話番号・メールアドレスなど、生存する特定の個人を識別できる情報を指します。書面・電磁的記録を問わず対象となり、メールアドレスや顔写真なども含まれます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "個人情報保護法",
+        "個人情報",
+        "プライバシー"
+      ],
+      "related_page_id": "S-06-02",
+      "tags": [
+        "個人情報",
+        "法律",
+        "プライバシー"
+      ]
+    },
+    {
+      "question_id": "P-R06S-019",
+      "chapter_id": "S-06",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "不正競争防止法で保護される「営業秘密」の要件として誤っているものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "秘密として適切に管理されていること（秘密管理性）"
+        },
+        {
+          "id": "b",
+          "text": "事業活動に有用な技術上・営業上の情報であること（有用性）"
+        },
+        {
+          "id": "c",
+          "text": "公然と知られていない情報であること（非公知性）"
+        },
+        {
+          "id": "d",
+          "text": "特許庁に登録されていること"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "営業秘密として不正競争防止法で保護されるには、秘密管理性・有用性・非公知性の3要件が必要です。特許庁への登録は要件に含まれません。特許権とは異なり、登録なしで保護されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "営業秘密",
+        "不正競争防止法",
+        "知的財産"
+      ],
+      "related_page_id": "S-06-01",
+      "tags": [
+        "営業秘密",
+        "知的財産",
+        "法律"
+      ]
+    },
+    {
+      "question_id": "P-R06S-020",
+      "chapter_id": "S-06",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "労働者派遣法における「派遣労働」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "派遣労働者の雇用主は受け入れた派遣先企業である"
+        },
+        {
+          "id": "b",
+          "text": "派遣労働者の雇用主は派遣元企業であり、業務の指揮命令は派遣先企業が行う"
+        },
+        {
+          "id": "c",
+          "text": "派遣労働者は同一の派遣先で無期限に勤務できる"
+        },
+        {
+          "id": "d",
+          "text": "派遣元企業が派遣先に代わって賃金を決定する権限を持つ"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "労働者派遣では、雇用主（雇用契約の相手）は派遣元企業です。しかし業務上の指揮命令は派遣先企業が行います。この「雇用と指揮命令の分離」が労働者派遣の特徴です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "労働者派遣法",
+        "派遣労働",
+        "雇用形態"
+      ],
+      "related_page_id": "S-06-02",
+      "tags": [
+        "労働法",
+        "派遣",
+        "雇用"
+      ]
+    },
+    {
+      "question_id": "P-R06S-021",
+      "chapter_id": "S-07",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "損益計算書（P/L）から読み取れる情報として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "一定時点における企業の財政状態（資産・負債・純資産）"
+        },
+        {
+          "id": "b",
+          "text": "一定期間における企業の現金の増減とその原因"
+        },
+        {
+          "id": "c",
+          "text": "一定期間における企業の経営成績（収益・費用・利益）"
+        },
+        {
+          "id": "d",
+          "text": "株主への配当金支払い実績と今後の計画"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "損益計算書（P/L：Profit and Loss Statement）は、一定期間の収益・費用・利益を示す財務諸表で、企業の経営成績を確認できます。アは貸借対照表（B/S）、イはキャッシュフロー計算書で確認できる情報です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "損益計算書",
+        "P/L",
+        "財務諸表"
+      ],
+      "related_page_id": "S-07-01",
+      "tags": [
+        "会計",
+        "財務諸表",
+        "損益計算書"
+      ]
+    },
+    {
+      "question_id": "P-R06S-022",
+      "chapter_id": "S-07",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "固定費と変動費の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "固定費は売上高に比例して増減し、変動費は売上高に関わらず一定額が発生する"
+        },
+        {
+          "id": "b",
+          "text": "固定費は売上高に関わらず一定額が発生し、変動費は売上高に比例して増減する"
+        },
+        {
+          "id": "c",
+          "text": "固定費と変動費ともに売上高に比例して増減する"
+        },
+        {
+          "id": "d",
+          "text": "固定費と変動費ともに売上高に関わらず一定額が発生する"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "固定費は売上高に関わらず一定額が発生する費用（家賃・正社員人件費など）、変動費は売上高に比例して増減する費用（材料費・外注費など）です。この区分は損益分岐点分析の基礎となります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "固定費",
+        "変動費",
+        "損益分岐点"
+      ],
+      "related_page_id": "S-07-02",
+      "tags": [
+        "会計",
+        "原価計算",
+        "損益分岐点"
+      ]
+    },
+    {
+      "question_id": "P-R06S-023",
+      "chapter_id": "S-07",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ROE（自己資本利益率）の計算式として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "当期純利益 ÷ 総資産 × 100"
+        },
+        {
+          "id": "b",
+          "text": "営業利益 ÷ 売上高 × 100"
+        },
+        {
+          "id": "c",
+          "text": "当期純利益 ÷ 自己資本 × 100"
+        },
+        {
+          "id": "d",
+          "text": "経常利益 ÷ 総資産 × 100"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "ROE（Return on Equity：自己資本利益率）は「当期純利益 ÷ 自己資本 × 100」で計算します。株主が出資した資金に対してどれだけ利益を上げたかを示し、投資家が重視する収益性指標です。アはROA（総資産利益率）の計算式です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ROE",
+        "自己資本利益率",
+        "財務指標"
+      ],
+      "related_page_id": "S-07-01",
+      "tags": [
+        "会計",
+        "ROE",
+        "財務分析"
+      ]
+    },
+    {
+      "question_id": "P-R06S-024",
+      "chapter_id": "S-01",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "AIの学習方法である「ファインチューニング」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "大量データでゼロから学習して新しいAIモデルを構築すること"
+        },
+        {
+          "id": "b",
+          "text": "既存の学習済みモデルを特定のタスク・分野のデータで追加学習させること"
+        },
+        {
+          "id": "c",
+          "text": "AIの推論速度向上のためにハードウェアを最適化すること"
+        },
+        {
+          "id": "d",
+          "text": "AIの出力を人間が評価して継続的に改善するフィードバック手法"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "ファインチューニング（Fine-tuning）とは、大規模な事前学習済みモデルを特定タスク・業界・用途向けデータで追加学習させることです。ゼロから学習するより少ないデータ・コストで特定分野の性能を高められます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ファインチューニング",
+        "転移学習",
+        "生成AI"
+      ],
+      "related_page_id": "S-01-03",
+      "tags": [
+        "AI",
+        "ファインチューニング",
+        "機械学習"
+      ]
+    },
+    {
+      "question_id": "P-R06S-025",
+      "chapter_id": "S-02",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "PPM（製品ポートフォリオ管理）において「花形（スター）」に分類される事業の特徴はどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "市場成長率が低く市場シェアも低い事業"
+        },
+        {
+          "id": "b",
+          "text": "市場成長率が高く市場シェアも高い事業"
+        },
+        {
+          "id": "c",
+          "text": "市場成長率が低く市場シェアが高い事業"
+        },
+        {
+          "id": "d",
+          "text": "市場成長率が高く市場シェアが低い事業"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "PPMの「花形（スター）」は、市場成長率・市場シェアともに高い事業です。投資も必要ですが高い収益を生みます。「金のなる木」は低成長・高シェア、「問題児」は高成長・低シェア、「負け犬」は低成長・低シェアです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "PPM",
+        "製品ポートフォリオ",
+        "事業戦略"
+      ],
+      "related_page_id": "S-02-01",
+      "tags": [
+        "経営戦略",
+        "PPM",
+        "事業管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-026",
+      "chapter_id": "S-03",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "IoT（モノのインターネット）の活用事例として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "オフィスの会議室予約をウェブから行えるようにするシステム"
+        },
+        {
+          "id": "b",
+          "text": "工場の機械にセンサーを取り付け稼働状況をリアルタイムで遠隔監視するシステム"
+        },
+        {
+          "id": "c",
+          "text": "社員のスケジュール共有グループウェアの導入"
+        },
+        {
+          "id": "d",
+          "text": "顧客向けECサイトのスマートフォン対応リニューアル"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "IoT（Internet of Things：モノのインターネット）は、センサーや機器がインターネットに接続してデータをやり取りする仕組みです。工場機械にセンサーを取り付けてリアルタイム遠隔監視・予知保全を行うのが典型的な活用例です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "IoT",
+        "センサー",
+        "予知保全"
+      ],
+      "related_page_id": "S-03-02",
+      "tags": [
+        "IoT",
+        "製造業",
+        "DX"
+      ]
+    },
+    {
+      "question_id": "P-R06S-027",
+      "chapter_id": "S-04",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "シェアリングエコノミーの特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "企業が商品を大量生産し低価格で流通させて市場シェアを拡大する"
+        },
+        {
+          "id": "b",
+          "text": "個人や企業が保有する遊休資産・スキルをインターネット経由で共有・活用するビジネスモデル"
+        },
+        {
+          "id": "c",
+          "text": "複数企業が業務提携してコスト・リスクを分担し新市場に参入する"
+        },
+        {
+          "id": "d",
+          "text": "定額料金でサービスを無制限に利用できるサブスクリプション型ビジネス"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "シェアリングエコノミーとは、個人や企業が保有する遊休資産（空き部屋・自動車・スキルなど）をインターネットプラットフォームを通じて共有・活用するビジネスモデルです。AirbnbやUberが代表例です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "シェアリングエコノミー",
+        "プラットフォーム",
+        "遊休資産"
+      ],
+      "related_page_id": "S-04-01",
+      "tags": [
+        "シェアリングエコノミー",
+        "新ビジネス"
+      ]
+    },
+    {
+      "question_id": "P-R06S-028",
+      "chapter_id": "S-05",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "BPR（業務プロセス再設計）の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "既存の業務プロセスを少しずつ改善して継続的にコストを削減すること"
+        },
+        {
+          "id": "b",
+          "text": "IT部門の業務プロセスに特化してシステム開発効率を向上させること"
+        },
+        {
+          "id": "c",
+          "text": "標準的な業務プロセスを業界全体で統一して相互運用性を高めること"
+        },
+        {
+          "id": "d",
+          "text": "既存の業務プロセスを根本的に見直し劇的な業績改善を実現すること"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "BPR（Business Process Re-engineering）は、既存の業務プロセスを抜本的に再設計することで、コスト・品質・スピードなどを劇的に改善する手法です。小さな改善（カイゼン）とは異なり、プロセス全体を白紙から見直す点が特徴です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "BPR",
+        "業務改革",
+        "プロセス再設計"
+      ],
+      "related_page_id": "S-05-02",
+      "tags": [
+        "BPR",
+        "業務改革",
+        "経営改善"
+      ]
+    },
+    {
+      "question_id": "P-R06S-029",
+      "chapter_id": "S-06",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "クーリングオフの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "通信販売において購入後14日以内であれば無条件で返品できる制度"
+        },
+        {
+          "id": "b",
+          "text": "企業間取引において代金支払い条件を変更できる制度"
+        },
+        {
+          "id": "c",
+          "text": "消費者が商品の欠陥について損害賠償を請求できる制度"
+        },
+        {
+          "id": "d",
+          "text": "訪問販売などで契約した消費者が一定期間内に無条件で契約を解除できる制度"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "クーリングオフは、訪問販売・電話勧誘販売など不意打ち的な取引で契約した消費者が、一定期間内（訪問販売は8日間）に理由を問わず無条件で契約解除できる制度です。通信販売（ネット通販）にはクーリングオフは適用されません。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "クーリングオフ",
+        "特定商取引法",
+        "消費者保護"
+      ],
+      "related_page_id": "S-06-02",
+      "tags": [
+        "消費者保護",
+        "法律",
+        "クーリングオフ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-030",
+      "chapter_id": "S-07",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "損益分岐点売上高の計算式として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "固定費 ÷ (1 - 変動費率)"
+        },
+        {
+          "id": "b",
+          "text": "固定費 × 変動費率"
+        },
+        {
+          "id": "c",
+          "text": "(固定費 + 変動費) ÷ 売上高"
+        },
+        {
+          "id": "d",
+          "text": "固定費 ÷ 変動費率"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "損益分岐点売上高は「固定費 ÷ (1 - 変動費率)」で計算します。変動費率は「変動費 ÷ 売上高」です。この売上高を超えると利益が発生します。例：固定費100万円・変動費率0.4の場合、約167万円が損益分岐点です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "損益分岐点",
+        "固定費",
+        "変動費率"
+      ],
+      "related_page_id": "S-07-02",
+      "tags": [
+        "会計",
+        "損益分岐点",
+        "CVP分析"
+      ]
+    },
+    {
+      "question_id": "P-R06S-031",
+      "chapter_id": "S-01",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "強化学習（Reinforcement Learning）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "大量のラベル付きデータを使って入力と正解の対応関係を学習する手法"
+        },
+        {
+          "id": "b",
+          "text": "ラベルなしデータからパターンや構造を自動発見する手法"
+        },
+        {
+          "id": "c",
+          "text": "エージェントが試行錯誤を繰り返し報酬を最大化する行動方策を学習する手法"
+        },
+        {
+          "id": "d",
+          "text": "複数のモデルを組み合わせて予測精度を向上させるアンサンブル手法"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "強化学習とは、エージェント（AI）が環境と相互作用しながら試行錯誤を繰り返し、報酬を最大化する行動方策を学習する手法です。囲碁AI（AlphaGo）やゲームAIに活用されています。アは教師あり学習、イは教師なし学習の説明です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "強化学習",
+        "機械学習",
+        "AIアルゴリズム"
+      ],
+      "related_page_id": "S-01-03",
+      "tags": [
+        "AI",
+        "機械学習",
+        "強化学習"
+      ]
+    },
+    {
+      "question_id": "P-R06S-032",
+      "chapter_id": "S-02",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "KGIとKPIの関係として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "KGIは部門レベルの目標でKPIは全社レベルの目標を示す"
+        },
+        {
+          "id": "b",
+          "text": "KGIは最終的な達成目標を示しKPIはその達成に向けた中間指標を示す"
+        },
+        {
+          "id": "c",
+          "text": "KGIは定性的な目標でKPIは定量的な目標を示す"
+        },
+        {
+          "id": "d",
+          "text": "KGIとKPIは同義語で使い分けに明確な定義はない"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "KGI（Key Goal Indicator）は最終的に達成すべきゴール（例：売上高10億円）、KPI（Key Performance Indicator）はKGI達成に向けた中間プロセス指標（例：新規顧客獲得数）です。KPIを管理することでKGI達成の進捗を測ります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "KGI",
+        "KPI",
+        "目標管理"
+      ],
+      "related_page_id": "S-02-02",
+      "tags": [
+        "経営管理",
+        "KPI",
+        "目標設定"
+      ]
+    },
+    {
+      "question_id": "P-R06S-033",
+      "chapter_id": "S-03",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ビッグデータの特徴「3V」に含まれないものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Volume（大量性）"
+        },
+        {
+          "id": "b",
+          "text": "Velocity（高速性）"
+        },
+        {
+          "id": "c",
+          "text": "Variety（多様性）"
+        },
+        {
+          "id": "d",
+          "text": "Validity（正確性）"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "ビッグデータの特徴「3V」はVolume（大量性）・Velocity（高速性）・Variety（多様性）の3つです。Validity（正確性）は3Vに含まれません。4V目としてVeracity（真実性）やValue（価値）を加える場合もあります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ビッグデータ",
+        "3V",
+        "データ分析"
+      ],
+      "related_page_id": "S-03-03",
+      "tags": [
+        "ビッグデータ",
+        "データ分析",
+        "AI"
+      ]
+    },
+    {
+      "question_id": "P-R06S-034",
+      "chapter_id": "S-05",
+      "category": "strategy",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "グリーンIT（Green IT）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "環境問題をテーマとしたアプリやコンテンツを開発提供すること"
+        },
+        {
+          "id": "b",
+          "text": "IT機器・システムの省エネ化やITを活用した社会全体の環境負荷低減を目指す取り組み"
+        },
+        {
+          "id": "c",
+          "text": "自然エネルギー発電所の運用管理にITを活用すること"
+        },
+        {
+          "id": "d",
+          "text": "農業にITを活用して効率化・省力化を図るスマート農業"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "グリーンITとは、IT機器・データセンターの省エネ化（IT機器自体の環境負荷低減）と、ITを活用した他産業の環境負荷低減という2つの側面を持つ取り組みです。SDGsやESGとも関連する重要な概念です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "グリーンIT",
+        "省エネ",
+        "環境経営"
+      ],
+      "related_page_id": "S-05-03",
+      "tags": [
+        "グリーンIT",
+        "環境",
+        "持続可能性"
+      ]
+    },
+    {
+      "question_id": "P-R06S-035",
+      "chapter_id": "S-04",
+      "category": "strategy",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "OMO（Online Merges with Offline）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "実店舗を閉鎖してECサイトに一本化することでコストを削減する戦略"
+        },
+        {
+          "id": "b",
+          "text": "オフラインで収集した顧客データをオンラインで分析活用する手法"
+        },
+        {
+          "id": "c",
+          "text": "オンライン会議とオフライン会議を組み合わせるハイブリッド型の働き方"
+        },
+        {
+          "id": "d",
+          "text": "オンラインとオフラインの境界をなくし顧客体験をシームレスに統合するビジネス概念"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "OMO（Online Merges with Offline）とは、オンラインとオフラインの境界をなくして顧客体験をシームレスに融合するビジネス概念です。ECと実店舗が連携して一貫した顧客体験を提供します。O2Oの進化形と位置づけられます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "OMO",
+        "O2O",
+        "顧客体験"
+      ],
+      "related_page_id": "S-04-01",
+      "tags": [
+        "OMO",
+        "マーケティング",
+        "デジタル戦略"
+      ]
+    },
+    {
+      "question_id": "P-R06S-036",
+      "chapter_id": "M-01",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ウォーターフォールモデルの特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "短い反復サイクルで開発を繰り返し顧客の変化する要件に対応する手法"
+        },
+        {
+          "id": "b",
+          "text": "要件定義・設計・開発・テスト・導入を順番に実施し前工程完了後に次工程へ進む手法"
+        },
+        {
+          "id": "c",
+          "text": "プロトタイプを繰り返し作成し顧客の確認を得ながら開発を進める手法"
+        },
+        {
+          "id": "d",
+          "text": "複数の小チームが並行して開発し最後に統合する分散開発手法"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "ウォーターフォールモデルは、要件定義→設計→開発→テスト→導入という工程を順番に実施する開発手法です。前工程が完了してから次工程に進むため計画が立てやすい反面、後戻りが困難です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ウォーターフォール",
+        "開発手法",
+        "工程管理"
+      ],
+      "related_page_id": "M-01-01",
+      "tags": [
+        "開発手法",
+        "プロジェクト管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-037",
+      "chapter_id": "M-01",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "プロジェクトマネジメントにおける「WBS（Work Breakdown Structure）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "プロジェクトの成果物と作業を階層的に分解した図"
+        },
+        {
+          "id": "b",
+          "text": "プロジェクトメンバーの役割と責任を定義した組織図"
+        },
+        {
+          "id": "c",
+          "text": "プロジェクトの予算と実績コストを管理する表"
+        },
+        {
+          "id": "d",
+          "text": "プロジェクトの開始から終了までのスケジュールを示すガントチャート"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "WBS（Work Breakdown Structure：作業分解構造）は、プロジェクトの成果物と作業を階層的に分解した構造図です。プロジェクトの全体像を把握し、作業の抜け・漏れを防ぐために活用します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "WBS",
+        "プロジェクト管理",
+        "作業分解"
+      ],
+      "related_page_id": "M-01-02",
+      "tags": [
+        "プロジェクト管理",
+        "WBS"
+      ]
+    },
+    {
+      "question_id": "P-R06S-038",
+      "chapter_id": "M-02",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ITサービス管理における「SLA（サービスレベル合意書）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ITプロジェクトの予算と実績を比較する財務管理文書"
+        },
+        {
+          "id": "b",
+          "text": "ITサービスの品質・可用性・応答時間などのサービスレベルをサービス提供者と利用者間で合意した文書"
+        },
+        {
+          "id": "c",
+          "text": "ITシステムの操作手順を詳細に記載したマニュアル"
+        },
+        {
+          "id": "d",
+          "text": "ITセキュリティポリシーを定めた社内規程文書"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "SLA（Service Level Agreement：サービスレベル合意書）は、ITサービスの品質・可用性・障害対応時間などのサービスレベルをサービス提供者と利用者間で合意した文書です。ITサービス管理（ITSM）の基礎となります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SLA",
+        "サービスレベル",
+        "ITSM"
+      ],
+      "related_page_id": "M-02-01",
+      "tags": [
+        "ITサービス管理",
+        "SLA"
+      ]
+    },
+    {
+      "question_id": "P-R06S-039",
+      "chapter_id": "M-02",
+      "category": "management",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ITIL（IT Infrastructure Library）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ITシステム開発の標準的な手法とツールをまとめたガイドライン"
+        },
+        {
+          "id": "b",
+          "text": "ITサービスマネジメントのベストプラクティスをまとめた国際的なフレームワーク"
+        },
+        {
+          "id": "c",
+          "text": "情報セキュリティ管理の国際標準規格"
+        },
+        {
+          "id": "d",
+          "text": "ソフトウェアの品質評価基準を定めた国際標準"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "ITIL（IT Infrastructure Library）は、ITサービスマネジメント（ITSM）のベストプラクティスをまとめた国際的なフレームワークです。サービスデスク・インシデント管理・変更管理などのプロセスが定義されています。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ITIL",
+        "ITSM",
+        "サービスデスク"
+      ],
+      "related_page_id": "M-02-01",
+      "tags": [
+        "ITサービス管理",
+        "ITIL"
+      ]
+    },
+    {
+      "question_id": "P-R06S-040",
+      "chapter_id": "M-03",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "システム監査の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "情報システムのプログラムコードを点検してバグを発見すること"
+        },
+        {
+          "id": "b",
+          "text": "情報システムに関わるリスクをコントロールし、組織の目標達成を支援すること"
+        },
+        {
+          "id": "c",
+          "text": "社内の不正行為を調査して責任者を特定すること"
+        },
+        {
+          "id": "d",
+          "text": "ITシステムの性能測定を行い最適なハードウェアを選定すること"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "システム監査とは、情報システムに関わるリスクをコントロールし、情報システムが信頼性・安全性・効率性の観点から適切に機能しているかを独立した立場で評価・検証することで組織の目標達成を支援する活動です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "システム監査",
+        "IT監査",
+        "内部統制"
+      ],
+      "related_page_id": "M-03-01",
+      "tags": [
+        "システム監査",
+        "内部統制",
+        "ガバナンス"
+      ]
+    },
+    {
+      "question_id": "P-R06S-041",
+      "chapter_id": "M-03",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "内部統制の4つの目的に含まれないものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "業務の有効性・効率性の確保"
+        },
+        {
+          "id": "b",
+          "text": "財務報告の信頼性の確保"
+        },
+        {
+          "id": "c",
+          "text": "法令等の遵守（コンプライアンス）"
+        },
+        {
+          "id": "d",
+          "text": "社員満足度の向上"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "内部統制の目的は、①業務の有効性・効率性の確保、②財務報告の信頼性の確保、③法令等の遵守（コンプライアンス）、④資産の保全の4つです。「社員満足度の向上」は内部統制の目的には含まれません。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "内部統制",
+        "コンプライアンス",
+        "ガバナンス"
+      ],
+      "related_page_id": "M-03-01",
+      "tags": [
+        "内部統制",
+        "システム監査"
+      ]
+    },
+    {
+      "question_id": "P-R06S-042",
+      "chapter_id": "M-04",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "プロジェクト管理における「クリティカルパス」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "プロジェクトで最もコストがかかる作業経路"
+        },
+        {
+          "id": "b",
+          "text": "プロジェクト完了までの最長の作業経路で、この経路の遅延がプロジェクト全体の遅延につながる"
+        },
+        {
+          "id": "c",
+          "text": "プロジェクト内で最もリスクの高い作業の集合"
+        },
+        {
+          "id": "d",
+          "text": "プロジェクトの品質管理において重点的に監視すべき指標群"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "クリティカルパスとは、プロジェクトの開始から終了までの最長の作業経路です。この経路上の作業が遅延するとプロジェクト全体の完了が遅延します。PERT/CPM（ネットワーク図）で算出されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "クリティカルパス",
+        "PERT",
+        "プロジェクト管理"
+      ],
+      "related_page_id": "M-04-01",
+      "tags": [
+        "プロジェクト管理",
+        "スケジュール管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-043",
+      "chapter_id": "M-04",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ガントチャートの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "作業の依存関係を矢印で示すネットワーク図"
+        },
+        {
+          "id": "b",
+          "text": "横軸に時間、縦軸に作業を配置し各作業の開始・終了・進捗を棒グラフで表した工程管理図"
+        },
+        {
+          "id": "c",
+          "text": "作業の発生頻度とコストを棒グラフと折れ線グラフで示したパレート図"
+        },
+        {
+          "id": "d",
+          "text": "プロジェクトのリスクと影響度をマトリクスで表したリスク管理図"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "ガントチャートは、横軸に時間（日付）・縦軸に作業（タスク）を配置し、各作業の開始・終了・進捗状況を棒グラフで視覚化した工程管理図です。プロジェクトの進捗確認や遅延把握に広く使われます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ガントチャート",
+        "スケジュール管理",
+        "工程管理"
+      ],
+      "related_page_id": "M-04-01",
+      "tags": [
+        "プロジェクト管理",
+        "ガントチャート"
+      ]
+    },
+    {
+      "question_id": "P-R06S-044",
+      "chapter_id": "M-05",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ソフトウェアのテスト手法である「ブラックボックステスト」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "プログラムの内部構造（ソースコード）を参照しながら行うテスト"
+        },
+        {
+          "id": "b",
+          "text": "システムの内部処理は考慮せず、入力と出力の関係だけを検証するテスト"
+        },
+        {
+          "id": "c",
+          "text": "本番環境と同じ環境でシステム全体の性能を測定するテスト"
+        },
+        {
+          "id": "d",
+          "text": "開発者自身がコードを書きながら並行して行う単体テスト"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "ブラックボックステストは、プログラムの内部構造（ソースコード）を参照せず、入力に対して期待どおりの出力が得られるかを外部仕様の観点から検証するテスト手法です。内部実装を知らなくても実施できます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ブラックボックステスト",
+        "テスト手法",
+        "ソフトウェアテスト"
+      ],
+      "related_page_id": "M-05-01",
+      "tags": [
+        "テスト",
+        "ソフトウェア品質"
+      ]
+    },
+    {
+      "question_id": "P-R06S-045",
+      "chapter_id": "M-05",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "品質管理ツールの「パレート図」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "特性（結果）と要因の関係を魚の骨のような形で整理した図"
+        },
+        {
+          "id": "b",
+          "text": "不具合の発生件数と累積比率を棒グラフと折れ線グラフで示した図"
+        },
+        {
+          "id": "c",
+          "text": "縦軸と横軸の2要素でデータの分布と相関関係を示した図"
+        },
+        {
+          "id": "d",
+          "text": "計画値と実績値の差異を時系列で追跡する管理図"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "パレート図は、不具合の種類別発生件数を多い順に棒グラフで表し、累積比率を折れ線グラフで重ねた図です。「重要な少数（vital few）」を特定するために使用し、改善の優先順位付けに役立てます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "パレート図",
+        "品質管理",
+        "QC7つ道具"
+      ],
+      "related_page_id": "M-05-02",
+      "tags": [
+        "品質管理",
+        "パレート図",
+        "QC"
+      ]
+    },
+    {
+      "question_id": "P-R06S-046",
+      "chapter_id": "M-01",
+      "category": "management",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "スクラム（Scrum）開発における「スプリント」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "開発チーム全員が参加する週次の振り返りミーティング"
+        },
+        {
+          "id": "b",
+          "text": "1〜4週間程度の固定された開発サイクルで、この期間内に動くソフトウェアを完成させる"
+        },
+        {
+          "id": "c",
+          "text": "チームの生産性（ベロシティ）を測定するための数値指標"
+        },
+        {
+          "id": "d",
+          "text": "製品バックログから優先度の高い項目を選んで並べた作業リスト"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "スクラムにおける「スプリント」は、1〜4週間程度の固定された開発サイクルです。各スプリントの終わりには動作可能なソフトウェアの増分を完成させます。スプリント計画→デイリースクラム→スプリントレビュー→振り返りのサイクルを繰り返します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "スクラム",
+        "スプリント",
+        "アジャイル"
+      ],
+      "related_page_id": "M-01-01",
+      "tags": [
+        "アジャイル",
+        "スクラム",
+        "開発手法"
+      ]
+    },
+    {
+      "question_id": "P-R06S-047",
+      "chapter_id": "M-02",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "インシデント管理の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "障害の根本原因を特定して恒久的な解決策を実施すること"
+        },
+        {
+          "id": "b",
+          "text": "ITサービスの中断を最小化し、できるだけ早くサービスを復旧させること"
+        },
+        {
+          "id": "c",
+          "text": "ITシステムへの変更を安全・効率的に実施すること"
+        },
+        {
+          "id": "d",
+          "text": "ITサービスのコストと価値を管理すること"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "インシデント管理の目的は、ITサービスの中断や品質低下を引き起こすインシデント（障害・問題）を早期に検知・対応し、サービスをできるだけ早く復旧させることです。根本原因の特定・解決は「問題管理」が担います。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "インシデント管理",
+        "ITSM",
+        "障害対応"
+      ],
+      "related_page_id": "M-02-01",
+      "tags": [
+        "ITサービス管理",
+        "インシデント管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-048",
+      "chapter_id": "M-03",
+      "category": "management",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "情報セキュリティのリスクアセスメントにおける「リスク低減」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "リスクの発生確率・影響度を下げる対策を実施すること"
+        },
+        {
+          "id": "b",
+          "text": "リスクを保険等で外部に転嫁すること"
+        },
+        {
+          "id": "c",
+          "text": "リスクの存在を認識しつつも意図的に対処しないこと"
+        },
+        {
+          "id": "d",
+          "text": "リスクが存在する業務・システムを廃止すること"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "リスク対応の選択肢には、低減（対策実施）・移転（保険等）・受容（意図的な許容）・回避（廃止）があります。「リスク低減」はセキュリティ対策の実施などによってリスクの発生確率や影響度を下げることです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "リスクアセスメント",
+        "リスク低減",
+        "情報セキュリティ"
+      ],
+      "related_page_id": "M-03-02",
+      "tags": [
+        "情報セキュリティ",
+        "リスク管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-049",
+      "chapter_id": "M-04",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "プロジェクト管理における「EVM（Earned Value Management）」で使用される指標「CPI（Cost Performance Index）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "スケジュール効率を示す指標で、1を超えると計画より進んでいることを示す"
+        },
+        {
+          "id": "b",
+          "text": "コスト効率を示す指標で、1を超えると予算内に収まっていることを示す"
+        },
+        {
+          "id": "c",
+          "text": "プロジェクトの完了予測コストを示す指標"
+        },
+        {
+          "id": "d",
+          "text": "プロジェクトのスコープ達成率を示す指標"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "CPI（Cost Performance Index：コスト効率指数）はEVMの指標で、EV（出来高）÷AC（実績コスト）で計算します。1.0を超えると予算内、1.0を下回るとコスト超過を示します。SPI（スケジュール効率指数）とともに使われます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "EVM",
+        "CPI",
+        "プロジェクト管理"
+      ],
+      "related_page_id": "M-04-02",
+      "tags": [
+        "プロジェクト管理",
+        "EVM",
+        "コスト管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-050",
+      "chapter_id": "M-05",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "「デシジョンテーブル（決定表）」を用いたテストの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "テストケースの実行順序を管理するための表形式のドキュメント"
+        },
+        {
+          "id": "b",
+          "text": "複数の条件の組合せに対応する動作・処理を一覧化し、すべての組合せをテストする手法"
+        },
+        {
+          "id": "c",
+          "text": "テストの合格・不合格を判定するための基準値を定義した表"
+        },
+        {
+          "id": "d",
+          "text": "テスト実施担当者と実施スケジュールを管理するための表"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "デシジョンテーブル（決定表）テストは、複数の条件の組合せとそれに対応するシステムの動作を表形式で整理し、すべての組合せをテストする手法です。複雑な業務ルールの検証に有効です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "デシジョンテーブル",
+        "テスト手法",
+        "組合せテスト"
+      ],
+      "related_page_id": "M-05-01",
+      "tags": [
+        "テスト",
+        "ソフトウェア品質"
+      ]
+    },
+    {
+      "question_id": "P-R06S-051",
+      "chapter_id": "M-01",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "DevOps（デブオプス）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "開発チームと運用チームが協力して、ソフトウェアのデリバリーと改善のサイクルを高速化する手法"
+        },
+        {
+          "id": "b",
+          "text": "開発者が設計・開発・テストをすべて1人で担当する手法"
+        },
+        {
+          "id": "c",
+          "text": "本番環境と同じ開発環境を用意してテストを効率化する手法"
+        },
+        {
+          "id": "d",
+          "text": "開発業務を外部ベンダーに委託してコスト削減を図る手法"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "DevOpsとは、開発（Development）と運用（Operations）チームが協力し、コミュニケーション・協働・自動化を通じてソフトウェアのデリバリーと改善サイクルを高速化するアプローチです。CI/CDパイプラインの構築が典型的な取り組みです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "DevOps",
+        "CI/CD",
+        "継続的デリバリー"
+      ],
+      "related_page_id": "M-01-01",
+      "tags": [
+        "開発手法",
+        "DevOps",
+        "自動化"
+      ]
+    },
+    {
+      "question_id": "P-R06S-052",
+      "chapter_id": "M-02",
+      "category": "management",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "サービスデスクの主な役割として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ITシステムの変更を管理し、本番環境への影響を最小化すること"
+        },
+        {
+          "id": "b",
+          "text": "ユーザーからのITに関する問い合わせや障害報告の窓口となり、解決または適切な担当へエスカレーションすること"
+        },
+        {
+          "id": "c",
+          "text": "ITシステムの性能を監視して容量計画を策定すること"
+        },
+        {
+          "id": "d",
+          "text": "IT資産の棚卸しと管理台帳の維持更新を行うこと"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "サービスデスクは、ユーザーからのITサービスに関する問い合わせ・インシデント報告・サービスリクエストを受け付け、解決または適切な担当部門へエスカレーションする窓口機能（SPOC）です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "サービスデスク",
+        "SPOC",
+        "ITSM"
+      ],
+      "related_page_id": "M-02-01",
+      "tags": [
+        "ITサービス管理",
+        "サービスデスク"
+      ]
+    },
+    {
+      "question_id": "P-R06S-053",
+      "chapter_id": "M-03",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "情報システムにおける「バックアップ」の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "システムへの不正アクセスを検知して遮断すること"
+        },
+        {
+          "id": "b",
+          "text": "データの破損・消失・障害に備えてデータのコピーを別の場所に保管すること"
+        },
+        {
+          "id": "c",
+          "text": "システムの処理速度を向上させるためにデータをキャッシュすること"
+        },
+        {
+          "id": "d",
+          "text": "複数のサーバに処理を分散させて負荷を均等化すること"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "バックアップは、システム障害・誤操作・災害などによるデータの消失・破損に備えて、データのコピーを別の媒体や場所に定期的に保管することです。RTO（目標復旧時間）・RPO（目標復旧時点）の設計が重要です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "バックアップ",
+        "データ保護",
+        "DR"
+      ],
+      "related_page_id": "M-03-02",
+      "tags": [
+        "システム管理",
+        "バックアップ",
+        "可用性"
+      ]
+    },
+    {
+      "question_id": "P-R06S-054",
+      "chapter_id": "M-04",
+      "category": "management",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "プロジェクトにおいてスコープクリープ（Scope Creep）が発生した場合の影響として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "プロジェクトチームの士気が向上し、創造的なソリューションが生まれやすくなる"
+        },
+        {
+          "id": "b",
+          "text": "無計画なスコープ拡大によりプロジェクトの予算超過・スケジュール遅延が発生しやすくなる"
+        },
+        {
+          "id": "c",
+          "text": "顧客満足度が向上しプロジェクトの評価が高まる"
+        },
+        {
+          "id": "d",
+          "text": "チームの技術スキルが向上し、将来のプロジェクトに活かせる経験が蓄積される"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "スコープクリープとは、プロジェクトのスコープ（範囲）が適切な管理なしに拡大していく現象です。無計画なスコープ拡大は作業量増加につながり、予算超過・スケジュール遅延・品質低下を引き起こします。変更管理プロセスの徹底が対策となります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "スコープクリープ",
+        "スコープ管理",
+        "プロジェクト管理"
+      ],
+      "related_page_id": "M-04-01",
+      "tags": [
+        "プロジェクト管理",
+        "スコープ管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-055",
+      "chapter_id": "M-05",
+      "category": "management",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ソフトウェアの品質特性を定義したISO/IEC 25010における「信頼性」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ユーザーが指定した条件下でソフトウェアを使用する際の満足度の度合い"
+        },
+        {
+          "id": "b",
+          "text": "指定された条件下で、指定された期間、システムが意図した機能を正確に実行できる度合い"
+        },
+        {
+          "id": "c",
+          "text": "ソフトウェアを修正・改善する際の容易さの度合い"
+        },
+        {
+          "id": "d",
+          "text": "異なる環境やシステムとの相互運用ができる度合い"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "ISO/IEC 25010における「信頼性（Reliability）」は、指定された条件下で指定された期間にシステムが正確に機能し続けられる度合いです。成熟性・可用性・障害許容性・回復性などの副特性で評価されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ISO/IEC 25010",
+        "信頼性",
+        "ソフトウェア品質"
+      ],
+      "related_page_id": "M-05-02",
+      "tags": [
+        "品質管理",
+        "ソフトウェア品質",
+        "ISO"
+      ]
+    },
+    {
+      "question_id": "P-R06S-056",
+      "chapter_id": "T-01",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "2進数の「1011」を10進数に変換した結果として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "9"
+        },
+        {
+          "id": "b",
+          "text": "10"
+        },
+        {
+          "id": "c",
+          "text": "11"
+        },
+        {
+          "id": "d",
+          "text": "12"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "2進数の1011を10進数に変換します。1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11です。2進数→10進数変換は各桁の数値（0または1）に対応する2の冪乗を掛けて合計します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "2進数",
+        "基数変換",
+        "コンピュータ基礎"
+      ],
+      "related_page_id": "T-01-01",
+      "tags": [
+        "基数変換",
+        "コンピュータ基礎",
+        "2進数"
+      ]
+    },
+    {
+      "question_id": "P-R06S-057",
+      "chapter_id": "T-01",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "1GBは何MBか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "10MB"
+        },
+        {
+          "id": "b",
+          "text": "100MB"
+        },
+        {
+          "id": "c",
+          "text": "1,000MB"
+        },
+        {
+          "id": "d",
+          "text": "1,024MB"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "コンピュータの世界では1GB = 1,024MB（1キロバイト = 1,024バイトの2進法基準）です。ただし、HDD・SSDメーカーなどは1GB = 1,000MB（10進法基準）で表記する場合もあります。ITパスポートでは1GB = 1,024MBが基本です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "単位",
+        "GB",
+        "MB",
+        "記憶容量"
+      ],
+      "related_page_id": "T-01-01",
+      "tags": [
+        "コンピュータ基礎",
+        "記憶容量",
+        "単位"
+      ]
+    },
+    {
+      "question_id": "P-R06S-058",
+      "chapter_id": "T-02",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "CPUの動作クロック周波数の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "CPUが1秒間に実行できる命令の総数"
+        },
+        {
+          "id": "b",
+          "text": "CPUの動作速度を示す指標で、単位はHz（ヘルツ）"
+        },
+        {
+          "id": "c",
+          "text": "CPUのキャッシュメモリの容量を示す指標"
+        },
+        {
+          "id": "d",
+          "text": "CPUコアの数を示す指標"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "クロック周波数はCPUの動作速度を示す指標で、単位はHz（ヘルツ）です。1GHz = 1秒間に10億回のクロックを刻みます。クロック周波数が高いほど一般的に処理が速くなりますが、コア数やアーキテクチャも性能に影響します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "CPU",
+        "クロック周波数",
+        "コンピュータ性能"
+      ],
+      "related_page_id": "T-02-01",
+      "tags": [
+        "ハードウェア",
+        "CPU",
+        "コンピュータ性能"
+      ]
+    },
+    {
+      "question_id": "P-R06S-059",
+      "chapter_id": "T-02",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "SSD（Solid State Drive）の特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "磁気ディスクを回転させてデータを読み書きする記憶装置"
+        },
+        {
+          "id": "b",
+          "text": "フラッシュメモリを使用した記憶装置で、HDDより高速・軽量・耐衝撃性が高い"
+        },
+        {
+          "id": "c",
+          "text": "光ディスクにレーザーでデータを記録する記憶装置"
+        },
+        {
+          "id": "d",
+          "text": "電源を切るとデータが消えてしまう揮発性の記憶装置"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "SSD（Solid State Drive）はフラッシュメモリを使用した記憶装置です。HDDに比べてアクセス速度が大幅に速く、物理的な可動部品がないため耐衝撃性・消費電力・重量の面でも優れています。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SSD",
+        "HDD",
+        "フラッシュメモリ"
+      ],
+      "related_page_id": "T-02-02",
+      "tags": [
+        "ハードウェア",
+        "記憶装置",
+        "SSD"
+      ]
+    },
+    {
+      "question_id": "P-R06S-060",
+      "chapter_id": "T-03",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "OSI参照モデルの第3層（ネットワーク層）のプロトコルとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "HTTP"
+        },
+        {
+          "id": "b",
+          "text": "TCP"
+        },
+        {
+          "id": "c",
+          "text": "IP"
+        },
+        {
+          "id": "d",
+          "text": "Ethernet"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "OSI参照モデルの第3層（ネットワーク層）のプロトコルはIP（Internet Protocol）です。HTTPは第7層（アプリケーション層）、TCPは第4層（トランスポート層）、Ethernetは第1・2層（物理・データリンク層）のプロトコルです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "OSI参照モデル",
+        "IP",
+        "ネットワーク層"
+      ],
+      "related_page_id": "T-03-01",
+      "tags": [
+        "ネットワーク",
+        "OSI",
+        "プロトコル"
+      ]
+    },
+    {
+      "question_id": "P-R06S-061",
+      "chapter_id": "T-03",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "TCP/IPにおけるIPアドレスのクラスBのデフォルトサブネットマスクとして正しいものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "255.0.0.0"
+        },
+        {
+          "id": "b",
+          "text": "255.255.0.0"
+        },
+        {
+          "id": "c",
+          "text": "255.255.255.0"
+        },
+        {
+          "id": "d",
+          "text": "255.255.255.255"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "クラスBのデフォルトサブネットマスクは「255.255.0.0」です。クラスAは255.0.0.0、クラスCは255.255.255.0が対応するデフォルトサブネットマスクです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "IPアドレス",
+        "サブネットマスク",
+        "クラスB"
+      ],
+      "related_page_id": "T-03-02",
+      "tags": [
+        "ネットワーク",
+        "IPアドレス",
+        "TCP/IP"
+      ]
+    },
+    {
+      "question_id": "P-R06S-062",
+      "chapter_id": "T-03",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "DNSの役割として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ネットワーク上のコンピュータにIPアドレスを動的に割り当てるサービス"
+        },
+        {
+          "id": "b",
+          "text": "ドメイン名とIPアドレスを相互に変換するサービス"
+        },
+        {
+          "id": "c",
+          "text": "メールサーバ間でメールを転送するプロトコル"
+        },
+        {
+          "id": "d",
+          "text": "Webサーバとブラウザ間の通信を暗号化するプロトコル"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "DNS（Domain Name System）は、「www.example.com」のようなドメイン名を対応するIPアドレス（例：203.0.113.1）に変換するサービスです。IPアドレスを覚えなくても人間に分かりやすいドメイン名でアクセスできるようにします。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "DNS",
+        "ドメイン名",
+        "名前解決"
+      ],
+      "related_page_id": "T-03-03",
+      "tags": [
+        "ネットワーク",
+        "DNS",
+        "インターネット"
+      ]
+    },
+    {
+      "question_id": "P-R06S-063",
+      "chapter_id": "T-04",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "関係データベース（RDB）における「主キー（Primary Key）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "テーブル内の行（レコード）を一意に識別するための列または列の組合せ"
+        },
+        {
+          "id": "b",
+          "text": "他のテーブルの主キーを参照することで関係を結ぶ列"
+        },
+        {
+          "id": "c",
+          "text": "テーブル内で最も重要なデータを格納するための列"
+        },
+        {
+          "id": "d",
+          "text": "頻繁に検索に使われる列に設定して検索速度を向上させるためのキー"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "主キー（Primary Key）は、テーブル内の各行（レコード）を一意に識別するための列または列の組合せです。主キーにはNULL値を設定できず、テーブル内で重複値は許可されません。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "主キー",
+        "リレーショナルデータベース",
+        "データベース設計"
+      ],
+      "related_page_id": "T-04-01",
+      "tags": [
+        "データベース",
+        "主キー",
+        "SQL"
+      ]
+    },
+    {
+      "question_id": "P-R06S-064",
+      "chapter_id": "T-04",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "SQLの「SELECT文」で条件を指定して行を絞り込む句はどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ORDER BY"
+        },
+        {
+          "id": "b",
+          "text": "GROUP BY"
+        },
+        {
+          "id": "c",
+          "text": "HAVING"
+        },
+        {
+          "id": "d",
+          "text": "WHERE"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "SELECT文で行（レコード）を条件によって絞り込むにはWHERE句を使います。ORDER BYは並び替え、GROUP BYはグループ化、HAVINGはグループ化後の絞り込みに使います。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SQL",
+        "WHERE句",
+        "SELECT文"
+      ],
+      "related_page_id": "T-04-01",
+      "tags": [
+        "データベース",
+        "SQL",
+        "クエリ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-065",
+      "chapter_id": "T-05",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "暗号化方式のうち「公開鍵暗号方式」の特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "送信者と受信者が同じ鍵を使って暗号化・復号を行う方式"
+        },
+        {
+          "id": "b",
+          "text": "暗号化に使う公開鍵と復号に使う秘密鍵が異なるペアで構成される方式"
+        },
+        {
+          "id": "c",
+          "text": "量子コンピュータでも解読できない理論的に完全な暗号方式"
+        },
+        {
+          "id": "d",
+          "text": "ハッシュ値を使ってデータの改ざんを検知する方式"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "公開鍵暗号方式は、公開鍵（暗号化）と秘密鍵（復号）という異なる2つの鍵ペアを使う方式です。公開鍵は誰でも入手できますが、秘密鍵の所有者だけが復号できます。共通鍵暗号方式と比べて鍵管理が容易です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "公開鍵暗号",
+        "秘密鍵",
+        "暗号化"
+      ],
+      "related_page_id": "T-05-01",
+      "tags": [
+        "セキュリティ",
+        "暗号化",
+        "公開鍵"
+      ]
+    },
+    {
+      "question_id": "P-R06S-066",
+      "chapter_id": "T-05",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "デジタル署名の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "データを暗号化して第三者による盗聴を防ぐこと"
+        },
+        {
+          "id": "b",
+          "text": "送信者の正当性（なりすまし防止）とデータの改ざんを検知すること"
+        },
+        {
+          "id": "c",
+          "text": "送信データを圧縮して通信量を削減すること"
+        },
+        {
+          "id": "d",
+          "text": "受信者だけがデータを復号できるよう鍵管理を行うこと"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "デジタル署名は、送信者が秘密鍵でデータに署名することで、受信者が公開鍵で①送信者の正当性（なりすまし防止）と②データが改ざんされていないことを検証できる仕組みです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "デジタル署名",
+        "なりすまし防止",
+        "改ざん検知"
+      ],
+      "related_page_id": "T-05-01",
+      "tags": [
+        "セキュリティ",
+        "デジタル署名",
+        "公開鍵"
+      ]
+    },
+    {
+      "question_id": "P-R06S-067",
+      "chapter_id": "T-05",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "SQLインジェクション攻撃の対策として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Webアプリのレスポンスにキャッシュ制御ヘッダーを設定する"
+        },
+        {
+          "id": "b",
+          "text": "データベースへの問い合わせにプリペアドステートメント（バインド変数）を使用する"
+        },
+        {
+          "id": "c",
+          "text": "Webサーバのアクセスログを定期的に削除する"
+        },
+        {
+          "id": "d",
+          "text": "利用者のパスワードを定期的に変更させる"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "SQLインジェクションは、フォームなどからSQL命令を不正入力してデータベースを操作する攻撃です。対策としてはプリペアドステートメント（バインド変数）の使用が最も効果的で、入力値をSQL命令として解釈させないようにします。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "SQLインジェクション",
+        "プリペアドステートメント",
+        "Webセキュリティ"
+      ],
+      "related_page_id": "T-05-02",
+      "tags": [
+        "セキュリティ",
+        "SQLインジェクション",
+        "Webセキュリティ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-068",
+      "chapter_id": "T-06",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "プログラムの「変数」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "プログラムの実行順序を制御するための命令"
+        },
+        {
+          "id": "b",
+          "text": "データを一時的に格納するメモリ上の記憶領域に付けた名前"
+        },
+        {
+          "id": "c",
+          "text": "繰り返し使用するプログラムの一部をまとめた処理単位"
+        },
+        {
+          "id": "d",
+          "text": "プログラムをコンパイルする際に使用するツール"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "変数とは、プログラムの実行中にデータを一時的に格納するメモリ上の記憶領域に付けた名前です。変数には数値・文字列・真偽値などのデータを代入・参照・変更できます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "変数",
+        "プログラミング",
+        "メモリ"
+      ],
+      "related_page_id": "T-06-01",
+      "tags": [
+        "プログラミング",
+        "変数",
+        "アルゴリズム"
+      ]
+    },
+    {
+      "question_id": "P-R06S-069",
+      "chapter_id": "T-06",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "フローチャートにおいて、条件による分岐を表す図形として正しいものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "長方形（矩形）"
+        },
+        {
+          "id": "b",
+          "text": "平行四辺形"
+        },
+        {
+          "id": "c",
+          "text": "ひし形（菱形）"
+        },
+        {
+          "id": "d",
+          "text": "楕円形"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "フローチャートにおいて、条件による分岐はひし形（菱形）で表します。長方形は処理（演算・代入など）、平行四辺形は入出力、楕円（角丸長方形）は開始・終了を表します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "フローチャート",
+        "アルゴリズム",
+        "条件分岐"
+      ],
+      "related_page_id": "T-06-01",
+      "tags": [
+        "アルゴリズム",
+        "フローチャート",
+        "プログラミング"
+      ]
+    },
+    {
+      "question_id": "P-R06S-070",
+      "chapter_id": "T-06",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "「スタック（Stack）」の動作特性として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "先に入れたデータが先に取り出される（FIFO：先入れ先出し）"
+        },
+        {
+          "id": "b",
+          "text": "後に入れたデータが先に取り出される（LIFO：後入れ先出し）"
+        },
+        {
+          "id": "c",
+          "text": "データをランダムなアドレスで格納し任意の順序で取り出せる"
+        },
+        {
+          "id": "d",
+          "text": "データを双方向のリストで管理し先頭・末尾どちらからでも取り出せる"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "スタックはLIFO（Last In First Out：後入れ先出し）のデータ構造で、最後に積んだデータが最初に取り出されます（本を積み重ねたイメージ）。関数呼び出しの管理や逆ポーランド記法の計算などに使われます。FIFOはキューの特性です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "スタック",
+        "LIFO",
+        "データ構造"
+      ],
+      "related_page_id": "T-06-02",
+      "tags": [
+        "アルゴリズム",
+        "データ構造",
+        "スタック"
+      ]
+    },
+    {
+      "question_id": "P-R06S-071",
+      "chapter_id": "T-07",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "システムの「可用性（Availability）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "システムが外部からの攻撃に対して安全であること"
+        },
+        {
+          "id": "b",
+          "text": "システムが正常に稼働しているときに情報が正確であること"
+        },
+        {
+          "id": "c",
+          "text": "必要なときに必要なシステムやデータを利用できる状態を維持する性質"
+        },
+        {
+          "id": "d",
+          "text": "システムの処理速度が要求されたレベルを満たしていること"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "可用性（Availability）とは、許可された利用者が必要なときに情報やシステムにアクセス・利用できる状態を確保する性質です。情報セキュリティの3要素（CIA：機密性・完全性・可用性）のひとつです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "可用性",
+        "CIA",
+        "情報セキュリティ3要素"
+      ],
+      "related_page_id": "T-07-01",
+      "tags": [
+        "セキュリティ",
+        "可用性",
+        "CIA"
+      ]
+    },
+    {
+      "question_id": "P-R06S-072",
+      "chapter_id": "T-07",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "フィッシング詐欺の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "コンピュータの処理能力を不正に使用して暗号資産をマイニングする攻撃"
+        },
+        {
+          "id": "b",
+          "text": "正規のWebサイトやメールに見せかけた偽のページでIDやパスワードを窃取する詐欺"
+        },
+        {
+          "id": "c",
+          "text": "ネットワークを流れるパケットを傍受して通信内容を解析する攻撃"
+        },
+        {
+          "id": "d",
+          "text": "大量のリクエストを送信してサービスを利用不能にする攻撃"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "フィッシング詐欺とは、実在する金融機関・ECサイト・行政機関などを装った偽メールや偽サイトで、IDやパスワード・クレジットカード番号などの個人情報を騙し取る詐欺です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "フィッシング詐欺",
+        "ソーシャルエンジニアリング",
+        "サイバー攻撃"
+      ],
+      "related_page_id": "T-07-02",
+      "tags": [
+        "セキュリティ",
+        "フィッシング",
+        "サイバー攻撃"
+      ]
+    },
+    {
+      "question_id": "P-R06S-073",
+      "chapter_id": "T-07",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ランサムウェアの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "コンピュータ起動時に自動実行されるプログラムを改ざんして永続的に潜伏するマルウェア"
+        },
+        {
+          "id": "b",
+          "text": "PCやファイルを暗号化してロックし、解除のために金銭を要求するマルウェア"
+        },
+        {
+          "id": "c",
+          "text": "ユーザーの操作を記録してキーボード入力を窃取するマルウェア"
+        },
+        {
+          "id": "d",
+          "text": "感染したコンピュータを踏み台として利用し大量のメールを送信するマルウェア"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "ランサムウェア（Ransomware）は、感染したコンピュータのファイルやシステムを暗号化してロックし、復号と引き換えに金銭（ransom：身代金）を要求するマルウェアです。バックアップの取得が有効な対策です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ランサムウェア",
+        "マルウェア",
+        "サイバー攻撃"
+      ],
+      "related_page_id": "T-07-02",
+      "tags": [
+        "セキュリティ",
+        "ランサムウェア",
+        "マルウェア"
+      ]
+    },
+    {
+      "question_id": "P-R06S-074",
+      "chapter_id": "T-08",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "UML（統一モデリング言語）のダイアグラムのうち、クラスとクラス間の関係を表すものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ユースケース図"
+        },
+        {
+          "id": "b",
+          "text": "シーケンス図"
+        },
+        {
+          "id": "c",
+          "text": "クラス図"
+        },
+        {
+          "id": "d",
+          "text": "アクティビティ図"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "クラス図は、オブジェクト指向設計においてクラスとクラス間の関係（継承・集約・関連など）を表すUMLダイアグラムです。システムの静的な構造を表現します。ユースケース図は機能要件、シーケンス図はオブジェクト間の相互作用を表します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "UML",
+        "クラス図",
+        "オブジェクト指向"
+      ],
+      "related_page_id": "T-08-01",
+      "tags": [
+        "システム設計",
+        "UML",
+        "オブジェクト指向"
+      ]
+    },
+    {
+      "question_id": "P-R06S-075",
+      "chapter_id": "T-08",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "E-R図（Entity-Relationship Diagram）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "システムの処理フローを矢印で表した状態遷移図"
+        },
+        {
+          "id": "b",
+          "text": "データベースの実体（エンティティ）と実体間の関連を表した図"
+        },
+        {
+          "id": "c",
+          "text": "プログラムのモジュール構造と依存関係を表した図"
+        },
+        {
+          "id": "d",
+          "text": "ネットワーク機器の接続関係と通信経路を表した図"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "E-R図（Entity-Relationship Diagram）は、データベース設計において実体（エンティティ）と実体間の関連（リレーションシップ）を視覚化した図です。データベースの論理設計の基礎として使われます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "E-R図",
+        "データベース設計",
+        "エンティティ"
+      ],
+      "related_page_id": "T-08-01",
+      "tags": [
+        "データベース",
+        "E-R図",
+        "システム設計"
+      ]
+    },
+    {
+      "question_id": "P-R06S-076",
+      "chapter_id": "T-09",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "HTMLの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Webアプリケーションのサーバサイドプログラミングに使用される言語"
+        },
+        {
+          "id": "b",
+          "text": "Webページの見た目（色・フォント・レイアウト）を定義するスタイルシート言語"
+        },
+        {
+          "id": "c",
+          "text": "Webページの構造・内容を記述するマークアップ言語"
+        },
+        {
+          "id": "d",
+          "text": "ブラウザ上でのインタラクティブな動作を実装するプログラミング言語"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "HTML（HyperText Markup Language）は、Webページの構造と内容を記述するマークアップ言語です。タグを使ってテキスト・画像・リンクなどの要素を定義します。イはCSS、エはJavaScriptの説明です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "HTML",
+        "マークアップ言語",
+        "Web技術"
+      ],
+      "related_page_id": "T-09-01",
+      "tags": [
+        "Web技術",
+        "HTML",
+        "プログラミング"
+      ]
+    },
+    {
+      "question_id": "P-R06S-077",
+      "chapter_id": "T-09",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "Webアプリケーションにおける「セッション管理」の目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "複数のサーバに処理を分散させて高可用性を実現すること"
+        },
+        {
+          "id": "b",
+          "text": "HTTPのステートレスな性質を補い、ログイン状態などユーザーの状態を管理すること"
+        },
+        {
+          "id": "c",
+          "text": "Webサイトへのアクセス数をリアルタイムで計測すること"
+        },
+        {
+          "id": "d",
+          "text": "CDNを使って静的コンテンツを高速配信すること"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "HTTPはステートレスなプロトコルで、リクエストごとに状態を保持しません。セッション管理はこの制限を補い、ログイン状態・ショッピングカートの内容など、ユーザーの状態を一定時間維持するための仕組みです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "セッション管理",
+        "HTTP",
+        "ステートレス"
+      ],
+      "related_page_id": "T-09-01",
+      "tags": [
+        "Web技術",
+        "セキュリティ",
+        "HTTP"
+      ]
+    },
+    {
+      "question_id": "P-R06S-078",
+      "chapter_id": "T-10",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "システム開発における「要件定義」工程で実施する主な作業として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "画面・帳票のデザインとデータベースの論理設計を行うこと"
+        },
+        {
+          "id": "b",
+          "text": "システムが満たすべき機能要件と非機能要件を明確にすること"
+        },
+        {
+          "id": "c",
+          "text": "プログラムのソースコードを実際に記述すること"
+        },
+        {
+          "id": "d",
+          "text": "完成したシステムを本番環境にデプロイすること"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "要件定義工程では、システムが満たすべき機能要件（何をすべきか）と非機能要件（性能・セキュリティ・可用性など）を、利用者・発注者と合意しながら明確にします。後続工程の基礎となる最重要工程です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "要件定義",
+        "機能要件",
+        "非機能要件"
+      ],
+      "related_page_id": "T-10-01",
+      "tags": [
+        "システム開発",
+        "要件定義",
+        "SDLC"
+      ]
+    },
+    {
+      "question_id": "P-R06S-079",
+      "chapter_id": "T-10",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ソフトウェアの「保守」の種類のうち「適応保守」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ソフトウェアのバグを修正する保守"
+        },
+        {
+          "id": "b",
+          "text": "ハードウェアやOS・法規制の変更などに合わせてソフトウェアを改修する保守"
+        },
+        {
+          "id": "c",
+          "text": "将来の変更を容易にするためにソフトウェアを改良する予防的保守"
+        },
+        {
+          "id": "d",
+          "text": "機能追加や性能向上のためにソフトウェアを強化する保守"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "適応保守とは、ハードウェアのアップグレードやOSのバージョンアップ、法律・制度の変更など、外部環境の変化に合わせてソフトウェアを改修する保守です。修正保守（バグ修正）・完全化保守（機能追加）・予防保守とは区別されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "適応保守",
+        "ソフトウェア保守",
+        "システム保守"
+      ],
+      "related_page_id": "T-10-02",
+      "tags": [
+        "システム開発",
+        "保守",
+        "SDLC"
+      ]
+    },
+    {
+      "question_id": "P-R06S-080",
+      "chapter_id": "T-11",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "マルチコアプロセッサの説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "複数のコンピュータをネットワークで接続して処理を分散させる構成"
+        },
+        {
+          "id": "b",
+          "text": "1つのCPUチップ上に複数の処理コアを搭載し、並列処理能力を高めたプロセッサ"
+        },
+        {
+          "id": "c",
+          "text": "処理速度向上のためにGPUとCPUを同一チップに統合したプロセッサ"
+        },
+        {
+          "id": "d",
+          "text": "電力消費を最小化するためにコアの動作クロックを動的に調整するプロセッサ"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "マルチコアプロセッサは、1つのCPUチップ上に複数の処理コア（演算ユニット）を搭載したプロセッサです。複数のコアが並列に処理を実行することで、シングルコアに比べて性能を向上させます。デュアルコア・クアッドコアなどが一般的です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "マルチコア",
+        "CPU",
+        "並列処理"
+      ],
+      "related_page_id": "T-11-01",
+      "tags": [
+        "ハードウェア",
+        "CPU",
+        "コンピュータ性能"
+      ]
+    },
+    {
+      "question_id": "P-R06S-081",
+      "chapter_id": "T-01",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "補数を用いた減算において、2の補数の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "2進数の各ビットを反転させたもの（1の補数）に1を加えた値"
+        },
+        {
+          "id": "b",
+          "text": "2進数の各ビットを反転させただけのもの"
+        },
+        {
+          "id": "c",
+          "text": "10進数の値を2で割った余りで表したもの"
+        },
+        {
+          "id": "d",
+          "text": "2進数の最上位ビット（MSB）を符号として使う表現方式"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "2の補数とは、2進数の各ビットを反転した1の補数に1を加えた値です。コンピュータは負の数を2の補数で表現しており、減算を加算で実現できます。例：10進数の-1は、8ビットで11111111（2の補数）と表されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "2の補数",
+        "補数",
+        "2進数"
+      ],
+      "related_page_id": "T-01-01",
+      "tags": [
+        "コンピュータ基礎",
+        "2進数",
+        "数値表現"
+      ]
+    },
+    {
+      "question_id": "P-R06S-082",
+      "chapter_id": "T-03",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "無線LANのセキュリティ方式「WPA3」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "有線LANと同等の暗号化を実現する旧式のセキュリティ方式"
+        },
+        {
+          "id": "b",
+          "text": "現在最新の無線LANセキュリティ規格で、SAEハンドシェイクなどの強化されたセキュリティ機能を持つ"
+        },
+        {
+          "id": "c",
+          "text": "MACアドレスフィルタリングを使ってアクセス制御を行うセキュリティ方式"
+        },
+        {
+          "id": "d",
+          "text": "VPNトンネルを使って無線通信を保護するセキュリティ方式"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "WPA3は無線LANセキュリティの最新規格です。SAE（Simultaneous Authentication of Equals）ハンドシェイクによるパスワード推測攻撃への耐性強化や、公共Wi-Fiでの通信保護などの機能が追加されています。WPA2の後継規格です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "WPA3",
+        "無線LANセキュリティ",
+        "Wi-Fi"
+      ],
+      "related_page_id": "T-03-04",
+      "tags": [
+        "ネットワーク",
+        "セキュリティ",
+        "無線LAN"
+      ]
+    },
+    {
+      "question_id": "P-R06S-083",
+      "chapter_id": "T-04",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "NoSQLデータベースの特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "すべてのデータをテーブル形式で管理し、SQLで操作する"
+        },
+        {
+          "id": "b",
+          "text": "関係データベースの制約を緩め、大量データの高速処理やスケールアウトに対応した多様なデータモデルを持つ"
+        },
+        {
+          "id": "c",
+          "text": "SQLのみで操作できる分散型リレーショナルデータベース"
+        },
+        {
+          "id": "d",
+          "text": "データの整合性を最優先するためACID特性を厳密に適用する"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "NoSQLは「Not only SQL」の略で、RDB（関係データベース）の制約を緩め、大量データの高速処理・水平スケールアウト・柔軟なデータモデルに対応したデータベースの総称です。キーバリュー型・ドキュメント型・グラフ型などの種類があります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "NoSQL",
+        "データベース",
+        "スケーラビリティ"
+      ],
+      "related_page_id": "T-04-02",
+      "tags": [
+        "データベース",
+        "NoSQL",
+        "ビッグデータ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-084",
+      "chapter_id": "T-05",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "二要素認証（2FA）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "2種類の異なるパスワードを交互に入力させる認証方式"
+        },
+        {
+          "id": "b",
+          "text": "「知識情報・所持情報・生体情報」のうち異なる2種類の要素を組み合わせる認証方式"
+        },
+        {
+          "id": "c",
+          "text": "2台の端末から同時にログインしないと認証できない方式"
+        },
+        {
+          "id": "d",
+          "text": "管理者と一般ユーザーの2種類の権限でアクセスを制御する方式"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "二要素認証（2FA：Two-Factor Authentication）は、「知識情報（パスワード）」「所持情報（スマートフォンのOTPなど）」「生体情報（指紋・顔）」のうち異なる2種類を組み合わせる認証方式で、不正アクセスに対する耐性が向上します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "二要素認証",
+        "2FA",
+        "多要素認証"
+      ],
+      "related_page_id": "T-05-01",
+      "tags": [
+        "セキュリティ",
+        "認証",
+        "2FA"
+      ]
+    },
+    {
+      "question_id": "P-R06S-085",
+      "chapter_id": "T-06",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "オブジェクト指向プログラミングにおける「継承（Inheritance）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "同名のメソッドが引数や処理内容によって異なる動作をする仕組み"
+        },
+        {
+          "id": "b",
+          "text": "クラスの内部データを外部から直接アクセスできないよう保護する仕組み"
+        },
+        {
+          "id": "c",
+          "text": "既存クラスの属性・メソッドを引き継いで新しいクラスを定義する仕組み"
+        },
+        {
+          "id": "d",
+          "text": "ひとつのオブジェクトが複数の型として振る舞える仕組み"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "継承とは、既存のクラス（親クラス・スーパークラス）の属性（プロパティ）とメソッドを引き継いで新しいクラス（子クラス・サブクラス）を定義する仕組みです。コードの再利用性を高めます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "継承",
+        "オブジェクト指向",
+        "クラス"
+      ],
+      "related_page_id": "T-06-03",
+      "tags": [
+        "プログラミング",
+        "オブジェクト指向",
+        "継承"
+      ]
+    },
+    {
+      "question_id": "P-R06S-086",
+      "chapter_id": "T-07",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "DoS攻撃（サービス妨害攻撃）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "標的のコンピュータに不正アクセスして機密情報を窃取する攻撃"
+        },
+        {
+          "id": "b",
+          "text": "大量のリクエストや不正なパケットを送りつけてサービスを利用不能にする攻撃"
+        },
+        {
+          "id": "c",
+          "text": "正規ユーザーとサーバの通信に割り込んで内容を盗聴・改ざんする攻撃"
+        },
+        {
+          "id": "d",
+          "text": "メールやSMSで偽りのURLに誘導してIDやパスワードを詐取する攻撃"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "DoS攻撃（Denial of Service）は、標的のサーバに大量のリクエストや不正なパケットを送りつけ、正常なサービス提供を妨害して利用不能にする攻撃です。複数のコンピュータから同時に行う場合はDDoS攻撃と呼びます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "DoS攻撃",
+        "DDoS",
+        "サービス妨害"
+      ],
+      "related_page_id": "T-07-02",
+      "tags": [
+        "セキュリティ",
+        "DoS",
+        "サイバー攻撃"
+      ]
+    },
+    {
+      "question_id": "P-R06S-087",
+      "chapter_id": "T-08",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "ソフトウェア設計における「モジュール結合度」について、最も望ましい（低い）結合度はどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "共通結合（グローバル変数を共有する）"
+        },
+        {
+          "id": "b",
+          "text": "内容結合（他モジュールの内部を直接参照する）"
+        },
+        {
+          "id": "c",
+          "text": "データ結合（必要なデータだけを引数で渡す）"
+        },
+        {
+          "id": "d",
+          "text": "制御結合（制御フラグを引数で渡す）"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "モジュール結合度は低いほど良い設計とされます。データ結合は必要なデータだけを引数で渡す最も低い（望ましい）結合度です。内容結合が最も高い（望ましくない）結合度で、共通結合・外部結合・制御結合・スタンプ結合・データ結合の順で低くなります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "モジュール結合度",
+        "ソフトウェア設計",
+        "低結合"
+      ],
+      "related_page_id": "T-08-02",
+      "tags": [
+        "システム設計",
+        "モジュール設計",
+        "ソフトウェア工学"
+      ]
+    },
+    {
+      "question_id": "P-R06S-088",
+      "chapter_id": "T-09",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "REST API（RESTful API）の特徴として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "XMLのみをデータ形式として使用し、SOAP通信プロトコルに準拠する"
+        },
+        {
+          "id": "b",
+          "text": "HTTPメソッド（GET・POST・PUT・DELETE）を使ってリソースを操作するステートレスなアーキテクチャ"
+        },
+        {
+          "id": "c",
+          "text": "クライアントとサーバが常時接続を維持してリアルタイム通信を行う"
+        },
+        {
+          "id": "d",
+          "text": "バイナリ形式でデータを転送して通信効率を最大化する"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "REST API（RESTful API）はHTTPメソッド（GET・POST・PUT・DELETE）を使ってリソースを操作するステートレスなWebAPIのアーキテクチャです。データ形式にはJSONやXMLが使われます。現在最も普及しているWebAPI設計スタイルです。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "REST API",
+        "HTTP",
+        "Web API"
+      ],
+      "related_page_id": "T-09-02",
+      "tags": [
+        "Web技術",
+        "API",
+        "システム設計"
+      ]
+    },
+    {
+      "question_id": "P-R06S-089",
+      "chapter_id": "T-10",
+      "category": "technology",
+      "difficulty": 3,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "システムの「フェールセーフ（Fail Safe）」設計の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "障害が発生してもシステムを正常稼働させ続けるための冗長化構成"
+        },
+        {
+          "id": "b",
+          "text": "障害が発生した場合に、安全側（被害が最小）の状態に自動的に移行する設計思想"
+        },
+        {
+          "id": "c",
+          "text": "障害の予兆を検知して発生前に予防措置を行う設計思想"
+        },
+        {
+          "id": "d",
+          "text": "ひとつのコンポーネントが故障しても他のコンポーネントで代替できる設計"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "フェールセーフは、システムに障害が発生した場合に被害が最小になる安全な状態に自動的に移行する設計思想です。例：信号機の電源断時に赤点灯させる設計。フォールトトレラントは障害があっても動き続ける設計で区別されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "フェールセーフ",
+        "システム信頼性",
+        "安全設計"
+      ],
+      "related_page_id": "T-10-01",
+      "tags": [
+        "システム設計",
+        "信頼性",
+        "フェールセーフ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-090",
+      "chapter_id": "T-11",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "仮想化技術の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ネットワーク機器を集約して管理を一元化する技術"
+        },
+        {
+          "id": "b",
+          "text": "1台の物理サーバ上で複数の仮想マシン（VM）を動作させる技術"
+        },
+        {
+          "id": "c",
+          "text": "複数のサーバのストレージを統合して大容量化する技術"
+        },
+        {
+          "id": "d",
+          "text": "サーバのCPU使用率を監視して自動的にスケールする技術"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "仮想化技術とは、1台の物理サーバ上でハイパーバイザー（仮想化ソフト）を使い、複数の仮想マシン（VM）を独立して動作させる技術です。サーバリソースの有効活用・コスト削減・柔軟なシステム構成が可能になります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "仮想化",
+        "ハイパーバイザー",
+        "仮想マシン"
+      ],
+      "related_page_id": "T-11-01",
+      "tags": [
+        "ハードウェア",
+        "仮想化",
+        "クラウド"
+      ]
+    },
+    {
+      "question_id": "P-R06S-091",
+      "chapter_id": "T-01",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "論理演算においてAND演算の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "入力がどちらか一方でも1であれば出力が1になる演算"
+        },
+        {
+          "id": "b",
+          "text": "入力が両方とも1であるときのみ出力が1になる演算"
+        },
+        {
+          "id": "c",
+          "text": "入力の値を反転させる演算"
+        },
+        {
+          "id": "d",
+          "text": "入力が一致するときのみ出力が1になる演算"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "AND演算は、2つの入力が両方とも1（真）のときのみ出力が1（真）になる論理演算です。「AかつB」を表します。OR演算は「どちらか一方でも1なら1」、NOT演算は「反転」、XOR演算は「不一致なら1」です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "AND演算",
+        "論理演算",
+        "ブール代数"
+      ],
+      "related_page_id": "T-01-02",
+      "tags": [
+        "コンピュータ基礎",
+        "論理演算",
+        "ハードウェア"
+      ]
+    },
+    {
+      "question_id": "P-R06S-092",
+      "chapter_id": "T-02",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "キャッシュメモリの目的として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "プログラムを永続的に保存するための大容量記憶装置"
+        },
+        {
+          "id": "b",
+          "text": "CPUとメインメモリの速度差を埋めるために頻繁に使用するデータを高速保存する記憶装置"
+        },
+        {
+          "id": "c",
+          "text": "外部記憶装置のデータをバックアップするための記憶装置"
+        },
+        {
+          "id": "d",
+          "text": "グラフィック処理専用の映像データを格納する記憶装置"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "キャッシュメモリはCPUとメインメモリの速度差を埋めるため、頻繁にアクセスするデータを高速なメモリに一時保存する仕組みです。L1・L2・L3キャッシュなどの階層があります。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "キャッシュメモリ",
+        "CPU",
+        "メモリ階層"
+      ],
+      "related_page_id": "T-02-01",
+      "tags": [
+        "ハードウェア",
+        "メモリ",
+        "コンピュータ性能"
+      ]
+    },
+    {
+      "question_id": "P-R06S-093",
+      "chapter_id": "T-03",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "VPN（Virtual Private Network）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "物理的に専用回線を敷設して拠点間を安全に接続するネットワーク"
+        },
+        {
+          "id": "b",
+          "text": "パブリックネットワーク（インターネット）上に暗号化された仮想的な専用通信路を構築する技術"
+        },
+        {
+          "id": "c",
+          "text": "複数の認証サーバを組み合わせて高可用性を実現するネットワーク構成"
+        },
+        {
+          "id": "d",
+          "text": "Webサーバへのアクセスを分散させて負荷を均等化するネットワーク技術"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "VPN（Virtual Private Network）は、インターネットなどのパブリックネットワーク上に暗号化された仮想的な専用通信路を構築する技術です。遠隔地からのセキュアなアクセスや拠点間通信に利用されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "VPN",
+        "暗号化",
+        "ネットワークセキュリティ"
+      ],
+      "related_page_id": "T-03-04",
+      "tags": [
+        "ネットワーク",
+        "VPN",
+        "セキュリティ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-094",
+      "chapter_id": "T-04",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "データベースの「トランザクション」における「原子性（Atomicity）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "トランザクションの結果がコミット後に永続的に保存されること"
+        },
+        {
+          "id": "b",
+          "text": "トランザクションがすべて完了（コミット）するか全て取り消し（ロールバック）されるかのどちらかであること"
+        },
+        {
+          "id": "c",
+          "text": "同時実行中のトランザクションが互いに干渉しないこと"
+        },
+        {
+          "id": "d",
+          "text": "トランザクション実行後のデータが一貫した状態を保つこと"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "ACID特性の「原子性（Atomicity）」は、トランザクションの処理がすべて完了（コミット）するかすべて取り消し（ロールバック）されるかのどちらかであることを保証します。中途半端な状態にはなりません。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "トランザクション",
+        "ACID",
+        "原子性"
+      ],
+      "related_page_id": "T-04-03",
+      "tags": [
+        "データベース",
+        "トランザクション",
+        "ACID"
+      ]
+    },
+    {
+      "question_id": "P-R06S-095",
+      "chapter_id": "T-05",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "情報セキュリティ管理の国際標準規格として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ISO/IEC 9001"
+        },
+        {
+          "id": "b",
+          "text": "ISO/IEC 27001"
+        },
+        {
+          "id": "c",
+          "text": "ISO/IEC 25010"
+        },
+        {
+          "id": "d",
+          "text": "ISO/IEC 14001"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "ISO/IEC 27001は情報セキュリティ管理システム（ISMS）の国際標準規格です。組織が情報セキュリティリスクを適切に管理するための要求事項を定めています。ISO 9001は品質管理、ISO 25010はソフトウェア品質、ISO 14001は環境管理の規格です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "ISO/IEC 27001",
+        "ISMS",
+        "情報セキュリティ"
+      ],
+      "related_page_id": "T-05-03",
+      "tags": [
+        "セキュリティ",
+        "ISMS",
+        "ISO"
+      ]
+    },
+    {
+      "question_id": "P-R06S-096",
+      "chapter_id": "T-06",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "アルゴリズムの計算量（時間複雑度）において、O(n)の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "入力サイズnに関わらず一定時間で処理が完了する"
+        },
+        {
+          "id": "b",
+          "text": "入力サイズnに比例して処理時間が増加する（線形時間）"
+        },
+        {
+          "id": "c",
+          "text": "入力サイズnの二乗に比例して処理時間が増加する"
+        },
+        {
+          "id": "d",
+          "text": "入力サイズnのlog値に比例して処理時間が増加する"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "O(n)表記はビッグオー記法で、入力サイズnに比例して処理時間が増加する線形時間アルゴリズムを意味します。O(1)は定数時間、O(n²)は二乗時間、O(log n)は対数時間です。アルゴリズムの性能評価に使われます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "計算量",
+        "ビッグオー",
+        "アルゴリズム"
+      ],
+      "related_page_id": "T-06-02",
+      "tags": [
+        "アルゴリズム",
+        "計算量",
+        "プログラミング"
+      ]
+    },
+    {
+      "question_id": "P-R06S-097",
+      "chapter_id": "T-07",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "WAF（Web Application Firewall）の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "ネットワーク層でIPアドレスとポート番号を基準に通信を制御するファイアウォール"
+        },
+        {
+          "id": "b",
+          "text": "Webアプリケーションへの攻撃（SQLインジェクション・XSSなど）を検知・遮断するセキュリティ機能"
+        },
+        {
+          "id": "c",
+          "text": "無線LANの通信を監視し不正なアクセスポイントを検出するシステム"
+        },
+        {
+          "id": "d",
+          "text": "マルウェアの感染を検知してリアルタイムで除去するウイルス対策ソフト"
+        }
+      ],
+      "correct_answer": "b",
+      "explanation": "WAF（Web Application Firewall）はSQLインジェクション・クロスサイトスクリプティング（XSS）などのWebアプリケーション層への攻撃を検知・遮断するセキュリティ機能です。通常のファイアウォールでは防げないアプリケーション層の攻撃に対応します。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "WAF",
+        "Webセキュリティ",
+        "ファイアウォール"
+      ],
+      "related_page_id": "T-07-03",
+      "tags": [
+        "セキュリティ",
+        "WAF",
+        "Webセキュリティ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-098",
+      "chapter_id": "T-10",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "テスト工程における「システムテスト（総合テスト）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "個々のモジュール（関数・クラス）が正しく動作するかを確認するテスト"
+        },
+        {
+          "id": "b",
+          "text": "複数のモジュールを組み合わせてインターフェースや連携動作を確認するテスト"
+        },
+        {
+          "id": "c",
+          "text": "システム全体が要件定義書の仕様を満たしているか総合的に確認するテスト"
+        },
+        {
+          "id": "d",
+          "text": "実際の業務シナリオで利用者がシステムを検証する受け入れテスト"
+        }
+      ],
+      "correct_answer": "c",
+      "explanation": "システムテスト（総合テスト）は、システム全体が要件定義書の仕様・非機能要件（性能・セキュリティ等）を満たしているかを総合的に確認するテストです。単体テスト→結合テスト→システムテスト→受け入れテストの順で実施されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "システムテスト",
+        "テスト工程",
+        "ソフトウェア開発"
+      ],
+      "related_page_id": "T-10-01",
+      "tags": [
+        "システム開発",
+        "テスト",
+        "品質管理"
+      ]
+    },
+    {
+      "question_id": "P-R06S-099",
+      "chapter_id": "T-11",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "クラウドサービスの「IaaS（Infrastructure as a Service）」の説明として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "インターネット経由でソフトウェアをサービスとして提供するクラウドサービス"
+        },
+        {
+          "id": "b",
+          "text": "アプリケーション開発・実行環境をクラウドで提供するサービス"
+        },
+        {
+          "id": "c",
+          "text": "仮想サーバ・ストレージ・ネットワークなどのインフラをクラウドで提供するサービス"
+        },
+        {
+          "id": "d",
+          "text": "AIや機械学習の機能をAPIとして提供するクラウドサービス"
+        }
+      ],
+      "correct_answer": "d",
+      "explanation": "IaaS（Infrastructure as a Service）は、仮想サーバ・ストレージ・ネットワークなどのITインフラをクラウドで提供するサービス形態です。OSやミドルウェアの管理はユーザーが担当します。SaaSはソフトウェア、PaaSは開発実行環境の提供です。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "IaaS",
+        "クラウドサービス",
+        "仮想化"
+      ],
+      "related_page_id": "T-11-02",
+      "tags": [
+        "クラウド",
+        "IaaS",
+        "インフラ"
+      ]
+    },
+    {
+      "question_id": "P-R06S-100",
+      "chapter_id": "T-09",
+      "category": "technology",
+      "difficulty": 2,
+      "source": "past_R06_spring",
+      "source_label": "令和6年度 公開問題",
+      "question_text": "HTTPSにおけるSSL/TLSの役割として最も適切なものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "WebサーバとブラウザのHTTP通信を暗号化し、盗聴・改ざんを防ぐこと"
+        },
+        {
+          "id": "b",
+          "text": "ブラウザがWebサーバに接続する際のIPアドレスを解決すること"
+        },
+        {
+          "id": "c",
+          "text": "Webサイトの表示速度を向上させるためにコンテンツをキャッシュすること"
+        },
+        {
+          "id": "d",
+          "text": "WebサーバへのDDoS攻撃を検知して自動的に遮断すること"
+        }
+      ],
+      "correct_answer": "a",
+      "explanation": "SSL/TLS（現在はTLSが主流）は、WebサーバとブラウザのHTTP通信を暗号化するプロトコルです。HTTPSはHTTPにTLSを組み合わせたもので、通信内容の盗聴・改ざん・なりすましを防ぎます。URLが「https://」で始まる接続で使用されます。出典：IPA ITパスポート試験",
+      "related_terms": [
+        "HTTPS",
+        "SSL/TLS",
+        "暗号化通信"
+      ],
+      "related_page_id": "T-09-01",
+      "tags": [
+        "ネットワーク",
+        "セキュリティ",
+        "HTTPS"
+      ]
+    }
+  ]
+}

@@ -191,10 +191,8 @@ export function calcStudyDays(readingTimeData, quizResults) {
     });
   }
 
-  // 今日アプリを開いていれば1日としてカウント
-  const today = new Date().toISOString().slice(0, 10);
-  activeDays.add(today);
-
+  // 実際に学習活動があった日だけカウントする
+  // （アプリを開いただけではカウントしない）
   return Math.max(1, activeDays.size);
 }
 

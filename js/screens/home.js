@@ -68,8 +68,11 @@ export async function renderHome(container) {
     const screenEl = buildHomeScreen({
       overallPct,
       studyDays,
+      elapsedDays,
       accuracy,
+      recentAcc,
       todaySecs,
+      passPred,
       sectionProgresses,
       recentSessions,
     }, progress);
@@ -91,7 +94,7 @@ export async function renderHome(container) {
  * @param {Object} progress - 進捗データ（オンボーディング判定に使用）
  * @returns {HTMLElement} ホーム画面の要素
  */
-function buildHomeScreen({ overallPct, studyDays, accuracy, todaySecs, sectionProgresses, recentSessions }, progress) {
+function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred, sectionProgresses, recentSessions }, progress) {
   const screen = createElement('div', { classes: ['home-screen'] });
 
   // ウェルカムバナー
@@ -259,7 +262,7 @@ function buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, 
   // 正答率カード（累計 + 直近3日）
   const accText = accuracy > 0 ? `${accuracy}%` : '---';
   const recentText = recentAcc >= 0 ? `${recentAcc}%` : '---';
-  grid.appendChild(buildDualStatCard(accText, '累計正答率', recentText, '直近3日間'));
+  grid.appendChild(buildDualStatCard(recentText, '直近3日間', accText, '累計正答率'));
 
   // 合格判定カード
   const predCard = createElement('div', { classes: ['stat-card', `stat-card-${passPred.color}`] });

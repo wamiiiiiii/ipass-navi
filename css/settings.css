@@ -1,7 +1,7 @@
 /*
  * settings.css
- * 設定画面のスタイルを定義する
- * テーマ切り替え・文字サイズ・データリセットの操作UI
+ * 設定画面
+ * デザインコンセプト：クリーン × ミニマル（Apple Settings風）
  */
 
 /* ===================================================
@@ -13,31 +13,30 @@
 
 /* ===================================================
    設定セクション
-   関連する設定項目をグループ化するコンテナ
    =================================================== */
 .settings-section {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
-/* セクションヘッダー（グループ名） */
 .settings-section-header {
   padding: var(--space-sm) var(--space-md) var(--space-xs);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
-/* セクション内のカード（iOS設定アプリ風） */
 .settings-card {
   background-color: var(--color-bg-elevated);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  margin: 0 var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
 }
 
 /* ===================================================
-   設定項目（行）
+   設定項目
    =================================================== */
 .settings-item {
   display: flex;
@@ -50,39 +49,29 @@
   transition: background-color var(--transition-fast);
 }
 
-.settings-item:last-child {
-  border-bottom: none;
-}
+.settings-item:last-child { border-bottom: none; }
+.settings-item:active { background-color: var(--color-bg-surface); }
 
-.settings-item:active {
-  background-color: var(--color-bg-surface);
-}
-
-/* 設定アイコン */
 .settings-item-icon {
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   line-height: 1;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
 
-/* アイコンの背景色（設定カテゴリごと） */
-.icon-bg-blue   { background-color: #E8F0FE; }
-.icon-bg-orange { background-color: #FFF3E0; }
-.icon-bg-red    { background-color: #FCE8E6; }
-.icon-bg-green  { background-color: #E6F4EA; }
-.icon-bg-purple { background-color: #F3E8FD; }
+.icon-bg-blue   { background-color: var(--color-primary-light); }
+.icon-bg-orange { background-color: #FFF7ED; }
+.icon-bg-red    { background-color: #FEF2F2; }
+.icon-bg-green  { background-color: #ECFDF5; }
+.icon-bg-purple { background-color: #F5F3FF; }
 .icon-bg-gray   { background-color: var(--color-bg-surface); }
 
-/* テキストエリア（ラベル＋サブテキスト） */
-.settings-item-text {
-  flex: 1;
-}
+.settings-item-text { flex: 1; }
 
 .settings-item-label {
   font-size: var(--font-size-base);
@@ -96,7 +85,6 @@
   margin-top: 2px;
 }
 
-/* 右側の値表示・矢印 */
 .settings-item-value {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
@@ -104,12 +92,12 @@
 }
 
 .settings-item-arrow {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   color: var(--color-text-disabled);
 }
 
 /* ===================================================
-   テーマ切り替え（ライト/ダーク/システム）
+   テーマ切り替え
    =================================================== */
 .theme-selector {
   display: flex;
@@ -117,7 +105,6 @@
   padding: var(--space-sm) 0 0;
 }
 
-/* テーマ選択カード */
 .theme-option {
   flex: 1;
   display: flex;
@@ -126,7 +113,7 @@
   gap: var(--space-xs);
   padding: var(--space-sm);
   border-radius: var(--radius-md);
-  border: 2px solid var(--color-border);
+  border: 1.5px solid var(--color-border);
   cursor: pointer;
   transition: all var(--transition-fast);
   min-height: var(--tap-target-min);
@@ -137,7 +124,6 @@
   background-color: var(--color-primary-light);
 }
 
-/* テーマプレビュー（小さなダミー画面） */
 .theme-preview {
   width: 48px;
   height: 36px;
@@ -147,18 +133,17 @@
 }
 
 .theme-preview-light {
-  background-color: #FFFFFF;
-  border-color: #DADCE0;
+  background-color: #F8FAFC;
+  border-color: #E2E8F0;
 }
 
 .theme-preview-dark {
-  background-color: #1a1a2e;
-  border-color: #2D3748;
+  background-color: #0F172A;
+  border-color: #334155;
 }
 
 .theme-preview-system {
-  /* 左半分白・右半分ダーク */
-  background: linear-gradient(to right, #FFFFFF 50%, #1a1a2e 50%);
+  background: linear-gradient(to right, #F8FAFC 50%, #0F172A 50%);
 }
 
 .theme-option-label {
@@ -169,7 +154,7 @@
 
 .theme-option.is-selected .theme-option-label {
   color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* ===================================================
@@ -190,7 +175,7 @@
   gap: var(--space-xs);
   padding: var(--space-sm);
   border-radius: var(--radius-md);
-  border: 2px solid var(--color-border);
+  border: 1.5px solid var(--color-border);
   cursor: pointer;
   transition: all var(--transition-fast);
   min-height: var(--tap-target-min);
@@ -201,7 +186,6 @@
   background-color: var(--color-primary-light);
 }
 
-/* プレビュー文字（サイズが違う「あ」を表示） */
 .font-size-preview-small  { font-size: 1.2rem; color: var(--color-text-primary); }
 .font-size-preview-medium { font-size: 1.6rem; color: var(--color-text-primary); }
 .font-size-preview-large  { font-size: 2.0rem; color: var(--color-text-primary); }
@@ -213,11 +197,11 @@
 
 .font-size-option.is-selected .font-size-option-label {
   color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* ===================================================
-   データリセット確認ダイアログ
+   リセットダイアログ
    =================================================== */
 .reset-dialog-overlay {
   position: fixed;
@@ -238,6 +222,7 @@
   width: 100%;
   max-width: 320px;
   animation: dialog-in var(--transition-base) ease;
+  border: 1px solid var(--color-border);
 }
 
 .reset-dialog-icon {
@@ -268,26 +253,22 @@
   gap: var(--space-sm);
 }
 
-/* リセット実行ボタン（赤） */
 .reset-confirm-btn {
   width: 100%;
   padding: var(--space-md);
   min-height: var(--tap-target-min);
   background-color: var(--color-error);
   color: #fff;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   text-align: center;
   cursor: pointer;
   transition: opacity var(--transition-fast);
 }
 
-.reset-confirm-btn:active {
-  opacity: 0.85;
-}
+.reset-confirm-btn:active { opacity: 0.85; }
 
-/* キャンセルボタン */
 .reset-cancel-btn {
   width: 100%;
   padding: var(--space-md);
@@ -295,7 +276,7 @@
   background-color: var(--color-bg-surface);
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   text-align: center;
@@ -303,26 +284,18 @@
   transition: opacity var(--transition-fast);
 }
 
-.reset-cancel-btn:active {
-  opacity: 0.75;
-}
+.reset-cancel-btn:active { opacity: 0.75; }
 
 @keyframes dialog-in {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 /* ===================================================
-   PWAインストール案内バナー
+   PWAインストールバナー
    =================================================== */
 .pwa-install-banner {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: var(--color-primary-gradient);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   margin: 0 var(--space-md) var(--space-md);
@@ -332,48 +305,42 @@
   gap: var(--space-md);
 }
 
-.pwa-install-icon {
-  font-size: 3.2rem;
-  flex-shrink: 0;
-}
+.pwa-install-icon { font-size: 3.2rem; flex-shrink: 0; }
 
-.pwa-install-text {
-  flex: 1;
-}
+.pwa-install-text { flex: 1; }
 
 .pwa-install-title {
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   margin-bottom: var(--space-xs);
 }
 
 .pwa-install-desc {
   font-size: var(--font-size-xs);
-  opacity: 0.9;
+  opacity: 0.85;
   line-height: var(--line-height-base);
 }
 
 .pwa-install-btn {
   padding: var(--space-xs) var(--space-md);
   min-height: 36px;
-  background-color: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
   transition: background-color var(--transition-fast);
+  backdrop-filter: blur(4px);
 }
 
-.pwa-install-btn:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
+.pwa-install-btn:active { background-color: rgba(255, 255, 255, 0.35); }
 
 /* ===================================================
-   バージョン情報表示
+   バージョン情報
    =================================================== */
 .settings-version {
   text-align: center;
@@ -384,7 +351,7 @@
 
 .settings-version-app {
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-xs);
 }

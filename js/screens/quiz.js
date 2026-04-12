@@ -520,15 +520,18 @@ async function startExamSession(container, questionsData) {
 function startExamTimer(container) {
   // 1秒ごとに実行するインターバル処理
   const timerId = setInterval(() => {
-    // セッションが存在しない、または模擬試験でない場合は停止する
-    if (!_session || _session.mode !== 'exam') {
+    // セッションが存在しない、または模擬試験でない場合は安全に停止する
+    if (!_session || _session.mode !== 'exam' || !_session.timerId) {
       clearInterval(timerId);
       return;
     }
 
+    // 現在のセッションを安全に参照する
+    const currentSession = _session;
+
     // 残り秒数を1秒減らす（イミュータブルに更新）
-    const newRemaining = _session.remainingSec - 1;
-    _session = { ..._session, remainingSec: newRemaining };
+    const newRemaining = currentSession.remainingSec - 1;
+    _session = { ...currentSession, remainingSec: newRemaining };
 
     // タイマー表示を更新する
     updateTimerDisplay(newRemaining);
@@ -698,13 +701,17 @@ function renderQuestionScreen(container) {
     attrs: { 'aria-label': '演習を中断する' },
   });
   quitBtn.addEventListener('click', () => {
-    // 模擬試験モードの場合はタイマーを停止する
-    if (_session && _session.timerId) {
-      clearInterval(_session.timerId);
+    // 回答済みの問題があれば結果画面を表示する
+    if (_session && _session.results && _session.results.length > 0) {
+      finishSession(container);
+    } else {
+      // 1問も回答していなければモード選択に戻る
+      if (_session && _session.timerId) {
+        clearInterval(_session.timerId);
+      }
+      _session = null;
+      navigate('quiz');
     }
-    // セッションをクリアしてモード選択に戻る
-    _session = null;
-    navigate('quiz');
   });
   progressHeader.appendChild(quitBtn);
 
@@ -775,10 +782,7 @@ function renderQuestionScreen(container) {
       if (_session.mode === 'exam') {
         const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
         if (isLastQuestion) {
-          // 全問解答完了：タイマーを停止してセッションを終了する
-          if (_session.timerId) {
-            clearInterval(_session.timerId);
-          }
+          // 全問解答完了：finishSession内でタイマー停止される
           finishSession(container);
         } else {
           // 次の問題へ（解説なし）
@@ -822,6 +826,40 @@ function renderExplanationScreen(container) {
   const isLastQuestion = _session.currentIdx >= totalCount - 1;
 
   const screen = createElement('div', { classes: ['quiz-question-screen'] });
+
+  // 進捗バー＋中断ボタン（問題画面と同じUIで一貫性を持たせる）
+  const currentNum = _session.currentIdx + 1;
+  const progressPct = Math.round((currentNum / totalCount) * 100);
+
+  const progressHeader = createElement('div', { classes: ['quiz-progress-header'] });
+  progressHeader.appendChild(createElement('span', {
+    classes: ['quiz-progress-text'],
+    text: `${currentNum} / ${totalCount}`,
+  }));
+
+  const bar = createElement('div', { classes: ['quiz-progress-bar'] });
+  bar.appendChild(createElement('div', {
+    classes: ['quiz-progress-fill'],
+    attrs: { style: `width: ${progressPct}%` },
+  }));
+  progressHeader.appendChild(bar);
+
+  // 中断ボタン
+  const quitBtn = createElement('button', {
+    classes: ['quiz-quit-btn'],
+    text: '✕',
+    attrs: { 'aria-label': '演習を中断する' },
+  });
+  quitBtn.addEventListener('click', () => {
+    if (_session && _session.results && _session.results.length > 0) {
+      finishSession(container);
+    } else {
+      _session = null;
+      navigate('quiz');
+    }
+  });
+  progressHeader.appendChild(quitBtn);
+  screen.appendChild(progressHeader);
 
   // 問題文（再表示）
   const questionCard = createElement('div', { classes: ['question-card'] });
@@ -969,6 +1007,7 @@ function finishSession(container) {
   // 模擬試験モードのタイマーが残っていれば確実に停止する
   if (_session.timerId) {
     clearInterval(_session.timerId);
+    _session = { ..._session, timerId: null };
   }
 
   // スコアを計算
