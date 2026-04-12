@@ -701,9 +701,11 @@ function renderQuestionScreen(container) {
     attrs: { 'aria-label': '演習を中断する' },
   });
   quitBtn.addEventListener('click', () => {
+    // _session.container を使う（クロージャの container が古くなる場合がある）
+    const target = _session ? _session.container : container;
     // 回答済みの問題があれば結果画面を表示する
     if (_session && _session.results && _session.results.length > 0) {
-      finishSession(container);
+      finishSession(target);
     } else {
       // 1問も回答していなければモード選択に戻る
       if (_session && _session.timerId) {
@@ -735,10 +737,23 @@ function renderQuestionScreen(container) {
   screen.appendChild(questionCard);
 
   const questionStartTime = Date.now(); // 回答時間計測用
+  const isFlashcard = _session.mode === 'flashcard';
 
-  // 一問一答（flashcard）モード：選択肢なし、「答えを見る」→自己判定
-  if (_session.mode === 'flashcard') {
-    const answerArea = createElement('div', { classes: ['flashcard-answer-area'] });
+  // 一問一答（flashcard）モード：選択肢を表示するが選択はできない
+  // 「答えを見る」→ 正解ハイライト＋解説 → 自己判定
+  if (isFlashcard) {
+    // 選択肢を読み取り専用で表示する（問題の文脈を理解するため）
+    const choicesList = createElement('div', { classes: ['choices-list'] });
+    current.choices.forEach((choice) => {
+      const btn = createElement('button', {
+        classes: ['choice-btn'],
+        attrs: { disabled: 'true' },
+      });
+      btn.appendChild(createElement('span', { classes: ['choice-id'], text: choice.id }));
+      btn.appendChild(createElement('span', { classes: ['choice-text'], text: choice.text }));
+      choicesList.appendChild(btn);
+    });
+    screen.appendChild(choicesList);
 
     // 「答えを見る」ボタン
     const revealBtn = createElement('button', {
@@ -749,25 +764,27 @@ function renderQuestionScreen(container) {
     revealBtn.addEventListener('click', () => {
       revealBtn.style.display = 'none';
 
-      // 正解カード
+      // 選択肢の正解をハイライト表示する
+      choicesList.querySelectorAll('.choice-btn').forEach((btn) => {
+        const choiceId = btn.querySelector('.choice-id').textContent;
+        if (choiceId === current.correct_answer) {
+          btn.classList.add('is-correct');
+          btn.appendChild(createElement('span', {
+            classes: ['choice-result-label', 'choice-result-correct'],
+            text: '✓ 正解',
+          }));
+        }
+      });
+
+      // 解説カード
       const answerCard = createElement('div', { classes: ['flashcard-answer-card'] });
-
-      // 正解の選択肢テキストを取得
-      const correctChoice = current.choices.find((c) => c.id === current.correct_answer);
-      answerCard.appendChild(createElement('div', {
-        classes: ['flashcard-correct-label'],
-        text: `正解：${current.correct_answer}. ${correctChoice ? correctChoice.text : ''}`,
-      }));
-
-      // 解説
       if (current.explanation) {
         answerCard.appendChild(createElement('p', {
           classes: ['flashcard-explanation'],
           text: current.explanation,
         }));
       }
-
-      answerArea.appendChild(answerCard);
+      screen.appendChild(answerCard);
 
       // 自己判定ボタン（わかった / わからなかった）
       const judgeRow = createElement('div', { classes: ['flashcard-self-judge'] });
@@ -782,7 +799,6 @@ function renderQuestionScreen(container) {
         text: '✓ わかった',
       });
 
-      // 自己判定の共通処理
       const handleJudge = (isCorrect) => {
         const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
         const newResult = {
@@ -802,14 +818,14 @@ function renderQuestionScreen(container) {
 
         const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
         if (isLastQuestion) {
-          finishSession(container);
+          finishSession(_session.container);
         } else {
           _session = {
             ..._session,
             phase:      'question',
             currentIdx: _session.currentIdx + 1,
           };
-          renderQuestionScreen(container);
+          renderQuestionScreen(_session.container);
         }
       };
 
@@ -818,12 +834,10 @@ function renderQuestionScreen(container) {
 
       judgeRow.appendChild(wrongBtn);
       judgeRow.appendChild(correctBtn);
-      answerArea.appendChild(judgeRow);
+      screen.appendChild(judgeRow);
     });
 
-    answerArea.appendChild(revealBtn);
-    screen.appendChild(answerArea);
-
+    screen.appendChild(revealBtn);
     renderInto(container, [screen]);
     return;
   }
@@ -943,9 +957,13 @@ function renderExplanationScreen(container) {
     attrs: { 'aria-label': '演習を中断する' },
   });
   quitBtn.addEventListener('click', () => {
+    const target = _session ? _session.container : container;
     if (_session && _session.results && _session.results.length > 0) {
-      finishSession(container);
+      finishSession(target);
     } else {
+      if (_session && _session.timerId) {
+        clearInterval(_session.timerId);
+      }
       _session = null;
       navigate('quiz');
     }
