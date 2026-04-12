@@ -134,8 +134,8 @@ function renderModeSelect(container, query) {
   }));
 
   const modes = [
-    { id: 'standard', icon: '📝', name: '4択（本番形式）', desc: '本番と同じ形式で演習' },
-    { id: 'flashcard', icon: '🃏', name: '一問一答',       desc: '手軽に確認したいとき' },
+    { id: 'standard', icon: '📝', name: '4択（本番形式）', desc: '選択肢から正解を選ぶ' },
+    { id: 'flashcard', icon: '🃏', name: '一問一答',       desc: '答えを見て自己判定' },
     { id: 'weak',      icon: '🎯', name: '苦手問題のみ',   desc: '誤答率50%以上を集中' },
     { id: 'shuffle',   icon: '🔀', name: 'シャッフル',    desc: 'ランダム順で出題' },
     // 模擬試験モード：本番と同じ100問・120分形式
@@ -697,7 +697,7 @@ function renderQuestionScreen(container) {
   // 中断ボタン（進捗バーの右端に配置）
   const quitBtn = createElement('button', {
     classes: ['quiz-quit-btn'],
-    text: '✕',
+    text: '中断',
     attrs: { 'aria-label': '演習を中断する' },
   });
   quitBtn.addEventListener('click', () => {
@@ -734,9 +734,102 @@ function renderQuestionScreen(container) {
 
   screen.appendChild(questionCard);
 
-  // 選択肢リスト
-  const choicesList = createElement('div', { classes: ['choices-list'] });
   const questionStartTime = Date.now(); // 回答時間計測用
+
+  // 一問一答（flashcard）モード：選択肢なし、「答えを見る」→自己判定
+  if (_session.mode === 'flashcard') {
+    const answerArea = createElement('div', { classes: ['flashcard-answer-area'] });
+
+    // 「答えを見る」ボタン
+    const revealBtn = createElement('button', {
+      classes: ['flashcard-reveal-btn'],
+      text: '💡 答えを見る',
+    });
+
+    revealBtn.addEventListener('click', () => {
+      revealBtn.style.display = 'none';
+
+      // 正解カード
+      const answerCard = createElement('div', { classes: ['flashcard-answer-card'] });
+
+      // 正解の選択肢テキストを取得
+      const correctChoice = current.choices.find((c) => c.id === current.correct_answer);
+      answerCard.appendChild(createElement('div', {
+        classes: ['flashcard-correct-label'],
+        text: `正解：${current.correct_answer}. ${correctChoice ? correctChoice.text : ''}`,
+      }));
+
+      // 解説
+      if (current.explanation) {
+        answerCard.appendChild(createElement('p', {
+          classes: ['flashcard-explanation'],
+          text: current.explanation,
+        }));
+      }
+
+      answerArea.appendChild(answerCard);
+
+      // 自己判定ボタン（わかった / わからなかった）
+      const judgeRow = createElement('div', { classes: ['flashcard-self-judge'] });
+
+      const wrongBtn = createElement('button', {
+        classes: ['flashcard-judge-btn', 'flashcard-judge-wrong'],
+        text: '✗ わからなかった',
+      });
+
+      const correctBtn = createElement('button', {
+        classes: ['flashcard-judge-btn', 'flashcard-judge-correct'],
+        text: '✓ わかった',
+      });
+
+      // 自己判定の共通処理
+      const handleJudge = (isCorrect) => {
+        const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
+        const newResult = {
+          question_id:    current.question_id,
+          answered:       isCorrect ? current.correct_answer : '__wrong__',
+          correct:        isCorrect,
+          time_spent_sec: timeSpent,
+          questionData:   null,
+        };
+
+        _session = {
+          ..._session,
+          results: [..._session.results, newResult],
+        };
+
+        recordQuestionAnswer(current.question_id, isCorrect);
+
+        const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
+        if (isLastQuestion) {
+          finishSession(container);
+        } else {
+          _session = {
+            ..._session,
+            phase:      'question',
+            currentIdx: _session.currentIdx + 1,
+          };
+          renderQuestionScreen(container);
+        }
+      };
+
+      wrongBtn.addEventListener('click', () => handleJudge(false));
+      correctBtn.addEventListener('click', () => handleJudge(true));
+
+      judgeRow.appendChild(wrongBtn);
+      judgeRow.appendChild(correctBtn);
+      answerArea.appendChild(judgeRow);
+    });
+
+    answerArea.appendChild(revealBtn);
+    screen.appendChild(answerArea);
+
+    renderInto(container, [screen]);
+    return;
+  }
+
+  // 4択モード（standard / shuffle / weak / past / exam）
+  const choicesList = createElement('div', { classes: ['choices-list'] });
 
   current.choices.forEach((choice) => {
     const btn = createElement('button', { classes: ['choice-btn'] });
@@ -758,7 +851,6 @@ function renderQuestionScreen(container) {
       const isCorrect = choice.id === current.correct_answer;
 
       // セッション結果を更新（イミュータブルに新しい結果配列を作成）
-      // 模擬試験モードでは解説表示のためquestion・answeredId・も保持する
       const newResult = {
         question_id:    current.question_id,
         answered:       choice.id,
@@ -847,7 +939,7 @@ function renderExplanationScreen(container) {
   // 中断ボタン
   const quitBtn = createElement('button', {
     classes: ['quiz-quit-btn'],
-    text: '✕',
+    text: '中断',
     attrs: { 'aria-label': '演習を中断する' },
   });
   quitBtn.addEventListener('click', () => {
