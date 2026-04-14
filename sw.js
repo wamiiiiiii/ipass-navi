@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v11: ○✗モード実装（提示された選択肢の正誤を判定）
-const CACHE_NAME = 'ipass-navi-v11';
-const DATA_CACHE_NAME = 'ipass-navi-data-v11';
+// v12: CSSプレミアム品質アップグレード（シャドウ・グラス・アニメーション強化）
+const CACHE_NAME = 'ipass-navi-v12';
+const DATA_CACHE_NAME = 'ipass-navi-data-v12';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

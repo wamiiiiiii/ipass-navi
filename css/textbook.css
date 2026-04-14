@@ -1,7 +1,7 @@
 /*
  * textbook.css
  * 教科書モード
- * デザインコンセプト：読みやすさ × ミニマル
+ * デザインコンセプト：読みやすさ × プレミアム品質 × 呼吸感のある余白
  */
 
 /* ===================================================
@@ -18,13 +18,13 @@
 }
 
 /* ===================================================
-   分野カード
+   分野カード（ヘッダーを少し大きく・シャドウエレベーション）
    =================================================== */
 .section-card {
   margin: 0 var(--space-md) var(--space-sm);
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow var(--transition-fast), transform var(--transition-fast);
@@ -32,11 +32,12 @@
 
 .section-card:active {
   transform: scale(0.99);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
+/* 分野ヘッダー（少し高くしてパディングを増やし、プレミアム感を強調） */
 .section-card-header {
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
   display: flex;
   align-items: center;
   gap: var(--space-md);
@@ -78,7 +79,7 @@
 }
 
 .section-card-footer {
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md) var(--space-lg);
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -150,6 +151,7 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .chapter-info {
@@ -192,7 +194,7 @@
 }
 
 /* ===================================================
-   節コンテンツ
+   節コンテンツ（十分な余白で読みやすさを確保）
    =================================================== */
 .page-content-screen {
   padding: var(--space-md);
@@ -207,11 +209,12 @@
   letter-spacing: -0.02em;
 }
 
+/* コンテンツカード（シャドウエレベーション・十分なパディング） */
 .content-card {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-xl) var(--space-lg);
   margin-bottom: var(--space-md);
 }
 
@@ -222,30 +225,41 @@
   white-space: pre-line;
 }
 
-/* キーワードハイライト */
+/* キーワードハイライト（ホバーで背景色ティント） */
 .keyword-highlight {
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
   border-bottom: 2px solid rgba(99, 102, 241, 0.3);
   cursor: pointer;
-  transition: background-color var(--transition-fast);
-  padding: 1px 2px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  padding: 1px 4px;
   border-radius: 3px;
 }
 
 .keyword-highlight:active {
-  background-color: var(--color-primary-light);
+  background-color: rgba(99, 102, 241, 0.08);
+  border-bottom-color: rgba(99, 102, 241, 0.5);
+}
+
+/* ダークテーマのキーワードハイライト */
+[data-theme="dark"] .keyword-highlight:active {
+  background-color: rgba(129, 140, 248, 0.12);
 }
 
 /* ===================================================
-   ポイントまとめカード
+   ポイントまとめカード（太い左ボーダー・グラデーション背景）
    =================================================== */
 .summary-card {
-  background-color: var(--color-primary-light);
-  border-left: 3px solid var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(245, 243, 255, 0.5) 100%);
+  border-left: 4px solid var(--color-primary);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
   margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .summary-card {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(30, 27, 75, 0.3) 100%);
 }
 
 .summary-card-title {
@@ -274,7 +288,7 @@
 }
 
 .summary-list-item::before {
-  content: '✓';
+  content: '\2713';
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
   flex-shrink: 0;
@@ -282,7 +296,7 @@
 }
 
 /* ===================================================
-   ページナビゲーション
+   ページナビゲーション（少し背が高いボタン）
    =================================================== */
 .page-navigation {
   display: flex;
@@ -297,28 +311,33 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-md);
-  min-height: var(--tap-target-min);
+  padding: var(--space-md);
+  min-height: 52px;
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .page-nav-btn-prev {
-  background-color: var(--color-bg-surface);
+  background-color: var(--color-bg-elevated);
   color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .page-nav-btn-next {
   background: var(--color-primary-gradient);
   color: var(--color-text-on-primary);
+  box-shadow: var(--shadow-glow-primary);
 }
 
-.page-nav-btn:active { opacity: 0.8; }
-.page-nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.page-nav-btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.page-nav-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
 .chapter-quiz-btn {
   width: 100%;
@@ -336,6 +355,7 @@
   cursor: pointer;
   transition: opacity var(--transition-fast);
   margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-glow-success);
 }
 
 .chapter-quiz-btn:active { opacity: 0.85; }
@@ -363,7 +383,7 @@
   height: 8px;
   border-radius: var(--radius-full);
   background-color: var(--color-border);
-  transition: background-color var(--transition-base);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .page-progress-dot.is-read {
@@ -387,11 +407,10 @@
   max-width: calc(var(--app-max-width) - var(--space-lg) * 2);
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-md);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-lg) var(--space-md);
   z-index: var(--z-modal);
   animation: popup-in var(--transition-base) ease;
-  border: 1px solid var(--color-border);
 }
 
 .glossary-popup-term {

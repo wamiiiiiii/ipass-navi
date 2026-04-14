@@ -2,6 +2,7 @@
  * reset.css
  * ブラウザごとのデフォルトスタイル差異をリセットする
  * すべてのスタイルの基盤となるファイル
+ * プレミアム品質：スムーズスクロール・セレクション・フォント最適化
  */
 
 /* ボックスモデルを border-box に統一する（パディングがwidthに含まれる） */
@@ -100,6 +101,32 @@ html {
   /* iOSでフォントサイズの自動調整を防ぐ */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* ページ内リンクの遷移をなめらかにする */
+  scroll-behavior: smooth;
+  /* テキスト描画の品質を最適化 */
+  text-rendering: optimizeLegibility;
+}
+
+/* テキスト選択時のハイライト色をブランドカラーに統一 */
+::selection {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: inherit;
+}
+
+/* ダークテーマ時のテキスト選択色 */
+[data-theme="dark"] ::selection {
+  background-color: rgba(129, 140, 248, 0.3);
+  color: inherit;
+}
+
+[data-theme="dark"] ::-moz-selection {
+  background-color: rgba(129, 140, 248, 0.3);
+  color: inherit;
 }
 
 /* body のベーススタイル */
@@ -172,4 +199,23 @@ textarea {
 /* テキストエリアのリサイズを縦のみに制限 */
 textarea {
   resize: vertical;
+}
+
+/* スクロールバーの統一（WebKit系） */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
 }

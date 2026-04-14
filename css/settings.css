@@ -1,7 +1,7 @@
 /*
  * settings.css
  * 設定画面
- * デザインコンセプト：クリーン × ミニマル（Apple Settings風）
+ * デザインコンセプト：Apple Settings品質 × プレミアムアイコン背景
  */
 
 /* ===================================================
@@ -31,7 +31,7 @@
   background-color: var(--color-bg-elevated);
   margin: 0 var(--space-md);
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 
@@ -52,15 +52,16 @@
 .settings-item:last-child { border-bottom: none; }
 .settings-item:active { background-color: var(--color-bg-surface); }
 
+/* アイコン背景（Apple風の大きめ角丸正方形） */
 .settings-item-icon {
   font-size: 2.0rem;
   line-height: 1;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   flex-shrink: 0;
 }
 
@@ -70,6 +71,13 @@
 .icon-bg-green  { background-color: #ECFDF5; }
 .icon-bg-purple { background-color: #F5F3FF; }
 .icon-bg-gray   { background-color: var(--color-bg-surface); }
+
+/* ダークテーマ時のアイコン背景をより濃くする */
+[data-theme="dark"] .icon-bg-blue   { background-color: rgba(129, 140, 248, 0.12); }
+[data-theme="dark"] .icon-bg-orange { background-color: rgba(251, 146, 60, 0.12); }
+[data-theme="dark"] .icon-bg-red    { background-color: rgba(248, 113, 113, 0.12); }
+[data-theme="dark"] .icon-bg-green  { background-color: rgba(52, 211, 153, 0.12); }
+[data-theme="dark"] .icon-bg-purple { background-color: rgba(167, 139, 250, 0.12); }
 
 .settings-item-text { flex: 1; }
 
@@ -122,6 +130,7 @@
 .theme-option.is-selected {
   border-color: var(--color-primary);
   background-color: var(--color-primary-light);
+  box-shadow: var(--shadow-glow-primary);
 }
 
 .theme-preview {
@@ -184,6 +193,7 @@
 .font-size-option.is-selected {
   border-color: var(--color-primary);
   background-color: var(--color-primary-light);
+  box-shadow: var(--shadow-glow-primary);
 }
 
 .font-size-preview-small  { font-size: 1.2rem; color: var(--color-text-primary); }
@@ -222,7 +232,7 @@
   width: 100%;
   max-width: 320px;
   animation: dialog-in var(--transition-base) ease;
-  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xl);
 }
 
 .reset-dialog-icon {
@@ -265,6 +275,7 @@
   text-align: center;
   cursor: pointer;
   transition: opacity var(--transition-fast);
+  box-shadow: var(--shadow-glow-error);
 }
 
 .reset-confirm-btn:active { opacity: 0.85; }
@@ -275,13 +286,13 @@
   min-height: var(--tap-target-min);
   background-color: var(--color-bg-surface);
   color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   text-align: center;
   cursor: pointer;
   transition: opacity var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .reset-cancel-btn:active { opacity: 0.75; }
@@ -303,6 +314,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  box-shadow: var(--shadow-glow-primary);
 }
 
 .pwa-install-icon { font-size: 3.2rem; flex-shrink: 0; }
