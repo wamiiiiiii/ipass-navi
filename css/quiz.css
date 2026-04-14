@@ -104,6 +104,38 @@
   font-weight: var(--font-weight-semibold);
 }
 
+/* 問題数セレクター */
+.quiz-count-chips {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.count-chip {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-xs);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  min-height: var(--tap-target-min);
+  transition: all var(--transition-fast);
+}
+
+.count-chip.is-selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.count-chip:active { transform: scale(0.96); }
+
 /* 演習開始ボタン */
 .quiz-start-btn {
   width: 100%;

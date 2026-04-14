@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v8: PWAアイコン追加・バグ修正
-const CACHE_NAME = 'ipass-navi-v8';
-const DATA_CACHE_NAME = 'ipass-navi-data-v8';
+// v9: 問題数セレクター追加
+const CACHE_NAME = 'ipass-navi-v9';
+const DATA_CACHE_NAME = 'ipass-navi-data-v9';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

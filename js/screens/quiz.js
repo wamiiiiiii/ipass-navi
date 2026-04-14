@@ -114,9 +114,10 @@ export async function renderQuiz(container, params = {}, query = {}) {
  * @param {Object} query - URLクエリパラメータ（事前選択状態の設定）
  */
 function renderModeSelect(container, query) {
-  /** 選択中のモード・分野をローカル状態として管理 */
+  /** 選択中のモード・分野・問題数をローカル状態として管理 */
   let selectedMode     = query.mode     || 'standard';
   let selectedCategory = query.category || 'all';
+  let selectedCount    = 10; // デフォルト10問
 
   const screen = createElement('div', { classes: ['quiz-mode-screen'] });
 
@@ -157,7 +158,6 @@ function renderModeSelect(container, query) {
     card.appendChild(createElement('span', { classes: ['quiz-mode-desc'], text: mode.desc }));
 
     card.addEventListener('click', () => {
-      // 選択済みカードのスタイルを更新（DOM操作のみ・ステートはローカル変数で管理）
       modeGrid.querySelectorAll('.quiz-mode-card').forEach((c) => c.classList.remove('is-selected'));
       card.classList.add('is-selected');
       selectedMode = mode.id;
@@ -203,6 +203,40 @@ function renderModeSelect(container, query) {
   categorySection.appendChild(chipContainer);
   screen.appendChild(categorySection);
 
+  // 問題数セレクター（模擬試験・過去問以外のモードで表示）
+  const countSection = createElement('div', { classes: ['quiz-filter-section'] });
+  countSection.appendChild(createElement('div', {
+    classes: ['quiz-filter-label'],
+    text: '問題数',
+  }));
+
+  const countContainer = createElement('div', { classes: ['quiz-count-chips'] });
+
+  const countOptions = [
+    { count: 10, label: '10問' },
+    { count: 20, label: '20問' },
+    { count: 30, label: '30問' },
+    { count: 50, label: '50問' },
+  ];
+
+  countOptions.forEach((opt) => {
+    const chip = createElement('div', {
+      classes: ['count-chip', selectedCount === opt.count ? 'is-selected' : ''],
+      text: opt.label,
+    });
+
+    chip.addEventListener('click', () => {
+      countContainer.querySelectorAll('.count-chip').forEach((c) => c.classList.remove('is-selected'));
+      chip.classList.add('is-selected');
+      selectedCount = opt.count;
+    });
+
+    countContainer.appendChild(chip);
+  });
+
+  countSection.appendChild(countContainer);
+  screen.appendChild(countSection);
+
   // 演習開始ボタン
   const startBtn = createElement('button', {
     classes: ['quiz-start-btn'],
@@ -217,7 +251,9 @@ function renderModeSelect(container, query) {
       return;
     }
     renderInto(container, [createLoadingSpinner()]);
-    await startSession(container, selectedMode, selectedCategory);
+    // 模擬試験は固定100問、それ以外は選択した問題数を渡す
+    const questionLimit = selectedMode === 'exam' ? null : selectedCount;
+    await startSession(container, selectedMode, selectedCategory, questionLimit);
   });
 
   screen.appendChild(startBtn);
@@ -394,8 +430,9 @@ async function startPastYearSession(container, source, sourceLabel, questionsDat
  * @param {HTMLElement} container - 描画先のコンテナ
  * @param {string} mode - 演習モード
  * @param {string} category - 分野フィルター
+ * @param {number|null} questionLimit - 出題する問題数（nullの場合は制限なし）
  */
-async function startSession(container, mode, category) {
+async function startSession(container, mode, category, questionLimit = null) {
   try {
     const questionsData = await loadQuestions();
     let questions = filterQuestionsByCategory(questionsData, category);
@@ -404,6 +441,10 @@ async function startSession(container, mode, category) {
       const weakData = getWeakQuestions();
       const weakIds = getWeakQuestionIds(weakData);
       questions = filterWeakQuestions(questionsData, weakIds);
+      // 苦手問題は分野フィルターも適用する
+      if (category !== 'all') {
+        questions = questions.filter((q) => q.category === category);
+      }
     }
 
     // 模擬試験モードは専用の問題選出ロジックを使用する
@@ -417,8 +458,11 @@ async function startSession(container, mode, category) {
       return;
     }
 
-    // シャッフルモードまたはデフォルトでシャッフル
+    // シャッフルして指定問題数に絞る（イミュータブル）
     const shuffled = shuffleQuestions(questions);
+    const limited = questionLimit
+      ? shuffled.slice(0, Math.min(questionLimit, shuffled.length))
+      : shuffled;
 
     // セッション状態を新しいオブジェクトとして初期化（イミュータブル）
     _session = {
@@ -426,7 +470,7 @@ async function startSession(container, mode, category) {
       phase:      'question',
       mode,
       category,
-      questions:  shuffled,
+      questions:  limited,
       currentIdx: 0,
       results:    [],
       startedAt:  new Date().toISOString(),
@@ -586,11 +630,12 @@ function formatSeconds(totalSeconds) {
 }
 
 /**
- * 苦手問題セッションを開始する
+ * 苦手問題セッションを開始する（ホーム画面のクイックアクセスから呼ばれる）
  * @param {HTMLElement} container - 描画先のコンテナ
  */
 async function startWeakSession(container) {
-  await startSession(container, 'weak', 'all');
+  // クイックアクセスからはデフォルト10問で開始する
+  await startSession(container, 'weak', 'all', 10);
 }
 
 /**
