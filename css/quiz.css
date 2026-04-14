@@ -227,11 +227,22 @@
   animation: fade-in var(--transition-base) ease;
 }
 
-.flashcard-correct-label {
-  font-size: var(--font-size-md);
+.flashcard-answer-label {
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-success);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.flashcard-answer-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-success-light);
+  border-radius: var(--radius-sm);
+  line-height: var(--line-height-base);
 }
 
 .flashcard-explanation {

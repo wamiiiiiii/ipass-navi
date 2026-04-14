@@ -784,22 +784,8 @@ function renderQuestionScreen(container) {
   const questionStartTime = Date.now(); // 回答時間計測用
   const isFlashcard = _session.mode === 'flashcard';
 
-  // 一問一答（flashcard）モード：選択肢を表示するが選択はできない
-  // 「答えを見る」→ 正解ハイライト＋解説 → 自己判定
+  // 一問一答（flashcard）モード：問題文のみ表示 → 答え確認 → ○✗自己判定
   if (isFlashcard) {
-    // 選択肢を読み取り専用で表示する（問題の文脈を理解するため）
-    const choicesList = createElement('div', { classes: ['choices-list'] });
-    current.choices.forEach((choice) => {
-      const btn = createElement('button', {
-        classes: ['choice-btn'],
-        attrs: { disabled: 'true' },
-      });
-      btn.appendChild(createElement('span', { classes: ['choice-id'], text: choice.id }));
-      btn.appendChild(createElement('span', { classes: ['choice-text'], text: choice.text }));
-      choicesList.appendChild(btn);
-    });
-    screen.appendChild(choicesList);
-
     // 「答えを見る」ボタン
     const revealBtn = createElement('button', {
       classes: ['flashcard-reveal-btn'],
@@ -809,20 +795,25 @@ function renderQuestionScreen(container) {
     revealBtn.addEventListener('click', () => {
       revealBtn.style.display = 'none';
 
-      // 選択肢の正解をハイライト表示する
-      choicesList.querySelectorAll('.choice-btn').forEach((btn) => {
-        const choiceId = btn.querySelector('.choice-id').textContent;
-        if (choiceId === current.correct_answer) {
-          btn.classList.add('is-correct');
-          btn.appendChild(createElement('span', {
-            classes: ['choice-result-label', 'choice-result-correct'],
-            text: '✓ 正解',
-          }));
-        }
-      });
-
-      // 解説カード
+      // 正解テキストを表示する
+      const correctChoice = current.choices.find((c) => c.id === current.correct_answer);
       const answerCard = createElement('div', { classes: ['flashcard-answer-card'] });
+
+      // 正解表示
+      const answerLabel = createElement('div', {
+        classes: ['flashcard-answer-label'],
+        text: `正解：${current.correct_answer}`,
+      });
+      answerCard.appendChild(answerLabel);
+
+      if (correctChoice) {
+        answerCard.appendChild(createElement('div', {
+          classes: ['flashcard-answer-text'],
+          text: correctChoice.text,
+        }));
+      }
+
+      // 解説文
       if (current.explanation) {
         answerCard.appendChild(createElement('p', {
           classes: ['flashcard-explanation'],
@@ -831,7 +822,7 @@ function renderQuestionScreen(container) {
       }
       screen.appendChild(answerCard);
 
-      // 自己判定ボタン（わかった / わからなかった）
+      // ○✗ 自己判定ボタン
       const judgeRow = createElement('div', { classes: ['flashcard-self-judge'] });
 
       const wrongBtn = createElement('button', {
@@ -841,7 +832,7 @@ function renderQuestionScreen(container) {
 
       const correctBtn = createElement('button', {
         classes: ['flashcard-judge-btn', 'flashcard-judge-correct'],
-        text: '✓ わかった',
+        text: '○ わかった',
       });
 
       const handleJudge = (isCorrect) => {

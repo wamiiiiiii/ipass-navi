@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v9: 問題数セレクター追加
-const CACHE_NAME = 'ipass-navi-v9';
-const DATA_CACHE_NAME = 'ipass-navi-data-v9';
+// v10: 一問一答モードを○✗方式に変更
+const CACHE_NAME = 'ipass-navi-v10';
+const DATA_CACHE_NAME = 'ipass-navi-data-v10';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
