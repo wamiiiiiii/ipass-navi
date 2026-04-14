@@ -136,7 +136,7 @@ function renderModeSelect(container, query) {
 
   const modes = [
     { id: 'standard', icon: '📝', name: '4択（本番形式）', desc: '選択肢から正解を選ぶ' },
-    { id: 'flashcard', icon: '🃏', name: '一問一答',       desc: '答えを見て自己判定' },
+    { id: 'flashcard', icon: '⭕', name: '○✗モード',       desc: '正しいか間違いか即判定' },
     { id: 'weak',      icon: '🎯', name: '苦手問題のみ',   desc: '誤答率50%以上を集中' },
     { id: 'shuffle',   icon: '🔀', name: 'シャッフル',    desc: 'ランダム順で出題' },
     // 模擬試験モード：本番と同じ100問・120分形式
@@ -784,75 +784,102 @@ function renderQuestionScreen(container) {
   const questionStartTime = Date.now(); // 回答時間計測用
   const isFlashcard = _session.mode === 'flashcard';
 
-  // 一問一答（flashcard）モード：問題文のみ表示 → 答え確認 → ○✗自己判定
+  // ○✗モード：問題文＋提示された選択肢が正解かどうかを○✗で判定する
   if (isFlashcard) {
-    // 「答えを見る」ボタン
-    const revealBtn = createElement('button', {
-      classes: ['flashcard-reveal-btn'],
-      text: '💡 答えを見る',
+    // 正解の選択肢と不正解の選択肢を取得する
+    const correctChoice = current.choices.find((c) => c.id === current.correct_answer);
+    const wrongChoices = current.choices.filter((c) => c.id !== current.correct_answer);
+
+    // 50%の確率で正解を提示、50%の確率で不正解を提示する
+    const showCorrect = Math.random() < 0.5;
+    const presentedChoice = showCorrect
+      ? correctChoice
+      : wrongChoices[Math.floor(Math.random() * wrongChoices.length)];
+    const correctAnswerIsMaruBatsu = showCorrect; // ○が正解か✗が正解か
+
+    // 提示する選択肢をカードで目立たせて表示する
+    const presentCard = createElement('div', { classes: ['marubatsu-present-card'] });
+    presentCard.appendChild(createElement('div', {
+      classes: ['marubatsu-present-label'],
+      text: 'この答えは正しい？',
+    }));
+    presentCard.appendChild(createElement('div', {
+      classes: ['marubatsu-present-text'],
+      text: presentedChoice.text,
+    }));
+    screen.appendChild(presentCard);
+
+    // ○✗ 判定ボタン
+    const judgeRow = createElement('div', { classes: ['marubatsu-judge-row'] });
+
+    const batsuBtn = createElement('button', {
+      classes: ['marubatsu-btn', 'marubatsu-btn-batsu'],
+      text: '✗',
     });
 
-    revealBtn.addEventListener('click', () => {
-      revealBtn.style.display = 'none';
+    const maruBtn = createElement('button', {
+      classes: ['marubatsu-btn', 'marubatsu-btn-maru'],
+      text: '○',
+    });
 
-      // 正解テキストを表示する
-      const correctChoice = current.choices.find((c) => c.id === current.correct_answer);
-      const answerCard = createElement('div', { classes: ['flashcard-answer-card'] });
+    const handleMaruBatsu = (userAnsweredMaru) => {
+      // ユーザーの判定が正しいかどうかを判定する
+      const isCorrect = userAnsweredMaru === correctAnswerIsMaruBatsu;
+      const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
 
-      // 正解表示
-      const answerLabel = createElement('div', {
-        classes: ['flashcard-answer-label'],
-        text: `正解：${current.correct_answer}`,
+      // ボタンを無効化して二重タップを防止する
+      maruBtn.disabled = true;
+      batsuBtn.disabled = true;
+
+      // 正誤フィードバックを表示する
+      const feedbackCard = createElement('div', {
+        classes: ['flashcard-answer-card', isCorrect ? 'marubatsu-correct' : 'marubatsu-wrong'],
       });
-      answerCard.appendChild(answerLabel);
 
-      if (correctChoice) {
-        answerCard.appendChild(createElement('div', {
-          classes: ['flashcard-answer-text'],
-          text: correctChoice.text,
-        }));
-      }
+      feedbackCard.appendChild(createElement('div', {
+        classes: ['marubatsu-feedback-label'],
+        text: isCorrect ? '⭕ 正解！' : '❌ 不正解…',
+      }));
+
+      // 正しい答えを表示する
+      feedbackCard.appendChild(createElement('div', {
+        classes: ['marubatsu-correct-answer'],
+        text: `正解：${correctChoice.text}`,
+      }));
 
       // 解説文
       if (current.explanation) {
-        answerCard.appendChild(createElement('p', {
+        feedbackCard.appendChild(createElement('p', {
           classes: ['flashcard-explanation'],
           text: current.explanation,
         }));
       }
-      screen.appendChild(answerCard);
+      screen.appendChild(feedbackCard);
 
-      // ○✗ 自己判定ボタン
-      const judgeRow = createElement('div', { classes: ['flashcard-self-judge'] });
+      // セッション結果を記録する
+      const newResult = {
+        question_id:    current.question_id,
+        answered:       isCorrect ? current.correct_answer : '__wrong__',
+        correct:        isCorrect,
+        time_spent_sec: timeSpent,
+        questionData:   null,
+      };
 
-      const wrongBtn = createElement('button', {
-        classes: ['flashcard-judge-btn', 'flashcard-judge-wrong'],
-        text: '✗ わからなかった',
+      _session = {
+        ..._session,
+        results: [..._session.results, newResult],
+      };
+
+      recordQuestionAnswer(current.question_id, isCorrect);
+
+      // 次の問題へ進むボタン
+      const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
+      const nextBtn = createElement('button', {
+        classes: ['next-question-btn'],
+        text: isLastQuestion ? '📊 結果を見る' : '次の問題へ →',
       });
 
-      const correctBtn = createElement('button', {
-        classes: ['flashcard-judge-btn', 'flashcard-judge-correct'],
-        text: '○ わかった',
-      });
-
-      const handleJudge = (isCorrect) => {
-        const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-        const newResult = {
-          question_id:    current.question_id,
-          answered:       isCorrect ? current.correct_answer : '__wrong__',
-          correct:        isCorrect,
-          time_spent_sec: timeSpent,
-          questionData:   null,
-        };
-
-        _session = {
-          ..._session,
-          results: [..._session.results, newResult],
-        };
-
-        recordQuestionAnswer(current.question_id, isCorrect);
-
-        const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
+      nextBtn.addEventListener('click', () => {
         if (isLastQuestion) {
           finishSession(_session.container);
         } else {
@@ -863,17 +890,17 @@ function renderQuestionScreen(container) {
           };
           renderQuestionScreen(_session.container);
         }
-      };
+      });
+      screen.appendChild(nextBtn);
+    };
 
-      wrongBtn.addEventListener('click', () => handleJudge(false));
-      correctBtn.addEventListener('click', () => handleJudge(true));
+    batsuBtn.addEventListener('click', () => handleMaruBatsu(false));
+    maruBtn.addEventListener('click', () => handleMaruBatsu(true));
 
-      judgeRow.appendChild(wrongBtn);
-      judgeRow.appendChild(correctBtn);
-      screen.appendChild(judgeRow);
-    });
+    judgeRow.appendChild(batsuBtn);
+    judgeRow.appendChild(maruBtn);
+    screen.appendChild(judgeRow);
 
-    screen.appendChild(revealBtn);
     renderInto(container, [screen]);
     return;
   }

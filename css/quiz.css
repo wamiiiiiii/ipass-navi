@@ -227,14 +227,75 @@
   animation: fade-in var(--transition-base) ease;
 }
 
-.flashcard-answer-label {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-success);
-  margin-bottom: var(--space-xs);
+/* ○✗モード：提示カード */
+.marubatsu-present-card {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-primary);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  text-align: center;
 }
 
-.flashcard-answer-text {
+.marubatsu-present-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.marubatsu-present-text {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+}
+
+/* ○✗モード：判定ボタン */
+.marubatsu-judge-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.marubatsu-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  border-radius: var(--radius-lg);
+  font-size: 4.0rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+}
+
+.marubatsu-btn:active { transform: scale(0.95); }
+.marubatsu-btn:disabled { opacity: 0.4; cursor: default; transform: none; }
+
+.marubatsu-btn-maru {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.marubatsu-btn-batsu {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+/* ○✗モード：フィードバック */
+.marubatsu-feedback-label {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.marubatsu-correct .marubatsu-feedback-label { color: var(--color-success); }
+.marubatsu-wrong .marubatsu-feedback-label { color: var(--color-error); }
+
+.marubatsu-correct-answer {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
