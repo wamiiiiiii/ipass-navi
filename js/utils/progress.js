@@ -307,7 +307,7 @@ export function calcRecentAccuracy(quizResults, days = 3) {
  */
 export function calcPassPrediction(quizResults) {
   if (!quizResults || !quizResults.sessions || quizResults.sessions.length < 3) {
-    return { level: 'unknown', label: 'データ不足', color: 'gray' };
+    return { level: 'unknown', label: 'データ不足', color: 'gray', description: '3回以上演習すると判定が表示されます' };
   }
 
   // 直近10セッションの正答率を計算
@@ -338,10 +338,11 @@ export function calcPassPrediction(quizResults) {
   });
 
   if (total === 0) {
-    return { level: 'unknown', label: 'データ不足', color: 'gray' };
+    return { level: 'unknown', label: 'データ不足', color: 'gray', description: '3回以上演習すると判定が表示されます' };
   }
 
   const overallRate = (correct / total) * 100;
+  const rateText = `正答率${Math.round(overallRate)}%`;
 
   // 分野別足切りチェック（各分野30%以上必要）
   let hasWeakCategory = false;
@@ -351,15 +352,16 @@ export function calcPassPrediction(quizResults) {
     }
   });
 
-  // 判定
+  // 判定（直近10回の演習結果がベース）
   if (overallRate >= 75 && !hasWeakCategory) {
-    return { level: 'high', label: '合格圏内', color: 'green' };
+    return { level: 'high', label: '合格圏内', color: 'green', description: `直近${recent.length}回 ${rateText}・全分野30%超` };
   } else if (overallRate >= 60 && !hasWeakCategory) {
-    return { level: 'borderline', label: 'あと一歩', color: 'orange' };
+    return { level: 'borderline', label: 'あと一歩', color: 'orange', description: `直近${recent.length}回 ${rateText}（75%で合格圏）` };
   } else if (overallRate >= 45) {
-    return { level: 'effort', label: 'もう少し頑張ろう', color: 'yellow' };
+    const weakNote = hasWeakCategory ? '・苦手分野あり' : '';
+    return { level: 'effort', label: 'もう少し頑張ろう', color: 'yellow', description: `直近${recent.length}回 ${rateText}${weakNote}` };
   } else {
-    return { level: 'low', label: '基礎固めから', color: 'red' };
+    return { level: 'low', label: '基礎固めから', color: 'red', description: `直近${recent.length}回 ${rateText}（60%が合格ライン）` };
   }
 }
 

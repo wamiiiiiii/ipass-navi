@@ -318,6 +318,33 @@
   border-color: var(--color-error);
 }
 
+/* ○✗モード：フィードバック後のアクション行 */
+.marubatsu-action-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* 中断ボタン（インライン） */
+.quiz-quit-inline-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.quiz-quit-inline-btn:active { opacity: 0.75; }
+
 /* ○✗モード：フィードバック */
 .marubatsu-feedback-label {
   font-size: var(--font-size-lg);

@@ -264,10 +264,14 @@ function buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, 
   const recentText = recentAcc >= 0 ? `${recentAcc}%` : '---';
   grid.appendChild(buildDualStatCard(recentText, '直近3日間', accText, '累計正答率'));
 
-  // 合格判定カード
+  // 合格判定カード（基準の説明付き）
   const predCard = createElement('div', { classes: ['stat-card', `stat-card-${passPred.color}`] });
   predCard.appendChild(createElement('div', { classes: ['stat-card-value'], text: passPred.label }));
   predCard.appendChild(createElement('div', { classes: ['stat-card-label'], text: '合格判定' }));
+  // 判定基準の補足テキスト
+  const predDesc = createElement('div', { classes: ['stat-card-desc'] });
+  predDesc.textContent = passPred.description || '';
+  predCard.appendChild(predDesc);
   grid.appendChild(predCard);
 
   return grid;

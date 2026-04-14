@@ -156,6 +156,14 @@
   font-weight: var(--font-weight-medium);
 }
 
+/* 判定基準の補足テキスト */
+.stat-card-desc {
+  margin-top: var(--space-xs);
+  font-size: 1.0rem;
+  color: var(--color-text-disabled);
+  line-height: var(--line-height-tight);
+}
+
 /* サブ情報（ボーダーの代わりに薄い背景で区切る） */
 .stat-card-sub {
   margin-top: var(--space-sm);

@@ -872,8 +872,11 @@ function renderQuestionScreen(container) {
 
       recordQuestionAnswer(current.question_id, isCorrect);
 
-      // 次の問題へ進むボタン
+      // 次の問題へ進むボタン＋中断ボタン
       const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
+
+      const actionRow = createElement('div', { classes: ['marubatsu-action-row'] });
+
       const nextBtn = createElement('button', {
         classes: ['next-question-btn'],
         text: isLastQuestion ? '📊 結果を見る' : '次の問題へ →',
@@ -891,7 +894,21 @@ function renderQuestionScreen(container) {
           renderQuestionScreen(_session.container);
         }
       });
-      screen.appendChild(nextBtn);
+      actionRow.appendChild(nextBtn);
+
+      // 中断ボタン（最終問題以外で表示）
+      if (!isLastQuestion) {
+        const quitBtnInline = createElement('button', {
+          classes: ['quiz-quit-inline-btn'],
+          text: '中断して結果を見る',
+        });
+        quitBtnInline.addEventListener('click', () => {
+          finishSession(_session.container);
+        });
+        actionRow.appendChild(quitBtnInline);
+      }
+
+      screen.appendChild(actionRow);
     };
 
     batsuBtn.addEventListener('click', () => handleMaruBatsu(false));
