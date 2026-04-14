@@ -595,3 +595,15 @@ function saveCurrentPageReadingTime() {
     _currentPageId = null;
   }
 }
+
+// ページ離脱・タブ切替時に閲覧時間を保存する
+// ブラウザを閉じたとき・タブを切り替えたときにも閲覧時間が失われないようにする
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    saveCurrentPageReadingTime();
+  }
+});
+
+window.addEventListener('beforeunload', () => {
+  saveCurrentPageReadingTime();
+});

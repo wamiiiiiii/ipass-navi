@@ -1072,7 +1072,12 @@ function renderExplanationScreen(container) {
     });
     reviewBtn.addEventListener('click', () => {
       // 現在のセッションはアクティブのまま（再開できるように）
-      navigate(`textbook/strategy?page=${current.related_page_id}`);
+      // related_page_idのプレフィックスから分野を判定する
+      // S-xx → strategy, M-xx → management, T-xx → technology
+      const sectionMap = { S: 'strategy', M: 'management', T: 'technology' };
+      const prefix = current.related_page_id.split('-')[0];
+      const sectionId = sectionMap[prefix] || 'strategy';
+      navigate(`textbook/${sectionId}?page=${current.related_page_id}`);
     });
     screen.appendChild(reviewBtn);
   }

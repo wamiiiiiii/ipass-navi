@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v5: 図解レンダリングシステム追加（diagram.js / diagram.css / diagrams.json）
-const CACHE_NAME = 'ipass-navi-v7';
-const DATA_CACHE_NAME = 'ipass-navi-data-v7';
+// v8: PWAアイコン追加・バグ修正
+const CACHE_NAME = 'ipass-navi-v8';
+const DATA_CACHE_NAME = 'ipass-navi-data-v8';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -39,6 +39,9 @@ const APP_SHELL_FILES = [
   './js/utils/progress.js',
   './js/utils/diagram.js',
   './css/diagram.css',
+  './favicon.png',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
 ];
 
 // JSONデータファイル：Cache First で管理するファイル

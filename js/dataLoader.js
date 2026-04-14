@@ -243,28 +243,28 @@ export function filterTermsByKanaRow(glossaryData, kanaRow) {
     return [...glossaryData.terms];
   }
 
-  // 各行の範囲を定義（Unicode順序で判定）
-  const kanaRanges = {
-    'あ': ['あ', 'お'],
-    'か': ['か', 'こ'],
-    'さ': ['さ', 'そ'],
-    'た': ['た', 'と'],
-    'な': ['な', 'の'],
-    'は': ['は', 'ほ'],
-    'ま': ['ま', 'も'],
-    'や': ['や', 'よ'],
-    'ら': ['ら', 'ろ'],
-    'わ': ['わ', 'ん'],
+  // 各行に含まれる文字を明示的に列挙する（Unicode範囲比較では濁音・半濁音が漏れるため）
+  const kanaRowChars = {
+    'あ': 'あいうえお',
+    'か': 'かきくけこがぎぐげご',
+    'さ': 'さしすせそざじずぜぞ',
+    'た': 'たちつてとだぢづでど',
+    'な': 'なにぬねの',
+    'は': 'はひふへほばびぶべぼぱぴぷぺぽ',
+    'ま': 'まみむめも',
+    'や': 'やゆよ',
+    'ら': 'らりるれろ',
+    'わ': 'わをん',
   };
 
-  const range = kanaRanges[kanaRow];
-  if (!range) {
+  const chars = kanaRowChars[kanaRow];
+  if (!chars) {
     return [...glossaryData.terms];
   }
 
   return glossaryData.terms.filter((term) => {
     const firstChar = term.reading.charAt(0);
-    return firstChar >= range[0] && firstChar <= range[1];
+    return chars.includes(firstChar);
   });
 }
 

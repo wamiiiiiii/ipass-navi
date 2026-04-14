@@ -114,9 +114,10 @@ function updateNavActiveState(routeName) {
   const rootName = routeName.split('/')[0];
   const activeTabId = tabMap[rootName];
 
-  // すべてのタブからアクティブクラスを除去
+  // すべてのタブからアクティブクラスとaria-selectedを除去
   document.querySelectorAll('.nav-tab').forEach((tab) => {
     tab.classList.remove('is-active');
+    tab.setAttribute('aria-selected', 'false');
   });
 
   // 対応するタブをアクティブにする
@@ -124,6 +125,7 @@ function updateNavActiveState(routeName) {
     const activeTab = document.getElementById(activeTabId);
     if (activeTab) {
       activeTab.classList.add('is-active');
+      activeTab.setAttribute('aria-selected', 'true');
     }
   }
 }
