@@ -12,107 +12,92 @@
 }
 
 /* ===================================================
-   ウェルカムバナー（アニメーショングラデーション）
+   ウェルカムバナー（Figma Make エディトリアルスタイル）
    =================================================== */
 .home-welcome {
-  background: var(--color-primary-gradient);
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-  color: var(--color-text-on-primary);
+  /* グラデーションなし・ウォームクリーム背景 */
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
   padding: var(--space-xl) var(--space-lg) var(--space-lg);
   margin-bottom: var(--space-lg);
-  position: relative;
-  overflow: hidden;
+  /* 下部に区切り線 */
+  border-bottom: 1px solid var(--color-divider);
+  animation: fade-in-up 0.6s ease-out;
 }
 
-/* ゆるやかなグラデーションシフトアニメーション */
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* 背景のアクセント装飾（浮遊する幾何学模様） */
-.home-welcome::before {
-  content: '';
-  position: absolute;
-  top: -40%;
-  right: -20%;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  animation: float-circle 6s ease-in-out infinite;
-}
-
-.home-welcome::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -10%;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  animation: float-circle 8s ease-in-out infinite reverse;
-}
-
-/* 装飾円のゆるやかな浮遊アニメーション */
-@keyframes float-circle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+/* ITパスポート ラベルバッジ（Figma Make のアクセントラベル） */
+.home-app-label {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border: 1px solid rgba(217, 119, 87, 0.25);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .home-app-title {
+  /* Figma Make スタイル：セリフフォントの大見出し */
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: 2px;
-  letter-spacing: -0.02em;
-  position: relative;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
 }
 
 .home-welcome-sub {
   font-size: var(--font-size-sm);
-  opacity: 0.75;
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
   font-weight: var(--font-weight-normal);
-  position: relative;
 }
 
 /* 全体進捗サマリー */
 .home-progress-summary {
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: var(--radius-lg);
+  /* Figma Make スタイル：ボーダーカード */
+  background-color: var(--color-bg-elevated);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-lg);
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .home-progress-number {
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.02em;
+  color: var(--color-primary);
 }
 
 .home-progress-label {
   font-size: var(--font-size-xs);
-  opacity: 0.7;
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-sm);
   font-weight: var(--font-weight-medium);
 }
 
 .home-progress-bar {
-  height: 6px;
-  background-color: rgba(255, 255, 255, 0.2);
+  height: 4px;
+  background-color: var(--color-divider);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .home-progress-bar-fill {
   height: 100%;
-  background-color: #FFFFFF;
+  background-color: var(--color-primary);
   border-radius: var(--radius-full);
   transition: width var(--transition-slow);
 }
@@ -205,24 +190,31 @@
 }
 
 /* ===================================================
-   分野別進捗カード（シャドウエレベーション・ボーダーレス）
+   分野別進捗カード（Figma Make ボーダースタイル）
    =================================================== */
 .section-progress-card {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  /* Figma Make スタイル：ボーダー + ホバーで border-primary */
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
   padding: var(--space-md);
   margin-bottom: var(--space-sm);
   cursor: pointer;
-  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
+.section-progress-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
 .section-progress-card:active {
   transform: scale(0.99);
-  box-shadow: var(--shadow-lg);
 }
 
 .section-progress-header {
@@ -265,38 +257,29 @@
 .quick-action-btn {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  /* Figma Make スタイル */
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
   cursor: pointer;
-  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
   min-height: var(--tap-target-min);
   position: relative;
   overflow: hidden;
 }
 
-/* ホバー/アクティブ時の微妙なグラデーションオーバーレイ */
-.quick-action-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-primary-gradient);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-  border-radius: inherit;
-  pointer-events: none;
+.quick-action-btn:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 .quick-action-btn:active {
   transform: scale(0.98);
-  box-shadow: var(--shadow-lg);
-}
-
-.quick-action-btn:active::after {
-  opacity: 0.04;
 }
 
 .quick-action-icon {

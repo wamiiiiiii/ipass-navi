@@ -435,26 +435,25 @@
   transition: width var(--transition-base);
 }
 
-/* 問題文（上部のアクセントライン付き） */
+/* 問題文（Figma Make スタイル：border-2 カード） */
 .question-card {
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  /* Figma Make スタイル：ボーダー + シャドウ */
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
   padding: var(--space-lg);
   margin-bottom: var(--space-md);
-  position: relative;
-  overflow: hidden;
 }
 
 /* 問題カードの上部アクセントライン */
 .question-card::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  display: block;
   height: 3px;
-  background: var(--color-primary-gradient);
+  margin: calc(var(--space-lg) * -1) calc(var(--space-lg) * -1) var(--space-md);
+  background: var(--color-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .question-meta {
@@ -465,10 +464,12 @@
 }
 
 .question-text {
+  /* Figma Make スタイル：問題文にセリフフォント */
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-medium);
+  font-weight: 500;
   color: var(--color-text-primary);
-  line-height: var(--line-height-base);
+  line-height: 1.7;
 }
 
 /* ===================================================
@@ -486,45 +487,35 @@
   align-items: center;
   gap: var(--space-md);
   width: 100%;
-  padding: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
   min-height: 56px;
   background-color: var(--color-bg-elevated);
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--color-border);
+  /* Figma Make スタイル：border-2 */
+  border: 2px solid var(--color-border);
   cursor: pointer;
   text-align: left;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
   -webkit-tap-highlight-color: transparent;
   position: relative;
-  overflow: hidden;
 }
 
-/* アクティブ時に左端にカラーバーを表示 */
-.choice-btn::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--color-primary-gradient);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
+.choice-btn:hover:not(:disabled) {
+  border-color: rgba(45, 53, 97, 0.35);
+  background-color: var(--color-primary-light);
 }
 
 .choice-btn:active {
   transform: scale(0.99);
 }
 
-.choice-btn:active::before {
-  opacity: 1;
-}
-
+/* 番号サークル（Figma Make スタイル） */
 .choice-id {
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);
-  background-color: var(--color-bg-surface);
+  background-color: transparent;
+  border: 2px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -542,47 +533,39 @@
   line-height: var(--line-height-base);
 }
 
+/* 選択済み（答え確認前） */
 .choice-btn.is-selected {
   border-color: var(--color-primary);
   background-color: var(--color-primary-light);
 }
 
-.choice-btn.is-selected::before {
-  opacity: 1;
-}
-
 .choice-btn.is-selected .choice-id {
-  background: var(--color-primary-gradient);
-  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-on-primary);
 }
 
+/* 正解（答え確認後） */
 .choice-btn.is-correct {
-  border-color: var(--color-success);
-  background-color: var(--color-success-light);
-}
-
-.choice-btn.is-correct::before {
-  background: var(--color-success);
-  opacity: 1;
+  border-color: var(--color-technology);
+  background-color: var(--color-technology-light);
 }
 
 .choice-btn.is-correct .choice-id {
-  background-color: var(--color-success);
+  background-color: var(--color-technology);
+  border-color: var(--color-technology);
   color: #fff;
 }
 
+/* 不正解（答え確認後） */
 .choice-btn.is-wrong {
   border-color: var(--color-error);
   background-color: var(--color-error-light);
 }
 
-.choice-btn.is-wrong::before {
-  background: var(--color-error);
-  opacity: 1;
-}
-
 .choice-btn.is-wrong .choice-id {
   background-color: var(--color-error);
+  border-color: var(--color-error);
   color: #fff;
 }
 

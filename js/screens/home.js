@@ -201,7 +201,13 @@ function buildOnboardingCard() {
 function buildWelcomeBanner(overallPct) {
   const banner = createElement('div', { classes: ['home-welcome'] });
 
-  // アプリタイトル
+  // Figma Makeデザイン：アクセントラベルバッジ
+  banner.appendChild(createElement('div', {
+    classes: ['home-app-label'],
+    text: 'IT PASSPORT STUDY',
+  }));
+
+  // アプリタイトル（セリフフォント）
   banner.appendChild(createElement('h1', {
     classes: ['home-app-title'],
     text: 'iPass ナビ',
@@ -209,7 +215,7 @@ function buildWelcomeBanner(overallPct) {
 
   banner.appendChild(createElement('p', {
     classes: ['home-welcome-sub'],
-    text: 'ITパスポート試験対策アプリ',
+    text: '効率的な学習で、確実に合格へ',
   }));
 
   // 全体進捗サマリー

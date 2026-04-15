@@ -9,122 +9,128 @@
    =================================================== */
 :root,
 [data-theme="light"] {
-  /* --- メインカラー（インディゴ → バイオレット グラデーション） --- */
-  --color-primary: #6366F1;
-  --color-primary-dark: #4F46E5;
-  --color-primary-light: #EEF2FF;
-  --color-primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  /* --- メインカラー（Figma Makeデザイン：ダークネイビー） --- */
+  --color-primary: #2d3561;
+  --color-primary-dark: #1e2547;
+  --color-primary-light: rgba(45, 53, 97, 0.08);
+  --color-primary-gradient: linear-gradient(135deg, #2d3561 0%, #3d4a82 100%);
 
-  /* --- 背景色（極めて薄いウォームグレー・カード用に微妙な差を設ける） --- */
-  --color-bg-base: #F8FAFC;
-  --color-bg-surface: #F1F5F9;
-  --color-bg-elevated: #FFFFFF;
-  --color-bg-card: #FAFBFF;
-  --color-bg-overlay: rgba(15, 23, 42, 0.4);
+  /* --- アクセントカラー（テラコッタ） --- */
+  --color-accent: #d97757;
+  --color-accent-light: rgba(217, 119, 87, 0.10);
+
+  /* --- 背景色（Figma Make：ウォームクリーム） --- */
+  --color-bg-base: #faf9f6;
+  --color-bg-surface: #f4f1ea;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-overlay: rgba(26, 26, 46, 0.45);
 
   /* --- テキスト色 --- */
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #64748B;
-  --color-text-disabled: #94A3B8;
-  --color-text-on-primary: #FFFFFF;
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #6b6b7c;
+  --color-text-disabled: #9b9baa;
+  --color-text-on-primary: #faf9f6;
 
-  /* --- ボーダー・区切り線（極めて控えめ） --- */
-  --color-border: #E2E8F0;
-  --color-divider: #F1F5F9;
+  /* --- ボーダー・区切り線 --- */
+  --color-border: rgba(45, 53, 97, 0.14);
+  --color-divider: #e8e5dc;
 
   /* --- セマンティックカラー --- */
-  --color-success: #10B981;
-  --color-success-light: #ECFDF5;
-  --color-error: #EF4444;
-  --color-error-light: #FEF2F2;
-  --color-warning: #F59E0B;
-  --color-warning-light: #FFFBEB;
-  --color-info: #6366F1;
-  --color-info-light: #EEF2FF;
+  --color-success: #6aaa89;
+  --color-success-light: rgba(139, 196, 168, 0.12);
+  --color-error: #d14343;
+  --color-error-light: rgba(209, 67, 67, 0.08);
+  --color-warning: #c8893a;
+  --color-warning-light: rgba(200, 137, 58, 0.10);
+  --color-info: #2d3561;
+  --color-info-light: rgba(45, 53, 97, 0.08);
 
   /* --- 出題頻度バッジ色 --- */
-  --color-freq-high: #EF4444;
-  --color-freq-medium: #F59E0B;
-  --color-freq-low: #10B981;
+  --color-freq-high: #d14343;
+  --color-freq-medium: #c8893a;
+  --color-freq-low: #6aaa89;
 
-  /* --- シャドウ（Apple風の多層シャドウ・低彩度で自然な奥行き） --- */
+  /* --- シャドウ（控えめで温かみのある） --- */
   --shadow-sm:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 1px 3px rgba(0, 0, 0, 0.02);
+    0 1px 2px rgba(26, 26, 46, 0.04),
+    0 1px 3px rgba(26, 26, 46, 0.03);
   --shadow-md:
-    0 2px 4px rgba(0, 0, 0, 0.02),
-    0 4px 16px rgba(0, 0, 0, 0.04),
-    0 8px 24px rgba(0, 0, 0, 0.02);
+    0 2px 4px rgba(26, 26, 46, 0.03),
+    0 4px 16px rgba(26, 26, 46, 0.06),
+    0 8px 24px rgba(26, 26, 46, 0.03);
   --shadow-lg:
-    0 4px 8px rgba(0, 0, 0, 0.02),
-    0 8px 24px rgba(0, 0, 0, 0.05),
-    0 16px 48px rgba(0, 0, 0, 0.03);
+    0 4px 8px rgba(26, 26, 46, 0.04),
+    0 8px 24px rgba(26, 26, 46, 0.08),
+    0 16px 48px rgba(26, 26, 46, 0.04);
   --shadow-xl:
-    0 8px 16px rgba(0, 0, 0, 0.03),
-    0 16px 48px rgba(0, 0, 0, 0.06),
-    0 24px 64px rgba(0, 0, 0, 0.04);
+    0 8px 16px rgba(26, 26, 46, 0.05),
+    0 16px 48px rgba(26, 26, 46, 0.10),
+    0 24px 64px rgba(26, 26, 46, 0.05);
   --shadow-nav:
-    0 -1px 0 rgba(0, 0, 0, 0.03),
-    0 -4px 16px rgba(0, 0, 0, 0.02);
-  /* グロウ系シャドウ（アクティブ要素やアクセント用） */
-  --shadow-glow-primary: 0 0 20px rgba(99, 102, 241, 0.15);
-  --shadow-glow-success: 0 0 16px rgba(16, 185, 129, 0.2);
-  --shadow-glow-error: 0 0 16px rgba(239, 68, 68, 0.2);
+    0 -1px 0 rgba(26, 26, 46, 0.06),
+    0 -4px 16px rgba(26, 26, 46, 0.04);
+  --shadow-glow-primary: 0 0 20px rgba(45, 53, 97, 0.15);
+  --shadow-glow-success: 0 0 16px rgba(106, 170, 137, 0.2);
+  --shadow-glow-error: 0 0 16px rgba(209, 67, 67, 0.2);
 
-  /* --- グラスモーフィズム（すりガラス効果） --- */
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-blur: saturate(180%) blur(20px);
+  /* --- グラスモーフィズム --- */
+  --glass-bg: rgba(250, 249, 246, 0.82);
+  --glass-border: rgba(45, 53, 97, 0.10);
+  --glass-blur: saturate(160%) blur(20px);
 
   /* --- ナビゲーション --- */
-  --color-nav-bg: rgba(255, 255, 255, 0.78);
-  --color-nav-active: #6366F1;
-  --color-nav-inactive: #94A3B8;
+  --color-nav-bg: rgba(250, 249, 246, 0.92);
+  --color-nav-active: #2d3561;
+  --color-nav-inactive: #9b9baa;
 
-  /* --- 分野カラー --- */
-  --color-strategy: #6366F1;
-  --color-strategy-light: #EEF2FF;
-  --color-management: #F97316;
-  --color-management-light: #FFF7ED;
-  --color-technology: #10B981;
-  --color-technology-light: #ECFDF5;
+  /* --- 分野カラー（Figma Make chart colors） --- */
+  --color-strategy: #d97757;
+  --color-strategy-light: rgba(217, 119, 87, 0.12);
+  --color-management: #6b9bd1;
+  --color-management-light: rgba(107, 155, 209, 0.12);
+  --color-technology: #8bc4a8;
+  --color-technology-light: rgba(139, 196, 168, 0.12);
 }
 
 /* ===================================================
    ダークテーマ
    =================================================== */
 [data-theme="dark"] {
-  --color-primary: #818CF8;
-  --color-primary-dark: #6366F1;
-  --color-primary-light: #1E1B4B;
-  --color-primary-gradient: linear-gradient(135deg, #818CF8 0%, #A78BFA 100%);
+  --color-primary: #8b99d4;
+  --color-primary-dark: #6b7bbf;
+  --color-primary-light: rgba(139, 153, 212, 0.12);
+  --color-primary-gradient: linear-gradient(135deg, #8b99d4 0%, #a0aee0 100%);
 
-  --color-bg-base: #0F172A;
-  --color-bg-surface: #1E293B;
-  --color-bg-elevated: #1E293B;
-  --color-bg-card: #1A2332;
+  --color-accent: #e8906e;
+  --color-accent-light: rgba(232, 144, 110, 0.12);
+
+  --color-bg-base: #14131a;
+  --color-bg-surface: #1c1b25;
+  --color-bg-elevated: #201f2c;
+  --color-bg-card: #201f2c;
   --color-bg-overlay: rgba(0, 0, 0, 0.6);
 
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #94A3B8;
-  --color-text-disabled: #475569;
-  --color-text-on-primary: #FFFFFF;
+  --color-text-primary: #e8e6f0;
+  --color-text-secondary: #8f8fa8;
+  --color-text-disabled: #5a5a72;
+  --color-text-on-primary: #14131a;
 
-  --color-border: #334155;
-  --color-divider: #1E293B;
+  --color-border: rgba(139, 153, 212, 0.18);
+  --color-divider: #2a2938;
 
-  --color-success: #34D399;
-  --color-success-light: #064E3B;
-  --color-error: #F87171;
-  --color-error-light: #450A0A;
-  --color-warning: #FBBF24;
-  --color-warning-light: #451A03;
-  --color-info: #818CF8;
-  --color-info-light: #1E1B4B;
+  --color-success: #7dc4a0;
+  --color-success-light: rgba(125, 196, 160, 0.12);
+  --color-error: #e06565;
+  --color-error-light: rgba(224, 101, 101, 0.10);
+  --color-warning: #d9a055;
+  --color-warning-light: rgba(217, 160, 85, 0.12);
+  --color-info: #8b99d4;
+  --color-info-light: rgba(139, 153, 212, 0.10);
 
-  --color-freq-high: #F87171;
-  --color-freq-medium: #FBBF24;
-  --color-freq-low: #34D399;
+  --color-freq-high: #e06565;
+  --color-freq-medium: #d9a055;
+  --color-freq-low: #7dc4a0;
 
   --shadow-sm:
     0 1px 2px rgba(0, 0, 0, 0.2),
@@ -144,38 +150,46 @@
   --shadow-nav:
     0 -1px 0 rgba(0, 0, 0, 0.2),
     0 -4px 16px rgba(0, 0, 0, 0.15);
-  --shadow-glow-primary: 0 0 24px rgba(129, 140, 248, 0.2);
-  --shadow-glow-success: 0 0 20px rgba(52, 211, 153, 0.2);
-  --shadow-glow-error: 0 0 20px rgba(248, 113, 113, 0.2);
+  --shadow-glow-primary: 0 0 24px rgba(139, 153, 212, 0.2);
+  --shadow-glow-success: 0 0 20px rgba(125, 196, 160, 0.2);
+  --shadow-glow-error: 0 0 20px rgba(224, 101, 101, 0.2);
 
-  --glass-bg: rgba(30, 41, 59, 0.72);
-  --glass-border: rgba(51, 65, 85, 0.5);
-  --glass-blur: saturate(180%) blur(20px);
+  --glass-bg: rgba(20, 19, 26, 0.82);
+  --glass-border: rgba(139, 153, 212, 0.15);
+  --glass-blur: saturate(160%) blur(20px);
 
-  --color-nav-bg: rgba(15, 23, 42, 0.82);
-  --color-nav-active: #818CF8;
-  --color-nav-inactive: #475569;
+  --color-nav-bg: rgba(20, 19, 26, 0.92);
+  --color-nav-active: #8b99d4;
+  --color-nav-inactive: #5a5a72;
 
-  --color-strategy: #818CF8;
-  --color-strategy-light: #1E1B4B;
-  --color-management: #FB923C;
-  --color-management-light: #431407;
-  --color-technology: #34D399;
-  --color-technology-light: #064E3B;
+  --color-strategy: #e8906e;
+  --color-strategy-light: rgba(232, 144, 110, 0.14);
+  --color-management: #7fb2e8;
+  --color-management-light: rgba(127, 178, 232, 0.14);
+  --color-technology: #9dd4b8;
+  --color-technology-light: rgba(157, 212, 184, 0.14);
 }
 
 /* ===================================================
    フォント設定
    =================================================== */
 :root {
+  /* サンセリフ：本文用（Figma Make DM Sans） */
   --font-family-base:
+    'DM Sans',
     -apple-system,
     BlinkMacSystemFont,
     'Hiragino Kaku Gothic ProN',
     'Hiragino Sans',
     'Noto Sans JP',
-    'Yu Gothic Medium',
     sans-serif;
+
+  /* セリフ：見出し用（Figma Make Crimson Pro） */
+  --font-family-serif:
+    'Crimson Pro',
+    'Noto Serif JP',
+    'Yu Mincho',
+    serif;
 
   /* フォントサイズ（rem基準：1rem = 10px） */
   --font-size-xs: 1.1rem;
