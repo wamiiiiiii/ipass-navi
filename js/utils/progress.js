@@ -22,11 +22,12 @@ export function calcOverallProgress(pagesRead, chaptersData) {
     return 0;
   }
 
-  // 既読数を数える（配列を変更しない）
-  const readCount = pagesRead.filter((id) => allPageIds.includes(id)).length;
+  // 既読数を数える（Setで高速化・配列を変更しない）
+  const allPageIdSet = new Set(allPageIds);
+  const readCount = pagesRead.filter((id) => allPageIdSet.has(id)).length;
 
-  // パーセンテージに変換（小数点以下1桁）
-  return Math.round((readCount / allPageIds.length) * 1000) / 10;
+  // パーセンテージに変換（整数%に統一）
+  return Math.round((readCount / allPageIds.length) * 100);
 }
 
 /**
@@ -51,9 +52,12 @@ export function calcSectionProgress(sectionId, pagesRead, chaptersData) {
     return 0;
   }
 
-  const readCount = pagesRead.filter((id) => sectionPageIds.includes(id)).length;
+  // Setで高速化（O(n)に改善）
+  const sectionPageIdSet = new Set(sectionPageIds);
+  const readCount = pagesRead.filter((id) => sectionPageIdSet.has(id)).length;
 
-  return Math.round((readCount / sectionPageIds.length) * 1000) / 10;
+  // 整数%に統一
+  return Math.round((readCount / sectionPageIds.length) * 100);
 }
 
 /**
@@ -72,9 +76,12 @@ export function calcChapterProgress(chapterId, pagesRead, chaptersData) {
   }
 
   const chapterPageIds = chapter.pages.map((p) => p.page_id);
-  const readCount = pagesRead.filter((id) => chapterPageIds.includes(id)).length;
+  // Setで高速化（O(n)に改善）
+  const chapterPageIdSet = new Set(chapterPageIds);
+  const readCount = pagesRead.filter((id) => chapterPageIdSet.has(id)).length;
 
-  return Math.round((readCount / chapterPageIds.length) * 1000) / 10;
+  // 整数%に統一
+  return Math.round((readCount / chapterPageIds.length) * 100);
 }
 
 /**
@@ -103,7 +110,8 @@ export function calcTotalAccuracy(quizResults) {
     return 0;
   }
 
-  return Math.round((totals.correct / totals.total) * 1000) / 10;
+  // 整数%に統一
+  return Math.round((totals.correct / totals.total) * 100);
 }
 
 /**
@@ -135,7 +143,8 @@ export function calcCategoryAccuracy(category, quizResults) {
     return 0;
   }
 
-  return Math.round((totals.correct / totals.total) * 1000) / 10;
+  // 整数%に統一
+  return Math.round((totals.correct / totals.total) * 100);
 }
 
 /**

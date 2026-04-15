@@ -12,7 +12,7 @@ import { applyTheme, applyFontSize } from './screens/settings.js';
 // 各画面モジュールを読み込む
 import { renderHome }     from './screens/home.js';
 import { renderTextbook } from './screens/textbook.js';
-import { renderQuiz }     from './screens/quiz.js';
+import { renderQuiz, cleanupQuiz } from './screens/quiz.js';
 import { renderGlossary } from './screens/glossary.js';
 import { renderSettings } from './screens/settings.js';
 
@@ -86,12 +86,14 @@ async function initApp() {
 function setupRoutes(mainContent) {
   // ホーム画面
   registerRoute('home', (params, query) => {
+    cleanupQuiz(); // quiz以外への遷移時にセッション・タイマーをクリアする
     updateHeader('iPass ナビ', false);
     renderHome(mainContent);
   });
 
   // 教科書モード
   registerRoute('textbook', (params, query) => {
+    cleanupQuiz(); // quiz以外への遷移時にセッション・タイマーをクリアする
     const title = params.id ? '教科書' : '教科書モード';
     const showBack = !!(params.id);
     updateHeader(title, showBack);
@@ -106,12 +108,14 @@ function setupRoutes(mainContent) {
 
   // 用語辞書
   registerRoute('glossary', (params, query) => {
+    cleanupQuiz(); // quiz以外への遷移時にセッション・タイマーをクリアする
     updateHeader('用語辞書', false);
     renderGlossary(mainContent, params, query);
   });
 
   // 設定画面
   registerRoute('settings', (params, query) => {
+    cleanupQuiz(); // quiz以外への遷移時にセッション・タイマーをクリアする
     updateHeader('設定', false);
     renderSettings(mainContent);
   });

@@ -60,22 +60,28 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     (async () => {
-      // アプリシェルをキャッシュする
+      // アプリシェルを個別にキャッシュする（1ファイル失敗しても他は続行する）
       const appCache = await caches.open(CACHE_NAME);
-      try {
-        await appCache.addAll(APP_SHELL_FILES);
+      const appResults = await Promise.allSettled(
+        APP_SHELL_FILES.map((file) => appCache.add(file))
+      );
+      const appFailed = appResults.filter((r) => r.status === 'rejected');
+      if (appFailed.length > 0) {
+        console.warn(`[SW] アプリシェルのキャッシュに${appFailed.length}件失敗しました:`, appFailed);
+      } else {
         console.info('[SW] アプリシェルのキャッシュが完了しました');
-      } catch (error) {
-        console.error('[SW] アプリシェルのキャッシュに失敗しました:', error);
       }
 
-      // データファイルをキャッシュする
+      // データファイルを個別にキャッシュする（1ファイル失敗しても他は続行する）
       const dataCache = await caches.open(DATA_CACHE_NAME);
-      try {
-        await dataCache.addAll(DATA_FILES);
+      const dataResults = await Promise.allSettled(
+        DATA_FILES.map((file) => dataCache.add(file))
+      );
+      const dataFailed = dataResults.filter((r) => r.status === 'rejected');
+      if (dataFailed.length > 0) {
+        console.warn(`[SW] データファイルのキャッシュに${dataFailed.length}件失敗しました（後でフェッチします）:`, dataFailed);
+      } else {
         console.info('[SW] データファイルのキャッシュが完了しました');
-      } catch (error) {
-        console.warn('[SW] データファイルの一部キャッシュに失敗しました（後でフェッチします）:', error);
       }
 
       // インストール直後に有効化する（activate待ちをスキップ）
@@ -203,7 +209,9 @@ async function staleWhileRevalidateStrategy(request, cacheName) {
     return response;
   }).catch(() => {
     // ネットワークエラーはログに残すだけ（バックグラウンドなのでユーザーに影響しない）
+    // キャッシュミス時にawaitされる可能性があるためnullを返す（undefinedを防止）
     console.warn('[SW] バックグラウンド更新に失敗しました:', request.url);
+    return null;
   });
 
   if (cached) {

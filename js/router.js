@@ -7,9 +7,7 @@
  * #home              → ホーム（ダッシュボード）
  * #textbook          → 教科書モード（分野一覧）
  * #textbook/S-01     → S-01の章コンテンツ
- * #quiz              → 問題演習モード選択
- * #quiz/session      → 演習セッション（クエリパラメータでフィルタ）
- * #quiz/result       → 結果サマリー
+ * #quiz              → 問題演習モード選択（クエリパラメータでモード指定）
  * #glossary          → 用語辞書
  * #settings          → 設定画面
  */
@@ -22,6 +20,9 @@ const _routes = new Map();
 
 /** ナビゲーション履歴スタック */
 const _history = [];
+
+/** navigate()によるハッシュ変更中かどうかのフラグ（hashchangeの二重発火を防止） */
+let _isNavigating = false;
 
 /**
  * ルートを登録する
@@ -39,7 +40,9 @@ export function registerRoute(pattern, handler) {
  */
 export function initRouter(defaultRoute = 'home') {
   // hashchange イベントを監視（ブラウザの戻る・進む・URLの変更を検知）
+  // navigate()による変更中は二重発火を防止するためスキップする
   window.addEventListener('hashchange', () => {
+    if (_isNavigating) return;
     handleRoute(parseHash(window.location.hash));
   });
 
@@ -61,11 +64,17 @@ export function initRouter(defaultRoute = 'home') {
  */
 export function navigate(route, addToHistory = true, state = {}) {
   if (addToHistory) {
-    _history.push({ route: _currentRoute, state });
+    // ハッシュ文字列を保存する（_currentRouteはオブジェクトなのでハッシュから取得）
+    _history.push({ route: window.location.hash.slice(1), state });
   }
 
+  // navigate中フラグを立ててhashchangeリスナーの二重発火を防止する
+  _isNavigating = true;
   // URLのハッシュを更新する（これがhashchangeイベントを発火する）
   window.location.hash = route;
+  // ハッシュ変更後にhandleRouteを直接呼び出す
+  handleRoute(parseHash(window.location.hash));
+  _isNavigating = false;
 }
 
 /**

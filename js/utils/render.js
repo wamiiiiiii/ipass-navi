@@ -38,14 +38,13 @@ export function createElement(tag, options = {}) {
     }
   });
 
-  // テキストコンテンツを設定（XSSを防ぐためtextContentを使用）
-  if (text !== undefined) {
-    el.textContent = text;
-  }
-
-  // HTMLコンテンツを設定（信頼できるデータのみ使用すること）
+  // HTMLコンテンツが指定された場合はtextを無視してHTMLを優先する
+  // （両方指定された場合、textContentの後にinnerHTMLで上書きされる不整合を防ぐ）
   if (html !== undefined) {
     el.innerHTML = html;
+  } else if (text !== undefined) {
+    // テキストコンテンツを設定（XSSを防ぐためtextContentを使用）
+    el.textContent = text;
   }
 
   // 子要素を追加

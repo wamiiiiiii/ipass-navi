@@ -168,7 +168,9 @@ function calcSectionProgress(section, pagesRead) {
   });
 
   if (allIds.length === 0) return 0;
-  const readCount = pagesRead.filter((id) => allIds.includes(id)).length;
+  // Setで高速化（O(n)に改善）
+  const allIdSet = new Set(allIds);
+  const readCount = pagesRead.filter((id) => allIdSet.has(id)).length;
   return Math.round((readCount / allIds.length) * 100);
 }
 
@@ -322,8 +324,10 @@ function renderPageContent(container, chaptersData, progress, pageId, glossaryDa
       screen.appendChild(buildSummaryCard(`${chapter.chapter_title} のまとめ`, chapter.chapter_summary));
     }
 
-    // 章を完了済みとしてマーク
-    markChapterCompleted(chapter.chapter_id);
+    // 章を完了済みとしてマーク（既に完了済みなら無駄なlocalStorageアクセスを避ける）
+    if (!progress.chapters_completed.includes(chapter.chapter_id)) {
+      markChapterCompleted(chapter.chapter_id);
+    }
 
     // この章の問題を解くボタン
     const quizBtn = createElement('button', {
@@ -598,6 +602,9 @@ function saveCurrentPageReadingTime() {
 
 // ページ離脱・タブ切替時に閲覧時間を保存する
 // ブラウザを閉じたとき・タブを切り替えたときにも閲覧時間が失われないようにする
+// 注意: これらのリスナーはモジュール読み込み時に1度だけ登録される。
+// saveCurrentPageReadingTimeは_pageStartTimeのnullチェックで安全に早期リターンするため、
+// 教科書画面以外で発火しても実害はない。
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden') {
     saveCurrentPageReadingTime();

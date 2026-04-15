@@ -25,6 +25,9 @@ let _currentFilter = {
 /** 用語辞書データのキャッシュ（画面内でのみ使用） */
 let _glossaryData = null;
 
+/** 詳細パネルの閉じアニメーション中フラグ（再タップ防止用） */
+let _isClosingPanel = false;
+
 /**
  * 用語辞書画面を描画する
  * @param {HTMLElement} container - 描画先のコンテナ
@@ -347,12 +350,17 @@ function buildTermCard(term) {
  * @param {Object} term - 表示する用語オブジェクト
  */
 function showTermDetail(term) {
+  // 閉じアニメーション中のタップは無視する（二重操作防止）
+  if (_isClosingPanel) return;
+
   // 既存のパネルを削除
   const existing = document.getElementById('glossary-detail-panel');
   if (existing) {
+    _isClosingPanel = true;
     existing.classList.remove('is-open');
     setTimeout(() => {
       if (existing.parentNode) existing.parentNode.removeChild(existing);
+      _isClosingPanel = false;
     }, 250);
     return;
   }

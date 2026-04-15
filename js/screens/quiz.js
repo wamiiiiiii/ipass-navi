@@ -33,6 +33,21 @@ import { getWeakQuestionIds } from '../utils/progress.js';
 /** 現在の演習セッションの状態（イミュータブルに管理） */
 let _session = null;
 
+/**
+ * 演習セッションをクリーンアップする（外部からの呼び出し用）
+ * ブラウザバック等でquiz以外の画面に遷移する際に呼び出し、
+ * セッション状態とタイマーを確実に停止・クリアする
+ */
+export function cleanupQuiz() {
+  if (_session) {
+    // 模擬試験タイマーが動いている場合は停止する
+    if (_session.timerId) {
+      clearInterval(_session.timerId);
+    }
+    _session = null;
+  }
+}
+
 // ===================================================
 // 模擬試験モードの定数
 // ===================================================
@@ -528,10 +543,7 @@ async function startExamSession(container, questionsData) {
     // 全100問を分野が混在するようにシャッフルする
     const shuffledAll = shuffleQuestions(selectedQuestions);
 
-    // タイマーを開始する（1秒ごとにカウントダウン）
-    const timerId = startExamTimer(container);
-
-    // セッション状態を新しいオブジェクトとして初期化（イミュータブル）
+    // セッション状態を先に初期化する（タイマーより先に設定してレースコンディションを防ぐ）
     _session = {
       isActive:       true,
       phase:          'question',
@@ -543,9 +555,12 @@ async function startExamSession(container, questionsData) {
       startedAt:      new Date().toISOString(),
       container,
       // 模擬試験専用プロパティ
-      timerId,                                // clearIntervalで停止するためIDを保持
+      timerId:        null,                   // startExamTimer後に設定する
       remainingSec:   EXAM_TIME_LIMIT_SEC,    // 残り秒数（1秒ごとに更新）
     };
+
+    // セッション初期化後にタイマーを開始する（_sessionを参照するため順序が重要）
+    _session = { ..._session, timerId: startExamTimer(container) };
 
     renderQuestionScreen(container);
 
@@ -859,7 +874,7 @@ function renderQuestionScreen(container) {
       // セッション結果を記録する
       const newResult = {
         question_id:    current.question_id,
-        answered:       isCorrect ? current.correct_answer : '__wrong__',
+        answered:       isCorrect ? current.correct_answer : null,
         correct:        isCorrect,
         time_spent_sec: timeSpent,
         questionData:   null,
@@ -1487,11 +1502,16 @@ function renderResultScreen(container) {
         // 選択した回答と正解を表示する
         const answerRow = createElement('div', { classes: ['exam-wrong-item-answers'] });
 
-        // 自分の回答
-        const myAnswer = questionData.choices.find((c) => c.id === result.answered);
+        // 自分の回答（nullの場合は○✗モードで不正解だったことを示す）
+        const myAnswer = result.answered
+          ? questionData.choices.find((c) => c.id === result.answered)
+          : null;
+        const myAnswerText = result.answered === null
+          ? '不正解（○✗モード）'
+          : `${result.answered}. ${myAnswer ? myAnswer.text : '不明'}`;
         answerRow.appendChild(createElement('div', {
           classes: ['exam-wrong-your-answer'],
-          text: `あなたの回答：${result.answered}. ${myAnswer ? myAnswer.text : '不明'}`,
+          text: `あなたの回答：${myAnswerText}`,
         }));
 
         // 正解

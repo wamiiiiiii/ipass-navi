@@ -247,9 +247,12 @@ function buildWelcomeBanner(overallPct) {
 
 /**
  * スタッツグリッドを構築する
- * @param {number} studyDays - 学習継続日数
+ * @param {number} studyDays - 実際に学習した日数
+ * @param {number} elapsedDays - 開始日からの経過日数
  * @param {number} accuracy - 累計正答率
+ * @param {number} recentAcc - 直近3日間の正答率
  * @param {number} todaySecs - 今日の学習時間（秒）
+ * @param {Object} passPred - 合格判定結果
  * @returns {HTMLElement} スタッツグリッド要素
  */
 function buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred) {

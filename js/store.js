@@ -25,15 +25,20 @@ const KEYS = {
 // デフォルト値の定義
 // ===================================================
 
-/** 学習進捗のデフォルト値 */
-const DEFAULT_PROGRESS = {
-  schema_version: 1,
-  last_updated: new Date().toISOString(),
-  pages_read: [],
-  chapters_completed: [],
-  bookmarked_pages: [],
-  bookmarked_questions: [],
-};
+/**
+ * 学習進捗のデフォルト値を生成する（関数化してタイムスタンプ固定を防ぐ）
+ * @returns {Object} デフォルトの学習進捗データ
+ */
+function createDefaultProgress() {
+  return {
+    schema_version: 1,
+    last_updated: new Date().toISOString(),
+    pages_read: [],
+    chapters_completed: [],
+    bookmarked_pages: [],
+    bookmarked_questions: [],
+  };
+}
 
 /** 演習結果のデフォルト値 */
 const DEFAULT_QUIZ_RESULTS = {
@@ -47,14 +52,19 @@ const DEFAULT_WEAK_QUESTIONS = {
   question_stats: {},
 };
 
-/** 設定のデフォルト値 */
-const DEFAULT_SETTINGS = {
-  schema_version: 1,
-  theme: 'light',
-  font_size: 'medium',
-  study_start_date: new Date().toISOString().slice(0, 10),
-  notification_enabled: false,
-};
+/**
+ * 設定のデフォルト値を生成する（関数化してタイムスタンプ固定を防ぐ）
+ * @returns {Object} デフォルトの設定データ
+ */
+function createDefaultSettings() {
+  return {
+    schema_version: 1,
+    theme: 'light',
+    font_size: 'medium',
+    study_start_date: new Date().toISOString().slice(0, 10),
+    notification_enabled: false,
+  };
+}
 
 /** 教科書閲覧時間のデフォルト値 */
 const DEFAULT_READING_TIME = {
@@ -113,7 +123,7 @@ function write(key, data) {
  * @returns {Object} 進捗データ
  */
 export function getProgress() {
-  return read(KEYS.PROGRESS, DEFAULT_PROGRESS);
+  return read(KEYS.PROGRESS, createDefaultProgress());
 }
 
 /**
@@ -319,7 +329,7 @@ export function recordQuestionAnswer(questionId, isCorrect) {
  * @returns {Object} 設定データ
  */
 export function getSettings() {
-  return read(KEYS.SETTINGS, DEFAULT_SETTINGS);
+  return read(KEYS.SETTINGS, createDefaultSettings());
 }
 
 /**

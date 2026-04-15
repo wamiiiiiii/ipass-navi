@@ -20,46 +20,47 @@ const _cache = new Map();
  * @throws {Error} ファイル取得やパースに失敗した場合
  */
 async function fetchJson(path) {
-  // キャッシュに存在する場合はキャッシュから返す
+  // キャッシュに存在する場合はキャッシュから返す（Promiseもキャッシュされる）
   if (_cache.has(path)) {
     return _cache.get(path);
   }
 
-  // Service Workerのキャッシュと干渉しないよう、クエリパラメータは付けない
-  // キャッシュの更新はSWのバージョン管理（CACHE_NAME）で行う
-  const url = path;
+  // Promiseそのものをキャッシュすることで同時リクエストの重複を防止する
+  const promise = (async () => {
+    try {
+      const response = await fetch(path);
 
-  try {
-    const response = await fetch(url);
+      // HTTPエラーのチェック
+      if (!response.ok) {
+        throw new Error(
+          `JSONファイルの取得に失敗しました。\n` +
+          `ファイル: ${path}\n` +
+          `HTTPステータス: ${response.status}\n` +
+          `対処法: ファイルが存在するか、サーバーが起動しているか確認してください。`
+        );
+      }
 
-    // HTTPエラーのチェック
-    if (!response.ok) {
-      throw new Error(
-        `JSONファイルの取得に失敗しました。\n` +
-        `ファイル: ${path}\n` +
-        `HTTPステータス: ${response.status}\n` +
-        `対処法: ファイルが存在するか、サーバーが起動しているか確認してください。`
-      );
+      return await response.json();
+    } catch (error) {
+      // fetchエラー時はキャッシュからPromiseを除去してリトライ可能にする
+      _cache.delete(path);
+
+      if (error.name === 'TypeError') {
+        throw new Error(
+          `ネットワーク接続エラーが発生しました。\n` +
+          `ファイル: ${path}\n` +
+          `原因: オフライン状態またはサーバーが応答していません。\n` +
+          `対処法: インターネット接続を確認してください。Service Workerが有効な場合はキャッシュから読み込まれます。`
+        );
+      }
+      throw error;
     }
+  })();
 
-    const data = await response.json();
+  // Promiseをキャッシュに保存する（解決前でも同一パスの重複リクエストを防ぐ）
+  _cache.set(path, promise);
 
-    // メモリにキャッシュして次回以降はfetchしない
-    _cache.set(path, data);
-
-    return data;
-  } catch (error) {
-    // fetchエラー（ネットワークエラー・オフラインなど）
-    if (error.name === 'TypeError') {
-      throw new Error(
-        `ネットワーク接続エラーが発生しました。\n` +
-        `ファイル: ${path}\n` +
-        `原因: オフライン状態またはサーバーが応答していません。\n` +
-        `対処法: インターネット接続を確認してください。Service Workerが有効な場合はキャッシュから読み込まれます。`
-      );
-    }
-    throw error;
-  }
+  return promise;
 }
 
 /**
