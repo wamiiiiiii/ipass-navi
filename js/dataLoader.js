@@ -73,10 +73,69 @@ export async function loadChapters() {
 
 /**
  * 問題データを取得する
- * @returns {Promise<Object>} questions.jsonのデータ
+ *
+ * 内部的には複数の questions*.json ファイルを並行 fetch して統合して返す。
+ * - questions.json         : オリジナル問題（メイン）
+ * - questions_extra1.json  : オリジナル問題（追加 1）
+ * - questions_extra2.json  : オリジナル問題（追加 2）
+ * - questions_past2.json   : 過去問（R02秋・R03春・R04春）
+ * - questions_past_r05.json: 過去問（R05春）
+ * - questions_past_r06.json: 過去問（R06春）
+ *
+ * 統合結果は { questions: [...] } 形式で返す（呼び出し側のシグネチャ互換）。
+ * 取得済みの統合結果は内部キーでキャッシュし、再取得を防ぐ。
+ *
+ * @returns {Promise<{questions: Array<Object>, version?: string}>} 統合された問題データ
  */
 export async function loadQuestions() {
-  return fetchJson('./data/questions.json');
+  // 統合結果用の独立キャッシュキー
+  const MERGED_KEY = '__merged_questions__';
+  if (_cache.has(MERGED_KEY)) {
+    return _cache.get(MERGED_KEY);
+  }
+
+  const sources = [
+    './data/questions.json',
+    './data/questions_extra1.json',
+    './data/questions_extra2.json',
+    './data/questions_past2.json',
+    './data/questions_past_r05.json',
+    './data/questions_past_r06.json',
+  ];
+
+  // Promise を先にキャッシュして並行アクセス時の重複fetchを抑止する
+  const promise = (async () => {
+    // 全ファイルを並行fetch（fetchJsonが内部でキャッシュも担う）
+    const settled = await Promise.allSettled(sources.map((p) => fetchJson(p)));
+
+    // 各ファイルから問題配列を取り出して結合する（イミュータブル：新しい配列を作る）
+    const merged = [];
+    settled.forEach((res, i) => {
+      if (res.status !== 'fulfilled') {
+        // 1つ失敗しても他は使う。ログだけ残す
+        console.warn(`[DataLoader] ${sources[i]} の取得に失敗:`, res.reason?.message);
+        return;
+      }
+      const raw = res.value;
+      const arr = Array.isArray(raw) ? raw : (raw.questions || []);
+      merged.push(...arr);
+    });
+
+    // question_id 重複を排除する（後勝ち：先頭優先で重複は捨てる）
+    const seen = new Set();
+    const unique = [];
+    for (const q of merged) {
+      const id = q && q.question_id;
+      if (!id || seen.has(id)) continue;
+      seen.add(id);
+      unique.push(q);
+    }
+
+    return { questions: unique };
+  })();
+
+  _cache.set(MERGED_KEY, promise);
+  return promise;
 }
 
 /**

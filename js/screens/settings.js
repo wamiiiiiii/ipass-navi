@@ -30,6 +30,9 @@ export function renderSettings(container) {
   // 表示設定セクション
   screen.appendChild(buildDisplaySection(settings, container));
 
+  // 学習設定セクション（試験日など）
+  screen.appendChild(buildStudySection(settings, container));
+
   // データ管理セクション
   screen.appendChild(buildDataSection(container));
 
@@ -105,6 +108,74 @@ function buildDisplaySection(settings, container) {
 
   section.appendChild(card);
 
+  return section;
+}
+
+/**
+ * 学習設定セクションを構築する（試験日など）
+ * @param {Object} settings - 現在の設定値
+ * @param {HTMLElement} container - 親コンテナ（再描画のため参照）
+ * @returns {HTMLElement} 設定セクション要素
+ */
+function buildStudySection(settings, container) {
+  const section = createElement('div', { classes: ['settings-section'] });
+
+  section.appendChild(createElement('div', {
+    classes: ['settings-section-header'],
+    text: '学習設定',
+  }));
+
+  const card = createElement('div', { classes: ['settings-card'] });
+
+  // 試験予定日の入力
+  const examItem = createElement('div', { classes: ['settings-item'] });
+  examItem.style.flexDirection = 'column';
+  examItem.style.alignItems = 'flex-start';
+  examItem.style.gap = '8px';
+
+  const examHeader = createElement('div', { attrs: { style: 'display:flex;align-items:center;gap:12px;width:100%' } });
+  examHeader.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-blue'], text: '🎯' }));
+
+  const examText = createElement('div', { classes: ['settings-item-text'] });
+  examText.appendChild(createElement('div', { classes: ['settings-item-label'], text: '試験予定日' }));
+  examText.appendChild(createElement('div', {
+    classes: ['settings-item-sublabel'],
+    text: 'ホームに残り日数と日次ノルマを表示します',
+  }));
+  examHeader.appendChild(examText);
+  examItem.appendChild(examHeader);
+
+  // 日付入力 + クリアボタン
+  const inputRow = createElement('div', { attrs: { style: 'display:flex;gap:8px;width:100%;align-items:center' } });
+  const dateInput = createElement('input', {
+    attrs: {
+      type: 'date',
+      style: 'flex:1;padding:8px;border:1px solid var(--color-border);border-radius:8px;font-size:1rem',
+      value: settings.exam_date || '',
+    },
+  });
+  dateInput.addEventListener('change', (e) => {
+    // 空文字なら null として保存して「未設定」扱いにする
+    const v = e.target.value || null;
+    updateSettings({ exam_date: v });
+  });
+  inputRow.appendChild(dateInput);
+
+  const clearBtn = createElement('button', {
+    classes: ['settings-clear-btn'],
+    attrs: { style: 'padding:8px 12px;border:1px solid var(--color-border);background:transparent;border-radius:8px;cursor:pointer' },
+    text: 'クリア',
+  });
+  clearBtn.addEventListener('click', () => {
+    updateSettings({ exam_date: null });
+    renderSettings(container);
+  });
+  inputRow.appendChild(clearBtn);
+
+  examItem.appendChild(inputRow);
+  card.appendChild(examItem);
+
+  section.appendChild(card);
   return section;
 }
 

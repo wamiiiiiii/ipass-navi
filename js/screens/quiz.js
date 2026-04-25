@@ -10,7 +10,8 @@
  * - 合否判定：総合60%以上かつ各分野30%以上を合格とする
  */
 
-import { getWeakQuestions, saveQuizSession, recordQuestionAnswer } from '../store.js';
+import { getWeakQuestions, saveQuizSession, recordQuestionAnswer, getSRSState, saveSRSState, getSRS } from '../store.js';
+import { applyAnswer as srsApplyAnswer, getDueQuestionIds as srsGetDueIds } from '../utils/srs.js';
 import {
   loadQuestions,
   filterQuestionsByChapter,
@@ -150,8 +151,10 @@ function renderModeSelect(container, query) {
   }));
 
   const modes = [
-    { id: 'standard', icon: '📝', name: '4択（本番形式）', desc: '選択肢から正解を選ぶ' },
+    { id: 'standard',  icon: '📝', name: '4択（本番形式）', desc: '選択肢から正解を選ぶ' },
     { id: 'flashcard', icon: '⭕', name: '○✗モード',       desc: '正しいか間違いか即判定' },
+    // 間隔反復学習：今日復習期日が来た問題だけを出題する。Anki方式
+    { id: 'review',    icon: '🔁', name: '今日の復習',     desc: '間隔反復で記憶を定着' },
     { id: 'weak',      icon: '🎯', name: '苦手問題のみ',   desc: '誤答率50%以上を集中' },
     { id: 'shuffle',   icon: '🔀', name: 'シャッフル',    desc: 'ランダム順で出題' },
     // 模擬試験モード：本番と同じ100問・120分形式
@@ -457,6 +460,21 @@ async function startSession(container, mode, category, questionLimit = null) {
       const weakIds = getWeakQuestionIds(weakData);
       questions = filterWeakQuestions(questionsData, weakIds);
       // 苦手問題は分野フィルターも適用する
+      if (category !== 'all') {
+        questions = questions.filter((q) => q.category === category);
+      }
+    }
+
+    // SRS復習モード：今日が復習期日になっている問題だけを出題する
+    if (mode === 'review') {
+      const srsData = getSRS();
+      const dueIds = srsGetDueIds(srsData.states);
+      // 全問題プールから due ID に該当するものを抽出
+      const allQuestions = Array.isArray(questionsData)
+        ? questionsData
+        : (questionsData.questions || []);
+      const dueIdSet = new Set(dueIds);
+      questions = allQuestions.filter((q) => dueIdSet.has(q.question_id));
       if (category !== 'all') {
         questions = questions.filter((q) => q.category === category);
       }
@@ -895,6 +913,10 @@ function renderQuestionScreen(container) {
       };
 
       recordQuestionAnswer(current.question_id, isCorrect);
+      // SRS（間隔反復）の状態も同時に更新する。次回復習日が自動算出される
+      const prevSrs = getSRSState(current.question_id);
+      const nextSrs = srsApplyAnswer(prevSrs, isCorrect);
+      saveSRSState(current.question_id, nextSrs);
 
       // 次の問題へ進むボタン＋中断ボタン
       const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
@@ -987,6 +1009,10 @@ function renderQuestionScreen(container) {
 
       // 苦手問題統計に記録
       recordQuestionAnswer(current.question_id, isCorrect);
+      // SRS（間隔反復）の状態も同時に更新する。次回復習日が自動算出される
+      const prevSrs = getSRSState(current.question_id);
+      const nextSrs = srsApplyAnswer(prevSrs, isCorrect);
+      saveSRSState(current.question_id, nextSrs);
 
       // 模擬試験モードでは解説画面をスキップして次の問題へ直接進む
       if (_session.mode === 'exam') {

@@ -4,8 +4,8 @@
  * 学習進捗・分野別統計・クイックアクセスを表示する
  */
 
-import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds, getReadingTime } from '../store.js';
-import { loadChapters } from '../dataLoader.js';
+import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds, getReadingTime, getSRS } from '../store.js';
+import { loadChapters, loadQuestions } from '../dataLoader.js';
 import { navigate } from '../router.js';
 import {
   createElement,
@@ -25,7 +25,12 @@ import {
   formatStudyTime,
   calcTodayStudySeconds,
   getRecentSessions,
+  calcCurrentStreak,
+  getStreakBadge,
+  calcChapterMastery,
+  calcExamCountdown,
 } from '../utils/progress.js';
+import { summarize as srsSummarize } from '../utils/srs.js';
 
 /**
  * ホーム画面を描画する
@@ -36,15 +41,18 @@ export async function renderHome(container) {
   renderInto(container, [createLoadingSpinner()]);
 
   try {
-    // データを並行して読み込む
-    const [chaptersData] = await Promise.all([
+    // データを並行して読み込む（教科書と問題プール両方）
+    const [chaptersData, questionsData] = await Promise.all([
       loadChapters(),
+      loadQuestions(),
     ]);
+    const allQuestions = (questionsData && questionsData.questions) || [];
 
     // localStorageからデータを取得
     const progress   = getProgress();
     const results    = getQuizResults();
     const settings   = getSettings();
+    const srsData    = getSRS();
 
     // 各種統計を計算（純粋関数で計算・副作用なし）
     const overallPct = calcOverallProgress(progress.pages_read, chaptersData);
@@ -56,6 +64,15 @@ export async function renderHome(container) {
     const accuracy   = calcTotalAccuracy(results);
     const todaySecs  = calcTodayStudySeconds(results) + getTodayReadingSeconds();
     const recentSessions = getRecentSessions(results, 3);
+
+    // モチベ機能：連続学習日数・章マスター・試験日カウントダウン
+    const streak = calcCurrentStreak(readingTime, results);
+    const streakBadge = getStreakBadge(streak);
+    const chapterMastery = calcChapterMastery(results, chaptersData, allQuestions);
+    const examCountdown = calcExamCountdown(settings.exam_date, results, allQuestions.length);
+
+    // SRS（間隔反復）：今日の復習対象数を集計
+    const srsSummary = srsSummarize(srsData.states);
 
     // 分野別進捗を計算
     const sectionProgresses = chaptersData.sections.map((section) => ({
@@ -75,6 +92,11 @@ export async function renderHome(container) {
       passPred,
       sectionProgresses,
       recentSessions,
+      streak,
+      streakBadge,
+      chapterMastery,
+      examCountdown,
+      srsSummary,
     }, progress);
 
     renderInto(container, [screenEl]);
@@ -94,7 +116,7 @@ export async function renderHome(container) {
  * @param {Object} progress - 進捗データ（オンボーディング判定に使用）
  * @returns {HTMLElement} ホーム画面の要素
  */
-function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred, sectionProgresses, recentSessions }, progress) {
+function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred, sectionProgresses, recentSessions, streak, streakBadge, chapterMastery, examCountdown, srsSummary }, progress) {
   const screen = createElement('div', { classes: ['home-screen'] });
 
   // ウェルカムバナー
@@ -108,14 +130,29 @@ function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentA
     screen.appendChild(buildOnboardingCard());
   }
 
+  // 試験日カウントダウン（試験日が設定されている場合のみ表示）
+  if (examCountdown) {
+    screen.appendChild(buildExamCountdown(examCountdown));
+  }
+
+  // 今日の復習カード（SRS復習期日がある場合のみ表示）
+  if (srsSummary && srsSummary.due_count > 0) {
+    screen.appendChild(buildSRSReviewCard(srsSummary));
+  }
+
+  // 連続学習日数バッジ（学習を始めていれば常時表示）
+  if (streak > 0 || (recentSessions && recentSessions.length > 0)) {
+    screen.appendChild(buildStreakBadge(streak, streakBadge));
+  }
+
   // スタッツグリッド
   screen.appendChild(buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred));
 
   // クイックアクションボタン
   screen.appendChild(buildQuickActions());
 
-  // 分野別進捗
-  screen.appendChild(buildSectionProgress(sectionProgresses));
+  // 分野別進捗（章マスター勲章も同セクションに表示）
+  screen.appendChild(buildSectionProgress(sectionProgresses, chapterMastery));
 
   // 最近の演習履歴
   if (recentSessions.length > 0) {
@@ -123,6 +160,101 @@ function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentA
   }
 
   return screen;
+}
+
+/**
+ * 試験日カウントダウンカードを構築する
+ * @param {Object} cd - calcExamCountdown の戻り値 { days_left, daily_quota, ... }
+ * @returns {HTMLElement} カード要素
+ */
+function buildExamCountdown(cd) {
+  const card = createElement('div', { classes: ['home-exam-countdown'] });
+
+  const left = createElement('div', { classes: ['exam-countdown-left'] });
+  left.appendChild(createElement('span', { classes: ['exam-countdown-icon'], text: '🎯' }));
+  left.appendChild(createElement('span', { classes: ['exam-countdown-label'], text: '試験まで' }));
+
+  const days = createElement('div', { classes: ['exam-countdown-days'] });
+  days.appendChild(createElement('span', { classes: ['exam-countdown-num'], text: String(cd.days_left) }));
+  days.appendChild(createElement('span', { classes: ['exam-countdown-unit'], text: '日' }));
+
+  const right = createElement('div', { classes: ['exam-countdown-right'] });
+  // 1日あたりの推奨問題数
+  const quotaText = cd.daily_quota > 0
+    ? `今日のノルマ：約${cd.daily_quota}問`
+    : '全問題を演習済み';
+  right.appendChild(createElement('div', { classes: ['exam-countdown-quota'], text: quotaText }));
+  right.appendChild(createElement('div', {
+    classes: ['exam-countdown-progress'],
+    text: `${cd.answered_count} / ${cd.answered_count + cd.remaining_questions} 問`,
+  }));
+
+  card.appendChild(left);
+  card.appendChild(days);
+  card.appendChild(right);
+  return card;
+}
+
+/**
+ * SRS（間隔反復）の今日の復習カードを構築する
+ * @param {Object} summary - srs.summarize の戻り値
+ * @returns {HTMLElement} カード要素
+ */
+function buildSRSReviewCard(summary) {
+  const card = createElement('button', { classes: ['home-srs-review-card'] });
+
+  const left = createElement('div', { classes: ['srs-review-left'] });
+  left.appendChild(createElement('span', { classes: ['srs-review-icon'], text: '🔁' }));
+
+  const text = createElement('div', { classes: ['srs-review-text'] });
+  text.appendChild(createElement('div', { classes: ['srs-review-title'], text: '今日の復習' }));
+  text.appendChild(createElement('div', {
+    classes: ['srs-review-sub'],
+    text: `${summary.due_count}問が復習期日 / マスター ${summary.mastered_count}問`,
+  }));
+  left.appendChild(text);
+
+  const cta = createElement('span', { classes: ['srs-review-cta'], text: '開始 →' });
+
+  card.appendChild(left);
+  card.appendChild(cta);
+
+  card.addEventListener('click', () => navigate('quiz?mode=review'));
+  return card;
+}
+
+/**
+ * 連続学習日数のバッジカードを構築する
+ * @param {number} streak - 連続学習日数
+ * @param {Object} badge - getStreakBadge の戻り値
+ * @returns {HTMLElement} カード要素
+ */
+function buildStreakBadge(streak, badge) {
+  const card = createElement('div', { classes: ['home-streak-badge'] });
+
+  const icon = createElement('span', { classes: ['streak-badge-icon'], text: badge.icon });
+  const days = createElement('div', { classes: ['streak-badge-days'] });
+  days.appendChild(createElement('span', { classes: ['streak-badge-num'], text: String(streak) }));
+  days.appendChild(createElement('span', { classes: ['streak-badge-unit'], text: '日連続' }));
+
+  const labelEl = createElement('div', { classes: ['streak-badge-label'], text: badge.label });
+
+  // 次のティアまでの残り日数
+  let nextEl = null;
+  if (badge.nextThreshold && streak < badge.nextThreshold) {
+    const remain = badge.nextThreshold - streak;
+    nextEl = createElement('div', {
+      classes: ['streak-badge-next'],
+      text: `次の称号まで あと${remain}日`,
+    });
+  }
+
+  card.appendChild(icon);
+  card.appendChild(days);
+  card.appendChild(labelEl);
+  if (nextEl) card.appendChild(nextEl);
+
+  return card;
 }
 
 /**
@@ -379,9 +511,10 @@ function buildQuickActionBtn(icon, label, desc, onClick) {
 /**
  * 分野別進捗セクションを構築する
  * @param {Array} sectionProgresses - 分野別の進捗データ
+ * @param {Object} [chapterMastery] - calcChapterMastery の戻り値（chapter_id → mastered フラグ等）
  * @returns {HTMLElement} 分野別進捗要素
  */
-function buildSectionProgress(sectionProgresses) {
+function buildSectionProgress(sectionProgresses, chapterMastery = {}) {
   const section = createElement('div', { classes: ['home-section'] });
 
   section.appendChild(createElement('h2', {
@@ -418,6 +551,21 @@ function buildSectionProgress(sectionProgresses) {
     // 進捗バー
     card.appendChild(createProgressBar(sec.progressPct));
 
+    // この分野配下のマスター済み章を勲章で表示する
+    const masteredCount = countMasteredInSection(sec, chapterMastery);
+    if (masteredCount > 0) {
+      const medal = createElement('div', { classes: ['section-mastery-row'] });
+      medal.appendChild(createElement('span', {
+        classes: ['section-mastery-icon'],
+        text: '🏅',
+      }));
+      medal.appendChild(createElement('span', {
+        classes: ['section-mastery-text'],
+        text: `マスター章：${masteredCount}章`,
+      }));
+      card.appendChild(medal);
+    }
+
     // 教科書モードに遷移するクリックイベント
     card.addEventListener('click', () => {
       navigate(`textbook/${sec.section_id}`);
@@ -427,6 +575,22 @@ function buildSectionProgress(sectionProgresses) {
   });
 
   return section;
+}
+
+/**
+ * 分野配下でマスター扱いの章数を数える（純粋関数）
+ * @param {Object} sec - 分野データ（categories[].chapters[] 構造を持つ）
+ * @param {Object} chapterMastery - chapter_id → { mastered, ... } のマップ
+ * @returns {number} マスター済み章数
+ */
+function countMasteredInSection(sec, chapterMastery) {
+  let count = 0;
+  for (const cat of (sec.categories || [])) {
+    for (const ch of (cat.chapters || [])) {
+      if (chapterMastery[ch.chapter_id]?.mastered) count += 1;
+    }
+  }
+  return count;
 }
 
 /**

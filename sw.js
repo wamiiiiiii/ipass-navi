@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v13: ○✗モード中断ボタン追加・合格判定の基準説明追加
-const CACHE_NAME = 'ipass-navi-v13';
-const DATA_CACHE_NAME = 'ipass-navi-data-v13';
+// v14: SRS（間隔反復）導入・モチベ機能追加・全915問プール統合・srs.jsで利用するファイル追加
+const CACHE_NAME = 'ipass-navi-v14';
+const DATA_CACHE_NAME = 'ipass-navi-data-v14';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -38,6 +38,7 @@ const APP_SHELL_FILES = [
   './js/utils/render.js',
   './js/utils/progress.js',
   './js/utils/diagram.js',
+  './js/utils/srs.js',
   './css/diagram.css',
   './favicon.png',
   './icons/icon-192.png',
@@ -45,9 +46,15 @@ const APP_SHELL_FILES = [
 ];
 
 // JSONデータファイル：Cache First で管理するファイル
+// loadQuestions() が並行fetchで統合するため、すべての questions*.json を含める
 const DATA_FILES = [
   './data/chapters.json',
   './data/questions.json',
+  './data/questions_extra1.json',
+  './data/questions_extra2.json',
+  './data/questions_past2.json',
+  './data/questions_past_r05.json',
+  './data/questions_past_r06.json',
   './data/glossary.json',
   './data/diagrams.json',
 ];

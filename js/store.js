@@ -19,6 +19,7 @@ const KEYS = {
   WEAK_QUESTIONS: 'ipass_weak_questions',
   SETTINGS:       'ipass_settings',
   READING_TIME:   'ipass_reading_time',  // 教科書閲覧時間の記録
+  SRS:            'ipass_srs',           // 間隔反復学習の問題ごとのステート
 };
 
 // ===================================================
@@ -62,6 +63,8 @@ function createDefaultSettings() {
     theme: 'light',
     font_size: 'medium',
     study_start_date: new Date().toISOString().slice(0, 10),
+    // 受験予定日（YYYY-MM-DD形式 / 未設定なら null）。ホームのカウントダウンと日次ノルマで使う
+    exam_date: null,
     notification_enabled: false,
   };
 }
@@ -71,6 +74,13 @@ const DEFAULT_READING_TIME = {
   schema_version: 1,
   daily_seconds: {},  // キー: 'YYYY-MM-DD'、値: 秒数
   page_seconds: {},   // キー: page_id、値: 合計閲覧秒数
+};
+
+/** SRS（間隔反復）データのデフォルト値 */
+const DEFAULT_SRS = {
+  schema_version: 1,
+  // states: 問題ID → SRSステート（utils/srs.js の createInitialState() の形）
+  states: {},
 };
 
 // ===================================================
@@ -321,6 +331,46 @@ export function recordQuestionAnswer(questionId, isCorrect) {
 }
 
 // ===================================================
+// SRS（間隔反復学習） (ipass_srs) の操作
+// ===================================================
+
+/**
+ * SRSデータ全体を取得する
+ * @returns {Object} SRSデータ（states マップを含む）
+ */
+export function getSRS() {
+  return read(KEYS.SRS, DEFAULT_SRS);
+}
+
+/**
+ * 特定の問題のSRSステートを取得する
+ * @param {string} questionId - 問題ID
+ * @returns {Object|null} ステート。未登録なら null
+ */
+export function getSRSState(questionId) {
+  const data = getSRS();
+  return data.states[questionId] || null;
+}
+
+/**
+ * 1問分のSRSステートを保存する（イミュータブル）
+ * @param {string} questionId - 問題ID
+ * @param {Object} newState - 保存するステート
+ * @returns {boolean} 保存に成功した場合はtrue
+ */
+export function saveSRSState(questionId, newState) {
+  const current = getSRS();
+  const updated = {
+    ...current,
+    states: {
+      ...current.states,
+      [questionId]: newState,
+    },
+  };
+  return write(KEYS.SRS, updated);
+}
+
+// ===================================================
 // 設定 (ipass_settings) の操作
 // ===================================================
 
@@ -420,6 +470,7 @@ export function resetAllData() {
     localStorage.removeItem(KEYS.QUIZ_RESULTS);
     localStorage.removeItem(KEYS.WEAK_QUESTIONS);
     localStorage.removeItem(KEYS.READING_TIME);
+    localStorage.removeItem(KEYS.SRS);
 
     // 設定の学習開始日だけをリセット（他の設定は保持）
     write(KEYS.SETTINGS, {

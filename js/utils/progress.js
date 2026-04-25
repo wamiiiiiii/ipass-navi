@@ -453,3 +453,194 @@ function findChapter(chapterId, chaptersData) {
   }
   return null;
 }
+
+// ===================================================
+// モチベ機能用の計算関数（純粋関数）
+// ===================================================
+
+/**
+ * 連続学習日数（current streak）を計算する
+ *
+ * 「連続」の判定：今日または前日から遡って、学習があった日が途切れずに続く日数。
+ * - 今日も学習なし、かつ昨日も学習なし → 0
+ * - 今日学習あり → 1。さらに昨日も学習あり → 2。…と遡る
+ * - 今日は学習なし、昨日は学習あり → 1（streak が今日途切れたとは判定しない）
+ *
+ * @param {Object} readingTimeData - ipass_reading_time のデータ
+ * @param {Object} quizResults - ipass_quiz_results のデータ
+ * @param {Date} [now] - 現在日時（テスト用）
+ * @returns {number} 連続学習日数
+ */
+export function calcCurrentStreak(readingTimeData, quizResults, now = new Date()) {
+  // 学習があった日付（YYYY-MM-DD）の Set を作る
+  const studyDays = new Set();
+
+  // 教科書閲覧があった日を加える
+  const daily = (readingTimeData && readingTimeData.daily_seconds) || {};
+  for (const [date, sec] of Object.entries(daily)) {
+    if (sec > 0) studyDays.add(date);
+  }
+
+  // 演習をした日を加える（started_at の日付部分）
+  const sessions = (quizResults && quizResults.sessions) || [];
+  for (const s of sessions) {
+    if (!s.started_at) continue;
+    studyDays.add(String(s.started_at).slice(0, 10));
+  }
+  // 苦手問題の attempts は日付情報を持たないので集計対象外（streak目的では readingTime + sessions で十分）
+
+  if (studyDays.size === 0) return 0;
+
+  // 今日から1日ずつ遡る。連続が途切れた時点で終了
+  let streak = 0;
+  let cursor = new Date(now.getTime());
+  cursor.setHours(0, 0, 0, 0);
+
+  // 今日が学習日でなければ、昨日からカウントを始める（today miss を許容）
+  const todayKey = cursor.toISOString().slice(0, 10);
+  if (!studyDays.has(todayKey)) {
+    cursor.setDate(cursor.getDate() - 1);
+  }
+
+  // 連続日数を遡って数える（最大365日でガード）
+  for (let i = 0; i < 365; i++) {
+    const key = cursor.toISOString().slice(0, 10);
+    if (studyDays.has(key)) {
+      streak += 1;
+      cursor.setDate(cursor.getDate() - 1);
+    } else {
+      break;
+    }
+  }
+
+  return streak;
+}
+
+/**
+ * 連続学習日数からバッジ情報を返す（純粋関数）
+ * @param {number} streakDays - 連続学習日数
+ * @returns {Object} { tier, label, icon, nextThreshold }
+ */
+export function getStreakBadge(streakDays) {
+  // ランクは下から上へ。streakDays がそのランクの閾値以上なら該当
+  const tiers = [
+    { tier: 0, threshold: 0,   label: 'スタート',  icon: '✨', nextThreshold: 3 },
+    { tier: 1, threshold: 3,   label: '3日継続',   icon: '🔥', nextThreshold: 7 },
+    { tier: 2, threshold: 7,   label: '1週間継続', icon: '🔥🔥', nextThreshold: 30 },
+    { tier: 3, threshold: 30,  label: '1ヶ月継続', icon: '🏅', nextThreshold: 100 },
+    { tier: 4, threshold: 100, label: '100日継続', icon: '👑', nextThreshold: null },
+  ];
+  // 該当する最大ランクを返す
+  let result = tiers[0];
+  for (const t of tiers) {
+    if (streakDays >= t.threshold) result = t;
+  }
+  return result;
+}
+
+/**
+ * 章ごとのマスター状況を計算する（純粋関数）
+ * 「マスター」=その章の問題に対する正答率が80%以上、かつ最低3回以上回答している
+ *
+ * 章を判定するために問題ID → chapter_id の逆引きマップが必要。
+ * 呼び出し側が questionsData（全問題のフラット配列）を渡す。
+ *
+ * @param {Object} quizResults - ipass_quiz_results のデータ
+ * @param {Object} chaptersData - chapters.json のデータ
+ * @param {Array<Object>} allQuestions - 全問題のフラット配列（chapter_idを引くため）
+ * @returns {Object} chapterId → { mastered, accuracy, attempts } のマップ
+ */
+export function calcChapterMastery(quizResults, chaptersData, allQuestions = []) {
+  // 問題ID → chapter_id のマップを作る（イミュータブル：新しいオブジェクトを返す）
+  const questionToChapter = {};
+  for (const q of allQuestions) {
+    if (q && q.question_id && q.chapter_id) {
+      questionToChapter[q.question_id] = q.chapter_id;
+    }
+  }
+
+  // 章ID → { attempts, correct } を集計する
+  const stats = {};
+  const sessions = (quizResults && quizResults.sessions) || [];
+  for (const session of sessions) {
+    // セッション内の各回答（results 配列）を見る
+    const results = session.results || [];
+    for (const r of results) {
+      const cid = questionToChapter[r.question_id];
+      if (!cid) continue;
+      if (!stats[cid]) stats[cid] = { attempts: 0, correct: 0 };
+      stats[cid].attempts += 1;
+      if (r.correct) stats[cid].correct += 1;
+    }
+  }
+
+  // 章一覧を取得して mastery 判定
+  const result = {};
+  for (const section of (chaptersData?.sections || [])) {
+    for (const category of (section.categories || [])) {
+      for (const chapter of (category.chapters || [])) {
+        const cid = chapter.chapter_id;
+        const s = stats[cid] || { attempts: 0, correct: 0 };
+        const accuracy = s.attempts > 0 ? Math.round((s.correct / s.attempts) * 100) : 0;
+        // 最低3回以上回答 + 正答率80%以上で「マスター」
+        const mastered = s.attempts >= 3 && accuracy >= 80;
+        result[cid] = {
+          mastered,
+          accuracy,
+          attempts: s.attempts,
+        };
+      }
+    }
+  }
+  return result;
+}
+
+/**
+ * 試験日までの残り日数と日次ノルマを計算する（純粋関数）
+ *
+ * 【日次ノルマの計算】
+ * 残り問題数 ÷ 残り日数 を1日あたりの推奨問題数とする。
+ * - 試験日が未設定 / 過去 / 当日 → null を返す（カウントダウン非表示）
+ * - 残り問題数 = 全問題数 − 既に回答済みの問題数（ユニーク）
+ *
+ * @param {string|null} examDateStr - 試験日（YYYY-MM-DD）
+ * @param {Object} quizResults - ipass_quiz_results のデータ
+ * @param {number} totalQuestions - 全問題数
+ * @param {Date} [now] - 現在日時
+ * @returns {Object|null} { days_left, answered_count, remaining_questions, daily_quota }
+ */
+export function calcExamCountdown(examDateStr, quizResults, totalQuestions, now = new Date()) {
+  if (!examDateStr) return null;
+
+  const examDate = new Date(`${examDateStr}T00:00:00`);
+  if (Number.isNaN(examDate.getTime())) return null;
+
+  // 今日0時を基準にする（時刻による誤差を排除）
+  const today = new Date(now.getTime());
+  today.setHours(0, 0, 0, 0);
+
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const daysLeft = Math.round((examDate.getTime() - today.getTime()) / msPerDay);
+
+  if (daysLeft <= 0) return null;
+
+  // 既に回答した問題のユニーク数
+  const answered = new Set();
+  const sessions = (quizResults && quizResults.sessions) || [];
+  for (const s of sessions) {
+    for (const r of (s.results || [])) {
+      if (r.question_id) answered.add(r.question_id);
+    }
+  }
+
+  const answeredCount = answered.size;
+  const remaining = Math.max(totalQuestions - answeredCount, 0);
+  const dailyQuota = remaining > 0 ? Math.ceil(remaining / daysLeft) : 0;
+
+  return {
+    days_left: daysLeft,
+    answered_count: answeredCount,
+    remaining_questions: remaining,
+    daily_quota: dailyQuota,
+  };
+}
