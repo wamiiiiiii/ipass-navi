@@ -1185,3 +1185,32 @@
   outline-offset: 1px;
   font-weight: var(--font-weight-bold);
 }
+
+/* ===================================================
+   過去問の繰り返し学習機能
+   =================================================== */
+
+/* 「間違えた過去問だけ復習」カード（年度カードリストの上に独立配置） */
+.past-year-card.is-wrong-review {
+  background: linear-gradient(135deg, #d9534f, #c9302c);
+  color: #fff;
+  border: none;
+  margin-bottom: var(--space-md);
+}
+.past-year-card.is-wrong-review .past-year-label,
+.past-year-card.is-wrong-review .past-year-count,
+.past-year-card.is-wrong-review .past-year-stats {
+  color: #fff;
+}
+
+/* 年度カード内の正答率表示 */
+.past-year-stats {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+.past-year-card:not(.is-wrong-review) .past-year-stats {
+  padding-top: 6px;
+  border-top: 1px dashed var(--color-border);
+}

@@ -99,6 +99,8 @@ export async function loadQuestions() {
     './data/questions_extra1.json',
     './data/questions_extra2.json',
     './data/questions_past2.json',
+    './data/questions_past_r02a.json',
+    './data/questions_past_r04s.json',
     './data/questions_past_r05.json',
     './data/questions_past_r06.json',
   ];

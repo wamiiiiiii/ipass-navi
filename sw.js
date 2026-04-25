@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v15: CBT本番再現モード（問題ジャンプパネル＋見直しフラグ）+ 学習計画自動生成
-const CACHE_NAME = 'ipass-navi-v15';
-const DATA_CACHE_NAME = 'ipass-navi-data-v15';
+// v16: 過去問追加（R02秋+9・R04春+10）+ 過去問繰り返し学習機能（年度別正答率・誤答復習モード）
+const CACHE_NAME = 'ipass-navi-v16';
+const DATA_CACHE_NAME = 'ipass-navi-data-v16';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -53,6 +53,8 @@ const DATA_FILES = [
   './data/questions_extra1.json',
   './data/questions_extra2.json',
   './data/questions_past2.json',
+  './data/questions_past_r02a.json',
+  './data/questions_past_r04s.json',
   './data/questions_past_r05.json',
   './data/questions_past_r06.json',
   './data/glossary.json',

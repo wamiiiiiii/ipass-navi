@@ -596,6 +596,85 @@ export function calcChapterMastery(quizResults, chaptersData, allQuestions = [])
 }
 
 /**
+ * 過去問の年度別統計を計算する（純粋関数）
+ *
+ * 過去問モード（mode === 'past'）のセッション結果を source 別に集計し、
+ * 各年度の正答率・正解数・間違えた問題IDを返す。
+ *
+ * @param {Object} quizResults - ipass_quiz_results のデータ
+ * @param {Array<Object>} allQuestions - 全問題のフラット配列（source/chapter_idを引くため）
+ * @returns {Object} source → { total, correct, accuracy, wrong_ids }
+ */
+export function calcPastYearStats(quizResults, allQuestions = []) {
+  // 問題ID → 問題オブジェクトのマップを作る（純粋関数：新しいオブジェクトを返す）
+  const qMap = {};
+  for (const q of allQuestions) {
+    if (q && q.question_id) qMap[q.question_id] = q;
+  }
+
+  // source別に「最新の正誤」を集計する
+  // 同じ問題を複数回演習した場合は最新の結果を採用（ただしwrong_idsには「現在も誤答」の問題だけ含める）
+  const stats = {};
+  const seenQuestions = new Set();  // 同じ問題は最新の結果のみ採用
+
+  // セッションは新しい順に並んでいる（saveQuizSession で先頭に追加されるため）
+  const sessions = (quizResults && quizResults.sessions) || [];
+  for (const session of sessions) {
+    if (session.mode !== 'past') continue;
+    for (const r of (session.results || [])) {
+      const q = qMap[r.question_id];
+      if (!q || !q.source || !q.source.startsWith('past_')) continue;
+      // 同じ問題は新しい結果（先に出現した方）を優先する
+      if (seenQuestions.has(r.question_id)) continue;
+      seenQuestions.add(r.question_id);
+
+      const src = q.source;
+      if (!stats[src]) {
+        stats[src] = { total: 0, correct: 0, accuracy: 0, wrong_ids: [] };
+      }
+      stats[src].total += 1;
+      if (r.correct) {
+        stats[src].correct += 1;
+      } else {
+        stats[src].wrong_ids.push(r.question_id);
+      }
+    }
+  }
+
+  // 正答率を計算（イミュータブル：新しいオブジェクトを返す）
+  for (const src of Object.keys(stats)) {
+    const s = stats[src];
+    s.accuracy = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+  }
+  return stats;
+}
+
+/**
+ * 過去問で「現時点で誤答状態」の問題IDをすべて返す（純粋関数）
+ *
+ * 「間違えた過去問だけ復習」モードで使用する。
+ * 同じ問題を複数回演習した場合は最新の結果を採用する。
+ *
+ * @param {Object} quizResults - ipass_quiz_results
+ * @returns {string[]} 現時点で誤答状態の question_id 配列
+ */
+export function getPastWrongQuestionIds(quizResults) {
+  const seen = new Set();
+  const wrongIds = [];
+  const sessions = (quizResults && quizResults.sessions) || [];
+  // セッションは新しい順。最初に見つかった結果が最新の結果
+  for (const session of sessions) {
+    if (session.mode !== 'past') continue;
+    for (const r of (session.results || [])) {
+      if (seen.has(r.question_id)) continue;
+      seen.add(r.question_id);
+      if (!r.correct) wrongIds.push(r.question_id);
+    }
+  }
+  return wrongIds;
+}
+
+/**
  * 今日の学習計画（具体的なタスクリスト）を生成する（純粋関数）
  *
  * 「合格に効く順」でその日にやるべきことを優先度つきで返す：

@@ -29,7 +29,8 @@ import {
   createDifficultyStars,
   showToast,
 } from '../utils/render.js';
-import { getWeakQuestionIds } from '../utils/progress.js';
+import { getWeakQuestionIds, calcPastYearStats, getPastWrongQuestionIds } from '../utils/progress.js';
+import { getQuizResults } from '../store.js';
 
 /** 現在の演習セッションの状態（イミュータブルに管理） */
 let _session = null;
@@ -339,6 +340,36 @@ async function renderPastYearSelect(container) {
     text: '演習する年度を選んでください',
   }));
 
+  // 過去問の年度別統計と「現在誤答中の問題ID」を取得する
+  // 演習履歴がなければ stats は空、wrongIds も空で問題ない
+  const quizResults = getQuizResults();
+  const pastStats = calcPastYearStats(quizResults, questionsData.questions);
+  const pastWrongIds = getPastWrongQuestionIds(quizResults);
+
+  // 「間違えた過去問だけ復習」カード（誤答が1問以上ある場合のみ表示する）
+  if (pastWrongIds.length > 0) {
+    const reviewCard = createElement('div', {
+      classes: ['past-year-card', 'is-wrong-review'],
+    });
+    reviewCard.appendChild(createElement('span', {
+      classes: ['past-year-label'],
+      text: '🎯 間違えた過去問を復習',
+    }));
+    reviewCard.appendChild(createElement('span', {
+      classes: ['past-year-count'],
+      text: `${pastWrongIds.length}問が誤答中`,
+    }));
+    reviewCard.appendChild(createElement('span', {
+      classes: ['past-year-stats'],
+      text: '正答するまで何度でも',
+    }));
+    reviewCard.addEventListener('click', async () => {
+      renderInto(container, [createLoadingSpinner()]);
+      await startPastWrongReviewSession(container, pastWrongIds, questionsData);
+    });
+    screen.appendChild(reviewCard);
+  }
+
   // 年度カードの一覧
   const yearGrid = createElement('div', { classes: ['past-year-grid'] });
 
@@ -376,6 +407,16 @@ async function renderPastYearSelect(container) {
       text: countText,
     }));
 
+    // 過去問の年度別統計を表示（演習履歴がある年度のみ）
+    if (!isEmpty && option.source !== 'all' && pastStats[option.source]) {
+      const s = pastStats[option.source];
+      const statsLine = createElement('span', {
+        classes: ['past-year-stats'],
+        text: `演習 ${s.total}問 / 正答率 ${s.accuracy}%（誤答 ${s.wrong_ids.length}問）`,
+      });
+      card.appendChild(statsLine);
+    }
+
     // 問題が存在する場合のみクリックで演習開始できる
     if (!isEmpty) {
       card.addEventListener('click', async () => {
@@ -398,6 +439,47 @@ async function renderPastYearSelect(container) {
  * @param {string} sourceLabel - 表示用ラベル（例：'令和6年度 公開問題'）
  * @param {Object} questionsData - questions.json のデータ（事前読み込み済み）
  */
+/**
+ * 「間違えた過去問だけ復習」セッションを開始する
+ * 過去問演習で現時点で誤答状態の問題のみを集めてシャッフル出題する
+ * @param {HTMLElement} container - 描画先のコンテナ
+ * @param {string[]} wrongIds - 復習対象の question_id 配列
+ * @param {Object} questionsData - 全問題データ（事前読み込み済み）
+ */
+async function startPastWrongReviewSession(container, wrongIds, questionsData) {
+  try {
+    // 該当する問題を抽出する（イミュータブル：元配列は変更しない）
+    const idSet = new Set(wrongIds);
+    const filtered = questionsData.questions.filter((q) => idSet.has(q.question_id));
+
+    if (filtered.length === 0) {
+      renderInto(container, [createEmptyState('🎯', '誤答中の過去問はありません')]);
+      return;
+    }
+
+    const shuffled = shuffleQuestions(filtered);
+
+    _session = {
+      isActive:        true,
+      phase:           'question',
+      mode:            'past',     // 既存の過去問モードと同じ扱い（解説バッジ等も流用）
+      category:        'all',
+      questions:       shuffled,
+      currentIdx:      0,
+      results:         [],
+      startedAt:       new Date().toISOString(),
+      container,
+      pastSource:      'wrong_review',
+      pastSourceLabel: '間違えた過去問の復習',
+    };
+
+    renderQuestionScreen(container);
+  } catch (error) {
+    console.error('[Quiz] 過去問復習セッション開始に失敗しました:', error);
+    renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
+  }
+}
+
 async function startPastYearSession(container, source, sourceLabel, questionsData) {
   try {
     // 年度で問題をフィルタリングする（イミュータブル：元の配列は変更しない）
