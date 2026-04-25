@@ -37,7 +37,9 @@
       "tags": [
         "生成AI",
         "プロンプトエンジニアリング"
-      ]
+      ],
+      "flashcard_text": "生成AIを業務活用する際の「プロンプトエンジニアリング」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-002",
@@ -76,7 +78,9 @@
       "tags": [
         "DX",
         "経営戦略"
-      ]
+      ],
+      "flashcard_text": "DX（デジタルトランスフォーメーション）の本質的な意味として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-003",
@@ -116,7 +120,9 @@
         "法律",
         "下請取引",
         "中小企業"
-      ]
+      ],
+      "flashcard_text": "下請代金支払遅延等防止法（下請法）の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-004",
@@ -156,7 +162,9 @@
         "経営戦略",
         "SWOT",
         "環境分析"
-      ]
+      ],
+      "flashcard_text": "SWOT分析において外部環境のプラス要因として分類されるもの。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-005",
@@ -196,7 +204,9 @@
         "経営管理",
         "BSC",
         "業績評価"
-      ]
+      ],
+      "flashcard_text": "バランススコアカード（BSC）の4つの視点として正しい組合せ。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-006",
@@ -235,7 +245,9 @@
       "tags": [
         "経営戦略",
         "コアコンピタンス"
-      ]
+      ],
+      "flashcard_text": "コアコンピタンス経営の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-007",
@@ -274,7 +286,9 @@
       "tags": [
         "開発手法",
         "アジャイル"
-      ]
+      ],
+      "flashcard_text": "アジャイル開発の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-008",
@@ -314,7 +328,9 @@
         "RPA",
         "業務自動化",
         "DX"
-      ]
+      ],
+      "flashcard_text": "RPA（Robotic Process Automation）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-009",
@@ -354,7 +370,9 @@
         "生成AI",
         "ハルシネーション",
         "AIリスク"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "P-R06S-010",
@@ -394,7 +412,9 @@
         "EC",
         "ロングテール",
         "ビジネスモデル"
-      ]
+      ],
+      "flashcard_text": "ロングテールの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-011",
@@ -435,7 +455,9 @@
         "クラウド",
         "SaaS",
         "ITサービス"
-      ]
+      ],
+      "flashcard_text": "SaaSの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-012",
@@ -475,7 +497,9 @@
         "フィンテック",
         "金融",
         "デジタル"
-      ]
+      ],
+      "flashcard_text": "フィンテック（FinTech）の事例として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-013",
@@ -515,7 +539,9 @@
         "SCM",
         "サプライチェーン",
         "物流"
-      ]
+      ],
+      "flashcard_text": "SCM（サプライチェーン管理）の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-014",
@@ -555,7 +581,9 @@
         "ERP",
         "業務統合",
         "経営システム"
-      ]
+      ],
+      "flashcard_text": "ERPシステムの主な目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-015",
@@ -595,7 +623,9 @@
         "CRM",
         "顧客管理",
         "マーケティング"
-      ]
+      ],
+      "flashcard_text": "CRM（顧客関係管理）の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-016",
@@ -635,7 +665,9 @@
         "データドリブン",
         "経営分析",
         "DX"
-      ]
+      ],
+      "flashcard_text": "データドリブン経営の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-017",
@@ -675,7 +707,9 @@
         "著作権",
         "知的財産",
         "法律"
-      ]
+      ],
+      "flashcard_text": "著作権の発生に関する説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-018",
@@ -715,7 +749,9 @@
         "個人情報",
         "法律",
         "プライバシー"
-      ]
+      ],
+      "flashcard_text": "個人情報保護法における個人情報の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-019",
@@ -755,7 +791,9 @@
         "営業秘密",
         "知的財産",
         "法律"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：誤り選択型"
     },
     {
       "question_id": "P-R06S-020",
@@ -795,7 +833,9 @@
         "労働法",
         "派遣",
         "雇用"
-      ]
+      ],
+      "flashcard_text": "労働者派遣法における「派遣労働」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-021",
@@ -835,7 +875,9 @@
         "会計",
         "財務諸表",
         "損益計算書"
-      ]
+      ],
+      "flashcard_text": "損益計算書（P/L）から読み取れる情報として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-022",
@@ -875,7 +917,9 @@
         "会計",
         "原価計算",
         "損益分岐点"
-      ]
+      ],
+      "flashcard_text": "固定費と変動費の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-023",
@@ -915,7 +959,9 @@
         "会計",
         "ROE",
         "財務分析"
-      ]
+      ],
+      "flashcard_text": "ROE（自己資本利益率）の計算式として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-024",
@@ -955,7 +1001,9 @@
         "AI",
         "ファインチューニング",
         "機械学習"
-      ]
+      ],
+      "flashcard_text": "AIの学習方法である「ファインチューニング」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-025",
@@ -995,7 +1043,9 @@
         "経営戦略",
         "PPM",
         "事業管理"
-      ]
+      ],
+      "flashcard_text": "PPM（製品ポートフォリオ管理）において「花形（スター）」に分類される事業の特徴。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-026",
@@ -1035,7 +1085,9 @@
         "IoT",
         "製造業",
         "DX"
-      ]
+      ],
+      "flashcard_text": "IoT（モノのインターネット）の活用事例として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-027",
@@ -1074,7 +1126,9 @@
       "tags": [
         "シェアリングエコノミー",
         "新ビジネス"
-      ]
+      ],
+      "flashcard_text": "シェアリングエコノミーの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-028",
@@ -1114,7 +1168,9 @@
         "BPR",
         "業務改革",
         "経営改善"
-      ]
+      ],
+      "flashcard_text": "BPR（業務プロセス再設計）の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-029",
@@ -1154,7 +1210,9 @@
         "消費者保護",
         "法律",
         "クーリングオフ"
-      ]
+      ],
+      "flashcard_text": "クーリングオフの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-030",
@@ -1194,7 +1252,9 @@
         "会計",
         "損益分岐点",
         "CVP分析"
-      ]
+      ],
+      "flashcard_text": "損益分岐点売上高の計算式として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-031",
@@ -1234,7 +1294,9 @@
         "AI",
         "機械学習",
         "強化学習"
-      ]
+      ],
+      "flashcard_text": "強化学習（Reinforcement Learning）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-032",
@@ -1274,7 +1336,9 @@
         "経営管理",
         "KPI",
         "目標設定"
-      ]
+      ],
+      "flashcard_text": "KGIとKPIの関係として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-033",
@@ -1314,7 +1378,9 @@
         "ビッグデータ",
         "データ分析",
         "AI"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：含まれない選択型"
     },
     {
       "question_id": "P-R06S-034",
@@ -1354,7 +1420,9 @@
         "グリーンIT",
         "環境",
         "持続可能性"
-      ]
+      ],
+      "flashcard_text": "グリーンIT（Green IT）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-035",
@@ -1394,7 +1462,9 @@
         "OMO",
         "マーケティング",
         "デジタル戦略"
-      ]
+      ],
+      "flashcard_text": "OMO（Online Merges with Offline）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-036",
@@ -1433,7 +1503,9 @@
       "tags": [
         "開発手法",
         "プロジェクト管理"
-      ]
+      ],
+      "flashcard_text": "ウォーターフォールモデルの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-037",
@@ -1472,7 +1544,9 @@
       "tags": [
         "プロジェクト管理",
         "WBS"
-      ]
+      ],
+      "flashcard_text": "プロジェクトマネジメントにおける「WBS（Work Breakdown Structure）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-038",
@@ -1511,7 +1585,9 @@
       "tags": [
         "ITサービス管理",
         "SLA"
-      ]
+      ],
+      "flashcard_text": "ITサービス管理における「SLA（サービスレベル合意書）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-039",
@@ -1550,7 +1626,9 @@
       "tags": [
         "ITサービス管理",
         "ITIL"
-      ]
+      ],
+      "flashcard_text": "ITIL（IT Infrastructure Library）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-040",
@@ -1590,7 +1668,9 @@
         "システム監査",
         "内部統制",
         "ガバナンス"
-      ]
+      ],
+      "flashcard_text": "システム監査の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-041",
@@ -1629,7 +1709,9 @@
       "tags": [
         "内部統制",
         "システム監査"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：含まれない選択型"
     },
     {
       "question_id": "P-R06S-042",
@@ -1668,7 +1750,9 @@
       "tags": [
         "プロジェクト管理",
         "スケジュール管理"
-      ]
+      ],
+      "flashcard_text": "プロジェクト管理における「クリティカルパス」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-043",
@@ -1707,7 +1791,9 @@
       "tags": [
         "プロジェクト管理",
         "ガントチャート"
-      ]
+      ],
+      "flashcard_text": "ガントチャートの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-044",
@@ -1746,7 +1832,9 @@
       "tags": [
         "テスト",
         "ソフトウェア品質"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアのテスト手法である「ブラックボックステスト」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-045",
@@ -1786,7 +1874,9 @@
         "品質管理",
         "パレート図",
         "QC"
-      ]
+      ],
+      "flashcard_text": "品質管理ツールの「パレート図」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-046",
@@ -1826,7 +1916,9 @@
         "アジャイル",
         "スクラム",
         "開発手法"
-      ]
+      ],
+      "flashcard_text": "スクラム（Scrum）開発における「スプリント」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-047",
@@ -1865,7 +1957,9 @@
       "tags": [
         "ITサービス管理",
         "インシデント管理"
-      ]
+      ],
+      "flashcard_text": "インシデント管理の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-048",
@@ -1904,7 +1998,9 @@
       "tags": [
         "情報セキュリティ",
         "リスク管理"
-      ]
+      ],
+      "flashcard_text": "情報セキュリティのリスクアセスメントにおける「リスク低減」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-049",
@@ -1944,7 +2040,9 @@
         "プロジェクト管理",
         "EVM",
         "コスト管理"
-      ]
+      ],
+      "flashcard_text": "プロジェクト管理における「EVM（Earned Value Management）」で使用される指標「CPI（Cost Performance Index）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-050",
@@ -1983,7 +2081,9 @@
       "tags": [
         "テスト",
         "ソフトウェア品質"
-      ]
+      ],
+      "flashcard_text": "「デシジョンテーブル（決定表）」を用いたテストの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-051",
@@ -2023,7 +2123,9 @@
         "開発手法",
         "DevOps",
         "自動化"
-      ]
+      ],
+      "flashcard_text": "DevOps（デブオプス）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-052",
@@ -2062,7 +2164,9 @@
       "tags": [
         "ITサービス管理",
         "サービスデスク"
-      ]
+      ],
+      "flashcard_text": "サービスデスクの主な役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-053",
@@ -2102,7 +2206,9 @@
         "システム管理",
         "バックアップ",
         "可用性"
-      ]
+      ],
+      "flashcard_text": "情報システムにおける「バックアップ」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-054",
@@ -2141,7 +2247,9 @@
       "tags": [
         "プロジェクト管理",
         "スコープ管理"
-      ]
+      ],
+      "flashcard_text": "プロジェクトにおいてスコープクリープ（Scope Creep）が発生した場合の影響として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-055",
@@ -2181,7 +2289,9 @@
         "品質管理",
         "ソフトウェア品質",
         "ISO"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアの品質特性を定義したISO/IEC 25010における「信頼性」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-056",
@@ -2221,7 +2331,9 @@
         "基数変換",
         "コンピュータ基礎",
         "2進数"
-      ]
+      ],
+      "flashcard_text": "2進数の「1011」を10進数に変換した結果として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-057",
@@ -2262,7 +2374,9 @@
         "コンピュータ基礎",
         "記憶容量",
         "単位"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "P-R06S-058",
@@ -2302,7 +2416,9 @@
         "ハードウェア",
         "CPU",
         "コンピュータ性能"
-      ]
+      ],
+      "flashcard_text": "CPUの動作クロック周波数の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-059",
@@ -2342,7 +2458,9 @@
         "ハードウェア",
         "記憶装置",
         "SSD"
-      ]
+      ],
+      "flashcard_text": "SSD（Solid State Drive）の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-060",
@@ -2382,7 +2500,9 @@
         "ネットワーク",
         "OSI",
         "プロトコル"
-      ]
+      ],
+      "flashcard_text": "OSI参照モデルの第3層（ネットワーク層）のプロトコルとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-061",
@@ -2422,7 +2542,9 @@
         "ネットワーク",
         "IPアドレス",
         "TCP/IP"
-      ]
+      ],
+      "flashcard_text": "TCP/IPにおけるIPアドレスのクラスBのデフォルトサブネットマスクとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-062",
@@ -2462,7 +2584,9 @@
         "ネットワーク",
         "DNS",
         "インターネット"
-      ]
+      ],
+      "flashcard_text": "DNSの役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-063",
@@ -2502,7 +2626,9 @@
         "データベース",
         "主キー",
         "SQL"
-      ]
+      ],
+      "flashcard_text": "関係データベース（RDB）における「主キー（Primary Key）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-064",
@@ -2542,7 +2668,9 @@
         "データベース",
         "SQL",
         "クエリ"
-      ]
+      ],
+      "flashcard_text": "SQLの「SELECT文」で条件を指定して行を絞り込む句。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-065",
@@ -2582,7 +2710,9 @@
         "セキュリティ",
         "暗号化",
         "公開鍵"
-      ]
+      ],
+      "flashcard_text": "暗号化方式のうち「公開鍵暗号方式」の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-066",
@@ -2622,7 +2752,9 @@
         "セキュリティ",
         "デジタル署名",
         "公開鍵"
-      ]
+      ],
+      "flashcard_text": "デジタル署名の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-067",
@@ -2662,7 +2794,9 @@
         "セキュリティ",
         "SQLインジェクション",
         "Webセキュリティ"
-      ]
+      ],
+      "flashcard_text": "SQLインジェクション攻撃の対策として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-068",
@@ -2702,7 +2836,9 @@
         "プログラミング",
         "変数",
         "アルゴリズム"
-      ]
+      ],
+      "flashcard_text": "プログラムの「変数」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-069",
@@ -2742,7 +2878,9 @@
         "アルゴリズム",
         "フローチャート",
         "プログラミング"
-      ]
+      ],
+      "flashcard_text": "フローチャートにおいて、条件による分岐を表す図形として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-070",
@@ -2782,7 +2920,9 @@
         "アルゴリズム",
         "データ構造",
         "スタック"
-      ]
+      ],
+      "flashcard_text": "「スタック（Stack）」の動作特性として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-071",
@@ -2822,7 +2962,9 @@
         "セキュリティ",
         "可用性",
         "CIA"
-      ]
+      ],
+      "flashcard_text": "システムの「可用性（Availability）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-072",
@@ -2862,7 +3004,9 @@
         "セキュリティ",
         "フィッシング",
         "サイバー攻撃"
-      ]
+      ],
+      "flashcard_text": "フィッシング詐欺の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-073",
@@ -2902,7 +3046,9 @@
         "セキュリティ",
         "ランサムウェア",
         "マルウェア"
-      ]
+      ],
+      "flashcard_text": "ランサムウェアの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-074",
@@ -2942,7 +3088,9 @@
         "システム設計",
         "UML",
         "オブジェクト指向"
-      ]
+      ],
+      "flashcard_text": "UML（統一モデリング言語）のダイアグラムのうち、クラスとクラス間の関係を表すもの。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-075",
@@ -2982,7 +3130,9 @@
         "データベース",
         "E-R図",
         "システム設計"
-      ]
+      ],
+      "flashcard_text": "E-R図（Entity-Relationship Diagram）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-076",
@@ -3022,7 +3172,9 @@
         "Web技術",
         "HTML",
         "プログラミング"
-      ]
+      ],
+      "flashcard_text": "HTMLの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-077",
@@ -3062,7 +3214,9 @@
         "Web技術",
         "セキュリティ",
         "HTTP"
-      ]
+      ],
+      "flashcard_text": "Webアプリケーションにおける「セッション管理」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-078",
@@ -3102,7 +3256,9 @@
         "システム開発",
         "要件定義",
         "SDLC"
-      ]
+      ],
+      "flashcard_text": "システム開発における「要件定義」工程で実施する主な作業として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-079",
@@ -3142,7 +3298,9 @@
         "システム開発",
         "保守",
         "SDLC"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアの「保守」の種類のうち「適応保守」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-080",
@@ -3182,7 +3340,9 @@
         "ハードウェア",
         "CPU",
         "コンピュータ性能"
-      ]
+      ],
+      "flashcard_text": "マルチコアプロセッサの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-081",
@@ -3222,7 +3382,9 @@
         "コンピュータ基礎",
         "2進数",
         "数値表現"
-      ]
+      ],
+      "flashcard_text": "補数を用いた減算において、2の補数の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-082",
@@ -3262,7 +3424,9 @@
         "ネットワーク",
         "セキュリティ",
         "無線LAN"
-      ]
+      ],
+      "flashcard_text": "無線LANのセキュリティ方式「WPA3」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-083",
@@ -3302,7 +3466,9 @@
         "データベース",
         "NoSQL",
         "ビッグデータ"
-      ]
+      ],
+      "flashcard_text": "NoSQLデータベースの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-084",
@@ -3342,7 +3508,9 @@
         "セキュリティ",
         "認証",
         "2FA"
-      ]
+      ],
+      "flashcard_text": "二要素認証（2FA）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-085",
@@ -3382,7 +3550,9 @@
         "プログラミング",
         "オブジェクト指向",
         "継承"
-      ]
+      ],
+      "flashcard_text": "オブジェクト指向プログラミングにおける「継承（Inheritance）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-086",
@@ -3422,7 +3592,9 @@
         "セキュリティ",
         "DoS",
         "サイバー攻撃"
-      ]
+      ],
+      "flashcard_text": "DoS攻撃（サービス妨害攻撃）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-087",
@@ -3462,7 +3634,9 @@
         "システム設計",
         "モジュール設計",
         "ソフトウェア工学"
-      ]
+      ],
+      "flashcard_text": "ソフトウェア設計における「モジュール結合度」について、最も望ましい（低い）結合度。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-088",
@@ -3502,7 +3676,9 @@
         "Web技術",
         "API",
         "システム設計"
-      ]
+      ],
+      "flashcard_text": "REST API（RESTful API）の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-089",
@@ -3542,7 +3718,9 @@
         "システム設計",
         "信頼性",
         "フェールセーフ"
-      ]
+      ],
+      "flashcard_text": "システムの「フェールセーフ（Fail Safe）」設計の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-090",
@@ -3582,7 +3760,9 @@
         "ハードウェア",
         "仮想化",
         "クラウド"
-      ]
+      ],
+      "flashcard_text": "仮想化技術の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-091",
@@ -3622,7 +3802,9 @@
         "コンピュータ基礎",
         "論理演算",
         "ハードウェア"
-      ]
+      ],
+      "flashcard_text": "論理演算においてAND演算の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-092",
@@ -3662,7 +3844,9 @@
         "ハードウェア",
         "メモリ",
         "コンピュータ性能"
-      ]
+      ],
+      "flashcard_text": "キャッシュメモリの目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-093",
@@ -3702,7 +3886,9 @@
         "ネットワーク",
         "VPN",
         "セキュリティ"
-      ]
+      ],
+      "flashcard_text": "VPN（Virtual Private Network）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-094",
@@ -3742,7 +3928,9 @@
         "データベース",
         "トランザクション",
         "ACID"
-      ]
+      ],
+      "flashcard_text": "データベースの「トランザクション」における「原子性（Atomicity）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-095",
@@ -3782,7 +3970,9 @@
         "セキュリティ",
         "ISMS",
         "ISO"
-      ]
+      ],
+      "flashcard_text": "情報セキュリティ管理の国際標準規格として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-096",
@@ -3822,7 +4012,9 @@
         "アルゴリズム",
         "計算量",
         "プログラミング"
-      ]
+      ],
+      "flashcard_text": "アルゴリズムの計算量（時間複雑度）において、O(n)の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-097",
@@ -3862,7 +4054,9 @@
         "セキュリティ",
         "WAF",
         "Webセキュリティ"
-      ]
+      ],
+      "flashcard_text": "WAF（Web Application Firewall）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-098",
@@ -3902,7 +4096,9 @@
         "システム開発",
         "テスト",
         "品質管理"
-      ]
+      ],
+      "flashcard_text": "テスト工程における「システムテスト（総合テスト）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-099",
@@ -3942,7 +4138,9 @@
         "クラウド",
         "IaaS",
         "インフラ"
-      ]
+      ],
+      "flashcard_text": "クラウドサービスの「IaaS（Infrastructure as a Service）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "P-R06S-100",
@@ -3982,7 +4180,9 @@
         "ネットワーク",
         "セキュリティ",
         "HTTPS"
-      ]
+      ],
+      "flashcard_text": "HTTPSにおけるSSL/TLSの役割として、以下は正しい？",
+      "flashcard_skip": false
     }
   ]
 }

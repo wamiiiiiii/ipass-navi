@@ -79,13 +79,13 @@
         {
           "label": "変動費：売上に比例して増加（材料費・仕入）",
           "from": 0,
-          "to": 7,
+          "to": 3,
           "position": "below"
         },
         {
           "label": "損益分岐点 = 固定費 ÷（1 - 変動費率）",
-          "from": 3,
-          "to": 4,
+          "from": 1,
+          "to": 2,
           "position": "above"
         }
       ]
@@ -735,9 +735,8 @@
       ]
     },
     "M-02-03": {
-      "type": "cycle",
+      "type": "flow",
       "title": "DevOps 無限ループ（開発と運用の継続的サイクル）",
-      "center": "継続的\n改善",
       "steps": [
         {
           "label": "Plan（計画）",
@@ -912,19 +911,19 @@
         {
           "label": "MTBF（平均故障間隔）= 故障から次の故障までの平均稼働時間",
           "from": 0,
-          "to": 4,
+          "to": 1,
           "position": "above"
         },
         {
           "label": "MTTR（平均修復時間）= 故障発生から復旧までの平均時間",
-          "from": 4,
-          "to": 5,
+          "from": 1,
+          "to": 2,
           "position": "below"
         },
         {
           "label": "稼働率 = MTBF ÷（MTBF + MTTR）",
           "from": 0,
-          "to": 13,
+          "to": 5,
           "position": "above"
         }
       ]
@@ -1321,7 +1320,7 @@
         {
           "label": "稼働率 = MTBF ÷（MTBF + MTTR）= 9 ÷（9+1）= 0.9（90%）",
           "from": 0,
-          "to": 20,
+          "to": 4,
           "position": "above"
         }
       ]
@@ -1655,19 +1654,19 @@
         {
           "label": "短期（1〜2年）：既存技術の改良・製品化",
           "from": 0,
-          "to": 3,
+          "to": 1,
           "position": "above"
         },
         {
           "label": "中期（3〜5年）：新技術開発・プロトタイプ",
-          "from": 3,
-          "to": 6,
+          "from": 1,
+          "to": 2,
           "position": "above"
         },
         {
           "label": "長期（5年超）：将来ビジョン・研究段階",
-          "from": 6,
-          "to": 9,
+          "from": 2,
+          "to": 3,
           "position": "above"
         }
       ]
@@ -1792,8 +1791,7 @@
           "cells": [
             "期間",
             "一度限りの大規模プロジェクト",
-            "継続的・恒常的な活動",
-            ""
+            "継続的・恒常的な活動"
           ],
           "highlight": false
         },
@@ -2635,8 +2633,7 @@
         {
           "cells": [
             "プライベートIPアドレス",
-            "組織内LANで使用（例：192.168.x.x・10.x.x.x）。インターネットでは使用不可",
-            ""
+            "組織内LANで使用（例：192.168.x.x・10.x.x.x）。インターネットでは使用不可"
           ],
           "highlight": false
         },

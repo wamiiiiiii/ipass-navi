@@ -37,7 +37,9 @@
         "財務",
         "会計",
         "損益計算書"
-      ]
+      ],
+      "flashcard_text": "損益計算書（P/L）に関する記述として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-045",
@@ -76,7 +78,9 @@
         "財務",
         "計算問題",
         "営業利益"
-      ]
+      ],
+      "flashcard_text": "売上高1,000万円、売上原価600万円、販売費及び一般管理費150万円のとき、営業利益として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-046",
@@ -115,7 +119,9 @@
         "財務分析",
         "流動比率",
         "安全性指標"
-      ]
+      ],
+      "flashcard_text": "流動比率の計算式として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-047",
@@ -154,7 +160,9 @@
         "財務",
         "計算問題",
         "目標利益"
-      ]
+      ],
+      "flashcard_text": "固定費200万円、変動費率30%のとき、目標利益100万円を達成するための売上高として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-048",
@@ -192,7 +200,9 @@
       "tags": [
         "企業形態",
         "コーポレートガバナンス"
-      ]
+      ],
+      "flashcard_text": "株式会社の機関設計に関する記述として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-049",
@@ -231,7 +241,9 @@
         "財務分析",
         "自己資本比率",
         "計算問題"
-      ]
+      ],
+      "flashcard_text": "A社の総資産が5,000万円、自己資本が2,000万円のとき、自己資本比率として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-050",
@@ -269,7 +281,9 @@
       "tags": [
         "企業統治",
         "コーポレートガバナンス"
-      ]
+      ],
+      "flashcard_text": "利益相反取引を防止するために設けられた企業統治の仕組みとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-051",
@@ -308,7 +322,9 @@
         "財務分析",
         "ROA",
         "計算問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-S-052",
@@ -346,7 +362,9 @@
       "tags": [
         "財務",
         "キャッシュフロー"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-S-053",
@@ -384,7 +402,9 @@
       "tags": [
         "CSR",
         "企業倫理"
-      ]
+      ],
+      "flashcard_text": "企業がステークホルダーに対してCSR（企業の社会的責任）活動の一環として実施する取り組みとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-054",
@@ -423,7 +443,9 @@
         "財務",
         "計算問題",
         "損益分析"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-S-055",
@@ -462,7 +484,9 @@
         "SDGs",
         "CSR",
         "企業戦略"
-      ]
+      ],
+      "flashcard_text": "企業経営におけるSDGs（持続可能な開発目標）の位置づけとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-056",
@@ -501,7 +525,9 @@
         "経営戦略",
         "PEST分析",
         "外部環境"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "組合せ選択型"
     },
     {
       "question_id": "Q-S-057",
@@ -540,7 +566,9 @@
         "経営戦略",
         "ファイブフォース",
         "競争分析"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：含まれない選択型"
     },
     {
       "question_id": "Q-S-058",
@@ -579,7 +607,9 @@
         "SWOT分析",
         "クロスSWOT",
         "経営戦略"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "組合せ選択型"
     },
     {
       "question_id": "Q-S-059",
@@ -618,7 +648,9 @@
         "PPM",
         "経営戦略",
         "ポートフォリオ"
-      ]
+      ],
+      "flashcard_text": "PPM（プロダクト・ポートフォリオ・マネジメント）において「負け犬」に分類される事業の特徴。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-060",
@@ -657,7 +689,9 @@
         "BSC",
         "経営管理",
         "KPI"
-      ]
+      ],
+      "flashcard_text": "A社はBSCを導入して戦略目標を設定している。「顧客の視点」の指標として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-061",
@@ -696,7 +730,9 @@
         "コアコンピタンス",
         "経営戦略",
         "競争優位"
-      ]
+      ],
+      "flashcard_text": "コアコンピタンス経営の考え方として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-062",
@@ -734,7 +770,9 @@
       "tags": [
         "ベンチマーキング",
         "経営改善"
-      ]
+      ],
+      "flashcard_text": "ベンチマーキングの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-063",
@@ -773,7 +811,9 @@
         "SWOT分析",
         "WT戦略",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社（IT企業）がSWOT分析を行い、「弱み：資金力が乏しい、脅威：大手IT企業の参入」を特定した。このWT戦略として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-064",
@@ -811,7 +851,9 @@
       "tags": [
         "マーケティング",
         "4P"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-S-065",
@@ -849,7 +891,9 @@
       "tags": [
         "マーケティング",
         "製品ライフサイクル"
-      ]
+      ],
+      "flashcard_text": "製品ライフサイクルにおける「成熟期」の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-066",
@@ -887,7 +931,9 @@
       "tags": [
         "マーケティング",
         "顧客理解"
-      ]
+      ],
+      "flashcard_text": "ニーズとウォンツの違いとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-067",
@@ -925,7 +971,9 @@
       "tags": [
         "組織論",
         "マトリクス組織"
-      ]
+      ],
+      "flashcard_text": "プロジェクト型組織（マトリクス組織）の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-068",
@@ -964,7 +1012,9 @@
         "人材育成",
         "OJT",
         "HRM"
-      ]
+      ],
+      "flashcard_text": "OJT（On-the-Job Training）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-069",
@@ -1003,7 +1053,9 @@
         "人事管理",
         "MBO",
         "目標管理"
-      ]
+      ],
+      "flashcard_text": "目標管理制度（MBO）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-070",
@@ -1042,7 +1094,9 @@
         "動機づけ理論",
         "ハーズバーグ",
         "HRM"
-      ]
+      ],
+      "flashcard_text": "ハーズバーグの二要因理論において「動機づけ要因（モチベーター）」に該当するもの。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-071",
@@ -1081,7 +1135,9 @@
         "組織管理",
         "情報共有",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社では、部門間の情報共有不足が課題となっている。改善策として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-072",
@@ -1119,7 +1175,9 @@
       "tags": [
         "人事評価",
         "360度評価"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-S-073",
@@ -1158,7 +1216,9 @@
         "BPR",
         "業務改革",
         "経営"
-      ]
+      ],
+      "flashcard_text": "BPR（ビジネスプロセス・リエンジニアリング）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-074",
@@ -1196,7 +1256,9 @@
       "tags": [
         "アウトソーシング",
         "組織戦略"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-S-075",
@@ -1236,7 +1298,9 @@
         "グローバル",
         "リスク",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社は製造工程の一部をB国の協力会社に委託することにした。このオフショアアウトソーシングのリスクとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-076",
@@ -1274,7 +1338,9 @@
       "tags": [
         "情報システム",
         "要件定義"
-      ]
+      ],
+      "flashcard_text": "会計システムの導入に際してIT部門が作成する「要件定義書」の主な内容として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-077",
@@ -1313,7 +1379,9 @@
         "IT投資",
         "TCO",
         "コスト管理"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-S-078",
@@ -1352,7 +1420,9 @@
         "IT投資",
         "ROI",
         "計算問題"
-      ]
+      ],
+      "flashcard_text": "A社はシステム投資を検討している。初期投資1,200万円、年間削減効果400万円、システム寿命4年のとき、ROI（投資対効果）として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-079",
@@ -1390,7 +1460,9 @@
       "tags": [
         "IT企画",
         "フィジビリティスタディ"
-      ]
+      ],
+      "flashcard_text": "情報システムの「フィジビリティスタディ（実現可能性調査）」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-080",
@@ -1428,7 +1500,9 @@
       "tags": [
         "IT企画",
         "ステークホルダー"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-S-081",
@@ -1467,7 +1541,9 @@
         "ITシステム",
         "パッケージ",
         "カスタマイズ"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアのカスタマイズに関する記述として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-082",
@@ -1507,7 +1583,9 @@
         "電子商取引",
         "EC",
         "ビジネスモデル"
-      ]
+      ],
+      "flashcard_text": "電子商取引（EC）の形態のうち「C2C」の例として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-083",
@@ -1545,7 +1623,9 @@
       "tags": [
         "ビジネスモデル",
         "サブスクリプション"
-      ]
+      ],
+      "flashcard_text": "サブスクリプションビジネスモデルの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-084",
@@ -1583,7 +1663,9 @@
       "tags": [
         "ビジネスモデル",
         "シェアリングエコノミー"
-      ]
+      ],
+      "flashcard_text": "シェアリングエコノミーの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-085",
@@ -1622,7 +1704,9 @@
         "DX",
         "デジタル化",
         "ビジネス変革"
-      ]
+      ],
+      "flashcard_text": "デジタルトランスフォーメーション（DX）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-086",
@@ -1662,7 +1746,9 @@
         "EC",
         "ビジネス戦略",
         "事例問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-S-087",
@@ -1701,7 +1787,9 @@
         "O2O",
         "マーケティング",
         "EC"
-      ]
+      ],
+      "flashcard_text": "O2O（Online to Offline）マーケティングの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-088",
@@ -1740,7 +1828,9 @@
         "EDI",
         "電子商取引",
         "企業間取引"
-      ]
+      ],
+      "flashcard_text": "EDI（電子データ交換）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-089",
@@ -1779,7 +1869,9 @@
         "プラットフォーム",
         "ビジネスモデル",
         "ネットワーク効果"
-      ]
+      ],
+      "flashcard_text": "プラットフォームビジネスの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-090",
@@ -1819,7 +1911,9 @@
         "SaaS",
         "ビジネス指標",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社は月間アクティブユーザー1万人のSaaSサービスを運営している。LTV（顧客生涯価値）を高めるための施策として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-091",
@@ -1857,7 +1951,9 @@
       "tags": [
         "SEO",
         "デジタルマーケティング"
-      ]
+      ],
+      "flashcard_text": "デジタルマーケティングにおけるSEO（検索エンジン最適化）の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-092",
@@ -1896,7 +1992,9 @@
         "個人情報保護法",
         "法律",
         "プライバシー"
-      ]
+      ],
+      "flashcard_text": "個人情報保護法で定める「要配慮個人情報」に該当するものとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-093",
@@ -1935,7 +2033,9 @@
         "法律",
         "メールマーケティング",
         "情報セキュリティ"
-      ]
+      ],
+      "flashcard_text": "特定電子メール法（迷惑メール防止法）に関する記述として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-094",
@@ -1974,7 +2074,9 @@
         "知的財産",
         "実用新案権",
         "法律"
-      ]
+      ],
+      "flashcard_text": "産業財産権のうち「実用新案権」の保護対象として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-095",
@@ -2014,7 +2116,9 @@
         "職務著作",
         "法律",
         "事例問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-S-096",
@@ -2053,7 +2157,9 @@
         "法律",
         "インターネット",
         "情報セキュリティ"
-      ]
+      ],
+      "flashcard_text": "プロバイダ責任制限法に関する説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-097",
@@ -2092,7 +2198,9 @@
         "不正アクセス禁止法",
         "法律",
         "セキュリティ"
-      ]
+      ],
+      "flashcard_text": "不正アクセス禁止法が禁止する行為として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-098",
@@ -2132,7 +2240,9 @@
         "法律",
         "事例問題",
         "営業秘密"
-      ]
+      ],
+      "flashcard_text": "A社の従業員が退職後に、在職中に習得した顧客リストを使って競合会社を設立した。この行為が問われる法律として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-099",
@@ -2171,7 +2281,9 @@
         "労働法",
         "派遣",
         "雇用形態"
-      ]
+      ],
+      "flashcard_text": "労働者派遣法における「派遣労働者」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-100",
@@ -2210,7 +2322,9 @@
         "景品表示法",
         "法律",
         "広告規制"
-      ]
+      ],
+      "flashcard_text": "景品表示法で規制される「不当表示」の例として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-101",
@@ -2249,7 +2363,9 @@
         "ソーシャルビジネス",
         "社会課題",
         "ビジネスモデル"
-      ]
+      ],
+      "flashcard_text": "ITサービスを活用して社会課題を解決するソーシャルビジネスの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-102",
@@ -2288,7 +2404,9 @@
         "クラウドファンディング",
         "資金調達",
         "フィンテック"
-      ]
+      ],
+      "flashcard_text": "クラウドファンディングの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-103",
@@ -2326,7 +2444,9 @@
       "tags": [
         "デザイン思考",
         "イノベーション"
-      ]
+      ],
+      "flashcard_text": "デザイン思考（Design Thinking）のプロセスの順序として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-104",
@@ -2365,7 +2485,9 @@
         "リーンスタートアップ",
         "MVP",
         "イノベーション"
-      ]
+      ],
+      "flashcard_text": "スタートアップ企業が活用するリーンスタートアップの考え方として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-105",
@@ -2405,7 +2527,9 @@
         "意思決定",
         "期待値",
         "新規事業"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-S-106",
@@ -2443,7 +2567,9 @@
       "tags": [
         "オープンイノベーション",
         "イノベーション戦略"
-      ]
+      ],
+      "flashcard_text": "オープンイノベーションの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-107",
@@ -2482,7 +2608,9 @@
         "スタートアップ",
         "インキュベーター",
         "アクセラレーター"
-      ]
+      ],
+      "flashcard_text": "アクセラレータープログラムとインキュベーターの違いとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-S-108",
@@ -2519,7 +2647,9 @@
       "tags": [
         "ビジネスモデルキャンバス",
         "経営ツール"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：含まれない選択型"
     },
     {
       "question_id": "Q-M-025",
@@ -2557,7 +2687,9 @@
       "tags": [
         "開発手法",
         "スパイラルモデル"
-      ]
+      ],
+      "flashcard_text": "ソフトウェア開発手法のうち「スパイラルモデル」の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-026",
@@ -2596,7 +2728,9 @@
         "開発手法",
         "TDD",
         "テスト"
-      ]
+      ],
+      "flashcard_text": "テスト駆動開発（TDD）のサイクルとして正しい順序。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-027",
@@ -2635,7 +2769,9 @@
         "品質管理",
         "レビュー",
         "ソフトウェア開発"
-      ]
+      ],
+      "flashcard_text": "レビュー技法の一つ「インスペクション」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-028",
@@ -2674,7 +2810,9 @@
         "見積もり",
         "プロジェクト管理",
         "開発手法"
-      ]
+      ],
+      "flashcard_text": "ソフトウェア開発の工数見積もり手法のうち、過去の類似プロジェクトの実績データを基準にして見積もる手法。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-029",
@@ -2713,7 +2851,9 @@
         "DevOps",
         "開発手法",
         "運用"
-      ]
+      ],
+      "flashcard_text": "DevOpsの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-030",
@@ -2752,7 +2892,9 @@
         "スクラム",
         "アジャイル",
         "振り返り"
-      ]
+      ],
+      "flashcard_text": "アジャイル開発のスクラムにおける「スプリントレトロスペクティブ」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-031",
@@ -2791,7 +2933,9 @@
         "プロジェクト管理",
         "変更管理",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社はウォーターフォール開発で大規模基幹システムを開発中。要件定義フェーズで「機能追加」の変更要求がユーザーから提出された。適切な対応。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-032",
@@ -2830,7 +2974,9 @@
         "テスト",
         "ホワイトボックス",
         "品質保証"
-      ]
+      ],
+      "flashcard_text": "ホワイトボックステストの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-033",
@@ -2869,7 +3015,9 @@
         "テスト",
         "受け入れテスト",
         "開発工程"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアの「受け入れテスト（UAT）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-034",
@@ -2908,7 +3056,9 @@
         "CI/CD",
         "DevOps",
         "自動化"
-      ]
+      ],
+      "flashcard_text": "継続的インテグレーション（CI）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-035",
@@ -2948,7 +3098,9 @@
         "EVM",
         "プロジェクト管理",
         "計算問題"
-      ]
+      ],
+      "flashcard_text": "プロジェクトのEVM（アーンドバリューマネジメント）において、AC（実コスト）が500万円、EV（アーンドバリュー）が400万円のとき、CV（コスト差異）として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-036",
@@ -2987,7 +3139,9 @@
         "クリティカルパス",
         "計算問題",
         "プロジェクト管理"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "計算・算出型"
     },
     {
       "question_id": "Q-M-037",
@@ -3025,7 +3179,9 @@
       "tags": [
         "リスク管理",
         "プロジェクト管理"
-      ]
+      ],
+      "flashcard_text": "プロジェクトのリスク管理において「リスク回避」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-038",
@@ -3063,7 +3219,9 @@
       "tags": [
         "スコープ管理",
         "プロジェクト管理"
-      ]
+      ],
+      "flashcard_text": "プロジェクトの「スコープクリープ」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-039",
@@ -3102,7 +3260,9 @@
         "ガントチャート",
         "スケジュール管理",
         "プロジェクト管理"
-      ]
+      ],
+      "flashcard_text": "ガントチャートの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-040",
@@ -3142,7 +3302,9 @@
         "SPI",
         "計算問題",
         "プロジェクト管理"
-      ]
+      ],
+      "flashcard_text": "A社のプロジェクトはPV（計画値）600万円に対し、EV（出来高）480万円、AC（実コスト）540万円である。SPI（スケジュール効率指数）として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-041",
@@ -3181,7 +3343,9 @@
         "ITIL",
         "サービスデスク",
         "ITサービス管理"
-      ]
+      ],
+      "flashcard_text": "ITILにおけるサービスデスクの機能として「エスカレーション」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-042",
@@ -3220,7 +3384,9 @@
         "ITIL",
         "問題管理",
         "インシデント管理"
-      ]
+      ],
+      "flashcard_text": "ITILにおける「問題管理」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-043",
@@ -3260,7 +3426,9 @@
         "計算問題",
         "稼働率",
         "ITサービス管理"
-      ]
+      ],
+      "flashcard_text": "SLAに「月間稼働率99.9%以上」と定められているシステムの最大許容停止時間（月720時間として）として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-044",
@@ -3299,7 +3467,9 @@
         "ITIL",
         "構成管理",
         "CMDB"
-      ]
+      ],
+      "flashcard_text": "ITサービスの「構成管理（CMDB）」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-045",
@@ -3339,7 +3509,9 @@
         "MTBF",
         "MTTR",
         "計算問題"
-      ]
+      ],
+      "flashcard_text": "A社のシステムでMTBF（平均故障間隔）が120時間、MTTR（平均修復時間）が4時間の場合、このシステムの稼働率として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-046",
@@ -3378,7 +3550,9 @@
         "ITIL",
         "問題管理",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社では月に数回、同じ種類のシステム障害が発生している。再発防止のために最初に実施すべき対応として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-047",
@@ -3416,7 +3590,9 @@
       "tags": [
         "ITIL",
         "リリース管理"
-      ]
+      ],
+      "flashcard_text": "ITILにおけるリリース管理の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-048",
@@ -3454,7 +3630,9 @@
       "tags": [
         "ITIL",
         "サービスデスク"
-      ]
+      ],
+      "flashcard_text": "サービスデスクの設置形態のうち「バーチャルサービスデスク」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-049",
@@ -3492,7 +3670,9 @@
       "tags": [
         "リスクアセスメント",
         "情報セキュリティ"
-      ]
+      ],
+      "flashcard_text": "情報セキュリティのリスクアセスメントにおける「リスクの特定」で実施する内容として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-050",
@@ -3530,7 +3710,9 @@
       "tags": [
         "情報セキュリティポリシー",
         "ISMS"
-      ]
+      ],
+      "flashcard_text": "情報セキュリティポリシーの構成として正しい階層順。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-051",
@@ -3568,7 +3750,9 @@
       "tags": [
         "デジタルフォレンジクス",
         "セキュリティ"
-      ]
+      ],
+      "flashcard_text": "デジタルフォレンジクスの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-052",
@@ -3607,7 +3791,9 @@
         "ランサムウェア",
         "インシデント対応",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社でランサムウェアによる感染事故が発生した。最初に取るべき対応として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-053",
@@ -3646,7 +3832,9 @@
         "CSIRT",
         "セキュリティ",
         "インシデント管理"
-      ]
+      ],
+      "flashcard_text": "CSIRT（Computer Security Incident Response Team）の役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-054",
@@ -3684,7 +3872,9 @@
       "tags": [
         "多層防御",
         "セキュリティ設計"
-      ]
+      ],
+      "flashcard_text": "情報セキュリティにおける「多層防御（Defense in Depth）」の考え方として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-055",
@@ -3723,7 +3913,9 @@
         "ITガバナンス",
         "COBIT",
         "内部統制"
-      ]
+      ],
+      "flashcard_text": "ITガバナンスに関連するフレームワーク「COBIT」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-056",
@@ -3761,7 +3953,9 @@
       "tags": [
         "システム監査",
         "監査手続"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-M-057",
@@ -3800,7 +3994,9 @@
         "システム監査",
         "内部監査",
         "外部監査"
-      ]
+      ],
+      "flashcard_text": "内部監査と外部監査の違いとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-058",
@@ -3839,7 +4035,9 @@
         "システム監査",
         "是正措置",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社のシステム監査で「販売システムへのアクセス権限設定の不備」が指摘された。監査報告後の適切な対応として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-059",
@@ -3878,7 +4076,9 @@
         "SOC報告書",
         "内部統制",
         "監査"
-      ]
+      ],
+      "flashcard_text": "SOC（System and Organization Controls）報告書の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-060",
@@ -3917,7 +4117,9 @@
         "アクセスコントロール",
         "内部統制",
         "情報セキュリティ"
-      ]
+      ],
+      "flashcard_text": "ITシステムに関する内部統制の「アクセスコントロール」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-061",
@@ -3956,7 +4158,9 @@
         "BCP",
         "RTO",
         "事業継続"
-      ]
+      ],
+      "flashcard_text": "BCP（事業継続計画）における「RTO（目標復旧時間）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-062",
@@ -3995,7 +4199,9 @@
         "BCP",
         "訓練",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社のBCPテストとして「タブレットップエクササイズ（机上演習）」を実施した。この演習の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-063",
@@ -4033,7 +4239,9 @@
       "tags": [
         "ペネトレーションテスト",
         "セキュリティ"
-      ]
+      ],
+      "flashcard_text": "ペネトレーションテスト（侵入テスト）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-M-064",
@@ -4071,7 +4279,9 @@
       "tags": [
         "ゼロトラスト",
         "セキュリティアーキテクチャ"
-      ]
+      ],
+      "flashcard_text": "情報セキュリティの「ゼロトラストセキュリティ」の考え方として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-055",
@@ -4110,7 +4320,9 @@
         "計算問題",
         "2進数",
         "基数変換"
-      ]
+      ],
+      "flashcard_text": "2進数「1101.01」を10進数に変換した結果として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-056",
@@ -4149,7 +4361,9 @@
         "計算問題",
         "16進数",
         "基数変換"
-      ]
+      ],
+      "flashcard_text": "16進数「A3」を10進数に変換した結果として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-057",
@@ -4188,7 +4402,9 @@
         "計算問題",
         "論理演算",
         "XOR"
-      ]
+      ],
+      "flashcard_text": "2進数「1010」と「0110」のXOR（排他的論理和）演算の結果として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-058",
@@ -4227,7 +4443,9 @@
         "計算問題",
         "2の補数",
         "2進数"
-      ]
+      ],
+      "flashcard_text": "8ビットの2の補数表現で「11110110」が表す10進数の値として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-059",
@@ -4266,7 +4484,9 @@
         "計算問題",
         "16進数",
         "基数変換"
-      ]
+      ],
+      "flashcard_text": "10進数「100」を16進数に変換した結果として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-060",
@@ -4305,7 +4525,9 @@
         "文字コード",
         "UTF-8",
         "Unicode"
-      ]
+      ],
+      "flashcard_text": "文字コードに関する説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-061",
@@ -4344,7 +4566,9 @@
         "計算問題",
         "ビット",
         "2進数"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "組合せ選択型"
     },
     {
       "question_id": "Q-T-062",
@@ -4383,7 +4607,9 @@
         "計算問題",
         "転送速度",
         "単位変換"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-T-063",
@@ -4421,7 +4647,9 @@
       "tags": [
         "ビット演算",
         "シフト演算"
-      ]
+      ],
+      "flashcard_text": "ビット演算において「論理シフト」と「算術シフト」の違いとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-064",
@@ -4460,7 +4688,9 @@
         "計算問題",
         "画像データ",
         "ビット"
-      ]
+      ],
+      "flashcard_text": "解像度1920×1080ピクセル、1ピクセルあたり24ビット（RGB各8ビット）の画像データの非圧縮時のサイズとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-065",
@@ -4499,7 +4729,9 @@
         "CPU",
         "パイプライン",
         "コンピュータアーキテクチャ"
-      ]
+      ],
+      "flashcard_text": "CPUのパイプライン処理の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-066",
@@ -4538,7 +4770,9 @@
         "キャッシュメモリ",
         "メモリ階層",
         "CPU"
-      ]
+      ],
+      "flashcard_text": "コンピュータのキャッシュメモリの役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-067",
@@ -4577,7 +4811,9 @@
         "SSD",
         "HDD",
         "補助記憶装置"
-      ]
+      ],
+      "flashcard_text": "SSD（ソリッドステートドライブ）とHDD（ハードディスクドライブ）の比較として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-068",
@@ -4616,7 +4852,9 @@
         "計算問題",
         "CPU性能",
         "クロック周波数"
-      ]
+      ],
+      "flashcard_text": "クロック周波数3GHz、1クロックあたりの平均命令実行数（IPC）が2のCPUの1秒間の命令実行数として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-069",
@@ -4655,7 +4893,9 @@
         "GPU",
         "並列処理",
         "コンピュータアーキテクチャ"
-      ]
+      ],
+      "flashcard_text": "GPU（グラフィックスプロセッシングユニット）の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-070",
@@ -4694,7 +4934,9 @@
         "割り込み処理",
         "CPU",
         "OS"
-      ]
+      ],
+      "flashcard_text": "コンピュータの割り込み処理（インタラプト）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-071",
@@ -4732,7 +4974,9 @@
       "tags": [
         "バス",
         "コンピュータアーキテクチャ"
-      ]
+      ],
+      "flashcard_text": "コンピュータのバスに関する説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-072",
@@ -4771,7 +5015,9 @@
         "USB",
         "インターフェース",
         "周辺機器"
-      ]
+      ],
+      "flashcard_text": "USBの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-073",
@@ -4810,7 +5056,9 @@
         "デッドロック",
         "OS",
         "プロセス管理"
-      ]
+      ],
+      "flashcard_text": "OSのプロセス管理における「デッドロック」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-074",
@@ -4849,7 +5097,9 @@
         "仮想記憶",
         "ページフォルト",
         "OS"
-      ]
+      ],
+      "flashcard_text": "ページング方式の仮想記憶における「ページフォルト」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-075",
@@ -4888,7 +5138,9 @@
         "OS",
         "スケジューリング",
         "ラウンドロビン"
-      ]
+      ],
+      "flashcard_text": "OSのスケジューリングアルゴリズムのうち「ラウンドロビン方式」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-076",
@@ -4927,7 +5179,9 @@
         "ファイルシステム",
         "OS",
         "ディレクトリ"
-      ]
+      ],
+      "flashcard_text": "OSのファイルシステムにおける「ディレクトリ（フォルダ）」の役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-077",
@@ -4966,7 +5220,9 @@
         "Linux",
         "コマンド",
         "ファイル操作"
-      ]
+      ],
+      "flashcard_text": "Linuxコマンドで「/var/log」ディレクトリ以下のすべての「.log」拡張子ファイルを検索するコマンドとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-078",
@@ -5005,7 +5261,9 @@
         "コンテナ",
         "Docker",
         "仮想化"
-      ]
+      ],
+      "flashcard_text": "コンテナ技術（Dockerなど）の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-079",
@@ -5044,7 +5302,9 @@
         "データベース",
         "外部キー",
         "参照整合性"
-      ]
+      ],
+      "flashcard_text": "関係データベースの「外部キー」の役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-080",
@@ -5084,7 +5344,9 @@
         "GROUP BY",
         "HAVING",
         "計算問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-T-081",
@@ -5123,7 +5385,9 @@
         "データベース",
         "インデックス",
         "SQL"
-      ]
+      ],
+      "flashcard_text": "データベースの「インデックス（索引）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-082",
@@ -5162,7 +5426,9 @@
         "NoSQL",
         "データベース",
         "スケーラビリティ"
-      ]
+      ],
+      "flashcard_text": "NoSQLデータベースの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-083",
@@ -5201,7 +5467,9 @@
         "データベース",
         "ビュー",
         "SQL"
-      ]
+      ],
+      "flashcard_text": "データベースの「ビュー（View）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-084",
@@ -5241,7 +5509,9 @@
         "JOIN",
         "計算問題",
         "事例問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-T-085",
@@ -5280,7 +5550,9 @@
         "データベース",
         "トランザクション",
         "分離レベル"
-      ]
+      ],
+      "flashcard_text": "データベースのトランザクション分離レベルで「ダーティリード」が発生する状況として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-086",
@@ -5319,7 +5591,9 @@
         "ネットワーク",
         "IPアドレス",
         "サブネット"
-      ]
+      ],
+      "flashcard_text": "IPアドレス「192.168.1.0/24」のサブネットマスクとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-087",
@@ -5358,7 +5632,9 @@
         "計算問題",
         "IPアドレス",
         "サブネット"
-      ]
+      ],
+      "flashcard_text": "192.168.10.0/24のネットワークで使用可能なホストアドレスの数として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-088",
@@ -5397,7 +5673,9 @@
         "ネットワーク",
         "NAT",
         "IPアドレス"
-      ]
+      ],
+      "flashcard_text": "NATの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-089",
@@ -5436,7 +5714,9 @@
         "DHCP",
         "ネットワーク",
         "IPアドレス管理"
-      ]
+      ],
+      "flashcard_text": "DHCP（動的ホスト構成プロトコル）の役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-090",
@@ -5475,7 +5755,9 @@
         "ネットワーク診断",
         "traceroute",
         "ルーティング"
-      ]
+      ],
+      "flashcard_text": "A社のネットワーク管理者が「traceroute」コマンドを実行した場合に得られる情報として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-091",
@@ -5513,7 +5795,9 @@
       "tags": [
         "VPN",
         "ネットワークセキュリティ"
-      ]
+      ],
+      "flashcard_text": "VPN（仮想プライベートネットワーク）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-092",
@@ -5552,7 +5836,9 @@
         "Wi-Fi",
         "ネットワークセキュリティ",
         "WPA3"
-      ]
+      ],
+      "flashcard_text": "WPA3の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-093",
@@ -5591,7 +5877,9 @@
         "DoS",
         "DDoS",
         "サイバー攻撃"
-      ]
+      ],
+      "flashcard_text": "DoS攻撃（サービス拒否攻撃）とDDoS攻撃の違いとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-094",
@@ -5630,7 +5918,9 @@
         "XSS",
         "Webセキュリティ",
         "サイバー攻撃"
-      ]
+      ],
+      "flashcard_text": "クロスサイトスクリプティング（XSS）攻撃の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-095",
@@ -5669,7 +5959,9 @@
         "CSRF",
         "Webセキュリティ",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社のWebシステムでCSRF（クロスサイトリクエストフォージェリ）攻撃が発生した場合の影響として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-096",
@@ -5708,7 +6000,9 @@
         "暗号化",
         "公開鍵暗号",
         "共通鍵暗号"
-      ]
+      ],
+      "flashcard_text": "対称暗号（共通鍵暗号）方式と非対称暗号（公開鍵暗号）方式の比較として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-097",
@@ -5747,7 +6041,9 @@
         "ハッシュ関数",
         "暗号化",
         "セキュリティ"
-      ]
+      ],
+      "flashcard_text": "ハッシュ関数の特性として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-098",
@@ -5786,7 +6082,9 @@
         "TLS",
         "HTTPS",
         "暗号化通信"
-      ]
+      ],
+      "flashcard_text": "TLS（Transport Layer Security）の動作に関する説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-099",
@@ -5825,7 +6123,9 @@
         "多要素認証",
         "MFA",
         "認証セキュリティ"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "組合せ選択型"
     },
     {
       "question_id": "Q-T-100",
@@ -5864,7 +6164,9 @@
         "フローチャート",
         "アルゴリズム",
         "記号"
-      ]
+      ],
+      "flashcard_text": "フローチャートで「平行四辺形」の記号が表すもの。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-101",
@@ -5903,7 +6205,9 @@
         "アルゴリズム",
         "擬似コード",
         "計算問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-T-102",
@@ -5942,7 +6246,9 @@
         "アルゴリズム",
         "探索",
         "計算量"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     },
     {
       "question_id": "Q-T-103",
@@ -5981,7 +6287,9 @@
         "データ構造",
         "スタック",
         "LIFO"
-      ]
+      ],
+      "flashcard_text": "スタック（Stack）の操作として正しい説明。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-104",
@@ -6020,7 +6328,9 @@
         "機械学習",
         "過学習",
         "AI"
-      ]
+      ],
+      "flashcard_text": "AIの機械学習における「過学習（オーバーフィッティング）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-105",
@@ -6059,7 +6369,9 @@
         "機械学習",
         "教師なし学習",
         "AI"
-      ]
+      ],
+      "flashcard_text": "機械学習の学習手法のうち「教師なし学習」の例として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-106",
@@ -6098,7 +6410,9 @@
         "NLP",
         "AI",
         "機械学習"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "否定形：適切でない選択型"
     },
     {
       "question_id": "Q-T-107",
@@ -6137,7 +6451,9 @@
         "機械学習評価",
         "精度",
         "計算問題"
-      ]
+      ],
+      "flashcard_text": "機械学習モデルの評価指標のうち「精度（Accuracy）」の計算式として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-108",
@@ -6176,7 +6492,9 @@
         "生成AI",
         "LLM",
         "AI"
-      ]
+      ],
+      "flashcard_text": "生成AI（ジェネレーティブAI）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-109",
@@ -6215,7 +6533,9 @@
         "AI",
         "エキスパートシステム",
         "知識工学"
-      ]
+      ],
+      "flashcard_text": "エキスパートシステムの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-110",
@@ -6254,7 +6574,9 @@
         "AI",
         "ハルシネーション",
         "LLM"
-      ]
+      ],
+      "flashcard_text": "AIの「ハルシネーション（幻覚）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-111",
@@ -6293,7 +6615,9 @@
         "オブジェクト指向",
         "カプセル化",
         "プログラミング"
-      ]
+      ],
+      "flashcard_text": "オブジェクト指向設計における「カプセル化」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-112",
@@ -6332,7 +6656,9 @@
         "UML",
         "シーケンス図",
         "設計"
-      ]
+      ],
+      "flashcard_text": "UML（統一モデリング言語）の「シーケンス図」で表現するものとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-113",
@@ -6371,7 +6697,9 @@
         "モジュール設計",
         "凝集度",
         "ソフトウェア品質"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアの「モジュール凝集度」のうち最も高い（望ましい）凝集度。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-114",
@@ -6410,7 +6738,9 @@
         "デザインパターン",
         "ファクトリーメソッド",
         "OOP"
-      ]
+      ],
+      "flashcard_text": "デザインパターンの「ファクトリーメソッドパターン」の目的として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-115",
@@ -6449,7 +6779,9 @@
         "Webシステム",
         "セッション管理",
         "HTTP"
-      ]
+      ],
+      "flashcard_text": "Webシステムにおけるセッション管理の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-116",
@@ -6488,7 +6820,9 @@
         "マイクロサービス",
         "アーキテクチャ",
         "システム設計"
-      ]
+      ],
+      "flashcard_text": "マイクロサービスアーキテクチャの特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-117",
@@ -6527,7 +6861,9 @@
         "REST API",
         "Webシステム",
         "API設計"
-      ]
+      ],
+      "flashcard_text": "REST APIの設計原則として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-118",
@@ -6566,7 +6902,9 @@
         "フローチャート",
         "システム設計",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社は在庫管理システムを開発中で、「在庫が0になったら自動発注する」処理を設計している。この処理のフローチャートとして適切な流れ。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-119",
@@ -6605,7 +6943,9 @@
         "リファクタリング",
         "コード品質",
         "開発"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアの「リファクタリング」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-120",
@@ -6644,7 +6984,9 @@
         "APIゲートウェイ",
         "マイクロサービス",
         "システム設計"
-      ]
+      ],
+      "flashcard_text": "APIゲートウェイの役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-121",
@@ -6683,7 +7025,9 @@
         "ソフトウェア品質",
         "ISO25010",
         "信頼性"
-      ]
+      ],
+      "flashcard_text": "ソフトウェアの品質特性を定義するISO/IEC 25010（SQuaRE）において「信頼性」の副特性として含まれるもの。以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-122",
@@ -6722,7 +7066,9 @@
         "CI/CD",
         "DevOps",
         "継続的デリバリー"
-      ]
+      ],
+      "flashcard_text": "継続的デリバリー（CD）と継続的デプロイメント（CD）の違いとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-123",
@@ -6761,7 +7107,9 @@
         "計算問題",
         "稼働率",
         "信頼性設計"
-      ]
+      ],
+      "flashcard_text": "3台のサーバーを「2台を並列（どちらか1台稼働でOK）＋その並列構成と1台を直列」で接続した場合、各サーバーの稼働率が0.9のとき、システム全体の稼働率として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-124",
@@ -6800,7 +7148,9 @@
         "高可用性",
         "スタンバイ構成",
         "冗長化"
-      ]
+      ],
+      "flashcard_text": "システムの「ウォームスタンバイ」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-125",
@@ -6839,7 +7189,9 @@
         "ロードバランサー",
         "負荷分散",
         "高可用性"
-      ]
+      ],
+      "flashcard_text": "ロードバランサーの役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-126",
@@ -6879,7 +7231,9 @@
         "稼働率",
         "MTBF",
         "MTTR"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "数値選択型"
     },
     {
       "question_id": "Q-T-127",
@@ -6918,7 +7272,9 @@
         "クラウド",
         "PaaS",
         "サービスモデル"
-      ]
+      ],
+      "flashcard_text": "クラウドサービスにおけるPaaS（Platform as a Service）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-128",
@@ -6957,7 +7313,9 @@
         "ディザスタリカバリ",
         "BCP",
         "事業継続"
-      ]
+      ],
+      "flashcard_text": "システムの「ディザスタリカバリ（DR）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-129",
@@ -6996,7 +7354,9 @@
         "RAID",
         "RAID5",
         "ストレージ冗長化"
-      ]
+      ],
+      "flashcard_text": "RAID5（分散パリティ）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-130",
@@ -7036,7 +7396,9 @@
         "クラウド",
         "可用性",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社は新しいECサイトにオートスケーリングを採用した。オートスケーリングの主なメリットとして、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-131",
@@ -7075,7 +7437,9 @@
         "CDN",
         "Webパフォーマンス",
         "クラウド"
-      ]
+      ],
+      "flashcard_text": "CDN（コンテンツデリバリーネットワーク）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-132",
@@ -7113,7 +7477,9 @@
       "tags": [
         "マルチクラウド",
         "クラウド戦略"
-      ]
+      ],
+      "flashcard_text": "クラウドの「マルチクラウド」戦略の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-133",
@@ -7152,7 +7518,9 @@
         "システム監視",
         "死活監視",
         "運用管理"
-      ]
+      ],
+      "flashcard_text": "システム監視において「死活監視（ハートビート監視）」の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-134",
@@ -7191,7 +7559,9 @@
         "クラウドコスト",
         "AWS",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社はEC基幹システムをオンプレミスからAWSに移行した。移行後、同じ性能を維持しつつコストを最適化するための施策として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-135",
@@ -7230,7 +7600,9 @@
         "IaC",
         "DevOps",
         "インフラ自動化"
-      ]
+      ],
+      "flashcard_text": "Infrastructure as Code（IaC）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-136",
@@ -7269,7 +7641,9 @@
         "キャパシティプランニング",
         "ITIL",
         "運用管理"
-      ]
+      ],
+      "flashcard_text": "システムのキャパシティプランニングの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-137",
@@ -7309,7 +7683,9 @@
         "ブルーグリーン",
         "DevOps",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社は新システムの本番リリースで「ブルーグリーンデプロイメント」を採用した。この手法の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-138",
@@ -7348,7 +7724,9 @@
         "サーバーレス",
         "FaaS",
         "クラウド"
-      ]
+      ],
+      "flashcard_text": "サーバーレスコンピューティング（FaaS）の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-139",
@@ -7387,7 +7765,9 @@
         "Kubernetes",
         "コンテナ",
         "クラウドネイティブ"
-      ]
+      ],
+      "flashcard_text": "Kubernetesの役割として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-140",
@@ -7427,7 +7807,9 @@
         "高可用性",
         "DB冗長化",
         "事例問題"
-      ]
+      ],
+      "flashcard_text": "A社の基幹DBサーバーの稼働率を99.99%に高めるために「アクティブ-アクティブクラスタ構成」を採用した。この構成の特徴として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-141",
@@ -7466,7 +7848,9 @@
         "SRE",
         "運用管理",
         "信頼性"
-      ]
+      ],
+      "flashcard_text": "SRE（Site Reliability Engineering）の説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-142",
@@ -7505,7 +7889,9 @@
         "エッジコンピューティング",
         "IoT",
         "クラウド"
-      ]
+      ],
+      "flashcard_text": "エッジコンピューティングの説明として、以下は正しい？",
+      "flashcard_skip": false
     },
     {
       "question_id": "Q-T-143",
@@ -7545,7 +7931,9 @@
         "計算問題",
         "データ保護",
         "事例問題"
-      ]
+      ],
+      "flashcard_skip": true,
+      "flashcard_skip_reason": "整形ルール非該当（計算/数値/特殊用語型）"
     }
   ]
 }

@@ -468,6 +468,12 @@ async function startSession(container, mode, category, questionLimit = null) {
       return;
     }
 
+    // ○✗モードでは、4択前提の問題文（否定形・計算問題等）は除外する
+    // flashcard_skip: true の問題は flashcard_text を持たないため、出題プールから外す
+    if (mode === 'flashcard') {
+      questions = questions.filter((q) => q.flashcard_skip !== true);
+    }
+
     if (questions.length === 0) {
       renderInto(container, [createEmptyState('🎯', 'この条件に一致する問題がありません')]);
       return;
@@ -788,16 +794,19 @@ function renderQuestionScreen(container) {
   meta.appendChild(createDifficultyStars(current.difficulty));
   questionCard.appendChild(meta);
 
-  // 問題文
+  // 問題文（○✗モードでは flashcard_text を優先表示する。4択前提の文言を自然な文に整形済み）
+  const isFlashcard = _session.mode === 'flashcard';
+  const displayQuestionText = (isFlashcard && current.flashcard_text)
+    ? current.flashcard_text
+    : current.question_text;
   questionCard.appendChild(createElement('p', {
     classes: ['question-text'],
-    text: current.question_text,
+    text: displayQuestionText,
   }));
 
   screen.appendChild(questionCard);
 
   const questionStartTime = Date.now(); // 回答時間計測用
-  const isFlashcard = _session.mode === 'flashcard';
 
   // ○✗モード：問題文＋提示された選択肢が正解かどうかを○✗で判定する
   if (isFlashcard) {
