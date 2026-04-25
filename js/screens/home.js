@@ -4,7 +4,7 @@
  * 学習進捗・分野別統計・クイックアクセスを表示する
  */
 
-import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds, getReadingTime, getSRS } from '../store.js';
+import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds, getReadingTime, getSRS, getWeakQuestions } from '../store.js';
 import { loadChapters, loadQuestions } from '../dataLoader.js';
 import { navigate } from '../router.js';
 import {
@@ -29,6 +29,7 @@ import {
   getStreakBadge,
   calcChapterMastery,
   calcExamCountdown,
+  buildTodayPlan,
 } from '../utils/progress.js';
 import { summarize as srsSummarize } from '../utils/srs.js';
 
@@ -74,6 +75,16 @@ export async function renderHome(container) {
     // SRS（間隔反復）：今日の復習対象数を集計
     const srsSummary = srsSummarize(srsData.states);
 
+    // 学習計画：今日やるべきタスクを優先度順に算出する
+    const weakData = getWeakQuestions();
+    const todayPlan = buildTodayPlan({
+      srsSummary,
+      weakData,
+      progress,
+      chaptersData,
+      examCountdown,
+    });
+
     // 分野別進捗を計算
     const sectionProgresses = chaptersData.sections.map((section) => ({
       ...section,
@@ -97,6 +108,7 @@ export async function renderHome(container) {
       chapterMastery,
       examCountdown,
       srsSummary,
+      todayPlan,
     }, progress);
 
     renderInto(container, [screenEl]);
@@ -116,7 +128,7 @@ export async function renderHome(container) {
  * @param {Object} progress - 進捗データ（オンボーディング判定に使用）
  * @returns {HTMLElement} ホーム画面の要素
  */
-function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred, sectionProgresses, recentSessions, streak, streakBadge, chapterMastery, examCountdown, srsSummary }, progress) {
+function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred, sectionProgresses, recentSessions, streak, streakBadge, chapterMastery, examCountdown, srsSummary, todayPlan }, progress) {
   const screen = createElement('div', { classes: ['home-screen'] });
 
   // ウェルカムバナー
@@ -135,8 +147,14 @@ function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentA
     screen.appendChild(buildExamCountdown(examCountdown));
   }
 
+  // 今日の学習計画（合格に効く順にタスクを提示）
+  if (todayPlan && todayPlan.length > 0) {
+    screen.appendChild(buildTodayPlanSection(todayPlan));
+  }
+
   // 今日の復習カード（SRS復習期日がある場合のみ表示）
-  if (srsSummary && srsSummary.due_count > 0) {
+  // → 学習計画の中にすでに含まれているので、SRS due_count があるときは todayPlan が代替として機能する
+  if (srsSummary && srsSummary.due_count > 0 && (!todayPlan || todayPlan.length === 0)) {
     screen.appendChild(buildSRSReviewCard(srsSummary));
   }
 
@@ -193,6 +211,57 @@ function buildExamCountdown(cd) {
   card.appendChild(days);
   card.appendChild(right);
   return card;
+}
+
+/**
+ * 今日の学習計画セクションを構築する
+ * @param {Array<Object>} tasks - buildTodayPlan の戻り値
+ * @returns {HTMLElement} セクション要素
+ */
+function buildTodayPlanSection(tasks) {
+  const section = createElement('div', { classes: ['home-today-plan'] });
+
+  // ヘッダー
+  const header = createElement('div', { classes: ['today-plan-header'] });
+  header.appendChild(createElement('span', { classes: ['today-plan-icon'], text: '📋' }));
+  header.appendChild(createElement('h2', { classes: ['today-plan-title'], text: '今日の学習計画' }));
+  section.appendChild(header);
+
+  // 各タスクをカードで表示する
+  // タスクごとに「優先度バッジ + タイトル + 詳細 + アクションボタン」
+  tasks.forEach((task, idx) => {
+    const card = createElement('div', {
+      classes: ['today-plan-task', `today-plan-task-${task.type}`],
+    });
+
+    // 優先度バッジ（1=最優先、2,3,...）
+    card.appendChild(createElement('span', {
+      classes: ['today-plan-priority'],
+      text: String(idx + 1),
+    }));
+
+    const body = createElement('div', { classes: ['today-plan-body'] });
+    body.appendChild(createElement('div', {
+      classes: ['today-plan-task-title'],
+      text: task.title,
+    }));
+    body.appendChild(createElement('div', {
+      classes: ['today-plan-task-detail'],
+      text: task.detail,
+    }));
+    card.appendChild(body);
+
+    const actionBtn = createElement('button', {
+      classes: ['today-plan-action'],
+      text: task.action_label,
+    });
+    actionBtn.addEventListener('click', () => navigate(task.route));
+    card.appendChild(actionBtn);
+
+    section.appendChild(card);
+  });
+
+  return section;
 }
 
 /**

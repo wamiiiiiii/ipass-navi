@@ -1097,3 +1097,91 @@
   padding: 2px 10px;
   margin-bottom: var(--space-sm);
 }
+
+/* ===================================================
+   CBT本番再現モード（exam mode）
+   =================================================== */
+
+/* 「あとで見直す」フラグボタン */
+.cbt-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--space-md);
+  padding: 6px 12px;
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.cbt-review-btn:hover { background-color: var(--color-surface-hover, #f5f5f5); }
+.cbt-review-btn.is-marked {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeaa7;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* 問題ジャンプパネル（折り畳み） */
+.cbt-jump-panel {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.cbt-jump-summary {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+}
+.cbt-jump-summary::marker { color: var(--color-primary); }
+.cbt-jump-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 4px;
+  margin-top: var(--space-md);
+}
+.cbt-jump-btn {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.cbt-jump-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.cbt-jump-btn.is-answered {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.cbt-jump-btn.is-marked {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeaa7;
+}
+.cbt-jump-btn.is-marked.is-answered {
+  background-color: #ffc107;
+  color: #fff;
+  border-color: #ffc107;
+}
+.cbt-jump-btn.is-current {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 1px;
+  font-weight: var(--font-weight-bold);
+}

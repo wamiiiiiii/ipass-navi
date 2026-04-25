@@ -9,9 +9,9 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v14: SRS（間隔反復）導入・モチベ機能追加・全915問プール統合・srs.jsで利用するファイル追加
-const CACHE_NAME = 'ipass-navi-v14';
-const DATA_CACHE_NAME = 'ipass-navi-data-v14';
+// v15: CBT本番再現モード（問題ジャンプパネル＋見直しフラグ）+ 学習計画自動生成
+const CACHE_NAME = 'ipass-navi-v15';
+const DATA_CACHE_NAME = 'ipass-navi-data-v15';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

@@ -581,6 +581,8 @@ async function startExamSession(container, questionsData) {
       // 模擬試験専用プロパティ
       timerId:        null,                   // startExamTimer後に設定する
       remainingSec:   EXAM_TIME_LIMIT_SEC,    // 残り秒数（1秒ごとに更新）
+      // CBT本番再現：問題ごとの「あとで見直す」フラグ。Set<question_id> 相当だがJSON化のため配列で保持
+      reviewMarks:    [],
     };
 
     // セッション初期化後にタイマーを開始する（_sessionを参照するため順序が重要）
@@ -822,6 +824,34 @@ function renderQuestionScreen(container) {
     text: displayQuestionText,
   }));
 
+  // CBT本番再現：模擬試験モード時は問題カードに「⚑ 見直し」フラグボタンを追加する
+  if (_session.mode === 'exam') {
+    const isMarked = (_session.reviewMarks || []).includes(current.question_id);
+    const reviewBtn = createElement('button', {
+      classes: ['cbt-review-btn', isMarked ? 'is-marked' : ''],
+      text: isMarked ? '⚑ 見直しに登録済み' : '⚑ あとで見直す',
+      attrs: { 'aria-pressed': String(isMarked) },
+    });
+    reviewBtn.addEventListener('click', () => {
+      const qid = current.question_id;
+      const marks = _session.reviewMarks || [];
+      // トグル：登録済なら外す、未登録なら追加する（イミュータブルに新しい配列を作成）
+      const newMarks = marks.includes(qid)
+        ? marks.filter((id) => id !== qid)
+        : [...marks, qid];
+      _session = { ..._session, reviewMarks: newMarks };
+      // ボタン表示を即時更新
+      const newMarked = newMarks.includes(qid);
+      reviewBtn.classList.toggle('is-marked', newMarked);
+      reviewBtn.textContent = newMarked ? '⚑ 見直しに登録済み' : '⚑ あとで見直す';
+      reviewBtn.setAttribute('aria-pressed', String(newMarked));
+      // 問題ジャンプパネルがあれば該当ボタンの色も更新する
+      const panelBtn = screen.querySelector(`.cbt-jump-btn[data-qid="${qid}"]`);
+      if (panelBtn) panelBtn.classList.toggle('is-marked', newMarked);
+    });
+    questionCard.appendChild(reviewBtn);
+  }
+
   screen.appendChild(questionCard);
 
   const questionStartTime = Date.now(); // 回答時間計測用
@@ -1041,7 +1071,61 @@ function renderQuestionScreen(container) {
 
   screen.appendChild(choicesList);
 
+  // CBT本番再現：模擬試験モード時は画面末尾に問題ジャンプパネルを表示する
+  // パネルから任意の問題に飛べる。状態は色で示す（未回答=灰 / 回答済=青 / 見直し=黄 / 現在=濃青）
+  if (_session.mode === 'exam') {
+    screen.appendChild(buildJumpPanel(container));
+  }
+
   renderInto(container, [screen]);
+}
+
+/**
+ * 問題ジャンプパネルを構築する（CBT本番再現用）
+ * 全問題を番号ボタンとして並べ、現在地・回答済・見直し対象を色で示す
+ * @param {HTMLElement} container - 描画先のコンテナ
+ * @returns {HTMLElement} パネル要素
+ */
+function buildJumpPanel(container) {
+  const wrapper = createElement('details', { classes: ['cbt-jump-panel'] });
+  const summary = createElement('summary', {
+    classes: ['cbt-jump-summary'],
+    text: '🗂 全問ジャンプ',
+  });
+  wrapper.appendChild(summary);
+
+  const grid = createElement('div', { classes: ['cbt-jump-grid'] });
+
+  // 回答済みの question_id を集める（即時参照のためSetに変換）
+  const answeredIds = new Set((_session.results || []).map((r) => r.question_id));
+  const reviewMarks = new Set(_session.reviewMarks || []);
+  const currentIdx = _session.currentIdx;
+
+  _session.questions.forEach((q, idx) => {
+    const isAnswered = answeredIds.has(q.question_id);
+    const isMarked = reviewMarks.has(q.question_id);
+    const isCurrent = idx === currentIdx;
+
+    const btn = createElement('button', {
+      classes: [
+        'cbt-jump-btn',
+        isCurrent ? 'is-current' : '',
+        isAnswered ? 'is-answered' : '',
+        isMarked ? 'is-marked' : '',
+      ].filter(Boolean),
+      text: String(idx + 1),
+      attrs: { 'data-qid': q.question_id, 'aria-label': `問${idx + 1}へ移動` },
+    });
+    btn.addEventListener('click', () => {
+      // ジャンプ先に移動して問題画面を再描画
+      _session = { ..._session, phase: 'question', currentIdx: idx };
+      renderQuestionScreen(container);
+    });
+    grid.appendChild(btn);
+  });
+
+  wrapper.appendChild(grid);
+  return wrapper;
 }
 
 // ===================================================

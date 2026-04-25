@@ -596,6 +596,99 @@ export function calcChapterMastery(quizResults, chaptersData, allQuestions = [])
 }
 
 /**
+ * 今日の学習計画（具体的なタスクリスト）を生成する（純粋関数）
+ *
+ * 「合格に効く順」でその日にやるべきことを優先度つきで返す：
+ *   1. SRS復習（今日が期日の問題） — 記憶定着の最優先
+ *   2. 苦手問題の演習 — 弱点克服
+ *   3. 未読の教科書を進める — 知識のカバレッジ
+ *   4. 新規問題の演習（日次ノルマ分） — 試験日逆算で必要数
+ *
+ * @param {Object} input
+ * @param {Object} input.srsSummary - srs.summarize の戻り値
+ * @param {Object} input.weakData - ipass_weak_questions
+ * @param {Object} input.progress - ipass_progress
+ * @param {Object} input.chaptersData - chapters.json
+ * @param {Object|null} input.examCountdown - calcExamCountdown の戻り値
+ * @returns {Array<{type, title, detail, action_label, route, priority}>} タスク配列（優先度順）
+ */
+export function buildTodayPlan({ srsSummary, weakData, progress, chaptersData, examCountdown }) {
+  const tasks = [];
+
+  // 1. SRS復習：今日が期日の問題を最優先で潰す
+  if (srsSummary && srsSummary.due_count > 0) {
+    tasks.push({
+      type: 'srs',
+      title: '今日の復習',
+      detail: `${srsSummary.due_count}問が復習期日。記憶定着に最優先`,
+      action_label: '復習を始める',
+      route: 'quiz?mode=review',
+      priority: 1,
+    });
+  }
+
+  // 2. 苦手問題：直近で誤答率が高い問題を集中
+  const weakIds = getWeakQuestionIds(weakData);
+  if (weakIds.length >= 3) {
+    tasks.push({
+      type: 'weak',
+      title: '苦手問題の集中演習',
+      detail: `誤答率50%以上が${weakIds.length}問。10問ピックアップで克服`,
+      action_label: '苦手モードへ',
+      route: 'quiz?mode=weak',
+      priority: 2,
+    });
+  }
+
+  // 3. 教科書未読：全節のうち未読割合が高ければ提案する
+  const allPageIds = getAllPageIds(chaptersData);
+  const readSet = new Set(progress?.pages_read || []);
+  const unread = allPageIds.filter((id) => !readSet.has(id));
+  if (unread.length > 0 && allPageIds.length > 0) {
+    const unreadPct = Math.round((unread.length / allPageIds.length) * 100);
+    if (unreadPct >= 20) {
+      // 次に読むべき節（先頭の未読）を提案する
+      const next = unread[0];
+      tasks.push({
+        type: 'textbook',
+        title: '教科書を進める',
+        detail: `未読 ${unread.length}節（${unreadPct}%）。次は ${next} から`,
+        action_label: '教科書を開く',
+        route: 'textbook',
+        priority: 3,
+      });
+    }
+  }
+
+  // 4. 新規問題演習（試験日が設定されていれば日次ノルマを表示）
+  if (examCountdown && examCountdown.daily_quota > 0) {
+    tasks.push({
+      type: 'quota',
+      title: '今日のノルマ',
+      detail: `試験まで${examCountdown.days_left}日 / 1日あたり ${examCountdown.daily_quota}問が必要`,
+      action_label: '4択モードへ',
+      route: 'quiz',
+      priority: 4,
+    });
+  }
+
+  // すべての候補がない場合のフォールバック：今日できる演習を案内する
+  if (tasks.length === 0) {
+    tasks.push({
+      type: 'default',
+      title: '今日も少しでも前進',
+      detail: '4択モードで5問だけでも解こう',
+      action_label: '演習を始める',
+      route: 'quiz',
+      priority: 99,
+    });
+  }
+
+  // 優先度の昇順で返す
+  return tasks.sort((a, b) => a.priority - b.priority);
+}
+
+/**
  * 試験日までの残り日数と日次ノルマを計算する（純粋関数）
  *
  * 【日次ノルマの計算】

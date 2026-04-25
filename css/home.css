@@ -680,3 +680,80 @@
 }
 .section-mastery-icon { font-size: 1rem; }
 .section-mastery-text { color: var(--color-text-secondary); }
+
+/* ===================================================
+   今日の学習計画セクション
+   =================================================== */
+.home-today-plan {
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.today-plan-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-sm);
+}
+.today-plan-icon { font-size: 1.2rem; }
+.today-plan-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  color: var(--color-text-primary);
+}
+.today-plan-task {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 10px 12px;
+  margin-top: 8px;
+  background-color: var(--color-bg, #fafafa);
+  border-left: 4px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+.today-plan-task-srs { border-left-color: var(--color-primary); }
+.today-plan-task-weak { border-left-color: #d9534f; }
+.today-plan-task-textbook { border-left-color: #5cb85c; }
+.today-plan-task-quota { border-left-color: #f0ad4e; }
+.today-plan-task-default { border-left-color: var(--color-text-secondary); }
+.today-plan-priority {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-bold);
+}
+.today-plan-body { flex: 1; min-width: 0; }
+.today-plan-task-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+.today-plan-task-detail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+.today-plan-action {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.today-plan-action:hover { opacity: 0.9; }
