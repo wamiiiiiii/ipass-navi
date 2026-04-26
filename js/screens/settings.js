@@ -175,8 +175,62 @@ function buildStudySection(settings, container) {
   examItem.appendChild(inputRow);
   card.appendChild(examItem);
 
+  // 区切り線（試験日 と 効果音設定 の間）
+  card.appendChild(createElement('div', { classes: ['divider'], attrs: { style: 'margin:0' } }));
+
+  // 効果音トグル：正解時の chime 音 ON/OFF
+  card.appendChild(buildSoundToggleItem(settings, container));
+
   section.appendChild(card);
   return section;
+}
+
+/**
+ * 効果音ON/OFFトグル項目を構築する
+ * 正解時の chime 音を有効化するかどうかをユーザーが選択する
+ * @param {Object} settings - 現在の設定値
+ * @param {HTMLElement} container - 親コンテナ（再描画用）
+ * @returns {HTMLElement} 効果音設定項目
+ */
+function buildSoundToggleItem(settings, container) {
+  const item = createElement('div', { classes: ['settings-item'] });
+
+  // アイコン（スピーカー絵文字でラベルを補強）
+  item.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-orange'], text: '🔔' }));
+
+  // テキスト部（ラベル＋説明）
+  const text = createElement('div', { classes: ['settings-item-text'] });
+  text.appendChild(createElement('div', { classes: ['settings-item-label'], text: '正解時の効果音' }));
+  text.appendChild(createElement('div', {
+    classes: ['settings-item-sublabel'],
+    text: '正解したときに小さな効果音を鳴らします',
+  }));
+  item.appendChild(text);
+
+  // チェックボックス（ネイティブ要素）
+  // role/labelは settings-item 全体に付けず、input 自体のクリックで切り替えできるようにする
+  const isOn = settings.sound_enabled === true;
+  const toggle = createElement('input', {
+    attrs: {
+      type: 'checkbox',
+      'aria-label': '正解時の効果音を有効化する',
+      style: 'width:20px;height:20px;cursor:pointer',
+    },
+  });
+  toggle.checked = isOn;
+
+  toggle.addEventListener('change', (e) => {
+    const next = e.target.checked;
+    updateSettings({ sound_enabled: next });
+    showToast(
+      next ? '効果音をオンにしました' : '効果音をオフにしました',
+      'success',
+    );
+  });
+
+  item.appendChild(toggle);
+
+  return item;
 }
 
 /**

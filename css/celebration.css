@@ -1,0 +1,111 @@
+/**
+ * celebration.css
+ * 正解時の演出スタイル（紙吹雪・バウンス）
+ *
+ * 【設計方針】
+ * - 紙吹雪は body 直下に fixed positioning でフルスクリーン展開
+ * - pointer-events: none で背景の操作を一切妨げない
+ * - prefers-reduced-motion を尊重：モーション軽減ユーザーには静かな表示に切り替える
+ */
+
+/* ==========================================================================
+   紙吹雪コンテナ：画面全面を覆う透明レイヤー
+   ========================================================================== */
+.confetti-container {
+  /* fixed で画面全体に重ねる。スクロール位置に関係なく見える位置に出す */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 操作を妨げない（クリックは下のUIに通す） */
+  pointer-events: none;
+  /* z-index は最前面に近い値に。トーストやモーダルより上にしないため 9000 */
+  z-index: 9000;
+  /* オーバーフローした紙片を非表示にしてレイアウト破壊を防ぐ */
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   紙吹雪の片：1個1個の紙片要素
+   ========================================================================== */
+.confetti-piece {
+  /* 画面上端から少し外側でスタートして、下方向へ落下する */
+  position: absolute;
+  top: -20px;
+  /* width/height/background は JS から個別に設定する */
+  border-radius: 1px;
+  /* fall キーフレームで落下＋回転＋横ドリフト */
+  animation-name: confetti-fall;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-fill-mode: forwards;
+  /* JSから animation-duration / animation-delay / --drift / --rotate を設定 */
+  will-change: transform, opacity;
+}
+
+/**
+ * 落下キーフレーム
+ * - translateY: 画面上端から下端まで落下
+ * - translateX: --drift で横方向に流れる
+ * - rotate: --rotate で回転
+ * - opacity: 終盤でフェードアウト
+ */
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--drift, 0), 110vh, 0) rotate(var(--rotate, 360deg));
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   バウンスアニメ：正解カードをぴょこんと跳ねさせる
+   ========================================================================== */
+.celebration-bounce {
+  /* JS側で classList.add → 600ms後に classList.remove する想定 */
+  animation: celebration-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes celebration-bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    /* やや膨らませる（喜びの表現） */
+    transform: scale(1.06);
+  }
+  60% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   モーション軽減対応：prefers-reduced-motion を尊重する
+   - アニメ酔いをするユーザーや、バッテリー節約モードのデバイスへの配慮
+   - 紙吹雪は完全にOFF、バウンスも控えめに
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .confetti-container {
+    /* 紙吹雪自体を非表示にする（DOMは生成されるが見えない・触れない） */
+    display: none;
+  }
+
+  .celebration-bounce {
+    /* バウンスは弱いフェードに置き換える */
+    animation: celebration-bounce-reduced 0.3s ease-out;
+  }
+
+  @keyframes celebration-bounce-reduced {
+    0%   { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+}

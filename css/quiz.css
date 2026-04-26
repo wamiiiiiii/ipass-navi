@@ -667,6 +667,37 @@
 
 .next-question-btn:active { opacity: 0.85; }
 
+/* 4択モードの「確定する」ボタン（選択→確定の2ステップ式） */
+/* 選択肢タップでは即遷移せず、ここを押して初めて確定処理に進む */
+.confirm-answer-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  min-height: var(--tap-target-min);
+  margin-top: var(--space-md);
+  background: var(--color-primary-gradient);
+  color: var(--color-text-on-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.confirm-answer-btn:active:not(:disabled) { opacity: 0.85; }
+
+/* 未選択時はトーンダウンしてタップ不可状態を視覚的に示す */
+.confirm-answer-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* ===================================================
    結果サマリー（ドラマチックなスコア表示）
    =================================================== */

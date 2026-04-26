@@ -31,6 +31,7 @@ import {
 } from '../utils/render.js';
 import { getWeakQuestionIds, calcPastYearStats, getPastWrongQuestionIds } from '../utils/progress.js';
 import { getQuizResults } from '../store.js';
+import { celebrateCorrect } from '../utils/celebration.js';
 
 /** 現在の演習セッションの状態（イミュータブルに管理） */
 let _session = null;
@@ -810,10 +811,28 @@ async function startChapterSession(container, chapterId, category) {
 function renderQuestionScreen(container) {
   if (!_session || !_session.isActive) return;
 
+  // 画面遷移時に前画面のフォーカス状態を解除する
+  // タッチデバイスで :hover や :focus が新しいDOMに視覚的に転写されるのを防ぐ
+  if (document.activeElement && typeof document.activeElement.blur === 'function') {
+    document.activeElement.blur();
+  }
+
   const current = _session.questions[_session.currentIdx];
   const totalCount = _session.questions.length;
   const currentNum = _session.currentIdx + 1;
   const progressPct = Math.round((currentNum / totalCount) * 100);
+
+  // 4択モード用：現在問題の過去回答から「未確定の選択」を復元する
+  // CBT再現モードで前の問題に戻ったとき、最初に選んだ選択肢を見えるようにする
+  // results 配列から同 question_id の結果を探し、その answered を初期選択として採用する
+  const pastResult = (_session.results || []).find(
+    (r) => r.question_id === current.question_id,
+  );
+  _session = {
+    ..._session,
+    // 過去回答があればその選択肢、なければ未選択（null）でスタート
+    pendingSelection: pastResult ? pastResult.answered : null,
+  };
 
   const screen = createElement('div', { classes: ['quiz-question-screen'] });
 
@@ -1010,6 +1029,12 @@ function renderQuestionScreen(container) {
       }
       screen.appendChild(feedbackCard);
 
+      // 正解時の演出（紙吹雪・バウンス・効果音・ハプティクス）
+      // appendChild後に呼ぶことで feedbackCard がDOMに乗った状態でアニメが動く
+      if (isCorrect) {
+        celebrateCorrect(feedbackCard);
+      }
+
       // セッション結果を記録する
       const newResult = {
         question_id:    current.question_id,
@@ -1080,11 +1105,24 @@ function renderQuestionScreen(container) {
     return;
   }
 
-  // 4択モード（standard / shuffle / weak / past / exam）
+  // 4択モード（standard / shuffle / weak / past / review / exam）
+  // 選択→確定の2ステップ式。タップで選択（変更可能）、確定ボタンで判定処理に進む
   const choicesList = createElement('div', { classes: ['choices-list'] });
 
+  // 確定ボタンは先に作成して、選択肢クリック時に有効化する参照を保持しておく
+  const confirmBtn = createElement('button', {
+    classes: ['confirm-answer-btn'],
+    text: '確定する',
+    attrs: { 'aria-label': '選択した回答を確定する' },
+  });
+  // 何も選択されていない初期状態は無効
+  confirmBtn.disabled = !_session.pendingSelection;
+
   current.choices.forEach((choice) => {
-    const btn = createElement('button', { classes: ['choice-btn'] });
+    const isInitiallySelected = _session.pendingSelection === choice.id;
+    const btn = createElement('button', {
+      classes: ['choice-btn', isInitiallySelected ? 'is-selected' : ''],
+    });
 
     // 選択肢ID（a, b, c, d）
     btn.appendChild(createElement('span', { classes: ['choice-id'], text: choice.id }));
@@ -1093,65 +1131,95 @@ function renderQuestionScreen(container) {
     btn.appendChild(createElement('span', { classes: ['choice-text'], text: choice.text }));
 
     btn.addEventListener('click', () => {
-      // 二重クリック防止：全ボタンを無効化
+      // 選択を更新する。disable しない＝確定前なら何度でも変更できる
+      _session = { ..._session, pendingSelection: choice.id };
+
+      // 全ボタンから is-selected を外し、選択中のボタンだけに付与する
       choicesList.querySelectorAll('.choice-btn').forEach((b) => {
-        b.disabled = true;
+        b.classList.remove('is-selected');
       });
+      btn.classList.add('is-selected');
 
-      // 選択した回答を記録
-      const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-      const isCorrect = choice.id === current.correct_answer;
-
-      // セッション結果を更新（イミュータブルに新しい結果配列を作成）
-      const newResult = {
-        question_id:    current.question_id,
-        answered:       choice.id,
-        correct:        isCorrect,
-        time_spent_sec: timeSpent,
-        // 模擬試験モードの結果画面で解説を表示するために問題データを保持する
-        questionData:   _session.mode === 'exam' ? current : null,
-      };
-
-      _session = {
-        ..._session,
-        phase:       'explanation',
-        results:     [..._session.results, newResult],
-        lastResult:  { isCorrect, answeredId: choice.id },
-      };
-
-      // 苦手問題統計に記録
-      recordQuestionAnswer(current.question_id, isCorrect);
-      // SRS（間隔反復）の状態も同時に更新する。次回復習日が自動算出される
-      const prevSrs = getSRSState(current.question_id);
-      const nextSrs = srsApplyAnswer(prevSrs, isCorrect);
-      saveSRSState(current.question_id, nextSrs);
-
-      // 模擬試験モードでは解説画面をスキップして次の問題へ直接進む
-      if (_session.mode === 'exam') {
-        const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
-        if (isLastQuestion) {
-          // 全問解答完了：finishSession内でタイマー停止される
-          finishSession(container);
-        } else {
-          // 次の問題へ（解説なし）
-          _session = {
-            ..._session,
-            phase:      'question',
-            currentIdx: _session.currentIdx + 1,
-          };
-          renderQuestionScreen(container);
-        }
-        return;
-      }
-
-      // 通常モード：解説フェーズへ
-      renderExplanationScreen(container);
+      // 確定ボタンを有効化する
+      confirmBtn.disabled = false;
     });
 
     choicesList.appendChild(btn);
   });
 
   screen.appendChild(choicesList);
+
+  // 確定ボタンを画面に追加する
+  // クリック時に判定処理（既存の results 更新・SRS・解説画面遷移）を実行する
+  confirmBtn.addEventListener('click', () => {
+    if (!_session.pendingSelection) return;
+    const choiceId = _session.pendingSelection;
+
+    // 二重クリック防止
+    confirmBtn.disabled = true;
+
+    const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
+    const isCorrect = choiceId === current.correct_answer;
+
+    const newResult = {
+      question_id:    current.question_id,
+      answered:       choiceId,
+      correct:        isCorrect,
+      time_spent_sec: timeSpent,
+      // 模擬試験モードの結果画面で解説を表示するために問題データを保持する
+      questionData:   _session.mode === 'exam' ? current : null,
+    };
+
+    // CBT再現モードで戻ってきて再確定した場合は既存の結果を上書き、新規なら配列末尾に追加する
+    const existingIdx = (_session.results || []).findIndex(
+      (r) => r.question_id === current.question_id,
+    );
+    const isFirstAnswer = existingIdx < 0;
+    const newResults = isFirstAnswer
+      ? [...(_session.results || []), newResult]
+      : _session.results.map((r, i) => (i === existingIdx ? newResult : r));
+
+    _session = {
+      ..._session,
+      phase:       'explanation',
+      results:     newResults,
+      pendingSelection: null,  // 確定後はリセットする
+      // celebrated: 正解演出を既に発火したかのフラグ。解説画面の再描画時の二重発火を防ぐ
+      lastResult:  { isCorrect, answeredId: choiceId, celebrated: false },
+    };
+
+    // 苦手問題統計とSRSは「初回確定時のみ」記録する
+    // CBTで戻って再確定した場合に統計が二重カウントされるのを防ぐ
+    if (isFirstAnswer) {
+      recordQuestionAnswer(current.question_id, isCorrect);
+      const prevSrs = getSRSState(current.question_id);
+      const nextSrs = srsApplyAnswer(prevSrs, isCorrect);
+      saveSRSState(current.question_id, nextSrs);
+    }
+
+    // 模擬試験モードでは解説画面をスキップして次の問題へ直接進む
+    if (_session.mode === 'exam') {
+      const isLastQuestion = _session.currentIdx >= _session.questions.length - 1;
+      if (isLastQuestion) {
+        // 全問解答完了：finishSession内でタイマー停止される
+        finishSession(container);
+      } else {
+        // 次の問題へ（解説なし）
+        _session = {
+          ..._session,
+          phase:      'question',
+          currentIdx: _session.currentIdx + 1,
+        };
+        renderQuestionScreen(container);
+      }
+      return;
+    }
+
+    // 通常モード：解説フェーズへ
+    renderExplanationScreen(container);
+  });
+
+  screen.appendChild(confirmBtn);
 
   // CBT本番再現：模擬試験モード時は画面末尾に問題ジャンプパネルを表示する
   // パネルから任意の問題に飛べる。状態は色で示す（未回答=灰 / 回答済=青 / 見直し=黄 / 現在=濃青）
@@ -1340,6 +1408,19 @@ function renderExplanationScreen(container) {
     text: isCorrect ? '✓ 正解！' : '✗ 不正解',
   });
   explanationCard.appendChild(resultEl);
+
+  // 正解時の演出（紙吹雪・バウンス・効果音・ハプティクス）
+  // 解説画面が同じ問題で再描画される場合の二重発火を lastResult.celebrated で防ぐ
+  if (isCorrect && lastResult && !lastResult.celebrated) {
+    // explanationCardはこの後 screen に append されるが、celebrateCorrect 内の
+    // bounce は classList 操作なので appendChild より先に呼んでも問題ない
+    celebrateCorrect(explanationCard);
+    // フラグを立てて、戻るボタン等で再描画された場合の再発火を防ぐ
+    _session = {
+      ..._session,
+      lastResult: { ...lastResult, celebrated: true },
+    };
+  }
 
   // 過去問モードの場合：出典バッジ（年度ラベル）を解説カードに表示する
   // current.source_label（問題データに含まれる場合）または セッションの pastSourceLabel を使用する

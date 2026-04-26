@@ -66,6 +66,8 @@ function createDefaultSettings() {
     // 受験予定日（YYYY-MM-DD形式 / 未設定なら null）。ホームのカウントダウンと日次ノルマで使う
     exam_date: null,
     notification_enabled: false,
+    // 正解時の効果音（デフォルトOFF。学習中の集中を妨げないため明示的に有効化が必要）
+    sound_enabled: false,
   };
 }
 
