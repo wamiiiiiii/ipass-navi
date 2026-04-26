@@ -131,53 +131,245 @@ export async function renderHome(container) {
 function buildHomeScreen({ overallPct, studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred, sectionProgresses, recentSessions, streak, streakBadge, chapterMastery, examCountdown, srsSummary, todayPlan }, progress) {
   const screen = createElement('div', { classes: ['home-screen'] });
 
-  // ウェルカムバナー
-  screen.appendChild(buildWelcomeBanner(overallPct));
-
-  // 初回オンボーディングカードの表示判定
-  // pages_read が空（まだ1ページも読んでいない）場合にのみ表示する
-  // 一度でも教科書を読み始めたら自動的に非表示になる
+  // 初回判定：1ページも読んでいないユーザーにはオンボーディングのみ表示
   const isFirstVisit = progress.pages_read.length === 0;
   if (isFirstVisit) {
+    screen.appendChild(buildWelcomeBanner(overallPct));
     screen.appendChild(buildOnboardingCard());
+    return screen;
   }
 
-  // 試験日カウントダウン（試験日が設定されている場合のみ表示）
-  if (examCountdown) {
-    screen.appendChild(buildExamCountdown(examCountdown));
+  // ===== ヒーローセクション（2回目以降のメイン表示） =====
+  // 「今日やること」と「学習を始める」CTAを画面トップに集約する
+  screen.appendChild(buildHeroSection({
+    examCountdown, todayPlan, streak, streakBadge, overallPct, srsSummary,
+  }));
+
+  // 今日の学習計画（最優先タスクはヒーローに表示済みなので2件目以降を表示）
+  if (todayPlan && todayPlan.length > 1) {
+    screen.appendChild(buildTodayPlanSection(todayPlan.slice(1)));
   }
 
-  // 今日の学習計画（合格に効く順にタスクを提示）
-  if (todayPlan && todayPlan.length > 0) {
-    screen.appendChild(buildTodayPlanSection(todayPlan));
-  }
-
-  // 今日の復習カード（SRS復習期日がある場合のみ表示）
-  // → 学習計画の中にすでに含まれているので、SRS due_count があるときは todayPlan が代替として機能する
+  // 今日の復習カード（todayPlan が無いがSRS復習期日があるフォールバック）
   if (srsSummary && srsSummary.due_count > 0 && (!todayPlan || todayPlan.length === 0)) {
     screen.appendChild(buildSRSReviewCard(srsSummary));
   }
 
-  // 連続学習日数バッジ（学習を始めていれば常時表示）
-  if (streak > 0 || (recentSessions && recentSessions.length > 0)) {
-    screen.appendChild(buildStreakBadge(streak, streakBadge));
-  }
-
-  // スタッツグリッド
-  screen.appendChild(buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred));
-
-  // クイックアクションボタン
+  // クイックアクションボタン（教科書・演習・辞書への即遷移）
   screen.appendChild(buildQuickActions());
 
-  // 分野別進捗（章マスター勲章も同セクションに表示）
-  screen.appendChild(buildSectionProgress(sectionProgresses, chapterMastery));
-
-  // 最近の演習履歴
+  // ===== 二次情報はアコーディオンで折りたたみ =====
+  // ヒーロー＋クイックアクションでファーストビューを完結させ、詳細は能動的に開く設計
+  screen.appendChild(buildCollapsible(
+    '📊 詳しい統計',
+    buildStatsGrid(studyDays, elapsedDays, accuracy, recentAcc, todaySecs, passPred),
+  ));
+  screen.appendChild(buildCollapsible(
+    '📚 分野別進捗',
+    buildSectionProgress(sectionProgresses, chapterMastery),
+  ));
   if (recentSessions.length > 0) {
-    screen.appendChild(buildRecentHistory(recentSessions));
+    screen.appendChild(buildCollapsible(
+      '📜 最近の履歴',
+      buildRecentHistory(recentSessions),
+    ));
   }
 
   return screen;
+}
+
+/**
+ * ヒーローセクションを構築する
+ *
+ * 「今日やること」を一目で把握させ、学習開始の摩擦を最小化する画面トップ要素。
+ *
+ * 構成：
+ *   1. タイトル+連続学習バッジ（モチベ要素）
+ *   2. マスコット枠（仮：絵文字。fal.ai生成画像が用意できたら差し替え）
+ *   3. 試験カウントダウン（コンパクト：日数+今日のノルマ）
+ *   4. 教科書進捗バー
+ *   5. 巨大CTA（todayPlanの最優先タスクへ直接遷移 / 無ければ演習画面へ）
+ *
+ * @param {Object} args - 表示に必要なデータ
+ * @returns {HTMLElement} ヒーローセクション要素
+ */
+function buildHeroSection({ examCountdown, todayPlan, streak, streakBadge, overallPct, srsSummary }) {
+  const hero = createElement('div', { classes: ['home-hero'] });
+
+  // --- 1. トップバー：タイトル + 連続学習バッジ（小） ---
+  const topBar = createElement('div', { classes: ['hero-top'] });
+
+  const titleGroup = createElement('div', { classes: ['hero-title-group'] });
+  titleGroup.appendChild(createElement('div', { classes: ['hero-app-label'], text: 'IT PASSPORT' }));
+  titleGroup.appendChild(createElement('h1', { classes: ['hero-app-title'], text: 'iPass ナビ' }));
+  topBar.appendChild(titleGroup);
+
+  // 連続学習日数（小バッジ・モチベ維持）
+  if (streak > 0 && streakBadge) {
+    const streakMini = createElement('div', { classes: ['hero-streak-mini'] });
+    streakMini.appendChild(createElement('span', { classes: ['hero-streak-icon'], text: streakBadge.icon }));
+    streakMini.appendChild(createElement('span', {
+      classes: ['hero-streak-num'],
+      text: `${streak}日連続`,
+    }));
+    topBar.appendChild(streakMini);
+  }
+  hero.appendChild(topBar);
+
+  // --- 2. マスコット枠（仮：絵文字） ---
+  // fal.ai での画像生成完了後、img要素に差し替えて状況別の表情を切り替える想定
+  const mascot = createElement('div', { classes: ['hero-mascot'] });
+  // モチベメッセージを動的に決める（ストリーク状況・カウントダウンに応じて）
+  const mascotMessage = pickMascotMessage({ streak, examCountdown, srsSummary });
+  mascot.appendChild(createElement('div', {
+    classes: ['hero-mascot-img'],
+    attrs: { 'aria-label': 'ナビ（マスコット）' },
+    text: '🦉',
+  }));
+  mascot.appendChild(createElement('div', { classes: ['hero-mascot-message'], text: mascotMessage }));
+  hero.appendChild(mascot);
+
+  // --- 3. 試験カウントダウン（コンパクト） ---
+  if (examCountdown && examCountdown.days_left != null) {
+    const countdown = createElement('div', { classes: ['hero-countdown'] });
+    countdown.appendChild(createElement('span', { classes: ['hero-countdown-icon'], text: '📅' }));
+    countdown.appendChild(createElement('span', {
+      classes: ['hero-countdown-text'],
+      text: `試験まで ${examCountdown.days_left}日`,
+    }));
+    if (examCountdown.daily_quota > 0) {
+      countdown.appendChild(createElement('span', {
+        classes: ['hero-countdown-quota'],
+        text: `今日のノルマ ${examCountdown.daily_quota}問`,
+      }));
+    }
+    hero.appendChild(countdown);
+  }
+
+  // --- 4. 教科書進捗バー ---
+  const progressWrap = createElement('div', { classes: ['hero-progress'] });
+  progressWrap.appendChild(createElement('div', {
+    classes: ['hero-progress-label'],
+    text: `教科書進捗 ${overallPct}%`,
+  }));
+  const bar = createElement('div', { classes: ['hero-progress-bar'] });
+  bar.appendChild(createElement('div', {
+    classes: ['hero-progress-fill'],
+    attrs: { style: `width: ${overallPct}%` },
+  }));
+  progressWrap.appendChild(bar);
+  hero.appendChild(progressWrap);
+
+  // --- 5. 巨大CTA ---
+  // todayPlan の最優先タスクが優先。無ければ演習画面へ誘導するデフォルトCTA
+  const topTask = todayPlan && todayPlan.length > 0 ? todayPlan[0] : null;
+  hero.appendChild(buildHeroCta(topTask));
+
+  return hero;
+}
+
+/**
+ * ヒーローのCTAボタンを構築する
+ *
+ * @param {Object|null} task - todayPlan の最優先タスク（無ければ null）
+ * @returns {HTMLElement} CTAボタン要素
+ */
+function buildHeroCta(task) {
+  const btn = createElement('button', { classes: ['hero-cta-btn'] });
+
+  // 左側：タスク内容（または学習開始の促し）
+  const inner = createElement('div', { classes: ['hero-cta-inner'] });
+  if (task) {
+    inner.appendChild(createElement('div', {
+      classes: ['hero-cta-label'],
+      text: '今日のおすすめ',
+    }));
+    inner.appendChild(createElement('div', {
+      classes: ['hero-cta-task-title'],
+      text: task.title,
+    }));
+    inner.appendChild(createElement('div', {
+      classes: ['hero-cta-task-detail'],
+      text: task.detail,
+    }));
+  } else {
+    // タスクが無い（全部完了 or 設定不足）→ 演習開始を促すデフォルト
+    inner.appendChild(createElement('div', {
+      classes: ['hero-cta-label'],
+      text: '今日も少しずつ',
+    }));
+    inner.appendChild(createElement('div', {
+      classes: ['hero-cta-task-title'],
+      text: '学習を始めましょう',
+    }));
+    inner.appendChild(createElement('div', {
+      classes: ['hero-cta-task-detail'],
+      text: '教科書 or 演習を選んで進めます',
+    }));
+  }
+  btn.appendChild(inner);
+
+  // 右側：アクションラベル + 矢印
+  const arrowWrap = createElement('div', { classes: ['hero-cta-arrow-wrap'] });
+  arrowWrap.appendChild(createElement('span', {
+    classes: ['hero-cta-action'],
+    text: task ? task.action_label : '演習へ',
+  }));
+  arrowWrap.appendChild(createElement('span', {
+    classes: ['hero-cta-arrow-icon'],
+    text: '▶',
+  }));
+  btn.appendChild(arrowWrap);
+
+  // クリックで遷移
+  btn.addEventListener('click', () => {
+    navigate(task ? task.route : 'quiz');
+  });
+
+  return btn;
+}
+
+/**
+ * マスコットの一言メッセージを決める
+ * 状況に応じて応援トーンを変える（マスコット表情切替の代わりに文言で表現）
+ */
+function pickMascotMessage({ streak, examCountdown, srsSummary }) {
+  // 試験日が直近2週間以内 → 直前応援
+  if (examCountdown && examCountdown.days_left != null && examCountdown.days_left <= 14) {
+    return `あと${examCountdown.days_left}日！集中していこう`;
+  }
+  // 連続学習10日以上 → ご褒美
+  if (streak >= 10) {
+    return `${streak}日連続すごい！この調子でいこう`;
+  }
+  // SRS復習が溜まってる → 復習を促す
+  if (srsSummary && srsSummary.due_count >= 5) {
+    return `今日の復習が${srsSummary.due_count}問あります`;
+  }
+  // 連続学習中 → 励まし
+  if (streak > 0) {
+    return '今日も学習を続けていこう';
+  }
+  // 通常 → 標準メッセージ
+  return 'ようこそ！一緒にがんばろう';
+}
+
+/**
+ * 折りたたみ可能なセクションを構築する（<details>/<summary>を使ったアコーディオン）
+ *
+ * @param {string} titleText - サマリーに表示するタイトル
+ * @param {HTMLElement} contentEl - 開いた時に表示する中身の要素
+ * @returns {HTMLElement} <details>要素
+ */
+function buildCollapsible(titleText, contentEl) {
+  const details = createElement('details', { classes: ['home-collapsible'] });
+  // アコーディオンのタイトル部分（タップで開閉）
+  const summary = createElement('summary', { classes: ['home-collapsible-summary'] });
+  summary.appendChild(createElement('span', { classes: ['home-collapsible-title'], text: titleText }));
+  summary.appendChild(createElement('span', { classes: ['home-collapsible-chevron'], text: '▾' }));
+  details.appendChild(summary);
+  details.appendChild(contentEl);
+  return details;
 }
 
 /**

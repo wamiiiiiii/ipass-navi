@@ -757,3 +757,298 @@
   white-space: nowrap;
 }
 .today-plan-action:hover { opacity: 0.9; }
+
+/* =====================================================
+   ヒーローセクション（Phase 3 リデザイン）
+   「今日やること」と「学習を始める」CTAを画面トップに集約
+   ===================================================== */
+
+.home-hero {
+  /* 縦に積み重ねるレイアウト。各要素間に空気感のある余白を設ける */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  /* グラデーション背景でアプリの主役感を演出 */
+  background: var(--color-primary-gradient);
+  color: var(--color-text-on-primary);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  margin: var(--space-md);
+  box-shadow: var(--shadow-glow-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- トップバー：タイトル + ストリーク --- */
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hero-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-app-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  font-weight: var(--font-weight-semibold);
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.hero-app-title {
+  /* セリフフォントでブランド感を出す（既存のhome-app-titleと同じトーン） */
+  font-family: 'Crimson Pro', 'Noto Serif JP', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-streak-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.hero-streak-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* --- マスコット枠 --- */
+.hero-mascot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.hero-mascot-img {
+  /* 仮の絵文字サイズ。画像差し替え時はimgタグでwidth/heightを指定 */
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hero-mascot-message {
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  font-weight: var(--font-weight-medium);
+}
+
+/* --- カウントダウン --- */
+.hero-countdown {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  font-size: var(--font-size-sm);
+}
+
+.hero-countdown-icon {
+  font-size: 1.1rem;
+}
+
+.hero-countdown-text {
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero-countdown-quota {
+  background-color: rgba(255, 255, 255, 0.18);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+}
+
+/* --- 進捗バー --- */
+.hero-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-progress-label {
+  font-size: var(--font-size-xs);
+  opacity: 0.85;
+}
+
+.hero-progress-bar {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  height: 8px;
+  overflow: hidden;
+}
+
+.hero-progress-fill {
+  /* 進捗％はJS側でstyle.widthを設定する */
+  background-color: #fff;
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+/* --- CTAボタン --- */
+.hero-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  width: 100%;
+  background-color: #fff;
+  color: var(--color-primary);
+  padding: var(--space-md) var(--space-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  /* タップ時のシャドウ強化でフィードバックを視覚的に伝える */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero-cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-cta-label {
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.hero-cta-task-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  /* 長いタイトルでも崩れないよう省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-cta-task-detail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.hero-cta-arrow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.hero-cta-action {
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.hero-cta-arrow-icon {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+/* =====================================================
+   折りたたみセクション（アコーディオン）
+   <details>/<summary> を使ったネイティブ実装
+   ===================================================== */
+
+.home-collapsible {
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  margin: var(--space-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.home-collapsible-summary {
+  /* listスタイルマーカーを消す（chrome/safariのデフォルト三角形を非表示に） */
+  list-style: none;
+  cursor: pointer;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--transition-fast);
+}
+
+.home-collapsible-summary::-webkit-details-marker {
+  /* Safari/Chrome のデフォルト三角形を消す */
+  display: none;
+}
+
+.home-collapsible-summary:hover {
+  background-color: var(--color-bg-hover, rgba(0, 0, 0, 0.03));
+}
+
+.home-collapsible-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.home-collapsible-chevron {
+  /* 開閉時に180度回転するシェブロン記号 */
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  transition: transform var(--transition-fast);
+}
+
+.home-collapsible[open] .home-collapsible-chevron {
+  transform: rotate(180deg);
+}
+
+/* 中身のセクションは余白とリセットを最小限に */
+.home-collapsible > *:not(summary) {
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+/* 中の home-section は既に padding を持っているため、二重余白を防ぐ */
+.home-collapsible > .home-section {
+  padding: 0;
+}
+.home-collapsible > .home-section .home-section-title {
+  /* アコーディオン内では section-title を非表示にしてシンプル化 */
+  display: none;
+}
+
+/* スタッツグリッドのアコーディオン内余白調整 */
+.home-collapsible > .home-stats-grid {
+  margin: var(--space-sm) 0 0;
+}
+
