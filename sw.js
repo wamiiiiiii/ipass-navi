@@ -28,8 +28,11 @@
 //   home.js の dead code（buildExamCountdown / buildStreakBadge）と関連CSSを削除。
 // v23 (app-version 1.3.0): 章演習はランダム20問・節演習はランダム5問に上限化。
 //   章は30〜75問のばらつきがあり、1セッションの負担を一定にするため。
-const CACHE_NAME = 'ipass-navi-v23';
-const DATA_CACHE_NAME = 'ipass-navi-data-v23';
+// v24 (app-version 1.4.0): 教科書 phantom 節 74節を追加（旧 100→174節）。
+//   問題77件の orphan related_page_id をすべて実在節に紐付け、節クイズが
+//   全章で機能するようにした。chapter_id 1件（P-R03S-089: T-10→T-11）も修正。
+const CACHE_NAME = 'ipass-navi-v24';
+const DATA_CACHE_NAME = 'ipass-navi-data-v24';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
