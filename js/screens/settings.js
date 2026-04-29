@@ -380,6 +380,8 @@ function buildAboutSection() {
   const card = createElement('div', { classes: ['settings-card'] });
 
   // バージョン表示
+  // index.html の <meta name="app-version"> から動的に取得する。これによりリリースごとに
+  // settings.js を編集しなくても表示が追従し、ユーザーがどの版を見ているかをひと目で判別できる。
   const versionItem = createElement('div', { classes: ['settings-item'] });
   versionItem.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-gray'], text: 'ℹ️' }));
 
@@ -391,9 +393,11 @@ function buildAboutSection() {
   }));
   versionItem.appendChild(versionText);
 
+  const versionMeta = document.querySelector('meta[name="app-version"]');
+  const appVersion = versionMeta?.getAttribute('content') || '不明';
   versionItem.appendChild(createElement('span', {
     classes: ['settings-item-value'],
-    text: 'v1.0.0',
+    text: `v${appVersion}`,
   }));
 
   card.appendChild(versionItem);

@@ -9,9 +9,13 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v17: 問題データ95件修正（P-R06S-084ほか）・Phase 1コピー敬語化・ポップアップ式モード選択
-//      ・CRITICAL/HIGH UI修正・E2E導入・CSP追加。Service Worker のバージョン不更新でデータ修正が
-//      ユーザー端末に届いていなかった不具合を解消する。
+// 【重要・運用ルール】リリース時はこの値と index.html の <meta name="app-version"> を必ず一緒に更新する。
+// 設定画面のバージョン表示が app-version から動的に読まれるため、ユーザーが現在どの版を見ているかを
+// 判別できるようになる。SW のキャッシュバンプを忘れると古いデータが配信され続けるので注意。
+//
+// v17 (app-version 1.1.0): 問題データ95件修正（P-R06S-084ほか）・Phase 1コピー敬語化・
+//   ポップアップ式モード選択・CRITICAL/HIGH UI修正・E2E導入・CSP追加。Service Worker のバージョン
+//   不更新でデータ修正がユーザー端末に届いていなかった不具合を解消する。
 const CACHE_NAME = 'ipass-navi-v17';
 const DATA_CACHE_NAME = 'ipass-navi-data-v17';
 
