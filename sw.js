@@ -16,8 +16,9 @@
 // v17 (app-version 1.1.0): 問題データ95件修正（P-R06S-084ほか）・Phase 1コピー敬語化・
 //   ポップアップ式モード選択・CRITICAL/HIGH UI修正・E2E導入・CSP追加。Service Worker のバージョン
 //   不更新でデータ修正がユーザー端末に届いていなかった不具合を解消する。
-const CACHE_NAME = 'ipass-navi-v17';
-const DATA_CACHE_NAME = 'ipass-navi-data-v17';
+// v18 (app-version 1.1.1): 分野チップを2段組（上段「すべて」単独・下段3分野均等）に変更。
+const CACHE_NAME = 'ipass-navi-v18';
+const DATA_CACHE_NAME = 'ipass-navi-data-v18';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

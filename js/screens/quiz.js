@@ -272,17 +272,11 @@ function openModeSettingsModal({ container, mode, initialCategory, initialCount 
       text: '分野絞り込み',
     }));
 
+    // チップ生成のヘルパー：選択状態管理を共通化する
     const chipContainer = createElement('div', { classes: ['quiz-filter-chips'] });
-    const categories = [
-      { id: 'all',        label: 'すべて' },
-      { id: 'strategy',   label: 'ストラテジ' },
-      { id: 'management', label: 'マネジメント' },
-      { id: 'technology', label: 'テクノロジ' },
-    ];
-
-    categories.forEach((cat) => {
+    const buildChip = (cat, extraClass) => {
       const chip = createElement('div', {
-        classes: ['filter-chip', selectedCategory === cat.id ? 'is-selected' : ''],
+        classes: ['filter-chip', extraClass, selectedCategory === cat.id ? 'is-selected' : ''],
         text: cat.label,
       });
       chip.addEventListener('click', () => {
@@ -290,8 +284,23 @@ function openModeSettingsModal({ container, mode, initialCategory, initialCount 
         chip.classList.add('is-selected');
         selectedCategory = cat.id;
       });
-      chipContainer.appendChild(chip);
-    });
+      return chip;
+    };
+
+    // 上段：すべて（単独・横幅いっぱい）。「全分野を選んでいる」ことを視覚的に強調する
+    const allRow = createElement('div', { classes: ['quiz-filter-row', 'quiz-filter-row--all'] });
+    allRow.appendChild(buildChip({ id: 'all', label: 'すべて' }, 'filter-chip--full'));
+    chipContainer.appendChild(allRow);
+
+    // 下段：3分野を均等3カラムで並べる
+    const subjectRow = createElement('div', { classes: ['quiz-filter-row', 'quiz-filter-row--subjects'] });
+    const subjects = [
+      { id: 'strategy',   label: 'ストラテジ' },
+      { id: 'management', label: 'マネジメント' },
+      { id: 'technology', label: 'テクノロジ' },
+    ];
+    subjects.forEach((cat) => subjectRow.appendChild(buildChip(cat, 'filter-chip--subject')));
+    chipContainer.appendChild(subjectRow);
 
     categorySection.appendChild(chipContainer);
     modal.appendChild(categorySection);

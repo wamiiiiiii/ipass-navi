@@ -99,8 +99,20 @@
 
 .quiz-filter-chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--space-sm);
+}
+
+/* 行（上段・下段）の共通レイアウト */
+.quiz-filter-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* 下段は3分野を均等3カラムで並べる */
+.quiz-filter-row--subjects > .filter-chip {
+  flex: 1 1 0;
+  justify-content: center;
 }
 
 .filter-chip {
@@ -115,6 +127,13 @@
   cursor: pointer;
   min-height: var(--tap-target-min);
   transition: all var(--transition-fast);
+}
+
+/* 「すべて」用：上段で横幅いっぱいに広げて主役感を出す */
+.filter-chip--full {
+  flex: 1 1 100%;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
 }
 
 .filter-chip.is-selected {
