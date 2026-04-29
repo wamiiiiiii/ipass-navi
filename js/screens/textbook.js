@@ -5,7 +5,7 @@
  */
 
 import { getProgress, markPageAsRead, markChapterCompleted, recordReadingTime } from '../store.js';
-import { loadChapters, loadGlossary, loadDiagrams, findTermByName } from '../dataLoader.js';
+import { loadChapters, loadGlossary, loadDiagrams, loadQuestions, findTermByName } from '../dataLoader.js';
 import { navigate, goBack } from '../router.js';
 import { renderDiagram } from '../utils/diagram.js';
 import {
@@ -56,12 +56,14 @@ export async function renderTextbook(container, params = {}, query = {}) {
       renderChapterList(container, section, progress);
     } else if (query.page) {
       // 節コンテンツ画面を表示
-      // 用語辞書と図解データを並行読み込みして効率化する
-      const [glossaryData, diagramsData] = await Promise.all([
+      // 用語辞書・図解・問題データを並行読み込みして効率化する
+      // 問題データは「この章の問題を解く」ボタンに該当章の問題数を表示するため
+      const [glossaryData, diagramsData, questionsData] = await Promise.all([
         loadGlossary(),
         loadDiagrams(),
+        loadQuestions(),
       ]);
-      renderPageContent(container, chaptersData, progress, query.page, glossaryData, diagramsData);
+      renderPageContent(container, chaptersData, progress, query.page, glossaryData, diagramsData, questionsData);
     } else {
       // chapterIdのみ指定 → 章の最初の節を表示
       navigate(`textbook/${params.id}?page=${params.id}-01`, false);
@@ -250,8 +252,9 @@ function renderChapterList(container, section, progress) {
  * @param {string} pageId - 表示する節のID（例: 'S-01-01'）
  * @param {Object} glossaryData - 用語辞書データ
  * @param {Object} [diagramsData] - 図解データ（diagrams.json の内容。省略可）
+ * @param {Object} [questionsData] - 問題データ（章別問題数表示に使用。省略可）
  */
-function renderPageContent(container, chaptersData, progress, pageId, glossaryData, diagramsData) {
+function renderPageContent(container, chaptersData, progress, pageId, glossaryData, diagramsData, questionsData) {
   // 節データを検索
   const { page, chapter, section } = findPageData(pageId, chaptersData);
 
@@ -330,13 +333,25 @@ function renderPageContent(container, chaptersData, progress, pageId, glossaryDa
     }
 
     // この章の問題を解くボタン
+    // 章に紐付く問題数を実データから集計して表示し、ユーザーが何問挑戦するか事前に分かるようにする
+    const chapterQuestionCount = questionsData && Array.isArray(questionsData.questions)
+      ? questionsData.questions.filter((q) => q.chapter_id === chapter.chapter_id).length
+      : 0;
     const quizBtn = createElement('button', {
       classes: ['chapter-quiz-btn'],
-      text: `✏️ この章の問題を解く`,
+      text: chapterQuestionCount > 0
+        ? `✏️ この章の問題を解く（${chapterQuestionCount}問）`
+        : `✏️ この章の問題を解く`,
     });
-    quizBtn.addEventListener('click', () => {
-      navigate(`quiz?chapter=${chapter.chapter_id}`);
-    });
+    if (chapterQuestionCount === 0) {
+      // 問題が0問の章はボタンを無効化（誤クリックで「問題がありません」遷移を防ぐ）
+      quizBtn.setAttribute('disabled', 'true');
+      quizBtn.classList.add('is-disabled');
+    } else {
+      quizBtn.addEventListener('click', () => {
+        navigate(`quiz?chapter=${chapter.chapter_id}`);
+      });
+    }
     screen.appendChild(quizBtn);
   }
 

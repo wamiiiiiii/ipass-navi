@@ -17,8 +17,10 @@
 //   ポップアップ式モード選択・CRITICAL/HIGH UI修正・E2E導入・CSP追加。Service Worker のバージョン
 //   不更新でデータ修正がユーザー端末に届いていなかった不具合を解消する。
 // v18 (app-version 1.1.1): 分野チップを2段組（上段「すべて」単独・下段3分野均等）に変更。
-const CACHE_NAME = 'ipass-navi-v18';
-const DATA_CACHE_NAME = 'ipass-navi-data-v18';
+// v19 (app-version 1.1.2): 教科書「この章の問題を解く」に問題数表示・孤立データS-08(3問)→S-02統合・
+//   chapter-quiz-btn のハードコード色をテーマトークン化・0問章のボタン無効化。
+const CACHE_NAME = 'ipass-navi-v19';
+const DATA_CACHE_NAME = 'ipass-navi-data-v19';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
