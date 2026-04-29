@@ -101,11 +101,14 @@ html {
   /* iOSでフォントサイズの自動調整を防ぐ */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  /* ページ内リンクの遷移をなめらかにする */
-  scroll-behavior: smooth;
   /* テキスト描画の品質を最適化 */
   text-rendering: optimizeLegibility;
 }
+/*
+  scroll-behavior: smooth はSPA遷移後の window.scrollTo(0, 0) と競合し、
+  「ページ切替時に上端まで滑らかにスクロール」する不要なアニメーションが発生していたので
+  ユーザーがアンカー操作する箇所だけに局所的に効かせる。HTML全体には適用しない。
+*/
 
 /* テキスト選択時のハイライト色をブランドカラーに統一 */
 ::selection {

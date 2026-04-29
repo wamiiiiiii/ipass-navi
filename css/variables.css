@@ -194,9 +194,10 @@
     serif;
 
   /* フォントサイズ（rem基準：1rem = 10px） */
+  /* base は iOS の推奨最小（16px）に合わせる。問題本文・選択肢の可読性向上 */
   --font-size-xs: 1.1rem;
   --font-size-sm: 1.3rem;
-  --font-size-base: 1.5rem;
+  --font-size-base: 1.6rem;
   --font-size-md: 1.7rem;
   --font-size-lg: 2.0rem;
   --font-size-xl: 2.4rem;

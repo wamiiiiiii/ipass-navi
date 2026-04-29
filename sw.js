@@ -21,8 +21,11 @@
 //   chapter-quiz-btn のハードコード色をテーマトークン化・0問章のボタン無効化。
 // v20 (app-version 1.2.0): 教科書の節（細分化された項目）単位での問題演習を追加。
 //   各節画面に「この節の問題を解く（X問）」ボタン・filterQuestionsByPage / startPageSession 追加。
-const CACHE_NAME = 'ipass-navi-v20';
-const DATA_CACHE_NAME = 'ipass-navi-data-v20';
+// v21 (app-version 1.2.1): MEDIUM級UI調整。本文サイズ16px化（iOS推奨最低達成）・
+//   celebration 100vh→100dvh（iOS Safariアドレスバー高さ問題回避）・
+//   reset.css scroll-behavior:smooth 削除（SPA遷移後 scrollTo(0,0) との競合解消）。
+const CACHE_NAME = 'ipass-navi-v21';
+const DATA_CACHE_NAME = 'ipass-navi-data-v21';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
