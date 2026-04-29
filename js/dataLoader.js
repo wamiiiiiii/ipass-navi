@@ -198,6 +198,22 @@ export function filterQuestionsByChapter(questionsData, chapterId) {
 }
 
 /**
+ * 節（page_id）で問題を絞り込む
+ * 教科書の節単位で「この節の問題を解く」ボタンから演習を開始するために使う
+ * @param {Object} questionsData - questions.jsonのデータ
+ * @param {string} pageId - 節ID（例: 'T-05-01'）
+ * @returns {Object[]} 絞り込んだ問題の配列（イミュータブル）
+ */
+export function filterQuestionsByPage(questionsData, pageId) {
+  if (!questionsData || !questionsData.questions) {
+    return [];
+  }
+  return questionsData.questions.filter(
+    (q) => q.related_page_id === pageId
+  );
+}
+
+/**
  * 分野で問題を絞り込む
  * @param {Object} questionsData - questions.jsonのデータ
  * @param {string} category - 絞り込む分野（'strategy' | 'management' | 'technology' | 'all'）

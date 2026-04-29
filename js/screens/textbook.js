@@ -320,6 +320,22 @@ function renderPageContent(container, chaptersData, progress, pageId, glossaryDa
     screen.appendChild(buildSummaryCard('このページのポイント', page.summary_points));
   }
 
+  // 「この節の問題を解く」ボタン：related_page_id がこの節と一致する問題を集計
+  // 章単位より細かい粒度で確認テストできるようにする。0問の節ではボタンを表示しない
+  const pageQuestionCount = questionsData && Array.isArray(questionsData.questions)
+    ? questionsData.questions.filter((q) => q.related_page_id === page.page_id).length
+    : 0;
+  if (pageQuestionCount > 0) {
+    const sectionQuizBtn = createElement('button', {
+      classes: ['section-quiz-btn'],
+      text: `📝 この節の問題を解く（${pageQuestionCount}問）`,
+    });
+    sectionQuizBtn.addEventListener('click', () => {
+      navigate(`quiz?page=${page.page_id}`);
+    });
+    screen.appendChild(sectionQuizBtn);
+  }
+
   // 最後の節なら章全体のまとめと問題へのボタンを表示
   const isLastPage = currentIndex === pages.length - 1;
   if (isLastPage) {

@@ -15,6 +15,7 @@ import { applyAnswer as srsApplyAnswer, getDueQuestionIds as srsGetDueIds } from
 import {
   loadQuestions,
   filterQuestionsByChapter,
+  filterQuestionsByPage,
   filterQuestionsByCategory,
   filterWeakQuestions,
   shuffleQuestions,
@@ -115,6 +116,13 @@ export async function renderQuiz(container, params = {}, query = {}) {
   if (query.chapter) {
     renderInto(container, [createLoadingSpinner()]);
     await startChapterSession(container, query.chapter, query.category || 'all');
+    return;
+  }
+
+  // URLパラメータに page が指定されている場合は節（細分化された項目）単位で問題を開始
+  if (query.page) {
+    renderInto(container, [createLoadingSpinner()]);
+    await startPageSession(container, query.page);
     return;
   }
 
@@ -885,6 +893,48 @@ async function startChapterSession(container, chapterId, category) {
 
   } catch (error) {
     console.error('[Quiz] 章別セッション開始に失敗しました:', error);
+    renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
+  }
+}
+
+/**
+ * 節（page_id）別セッションを開始する
+ * 教科書の各節（細分化された項目）から「この節の問題を解く」を押した時に呼ばれる。
+ * 問題の related_page_id でフィルタする
+ *
+ * @param {HTMLElement} container - 描画先のコンテナ
+ * @param {string} pageId - 節ID（例: 'T-05-01'）
+ */
+async function startPageSession(container, pageId) {
+  try {
+    const questionsData = await loadQuestions();
+    const questions = filterQuestionsByPage(questionsData, pageId);
+
+    if (questions.length === 0) {
+      showToast('この節にはまだ問題がありません', 'info');
+      // 教科書の節画面に戻す（演習モード選択へ流すよりUX上自然）
+      navigate(`textbook?page=${pageId}`);
+      return;
+    }
+
+    _session = {
+      isActive:   true,
+      phase:      'question',
+      mode:       'standard',
+      // 節は分野が一意に決まるが、UI互換のため category は all 扱いにする
+      category:   'all',
+      questions:  shuffleQuestions(questions),
+      currentIdx: 0,
+      results:    [],
+      startedAt:  new Date().toISOString(),
+      pageId,
+      container,
+    };
+
+    renderQuestionScreen(container);
+
+  } catch (error) {
+    console.error('[Quiz] 節別セッション開始に失敗しました:', error);
     renderInto(container, [createEmptyState('⚠️', 'データの読み込みに失敗しました')]);
   }
 }

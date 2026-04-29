@@ -370,6 +370,30 @@
   box-shadow: none;
 }
 
+/* 節（細分化された項目）単位の問題ボタン。章ボタンよりやや控えめなセカンダリスタイル */
+.section-quiz-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--tap-target-min);
+  background-color: var(--color-bg-elevated);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  margin-bottom: var(--space-md);
+}
+
+.section-quiz-btn:active {
+  background-color: var(--color-primary-light);
+}
+
 /* ===================================================
    既読ドット
    =================================================== */

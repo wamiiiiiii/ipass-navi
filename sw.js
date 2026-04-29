@@ -19,8 +19,10 @@
 // v18 (app-version 1.1.1): 分野チップを2段組（上段「すべて」単独・下段3分野均等）に変更。
 // v19 (app-version 1.1.2): 教科書「この章の問題を解く」に問題数表示・孤立データS-08(3問)→S-02統合・
 //   chapter-quiz-btn のハードコード色をテーマトークン化・0問章のボタン無効化。
-const CACHE_NAME = 'ipass-navi-v19';
-const DATA_CACHE_NAME = 'ipass-navi-data-v19';
+// v20 (app-version 1.2.0): 教科書の節（細分化された項目）単位での問題演習を追加。
+//   各節画面に「この節の問題を解く（X問）」ボタン・filterQuestionsByPage / startPageSession 追加。
+const CACHE_NAME = 'ipass-navi-v20';
+const DATA_CACHE_NAME = 'ipass-navi-data-v20';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
