@@ -10,17 +10,21 @@
 
 /**
  * HTML要素を生成する汎用関数
+ *
+ * テキストはすべて textContent 経由で挿入し、innerHTML は使わない。
+ * これにより、ユーザー入力や問題データに HTML タグが混じっていても
+ * スクリプトとして実行されず XSS を構造的に防げる。
+ *
  * @param {string} tag - 生成するHTML要素のタグ名（例: 'div', 'button', 'span'）
  * @param {Object} options - 要素のオプション
  * @param {string[]} [options.classes] - 追加するCSSクラスの配列
  * @param {Object} [options.attrs] - 設定する属性のオブジェクト（例: { id: 'foo', type: 'button' }）
- * @param {string} [options.text] - テキストコンテンツ
- * @param {string} [options.html] - HTMLコンテンツ（XSSに注意して使うこと）
+ * @param {string} [options.text] - テキストコンテンツ（textContent経由で安全に挿入される）
  * @param {Node[]} [options.children] - 子ノードの配列
  * @returns {HTMLElement} 生成されたHTML要素
  */
 export function createElement(tag, options = {}) {
-  const { classes = [], attrs = {}, text, html, children = [] } = options;
+  const { classes = [], attrs = {}, text, children = [] } = options;
 
   // 要素を新規生成
   const el = document.createElement(tag);
@@ -38,12 +42,8 @@ export function createElement(tag, options = {}) {
     }
   });
 
-  // HTMLコンテンツが指定された場合はtextを無視してHTMLを優先する
-  // （両方指定された場合、textContentの後にinnerHTMLで上書きされる不整合を防ぐ）
-  if (html !== undefined) {
-    el.innerHTML = html;
-  } else if (text !== undefined) {
-    // テキストコンテンツを設定（XSSを防ぐためtextContentを使用）
+  // テキストコンテンツを設定（XSSを防ぐためtextContentを使用）
+  if (text !== undefined) {
     el.textContent = text;
   }
 

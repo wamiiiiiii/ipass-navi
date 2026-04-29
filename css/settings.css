@@ -52,6 +52,21 @@
 .settings-item:last-child { border-bottom: none; }
 .settings-item:active { background-color: var(--color-bg-surface); }
 
+/* 縦並びバリアント：ヘッダー+セレクタを縦に配置する設定項目用 */
+.settings-item--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+/* 設定項目のヘッダー行（アイコン+ラベル+説明文を横一列に並べる） */
+.settings-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
 /* アイコン背景（Apple風の大きめ角丸正方形） */
 .settings-item-icon {
   font-size: 2.0rem;

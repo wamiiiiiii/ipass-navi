@@ -43,19 +43,19 @@
   gap: var(--space-md);
 }
 
-/* 分野ごとのグラデーション */
+/* 分野ごとの色（テーマ変数を使用しライト/ダーク両対応） */
 .section-card.strategy .section-card-header {
-  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  background-color: var(--color-strategy);
   color: #fff;
 }
 
 .section-card.management .section-card-header {
-  background: linear-gradient(135deg, #F97316, #EA580C);
+  background-color: var(--color-management);
   color: #fff;
 }
 
 .section-card.technology .section-card-header {
-  background: linear-gradient(135deg, #10B981, #059669);
+  background-color: var(--color-technology);
   color: #fff;
 }
 
@@ -107,15 +107,15 @@
 }
 
 .section-card.strategy .section-card-progress-fill {
-  background: linear-gradient(90deg, #6366F1, #8B5CF6);
+  background-color: var(--color-strategy);
 }
 
 .section-card.management .section-card-progress-fill {
-  background: linear-gradient(90deg, #F97316, #EA580C);
+  background-color: var(--color-management);
 }
 
 .section-card.technology .section-card-progress-fill {
-  background: linear-gradient(90deg, #10B981, #059669);
+  background-color: var(--color-technology);
 }
 
 /* ===================================================
@@ -229,7 +229,7 @@
 .keyword-highlight {
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
-  border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+  border-bottom: 2px solid rgba(45, 53, 97, 0.3);
   cursor: pointer;
   transition: background-color var(--transition-fast), border-color var(--transition-fast);
   padding: 1px 4px;
@@ -237,8 +237,8 @@
 }
 
 .keyword-highlight:active {
-  background-color: rgba(99, 102, 241, 0.08);
-  border-bottom-color: rgba(99, 102, 241, 0.5);
+  background-color: rgba(45, 53, 97, 0.08);
+  border-bottom-color: rgba(45, 53, 97, 0.5);
 }
 
 /* ダークテーマのキーワードハイライト */

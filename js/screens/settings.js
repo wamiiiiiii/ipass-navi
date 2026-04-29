@@ -58,13 +58,10 @@ function buildDisplaySection(settings, container) {
 
   const card = createElement('div', { classes: ['settings-card'] });
 
-  // テーマ設定
-  const themeItem = createElement('div', { classes: ['settings-item'] });
-  themeItem.style.flexDirection = 'column';
-  themeItem.style.alignItems = 'flex-start';
-  themeItem.style.gap = '8px';
+  // テーマ設定（縦積みバリアント：ヘッダー+セレクタの2段構成）
+  const themeItem = createElement('div', { classes: ['settings-item', 'settings-item--stack'] });
 
-  const themeHeader = createElement('div', { attrs: { style: 'display:flex;align-items:center;gap:12px;width:100%' } });
+  const themeHeader = createElement('div', { classes: ['settings-item-row'] });
 
   const themeIcon = createElement('div', { classes: ['settings-item-icon', 'icon-bg-blue'], text: '🌓' });
   themeHeader.appendChild(themeIcon);
@@ -84,13 +81,10 @@ function buildDisplaySection(settings, container) {
   // 区切り線
   card.appendChild(createElement('div', { classes: ['divider'], attrs: { style: 'margin:0' } }));
 
-  // 文字サイズ設定
-  const fontItem = createElement('div', { classes: ['settings-item'] });
-  fontItem.style.flexDirection = 'column';
-  fontItem.style.alignItems = 'flex-start';
-  fontItem.style.gap = '8px';
+  // 文字サイズ設定（縦積みバリアント）
+  const fontItem = createElement('div', { classes: ['settings-item', 'settings-item--stack'] });
 
-  const fontHeader = createElement('div', { attrs: { style: 'display:flex;align-items:center;gap:12px;width:100%' } });
+  const fontHeader = createElement('div', { classes: ['settings-item-row'] });
 
   fontHeader.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-orange'], text: '📝' }));
 
@@ -127,13 +121,10 @@ function buildStudySection(settings, container) {
 
   const card = createElement('div', { classes: ['settings-card'] });
 
-  // 試験予定日の入力
-  const examItem = createElement('div', { classes: ['settings-item'] });
-  examItem.style.flexDirection = 'column';
-  examItem.style.alignItems = 'flex-start';
-  examItem.style.gap = '8px';
+  // 試験予定日の入力（縦積みバリアント）
+  const examItem = createElement('div', { classes: ['settings-item', 'settings-item--stack'] });
 
-  const examHeader = createElement('div', { attrs: { style: 'display:flex;align-items:center;gap:12px;width:100%' } });
+  const examHeader = createElement('div', { classes: ['settings-item-row'] });
   examHeader.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-blue'], text: '🎯' }));
 
   const examText = createElement('div', { classes: ['settings-item-text'] });

@@ -109,12 +109,12 @@ html {
 
 /* テキスト選択時のハイライト色をブランドカラーに統一 */
 ::selection {
-  background-color: rgba(99, 102, 241, 0.2);
+  background-color: rgba(45, 53, 97, 0.2);
   color: inherit;
 }
 
 ::-moz-selection {
-  background-color: rgba(99, 102, 241, 0.2);
+  background-color: rgba(45, 53, 97, 0.2);
   color: inherit;
 }
 

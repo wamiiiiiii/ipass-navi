@@ -45,7 +45,7 @@
 
 .glossary-search-input-wrapper:focus-within {
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(99, 102, 241, 0.08);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(45, 53, 97, 0.08);
 }
 
 .glossary-search-icon {

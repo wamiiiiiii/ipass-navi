@@ -698,8 +698,8 @@ export function buildTodayPlan({ srsSummary, weakData, progress, chaptersData, e
   if (srsSummary && srsSummary.due_count > 0) {
     tasks.push({
       type: 'srs',
-      title: '今日の復習',
-      detail: `${srsSummary.due_count}問が復習期日。記憶定着に最優先`,
+      title: '🔁 今日の復習',
+      detail: `${srsSummary.due_count}問が復習期日です。記憶定着に最優先`,
       action_label: '復習を始める',
       route: 'quiz?mode=review',
       priority: 1,
@@ -711,8 +711,8 @@ export function buildTodayPlan({ srsSummary, weakData, progress, chaptersData, e
   if (weakIds.length >= 3) {
     tasks.push({
       type: 'weak',
-      title: '苦手問題の集中演習',
-      detail: `誤答率50%以上が${weakIds.length}問。10問ピックアップで克服`,
+      title: '🎯 苦手問題の集中演習',
+      detail: `誤答率50%以上が${weakIds.length}問。10問ピックアップで克服します`,
       action_label: '苦手モードへ',
       route: 'quiz?mode=weak',
       priority: 2,
@@ -730,8 +730,8 @@ export function buildTodayPlan({ srsSummary, weakData, progress, chaptersData, e
       const next = unread[0];
       tasks.push({
         type: 'textbook',
-        title: '教科書を進める',
-        detail: `未読 ${unread.length}節（${unreadPct}%）。次は ${next} から`,
+        title: '📖 教科書を進める',
+        detail: `未読 ${unread.length}節（${unreadPct}%）。次は ${next} から始めます`,
         action_label: '教科書を開く',
         route: 'textbook',
         priority: 3,
@@ -743,8 +743,8 @@ export function buildTodayPlan({ srsSummary, weakData, progress, chaptersData, e
   if (examCountdown && examCountdown.daily_quota > 0) {
     tasks.push({
       type: 'quota',
-      title: '今日のノルマ',
-      detail: `試験まで${examCountdown.days_left}日 / 1日あたり ${examCountdown.daily_quota}問が必要`,
+      title: '⚡ 今日のノルマ',
+      detail: `試験まで${examCountdown.days_left}日 / 1日あたり ${examCountdown.daily_quota}問が必要です`,
       action_label: '4択モードへ',
       route: 'quiz',
       priority: 4,
@@ -755,8 +755,8 @@ export function buildTodayPlan({ srsSummary, weakData, progress, chaptersData, e
   if (tasks.length === 0) {
     tasks.push({
       type: 'default',
-      title: '今日も少しでも前進',
-      detail: '4択モードで5問だけでも解こう',
+      title: '✨ 今日も少しずつ前進',
+      detail: '4択モードで5問だけでも解いてみましょう',
       action_label: '演習を始める',
       route: 'quiz',
       priority: 99,

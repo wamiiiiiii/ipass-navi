@@ -1,0 +1,17 @@
+{
+  "name": "ipass-navi",
+  "version": "1.0.0",
+  "description": "ITパスポート学習PWA",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 4173",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:install": "playwright install chromium webkit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

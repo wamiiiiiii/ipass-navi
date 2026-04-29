@@ -27,9 +27,10 @@
   --color-bg-overlay: rgba(26, 26, 46, 0.45);
 
   /* --- テキスト色 --- */
+  /* WCAG AA を満たすため、disabled は背景白に対して4.5:1以上を確保 */
   --color-text-primary: #1a1a2e;
   --color-text-secondary: #6b6b7c;
-  --color-text-disabled: #9b9baa;
+  --color-text-disabled: #7a7a8a;
   --color-text-on-primary: #faf9f6;
 
   /* --- ボーダー・区切り線 --- */
@@ -113,7 +114,8 @@
 
   --color-text-primary: #e8e6f0;
   --color-text-secondary: #8f8fa8;
-  --color-text-disabled: #5a5a72;
+  /* ダーク背景上で AA を確保するため明度を上げる */
+  --color-text-disabled: #8a8aa0;
   --color-text-on-primary: #14131a;
 
   --color-border: rgba(139, 153, 212, 0.18);

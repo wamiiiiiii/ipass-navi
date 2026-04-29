@@ -296,15 +296,15 @@ function buildHeroCta(task) {
     // タスクが無い（全部完了 or 設定不足）→ 演習開始を促すデフォルト
     inner.appendChild(createElement('div', {
       classes: ['hero-cta-label'],
-      text: '今日も少しずつ',
+      text: 'さあ、はじめましょう',
     }));
     inner.appendChild(createElement('div', {
       classes: ['hero-cta-task-title'],
-      text: '学習を始めましょう',
+      text: '学習を始めましょう！',
     }));
     inner.appendChild(createElement('div', {
       classes: ['hero-cta-task-detail'],
-      text: '教科書 or 演習を選んで進めます',
+      text: '教科書か演習、どちらから始めますか？',
     }));
   }
   btn.appendChild(inner);
@@ -334,24 +334,24 @@ function buildHeroCta(task) {
  * 状況に応じて応援トーンを変える（マスコット表情切替の代わりに文言で表現）
  */
 function pickMascotMessage({ streak, examCountdown, srsSummary }) {
-  // 試験日が直近2週間以内 → 直前応援
+  // 試験日が直近2週間以内 → 直前応援（テンション高め）
   if (examCountdown && examCountdown.days_left != null && examCountdown.days_left <= 14) {
-    return `あと${examCountdown.days_left}日！集中していこう`;
+    return `あと${examCountdown.days_left}日！集中していきましょう🔥`;
   }
-  // 連続学習10日以上 → ご褒美
+  // 連続学習10日以上 → ご褒美（称賛）
   if (streak >= 10) {
-    return `${streak}日連続すごい！この調子でいこう`;
+    return `${streak}日連続！この調子で進みましょう⚡`;
   }
   // SRS復習が溜まってる → 復習を促す
   if (srsSummary && srsSummary.due_count >= 5) {
-    return `今日の復習が${srsSummary.due_count}問あります`;
+    return `今日の復習が${srsSummary.due_count}問あります。記憶を定着させましょう`;
   }
   // 連続学習中 → 励まし
   if (streak > 0) {
-    return '今日も学習を続けていこう';
+    return '今日も1問からでOK！一緒に進めましょう';
   }
   // 通常 → 標準メッセージ
-  return 'ようこそ！一緒にがんばろう';
+  return 'ようこそ！今日から始めましょう🚀';
 }
 
 /**
@@ -475,7 +475,7 @@ function buildSRSReviewCard(summary) {
   }));
   left.appendChild(text);
 
-  const cta = createElement('span', { classes: ['srs-review-cta'], text: '開始 →' });
+  const cta = createElement('span', { classes: ['srs-review-cta'], text: '始める →' });
 
   card.appendChild(left);
   card.appendChild(cta);
@@ -534,7 +534,7 @@ function buildOnboardingCard() {
   titleGroup.appendChild(createElement('div', { classes: ['onboarding-title'], text: 'はじめての方へ' }));
   titleGroup.appendChild(createElement('div', {
     classes: ['onboarding-subtitle'],
-    text: 'まずはここから始めましょう！',
+    text: '合格まで一緒に進みましょう🚀',
   }));
   header.appendChild(titleGroup);
   card.appendChild(header);
@@ -544,9 +544,9 @@ function buildOnboardingCard() {
 
   // ステップ定義（新しい配列として定義・イミュータブルなデータ）
   const stepDefinitions = [
-    { num: '1', text: '教科書を読んで基礎を理解する' },
-    { num: '2', text: '各章の問題を解いて理解を深める' },
-    { num: '3', text: '苦手問題を繰り返して合格力を上げる' },
+    { num: '1', text: '教科書で基礎を理解します' },
+    { num: '2', text: '問題を解いて理解を深めます' },
+    { num: '3', text: '苦手を克服して合格を目指します' },
   ];
 
   stepDefinitions.forEach(({ num, text }) => {
@@ -575,7 +575,7 @@ function buildOnboardingCard() {
   // 「問題から始める」ボタン → 演習モード選択画面へ遷移
   const secondaryBtn = createElement('button', {
     classes: ['onboarding-btn-secondary'],
-    text: '✏️ まず問題を解いてみる',
+    text: '✏️ まず問題から挑戦する',
   });
   secondaryBtn.addEventListener('click', () => {
     navigate('quiz');
@@ -608,7 +608,7 @@ function buildWelcomeBanner(overallPct) {
 
   banner.appendChild(createElement('p', {
     classes: ['home-welcome-sub'],
-    text: '効率的な学習で、確実に合格へ',
+    text: '合格まで、一緒に進みましょう！',
   }));
 
   // 全体進捗サマリー
@@ -735,7 +735,7 @@ function buildQuickActions() {
 
   // 苦手問題ボタン
   grid.appendChild(buildQuickActionBtn(
-    '🎯', '苦手問題', '誤答率50%以上の問題',
+    '🎯', '苦手問題', '誤答率50%以上を集中攻略',
     () => navigate('quiz?mode=weak')
   ));
 

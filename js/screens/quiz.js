@@ -132,17 +132,12 @@ export async function renderQuiz(container, params = {}, query = {}) {
  * @param {Object} query - URLクエリパラメータ（事前選択状態の設定）
  */
 function renderModeSelect(container, query) {
-  /** 選択中のモード・分野・問題数をローカル状態として管理 */
-  let selectedMode     = query.mode     || 'standard';
-  let selectedCategory = query.category || 'all';
-  let selectedCount    = 10; // デフォルト10問
-
   const screen = createElement('div', { classes: ['quiz-mode-screen'] });
 
   screen.appendChild(createElement('h1', { classes: ['quiz-mode-title'], text: '問題演習' }));
   screen.appendChild(createElement('p', {
     classes: ['quiz-mode-subtitle'],
-    text: '演習モードと分野を選んでください',
+    text: 'モードをタップして開始してください',
   }));
 
   // モード選択カード
@@ -158,7 +153,6 @@ function renderModeSelect(container, query) {
     // 間隔反復学習：今日復習期日が来た問題だけを出題する。Anki方式
     { id: 'review',    icon: '🔁', name: '今日の復習',     desc: '間隔反復で記憶を定着' },
     { id: 'weak',      icon: '🎯', name: '苦手問題のみ',   desc: '誤答率50%以上を集中' },
-    { id: 'shuffle',   icon: '🔀', name: 'シャッフル',    desc: 'ランダム順で出題' },
     // 模擬試験モード：本番と同じ100問・120分形式
     { id: 'exam',      icon: '🏆', name: '模擬試験',       desc: '本番形式 100問・120分' },
     // 過去問演習モード：年度別の公開問題を選択して演習する
@@ -169,18 +163,27 @@ function renderModeSelect(container, query) {
 
   modes.forEach((mode) => {
     const card = createElement('div', {
-      classes: ['quiz-mode-card', selectedMode === mode.id ? 'is-selected' : ''],
-      attrs: { 'data-mode': mode.id },
+      classes: ['quiz-mode-card'],
+      attrs: { 'data-mode': mode.id, 'role': 'button', 'tabindex': '0' },
     });
 
     card.appendChild(createElement('span', { classes: ['quiz-mode-icon'], text: mode.icon }));
     card.appendChild(createElement('span', { classes: ['quiz-mode-name'], text: mode.name }));
     card.appendChild(createElement('span', { classes: ['quiz-mode-desc'], text: mode.desc }));
 
+    // モードカードをタップ：過去問は直接年度選択へ、それ以外は設定ポップアップを開く
     card.addEventListener('click', () => {
-      modeGrid.querySelectorAll('.quiz-mode-card').forEach((c) => c.classList.remove('is-selected'));
-      card.classList.add('is-selected');
-      selectedMode = mode.id;
+      if (mode.id === 'past') {
+        renderInto(container, [createLoadingSpinner()]);
+        renderPastYearSelect(container);
+        return;
+      }
+      openModeSettingsModal({
+        container,
+        mode,
+        initialCategory: query.category || 'all',
+        initialCount: 10,
+      });
     });
 
     modeGrid.appendChild(card);
@@ -189,96 +192,173 @@ function renderModeSelect(container, query) {
   modeSection.appendChild(modeGrid);
   screen.appendChild(modeSection);
 
-  // 分野フィルター
-  const categorySection = createElement('div', { classes: ['quiz-filter-section'] });
-  categorySection.appendChild(createElement('div', {
-    classes: ['quiz-filter-label'],
-    text: '分野絞り込み',
-  }));
+  renderInto(container, [screen]);
 
-  const chipContainer = createElement('div', { classes: ['quiz-filter-chips'] });
+  // URLでmodeが指定されていてweak/review以外の場合は、初期表示でポップアップを開く
+  // （weak/reviewは renderQuiz 側で自動セッション開始するためここには来ない）
+  if (query.mode) {
+    const targetMode = modes.find((m) => m.id === query.mode);
+    if (targetMode && targetMode.id !== 'past') {
+      openModeSettingsModal({
+        container,
+        mode: targetMode,
+        initialCategory: query.category || 'all',
+        initialCount: 10,
+      });
+    }
+  }
+}
 
-  const categories = [
-    { id: 'all',        label: 'すべて' },
-    { id: 'strategy',   label: 'ストラテジ' },
-    { id: 'management', label: 'マネジメント' },
-    { id: 'technology', label: 'テクノロジ' },
-  ];
+/**
+ * モード設定ポップアップを開く
+ * モード選択後、分野・問題数を選んで演習を開始するためのモーダル
+ *
+ * 模擬試験モードは100問固定・全分野なのでチップは出さず確認のみ表示する
+ *
+ * @param {Object} args
+ * @param {HTMLElement} args.container - メインコンテナ（演習開始時に上書きされる）
+ * @param {Object} args.mode - 選択されたモード { id, icon, name, desc }
+ * @param {string} args.initialCategory - 初期選択分野
+ * @param {number} args.initialCount - 初期選択問題数
+ */
+function openModeSettingsModal({ container, mode, initialCategory, initialCount }) {
+  // モーダル内のローカル選択状態（イミュータブルにするため変数として保持）
+  let selectedCategory = initialCategory;
+  let selectedCount    = initialCount;
 
-  categories.forEach((cat) => {
-    const chip = createElement('div', {
-      classes: ['filter-chip', selectedCategory === cat.id ? 'is-selected' : ''],
-      text: cat.label,
-    });
+  // オーバーレイ：背景を半透明で覆う
+  const overlay = createElement('div', { classes: ['quiz-mode-modal-overlay'] });
 
-    chip.addEventListener('click', () => {
-      chipContainer.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('is-selected'));
-      chip.classList.add('is-selected');
-      selectedCategory = cat.id;
-    });
-
-    chipContainer.appendChild(chip);
+  // モーダル本体
+  const modal = createElement('div', {
+    classes: ['quiz-mode-modal'],
+    attrs: { 'role': 'dialog', 'aria-modal': 'true', 'aria-label': `${mode.name}の設定` },
   });
 
-  categorySection.appendChild(chipContainer);
-  screen.appendChild(categorySection);
+  // 閉じる関数（オーバーレイから外す）
+  const closeModal = () => overlay.remove();
 
-  // 問題数セレクター（模擬試験・過去問以外のモードで表示）
-  const countSection = createElement('div', { classes: ['quiz-filter-section'] });
-  countSection.appendChild(createElement('div', {
-    classes: ['quiz-filter-label'],
-    text: '問題数',
-  }));
-
-  const countContainer = createElement('div', { classes: ['quiz-count-chips'] });
-
-  const countOptions = [
-    { count: 10, label: '10問' },
-    { count: 20, label: '20問' },
-    { count: 30, label: '30問' },
-    { count: 50, label: '50問' },
-  ];
-
-  countOptions.forEach((opt) => {
-    const chip = createElement('div', {
-      classes: ['count-chip', selectedCount === opt.count ? 'is-selected' : ''],
-      text: opt.label,
-    });
-
-    chip.addEventListener('click', () => {
-      countContainer.querySelectorAll('.count-chip').forEach((c) => c.classList.remove('is-selected'));
-      chip.classList.add('is-selected');
-      selectedCount = opt.count;
-    });
-
-    countContainer.appendChild(chip);
+  // 右上の✕ボタン
+  const closeBtn = createElement('button', {
+    classes: ['quiz-mode-modal-close'],
+    text: '✕',
+    attrs: { 'aria-label': '閉じる' },
   });
+  closeBtn.addEventListener('click', closeModal);
+  modal.appendChild(closeBtn);
 
-  countSection.appendChild(countContainer);
-  screen.appendChild(countSection);
+  // ヘッダー（モード名・アイコン・説明）
+  const header = createElement('div', { classes: ['quiz-mode-modal-header'] });
+  header.appendChild(createElement('span', { classes: ['quiz-mode-modal-icon'], text: mode.icon }));
+  const headerText = createElement('div', { classes: ['quiz-mode-modal-header-text'] });
+  headerText.appendChild(createElement('h2', { classes: ['quiz-mode-modal-name'], text: mode.name }));
+  headerText.appendChild(createElement('p', { classes: ['quiz-mode-modal-desc'], text: mode.desc }));
+  header.appendChild(headerText);
+  modal.appendChild(header);
 
-  // 演習開始ボタン
+  // 模擬試験モードはチップを出さず、確認情報のみ表示する
+  if (mode.id === 'exam') {
+    const info = createElement('div', { classes: ['quiz-mode-modal-info'] });
+    info.appendChild(createElement('p', {
+      classes: ['quiz-mode-modal-info-text'],
+      text: '100問・120分・全分野（ストラテジ／マネジメント／テクノロジ）の本番形式で出題されます。',
+    }));
+    modal.appendChild(info);
+  } else {
+    // 分野チップセクション
+    const categorySection = createElement('div', { classes: ['quiz-mode-modal-section'] });
+    categorySection.appendChild(createElement('div', {
+      classes: ['quiz-filter-label'],
+      text: '分野絞り込み',
+    }));
+
+    const chipContainer = createElement('div', { classes: ['quiz-filter-chips'] });
+    const categories = [
+      { id: 'all',        label: 'すべて' },
+      { id: 'strategy',   label: 'ストラテジ' },
+      { id: 'management', label: 'マネジメント' },
+      { id: 'technology', label: 'テクノロジ' },
+    ];
+
+    categories.forEach((cat) => {
+      const chip = createElement('div', {
+        classes: ['filter-chip', selectedCategory === cat.id ? 'is-selected' : ''],
+        text: cat.label,
+      });
+      chip.addEventListener('click', () => {
+        chipContainer.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('is-selected'));
+        chip.classList.add('is-selected');
+        selectedCategory = cat.id;
+      });
+      chipContainer.appendChild(chip);
+    });
+
+    categorySection.appendChild(chipContainer);
+    modal.appendChild(categorySection);
+
+    // 問題数チップセクション
+    const countSection = createElement('div', { classes: ['quiz-mode-modal-section'] });
+    countSection.appendChild(createElement('div', {
+      classes: ['quiz-filter-label'],
+      text: '問題数',
+    }));
+
+    const countContainer = createElement('div', { classes: ['quiz-count-chips'] });
+    const countOptions = [
+      { count: 10, label: '10問' },
+      { count: 20, label: '20問' },
+      { count: 30, label: '30問' },
+      { count: 50, label: '50問' },
+    ];
+
+    countOptions.forEach((opt) => {
+      const chip = createElement('div', {
+        classes: ['count-chip', selectedCount === opt.count ? 'is-selected' : ''],
+        text: opt.label,
+      });
+      chip.addEventListener('click', () => {
+        countContainer.querySelectorAll('.count-chip').forEach((c) => c.classList.remove('is-selected'));
+        chip.classList.add('is-selected');
+        selectedCount = opt.count;
+      });
+      countContainer.appendChild(chip);
+    });
+
+    countSection.appendChild(countContainer);
+    modal.appendChild(countSection);
+  }
+
+  // 開始ボタン
   const startBtn = createElement('button', {
-    classes: ['quiz-start-btn'],
+    classes: ['quiz-modal-start-btn'],
     text: '✏️ 演習を開始する',
   });
-
   startBtn.addEventListener('click', async () => {
-    // 過去問モードは年度選択画面を表示する（演習開始はしない）
-    if (selectedMode === 'past') {
-      renderInto(container, [createLoadingSpinner()]);
-      await renderPastYearSelect(container);
-      return;
-    }
+    closeModal();
     renderInto(container, [createLoadingSpinner()]);
-    // 模擬試験は固定100問、それ以外は選択した問題数を渡す
-    const questionLimit = selectedMode === 'exam' ? null : selectedCount;
-    await startSession(container, selectedMode, selectedCategory, questionLimit);
+    // 模擬試験は固定100問・全分野、それ以外は選択値を渡す
+    const questionLimit = mode.id === 'exam' ? null : selectedCount;
+    const category = mode.id === 'exam' ? 'all' : selectedCategory;
+    await startSession(container, mode.id, category, questionLimit);
+  });
+  modal.appendChild(startBtn);
+
+  // オーバーレイ部分（モーダル外）クリックで閉じる
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
   });
 
-  screen.appendChild(startBtn);
+  // Escキーで閉じる（一度だけ反応するワンショットリスナー）
+  const onEsc = (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+      document.removeEventListener('keydown', onEsc);
+    }
+  };
+  document.addEventListener('keydown', onEsc);
 
-  renderInto(container, [screen]);
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
 }
 
 // ===================================================
@@ -1011,7 +1091,7 @@ function renderQuestionScreen(container) {
 
       feedbackCard.appendChild(createElement('div', {
         classes: ['marubatsu-feedback-label'],
-        text: isCorrect ? '⭕ 正解！' : '❌ 不正解…',
+        text: isCorrect ? '⭕ 正解です！' : '❌ 不正解です…',
       }));
 
       // 正しい答えを表示する
@@ -1405,7 +1485,7 @@ function renderExplanationScreen(container) {
 
   const resultEl = createElement('div', {
     classes: ['explanation-result', isCorrect ? 'is-correct' : 'is-wrong'],
-    text: isCorrect ? '✓ 正解！' : '✗ 不正解',
+    text: isCorrect ? '✓ 正解です！' : '✗ 不正解です',
   });
   explanationCard.appendChild(resultEl);
 
@@ -1634,8 +1714,8 @@ function renderResultScreen(container) {
     judgmentBanner.appendChild(createElement('div', {
       classes: ['exam-judgment-comment'],
       text: examJudgment.isPassed
-        ? '合格ラインを超えました！本番も自信を持って臨みましょう。'
-        : '惜しい！苦手分野を復習してもう一度挑戦しましょう。',
+        ? '合格ラインを超えました！本番もこの調子で臨みましょう🎉'
+        : '惜しい！苦手分野を復習してもう一度挑戦しましょう🔥',
     }));
 
     screen.appendChild(judgmentBanner);
@@ -1823,7 +1903,7 @@ function renderResultScreen(container) {
         classes: ['card', 'exam-perfect-message'],
       });
       perfectMsg.appendChild(createElement('div', {
-        text: '全問正解！素晴らしいです！',
+        text: '全問正解🎉 素晴らしいです！⭐',
         classes: ['exam-perfect-text'],
       }));
       screen.appendChild(perfectMsg);

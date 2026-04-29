@@ -9,3 +9,10 @@ data/raw_pdfs/**
 # データ生成スクリプトとドキュメント素材は配信不要
 data/gen_*.py
 docs/screenshots/
+
+# Node / Playwright
+node_modules/
+package-lock.json
+playwright-report/
+test-results/
+.playwright/

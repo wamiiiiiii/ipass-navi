@@ -38,12 +38,15 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--app-max-width);
-  height: var(--header-height);
+  /* iOS のノッチ・ダイナミックアイランド領域分を上に追加し、コンテンツが食い込まないようにする */
+  height: calc(var(--header-height) + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
   background-color: var(--glass-bg);
   border-bottom: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
-  padding: 0 var(--space-md);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
   z-index: var(--z-header);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -110,8 +113,10 @@ body {
    メインコンテンツエリア
    =================================================== */
 #main-content {
-  padding-top: var(--header-height);
-  padding-bottom: var(--nav-height);
+  /* ヘッダー + ノッチ分を確保（fixed ヘッダーに被らないようにする） */
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top));
+  /* ボトムナビ + ホームバー（iOSセーフエリア下端）分を確保 */
+  padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom));
   min-height: 100dvh;
   -webkit-overflow-scrolling: touch;
 }
@@ -126,7 +131,8 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--app-max-width);
-  height: var(--nav-height);
+  /* min-height でホームバー領域を加算する。height固定だとナビが圧縮されてラベルが切れる */
+  min-height: calc(var(--nav-height) + env(safe-area-inset-bottom));
   background-color: var(--color-nav-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -208,12 +214,12 @@ body {
   transform: scale(1.08);
 }
 
-/* ラベル */
+/* ラベル：iOS推奨の最低12px相当を確保し、漢字3文字「教科書」を判別しやすくする */
 .nav-tab-label {
-  font-size: 1.1rem;
-  font-weight: var(--font-weight-medium);
-  line-height: 1;
-  letter-spacing: 0.02em;
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
 }
 
 .nav-tab.is-active .nav-tab-label {
@@ -234,10 +240,12 @@ body {
   transition: box-shadow var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: scale(1.01);
-  border-color: var(--color-primary);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.01);
+    border-color: var(--color-primary);
+  }
 }
 
 .card-header {

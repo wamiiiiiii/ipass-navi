@@ -4,6 +4,17 @@
   <!-- 文字エンコーディング：UTF-8で日本語を正しく表示する -->
   <meta charset="UTF-8">
 
+  <!--
+    Content-Security-Policy（最低限のXSS対策）
+    - スクリプトは同一オリジンのみ（外部スクリプト読込・eval禁止）
+    - スタイルは同一オリジン+Google Fonts。'unsafe-inline'は既存コードの style 属性のため一時的に許可
+    - 画像はself+data URI（emoji icon等）
+    - フォントはGoogle Fonts CDNを許可
+    - frame-ancestors 'none' でクリックジャッキング防止
+    - base-uri 'self' でbase書き換え攻撃防止
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+
   <!-- ビューポート設定：スマホでの適切な表示サイズを指定する -->
   <!-- viewport-fit=cover でiPhoneのノッチ・ホームバー領域まで使用する -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -15,7 +26,7 @@
   <meta name="apple-mobile-web-app-title" content="iPassナビ">
 
   <!-- テーマカラー：ブラウザのUIカラーをブランドカラーに合わせる -->
-  <meta name="theme-color" content="#6366F1">
+  <meta name="theme-color" content="#2d3561">
 
   <!-- SEO・共有向けメタタグ -->
   <meta name="description" content="ITパスポート試験（IPA）の出題範囲に基づいた学習アプリ。教科書・問題演習・用語辞書をオフラインで使用できます。">
