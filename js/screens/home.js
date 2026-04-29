@@ -373,39 +373,6 @@ function buildCollapsible(titleText, contentEl) {
 }
 
 /**
- * 試験日カウントダウンカードを構築する
- * @param {Object} cd - calcExamCountdown の戻り値 { days_left, daily_quota, ... }
- * @returns {HTMLElement} カード要素
- */
-function buildExamCountdown(cd) {
-  const card = createElement('div', { classes: ['home-exam-countdown'] });
-
-  const left = createElement('div', { classes: ['exam-countdown-left'] });
-  left.appendChild(createElement('span', { classes: ['exam-countdown-icon'], text: '🎯' }));
-  left.appendChild(createElement('span', { classes: ['exam-countdown-label'], text: '試験まで' }));
-
-  const days = createElement('div', { classes: ['exam-countdown-days'] });
-  days.appendChild(createElement('span', { classes: ['exam-countdown-num'], text: String(cd.days_left) }));
-  days.appendChild(createElement('span', { classes: ['exam-countdown-unit'], text: '日' }));
-
-  const right = createElement('div', { classes: ['exam-countdown-right'] });
-  // 1日あたりの推奨問題数
-  const quotaText = cd.daily_quota > 0
-    ? `今日のノルマ：約${cd.daily_quota}問`
-    : '全問題を演習済み';
-  right.appendChild(createElement('div', { classes: ['exam-countdown-quota'], text: quotaText }));
-  right.appendChild(createElement('div', {
-    classes: ['exam-countdown-progress'],
-    text: `${cd.answered_count} / ${cd.answered_count + cd.remaining_questions} 問`,
-  }));
-
-  card.appendChild(left);
-  card.appendChild(days);
-  card.appendChild(right);
-  return card;
-}
-
-/**
  * 今日の学習計画セクションを構築する
  * @param {Array<Object>} tasks - buildTodayPlan の戻り値
  * @returns {HTMLElement} セクション要素
@@ -481,40 +448,6 @@ function buildSRSReviewCard(summary) {
   card.appendChild(cta);
 
   card.addEventListener('click', () => navigate('quiz?mode=review'));
-  return card;
-}
-
-/**
- * 連続学習日数のバッジカードを構築する
- * @param {number} streak - 連続学習日数
- * @param {Object} badge - getStreakBadge の戻り値
- * @returns {HTMLElement} カード要素
- */
-function buildStreakBadge(streak, badge) {
-  const card = createElement('div', { classes: ['home-streak-badge'] });
-
-  const icon = createElement('span', { classes: ['streak-badge-icon'], text: badge.icon });
-  const days = createElement('div', { classes: ['streak-badge-days'] });
-  days.appendChild(createElement('span', { classes: ['streak-badge-num'], text: String(streak) }));
-  days.appendChild(createElement('span', { classes: ['streak-badge-unit'], text: '日連続' }));
-
-  const labelEl = createElement('div', { classes: ['streak-badge-label'], text: badge.label });
-
-  // 次のティアまでの残り日数
-  let nextEl = null;
-  if (badge.nextThreshold && streak < badge.nextThreshold) {
-    const remain = badge.nextThreshold - streak;
-    nextEl = createElement('div', {
-      classes: ['streak-badge-next'],
-      text: `次の称号まで あと${remain}日`,
-    });
-  }
-
-  card.appendChild(icon);
-  card.appendChild(days);
-  card.appendChild(labelEl);
-  if (nextEl) card.appendChild(nextEl);
-
   return card;
 }
 

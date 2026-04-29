@@ -24,8 +24,10 @@
 // v21 (app-version 1.2.1): MEDIUM級UI調整。本文サイズ16px化（iOS推奨最低達成）・
 //   celebration 100vh→100dvh（iOS Safariアドレスバー高さ問題回避）・
 //   reset.css scroll-behavior:smooth 削除（SPA遷移後 scrollTo(0,0) との競合解消）。
-const CACHE_NAME = 'ipass-navi-v21';
-const DATA_CACHE_NAME = 'ipass-navi-data-v21';
+// v22 (app-version 1.2.2): R06/past2/past_r04s の選択肢シャッフル（生成時のb偏り解消）。
+//   home.js の dead code（buildExamCountdown / buildStreakBadge）と関連CSSを削除。
+const CACHE_NAME = 'ipass-navi-v22';
+const DATA_CACHE_NAME = 'ipass-navi-data-v22';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
