@@ -26,8 +26,10 @@
 //   reset.css scroll-behavior:smooth 削除（SPA遷移後 scrollTo(0,0) との競合解消）。
 // v22 (app-version 1.2.2): R06/past2/past_r04s の選択肢シャッフル（生成時のb偏り解消）。
 //   home.js の dead code（buildExamCountdown / buildStreakBadge）と関連CSSを削除。
-const CACHE_NAME = 'ipass-navi-v22';
-const DATA_CACHE_NAME = 'ipass-navi-data-v22';
+// v23 (app-version 1.3.0): 章演習はランダム20問・節演習はランダム5問に上限化。
+//   章は30〜75問のばらつきがあり、1セッションの負担を一定にするため。
+const CACHE_NAME = 'ipass-navi-v23';
+const DATA_CACHE_NAME = 'ipass-navi-data-v23';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

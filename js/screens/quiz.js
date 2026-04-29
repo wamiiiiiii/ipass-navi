@@ -865,6 +865,9 @@ async function startWeakSession(container) {
  * @param {string} chapterId - 章ID
  * @param {string} category - 分野ID
  */
+/** 章単位演習でランダム抽出する目標問題数 */
+const CHAPTER_QUIZ_LIMIT = 20;
+
 async function startChapterSession(container, chapterId, category) {
   try {
     const questionsData = await loadQuestions();
@@ -876,12 +879,17 @@ async function startChapterSession(container, chapterId, category) {
       return;
     }
 
+    // シャッフル後、上限まで切り出す。章には30〜75問のばらつきがあるが
+    // 1セッションを固定（20問前後）にして負担を一定にする。次回セッションで違う問題が出る
+    const shuffled = shuffleQuestions(questions);
+    const sessionQuestions = shuffled.slice(0, Math.min(CHAPTER_QUIZ_LIMIT, shuffled.length));
+
     _session = {
       isActive:   true,
       phase:      'question',
       mode:       'standard',
       category,
-      questions:  shuffleQuestions(questions),
+      questions:  sessionQuestions,
       currentIdx: 0,
       results:    [],
       startedAt:  new Date().toISOString(),
@@ -905,6 +913,9 @@ async function startChapterSession(container, chapterId, category) {
  * @param {HTMLElement} container - 描画先のコンテナ
  * @param {string} pageId - 節ID（例: 'T-05-01'）
  */
+/** 節単位演習でランダム抽出する目標問題数 */
+const PAGE_QUIZ_LIMIT = 5;
+
 async function startPageSession(container, pageId) {
   try {
     const questionsData = await loadQuestions();
@@ -917,13 +928,18 @@ async function startPageSession(container, pageId) {
       return;
     }
 
+    // 節は問題数が少なめ（多くの節は5問前後）。シャッフル後、上限まで切り出す。
+    // 5問未満なら持っている分だけ。次回セッションで違う問題が出るのでリプレイ価値あり
+    const shuffled = shuffleQuestions(questions);
+    const sessionQuestions = shuffled.slice(0, Math.min(PAGE_QUIZ_LIMIT, shuffled.length));
+
     _session = {
       isActive:   true,
       phase:      'question',
       mode:       'standard',
       // 節は分野が一意に決まるが、UI互換のため category は all 扱いにする
       category:   'all',
-      questions:  shuffleQuestions(questions),
+      questions:  sessionQuestions,
       currentIdx: 0,
       results:    [],
       startedAt:  new Date().toISOString(),

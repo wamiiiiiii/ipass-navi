@@ -321,14 +321,17 @@ function renderPageContent(container, chaptersData, progress, pageId, glossaryDa
   }
 
   // 「この節の問題を解く」ボタン：related_page_id がこの節と一致する問題を集計
-  // 章単位より細かい粒度で確認テストできるようにする。0問の節ではボタンを表示しない
-  const pageQuestionCount = questionsData && Array.isArray(questionsData.questions)
+  // 節も quiz 側でランダム5問に切り出すため、表示は「ランダム5問」固定に
+  // （プールが5問未満なら実数）
+  const PAGE_QUIZ_LIMIT = 5;
+  const pageQuestionPool = questionsData && Array.isArray(questionsData.questions)
     ? questionsData.questions.filter((q) => q.related_page_id === page.page_id).length
     : 0;
-  if (pageQuestionCount > 0) {
+  if (pageQuestionPool > 0) {
+    const pageDisplayCount = Math.min(PAGE_QUIZ_LIMIT, pageQuestionPool);
     const sectionQuizBtn = createElement('button', {
       classes: ['section-quiz-btn'],
-      text: `📝 この節の問題を解く（${pageQuestionCount}問）`,
+      text: `📝 この節の問題を解く（ランダム${pageDisplayCount}問）`,
     });
     sectionQuizBtn.addEventListener('click', () => {
       navigate(`quiz?page=${page.page_id}`);
@@ -349,17 +352,21 @@ function renderPageContent(container, chaptersData, progress, pageId, glossaryDa
     }
 
     // この章の問題を解くボタン
-    // 章に紐付く問題数を実データから集計して表示し、ユーザーが何問挑戦するか事前に分かるようにする
-    const chapterQuestionCount = questionsData && Array.isArray(questionsData.questions)
+    // 章は実データに30〜75問の偏りがあるが、quiz側でランダム20問に切り出すため
+    // 表示も「ランダム20問」固定にして体験を統一する。問題プールが20問未満の章だけ
+    // 実数を出して期待値の齟齬を減らす
+    const CHAPTER_QUIZ_LIMIT = 20;
+    const chapterQuestionPool = questionsData && Array.isArray(questionsData.questions)
       ? questionsData.questions.filter((q) => q.chapter_id === chapter.chapter_id).length
       : 0;
+    const chapterDisplayCount = Math.min(CHAPTER_QUIZ_LIMIT, chapterQuestionPool);
     const quizBtn = createElement('button', {
       classes: ['chapter-quiz-btn'],
-      text: chapterQuestionCount > 0
-        ? `✏️ この章の問題を解く（${chapterQuestionCount}問）`
+      text: chapterQuestionPool > 0
+        ? `✏️ この章の問題を解く（ランダム${chapterDisplayCount}問）`
         : `✏️ この章の問題を解く`,
     });
-    if (chapterQuestionCount === 0) {
+    if (chapterQuestionPool === 0) {
       // 問題が0問の章はボタンを無効化（誤クリックで「問題がありません」遷移を防ぐ）
       quizBtn.setAttribute('disabled', 'true');
       quizBtn.classList.add('is-disabled');
