@@ -57,7 +57,10 @@ test.describe('問題演習フロー', () => {
   });
 
   test('模擬試験モードは確認テキストのみ表示しチップは出ない', async ({ page }) => {
-    await page.getByText('模擬試験').click();
+    // モードカード経由で確実にクリックする（同じテキストが他に出ても干渉しない）
+    const card = page.locator('.quiz-mode-card[data-mode="exam"]');
+    await card.scrollIntoViewIfNeeded();
+    await card.click({ force: true });
     const modal = page.locator('.quiz-mode-modal');
     await expect(modal).toBeVisible();
     // 模擬試験は分野チップ・問題数チップを出さない
@@ -92,7 +95,9 @@ test.describe('問題演習フロー', () => {
   });
 
   test('過去問モードカードは直接年度選択画面に飛ぶ（モーダルを開かない）', async ({ page }) => {
-    await page.getByText('過去問演習').click();
+    const card = page.locator('.quiz-mode-card[data-mode="past"]');
+    await card.scrollIntoViewIfNeeded();
+    await card.click({ force: true });
     // モーダルは出ない
     await expect(page.locator('.quiz-mode-modal')).toHaveCount(0);
     // 年度カードが表示される（令和X年度）

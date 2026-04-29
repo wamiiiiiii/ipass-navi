@@ -38,8 +38,8 @@ test.describe('スモークテスト：アプリ起動とナビゲーション',
 
   test('演習タブに遷移してモード選択が表示される', async ({ page }) => {
     await page.locator('#nav-quiz').click();
-    // タイトルとサブタイトル
-    await expect(page.getByRole('heading', { name: '問題演習' })).toBeVisible();
+    // モード選択画面のタイトル（ヘッダーのタイトルと重複するので class で限定）
+    await expect(page.locator('.quiz-mode-title')).toBeVisible();
     // 6つのモードカードが表示される（standard / flashcard / review / weak / exam / past）
     await expect(page.getByText('4択（本番形式）')).toBeVisible();
     await expect(page.getByText('○✗モード')).toBeVisible();

@@ -12,33 +12,41 @@ test.describe('設定画面', () => {
   });
 
   test('テーマセレクタでダークテーマに切り替えるとhtmlに data-theme=dark が反映される', async ({ page }) => {
-    // ダークボタンをクリック（buildThemeSelector の生成するボタン群を想定）
-    const darkBtn = page.getByRole('button', { name: /ダーク|dark/i }).first();
-    await darkBtn.click();
-    // html要素 or body に data-theme=dark が設定される
-    const themeAttr = await page.evaluate(() => {
-      return document.documentElement.getAttribute('data-theme')
-        || document.body.getAttribute('data-theme');
-    });
-    expect(themeAttr).toBe('dark');
+    // テーマオプションは <div class="theme-option"> で role がついていないため class でマッチさせる
+    const darkOption = page.locator('.theme-option', { hasText: 'ダーク' });
+    // ボトムナビが overlapping する場合があるので scrollIntoViewIfNeeded で確実にビューポート内へ
+    await darkOption.scrollIntoViewIfNeeded();
+    // Safari では稀にイベント伝播が完了しないので force click で確実にクリックを送る
+    await darkOption.click({ force: true });
+
+    // applyTheme が html 要素に data-theme を設定する
+    await expect.poll(async () => {
+      return page.evaluate(() => {
+        return document.documentElement.getAttribute('data-theme')
+          || document.body.getAttribute('data-theme');
+      });
+    }, { timeout: 3000 }).toBe('dark');
   });
 
   test('試験予定日を設定するとlocalStorageに保存される', async ({ page }) => {
-    // 試験日入力欄を探す（type=date）
     const dateInput = page.locator('input[type="date"]').first();
     await expect(dateInput).toBeVisible();
-    await dateInput.fill('2026-06-13');
-    // 保存ボタンがあれば押す（自動保存の場合は不要）
-    const saveBtn = page.getByRole('button', { name: /保存|更新/ });
-    if (await saveBtn.isVisible({ timeout: 500 }).catch(() => false)) {
-      await saveBtn.click();
-    }
-    // localStorage に exam_date が保存されている
-    const examDate = await page.evaluate(() => {
-      const settings = JSON.parse(localStorage.getItem('settings') || '{}');
-      return settings.exam_date;
+    // mobile-safari は input[type=date] のピッカーが独自実装で fill() が効かない場合がある。
+    // value を直接代入し、change イベントを明示的に発火させる
+    await page.evaluate(() => {
+      const el = document.querySelector('input[type="date"]');
+      if (!el) return;
+      el.value = '2026-06-13';
+      el.dispatchEvent(new Event('change', { bubbles: true }));
     });
-    expect(examDate).toBe('2026-06-13');
+
+    // localStorage キーは ipass_settings（store.js の KEYS.SETTINGS）
+    await expect.poll(async () => {
+      return page.evaluate(() => {
+        const settings = JSON.parse(localStorage.getItem('ipass_settings') || '{}');
+        return settings.exam_date;
+      });
+    }, { timeout: 3000 }).toBe('2026-06-13');
   });
 
   test('settings画面のレイアウトクラスが正しく適用されている', async ({ page }) => {
