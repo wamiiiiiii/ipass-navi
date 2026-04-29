@@ -9,9 +9,11 @@
  */
 
 // キャッシュの名前（バージョンを上げると古いキャッシュを削除できる）
-// v16: 過去問追加（R02秋+9・R04春+10）+ 過去問繰り返し学習機能（年度別正答率・誤答復習モード）
-const CACHE_NAME = 'ipass-navi-v16';
-const DATA_CACHE_NAME = 'ipass-navi-data-v16';
+// v17: 問題データ95件修正（P-R06S-084ほか）・Phase 1コピー敬語化・ポップアップ式モード選択
+//      ・CRITICAL/HIGH UI修正・E2E導入・CSP追加。Service Worker のバージョン不更新でデータ修正が
+//      ユーザー端末に届いていなかった不具合を解消する。
+const CACHE_NAME = 'ipass-navi-v17';
+const DATA_CACHE_NAME = 'ipass-navi-data-v17';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -26,6 +28,8 @@ const APP_SHELL_FILES = [
   './css/quiz.css',
   './css/glossary.css',
   './css/settings.css',
+  './css/diagram.css',
+  './css/celebration.css',
   './js/app.js',
   './js/router.js',
   './js/store.js',
@@ -39,7 +43,7 @@ const APP_SHELL_FILES = [
   './js/utils/progress.js',
   './js/utils/diagram.js',
   './js/utils/srs.js',
-  './css/diagram.css',
+  './js/utils/celebration.js',
   './favicon.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
