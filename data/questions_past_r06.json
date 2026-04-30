@@ -33,7 +33,7 @@
         "生成AI",
         "大規模言語モデル"
       ],
-      "related_page_id": "S-01-03",
+      "related_page_id": "S-01-01",
       "tags": [
         "生成AI",
         "プロンプトエンジニアリング"
@@ -115,7 +115,7 @@
         "中小企業保護",
         "下請取引適正化"
       ],
-      "related_page_id": "S-06-02",
+      "related_page_id": "S-06-04",
       "tags": [
         "法律",
         "下請取引",
@@ -157,7 +157,7 @@
         "機会",
         "外部環境"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営戦略",
         "SWOT",
@@ -199,7 +199,7 @@
         "BSC",
         "KPI"
       ],
-      "related_page_id": "S-02-02",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営管理",
         "BSC",
@@ -241,7 +241,7 @@
         "競争優位",
         "経営戦略"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営戦略",
         "コアコンピタンス"
@@ -282,7 +282,7 @@
         "スクラム",
         "イテレーション"
       ],
-      "related_page_id": "S-03-01",
+      "related_page_id": "S-03-05",
       "tags": [
         "開発手法",
         "アジャイル"
@@ -323,7 +323,7 @@
         "業務自動化",
         "ソフトウェアロボット"
       ],
-      "related_page_id": "S-03-02",
+      "related_page_id": "S-03-05",
       "tags": [
         "RPA",
         "業務自動化",
@@ -334,7 +334,7 @@
     },
     {
       "question_id": "P-R06S-009",
-      "chapter_id": "S-03",
+      "chapter_id": "S-05",
       "category": "strategy",
       "difficulty": 3,
       "source": "past_R06_spring",
@@ -365,7 +365,7 @@
         "生成AI",
         "AIリスク"
       ],
-      "related_page_id": "S-01-03",
+      "related_page_id": "S-05-06",
       "tags": [
         "生成AI",
         "ハルシネーション",
@@ -492,7 +492,7 @@
         "ロボアドバイザー",
         "キャッシュレス"
       ],
-      "related_page_id": "S-04-03",
+      "related_page_id": "S-04-02",
       "tags": [
         "フィンテック",
         "金融",
@@ -534,7 +534,7 @@
         "サプライチェーン",
         "物流最適化"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-12",
       "tags": [
         "SCM",
         "サプライチェーン",
@@ -576,7 +576,7 @@
         "基幹システム",
         "統合管理"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-04",
       "tags": [
         "ERP",
         "業務統合",
@@ -618,7 +618,7 @@
         "顧客管理",
         "LTV"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-04",
       "tags": [
         "CRM",
         "顧客管理",
@@ -660,7 +660,7 @@
         "ビッグデータ",
         "データ分析"
       ],
-      "related_page_id": "S-05-02",
+      "related_page_id": "S-05-09",
       "tags": [
         "データドリブン",
         "経営分析",
@@ -702,7 +702,7 @@
         "知的財産権",
         "無方式主義"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "著作権",
         "知的財産",
@@ -744,7 +744,7 @@
         "個人情報",
         "プライバシー"
       ],
-      "related_page_id": "S-06-02",
+      "related_page_id": "S-06-04",
       "tags": [
         "個人情報",
         "法律",
@@ -786,7 +786,7 @@
         "不正競争防止法",
         "知的財産"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "営業秘密",
         "知的財産",
@@ -828,7 +828,7 @@
         "派遣労働",
         "雇用形態"
       ],
-      "related_page_id": "S-06-02",
+      "related_page_id": "S-06-04",
       "tags": [
         "労働法",
         "派遣",
@@ -870,7 +870,7 @@
         "P/L",
         "財務諸表"
       ],
-      "related_page_id": "S-07-01",
+      "related_page_id": "S-07-03",
       "tags": [
         "会計",
         "財務諸表",
@@ -912,7 +912,7 @@
         "変動費",
         "損益分岐点"
       ],
-      "related_page_id": "S-07-02",
+      "related_page_id": "S-07-03",
       "tags": [
         "会計",
         "原価計算",
@@ -954,7 +954,7 @@
         "自己資本利益率",
         "財務指標"
       ],
-      "related_page_id": "S-07-01",
+      "related_page_id": "S-07-03",
       "tags": [
         "会計",
         "ROE",
@@ -996,7 +996,7 @@
         "転移学習",
         "生成AI"
       ],
-      "related_page_id": "S-01-03",
+      "related_page_id": "S-01-01",
       "tags": [
         "AI",
         "ファインチューニング",
@@ -1038,7 +1038,7 @@
         "製品ポートフォリオ",
         "事業戦略"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営戦略",
         "PPM",
@@ -1080,7 +1080,7 @@
         "センサー",
         "予知保全"
       ],
-      "related_page_id": "S-03-02",
+      "related_page_id": "S-03-05",
       "tags": [
         "IoT",
         "製造業",
@@ -1122,7 +1122,7 @@
         "プラットフォーム",
         "遊休資産"
       ],
-      "related_page_id": "S-04-01",
+      "related_page_id": "S-04-02",
       "tags": [
         "シェアリングエコノミー",
         "新ビジネス"
@@ -1163,7 +1163,7 @@
         "業務改革",
         "プロセス再設計"
       ],
-      "related_page_id": "S-05-02",
+      "related_page_id": "S-06-02",
       "tags": [
         "BPR",
         "業務改革",
@@ -1205,7 +1205,7 @@
         "特定商取引法",
         "消費者保護"
       ],
-      "related_page_id": "S-06-02",
+      "related_page_id": "S-06-04",
       "tags": [
         "消費者保護",
         "法律",
@@ -1247,7 +1247,7 @@
         "固定費",
         "変動費率"
       ],
-      "related_page_id": "S-07-02",
+      "related_page_id": "S-07-03",
       "tags": [
         "会計",
         "損益分岐点",
@@ -1289,7 +1289,7 @@
         "機械学習",
         "AIアルゴリズム"
       ],
-      "related_page_id": "S-01-03",
+      "related_page_id": "S-01-01",
       "tags": [
         "AI",
         "機械学習",
@@ -1331,7 +1331,7 @@
         "KPI",
         "目標管理"
       ],
-      "related_page_id": "S-02-02",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営管理",
         "KPI",
@@ -1373,7 +1373,7 @@
         "3V",
         "データ分析"
       ],
-      "related_page_id": "S-03-03",
+      "related_page_id": "S-03-05",
       "tags": [
         "ビッグデータ",
         "データ分析",
@@ -1415,7 +1415,7 @@
         "省エネ",
         "環境経営"
       ],
-      "related_page_id": "S-05-03",
+      "related_page_id": "S-05-14",
       "tags": [
         "グリーンIT",
         "環境",
@@ -1457,7 +1457,7 @@
         "O2O",
         "顧客体験"
       ],
-      "related_page_id": "S-04-01",
+      "related_page_id": "S-04-02",
       "tags": [
         "OMO",
         "マーケティング",
@@ -1499,7 +1499,7 @@
         "開発手法",
         "工程管理"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-02",
       "tags": [
         "開発手法",
         "プロジェクト管理"
@@ -1540,7 +1540,7 @@
         "プロジェクト管理",
         "作業分解"
       ],
-      "related_page_id": "M-01-02",
+      "related_page_id": "M-01-01",
       "tags": [
         "プロジェクト管理",
         "WBS"
@@ -1911,7 +1911,7 @@
         "スプリント",
         "アジャイル"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-03",
       "tags": [
         "アジャイル",
         "スクラム",
@@ -1994,7 +1994,7 @@
         "リスク低減",
         "情報セキュリティ"
       ],
-      "related_page_id": "M-03-02",
+      "related_page_id": "M-03-04",
       "tags": [
         "情報セキュリティ",
         "リスク管理"
@@ -2077,7 +2077,7 @@
         "テスト手法",
         "組合せテスト"
       ],
-      "related_page_id": "M-05-01",
+      "related_page_id": "M-05-04",
       "tags": [
         "テスト",
         "ソフトウェア品質"
@@ -2118,7 +2118,7 @@
         "CI/CD",
         "継続的デリバリー"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-08",
       "tags": [
         "開発手法",
         "DevOps",
@@ -2201,7 +2201,7 @@
         "データ保護",
         "DR"
       ],
-      "related_page_id": "M-03-02",
+      "related_page_id": "M-03-01",
       "tags": [
         "システム管理",
         "バックアップ",
@@ -2284,7 +2284,7 @@
         "信頼性",
         "ソフトウェア品質"
       ],
-      "related_page_id": "M-05-02",
+      "related_page_id": "M-05-01",
       "tags": [
         "品質管理",
         "ソフトウェア品質",
@@ -2369,7 +2369,7 @@
         "MB",
         "記憶容量"
       ],
-      "related_page_id": "T-01-01",
+      "related_page_id": "T-01-03",
       "tags": [
         "コンピュータ基礎",
         "記憶容量",
@@ -2411,7 +2411,7 @@
         "クロック周波数",
         "コンピュータ性能"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-01",
       "tags": [
         "ハードウェア",
         "CPU",
@@ -2453,7 +2453,7 @@
         "HDD",
         "フラッシュメモリ"
       ],
-      "related_page_id": "T-02-02",
+      "related_page_id": "T-03-04",
       "tags": [
         "ハードウェア",
         "記憶装置",
@@ -2495,7 +2495,7 @@
         "IP",
         "ネットワーク層"
       ],
-      "related_page_id": "T-03-01",
+      "related_page_id": "T-05-02",
       "tags": [
         "ネットワーク",
         "OSI",
@@ -2537,7 +2537,7 @@
         "サブネットマスク",
         "クラスB"
       ],
-      "related_page_id": "T-03-02",
+      "related_page_id": "T-05-01",
       "tags": [
         "ネットワーク",
         "IPアドレス",
@@ -2579,7 +2579,7 @@
         "ドメイン名",
         "名前解決"
       ],
-      "related_page_id": "T-03-03",
+      "related_page_id": "T-05-03",
       "tags": [
         "ネットワーク",
         "DNS",
@@ -2705,7 +2705,7 @@
         "秘密鍵",
         "暗号化"
       ],
-      "related_page_id": "T-05-01",
+      "related_page_id": "T-05-03",
       "tags": [
         "セキュリティ",
         "暗号化",
@@ -2747,7 +2747,7 @@
         "なりすまし防止",
         "改ざん検知"
       ],
-      "related_page_id": "T-05-01",
+      "related_page_id": "T-05-03",
       "tags": [
         "セキュリティ",
         "デジタル署名",
@@ -2789,7 +2789,7 @@
         "プリペアドステートメント",
         "Webセキュリティ"
       ],
-      "related_page_id": "T-05-02",
+      "related_page_id": "T-05-01",
       "tags": [
         "セキュリティ",
         "SQLインジェクション",
@@ -2831,7 +2831,7 @@
         "プログラミング",
         "メモリ"
       ],
-      "related_page_id": "T-06-01",
+      "related_page_id": "T-02-04",
       "tags": [
         "プログラミング",
         "変数",
@@ -2873,7 +2873,7 @@
         "アルゴリズム",
         "条件分岐"
       ],
-      "related_page_id": "T-06-01",
+      "related_page_id": "T-02-02",
       "tags": [
         "アルゴリズム",
         "フローチャート",
@@ -2915,7 +2915,7 @@
         "LIFO",
         "データ構造"
       ],
-      "related_page_id": "T-06-02",
+      "related_page_id": "T-02-03",
       "tags": [
         "アルゴリズム",
         "データ構造",
@@ -3293,7 +3293,7 @@
         "ソフトウェア保守",
         "システム保守"
       ],
-      "related_page_id": "T-10-02",
+      "related_page_id": "T-10-01",
       "tags": [
         "システム開発",
         "保守",
@@ -3419,7 +3419,7 @@
         "無線LANセキュリティ",
         "Wi-Fi"
       ],
-      "related_page_id": "T-03-04",
+      "related_page_id": "T-06-01",
       "tags": [
         "ネットワーク",
         "セキュリティ",
@@ -3461,7 +3461,7 @@
         "データベース",
         "スケーラビリティ"
       ],
-      "related_page_id": "T-04-02",
+      "related_page_id": "T-04-01",
       "tags": [
         "データベース",
         "NoSQL",
@@ -3545,7 +3545,7 @@
         "オブジェクト指向",
         "クラス"
       ],
-      "related_page_id": "T-06-03",
+      "related_page_id": "T-02-04",
       "tags": [
         "プログラミング",
         "オブジェクト指向",
@@ -3671,7 +3671,7 @@
         "HTTP",
         "Web API"
       ],
-      "related_page_id": "T-09-02",
+      "related_page_id": "T-09-01",
       "tags": [
         "Web技術",
         "API",
@@ -3839,7 +3839,7 @@
         "CPU",
         "メモリ階層"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-02",
       "tags": [
         "ハードウェア",
         "メモリ",
@@ -3881,7 +3881,7 @@
         "暗号化",
         "ネットワークセキュリティ"
       ],
-      "related_page_id": "T-03-04",
+      "related_page_id": "T-05-02",
       "tags": [
         "ネットワーク",
         "VPN",
@@ -3923,7 +3923,7 @@
         "ACID",
         "原子性"
       ],
-      "related_page_id": "T-04-03",
+      "related_page_id": "T-04-01",
       "tags": [
         "データベース",
         "トランザクション",
@@ -4007,7 +4007,7 @@
         "ビッグオー",
         "アルゴリズム"
       ],
-      "related_page_id": "T-06-02",
+      "related_page_id": "T-02-05",
       "tags": [
         "アルゴリズム",
         "計算量",
@@ -4133,7 +4133,7 @@
         "クラウドサービス",
         "仮想化"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "クラウド",
         "IaaS",

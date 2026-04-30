@@ -16,3 +16,8 @@ package-lock.json
 playwright-report/
 test-results/
 .playwright/
+
+# Phase C 中間ファイル（再マッピング・生成用ペイロード）
+data/_gen/
+data/_remap/
+suspect_questions.json

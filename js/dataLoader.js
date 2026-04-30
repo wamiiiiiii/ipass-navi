@@ -78,6 +78,7 @@ export async function loadChapters() {
  * - questions.json         : オリジナル問題（メイン）
  * - questions_extra1.json  : オリジナル問題（追加 1）
  * - questions_extra2.json  : オリジナル問題（追加 2）
+ * - questions_extra3.json  : 節5問体制（Phase C・節summary_points厳守生成 379問）
  * - questions_past2.json   : 過去問（R02秋・R03春・R04春）
  * - questions_past_r05.json: 過去問（R05春）
  * - questions_past_r06.json: 過去問（R06春）
@@ -98,6 +99,7 @@ export async function loadQuestions() {
     './data/questions.json',
     './data/questions_extra1.json',
     './data/questions_extra2.json',
+    './data/questions_extra3.json',
     './data/questions_past2.json',
     './data/questions_past_r02a.json',
     './data/questions_past_r04s.json',

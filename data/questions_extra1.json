@@ -32,7 +32,7 @@
         "財務諸表",
         "当期純利益"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-04",
       "tags": [
         "財務",
         "会計",
@@ -73,7 +73,7 @@
         "売上総利益",
         "販売費及び一般管理費"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-04",
       "tags": [
         "財務",
         "計算問題",
@@ -114,7 +114,7 @@
         "流動資産",
         "流動負債"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-04",
       "tags": [
         "財務分析",
         "流動比率",
@@ -155,7 +155,7 @@
         "限界利益率",
         "目標利益"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-03",
       "tags": [
         "財務",
         "計算問題",
@@ -236,7 +236,7 @@
         "財務健全性",
         "貸借対照表"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-04",
       "tags": [
         "財務分析",
         "自己資本比率",
@@ -317,7 +317,7 @@
         "ROE",
         "総資産利益率"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-04",
       "tags": [
         "財務分析",
         "ROA",
@@ -358,7 +358,7 @@
         "投資活動",
         "財務活動"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-04",
       "tags": [
         "財務",
         "キャッシュフロー"
@@ -438,7 +438,7 @@
         "固定費",
         "変動費"
       ],
-      "related_page_id": "S-01-01",
+      "related_page_id": "S-01-03",
       "tags": [
         "財務",
         "計算問題",
@@ -520,7 +520,7 @@
         "外部環境分析",
         "マクロ環境"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営戦略",
         "PEST分析",
@@ -561,7 +561,7 @@
         "ポーター",
         "業界分析"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "経営戦略",
         "ファイブフォース",
@@ -602,7 +602,7 @@
         "SO戦略",
         "SWOT分析"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "SWOT分析",
         "クロスSWOT",
@@ -643,7 +643,7 @@
         "負け犬",
         "ポートフォリオ管理"
       ],
-      "related_page_id": "S-02-02",
+      "related_page_id": "S-02-05",
       "tags": [
         "PPM",
         "経営戦略",
@@ -684,7 +684,7 @@
         "バランストスコアカード",
         "顧客の視点"
       ],
-      "related_page_id": "S-02-02",
+      "related_page_id": "S-02-05",
       "tags": [
         "BSC",
         "経営管理",
@@ -725,7 +725,7 @@
         "競争優位",
         "資源ベース理論"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "コアコンピタンス",
         "経営戦略",
@@ -766,7 +766,7 @@
         "ベストプラクティス",
         "業務改善"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "ベンチマーキング",
         "経営改善"
@@ -806,7 +806,7 @@
         "クロスSWOT",
         "リスク回避"
       ],
-      "related_page_id": "S-02-01",
+      "related_page_id": "S-02-05",
       "tags": [
         "SWOT分析",
         "WT戦略",
@@ -887,7 +887,7 @@
         "成熟期",
         "価格競争"
       ],
-      "related_page_id": "S-02-03",
+      "related_page_id": "S-02-05",
       "tags": [
         "マーケティング",
         "製品ライフサイクル"
@@ -927,7 +927,7 @@
         "ウォンツ",
         "デマンド"
       ],
-      "related_page_id": "S-02-03",
+      "related_page_id": "S-02-05",
       "tags": [
         "マーケティング",
         "顧客理解"
@@ -1007,7 +1007,7 @@
         "Off-JT",
         "人材育成"
       ],
-      "related_page_id": "S-03-02",
+      "related_page_id": "S-03-05",
       "tags": [
         "人材育成",
         "OJT",
@@ -1048,7 +1048,7 @@
         "目標管理",
         "ドラッカー"
       ],
-      "related_page_id": "S-03-02",
+      "related_page_id": "S-03-05",
       "tags": [
         "人事管理",
         "MBO",
@@ -1089,7 +1089,7 @@
         "二要因理論",
         "モチベーション"
       ],
-      "related_page_id": "S-03-02",
+      "related_page_id": "S-03-05",
       "tags": [
         "動機づけ理論",
         "ハーズバーグ",
@@ -1130,7 +1130,7 @@
         "組織論",
         "ナレッジマネジメント"
       ],
-      "related_page_id": "S-03-01",
+      "related_page_id": "S-03-06",
       "tags": [
         "組織管理",
         "情報共有",
@@ -1171,7 +1171,7 @@
         "多面評価",
         "人事評価"
       ],
-      "related_page_id": "S-03-02",
+      "related_page_id": "S-03-05",
       "tags": [
         "人事評価",
         "360度評価"
@@ -1211,7 +1211,7 @@
         "ビジネスプロセス",
         "業務改革"
       ],
-      "related_page_id": "S-03-01",
+      "related_page_id": "S-03-05",
       "tags": [
         "BPR",
         "業務改革",
@@ -1252,7 +1252,7 @@
         "コア業務",
         "BPO"
       ],
-      "related_page_id": "S-03-01",
+      "related_page_id": "S-03-05",
       "tags": [
         "アウトソーシング",
         "組織戦略"
@@ -1292,7 +1292,7 @@
         "グローバル調達",
         "リスク管理"
       ],
-      "related_page_id": "S-03-01",
+      "related_page_id": "S-03-05",
       "tags": [
         "アウトソーシング",
         "グローバル",
@@ -1578,7 +1578,7 @@
         "B2B",
         "EC"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-03",
       "tags": [
         "電子商取引",
         "EC",
@@ -1619,7 +1619,7 @@
         "ストック収益",
         "ビジネスモデル"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-10",
       "tags": [
         "ビジネスモデル",
         "サブスクリプション"
@@ -1659,7 +1659,7 @@
         "プラットフォームビジネス",
         "Airbnb"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-03",
       "tags": [
         "ビジネスモデル",
         "シェアリングエコノミー"
@@ -1699,7 +1699,7 @@
         "デジタルトランスフォーメーション",
         "デジタライゼーション"
       ],
-      "related_page_id": "S-05-02",
+      "related_page_id": "S-05-05",
       "tags": [
         "DX",
         "デジタル化",
@@ -1740,7 +1740,7 @@
         "マルチチャネル",
         "顧客体験"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-03",
       "tags": [
         "オムニチャネル",
         "EC",
@@ -1782,7 +1782,7 @@
         "オムニチャネル",
         "デジタルマーケティング"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-03",
       "tags": [
         "O2O",
         "マーケティング",
@@ -1823,7 +1823,7 @@
         "電子データ交換",
         "B2B"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-03",
       "tags": [
         "EDI",
         "電子商取引",
@@ -1864,7 +1864,7 @@
         "ネットワーク効果",
         "両面市場"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-19",
       "tags": [
         "プラットフォーム",
         "ビジネスモデル",
@@ -1905,7 +1905,7 @@
         "チャーンレート",
         "カスタマーサクセス"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-10",
       "tags": [
         "LTV",
         "SaaS",
@@ -1947,7 +1947,7 @@
         "検索エンジン最適化",
         "Webマーケティング"
       ],
-      "related_page_id": "S-05-01",
+      "related_page_id": "S-05-03",
       "tags": [
         "SEO",
         "デジタルマーケティング"
@@ -1987,7 +1987,7 @@
         "個人情報保護法",
         "プライバシー"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "個人情報保護法",
         "法律",
@@ -2028,7 +2028,7 @@
         "オプトイン",
         "迷惑メール"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "法律",
         "メールマーケティング",
@@ -2069,7 +2069,7 @@
         "産業財産権",
         "知的財産"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "知的財産",
         "実用新案権",
@@ -2110,7 +2110,7 @@
         "著作権法",
         "知的財産"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "著作権法",
         "職務著作",
@@ -2152,7 +2152,7 @@
         "発信者情報開示",
         "インターネット法"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "法律",
         "インターネット",
@@ -2193,7 +2193,7 @@
         "不正アクセス",
         "サイバーセキュリティ"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "不正アクセス禁止法",
         "法律",
@@ -2234,7 +2234,7 @@
         "営業秘密",
         "顧客情報"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "不正競争防止法",
         "法律",
@@ -2276,7 +2276,7 @@
         "派遣労働者",
         "派遣元・派遣先"
       ],
-      "related_page_id": "S-06-02",
+      "related_page_id": "S-06-04",
       "tags": [
         "労働法",
         "派遣",
@@ -2317,7 +2317,7 @@
         "不当表示",
         "消費者保護"
       ],
-      "related_page_id": "S-06-01",
+      "related_page_id": "S-06-04",
       "tags": [
         "景品表示法",
         "法律",
@@ -2521,7 +2521,7 @@
         "意思決定",
         "リスク分析"
       ],
-      "related_page_id": "S-07-01",
+      "related_page_id": "S-07-03",
       "tags": [
         "計算問題",
         "意思決定",
@@ -2683,7 +2683,7 @@
         "プロトタイプ",
         "ソフトウェア開発手法"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-04",
       "tags": [
         "開発手法",
         "スパイラルモデル"
@@ -2723,7 +2723,7 @@
         "テスト駆動開発",
         "リファクタリング"
       ],
-      "related_page_id": "M-01-02",
+      "related_page_id": "M-01-03",
       "tags": [
         "開発手法",
         "TDD",
@@ -2764,7 +2764,7 @@
         "コードレビュー",
         "品質管理"
       ],
-      "related_page_id": "M-01-02",
+      "related_page_id": "M-01-09",
       "tags": [
         "品質管理",
         "レビュー",
@@ -2846,7 +2846,7 @@
         "CI/CD",
         "継続的デリバリー"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-08",
       "tags": [
         "DevOps",
         "開発手法",
@@ -2887,7 +2887,7 @@
         "スプリントレトロスペクティブ",
         "アジャイル"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-03",
       "tags": [
         "スクラム",
         "アジャイル",
@@ -2928,7 +2928,7 @@
         "チェンジコントロール",
         "スコープ管理"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-02",
       "tags": [
         "プロジェクト管理",
         "変更管理",
@@ -2969,7 +2969,7 @@
         "ブラックボックステスト",
         "テスト技法"
       ],
-      "related_page_id": "M-01-02",
+      "related_page_id": "M-01-05",
       "tags": [
         "テスト",
         "ホワイトボックス",
@@ -3010,7 +3010,7 @@
         "UAT",
         "システムテスト"
       ],
-      "related_page_id": "M-01-02",
+      "related_page_id": "M-01-05",
       "tags": [
         "テスト",
         "受け入れテスト",
@@ -3051,7 +3051,7 @@
         "継続的インテグレーション",
         "DevOps"
       ],
-      "related_page_id": "M-01-01",
+      "related_page_id": "M-01-08",
       "tags": [
         "CI/CD",
         "DevOps",
@@ -3175,7 +3175,7 @@
         "リスク管理",
         "プロジェクトリスク"
       ],
-      "related_page_id": "M-02-02",
+      "related_page_id": "M-02-01",
       "tags": [
         "リスク管理",
         "プロジェクト管理"
@@ -3420,7 +3420,7 @@
         "稼働率",
         "システム可用性"
       ],
-      "related_page_id": "M-03-02",
+      "related_page_id": "M-03-05",
       "tags": [
         "SLA",
         "計算問題",
@@ -3503,7 +3503,7 @@
         "MTBF",
         "MTTR"
       ],
-      "related_page_id": "M-03-02",
+      "related_page_id": "M-03-05",
       "tags": [
         "稼働率",
         "MTBF",
@@ -3746,7 +3746,7 @@
         "インシデント対応",
         "証拠保全"
       ],
-      "related_page_id": "M-04-01",
+      "related_page_id": "M-04-06",
       "tags": [
         "デジタルフォレンジクス",
         "セキュリティ"
@@ -3786,7 +3786,7 @@
         "インシデント対応",
         "初動対応"
       ],
-      "related_page_id": "M-04-01",
+      "related_page_id": "M-04-06",
       "tags": [
         "ランサムウェア",
         "インシデント対応",
@@ -3827,7 +3827,7 @@
         "インシデント対応",
         "セキュリティ"
       ],
-      "related_page_id": "M-04-01",
+      "related_page_id": "M-04-06",
       "tags": [
         "CSIRT",
         "セキュリティ",
@@ -3908,7 +3908,7 @@
         "ITガバナンス",
         "IT統制"
       ],
-      "related_page_id": "M-04-02",
+      "related_page_id": "M-04-01",
       "tags": [
         "ITガバナンス",
         "COBIT",
@@ -4112,7 +4112,7 @@
         "認証",
         "認可"
       ],
-      "related_page_id": "M-05-01",
+      "related_page_id": "M-05-02",
       "tags": [
         "アクセスコントロール",
         "内部統制",
@@ -4235,7 +4235,7 @@
         "脆弱性診断",
         "セキュリティテスト"
       ],
-      "related_page_id": "M-05-01",
+      "related_page_id": "M-05-06",
       "tags": [
         "ペネトレーションテスト",
         "セキュリティ"
@@ -4245,8 +4245,8 @@
     },
     {
       "question_id": "Q-M-064",
-      "chapter_id": "M-05",
-      "category": "management",
+      "chapter_id": "S-07",
+      "category": "strategy",
       "difficulty": 2,
       "source": "original",
       "question_text": "情報セキュリティの「ゼロトラストセキュリティ」の考え方として最も適切なものはどれか。",
@@ -4275,7 +4275,7 @@
         "ゼロトラストセキュリティ",
         "認証認可"
       ],
-      "related_page_id": "M-04-01",
+      "related_page_id": "S-07-04",
       "tags": [
         "ゼロトラスト",
         "セキュリティアーキテクチャ"
@@ -4520,7 +4520,7 @@
         "Unicode",
         "文字コード"
       ],
-      "related_page_id": "T-01-01",
+      "related_page_id": "T-01-03",
       "tags": [
         "文字コード",
         "UTF-8",
@@ -4602,7 +4602,7 @@
         "bps",
         "単位変換"
       ],
-      "related_page_id": "T-01-01",
+      "related_page_id": "T-01-03",
       "tags": [
         "計算問題",
         "転送速度",
@@ -4683,7 +4683,7 @@
         "解像度",
         "ビット深度"
       ],
-      "related_page_id": "T-01-01",
+      "related_page_id": "T-01-03",
       "tags": [
         "計算問題",
         "画像データ",
@@ -4724,7 +4724,7 @@
         "CPU",
         "命令実行"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-01",
       "tags": [
         "CPU",
         "パイプライン",
@@ -4765,7 +4765,7 @@
         "SRAM",
         "メモリ階層"
       ],
-      "related_page_id": "T-02-02",
+      "related_page_id": "T-03-02",
       "tags": [
         "キャッシュメモリ",
         "メモリ階層",
@@ -4806,7 +4806,7 @@
         "HDD",
         "フラッシュメモリ"
       ],
-      "related_page_id": "T-02-02",
+      "related_page_id": "T-03-04",
       "tags": [
         "SSD",
         "HDD",
@@ -4847,7 +4847,7 @@
         "IPC",
         "CPU性能"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-01",
       "tags": [
         "計算問題",
         "CPU性能",
@@ -4888,7 +4888,7 @@
         "並列処理",
         "機械学習"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-01",
       "tags": [
         "GPU",
         "並列処理",
@@ -4929,7 +4929,7 @@
         "インタラプト",
         "CPU"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-05",
       "tags": [
         "割り込み処理",
         "CPU",
@@ -4970,7 +4970,7 @@
         "データバス",
         "アドレスバス"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-03-01",
       "tags": [
         "バス",
         "コンピュータアーキテクチャ"
@@ -5010,7 +5010,7 @@
         "シリアルバス",
         "ホットプラグ"
       ],
-      "related_page_id": "T-02-01",
+      "related_page_id": "T-06-01",
       "tags": [
         "USB",
         "インターフェース",
@@ -5051,7 +5051,7 @@
         "プロセス管理",
         "排他制御"
       ],
-      "related_page_id": "T-03-01",
+      "related_page_id": "T-05-01",
       "tags": [
         "デッドロック",
         "OS",
@@ -5092,7 +5092,7 @@
         "仮想記憶",
         "ページング"
       ],
-      "related_page_id": "T-03-01",
+      "related_page_id": "T-05-01",
       "tags": [
         "仮想記憶",
         "ページフォルト",
@@ -5133,7 +5133,7 @@
         "スケジューリング",
         "タイムスライス"
       ],
-      "related_page_id": "T-03-01",
+      "related_page_id": "T-05-01",
       "tags": [
         "OS",
         "スケジューリング",
@@ -5174,7 +5174,7 @@
         "ファイルシステム",
         "階層構造"
       ],
-      "related_page_id": "T-03-01",
+      "related_page_id": "T-05-02",
       "tags": [
         "ファイルシステム",
         "OS",
@@ -5215,7 +5215,7 @@
         "findコマンド",
         "ファイル操作"
       ],
-      "related_page_id": "T-03-01",
+      "related_page_id": "T-05-02",
       "tags": [
         "Linux",
         "コマンド",
@@ -5256,7 +5256,7 @@
         "Docker",
         "仮想化"
       ],
-      "related_page_id": "T-03-02",
+      "related_page_id": "T-04-02",
       "tags": [
         "コンテナ",
         "Docker",
@@ -5338,7 +5338,7 @@
         "HAVING",
         "SQL集計"
       ],
-      "related_page_id": "T-04-02",
+      "related_page_id": "T-04-01",
       "tags": [
         "SQL",
         "GROUP BY",
@@ -5462,7 +5462,7 @@
         "仮想テーブル",
         "SQL"
       ],
-      "related_page_id": "T-04-02",
+      "related_page_id": "T-04-01",
       "tags": [
         "データベース",
         "ビュー",
@@ -5503,7 +5503,7 @@
         "SQL結合",
         "JOIN"
       ],
-      "related_page_id": "T-04-02",
+      "related_page_id": "T-04-01",
       "tags": [
         "SQL",
         "JOIN",
@@ -5791,7 +5791,7 @@
         "トンネリング",
         "暗号化"
       ],
-      "related_page_id": "T-05-02",
+      "related_page_id": "T-05-01",
       "tags": [
         "VPN",
         "ネットワークセキュリティ"
@@ -6159,7 +6159,7 @@
         "JIS記号",
         "アルゴリズム"
       ],
-      "related_page_id": "T-08-01",
+      "related_page_id": "T-02-02",
       "tags": [
         "フローチャート",
         "アルゴリズム",
@@ -6200,7 +6200,7 @@
         "繰り返し処理",
         "アルゴリズム"
       ],
-      "related_page_id": "T-08-01",
+      "related_page_id": "T-02-01",
       "tags": [
         "アルゴリズム",
         "擬似コード",
@@ -6241,7 +6241,7 @@
         "二分探索",
         "計算量"
       ],
-      "related_page_id": "T-08-01",
+      "related_page_id": "T-02-05",
       "tags": [
         "アルゴリズム",
         "探索",
@@ -6282,7 +6282,7 @@
         "LIFO",
         "PUSH/POP"
       ],
-      "related_page_id": "T-08-01",
+      "related_page_id": "T-02-03",
       "tags": [
         "データ構造",
         "スタック",
@@ -6774,7 +6774,7 @@
         "Cookie",
         "HTTPステートレス"
       ],
-      "related_page_id": "T-10-02",
+      "related_page_id": "T-10-06",
       "tags": [
         "Webシステム",
         "セッション管理",
@@ -7267,7 +7267,7 @@
         "IaaS",
         "SaaS"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "クラウド",
         "PaaS",
@@ -7390,7 +7390,7 @@
         "スケールアウト",
         "クラウド"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "オートスケーリング",
         "クラウド",
@@ -7432,7 +7432,7 @@
         "エッジサーバー",
         "コンテンツ配信"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "CDN",
         "Webパフォーマンス",
@@ -7473,7 +7473,7 @@
         "ハイブリッドクラウド",
         "クラウド戦略"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "マルチクラウド",
         "クラウド戦略"
@@ -7554,7 +7554,7 @@
         "スポットインスタンス",
         "クラウドコスト最適化"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "クラウドコスト",
         "AWS",
@@ -7595,7 +7595,7 @@
         "Terraform",
         "インフラ自動化"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "IaC",
         "DevOps",
@@ -7677,7 +7677,7 @@
         "ゼロダウンタイム",
         "リリース戦略"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "デプロイ戦略",
         "ブルーグリーン",
@@ -7719,7 +7719,7 @@
         "FaaS",
         "AWS Lambda"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "サーバーレス",
         "FaaS",
@@ -7760,7 +7760,7 @@
         "コンテナオーケストレーション",
         "Docker"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "Kubernetes",
         "コンテナ",
@@ -7884,7 +7884,7 @@
         "IoT",
         "遅延削減"
       ],
-      "related_page_id": "T-11-02",
+      "related_page_id": "T-11-01",
       "tags": [
         "エッジコンピューティング",
         "IoT",

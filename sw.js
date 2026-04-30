@@ -31,8 +31,13 @@
 // v24 (app-version 1.4.0): 教科書 phantom 節 74節を追加（旧 100→174節）。
 //   問題77件の orphan related_page_id をすべて実在節に紐付け、節クイズが
 //   全章で機能するようにした。chapter_id 1件（P-R03S-089: T-10→T-11）も修正。
-const CACHE_NAME = 'ipass-navi-v24';
-const DATA_CACHE_NAME = 'ipass-navi-data-v24';
+// v25 (app-version 1.5.0): Phase C「節5問体制」完成。
+//   既存934問の related_page_id を Sonnet 並列で再マッピング（539問変更・節と内容のズレ81%を解消）。
+//   章不整合 3件修正（Q-M-064, P-R04S-079, P-R06S-009）。
+//   不足節117節に対し節 summary_points 厳守プロンプトで379問追加生成（questions_extra3.json）。
+//   全節が5問以上になり、教科書のポイントに沿った演習が全節で可能に。総問題数 934→1313。
+const CACHE_NAME = 'ipass-navi-v25';
+const DATA_CACHE_NAME = 'ipass-navi-data-v25';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

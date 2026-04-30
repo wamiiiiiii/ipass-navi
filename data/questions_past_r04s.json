@@ -35,7 +35,8 @@
         "ファームウェア",
         "組込みシステム",
         "ソフトウェア分類"
-      ]
+      ],
+      "related_page_id": "T-05-01"
     },
     {
       "question_id": "P-R04S-005",
@@ -70,7 +71,7 @@
         "秘密保持契約",
         "法務"
       ],
-      "related_page_id": "S-02-01"
+      "related_page_id": "S-02-04"
     },
     {
       "question_id": "P-R04S-017",
@@ -104,7 +105,8 @@
         "BYOD",
         "情報セキュリティ",
         "モバイル管理"
-      ]
+      ],
+      "related_page_id": "T-08-01"
     },
     {
       "question_id": "P-R04S-022",
@@ -138,7 +140,8 @@
         "SCM",
         "サプライチェーン",
         "経営情報システム"
-      ]
+      ],
+      "related_page_id": "S-04-01"
     },
     {
       "question_id": "P-R04S-023",
@@ -173,7 +176,7 @@
         "個人情報保護",
         "プライバシー"
       ],
-      "related_page_id": "S-02-01"
+      "related_page_id": "S-02-02"
     },
     {
       "question_id": "P-R04S-024",
@@ -207,7 +210,8 @@
         "教師あり学習",
         "機械学習",
         "AI"
-      ]
+      ],
+      "related_page_id": "S-05-06"
     },
     {
       "question_id": "P-R04S-027",
@@ -242,7 +246,7 @@
         "個人情報保護法",
         "法務"
       ],
-      "related_page_id": "S-02-01"
+      "related_page_id": "S-02-02"
     },
     {
       "question_id": "P-R04S-042",
@@ -276,7 +280,8 @@
         "DevOps",
         "CI/CD",
         "開発手法"
-      ]
+      ],
+      "related_page_id": "M-02-03"
     },
     {
       "question_id": "P-R04S-044",
@@ -310,7 +315,8 @@
         "インシデント管理",
         "ITサービスマネジメント",
         "ITIL"
-      ]
+      ],
+      "related_page_id": "M-04-03"
     },
     {
       "question_id": "P-R04S-045",
@@ -344,7 +350,8 @@
         "ブラックボックステスト",
         "テスト技法",
         "ソフトウェア品質"
-      ]
+      ],
+      "related_page_id": "M-02-01"
     }
   ]
 }
