@@ -4325,47 +4325,6 @@
       "flashcard_skip": false
     },
     {
-      "question_id": "Q-T-056",
-      "chapter_id": "T-01",
-      "category": "technology",
-      "difficulty": 1,
-      "source": "original",
-      "question_text": "16進数「A3」を10進数に変換した結果として正しいものはどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "153"
-        },
-        {
-          "id": "b",
-          "text": "143"
-        },
-        {
-          "id": "c",
-          "text": "163"
-        },
-        {
-          "id": "d",
-          "text": "173"
-        }
-      ],
-      "correct_answer": "c",
-      "explanation": "16進数A=10、3=3。A3=10×16¹+3×16⁰=160+3=163。16進数の各桁はA=10、B=11、C=12、D=13、E=14、F=15に対応する。",
-      "related_terms": [
-        "16進数",
-        "10進数変換",
-        "基数変換"
-      ],
-      "related_page_id": "T-01-01",
-      "tags": [
-        "計算問題",
-        "16進数",
-        "基数変換"
-      ],
-      "flashcard_text": "16進数「A3」を10進数に変換した結果として、以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
       "question_id": "Q-T-057",
       "chapter_id": "T-01",
       "category": "technology",

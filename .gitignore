@@ -21,3 +21,4 @@ test-results/
 data/_gen/
 data/_remap/
 suspect_questions.json
+similar_pairs.json

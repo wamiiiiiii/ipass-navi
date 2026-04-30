@@ -2605,48 +2605,6 @@
       "flashcard_skip": false
     },
     {
-      "question_id": "P-R05S-063",
-      "chapter_id": "T-02",
-      "category": "technology",
-      "difficulty": 2,
-      "source": "past_R05_spring",
-      "source_label": "令和5年度 公開問題",
-      "question_text": "2進数の「1011」を10進数に変換した値はどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "11"
-        },
-        {
-          "id": "b",
-          "text": "10"
-        },
-        {
-          "id": "c",
-          "text": "9"
-        },
-        {
-          "id": "d",
-          "text": "12"
-        }
-      ],
-      "correct_answer": "a",
-      "explanation": "2進数「1011」を10進数に変換します。桁ごとに2の累乗をかけて合算します：1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11。したがって2進数「1011」は10進数で「11」です。出典：IPA ITパスポート試験",
-      "related_terms": [
-        "2進数",
-        "10進数",
-        "基数変換"
-      ],
-      "related_page_id": "T-01-01",
-      "tags": [
-        "2進数",
-        "基数変換",
-        "コンピュータ基礎"
-      ],
-      "flashcard_text": "2進数の「1011」を10進数に変換した値。以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
       "question_id": "P-R05S-064",
       "chapter_id": "T-03",
       "category": "technology",
@@ -2938,48 +2896,6 @@
         "SQL"
       ],
       "flashcard_text": "関係データベース（リレーショナルデータベース）の主キーの役割として、以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
-      "question_id": "P-R05S-071",
-      "chapter_id": "T-05",
-      "category": "technology",
-      "difficulty": 2,
-      "source": "past_R05_spring",
-      "source_label": "令和5年度 公開問題",
-      "question_text": "SQLのSELECT文でデータを絞り込む際に使用する句はどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "WHERE"
-        },
-        {
-          "id": "b",
-          "text": "ORDER BY"
-        },
-        {
-          "id": "c",
-          "text": "GROUP BY"
-        },
-        {
-          "id": "d",
-          "text": "HAVING"
-        }
-      ],
-      "correct_answer": "a",
-      "explanation": "SQLのSELECT文でレコードを条件絞り込みする際にはWHERE句を使用します。GROUP BYはグループ化、ORDER BYは並び替え、HAVINGはGROUP BY後のグループに対する条件絞り込みに使います。WHEREとHAVINGの違いに注意が必要です。出典：IPA ITパスポート試験",
-      "related_terms": [
-        "SQL",
-        "WHERE",
-        "SELECT文"
-      ],
-      "related_page_id": "T-04-01",
-      "tags": [
-        "SQL",
-        "データベース",
-        "WHERE"
-      ],
-      "flashcard_text": "SQLのSELECT文でデータを絞り込む際に使用する句。以下は正しい？",
       "flashcard_skip": false
     },
     {

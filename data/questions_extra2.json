@@ -4610,89 +4610,6 @@
       "flashcard_skip": false
     },
     {
-      "question_id": "Q-T-145",
-      "chapter_id": "T-01",
-      "category": "technology",
-      "difficulty": 1,
-      "source": "original",
-      "question_text": "2進数の「1011」を10進数に変換した値として、正しいものはどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "11"
-        },
-        {
-          "id": "b",
-          "text": "9"
-        },
-        {
-          "id": "c",
-          "text": "13"
-        },
-        {
-          "id": "d",
-          "text": "15"
-        }
-      ],
-      "correct_answer": "a",
-      "explanation": "2進数1011を10進数に変換する。1×2³＋0×2²＋1×2¹＋1×2⁰＝8＋0＋2＋1＝11。各桁の重みは右から2⁰・2¹・2²・2³となる。",
-      "related_terms": [
-        "2進数",
-        "10進数",
-        "基数変換"
-      ],
-      "related_page_id": "T-01-01",
-      "tags": [
-        "コンピュータ基礎",
-        "2進数",
-        "計算問題"
-      ],
-      "flashcard_text": "2進数の「1011」を10進数に変換した値として、以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
-      "question_id": "Q-T-146",
-      "chapter_id": "T-01",
-      "category": "technology",
-      "difficulty": 2,
-      "source": "original",
-      "question_text": "16進数「2F」を10進数に変換した値として、正しいものはどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "37"
-        },
-        {
-          "id": "b",
-          "text": "45"
-        },
-        {
-          "id": "c",
-          "text": "47"
-        },
-        {
-          "id": "d",
-          "text": "63"
-        }
-      ],
-      "correct_answer": "c",
-      "explanation": "16進数の「F」は10進数の15に相当する。2F＝2×16¹＋15×16⁰＝32＋15＝47。16進数ではA=10、B=11、C=12、D=13、E=14、F=15である。",
-      "related_terms": [
-        "16進数",
-        "10進数",
-        "基数変換",
-        "16進数"
-      ],
-      "related_page_id": "T-01-01",
-      "tags": [
-        "コンピュータ基礎",
-        "16進数",
-        "計算問題"
-      ],
-      "flashcard_text": "16進数「2F」を10進数に変換した値として、以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
       "question_id": "Q-T-147",
       "chapter_id": "T-01",
       "category": "technology",
@@ -4944,47 +4861,6 @@
         "数値表現"
       ],
       "flashcard_text": "浮動小数点数の説明として、以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
-      "question_id": "Q-T-153",
-      "chapter_id": "T-01",
-      "category": "technology",
-      "difficulty": 2,
-      "source": "original",
-      "question_text": "論理演算のXOR（排他的論理和）において、入力A=1、B=1のとき結果はどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "0"
-        },
-        {
-          "id": "b",
-          "text": "1"
-        },
-        {
-          "id": "c",
-          "text": "2"
-        },
-        {
-          "id": "d",
-          "text": "不定"
-        }
-      ],
-      "correct_answer": "a",
-      "explanation": "XOR（排他的論理和）は2つの入力が異なるときに1、同じときに0を出力する。A=1、B=1は同じ値なので1 XOR 1＝0となる。1 XOR 0や0 XOR 1の場合は1になる。",
-      "related_terms": [
-        "XOR",
-        "排他的論理和",
-        "論理演算"
-      ],
-      "related_page_id": "T-01-02",
-      "tags": [
-        "コンピュータ基礎",
-        "XOR",
-        "論理演算"
-      ],
-      "flashcard_text": "論理演算のXOR（排他的論理和）において、入力A=1、B=1のとき結果。以下は正しい？",
       "flashcard_skip": false
     },
     {
@@ -8130,48 +8006,6 @@
         "APT"
       ],
       "flashcard_text": "標的型攻撃メールの特徴として、以下は正しい？",
-      "flashcard_skip": false
-    },
-    {
-      "question_id": "Q-T-228",
-      "chapter_id": "T-11",
-      "category": "technology",
-      "difficulty": 2,
-      "source": "original",
-      "question_text": "ISMS（情報セキュリティマネジメントシステム）の国際規格として、正しいものはどれか。",
-      "choices": [
-        {
-          "id": "a",
-          "text": "ISO/IEC 27001"
-        },
-        {
-          "id": "b",
-          "text": "ISO/IEC 9001"
-        },
-        {
-          "id": "c",
-          "text": "ISO/IEC 20000"
-        },
-        {
-          "id": "d",
-          "text": "ISO/IEC 14001"
-        }
-      ],
-      "correct_answer": "a",
-      "explanation": "ISO/IEC 27001はISMS（情報セキュリティマネジメントシステム）の国際規格であり、情報セキュリティのリスクを組織的に管理するための要求事項を定めている。認証取得によりセキュリティ管理体制を第三者機関が保証する。",
-      "related_terms": [
-        "ISMS",
-        "ISO/IEC 27001",
-        "情報セキュリティ",
-        "リスク管理"
-      ],
-      "related_page_id": "T-11-10",
-      "tags": [
-        "セキュリティ",
-        "ISMS",
-        "ISO 27001"
-      ],
-      "flashcard_text": "ISMS（情報セキュリティマネジメントシステム）の国際規格として、以下は正しい？",
       "flashcard_skip": false
     },
     {

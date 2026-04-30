@@ -250,21 +250,64 @@ export function filterWeakQuestions(questionsData, weakIds) {
 }
 
 /**
- * 問題をシャッフルする（Fisher-Yatesアルゴリズム）
+ * 問題をシャッフルする（Fisher-Yatesアルゴリズム＋同節分散）
+ *
+ * 同じ related_page_id の問題が連続しないように後段でリオーダする。
+ * これにより「同じような問題が続けて出る」体感を抑える。
+ *
  * @param {Object[]} questions - シャッフルする問題の配列
  * @returns {Object[]} シャッフルされた新しい配列（元配列は変更しない）
  */
 export function shuffleQuestions(questions) {
-  // スプレッドでコピーしてからシャッフル（イミュータブル）
+  // 1段目: Fisher-Yates でランダム化（イミュータブル）
   const shuffled = [...questions];
-
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    // 分割代入でスワップ
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
 
-  return shuffled;
+  // 2段目: 同じ related_page_id の問題が連続しないように後段リオーダ
+  // 短い配列（5問未満）は元のまま返す（並べ替えても効果が薄い）
+  if (shuffled.length < 5) {
+    return shuffled;
+  }
+  return spreadByPage(shuffled);
+}
+
+/**
+ * 同じ related_page_id が連続しないように並び替える
+ *
+ * 戦略: 各 page_id ごとにキューを作り、ラウンドロビン的に取り出す。
+ * ただし完全なラウンドロビンだと「教科書順」になってしまうので、
+ * 各キューから取り出す順序自体もシャッフルしておく。
+ *
+ * @param {Object[]} questions - 既にシャッフル済みの問題配列
+ * @returns {Object[]} 同節連続を抑制した配列
+ */
+function spreadByPage(questions) {
+  // page_id ごとにキューを作る（既にシャッフル済みなのでキュー内はランダム順）
+  const queues = new Map();
+  for (const q of questions) {
+    const pid = q.related_page_id || '__no_page__';
+    if (!queues.has(pid)) queues.set(pid, []);
+    queues.get(pid).push(q);
+  }
+
+  const result = [];
+  let prevPage = null;
+  while (result.length < questions.length) {
+    // 残ってる page_id の候補（直前と異なるものを優先）
+    const available = [...queues.entries()].filter(([_, q]) => q.length > 0);
+    if (available.length === 0) break;
+    // 直前以外を優先、無ければ直前と同じでもOK
+    const candidates = available.filter(([pid]) => pid !== prevPage);
+    const pool = candidates.length > 0 ? candidates : available;
+    // pool 内からランダム選択
+    const [pid, queue] = pool[Math.floor(Math.random() * pool.length)];
+    result.push(queue.shift());
+    prevPage = pid;
+  }
+  return result;
 }
 
 /**

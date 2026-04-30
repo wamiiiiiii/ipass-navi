@@ -112,6 +112,14 @@ export async function renderQuiz(container, params = {}, query = {}) {
     return;
   }
 
+  // SRS復習モード：ホーム「今日の復習」からの遷移は分野/問題数の選択不要
+  // （SRSが期日来た問題を全件出すため）。モード選択画面 + モーダルの二重表示を回避する
+  if (query.mode === 'review') {
+    renderInto(container, [createLoadingSpinner()]);
+    await startSession(container, 'review', 'all', null);
+    return;
+  }
+
   // URLパラメータに chapter が指定されている場合はその章の問題を開始
   if (query.chapter) {
     renderInto(container, [createLoadingSpinner()]);

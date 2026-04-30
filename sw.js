@@ -36,8 +36,13 @@
 //   章不整合 3件修正（Q-M-064, P-R04S-079, P-R06S-009）。
 //   不足節117節に対し節 summary_points 厳守プロンプトで379問追加生成（questions_extra3.json）。
 //   全節が5問以上になり、教科書のポイントに沿った演習が全節で可能に。総問題数 934→1313。
-const CACHE_NAME = 'ipass-navi-v25';
-const DATA_CACHE_NAME = 'ipass-navi-data-v25';
+// v26 (app-version 1.5.1): バグ修正・体験改善。
+//   ホーム「今日の復習」からの遷移でモード選択画面が下に残るバグを修正
+//   （mode=review を直接 startSession に流す。weak と同様の挙動）。
+//   重複問題7件削除（正解一致＋類似度70%以上ペアの片方）。総問題数 1313→1306。
+//   shuffleQuestions に同節連続出題回避のリオーダを追加（同じような問題が続く体感を抑制）。
+const CACHE_NAME = 'ipass-navi-v26';
+const DATA_CACHE_NAME = 'ipass-navi-data-v26';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
