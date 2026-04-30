@@ -144,10 +144,43 @@ export async function loadQuestions() {
 
 /**
  * 用語辞書データを取得する
- * @returns {Promise<Object>} glossary.jsonのデータ
+ *
+ * 内部的には複数の glossary*.json ファイルを並行 fetch して統合して返す。
+ * - glossary.json              : メイン
+ * - glossary_extra_part1.json  : 追加（過去問頻出語）
+ * - glossary_extra_part2.json  : 追加（過去問頻出語）
+ * - glossary_extra_part3.json  : 追加（過去問頻出語）
+ * - glossary_extra_part4.json  : 教科書 keywords 由来 722語（v1.7.0で追加）
+ *
+ * @returns {Promise<{terms: Array<Object>, version?: string}>} 統合された用語データ
  */
 export async function loadGlossary() {
-  return fetchJson('./data/glossary.json');
+  const MERGED_KEY = '__merged_glossary__';
+  if (_cache.has(MERGED_KEY)) {
+    return _cache.get(MERGED_KEY);
+  }
+
+  const sources = [
+    './data/glossary.json',
+    './data/glossary_extra_part1.json',
+    './data/glossary_extra_part2.json',
+    './data/glossary_extra_part3.json',
+    './data/glossary_extra_part4.json',
+  ];
+
+  const promise = (async () => {
+    const datas = await Promise.all(sources.map((src) => fetchJson(src)));
+    const merged = { terms: [] };
+    for (const data of datas) {
+      if (!data) continue;
+      const terms = Array.isArray(data) ? data : (data.terms || []);
+      merged.terms = merged.terms.concat(terms);
+    }
+    return merged;
+  })();
+
+  _cache.set(MERGED_KEY, promise);
+  return promise;
 }
 
 /**

@@ -21,5 +21,6 @@ test-results/
 data/_gen/
 data/_remap/
 data/_expand/
+data/_gloss/
 suspect_questions.json
 similar_pairs.json

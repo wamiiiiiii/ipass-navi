@@ -45,8 +45,12 @@
 //   body 平均 361字 → 554字（既存節 511字とのギャップ解消）。
 //   各節に「具体例・試験での問われ方・関連用語との対比」を追加し、keywords も補完。
 //   全174節 body 中央540字、500〜600字が80節と最多。教科書として読み応えのある状態に。
-const CACHE_NAME = 'ipass-navi-v27';
-const DATA_CACHE_NAME = 'ipass-navi-data-v27';
+// v28 (app-version 1.7.0): 用語辞書を 828→1550語 に拡張（+722語）。
+//   教科書 keywords のうち未登録だった 722語を Haiku 並列で生成し glossary_extra_part4.json として追加。
+//   各用語に reading（読み）・definition（120〜200字）・related_terms・exam_frequency を付与。
+//   loadGlossary を複数ファイル統合形式に改修（loadQuestions と同じ方式）。
+const CACHE_NAME = 'ipass-navi-v28';
+const DATA_CACHE_NAME = 'ipass-navi-data-v28';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -83,18 +87,23 @@ const APP_SHELL_FILES = [
 ];
 
 // JSONデータファイル：Cache First で管理するファイル
-// loadQuestions() が並行fetchで統合するため、すべての questions*.json を含める
+// loadQuestions() / loadGlossary() が並行fetchで統合するため、すべての分割ファイルを含める
 const DATA_FILES = [
   './data/chapters.json',
   './data/questions.json',
   './data/questions_extra1.json',
   './data/questions_extra2.json',
+  './data/questions_extra3.json',
   './data/questions_past2.json',
   './data/questions_past_r02a.json',
   './data/questions_past_r04s.json',
   './data/questions_past_r05.json',
   './data/questions_past_r06.json',
   './data/glossary.json',
+  './data/glossary_extra_part1.json',
+  './data/glossary_extra_part2.json',
+  './data/glossary_extra_part3.json',
+  './data/glossary_extra_part4.json',
   './data/diagrams.json',
 ];
 
