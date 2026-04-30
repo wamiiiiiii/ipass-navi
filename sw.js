@@ -41,8 +41,12 @@
 //   （mode=review を直接 startSession に流す。weak と同様の挙動）。
 //   重複問題7件削除（正解一致＋類似度70%以上ペアの片方）。総問題数 1313→1306。
 //   shuffleQuestions に同節連続出題回避のリオーダを追加（同じような問題が続く体感を抑制）。
-const CACHE_NAME = 'ipass-navi-v26';
-const DATA_CACHE_NAME = 'ipass-navi-data-v26';
+// v27 (app-version 1.6.0): 教科書本文を Phase B 追加74節で拡張。
+//   body 平均 361字 → 554字（既存節 511字とのギャップ解消）。
+//   各節に「具体例・試験での問われ方・関連用語との対比」を追加し、keywords も補完。
+//   全174節 body 中央540字、500〜600字が80節と最多。教科書として読み応えのある状態に。
+const CACHE_NAME = 'ipass-navi-v27';
+const DATA_CACHE_NAME = 'ipass-navi-data-v27';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

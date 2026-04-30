@@ -20,5 +20,6 @@ test-results/
 # Phase C 中間ファイル（再マッピング・生成用ペイロード）
 data/_gen/
 data/_remap/
+data/_expand/
 suspect_questions.json
 similar_pairs.json
