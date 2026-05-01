@@ -289,8 +289,9 @@ function appendTermsToList(listEl, terms) {
 
   // 50音順でグループ化（検索中はグループなし）
   if (_currentFilter.query) {
-    // 検索中はグループなしでフラットに表示
-    terms.forEach((term) => {
+    // 検索中はグループなしでフラットに表示（読み仮名で50音順ソート）
+    const sortedTerms = terms.slice().sort((a, b) => a.reading.localeCompare(b.reading, 'ja'));
+    sortedTerms.forEach((term) => {
       listEl.appendChild(buildTermCard(term));
     });
     return;
@@ -500,6 +501,9 @@ function groupTermsByKana(terms) {
     'わをん':                   'わ行',
   };
 
+  // グループの表示順（あ行→か行→...→わ行→その他）
+  const rowOrder = ['あ行', 'か行', 'さ行', 'た行', 'な行', 'は行', 'ま行', 'や行', 'ら行', 'わ行', 'その他'];
+
   /** 文字が属する行ラベルを返す */
   const getKanaRow = (char) => {
     for (const [chars, label] of Object.entries(kanaRowMap)) {
@@ -521,7 +525,13 @@ function groupTermsByKana(terms) {
     groupMap.get(rowLabel).push(term);
   });
 
-  return Array.from(groupMap.entries()).map(([header, terms]) => ({ header, terms }));
+  // グループ自体は rowOrder の順、各グループ内は reading で50音順にソート
+  return rowOrder
+    .filter((label) => groupMap.has(label))
+    .map((label) => ({
+      header: label,
+      terms: groupMap.get(label).slice().sort((a, b) => a.reading.localeCompare(b.reading, 'ja')),
+    }));
 }
 
 /**

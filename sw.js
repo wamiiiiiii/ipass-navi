@@ -63,8 +63,12 @@
 //      アノテーションを絶対配置の同一行（display:flex + position:absolute）から
 //      縦並び（display:block + position:relative）に変更し、長文も折り返して
 //      重ならないようにした。
-const CACHE_NAME = 'ipass-navi-v30';
-const DATA_CACHE_NAME = 'ipass-navi-data-v30';
+// v31 (app-version 1.7.3): 用語辞書の50音順ソート修正。
+//   グループ自体（あ行→か行→...）の表示順がデータのロード順依存だった問題を rowOrder で固定。
+//   各グループ内も reading で localeCompare('ja') による50音順ソートを追加。
+//   検索結果も reading 順でソートして一貫した表示に。
+const CACHE_NAME = 'ipass-navi-v31';
+const DATA_CACHE_NAME = 'ipass-navi-data-v31';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
