@@ -428,29 +428,40 @@
   white-space: nowrap;
 }
 
-/* アノテーション行（上・下） */
+/* アノテーション行（上・下）
+   各アノテーションを縦に積むことで、長文ラベルが折り返しても
+   隣同士やセグメントバーと重ならないようにする */
 .diagram-timeline-annotations {
-  display: flex;
+  display: block;
   position: relative;
-  height: 28px;
 }
 
-.diagram-annotations-above { margin-bottom: 4px; }
-.diagram-annotations-below { margin-top: 4px; }
+.diagram-annotations-above { margin-bottom: 6px; }
+.diagram-annotations-below { margin-top: 6px; }
 
-/* 各アノテーション */
+/* 各アノテーション（縦並び・width と margin-left で from-to の範囲を示す） */
 .diagram-timeline-ann {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: relative;
+  margin-bottom: 4px;
 }
 
-/* アノテーションのラベルテキスト */
+.diagram-timeline-ann:last-child {
+  margin-bottom: 0;
+}
+
+/* アノテーションのラベルテキスト（折り返し対応・可読性向上） */
 .diagram-timeline-ann-label {
   font-size: 10px;
   font-weight: 700;
   color: var(--diagram-text-secondary);
+  text-align: center;
+  line-height: 1.3;
+  white-space: normal;
+  word-break: break-word;
+  padding: 0 2px;
 }
 
 /* アノテーションの矢印 */

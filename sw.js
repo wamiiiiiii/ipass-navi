@@ -54,8 +54,17 @@
 //   遅れて完了した renderHome が main を上書きしてしまう問題を修正。
 //   home.js / textbook.js / glossary.js の async 描画完了直前に getCurrentRoute() ガードを追加し、
 //   レース時に古い描画を破棄するようにした。E2E mobile-safari の設定タブテストが安定通過。
-const CACHE_NAME = 'ipass-navi-v29';
-const DATA_CACHE_NAME = 'ipass-navi-data-v29';
+// v30 (app-version 1.7.2): 実機で発覚した2件のレイアウト崩れを修正。
+//   1) 辞書のスクロール時に50音インデックスが少しズレて文字に被る問題：
+//      検索バーとフィルターバーをひとつの sticky 親 (.glossary-sticky-header) に集約し、
+//      検索バー高さに依存せず両方が一体でスクロール追従するようにした。
+//   2) 教科書「損益分岐点分析」の図解 (timeline型) で長文 annotation が
+//      固定 28px 高さからはみ出して隣の要素に被る問題：
+//      アノテーションを絶対配置の同一行（display:flex + position:absolute）から
+//      縦並び（display:block + position:relative）に変更し、長文も折り返して
+//      重ならないようにした。
+const CACHE_NAME = 'ipass-navi-v30';
+const DATA_CACHE_NAME = 'ipass-navi-data-v30';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

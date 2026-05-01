@@ -68,11 +68,12 @@ export async function renderGlossary(container, params = {}, query = {}) {
 function renderGlossaryScreen(container) {
   const screen = createElement('div', { classes: ['glossary-screen'] });
 
-  // 検索バー
-  screen.appendChild(buildSearchBar(container));
-
-  // フィルタータブバー
-  screen.appendChild(buildFilterBar(container));
+  // 検索バー＋フィルタータブバーをまとめて sticky にする親
+  // （検索バーの高さに依存せず、両方が一体で固定スクロールするため）
+  const stickyHeader = createElement('div', { classes: ['glossary-sticky-header'] });
+  stickyHeader.appendChild(buildSearchBar(container));
+  stickyHeader.appendChild(buildFilterBar(container));
+  screen.appendChild(stickyHeader);
 
   // 用語リスト
   screen.appendChild(buildTermList());
