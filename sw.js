@@ -49,8 +49,13 @@
 //   教科書 keywords のうち未登録だった 722語を Haiku 並列で生成し glossary_extra_part4.json として追加。
 //   各用語に reading（読み）・definition（120〜200字）・related_terms・exam_frequency を付与。
 //   loadGlossary を複数ファイル統合形式に改修（loadQuestions と同じ方式）。
-const CACHE_NAME = 'ipass-navi-v28';
-const DATA_CACHE_NAME = 'ipass-navi-data-v28';
+// v29 (app-version 1.7.1): mobile-safari の設定タブ遷移バグ修正。
+//   reload直後の renderHome 非同期データロードと、その後のタブ切替の renderSettings(同期) が競合し、
+//   遅れて完了した renderHome が main を上書きしてしまう問題を修正。
+//   home.js / textbook.js / glossary.js の async 描画完了直前に getCurrentRoute() ガードを追加し、
+//   レース時に古い描画を破棄するようにした。E2E mobile-safari の設定タブテストが安定通過。
+const CACHE_NAME = 'ipass-navi-v29';
+const DATA_CACHE_NAME = 'ipass-navi-data-v29';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [

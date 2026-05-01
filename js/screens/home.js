@@ -6,7 +6,7 @@
 
 import { getProgress, getQuizResults, getSettings, getTodayReadingSeconds, getReadingTime, getSRS, getWeakQuestions } from '../store.js';
 import { loadChapters, loadQuestions } from '../dataLoader.js';
-import { navigate } from '../router.js';
+import { navigate, getCurrentRoute } from '../router.js';
 import {
   createElement,
   renderInto,
@@ -111,11 +111,14 @@ export async function renderHome(container) {
       todayPlan,
     }, progress);
 
+    // 非同期データロード中に他画面へ遷移していたら、ホーム描画は破棄する（レース防止）
+    if (getCurrentRoute()?.name !== 'home') return;
     renderInto(container, [screenEl]);
 
   } catch (error) {
     // エラー時はエラー表示を描画
     console.error('[Home] 描画に失敗しました:', error);
+    if (getCurrentRoute()?.name !== 'home') return;
     renderInto(container, [
       createEmptyState('⚠️', 'データの読み込みに失敗しました。ページを更新してください。'),
     ]);

@@ -6,7 +6,7 @@
 
 import { getProgress, markPageAsRead, markChapterCompleted, recordReadingTime } from '../store.js';
 import { loadChapters, loadGlossary, loadDiagrams, loadQuestions, findTermByName } from '../dataLoader.js';
-import { navigate, goBack } from '../router.js';
+import { navigate, goBack, getCurrentRoute } from '../router.js';
 import { renderDiagram } from '../utils/diagram.js';
 import {
   createElement,
@@ -41,6 +41,8 @@ export async function renderTextbook(container, params = {}, query = {}) {
 
   try {
     const chaptersData = await loadChapters();
+    // 非同期データロード中に他画面へ遷移していたら、教科書描画は破棄する（レース防止）
+    if (getCurrentRoute()?.name !== 'textbook') return;
     const progress = getProgress();
 
     if (!params.id) {
@@ -63,6 +65,8 @@ export async function renderTextbook(container, params = {}, query = {}) {
         loadDiagrams(),
         loadQuestions(),
       ]);
+      // 並行ロード中に他画面へ遷移していたら描画を破棄する
+      if (getCurrentRoute()?.name !== 'textbook') return;
       renderPageContent(container, chaptersData, progress, query.page, glossaryData, diagramsData, questionsData);
     } else {
       // chapterIdのみ指定 → 章の最初の節を表示
@@ -74,6 +78,7 @@ export async function renderTextbook(container, params = {}, query = {}) {
 
   } catch (error) {
     console.error('[Textbook] 描画に失敗しました:', error);
+    if (getCurrentRoute()?.name !== 'textbook') return;
     renderInto(container, [
       createEmptyState('⚠️', 'データの読み込みに失敗しました。ページを更新してください。'),
     ]);

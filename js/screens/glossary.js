@@ -5,7 +5,7 @@
  */
 
 import { loadGlossary, searchTerms, filterTermsByKanaRow } from '../dataLoader.js';
-import { navigate } from '../router.js';
+import { navigate, getCurrentRoute } from '../router.js';
 import {
   createElement,
   renderInto,
@@ -40,6 +40,8 @@ export async function renderGlossary(container, params = {}, query = {}) {
   try {
     // データを読み込む（2回目以降はdataLoaderのキャッシュから返る）
     _glossaryData = await loadGlossary();
+    // 非同期データロード中に他画面へ遷移していたら、用語辞書描画は破棄する（レース防止）
+    if (getCurrentRoute()?.name !== 'glossary') return;
 
     // フィルター状態を初期化（URLパラメータを反映）
     _currentFilter = {
@@ -52,6 +54,7 @@ export async function renderGlossary(container, params = {}, query = {}) {
 
   } catch (error) {
     console.error('[Glossary] 描画に失敗しました:', error);
+    if (getCurrentRoute()?.name !== 'glossary') return;
     renderInto(container, [
       createEmptyState('⚠️', 'データの読み込みに失敗しました。ページを更新してください。'),
     ]);
