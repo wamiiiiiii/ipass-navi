@@ -338,6 +338,48 @@ function buildDataSection(container) {
 
   const card = createElement('div', { classes: ['settings-card'] });
 
+  // データのバックアップ（エクスポート）項目
+  // localStorage の ipass_* を JSON ファイルにダウンロード。機種変更・キャッシュクリア時の備え。
+  const exportItem = createElement('div', { classes: ['settings-item'] });
+  exportItem.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-blue'], text: '⬇️' }));
+
+  const exportText = createElement('div', { classes: ['settings-item-text'] });
+  exportText.appendChild(createElement('div', { classes: ['settings-item-label'], text: 'データをバックアップ' }));
+  exportText.appendChild(createElement('div', {
+    classes: ['settings-item-sublabel'],
+    text: '学習進捗を JSON ファイルに書き出します',
+  }));
+  exportItem.appendChild(exportText);
+  exportItem.appendChild(createElement('span', { classes: ['settings-item-arrow'], text: '›' }));
+
+  exportItem.addEventListener('click', () => {
+    exportAllData();
+  });
+
+  card.appendChild(exportItem);
+  card.appendChild(createElement('div', { classes: ['divider'], attrs: { style: 'margin:0' } }));
+
+  // データの復元（インポート）項目
+  const importItem = createElement('div', { classes: ['settings-item'] });
+  importItem.appendChild(createElement('div', { classes: ['settings-item-icon', 'icon-bg-green'], text: '⬆️' }));
+
+  const importText = createElement('div', { classes: ['settings-item-text'] });
+  importText.appendChild(createElement('div', { classes: ['settings-item-label'], text: 'データを復元' }));
+  importText.appendChild(createElement('div', {
+    classes: ['settings-item-sublabel'],
+    text: 'バックアップファイルから学習データを復元します',
+  }));
+  importItem.appendChild(importText);
+  importItem.appendChild(createElement('span', { classes: ['settings-item-arrow'], text: '›' }));
+
+  // クリックで隠し file input を起動
+  importItem.addEventListener('click', () => {
+    showImportConfirmDialog(container);
+  });
+
+  card.appendChild(importItem);
+  card.appendChild(createElement('div', { classes: ['divider'], attrs: { style: 'margin:0' } }));
+
   // データリセット項目
   const resetItem = createElement('div', { classes: ['settings-item'] });
 
@@ -363,6 +405,163 @@ function buildDataSection(container) {
   section.appendChild(card);
 
   return section;
+}
+
+/**
+ * 全データを JSON ファイルとしてダウンロードする
+ * localStorage の ipass_ プレフィックスのキーを全部まとめてエクスポート。
+ * 機種変更・キャッシュクリア時の復元用。
+ */
+function exportAllData() {
+  const data = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith('ipass_')) {
+      data[key] = localStorage.getItem(key);
+    }
+  }
+
+  const versionMeta = document.querySelector('meta[name="app-version"]');
+  const appVersion = versionMeta?.getAttribute('content') || '';
+
+  const payload = {
+    app: 'ipass-navi',
+    version: appVersion,
+    exported_at: new Date().toISOString(),
+    data,
+  };
+
+  const json = JSON.stringify(payload, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  const ymd = new Date().toISOString().slice(0, 10);
+  a.download = `ipass-navi-backup-${ymd}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+  showToast(`バックアップをダウンロードしました（${Object.keys(data).length} 件）`, 'success');
+}
+
+/**
+ * インポート（復元）の確認ダイアログを表示する
+ * 既存データを上書きするので警告してから実行する。
+ * @param {HTMLElement} container - 設定画面のコンテナ（復元後の再描画用）
+ */
+function showImportConfirmDialog(container) {
+  const overlay = createElement('div', { classes: ['modal-overlay', 'is-visible'] });
+  const dialog = createElement('div', { classes: ['modal-dialog'], attrs: { role: 'dialog', 'aria-modal': 'true' } });
+
+  dialog.appendChild(createElement('h2', { classes: ['modal-title'], text: 'データを復元しますか？' }));
+  dialog.appendChild(createElement('p', {
+    classes: ['modal-message'],
+    text: 'バックアップファイルから学習データを読み込みます。現在のデータは上書きされます。続行しますか？',
+  }));
+
+  const actions = createElement('div', { classes: ['modal-actions'] });
+
+  const cancelBtn = createElement('button', { classes: ['modal-btn', 'modal-btn-cancel'], text: 'キャンセル' });
+  const confirmBtn = createElement('button', { classes: ['modal-btn', 'modal-btn-confirm'], text: 'ファイルを選ぶ' });
+
+  let cleanupFocusTrap = null;
+
+  function closeDialog() {
+    if (cleanupFocusTrap) cleanupFocusTrap();
+    overlay.remove();
+  }
+
+  cancelBtn.addEventListener('click', closeDialog);
+  confirmBtn.addEventListener('click', () => {
+    closeDialog();
+    triggerImportFileSelect(container);
+  });
+
+  actions.appendChild(cancelBtn);
+  actions.appendChild(confirmBtn);
+  dialog.appendChild(actions);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeDialog();
+  });
+
+  overlay.appendChild(dialog);
+  document.body.appendChild(overlay);
+
+  cleanupFocusTrap = createFocusTrap(dialog, closeDialog);
+}
+
+/**
+ * 隠し input[type=file] を生成してファイル選択ダイアログを起動する
+ * @param {HTMLElement} container - 設定画面のコンテナ
+ */
+function triggerImportFileSelect(container) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json,.json';
+  input.style.display = 'none';
+
+  input.addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    importDataFromFile(file, container);
+  });
+
+  document.body.appendChild(input);
+  input.click();
+  // クリック後すぐに DOM から除去（次回起動時も新規生成するため）
+  setTimeout(() => input.remove(), 1000);
+}
+
+/**
+ * 選択された JSON ファイルから localStorage に復元する
+ * @param {File} file - ユーザーが選択したファイル
+ * @param {HTMLElement} container - 設定画面のコンテナ（復元後の再描画用）
+ */
+function importDataFromFile(file, container) {
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const obj = JSON.parse(e.target.result);
+      // バックアップファイルの形式を検証
+      if (!obj || obj.app !== 'ipass-navi' || !obj.data || typeof obj.data !== 'object') {
+        throw new Error('iPass ナビのバックアップファイルではありません');
+      }
+
+      // 既存の ipass_* キーを一旦クリアして、バックアップで上書き
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('ipass_')) keysToRemove.push(k);
+      }
+      keysToRemove.forEach((k) => localStorage.removeItem(k));
+
+      let count = 0;
+      for (const [key, value] of Object.entries(obj.data)) {
+        if (typeof key === 'string' && key.startsWith('ipass_')) {
+          localStorage.setItem(key, String(value));
+          count++;
+        }
+      }
+
+      // テーマ・文字サイズ等を再適用するため設定画面を再描画
+      showToast(`${count} 件のデータを復元しました`, 'success');
+      renderSettings(container);
+      const settings = getSettings();
+      applyTheme(settings.theme);
+      applyFontSize(settings.font_size);
+    } catch (err) {
+      console.error('[Settings] インポート失敗:', err);
+      showToast(`復元失敗: ${err.message}`, 'error', 4000);
+    }
+  };
+  reader.onerror = () => {
+    showToast('ファイルの読み込みに失敗しました', 'error');
+  };
+  reader.readAsText(file);
 }
 
 /**

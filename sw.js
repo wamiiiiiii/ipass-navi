@@ -67,8 +67,13 @@
 //   グループ自体（あ行→か行→...）の表示順がデータのロード順依存だった問題を rowOrder で固定。
 //   各グループ内も reading で localeCompare('ja') による50音順ソートを追加。
 //   検索結果も reading 順でソートして一貫した表示に。
-const CACHE_NAME = 'ipass-navi-v31';
-const DATA_CACHE_NAME = 'ipass-navi-data-v31';
+// v32 (app-version 1.7.4): データのエクスポート/インポート機能を追加。
+//   設定画面「データ管理」に「データをバックアップ」「データを復元」項目を追加。
+//   - バックアップ：localStorage の ipass_* を JSON で書き出し（ファイル名 ipass-navi-backup-YYYY-MM-DD.json）
+//   - 復元：バックアップ JSON を選択 → 既存データを上書きして復元 → 設定画面再描画＋テーマ/文字サイズ再適用
+//   機種変更・キャッシュクリア・別ブラウザへの引き継ぎ等に対応。販売前の必須機能。
+const CACHE_NAME = 'ipass-navi-v32';
+const DATA_CACHE_NAME = 'ipass-navi-data-v32';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
