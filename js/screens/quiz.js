@@ -277,7 +277,7 @@ function openModeSettingsModal({ container, mode, initialCategory, initialCount 
     const info = createElement('div', { classes: ['quiz-mode-modal-info'] });
     info.appendChild(createElement('p', {
       classes: ['quiz-mode-modal-info-text'],
-      text: '100問・120分・全分野（ストラテジ／マネジメント／テクノロジ）の本番形式で出題されます。',
+      text: '100問・120分・全分野（ストラテジ／マネジメント／テクノロジ）の本番形式で出題されます。実過去問（IPA公開問題）を優先して出題します。',
     }));
     modal.appendChild(info);
   } else {
@@ -396,11 +396,15 @@ function openModeSettingsModal({ container, mode, initialCategory, initialCount 
  * label : 画面や解説バッジに表示する日本語名
  */
 const PAST_YEAR_OPTIONS = [
-  { source: 'past_R06_spring', label: '令和6年度 公開問題', count: 100 },
-  { source: 'past_R05_spring', label: '令和5年度 公開問題', count: 100 },
-  { source: 'past_R04_spring', label: '令和4年度 公開問題', count: 100 },
-  { source: 'past_R03_spring', label: '令和3年度 公開問題', count: 100 },
-  { source: 'past_R02_autumn', label: '令和2年度 秋期',     count: 100 },
+  // 実過去問：IPA公開問題の原文ママ（問題文の長さ・略語表記も本番同等）
+  { source: 'past_R08',        label: '令和8年度 公開問題（実過去問）', count: 100 },
+  // 以下はAI予想問題：各年度の出題傾向を基にAIが生成した問題。
+  // 本物の過去問ではないため「公開問題」とは表記しない（実試験より短文）
+  { source: 'past_R06_spring', label: 'AI予想問題（令和6年度傾向）', count: 100 },
+  { source: 'past_R05_spring', label: 'AI予想問題（令和5年度傾向）', count: 100 },
+  { source: 'past_R04_spring', label: 'AI予想問題（令和4年度傾向）', count: 100 },
+  { source: 'past_R03_spring', label: 'AI予想問題（令和3年度傾向）', count: 100 },
+  { source: 'past_R02_autumn', label: 'AI予想問題（令和2年度傾向）', count: 100 },
   // 全年度シャッフル：source = 'all' として特別処理する
   { source: 'all',             label: '全年度シャッフル',   count: null },
 ];
@@ -721,19 +725,26 @@ async function startSession(container, mode, category, questionLimit = null) {
 async function startExamSession(container, questionsData) {
   try {
     // 分野別に問題をシャッフルして規定数を選出する（イミュータブル）
+    // 【本番同等化】実過去問（is_real_past: IPA公開問題の原文ママ）を優先して選出し、
+    // 不足分だけAI生成問題で補充する。実過去問は本番と同じ文章量・表記のため、
+    // 模試の体感難易度・所要時間を本番に近づけられる。
     const selectedQuestions = Object.entries(EXAM_QUESTION_COUNTS).flatMap(
       ([category, count]) => {
-        // 該当分野の問題をすべて取得してシャッフル
+        // 該当分野の問題をすべて取得し、実過去問とそれ以外に分ける
         const categoryQuestions = filterQuestionsByCategory(questionsData, category);
-        const shuffled = shuffleQuestions(categoryQuestions);
+        const realPast = shuffleQuestions(categoryQuestions.filter((q) => q.is_real_past));
+        const others   = shuffleQuestions(categoryQuestions.filter((q) => !q.is_real_past));
+
+        // 実過去問を先頭に、足りない分をAI生成問題で補充した候補リストを作る
+        const candidates = [...realPast, ...others];
 
         // 問題数が不足している場合は何問あるかを記録する
-        if (shuffled.length < count) {
-          return shuffled; // 不足分はそのまま（後でチェック）
+        if (candidates.length < count) {
+          return candidates; // 不足分はそのまま（後でチェック）
         }
 
         // 規定数だけ取り出す（sliceで新しい配列を返す・イミュータブル）
-        return shuffled.slice(0, count);
+        return candidates.slice(0, count);
       }
     );
 
@@ -1087,6 +1098,19 @@ function renderQuestionScreen(container) {
     classes: ['question-text'],
     text: displayQuestionText,
   }));
+
+  // 図表付き問題（実過去問の表・プログラム・図など）：問題文の下に画像を表示する
+  if (current.question_image) {
+    const figure = createElement('div', { classes: ['question-figure'] });
+    figure.appendChild(createElement('img', {
+      attrs: {
+        src: current.question_image,
+        alt: '問題に付属する図表',
+        loading: 'lazy',
+      },
+    }));
+    questionCard.appendChild(figure);
+  }
 
   // CBT本番再現：模擬試験モード時は問題カードに「⚑ 見直し」フラグボタンを追加する
   if (_session.mode === 'exam') {
@@ -1504,6 +1528,18 @@ function renderExplanationScreen(container) {
     classes: ['question-text'],
     text: current.question_text,
   }));
+  // 図表付き問題は解説画面でも画像を再表示する
+  if (current.question_image) {
+    const figure = createElement('div', { classes: ['question-figure'] });
+    figure.appendChild(createElement('img', {
+      attrs: {
+        src: current.question_image,
+        alt: '問題に付属する図表',
+        loading: 'lazy',
+      },
+    }));
+    questionCard.appendChild(figure);
+  }
   screen.appendChild(questionCard);
 
   // 選択肢（正解・不正解を表示）

@@ -79,9 +79,10 @@ export async function loadChapters() {
  * - questions_extra1.json  : オリジナル問題（追加 1）
  * - questions_extra2.json  : オリジナル問題（追加 2）
  * - questions_extra3.json  : 節5問体制（Phase C・節summary_points厳守生成 379問）
- * - questions_past2.json   : 過去問（R02秋・R03春・R04春）
- * - questions_past_r05.json: 過去問（R05春）
- * - questions_past_r06.json: 過去問（R06春）
+ * - questions_past2.json   : AI予想問題（R02秋・R03春・R04春の出題傾向を基に生成）
+ * - questions_past_r05.json: AI予想問題（R05の出題傾向を基に生成）
+ * - questions_past_r06.json: AI予想問題（R06の出題傾向を基に生成）
+ * - questions_past_r08.json: 実過去問（令和8年度 IPA公開問題・原文ママ）
  *
  * 統合結果は { questions: [...] } 形式で返す（呼び出し側のシグネチャ互換）。
  * 取得済みの統合結果は内部キーでキャッシュし、再取得を防ぐ。
@@ -105,6 +106,7 @@ export async function loadQuestions() {
     './data/questions_past_r04s.json',
     './data/questions_past_r05.json',
     './data/questions_past_r06.json',
+    './data/questions_past_r08.json',
   ];
 
   // Promise を先にキャッシュして並行アクセス時の重複fetchを抑止する

@@ -489,6 +489,26 @@
   font-weight: 500;
   color: var(--color-text-primary);
   line-height: 1.7;
+  /* 実過去問の小問リスト（a／b／c）などの改行をそのまま表示する */
+  white-space: pre-line;
+}
+
+/* ===================================================
+   図表付き問題（実過去問の表・プログラム・図）
+   =================================================== */
+.question-figure {
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+.question-figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 8px;
+  /* スキャン画像なので背景を白で固定（ダークテーマでも図表は白地のまま見せる） */
+  background: #fff;
+  padding: var(--space-sm);
 }
 
 /* ===================================================

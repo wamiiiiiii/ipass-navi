@@ -72,8 +72,18 @@
 //   - バックアップ：localStorage の ipass_* を JSON で書き出し（ファイル名 ipass-navi-backup-YYYY-MM-DD.json）
 //   - 復元：バックアップ JSON を選択 → 既存データを上書きして復元 → 設定画面再描画＋テーマ/文字サイズ再適用
 //   機種変更・キャッシュクリア・別ブラウザへの引き継ぎ等に対応。販売前の必須機能。
-const CACHE_NAME = 'ipass-navi-v32';
-const DATA_CACHE_NAME = 'ipass-navi-data-v32';
+// v33 (app-version 1.8.0): 本番不合格の反省を受けた「本番同等化」改修 第1弾。
+//   1) 実過去問を初収録：令和8年度 IPA公開問題 全100問（questions_past_r08.json）。
+//      問題文・選択肢は原文ママ（平均94字・最大450字。従来のAI生成問題は平均35〜45字で
+//      本番より大幅に短く、本番のボリューム感が身につかなかった）。
+//      図表・擬似言語問題17問はIPA公式PDFから図版を切り出し question_image で表示。
+//      解説は全問アプリ独自執筆・出典明記（IPAの過去問利用条件に準拠）。
+//   2) 従来「令和X年度 公開問題」と表示していたAI生成問題を「AI予想問題（令和X年度傾向）」に
+//      表記変更（本物の過去問との誤認を防止）。
+//   3) 全問題の略語併記（例「DX（デジタルトランスフォーメーション）」）を削除。
+//      本番は略語のみの表記のため、読みからの意味逆算という本番で通用しない学習法を防ぐ。
+const CACHE_NAME = 'ipass-navi-v33';
+const DATA_CACHE_NAME = 'ipass-navi-data-v33';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -122,12 +132,31 @@ const DATA_FILES = [
   './data/questions_past_r04s.json',
   './data/questions_past_r05.json',
   './data/questions_past_r06.json',
+  './data/questions_past_r08.json',
   './data/glossary.json',
   './data/glossary_extra_part1.json',
   './data/glossary_extra_part2.json',
   './data/glossary_extra_part3.json',
   './data/glossary_extra_part4.json',
   './data/diagrams.json',
+  // 実過去問（令和8年度）の図表画像：オフラインでも図表付き問題を解けるように事前キャッシュ
+  './img/past_r08/q003.png',
+  './img/past_r08/q026.png',
+  './img/past_r08/q044.png',
+  './img/past_r08/q050.png',
+  './img/past_r08/q055.png',
+  './img/past_r08/q057.png',
+  './img/past_r08/q067.png',
+  './img/past_r08/q068.png',
+  './img/past_r08/q069.png',
+  './img/past_r08/q072.png',
+  './img/past_r08/q074.png',
+  './img/past_r08/q076.png',
+  './img/past_r08/q080.png',
+  './img/past_r08/q085.png',
+  './img/past_r08/q088.png',
+  './img/past_r08/q089.png',
+  './img/past_r08/q099.png',
 ];
 
 // ===================================================

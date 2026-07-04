@@ -17,6 +17,9 @@ playwright-report/
 test-results/
 .playwright/
 
+# 過去問道場から取得した生HTML（抽出元素材・配信不要）
+data/raw_html/
+
 # Phase C 中間ファイル（再マッピング・生成用ペイロード）
 data/_gen/
 data/_remap/
