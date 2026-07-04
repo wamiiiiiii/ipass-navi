@@ -82,8 +82,19 @@
 //      表記変更（本物の過去問との誤認を防止）。
 //   3) 全問題の略語併記（例「DX（デジタルトランスフォーメーション）」）を削除。
 //      本番は略語のみの表記のため、読みからの意味逆算という本番で通用しない学習法を防ぐ。
-const CACHE_NAME = 'ipass-navi-v33';
-const DATA_CACHE_NAME = 'ipass-navi-data-v33';
+// v34 (app-version 1.9.0): 本番同等化 第2弾。実過去問に令和7年度 IPA公開問題 全100問を追加
+//   （questions_past_r07.json）。図表・擬似言語問題16問を切り出し（img/past_r07/）。
+//   模試モードは実過去問（R7・R8計200問）を優先出題するため、同じ100問ばかりになる問題を緩和。
+// v35 (app-version 1.10.0): 本番同等化 第3弾。実過去問に令和6年度 IPA公開問題 全100問を追加
+//   （questions_past_r06_real.json。既存のAI予想問題 questions_past_r06.json とは別ファイル）。
+//   図表・擬似言語問題12問を切り出し（img/past_r06/）。正解はIPA解答例と100/100一致を確認。
+//   これで実過去問がR6・R7・R8の計300問に。
+// v36 (app-version 1.11.0): 本番同等化 第4弾。実過去問に令和5年度 IPA公開問題 全100問を追加
+//   （questions_past_r05_real.json。既存のAI予想問題 questions_past_r05.json とは別ファイル）。
+//   図表・擬似言語問題10問を切り出し（img/past_r05/）。正解はIPA解答例と100/100一致を確認。
+//   これで実過去問がR5・R6・R7・R8の計400問に。
+const CACHE_NAME = 'ipass-navi-v36';
+const DATA_CACHE_NAME = 'ipass-navi-data-v36';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -131,7 +142,10 @@ const DATA_FILES = [
   './data/questions_past_r02a.json',
   './data/questions_past_r04s.json',
   './data/questions_past_r05.json',
+  './data/questions_past_r05_real.json',
   './data/questions_past_r06.json',
+  './data/questions_past_r06_real.json',
+  './data/questions_past_r07.json',
   './data/questions_past_r08.json',
   './data/glossary.json',
   './data/glossary_extra_part1.json',
@@ -157,6 +171,47 @@ const DATA_FILES = [
   './img/past_r08/q088.png',
   './img/past_r08/q089.png',
   './img/past_r08/q099.png',
+  // 実過去問（令和7年度）の図表画像
+  './img/past_r07/q026.png',
+  './img/past_r07/q030.png',
+  './img/past_r07/q037.png',
+  './img/past_r07/q039.png',
+  './img/past_r07/q045.png',
+  './img/past_r07/q054.png',
+  './img/past_r07/q062.png',
+  './img/past_r07/q066.png',
+  './img/past_r07/q069.png',
+  './img/past_r07/q071.png',
+  './img/past_r07/q072.png',
+  './img/past_r07/q073.png',
+  './img/past_r07/q076.png',
+  './img/past_r07/q078.png',
+  './img/past_r07/q083.png',
+  './img/past_r07/q099.png',
+  // 実過去問（令和6年度）の図表画像
+  './img/past_r06/q008.png',
+  './img/past_r06/q024.png',
+  './img/past_r06/q041.png',
+  './img/past_r06/q046.png',
+  './img/past_r06/q049.png',
+  './img/past_r06/q057.png',
+  './img/past_r06/q060.png',
+  './img/past_r06/q062.png',
+  './img/past_r06/q067.png',
+  './img/past_r06/q081.png',
+  './img/past_r06/q085.png',
+  './img/past_r06/q093.png',
+  // 実過去問（令和5年度）の図表画像
+  './img/past_r05/q013.png',
+  './img/past_r05/q033.png',
+  './img/past_r05/q041.png',
+  './img/past_r05/q059.png',
+  './img/past_r05/q060.png',
+  './img/past_r05/q064.png',
+  './img/past_r05/q075.png',
+  './img/past_r05/q076.png',
+  './img/past_r05/q077.png',
+  './img/past_r05/q086.png',
 ];
 
 // ===================================================
