@@ -388,6 +388,45 @@ export function createFocusTrap(modalEl, onClose) {
 }
 
 /**
+ * 図表画像をタップ拡大表示するライトボックスを開く
+ * 実過去問の図表・表・擬似言語プログラムはスマホ画面では文字が小さく読みにくいため、
+ * タップで全画面に近いサイズに拡大表示できるようにする
+ * @param {string} src - 拡大表示する画像のパス
+ * @param {string} [altText] - 画像の代替テキスト
+ */
+export function openImageLightbox(src, altText = '拡大表示された図表') {
+  const overlay = createElement('div', {
+    classes: ['figure-lightbox-overlay'],
+    attrs: { role: 'button', 'aria-label': '図表の拡大表示を閉じる', tabindex: '0' },
+  });
+
+  const img = createElement('img', {
+    classes: ['figure-lightbox-img'],
+    attrs: { src, alt: altText },
+  });
+  overlay.appendChild(img);
+
+  const close = () => {
+    document.removeEventListener('keydown', handleKeyDown);
+    if (overlay.parentNode) {
+      overlay.parentNode.removeChild(overlay);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      close();
+    }
+  };
+
+  // 画像自体をタップしても、背景をタップしても閉じる（どこをタップしても迷わず戻れるようにする）
+  overlay.addEventListener('click', close);
+  document.addEventListener('keydown', handleKeyDown);
+
+  document.body.appendChild(overlay);
+}
+
+/**
  * トースト通知を表示する
  * @param {string} message - 表示するメッセージ
  * @param {'info'|'success'|'error'} [type] - 通知の種類

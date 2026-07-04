@@ -29,6 +29,7 @@ import {
   createCategoryBadge,
   createDifficultyStars,
   showToast,
+  openImageLightbox,
 } from '../utils/render.js';
 import { getWeakQuestionIds, calcPastYearStats, getPastWrongQuestionIds } from '../utils/progress.js';
 import { getQuizResults } from '../store.js';
@@ -1103,14 +1104,21 @@ function renderQuestionScreen(container) {
   }));
 
   // 図表付き問題（実過去問の表・プログラム・図など）：問題文の下に画像を表示する
+  // スマホでは文字が小さく読みにくいため、タップで拡大表示できるようにする
   if (current.question_image) {
     const figure = createElement('div', { classes: ['question-figure'] });
-    figure.appendChild(createElement('img', {
+    const figureImg = createElement('img', {
       attrs: {
         src: current.question_image,
         alt: '問題に付属する図表',
         loading: 'lazy',
       },
+    });
+    figureImg.addEventListener('click', () => openImageLightbox(current.question_image));
+    figure.appendChild(figureImg);
+    figure.appendChild(createElement('p', {
+      classes: ['question-figure-hint'],
+      text: 'タップして拡大',
     }));
     questionCard.appendChild(figure);
   }
@@ -1531,15 +1539,21 @@ function renderExplanationScreen(container) {
     classes: ['question-text'],
     text: current.question_text,
   }));
-  // 図表付き問題は解説画面でも画像を再表示する
+  // 図表付き問題は解説画面でも画像を再表示する（タップで拡大表示できるようにする）
   if (current.question_image) {
     const figure = createElement('div', { classes: ['question-figure'] });
-    figure.appendChild(createElement('img', {
+    const figureImg = createElement('img', {
       attrs: {
         src: current.question_image,
         alt: '問題に付属する図表',
         loading: 'lazy',
       },
+    });
+    figureImg.addEventListener('click', () => openImageLightbox(current.question_image));
+    figure.appendChild(figureImg);
+    figure.appendChild(createElement('p', {
+      classes: ['question-figure-hint'],
+      text: 'タップして拡大',
     }));
     questionCard.appendChild(figure);
   }

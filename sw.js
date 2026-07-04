@@ -93,8 +93,10 @@
 //   （questions_past_r05_real.json。既存のAI予想問題 questions_past_r05.json とは別ファイル）。
 //   図表・擬似言語問題10問を切り出し（img/past_r05/）。正解はIPA解答例と100/100一致を確認。
 //   これで実過去問がR5・R6・R7・R8の計400問に。
-const CACHE_NAME = 'ipass-navi-v36';
-const DATA_CACHE_NAME = 'ipass-navi-data-v36';
+// v37 (app-version 1.11.1): 図表画像のタップ拡大機能を追加。
+//   question-figure の画像タップでライトボックス表示（js/utils/render.js の openImageLightbox）。
+const CACHE_NAME = 'ipass-navi-v37';
+const DATA_CACHE_NAME = 'ipass-navi-data-v37';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
