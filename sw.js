@@ -95,8 +95,12 @@
 //   これで実過去問がR5・R6・R7・R8の計400問に。
 // v37 (app-version 1.11.1): 図表画像のタップ拡大機能を追加。
 //   question-figure の画像タップでライトボックス表示（js/utils/render.js の openImageLightbox）。
-const CACHE_NAME = 'ipass-navi-v37';
-const DATA_CACHE_NAME = 'ipass-navi-data-v37';
+// v38 (app-version 1.12.0): AI予想問題（既存1,306問）が本番と比べて短文に偏っていた問題に対応。
+//   節（related_page_id）ごとに上位5問へ選別・重複排除し869問に整理（questions.json/extra1/2/3、
+//   questions_past2/r02a/r04s/r05/r06.json）。加えて、既存AI予想問題にほぼ皆無だった
+//   100字以上の長文・事例・計算問題を100問自前執筆し追加（questions_extra4.json）。
+const CACHE_NAME = 'ipass-navi-v38';
+const DATA_CACHE_NAME = 'ipass-navi-data-v38';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -140,6 +144,7 @@ const DATA_FILES = [
   './data/questions_extra1.json',
   './data/questions_extra2.json',
   './data/questions_extra3.json',
+  './data/questions_extra4.json',
   './data/questions_past2.json',
   './data/questions_past_r02a.json',
   './data/questions_past_r04s.json',

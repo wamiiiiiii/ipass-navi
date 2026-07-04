@@ -1,87 +1,6 @@
 {
  "questions": [
   {
-   "question_id": "P-R04S-051",
-   "chapter_id": "S-05",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "DXの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "既存の業務プロセスをそのままにして、デジタル機器を導入すること"
-    },
-    {
-     "id": "b",
-     "text": "デジタル技術を活用してビジネスモデルや企業文化を変革し、競争上の優位性を確立すること"
-    },
-    {
-     "id": "c",
-     "text": "社内システムをクラウドへ移行するITインフラの刷新プロジェクトのこと"
-    },
-    {
-     "id": "d",
-     "text": "企業のWebサイトをスマートフォン対応に改修する取り組みのこと"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "DX（デジタルトランスフォーメーション）とは、デジタル技術を活用してビジネスモデル・プロセス・組織・企業文化を変革し、競争上の優位性を確立することを指します。アはデジタル化（Digitization）にとどまり変革を伴わないため不正解。ウはクラウド移行であり手段の一つに過ぎない。エはWebのスマホ対応であり変革とは言えない。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "DX",
-    "デジタルトランスフォーメーション"
-   ],
-   "related_page_id": "S-05-05",
-   "tags": [
-    "DX",
-    "デジタル変革",
-    "ビジネスモデル"
-   ],
-   "flashcard_text": "DXの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-052",
-   "chapter_id": "S-05",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "シェアリングエコノミーの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "複数の企業が共同出資してシステム開発費用を分担する調達手法"
-    },
-    {
-     "id": "b",
-     "text": "企業が保有する余剰在庫を系列会社に無償で提供する仕組み"
-    },
-    {
-     "id": "c",
-     "text": "政府が国民に対して公共サービスを均等に提供するための政策"
-    },
-    {
-     "id": "d",
-     "text": "個人や企業が保有する遊休資産・スキルをインターネットを介して他者と共有・交換する経済モデル"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "シェアリングエコノミーとは、個人や企業が保有する遊休資産（車・住居・スキルなど）をインターネットを介して他者と共有・貸出し・交換する経済モデルです。UberやAirbnbが代表例。アは企業間の在庫融通であり不正解。ウは共同調達の話であり不正解。エは公共政策の話で無関係。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "シェアリングエコノミー",
-    "プラットフォームビジネス"
-   ],
-   "related_page_id": "S-05-03",
-   "tags": [
-    "シェアリングエコノミー",
-    "ビジネスインダストリ"
-   ],
-   "flashcard_text": "シェアリングエコノミーの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-053",
    "chapter_id": "S-03",
    "category": "strategy",
@@ -372,47 +291,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-060",
-   "chapter_id": "S-07",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "TCOの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "システムの導入から廃棄までに要する全てのコスト（導入費・運用費・保守費・廃棄費）の合計"
-    },
-    {
-     "id": "b",
-     "text": "プロジェクトの人件費と外注費のみを合算したコスト"
-    },
-    {
-     "id": "c",
-     "text": "情報セキュリティ対策にかかる費用の総計"
-    },
-    {
-     "id": "d",
-     "text": "システム導入時の初期費用（ハードウェア・ソフトウェア購入費）のみを合計したコスト"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "TCO（Total Cost of Ownership：総所有コスト）は、システムやIT資産の導入から廃棄までのライフサイクル全体にかかる総コストです。導入費だけでなく、運用・保守・教育・廃棄コストも含みます。初期費用だけを見るとTCOを大幅に過小評価するため、システム選定の際はTCOで比較することが重要。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "TCO",
-    "総所有コスト"
-   ],
-   "related_page_id": "S-07-03",
-   "tags": [
-    "TCO",
-    "システム企画",
-    "コスト管理"
-   ],
-   "flashcard_text": "TCOの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-061",
    "chapter_id": "S-04",
    "category": "strategy",
@@ -451,89 +329,6 @@
     "MOT"
    ],
    "flashcard_text": "オープンイノベーションの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-062",
-   "chapter_id": "S-01",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "貸借対照表（バランスシート）の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "現金の収入と支出の流れを示すキャッシュフロー報告書"
-    },
-    {
-     "id": "b",
-     "text": "株主への配当金の支払い状況を示す剰余金計算書"
-    },
-    {
-     "id": "c",
-     "text": "一定時点における企業の資産・負債・純資産の残高を示す財政状態の報告書"
-    },
-    {
-     "id": "d",
-     "text": "一定期間の売上・費用・利益を示す経営成績の報告書"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "貸借対照表（バランスシート）は、決算日などの一定時点における企業の財政状態（資産・負債・純資産）を示す財務諸表です。左側（借方）に資産、右側（貸方）に負債と純資産が記載されます。アは損益計算書（P/L）の説明。ウはキャッシュフロー計算書の説明。エは株主資本等変動計算書の説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "貸借対照表",
-    "バランスシート",
-    "財務諸表"
-   ],
-   "related_page_id": "S-01-04",
-   "tags": [
-    "貸借対照表",
-    "財務諸表",
-    "企業活動"
-   ],
-   "flashcard_text": "貸借対照表（バランスシート）の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-063",
-   "chapter_id": "S-05",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "CRMの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "顧客情報を一元管理し、顧客との長期的な関係を構築することで顧客満足度・収益を向上させる経営手法"
-    },
-    {
-     "id": "b",
-     "text": "製品の生産・物流・販売の流れを一元管理するサプライチェーン管理システム"
-    },
-    {
-     "id": "c",
-     "text": "企業内の人事・財務・生産などの基幹業務を統合管理するシステム"
-    },
-    {
-     "id": "d",
-     "text": "企業がWebマーケティングを通じて新規顧客を獲得するための手法"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "CRM（Customer Relationship Management：顧客関係管理）は、顧客情報を一元管理し、購買履歴・問い合わせ・嗜好などを分析して顧客との長期的な関係を強化することで顧客満足度と収益を向上させる経営手法・システムです。アはSCM（サプライチェーンマネジメント）。ウはERP（基幹系システム）。エはデジタルマーケティングの説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "CRM",
-    "顧客関係管理"
-   ],
-   "related_page_id": "S-05-04",
-   "tags": [
-    "CRM",
-    "顧客管理",
-    "マーケティング"
-   ],
-   "flashcard_text": "CRMの説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -621,47 +416,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-066",
-   "chapter_id": "S-03",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "コアコンピタンスの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "企業の財務健全性を示す自己資本比率のこと"
-    },
-    {
-     "id": "b",
-     "text": "業界標準となっている製品仕様や技術規格のこと"
-    },
-    {
-     "id": "c",
-     "text": "企業が新規参入を防ぐために保有する特許や商標などの知的財産"
-    },
-    {
-     "id": "d",
-     "text": "企業が競合他社に対して持続的な競争優位をもたらす独自の中核的な能力"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "コアコンピタンス（中核能力）とは、企業が競合他社に対して持続的な競争優位をもたらす独自の能力・技術・ノウハウのことです。プラハラードとハメルが提唱しました。模倣困難性・顧客価値・複数市場への応用可能性の3要件を満たすものがコアコンピタンスとされます。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "コアコンピタンス",
-    "競争優位"
-   ],
-   "related_page_id": "S-03-05",
-   "tags": [
-    "コアコンピタンス",
-    "経営戦略",
-    "競争優位"
-   ],
-   "flashcard_text": "コアコンピタンスの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-067",
    "chapter_id": "S-05",
    "category": "strategy",
@@ -702,48 +456,6 @@
     "BtoB"
    ],
    "flashcard_text": "電子商取引（EC）の形態のうち、企業間の取引を表すもの。以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-068",
-   "chapter_id": "M-01",
-   "category": "management",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "アジャイル開発の特徴として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "大規模プロジェクト向けに詳細な計画を事前に立案し、計画通りに進める手法"
-    },
-    {
-     "id": "b",
-     "text": "プログラムを部品（コンポーネント）として再利用することを重視する開発手法"
-    },
-    {
-     "id": "c",
-     "text": "要件定義・設計・実装・テストを順番に一度だけ実施し、後戻りしない開発手法"
-    },
-    {
-     "id": "d",
-     "text": "短い反復サイクル（イテレーション）を繰り返しながら、変化する要件に柔軟に対応する開発手法"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "アジャイル開発は、短い反復サイクル（スプリント・イテレーション）を繰り返しながら動作するソフトウェアを段階的に提供し、変化する要件に柔軟に対応する開発手法です。代表例はスクラム・XP・カンバン。アはウォーターフォール開発の特徴。ウも計画駆動型の説明。エはコンポーネント指向開発の説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "アジャイル開発",
-    "スクラム",
-    "イテレーション"
-   ],
-   "related_page_id": "M-01-03",
-   "tags": [
-    "アジャイル開発",
-    "開発手法",
-    "スクラム"
-   ],
-   "flashcard_text": "アジャイル開発の特徴として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -916,48 +628,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-073",
-   "chapter_id": "M-05",
-   "category": "management",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "システム監査における「監査証跡」の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "システム監査を依頼する契約書類"
-    },
-    {
-     "id": "b",
-     "text": "内部統制の設計書として経営者が作成するドキュメント"
-    },
-    {
-     "id": "c",
-     "text": "システムの操作・更新・アクセスなどの記録であり、事後に追跡・検証できるように保存された情報"
-    },
-    {
-     "id": "d",
-     "text": "監査人が発行する監査報告書の草案"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "監査証跡（オーディットトレイル）とは、システムの操作履歴・データ更新記録・アクセスログなど、事後に追跡・検証できるように保存された記録の総称です。不正検知・障害調査・コンプライアンス確認に使用されます。アは監査報告書。ウは監査契約書。エは内部統制設計書（RCM等）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "監査証跡",
-    "オーディットトレイル",
-    "システム監査"
-   ],
-   "related_page_id": "M-05-02",
-   "tags": [
-    "システム監査",
-    "監査証跡",
-    "内部統制"
-   ],
-   "flashcard_text": "システム監査における「監査証跡」の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-074",
    "chapter_id": "M-04",
    "category": "management",
@@ -1127,48 +797,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-078",
-   "chapter_id": "T-11",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "ランサムウェアの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "正規のソフトウェアに偽装して侵入し、バックドアを作成するトロイの木馬"
-    },
-    {
-     "id": "b",
-     "text": "感染したPCのデータを暗号化して使用不能にし、復号と引き換えに金銭を要求するマルウェア"
-    },
-    {
-     "id": "c",
-     "text": "ネットワークを通じて自己複製し、他のコンピュータに感染を広げるウイルス"
-    },
-    {
-     "id": "d",
-     "text": "感染したPCの画面を監視し、スクリーンショットを攻撃者に送信するマルウェア"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "ランサムウェア（Ransomware）は、感染したPCのファイルやシステムを暗号化して使用不能にし、復号鍵の提供と引き換えに身代金（Ransom）を要求するマルウェアです。近年は企業・病院・行政機関への攻撃が急増しています。アはスパイウェアの一種。ウはトロイの木馬。エはワーム。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "ランサムウェア",
-    "マルウェア",
-    "サイバー攻撃"
-   ],
-   "related_page_id": "T-11-02",
-   "tags": [
-    "ランサムウェア",
-    "マルウェア",
-    "セキュリティ脅威"
-   ],
-   "flashcard_text": "ランサムウェアの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-079",
    "chapter_id": "S-06",
    "category": "strategy",
@@ -1210,89 +838,6 @@
     "PaaS"
    ],
    "flashcard_text": "クラウドサービスの形態のうち、仮想マシン・ストレージ・ネットワークなどのITインフラをインターネット経由で提供するもの。以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-080",
-   "chapter_id": "T-01",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "2進数「11010」を10進数に変換したものとして、正しいものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "30"
-    },
-    {
-     "id": "b",
-     "text": "28"
-    },
-    {
-     "id": "c",
-     "text": "26"
-    },
-    {
-     "id": "d",
-     "text": "24"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "2進数「11010」を10進数に変換します。各桁の重みは右から2^0, 2^1, 2^2, 2^3, 2^4です。1×2^4 + 1×2^3 + 0×2^2 + 1×2^1 + 0×2^0 = 16 + 8 + 0 + 2 + 0 = 26。ア24は「11000」、ウ28は「11100」、エ30は「11110」に対応。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "2進数",
-    "基数変換",
-    "情報の表現"
-   ],
-   "related_page_id": "T-01-01",
-   "tags": [
-    "2進数",
-    "基数変換",
-    "計算問題"
-   ],
-   "flashcard_text": "2進数「11010」を10進数に変換したものとして、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-081",
-   "chapter_id": "T-11",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "フィッシング攻撃の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "正規のWebサイトや電子メールに偽装してID・パスワードなどの個人情報をだまし取る攻撃"
-    },
-    {
-     "id": "b",
-     "text": "脆弱なパスワードを総当たりで試行してアカウントを乗っ取る攻撃"
-    },
-    {
-     "id": "c",
-     "text": "大量のパケットを送りつけてサーバーをサービス不能状態にする攻撃"
-    },
-    {
-     "id": "d",
-     "text": "ネットワークを盗聴して通信内容（パスワード等）を傍受する攻撃"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "フィッシング（Phishing）は、実在する金融機関・EC・SNSなどを装った偽のメールやWebサイトで被害者を誘導し、ID・パスワード・クレジットカード番号などをだまし取るサイバー攻撃です。アはDDoS攻撃。ウはブルートフォース（総当たり）攻撃。エはスニッフィング（盗聴）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "フィッシング",
-    "ソーシャルエンジニアリング"
-   ],
-   "related_page_id": "T-11-02",
-   "tags": [
-    "フィッシング",
-    "サイバー攻撃",
-    "セキュリティ"
-   ],
-   "flashcard_text": "フィッシング攻撃の説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -1510,48 +1055,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-087",
-   "chapter_id": "T-05",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "OSのプロセス管理において、デッドロックの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "CPUの処理速度が遅くなり、システム全体のパフォーマンスが低下した状態"
-    },
-    {
-     "id": "b",
-     "text": "メモリの断片化が進み、連続した空き領域が確保できなくなる状態"
-    },
-    {
-     "id": "c",
-     "text": "複数のプロセスが互いに相手の保持するリソースの解放を待ち合い、処理が進まなくなる状態"
-    },
-    {
-     "id": "d",
-     "text": "プロセスがCPU時間を独占し、他のプロセスが実行されない状態"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "デッドロックは、複数のプロセスが互いに相手が保持するリソース（ファイル・メモリ等）の解放を待ち合い、どのプロセスも処理を進められなくなる状態です。例：プロセスAがリソース1を保持しリソース2を待ち、プロセスBがリソース2を保持しリソース1を待つ。アはスラッシング・性能低下。ウはメモリの断片化。エはスタベーション（飢餓状態）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "デッドロック",
-    "プロセス管理",
-    "OS"
-   ],
-   "related_page_id": "T-05-01",
-   "tags": [
-    "デッドロック",
-    "OS",
-    "プロセス管理"
-   ],
-   "flashcard_text": "OSのプロセス管理において、デッドロックの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-088",
    "chapter_id": "T-09",
    "category": "technology",
@@ -1724,48 +1227,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-092",
-   "chapter_id": "T-04",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "仮想化技術の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "ネットワーク上のデータを暗号化して安全に送受信するVPN技術"
-    },
-    {
-     "id": "b",
-     "text": "サーバーの電力を削減するためにCPUをスリープさせる省電力技術"
-    },
-    {
-     "id": "c",
-     "text": "1台の物理サーバー上に複数の仮想的なサーバーを構築し、効率的に運用する技術"
-    },
-    {
-     "id": "d",
-     "text": "複数の物理サーバーを1台に見せかけてリソースを集約する技術"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "仮想化技術は、1台の物理サーバー上にハイパーバイザー（仮想化ソフトウェア）を使って複数の仮想マシン（VM）を構築し、サーバーリソースを効率的に活用する技術です。サーバー統合によりコスト削減・省スペース化が実現できます。イはクラスタリング（集約）の説明。ウは電力管理。エはVPN。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "仮想化",
-    "仮想マシン",
-    "ハイパーバイザー"
-   ],
-   "related_page_id": "T-04-02",
-   "tags": [
-    "仮想化",
-    "仮想マシン",
-    "クラウド"
-   ],
-   "flashcard_text": "仮想化技術の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R04S-093",
    "chapter_id": "T-11",
    "category": "technology",
@@ -1935,50 +1396,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R04S-097",
-   "chapter_id": "T-11",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "情報セキュリティの3要素（CIAトライアド）に含まれないものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "可用性（Availability）"
-    },
-    {
-     "id": "b",
-     "text": "機密性（Confidentiality）"
-    },
-    {
-     "id": "c",
-     "text": "完全性（Integrity）"
-    },
-    {
-     "id": "d",
-     "text": "効率性（Efficiency）"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "情報セキュリティの3要素（CIAトライアド）は、①機密性（Confidentiality：許可された者だけがアクセスできる）、②完全性（Integrity：情報が改ざんされていない）、③可用性（Availability：必要なときに利用できる）です。効率性（Efficiency）はセキュリティの3要素には含まれません。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "情報セキュリティ",
-    "CIA",
-    "機密性",
-    "完全性",
-    "可用性"
-   ],
-   "related_page_id": "T-11-01",
-   "tags": [
-    "情報セキュリティ",
-    "CIA",
-    "セキュリティ3要素"
-   ],
-   "flashcard_skip": true,
-   "flashcard_skip_reason": "否定形：含まれない選択型"
-  },
-  {
    "question_id": "P-R04S-098",
    "chapter_id": "T-09",
    "category": "technology",
@@ -2020,48 +1437,6 @@
     "データベース"
    ],
    "flashcard_text": "データベースのトランザクション管理における「ロールバック」の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R04S-099",
-   "chapter_id": "T-06",
-   "category": "technology",
-   "difficulty": 1,
-   "source": "past_R04_spring",
-   "source_label": "AI予想問題（令和4年度傾向）",
-   "question_text": "USBの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "コンピュータ内部でCPUとメモリを接続する高速バス規格"
-    },
-    {
-     "id": "b",
-     "text": "ネットワーク機器をLANに接続するためのケーブル規格"
-    },
-    {
-     "id": "c",
-     "text": "コンピュータと周辺機器を接続するための汎用インタフェース規格。ホットプラグに対応している"
-    },
-    {
-     "id": "d",
-     "text": "無線でデータを送受信するための近距離通信規格"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "USB（Universal Serial Bus）は、コンピュータとキーボード・マウス・プリンター・ストレージなどの周辺機器を接続するための汎用インタフェース規格です。ホットプラグ（電源を入れたまま接続・取り外し）対応、電力供給可能などの特徴があります。イはシステムバス（内部バス）。ウはBluetooth・NFCなど。エはEthernetケーブルの説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "USB",
-    "インタフェース",
-    "ホットプラグ"
-   ],
-   "related_page_id": "T-06-01",
-   "tags": [
-    "USB",
-    "インタフェース",
-    "ハードウェア"
-   ],
-   "flashcard_text": "USBの説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -2359,47 +1734,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-007",
-   "chapter_id": "S-06",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "エンタープライズアーキテクチャ（EA）の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "個々のシステムの詳細な設計書をまとめたドキュメント集"
-    },
-    {
-     "id": "b",
-     "text": "ソフトウェアの設計パターンを体系化したデザインパターンカタログ"
-    },
-    {
-     "id": "c",
-     "text": "クラウドシステムのインフラ設計を行うためのベストプラクティス集"
-    },
-    {
-     "id": "d",
-     "text": "組織全体のビジネス・情報・データ・技術を体系的に整理し、業務とITを最適化するフレームワーク"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "エンタープライズアーキテクチャ（EA）は、組織全体のビジネス（業務）・情報・データ・技術（IT）の現状と理想の姿を体系的に整理し、業務とITを最適化するための全体設計フレームワークです。政府のIT施策でも採用されています。アは個別システム設計書。ウはクラウド設計のベストプラクティス（AWSのWell-Architected等）。エはGoF等のデザインパターン。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "EA",
-    "エンタープライズアーキテクチャ"
-   ],
-   "related_page_id": "S-06-01",
-   "tags": [
-    "EA",
-    "システム戦略",
-    "エンタープライズアーキテクチャ"
-   ],
-   "flashcard_text": "エンタープライズアーキテクチャ（EA）の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-008",
    "chapter_id": "S-02",
    "category": "strategy",
@@ -2481,48 +1815,6 @@
     "データ分析"
    ],
    "flashcard_text": "ビッグデータの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-010",
-   "chapter_id": "S-03",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "CSRの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "企業が利益を最大化するために株主の利益を最優先にすること"
-    },
-    {
-     "id": "b",
-     "text": "企業が自社製品の安全性を第三者機関に認証させること"
-    },
-    {
-     "id": "c",
-     "text": "企業が経済活動を通じて社会・環境に与える影響を考慮し、ステークホルダーへの責任を果たすこと"
-    },
-    {
-     "id": "d",
-     "text": "企業が行政機関との連携により公共サービスを提供すること"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "CSR（Corporate Social Responsibility：企業の社会的責任）は、企業が利益追求だけでなく、事業活動を通じて社会・環境・従業員・顧客・地域社会などのステークホルダーへの責任を自主的に果たすという考え方です。環境保護・労働環境改善・コンプライアンス・地域貢献などが含まれます。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "CSR",
-    "企業の社会的責任",
-    "ステークホルダー"
-   ],
-   "related_page_id": "S-03-05",
-   "tags": [
-    "CSR",
-    "企業倫理",
-    "経営戦略"
-   ],
-   "flashcard_text": "CSRの説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -2688,90 +1980,6 @@
     "企業活動"
    ],
    "flashcard_text": "マトリックス組織の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-015",
-   "chapter_id": "S-04",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "技術ロードマップの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "新製品の市場投入前にターゲット顧客を特定するマーケティング手法"
-    },
-    {
-     "id": "b",
-     "text": "企業の財務目標と技術投資の関係をマッピングした財務計画"
-    },
-    {
-     "id": "c",
-     "text": "製品・サービスの開発に必要な技術の進化の方向性と時間軸を可視化した計画図"
-    },
-    {
-     "id": "d",
-     "text": "ソフトウェア開発プロジェクトの作業スケジュールを示すガントチャート"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "技術ロードマップは、製品・サービスの実現に必要な技術の発展方向性と時間軸（いつどの技術が必要か）を可視化した計画図です。中長期の技術戦略を共有し、R&D投資の優先順位づけに活用されます。アはSTP（セグメンテーション・ターゲティング・ポジショニング）。ウはプロジェクトスケジュール。エは財務計画。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "技術ロードマップ",
-    "MOT",
-    "技術戦略"
-   ],
-   "related_page_id": "S-04-02",
-   "tags": [
-    "技術ロードマップ",
-    "MOT",
-    "技術戦略マネジメント"
-   ],
-   "flashcard_text": "技術ロードマップの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-016",
-   "chapter_id": "S-06",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "共通フレーム（SLCP）の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "プロジェクトマネジメントの知識体系をまとめたPMBOK"
-    },
-    {
-     "id": "b",
-     "text": "クラウドサービスの品質基準を定めた国際規格"
-    },
-    {
-     "id": "c",
-     "text": "情報セキュリティ管理の国際規格ISO/IEC 27001"
-    },
-    {
-     "id": "d",
-     "text": "ソフトウェア開発・取引における作業項目・用語を標準化したフレームワーク"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "共通フレーム（SLCP：Software Life Cycle Process）は、ソフトウェア開発・保守・運用に関わる作業項目・用語・責任を標準化したフレームワークです。発注者・受注者間の認識の齟齬を防ぎ、取引の透明性を高めます。IPAが提供しています。ウはPMBOK（プロジェクト管理）。エはISMS（情報セキュリティ）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "共通フレーム",
-    "SLCP",
-    "システム開発"
-   ],
-   "related_page_id": "S-06-01",
-   "tags": [
-    "共通フレーム",
-    "SLCP",
-    "システム戦略"
-   ],
-   "flashcard_text": "共通フレーム（SLCP）の説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -2984,48 +2192,6 @@
    ],
    "flashcard_text": "ITサービスマネジメントにおける「変更管理」の目的として、以下は正しい？",
    "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-022",
-   "chapter_id": "M-05",
-   "category": "management",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "内部統制の4つの目的に含まれないものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "財務報告の信頼性"
-    },
-    {
-     "id": "b",
-     "text": "法令等の遵守（コンプライアンス）"
-    },
-    {
-     "id": "c",
-     "text": "競合他社との差別化"
-    },
-    {
-     "id": "d",
-     "text": "業務の有効性・効率性"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "内部統制の4目的は①業務の有効性・効率性、②財務報告の信頼性、③法令等の遵守（コンプライアンス）、④資産の保全です。競合他社との差別化は内部統制の目的ではなく、経営戦略の目標に該当します。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "内部統制",
-    "コンプライアンス",
-    "財務報告"
-   ],
-   "related_page_id": "M-05-02",
-   "tags": [
-    "内部統制",
-    "コンプライアンス",
-    "システム監査"
-   ],
-   "flashcard_skip": true,
-   "flashcard_skip_reason": "否定形：含まれない選択型"
   },
   {
    "question_id": "P-R03S-023",
@@ -3324,90 +2490,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-030",
-   "chapter_id": "T-10",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "DNSの役割として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "ドメイン名（example.com等）をIPアドレスに変換するサービス"
-    },
-    {
-     "id": "b",
-     "text": "Webサーバーとブラウザ間でHTTPSによる暗号化通信を行うプロトコル"
-    },
-    {
-     "id": "c",
-     "text": "ネットワーク上の機器にIPアドレスを自動的に割り当てるサービス"
-    },
-    {
-     "id": "d",
-     "text": "メールを送受信するためのプロトコル（SMTP・POP3等）"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "DNS（Domain Name System）は、人間が覚えやすいドメイン名（www.example.com等）をコンピュータが扱うIPアドレス（192.168.0.1等）に変換（名前解決）するサービスです。インターネットの電話帳と呼ばれます。アはDHCP。ウはメールプロトコルの説明。エはTLS/SSLの説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "DNS",
-    "ドメイン名",
-    "名前解決"
-   ],
-   "related_page_id": "T-10-02",
-   "tags": [
-    "DNS",
-    "ネットワーク",
-    "名前解決"
-   ],
-   "flashcard_text": "DNSの役割として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-031",
-   "chapter_id": "T-01",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "10進数「45」を2進数に変換したものとして、正しいものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "101011"
-    },
-    {
-     "id": "b",
-     "text": "101111"
-    },
-    {
-     "id": "c",
-     "text": "101101"
-    },
-    {
-     "id": "d",
-     "text": "110101"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "45を2進数に変換します。45 ÷ 2 = 22 余り 1、22 ÷ 2 = 11 余り 0、11 ÷ 2 = 5 余り 1、5 ÷ 2 = 2 余り 1、2 ÷ 2 = 1 余り 0、1 ÷ 2 = 0 余り 1。余りを下から読むと101101。検証：32+8+4+1=45。ア101011=43、ウ110101=53、エ101111=47。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "2進数",
-    "基数変換",
-    "10進数"
-   ],
-   "related_page_id": "T-01-01",
-   "tags": [
-    "2進数",
-    "基数変換",
-    "計算問題"
-   ],
-   "flashcard_text": "10進数「45」を2進数に変換したものとして、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-032",
    "chapter_id": "T-11",
    "category": "technology",
@@ -3537,132 +2619,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-035",
-   "chapter_id": "T-05",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "OSにおける「仮想記憶」の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "データを圧縮してメモリ使用量を削減する技術"
-    },
-    {
-     "id": "b",
-     "text": "複数のCPUを搭載してプログラムを並列処理する技術"
-    },
-    {
-     "id": "c",
-     "text": "プログラムの実行速度を向上させるキャッシュメモリの仕組み"
-    },
-    {
-     "id": "d",
-     "text": "補助記憶装置（HDD等）の一部をメインメモリの延長として使用し、実際の物理メモリより大きな仮想的なメモリ空間を提供する技術"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "仮想記憶（Virtual Memory）は、HDDやSSDの一部をページングファイルとして使用し、物理メモリ（RAM）の容量を超えた大きな仮想アドレス空間をプログラムに提供するOS機能です。スワッピング（メモリとディスク間のデータ入れ替え）が行われます。アはマルチプロセッシング。ウはキャッシュメモリ。エはメモリ圧縮。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "仮想記憶",
-    "ページング",
-    "スワッピング"
-   ],
-   "related_page_id": "T-05-01",
-   "tags": [
-    "仮想記憶",
-    "OS",
-    "メモリ管理"
-   ],
-   "flashcard_text": "OSにおける「仮想記憶」の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-036",
-   "chapter_id": "T-02",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "オブジェクト指向プログラミングにおける「継承」の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "複数のオブジェクトを一つのまとまりとして扱う集約関係"
-    },
-    {
-     "id": "b",
-     "text": "オブジェクトの内部状態を隠蔽して外部から直接アクセスできないようにすること"
-    },
-    {
-     "id": "c",
-     "text": "既存クラスの属性・メソッドを引き継いで新しいクラスを定義すること"
-    },
-    {
-     "id": "d",
-     "text": "同一の操作名で異なる動作を実現できる仕組み"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "継承（Inheritance）は、既存のクラス（スーパークラス・親クラス）の属性やメソッドを引き継いで新しいクラス（サブクラス・子クラス）を定義するオブジェクト指向の機能です。コードの再利用性が向上します。アはカプセル化。ウはポリモーフィズム（多態性）。エは集約（Aggregation）の説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "継承",
-    "オブジェクト指向",
-    "クラス"
-   ],
-   "related_page_id": "T-02-04",
-   "tags": [
-    "継承",
-    "オブジェクト指向",
-    "プログラミング"
-   ],
-   "flashcard_text": "オブジェクト指向プログラミングにおける「継承」の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-037",
-   "chapter_id": "T-10",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "ルーターの役割として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "無線LANのアクセスポイントとして機能し、電波を増幅して通信範囲を拡大する"
-    },
-    {
-     "id": "b",
-     "text": "異なるネットワーク間を接続し、IPアドレスに基づいてデータの最適な転送経路を選択する"
-    },
-    {
-     "id": "c",
-     "text": "複数の機器を有線LANで接続するための集線装置"
-    },
-    {
-     "id": "d",
-     "text": "同一ネットワーク内の機器を接続し、MACアドレスに基づいてデータを転送する"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "ルーターは、異なるネットワーク（例：社内LAN〜インターネット）を接続し、IPアドレスに基づいてデータパケットの最適な転送経路（ルーティング）を選択する機器です。アはスイッチ（L2スイッチ）の説明。ウは無線LAN中継器。エはハブ（スイッチングハブ）の説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "ルーター",
-    "ルーティング",
-    "ネットワーク機器"
-   ],
-   "related_page_id": "T-10-01",
-   "tags": [
-    "ルーター",
-    "ネットワーク機器",
-    "ルーティング"
-   ],
-   "flashcard_text": "ルーターの役割として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-038",
    "chapter_id": "T-11",
    "category": "technology",
@@ -3702,90 +2658,6 @@
     "情報セキュリティ規格"
    ],
    "flashcard_text": "ISMSの国際規格として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-039",
-   "chapter_id": "T-03",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "CPUのパイプライン処理の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "複数のCPUコアが独立して同時に異なるプログラムを実行する並列処理"
-    },
-    {
-     "id": "b",
-     "text": "CPUの動作周波数を動的に上げ下げしてパフォーマンスと消費電力を調整する技術"
-    },
-    {
-     "id": "c",
-     "text": "命令の取得・解読・実行・書き戻しなどの処理段階を重ね合わせて実行することで処理効率を高める技術"
-    },
-    {
-     "id": "d",
-     "text": "プログラムをキャッシュメモリに先読みして実行速度を高める技術"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "パイプライン処理は、命令を「フェッチ（取得）→デコード（解読）→実行→ライトバック（書き戻し）」などの段階に分け、ちょうど工場の流れ作業のように複数の命令を同時並行で処理することでスループットを向上させる技術です。アはマルチコア処理。ウはCPUクロック周波数制御（SpeedStep等）。エはプリフェッチ。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "パイプライン",
-    "CPU",
-    "命令実行"
-   ],
-   "related_page_id": "T-03-01",
-   "tags": [
-    "パイプライン",
-    "CPU",
-    "コンピュータアーキテクチャ"
-   ],
-   "flashcard_text": "CPUのパイプライン処理の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-040",
-   "chapter_id": "T-07",
-   "category": "technology",
-   "difficulty": 1,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "GUIの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "音声でコンピュータに命令を与えて操作するインタフェース"
-    },
-    {
-     "id": "b",
-     "text": "アイコン・メニュー・ウィンドウなどの視覚的要素を使ってマウスやタッチで操作するインタフェース"
-    },
-    {
-     "id": "c",
-     "text": "コマンドを文字で入力してコンピュータを操作するインタフェース"
-    },
-    {
-     "id": "d",
-     "text": "プログラムがAPIを通じて他のプログラムを呼び出すインタフェース"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "GUI（Graphical User Interface）は、アイコン・ボタン・メニュー・ウィンドウなどの視覚的要素を使い、マウスクリックやタッチ操作でコンピュータを直感的に操作するインタフェースです。WindowsやmacOSが代表例。アはCUI（Character User Interface：コマンドライン）。ウは音声UI（VUI）。エはAPIの説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "GUI",
-    "CUI",
-    "ユーザーインタフェース"
-   ],
-   "related_page_id": "T-07-01",
-   "tags": [
-    "GUI",
-    "CUI",
-    "ユーザーインタフェース"
-   ],
-   "flashcard_text": "GUIの説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -3918,47 +2790,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-044",
-   "chapter_id": "T-04",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "クライアントサーバシステムの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "サービスを提供するサーバーと、そのサービスを利用するクライアントで役割分担するシステム"
-    },
-    {
-     "id": "b",
-     "text": "全ての処理を中央の大型コンピュータ（ホスト）で行い、端末は入出力のみ担当するシステム"
-    },
-    {
-     "id": "c",
-     "text": "クラウド上のサーバーにアクセスしてWebブラウザからシステムを利用する形態"
-    },
-    {
-     "id": "d",
-     "text": "全ての機器が対等な立場でリソースを共有するP2Pシステム"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "クライアントサーバシステムは、サービス（データ・機能）を提供するサーバーと、そのサービスを要求・利用するクライアント（PC・スマホ等）で処理を分担するシステム構成です。現在のWebシステム・業務システムの基本形態。アはホスト集中処理（メインフレーム型）。ウはP2P（ピアツーピア）。エはWebシステム（クライアントサーバの一形態）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "クライアントサーバ",
-    "サーバー",
-    "クライアント"
-   ],
-   "related_page_id": "T-04-01",
-   "tags": [
-    "クライアントサーバ",
-    "システム構成要素"
-   ],
-   "flashcard_text": "クライアントサーバシステムの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-045",
    "chapter_id": "T-11",
    "category": "technology",
@@ -3996,90 +2827,6 @@
     "セキュリティ対策"
    ],
    "flashcard_text": "パスワードの管理に関する適切な対策として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-046",
-   "chapter_id": "T-06",
-   "category": "technology",
-   "difficulty": 1,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "HDMIの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "コンピュータと周辺機器を接続する汎用シリアルインタフェース"
-    },
-    {
-     "id": "b",
-     "text": "有線LANでコンピュータをネットワークに接続するEthernetコネクタ"
-    },
-    {
-     "id": "c",
-     "text": "コンピュータ内部でCPUとメモリを接続する内部バス規格"
-    },
-    {
-     "id": "d",
-     "text": "映像・音声・制御信号を1本のケーブルでデジタル伝送するインタフェース規格"
-    }
-   ],
-   "correct_answer": "d",
-   "explanation": "HDMI（High-Definition Multimedia Interface）は、映像・音声・制御信号を1本のデジタルケーブルで伝送するインタフェース規格です。テレビ・モニター・プロジェクターへの接続に広く使用されています。アはUSBの説明。ウはシステムバス（内部バス）。エはEthernetポートの説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "HDMI",
-    "インタフェース",
-    "映像出力"
-   ],
-   "related_page_id": "T-06-01",
-   "tags": [
-    "HDMI",
-    "インタフェース",
-    "ハードウェア"
-   ],
-   "flashcard_text": "HDMIの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-047",
-   "chapter_id": "T-01",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "論理演算において、ANDの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "入力の両方が1のとき、出力が1になる演算"
-    },
-    {
-     "id": "b",
-     "text": "入力の少なくとも一方が1のとき、出力が1になる演算"
-    },
-    {
-     "id": "c",
-     "text": "入力の一方が1のとき、出力が1になる演算"
-    },
-    {
-     "id": "d",
-     "text": "入力が0のとき出力が1、入力が1のとき出力が0になる演算"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "AND（論理積）は、入力の両方が1（TRUE）のときのみ出力が1になる論理演算です。真理値表：0 AND 0=0、0 AND 1=0、1 AND 0=0、1 AND 1=1。アはどちらが1でも出力が1→OR（一部）の誤解。ウはNOT（否定）。エはOR（論理和）の説明。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "AND",
-    "論理演算",
-    "論理積"
-   ],
-   "related_page_id": "T-01-02",
-   "tags": [
-    "AND",
-    "論理演算",
-    "基礎理論"
-   ],
-   "flashcard_text": "論理演算において、ANDの説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -4548,90 +3295,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-059",
-   "chapter_id": "S-07",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "PoCの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "システム開発後にユーザーが受け入れ可否を判断する受入テスト"
-    },
-    {
-     "id": "b",
-     "text": "新しいアイデアや技術が実現可能かを小規模に試して検証すること"
-    },
-    {
-     "id": "c",
-     "text": "製品の量産を開始する前に行う最終品質確認テスト"
-    },
-    {
-     "id": "d",
-     "text": "市場に投入した製品の売上・利益を一定期間評価すること"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "PoC（Proof of Concept：概念実証）は、新しいアイデア・技術・ビジネスモデルが実現可能かどうかを小規模な試作・実験で検証するプロセスです。大規模投資の前に実現性を確認することでリスクを低減します。アは量産前の品質検査。ウは製品評価（KPI測定）。エはUAT（ユーザー受入テスト）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "PoC",
-    "概念実証",
-    "プロトタイプ"
-   ],
-   "related_page_id": "S-07-01",
-   "tags": [
-    "PoC",
-    "概念実証",
-    "システム企画"
-   ],
-   "flashcard_text": "PoCの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-060",
-   "chapter_id": "S-04",
-   "category": "strategy",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "デジタルツインの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "物理空間の機器・施設・プロセスをデジタル空間上に仮想的に再現し、シミュレーションや分析に活用する技術"
-    },
-    {
-     "id": "b",
-     "text": "双子の兄弟がそれぞれ独立した事業を運営するフランチャイズモデル"
-    },
-    {
-     "id": "c",
-     "text": "1台のサーバーを仮想化して2つのシステムとして動作させる技術"
-    },
-    {
-     "id": "d",
-     "text": "同一のWebサービスを冗長化して高可用性を実現するクラウド技術"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "デジタルツイン（Digital Twin）は、工場・航空機エンジン・建物などの物理的な実体をセンサーデータを基にデジタル空間上でリアルタイムに再現し、シミュレーション・予知保全・設計最適化に活用する技術です。GEやシーメンスが先行して活用しています。IoTと組み合わせて活用されます。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "デジタルツイン",
-    "IoT",
-    "シミュレーション"
-   ],
-   "related_page_id": "S-04-02",
-   "tags": [
-    "デジタルツイン",
-    "IoT",
-    "技術戦略"
-   ],
-   "flashcard_text": "デジタルツインの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-061",
    "chapter_id": "S-05",
    "category": "strategy",
@@ -4927,48 +3590,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-068",
-   "chapter_id": "M-03",
-   "category": "management",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "プロジェクトのステークホルダー管理の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "プロジェクトに影響を与える・受けるすべての関係者を特定し、期待・関心事を把握して適切に対応すること"
-    },
-    {
-     "id": "b",
-     "text": "プロジェクトで使用するハードウェア・ソフトウェアを調達する購買管理"
-    },
-    {
-     "id": "c",
-     "text": "プロジェクトチームのモチベーションを管理する人事マネジメント"
-    },
-    {
-     "id": "d",
-     "text": "プロジェクトの予算を適正に管理してコスト超過を防ぐこと"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "プロジェクトのステークホルダー管理は、プロジェクトに影響を与える・受けるすべての関係者（発注者・ユーザー・チームメンバー・経営層・規制機関等）を特定し、それぞれの期待・関心事・影響力を把握して適切にコミュニケーションをとる知識エリアです。PMBOKの10知識エリアの一つです。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "ステークホルダー管理",
-    "PMBOK",
-    "プロジェクトマネジメント"
-   ],
-   "related_page_id": "M-03-01",
-   "tags": [
-    "ステークホルダー管理",
-    "PMBOK",
-    "プロジェクトマネジメント"
-   ],
-   "flashcard_text": "プロジェクトのステークホルダー管理の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-069",
    "chapter_id": "M-01",
    "category": "management",
@@ -5137,48 +3758,6 @@
     "自動化"
    ],
    "flashcard_text": "CIの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-073",
-   "chapter_id": "M-05",
-   "category": "management",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "情報セキュリティ監査の説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "新しいセキュリティ製品を導入する際の技術評価プロセス"
-    },
-    {
-     "id": "b",
-     "text": "情報システムの機能・性能が要件を満たしているかをユーザーが確認するテスト"
-    },
-    {
-     "id": "c",
-     "text": "情報セキュリティ対策の状況を独立した立場から評価し、改善提言を行う監査"
-    },
-    {
-     "id": "d",
-     "text": "企業の財務諸表の正確性を監査法人が確認する財務監査"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "情報セキュリティ監査は、組織の情報セキュリティ対策（方針・ルール・技術的対策・運用管理等）が適切に整備・運用されているかを、独立した立場の監査人が客観的に評価し、改善提言を行うプロセスです。ISMSの内部監査・外部審査がこれに該当します。アは会計監査。ウはシステムテスト。エはPoC。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "情報セキュリティ監査",
-    "ISMS",
-    "内部監査"
-   ],
-   "related_page_id": "M-05-01",
-   "tags": [
-    "情報セキュリティ監査",
-    "ISMS",
-    "システム監査"
-   ],
-   "flashcard_text": "情報セキュリティ監査の説明として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -5522,50 +4101,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-082",
-   "chapter_id": "T-03",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "DRAMの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "CPUのレジスタとして使用される超高速・小容量の一時記憶領域"
-    },
-    {
-     "id": "b",
-     "text": "定期的なリフレッシュ操作が必要で、コンピュータの主記憶（メインメモリ）として広く使用される揮発性メモリ"
-    },
-    {
-     "id": "c",
-     "text": "SSDに使用されるフラッシュメモリの一種"
-    },
-    {
-     "id": "d",
-     "text": "電源を切っても内容が保持される不揮発性メモリ"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "DRAM（Dynamic RAM）は、コンデンサに電荷を蓄えてデータを保持する揮発性メモリです。定期的なリフレッシュ（再充電）操作が必要ですが、高集積・低コストのためパソコンのメインメモリ（主記憶）として広く使用されます。アはフラッシュメモリ・ROM。ウはCPUレジスタ（半導体素子）。エはフラッシュメモリ（NAND）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "DRAM",
-    "RAM",
-    "主記憶",
-    "揮発性メモリ"
-   ],
-   "related_page_id": "T-03-02",
-   "tags": [
-    "DRAM",
-    "RAM",
-    "メモリ",
-    "コンピュータ構成要素"
-   ],
-   "flashcard_text": "DRAMの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-083",
    "chapter_id": "T-05",
    "category": "technology",
@@ -5606,48 +4141,6 @@
     "周辺装置管理"
    ],
    "flashcard_text": "OSにおけるスプーリング（Spooling）の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-084",
-   "chapter_id": "T-02",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "二分探索（バイナリサーチ）の前提条件として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "探索するデータが必ずリストの先頭に存在すること"
-    },
-    {
-     "id": "b",
-     "text": "データが昇順または降順に整列（ソート）されていること"
-    },
-    {
-     "id": "c",
-     "text": "データが配列ではなくリスト構造で格納されていること"
-    },
-    {
-     "id": "d",
-     "text": "データの件数が偶数であること"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "二分探索（バイナリサーチ）は、探索対象のデータが昇順または降順にソート済みであることが前提条件です。中央の要素と比較して探索範囲を半分に絞り込みながら検索するため、O(log n)の効率的な探索が可能です。ソートされていないデータには使えません。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "二分探索",
-    "バイナリサーチ",
-    "アルゴリズム"
-   ],
-   "related_page_id": "T-02-05",
-   "tags": [
-    "二分探索",
-    "バイナリサーチ",
-    "アルゴリズム"
-   ],
-   "flashcard_text": "二分探索（バイナリサーチ）の前提条件として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -5950,48 +4443,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-092",
-   "chapter_id": "T-06",
-   "category": "technology",
-   "difficulty": 1,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "Bluetoothの特徴として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "数十〜数百kmの距離を結ぶ広域無線通信規格"
-    },
-    {
-     "id": "b",
-     "text": "ICカードやスマートフォンで使用される13.56MHzの近接通信規格"
-    },
-    {
-     "id": "c",
-     "text": "数cm〜数mの近距離で機器間を無線接続する短距離無線通信規格。ヘッドセット・マウスなどに使用される"
-    },
-    {
-     "id": "d",
-     "text": "有線LANの代替として室内での高速データ通信に使用するWi-Fi規格"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "Bluetooth（ブルートゥース）は、2.4GHz帯の電波を使用して数cm〜約100m（クラスにより異なる）の近距離で機器間を無線接続する短距離無線通信規格です。ワイヤレスイヤホン・マウス・キーボード・スマートウォッチなどに広く使用されます。アは携帯電話網・衛星通信。ウはWi-Fi（IEEE 802.11）。エはNFC（Near Field Communication）。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "Bluetooth",
-    "無線通信",
-    "近距離通信"
-   ],
-   "related_page_id": "T-06-01",
-   "tags": [
-    "Bluetooth",
-    "無線通信",
-    "ハードウェア"
-   ],
-   "flashcard_text": "Bluetoothの特徴として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-093",
    "chapter_id": "T-04",
    "category": "technology",
@@ -6162,50 +4613,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R03S-097",
-   "chapter_id": "T-03",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "GPUの説明として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "大量の並列演算処理に特化したプロセッサで、3D描画やAI計算に活用される"
-    },
-    {
-     "id": "b",
-     "text": "コンピュータと周辺機器を接続するためのインタフェース"
-    },
-    {
-     "id": "c",
-     "text": "コンピュータ全体の演算処理を統括する中央処理装置"
-    },
-    {
-     "id": "d",
-     "text": "SSDやHDDなどの補助記憶装置を制御するプロセッサ"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "GPU（Graphics Processing Unit）は、もともと3Dグラフィックの描画処理に特化したプロセッサですが、大量の並列演算処理能力を活かして深層学習（ディープラーニング）・科学技術計算・仮想通貨マイニングにも広く活用されています。CPUは少数の高性能コアで汎用処理、GPUは数千の小規模コアで並列処理が得意です。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "GPU",
-    "並列処理",
-    "AI",
-    "ディープラーニング"
-   ],
-   "related_page_id": "T-03-01",
-   "tags": [
-    "GPU",
-    "並列処理",
-    "AI",
-    "コンピュータ構成要素"
-   ],
-   "flashcard_text": "GPUの説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R03S-098",
    "chapter_id": "T-09",
    "category": "technology",
@@ -6291,48 +4698,6 @@
     "公開鍵"
    ],
    "flashcard_text": "PKIにおける認証局（CA）の役割として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R03S-100",
-   "chapter_id": "T-02",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R03_spring",
-   "source_label": "AI予想問題（令和3年度傾向）",
-   "question_text": "バブルソートの特徴として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "データを半分に分割しながら再帰的にソートする効率的な手法（O(n log n)）"
-    },
-    {
-     "id": "b",
-     "text": "未整列部分から最小値を選んで先頭に移動する手法"
-    },
-    {
-     "id": "c",
-     "text": "隣り合う要素を比較・交換する操作を繰り返し、全体を整列する手法（O(n²)）"
-    },
-    {
-     "id": "d",
-     "text": "整列済み部分に新しい要素を適切な位置に挿入する手法"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "バブルソートは、隣り合う要素を比較して順序が逆なら交換する操作をリスト末尾まで繰り返し（1パス）、これを整列完了まで繰り返すアルゴリズムです。計算量はO(n²)で大規模データには不向きですが、実装が単純です。アはクイックソートやマージソート（O(n log n)）。ウは選択ソート。エは挿入ソート。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "バブルソート",
-    "ソートアルゴリズム",
-    "計算量"
-   ],
-   "related_page_id": "T-02-05",
-   "tags": [
-    "バブルソート",
-    "ソート",
-    "アルゴリズム"
-   ],
-   "flashcard_text": "バブルソートの特徴として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -6671,49 +5036,6 @@
     "法務"
    ],
    "flashcard_text": "サイバーセキュリティ基本法の説明として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R02A-009",
-   "chapter_id": "S-01",
-   "category": "strategy",
-   "difficulty": 3,
-   "source": "past_R02_autumn",
-   "source_label": "AI予想問題（令和2年度傾向）",
-   "question_text": "ある製品の売上高が5,000万円、変動費が3,000万円、固定費が1,500万円のとき、限界利益率として正しいものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "30%"
-    },
-    {
-     "id": "b",
-     "text": "40%"
-    },
-    {
-     "id": "c",
-     "text": "70%"
-    },
-    {
-     "id": "d",
-     "text": "60%"
-    }
-   ],
-   "correct_answer": "b",
-   "explanation": "限界利益 = 売上高 − 変動費 = 5,000万円 − 3,000万円 = 2,000万円。限界利益率 = 限界利益 ÷ 売上高 × 100 = 2,000 ÷ 5,000 × 100 = 40%。損益分岐点売上高 = 固定費 ÷ 限界利益率 = 1,500 ÷ 0.4 = 3,750万円。ア30%は変動費率（3,000÷5,000）。ウ60%は（5,000−1,500−500）÷5,000などの誤計算。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "限界利益率",
-    "限界利益",
-    "損益分岐点"
-   ],
-   "related_page_id": "S-01-03",
-   "tags": [
-    "限界利益率",
-    "損益分岐点",
-    "計算問題",
-    "財務"
-   ],
-   "flashcard_text": "ある製品の売上高が5,000万円、変動費が3,000万円、固定費が1,500万円のとき、限界利益率として、以下は正しい？",
    "flashcard_skip": false
   },
   {
@@ -7611,48 +5933,6 @@
    "flashcard_skip": false
   },
   {
-   "question_id": "P-R02A-031",
-   "chapter_id": "T-01",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R02_autumn",
-   "source_label": "AI予想問題（令和2年度傾向）",
-   "question_text": "16進数「A3」を10進数に変換したものとして、正しいものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "173"
-    },
-    {
-     "id": "b",
-     "text": "143"
-    },
-    {
-     "id": "c",
-     "text": "163"
-    },
-    {
-     "id": "d",
-     "text": "153"
-    }
-   ],
-   "correct_answer": "c",
-   "explanation": "16進数「A3」を10進数に変換します。16進数でAは10を表します。A3 = A × 16^1 + 3 × 16^0 = 10 × 16 + 3 × 1 = 160 + 3 = 163。ア143は「8F」、イ153は「99」、エ173は「AD」に対応。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "16進数",
-    "基数変換",
-    "10進数"
-   ],
-   "related_page_id": "T-01-01",
-   "tags": [
-    "16進数",
-    "基数変換",
-    "計算問題"
-   ],
-   "flashcard_text": "16進数「A3」を10進数に変換したものとして、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
    "question_id": "P-R02A-032",
    "chapter_id": "T-09",
    "category": "technology",
@@ -8334,48 +6614,6 @@
     "ネットワーク"
    ],
    "flashcard_text": "プロキシサーバーの役割として、以下は正しい？",
-   "flashcard_skip": false
-  },
-  {
-   "question_id": "P-R02A-048",
-   "chapter_id": "T-11",
-   "category": "technology",
-   "difficulty": 2,
-   "source": "past_R02_autumn",
-   "source_label": "AI予想問題（令和2年度傾向）",
-   "question_text": "マルウェアの一種「ワーム」の特徴として、最も適切なものはどれか。",
-   "choices": [
-    {
-     "id": "a",
-     "text": "ネットワークを通じて自己複製し、宿主となるファイルなしに単独で感染を拡大するプログラム"
-    },
-    {
-     "id": "b",
-     "text": "他のファイルに寄生して感染を広げるプログラム"
-    },
-    {
-     "id": "c",
-     "text": "正規のソフトウェアに偽装してシステムに侵入し、バックドアを作るプログラム"
-    },
-    {
-     "id": "d",
-     "text": "感染したPCのデータを暗号化して身代金を要求するプログラム"
-    }
-   ],
-   "correct_answer": "a",
-   "explanation": "ワーム（Worm）は、他のファイルに寄生する必要なく単独で存在し、ネットワーク（インターネット・LAN）を通じて自己複製して他のコンピュータに感染を拡大するマルウェアです。感染速度が速く、ネットワーク帯域を消費する特徴があります。アは「コンピュータウイルス」（狭義）。ウはランサムウェア。エはトロイの木馬。出典：IPA ITパスポート試験",
-   "related_terms": [
-    "ワーム",
-    "マルウェア",
-    "自己複製"
-   ],
-   "related_page_id": "T-11-02",
-   "tags": [
-    "ワーム",
-    "マルウェア",
-    "セキュリティ脅威"
-   ],
-   "flashcard_text": "マルウェアの一種「ワーム」の特徴として、以下は正しい？",
    "flashcard_skip": false
   },
   {

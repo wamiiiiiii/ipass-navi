@@ -1,0 +1,3642 @@
+{
+ "version": "1.0",
+ "updated_at": "2026-07-04",
+ "source_note": "本番同等化の一環として自前執筆した長文・事例・計算問題（既存AI予想問題には少なかった100字以上の長文問題を補うために新規作成。実過去問ではない）。",
+ "questions": [
+  {
+   "question_id": "LF-S-001",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "A社は、創業以来「ヒト」を最も重視する経営方針を掲げ、社員教育に多くの予算を投じてきた。近年、業務のデジタル化に伴い、顧客データや技術ノウハウを一元管理して活用する取り組みを始めた。この取り組みが新たに重視するようになった経営資源として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ヒト"
+    },
+    {
+     "id": "b",
+     "text": "モノ"
+    },
+    {
+     "id": "c",
+     "text": "カネ"
+    },
+    {
+     "id": "d",
+     "text": "情報"
+    }
+   ],
+   "correct_answer": "d",
+   "explanation": "経営資源は「ヒト・モノ・カネ・情報」の4つに分類されます。顧客データや技術ノウハウを一元管理して活用する取り組みは、経営資源のうち「情報」を重視する経営への転換を表しています。（自作問題）",
+   "related_terms": [
+    "経営資源"
+   ],
+   "related_page_id": "S-01-01",
+   "tags": [
+    "企業活動",
+    "経営資源"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-002",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "B社は、各事業部が製造・販売・開発の機能をすべて持ち、事業部ごとに独立採算で運営される組織体制を採用している。この組織形態のメリットとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "同じ機能を持つ人員を全社で一元管理できるため、専門性が高まりやすい"
+    },
+    {
+     "id": "b",
+     "text": "事業部ごとに損益責任が明確になり、迅速な意思決定ができる"
+    },
+    {
+     "id": "c",
+     "text": "全社共通のルールで統制するため、部門間の重複投資が起きにくい"
+    },
+    {
+     "id": "d",
+     "text": "経営トップに情報や権限が集中するため、統一的な戦略を徹底しやすい"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "事業部制組織は、製品や地域ごとに一体的な機能を持つ事業部を編成し、独立採算で運営する組織形態です。事業部ごとに損益責任が明確になり、市場変化への迅速な意思決定ができる一方、機能の重複投資が起きやすい点が課題です。（自作問題）",
+   "related_terms": [
+    "事業部制組織"
+   ],
+   "related_page_id": "S-01-02",
+   "tags": [
+    "企業活動",
+    "組織形態"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-003",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "ある製品の販売価格は1個2,000円、1個当たりの変動費は1,200円である。固定費が年間4,800,000円かかるとき、この製品の損益分岐点となる年間販売数量は何個か。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "2,400個"
+    },
+    {
+     "id": "b",
+     "text": "4,000個"
+    },
+    {
+     "id": "c",
+     "text": "6,000個"
+    },
+    {
+     "id": "d",
+     "text": "8,000個"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "損益分岐点販売数量＝固定費÷（販売価格－変動費）で求めます。4,800,000円÷（2,000円－1,200円）＝4,800,000円÷800円＝6,000個となります。（自作問題）",
+   "related_terms": [
+    "損益分岐点分析"
+   ],
+   "related_page_id": "S-01-03",
+   "tags": [
+    "財務",
+    "損益分岐点"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-004",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "C社の決算書には、ある時点における資産・負債・純資産の残高が記載された表と、一定期間の収益・費用の内訳を示す表がある。このうち、ある時点の財政状態を示す表の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "損益計算書（P/L）"
+    },
+    {
+     "id": "b",
+     "text": "貸借対照表（B/S）"
+    },
+    {
+     "id": "c",
+     "text": "キャッシュフロー計算書（C/F）"
+    },
+    {
+     "id": "d",
+     "text": "株主資本等変動計算書"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "貸借対照表（B/S）は、決算日などある一時点における資産・負債・純資産の残高を示し、企業の財政状態を表します。損益計算書（P/L）は一定期間の収益・費用と利益を示す表であり、財政状態ではなく経営成績を表す点が異なります。（自作問題）",
+   "related_terms": [
+    "貸借対照表"
+   ],
+   "related_page_id": "S-01-04",
+   "tags": [
+    "財務諸表"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-005",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "D工場では、製品の不良原因を洗い出すために、不良の種類ごとの発生件数を棒グラフで多い順に並べ、その累積比率を折れ線グラフで重ねて表示した図を作成した。この図の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "特性要因図"
+    },
+    {
+     "id": "b",
+     "text": "散布図"
+    },
+    {
+     "id": "c",
+     "text": "パレート図"
+    },
+    {
+     "id": "d",
+     "text": "管理図"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "パレート図は、QC七つ道具の一つで、項目別の発生件数を大きい順に並べた棒グラフと、その累積比率を示す折れ線グラフを組み合わせた図です。重点的に対応すべき少数の重要な原因（重点管理項目）を特定するのに用いられます。（自作問題）",
+   "related_terms": [
+    "パレート図",
+    "QC七つ道具"
+   ],
+   "related_page_id": "S-01-05",
+   "tags": [
+    "品質管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-006",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "E社の営業部門では「顧客訪問件数」を日々のKPIとして測定し、これを積み上げることで最終目標である「年間契約件数の増加」というKGIの達成を目指している。この関係の説明として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "KGIはKPIの達成状況を測るための中間指標であり、KPIより上位の概念である"
+    },
+    {
+     "id": "b",
+     "text": "KPIは最終目標を示す指標であり、KGIはその達成度を測る中間指標である"
+    },
+    {
+     "id": "c",
+     "text": "KGIは最終目標（重要目標達成指標）であり、KPIはその達成過程を測る中間指標（重要業績評価指標）である"
+    },
+    {
+     "id": "d",
+     "text": "KGIとKPIは同一の指標を異なる部署向けに言い換えたものであり、実質的な違いはない"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "KGI（重要目標達成指標）は最終的に達成すべき目標を示し、KPI（重要業績評価指標）はその目標達成に向けた活動の進捗を測る中間指標です。設問では契約件数の増加がKGI、訪問件数がKPIに当たります。（自作問題）",
+   "related_terms": [
+    "KGI",
+    "KPI"
+   ],
+   "related_page_id": "S-01-07",
+   "tags": [
+    "業績評価指標"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-007",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "F社では、新商品の投入可否を判断するために、市場の成長性や競合状況など複数の条件を枝分かれさせながら、それぞれの選択がもたらす期待利益を樹形図の形で整理し、比較検討することにした。この分析手法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SWOT分析"
+    },
+    {
+     "id": "b",
+     "text": "デシジョンツリー分析"
+    },
+    {
+     "id": "c",
+     "text": "ABC分析"
+    },
+    {
+     "id": "d",
+     "text": "バランススコアカード"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "デシジョンツリー（決定木）分析は、複数の選択肢とその結果生じ得る事象を樹形図（ツリー状の図）で表し、各選択肢の期待値を計算して比較検討する意思決定手法です。不確実性を伴う投資判断などに用いられます。（自作問題）",
+   "related_terms": [
+    "デシジョンツリー"
+   ],
+   "related_page_id": "S-01-08",
+   "tags": [
+    "意思決定"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-008",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "G社は、既存の食品加工技術を活かして、これまで参入していなかった海外市場向けに新たな商品を投入する計画を立てた。アンゾフの成長マトリックスにおいて、この戦略に該当するものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "市場浸透戦略"
+    },
+    {
+     "id": "b",
+     "text": "新製品開発戦略"
+    },
+    {
+     "id": "c",
+     "text": "新市場開拓戦略"
+    },
+    {
+     "id": "d",
+     "text": "多角化戦略"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "アンゾフの成長マトリックスは「製品」と「市場」の軸で戦略を4分類します。既存の技術・製品を活かして新しい市場（海外市場）に進出する戦略は「新市場開拓戦略」に該当します。既存製品を新市場に投入する点が、新製品開発戦略や多角化戦略とは異なります。（自作問題）",
+   "related_terms": [
+    "アンゾフの成長マトリックス"
+   ],
+   "related_page_id": "S-01-09",
+   "tags": [
+    "経営戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-009",
+   "chapter_id": "S-01",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "H社の在庫管理担当者は、多数ある部品の中から重点的に管理すべきものを絞り込むために、各部品の年間使用金額を大きい順に並べ、累積比率が70％に達するまでの部品を最重要グループ（Aランク）とする分析を行った。この分析手法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ABC分析"
+    },
+    {
+     "id": "b",
+     "text": "クロスSWOT分析"
+    },
+    {
+     "id": "c",
+     "text": "バリューチェーン分析"
+    },
+    {
+     "id": "d",
+     "text": "PPM分析"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ABC分析（パレート分析）は、対象を重要度（累積比率など）によってA・B・Cのランクに分類し、重点的に管理すべき対象を絞り込む分析手法です。在庫管理や顧客管理などで、少数の重要項目に経営資源を集中させる際に用いられます。（自作問題）",
+   "related_terms": [
+    "ABC分析"
+   ],
+   "related_page_id": "S-01-10",
+   "tags": [
+    "在庫管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-010",
+   "chapter_id": "S-02",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "I社は、自社が独自に開発した製造ノウハウを、特許出願はせず秘密として社内で厳重に管理する方針をとっている。一方、自社ブランドのロゴマークについては特許庁に登録して保護を受けている。これらの知的財産のうち、ロゴマークを保護する権利として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "特許権"
+    },
+    {
+     "id": "b",
+     "text": "実用新案権"
+    },
+    {
+     "id": "c",
+     "text": "商標権"
+    },
+    {
+     "id": "d",
+     "text": "著作権"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "商標権は、商品やサービスに使用するロゴマークやネーミングなどを保護する産業財産権です。特許権は発明、実用新案権は物品の形状等の考案を保護する権利であり、ブランドを示すロゴマークの保護には商標権が適切です。（自作問題）",
+   "related_terms": [
+    "商標権"
+   ],
+   "related_page_id": "S-02-01",
+   "tags": [
+    "知的財産権"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-011",
+   "chapter_id": "S-02",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "J社の従業員が、在職中に得た顧客リストや取引条件などの営業秘密を、退職後に転職先の競合企業に無断で開示した。この行為を規制する法律として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "不正競争防止法"
+    },
+    {
+     "id": "b",
+     "text": "不正アクセス禁止法"
+    },
+    {
+     "id": "c",
+     "text": "個人情報保護法"
+    },
+    {
+     "id": "d",
+     "text": "労働基準法"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "不正競争防止法は、秘密として管理されている有用な営業上・技術上の情報（営業秘密）の不正な取得・使用・開示などを規制する法律です。退職者による営業秘密の無断開示は、この法律で規制される不正競争行為に該当します。（自作問題）",
+   "related_terms": [
+    "不正競争防止法",
+    "営業秘密"
+   ],
+   "related_page_id": "S-02-02",
+   "tags": [
+    "セキュリティ関連法規"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-012",
+   "chapter_id": "S-02",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "K社では、法令遵守にとどまらず、環境保全活動への参加や地域社会への貢献活動にも積極的に取り組んでおり、これらの活動内容を毎年報告書にまとめて公表している。このような、企業が社会の一員として果たすべき責任を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "コーポレートガバナンス"
+    },
+    {
+     "id": "b",
+     "text": "CSR（企業の社会的責任）"
+    },
+    {
+     "id": "c",
+     "text": "内部統制"
+    },
+    {
+     "id": "d",
+     "text": "コンプライアンス"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "CSR（Corporate Social Responsibility、企業の社会的責任）は、企業が法令遵守（コンプライアンス）にとどまらず、環境保全や地域貢献など社会の一員として果たすべき責任を自主的に果たす取り組みを指します。コンプライアンスはCSRを支える要素の一つです。（自作問題）",
+   "related_terms": [
+    "CSR"
+   ],
+   "related_page_id": "S-02-05",
+   "tags": [
+    "コンプライアンス"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-013",
+   "chapter_id": "S-02",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "L社が製造した家電製品の設計上の欠陥が原因で、購入者が火傷を負う事故が発生した。製造業者の過失の有無にかかわらず、製造物の欠陥によって生じた損害について製造業者が賠償責任を負うことを定めた法律として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "消費者契約法"
+    },
+    {
+     "id": "b",
+     "text": "製造物責任法（PL法）"
+    },
+    {
+     "id": "c",
+     "text": "特定商取引に関する法律"
+    },
+    {
+     "id": "d",
+     "text": "景品表示法"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "製造物責任法（PL法）は、製造物の欠陥によって生命・身体・財産に損害が生じた場合、製造業者の過失の有無を問わず、製造業者が損害賠償責任を負うことを定めた法律です。消費者を保護し、無過失責任を追及できる点が特徴です。（自作問題）",
+   "related_terms": [
+    "製造物責任法"
+   ],
+   "related_page_id": "S-02-07",
+   "tags": [
+    "製造物責任法"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-014",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "M社は自社の経営環境を分析するに当たり、「高い技術力」「豊富な資金力」を強み、「若手人材の不足」を弱みとして内部要因を整理し、「市場の拡大」を機会、「新規競合の参入」を脅威として外部要因を整理した。この分析手法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SWOT分析"
+    },
+    {
+     "id": "b",
+     "text": "PPM分析"
+    },
+    {
+     "id": "c",
+     "text": "バリューチェーン分析"
+    },
+    {
+     "id": "d",
+     "text": "ファイブフォース分析"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "SWOT分析は、内部環境の強み（Strength）・弱み（Weakness）と、外部環境の機会（Opportunity）・脅威（Threat）の4つの要素で自社を取り巻く状況を整理し、経営戦略の立案に活用する分析手法です。（自作問題）",
+   "related_terms": [
+    "SWOT分析"
+   ],
+   "related_page_id": "S-03-01",
+   "tags": [
+    "経営戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-015",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "N社は、複数の事業について「市場成長率」と「市場占有率（シェア）」の2軸でマトリックス上に位置付け、市場成長率は低いがシェアが高い事業を「安定した資金源」と位置付けて、他の事業への投資原資とする方針を立てた。この分析手法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SWOT分析"
+    },
+    {
+     "id": "b",
+     "text": "PPM（プロダクトポートフォリオマネジメント）"
+    },
+    {
+     "id": "c",
+     "text": "バランススコアカード"
+    },
+    {
+     "id": "d",
+     "text": "アンゾフの成長マトリックス"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "PPM（プロダクトポートフォリオマネジメント）は、市場成長率と市場占有率の2軸で事業を「花形」「金のなる木」「問題児」「負け犬」に分類し、事業ごとの資源配分の方針を検討するフレームワークです。設問の「市場成長率は低いがシェアが高い」事業は「金のなる木」に該当します。（自作問題）",
+   "related_terms": [
+    "PPM"
+   ],
+   "related_page_id": "S-03-02",
+   "tags": [
+    "経営戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-016",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "O社は、財務の視点だけでなく、顧客の視点、社内業務プロセスの視点、学習と成長の視点という4つの視点から目標と評価指標を設定し、経営戦略の実行状況をバランスよく管理する仕組みを導入した。この仕組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "バランススコアカード（BSC）"
+    },
+    {
+     "id": "b",
+     "text": "PPM"
+    },
+    {
+     "id": "c",
+     "text": "SWOT分析"
+    },
+    {
+     "id": "d",
+     "text": "ベンチマーキング"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "バランススコアカード（BSC）は、財務の視点・顧客の視点・社内業務プロセスの視点・学習と成長の視点という4つの視点から、経営戦略を具体的な目標と評価指標に落とし込んで管理する経営管理手法です。財務指標だけに偏らないバランスの取れた評価が特徴です。（自作問題）",
+   "related_terms": [
+    "バランススコアカード"
+   ],
+   "related_page_id": "S-03-03",
+   "tags": [
+    "経営戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-017",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "P社のマーケティング担当者は、新商品の販促計画を立てるに当たり、「製品（Product）」「価格（Price）」「流通（Place）」「販売促進（Promotion）」の4つの観点から施策を検討することにした。この考え方を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "STP"
+    },
+    {
+     "id": "b",
+     "text": "4P（マーケティングミックス）"
+    },
+    {
+     "id": "c",
+     "text": "CRM"
+    },
+    {
+     "id": "d",
+     "text": "SWOT分析"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "4P（マーケティングミックス）は、製品（Product）・価格（Price）・流通（Place）・販売促進（Promotion）の4つの観点から、具体的なマーケティング施策を組み合わせて検討するフレームワークです。STPは市場の細分化・標的設定・位置付けを行う手法で、4Pとは異なる段階の分析です。（自作問題）",
+   "related_terms": [
+    "4P",
+    "マーケティングミックス"
+   ],
+   "related_page_id": "S-03-04",
+   "tags": [
+    "マーケティング"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-018",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "Q社は、経営者の独断的な意思決定を防ぎ、株主をはじめとするステークホルダーの利益を守るために、社外取締役の増員や取締役会の監督機能の強化を進めている。このような、企業経営を監視・統制する仕組みを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "コーポレートガバナンス"
+    },
+    {
+     "id": "b",
+     "text": "CSR"
+    },
+    {
+     "id": "c",
+     "text": "アカウンタビリティ"
+    },
+    {
+     "id": "d",
+     "text": "コンプライアンス"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "コーポレートガバナンス（企業統治）は、株主をはじめとするステークホルダーの利益を守るため、経営者の独断的な意思決定を防ぎ、経営の透明性・健全性を確保する仕組みです。社外取締役の増員や取締役会の監督機能強化は、その代表的な取組です。（自作問題）",
+   "related_terms": [
+    "コーポレートガバナンス"
+   ],
+   "related_page_id": "S-03-05",
+   "tags": [
+    "経営管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-019",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "R社は、業界で優れた業績を上げている他社の業務プロセスや手法を調査・分析し、自社の業務改善に活用する取り組みを行っている。この手法を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "アウトソーシング"
+    },
+    {
+     "id": "b",
+     "text": "ベンチマーキング"
+    },
+    {
+     "id": "c",
+     "text": "M&A"
+    },
+    {
+     "id": "d",
+     "text": "リエンジニアリング"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "ベンチマーキングは、業界で優れた業績を上げている他社（ベストプラクティス企業）の手法やプロセスを調査・分析し、自社の業務改善の目標や指標として活用する経営手法です。（自作問題）",
+   "related_terms": [
+    "ベンチマーキング"
+   ],
+   "related_page_id": "S-03-07",
+   "tags": [
+    "経営管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-020",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "S社は、自社が持たない技術やブランド力を短期間で獲得するために、同業の他社の株式を取得して経営権を取得する取り組みを進めている。この取り組みを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "M&A（合併・買収）"
+    },
+    {
+     "id": "b",
+     "text": "アライアンス"
+    },
+    {
+     "id": "c",
+     "text": "アウトソーシング"
+    },
+    {
+     "id": "d",
+     "text": "フランチャイズ"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "M&A（Mergers and Acquisitions、合併・買収）は、他社の株式取得や事業譲受などによって経営権を取得し、技術やブランド力、市場シェアなどを短期間で獲得する経営手法です。アライアンスは資本の移動を伴わない業務提携である点が異なります。（自作問題）",
+   "related_terms": [
+    "M&A"
+   ],
+   "related_page_id": "S-03-08",
+   "tags": [
+    "経営戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-021",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "T社は、最終目標であるKGI（重要目標達成指標）を設定した上で、その達成のために特に重要となる要因をCSF（重要成功要因）として特定し、CSFの実行状況をKPI（重要業績評価指標）で日々測定する目標管理の仕組みを構築した。この関係の説明として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "KGIはCSFを達成するための手段であり、KPIは最終目標を表す"
+    },
+    {
+     "id": "b",
+     "text": "CSFはKGI達成のために特に重要な要因であり、KPIはCSFの実行状況を測る指標である"
+    },
+    {
+     "id": "c",
+     "text": "KPIはKGIより上位の概念であり、CSFはKPIの達成手段である"
+    },
+    {
+     "id": "d",
+     "text": "KGI・CSF・KPIはすべて同じ内容を異なる部門向けに言い換えたものである"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "KGI（重要目標達成指標）は最終目標、CSF（重要成功要因）はKGI達成のために特に重要となる要因、KPI（重要業績評価指標）はCSFの実行状況を日々測定する指標です。KGI→CSF→KPIという順に目標を具体化していく関係にあります。（自作問題）",
+   "related_terms": [
+    "KGI",
+    "CSF",
+    "KPI"
+   ],
+   "related_page_id": "S-03-09",
+   "tags": [
+    "目標管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-022",
+   "chapter_id": "S-03",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "U社は、新規事業のアイデアについて、まず必要最小限の機能を持つ試作品（MVP）を市場に投入し、顧客からのフィードバックを得ながら、仮説検証を繰り返して製品を改良していく開発手法を採用した。この手法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ウォーターフォールモデル"
+    },
+    {
+     "id": "b",
+     "text": "リーンスタートアップ"
+    },
+    {
+     "id": "c",
+     "text": "PPM"
+    },
+    {
+     "id": "d",
+     "text": "OJT"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "リーンスタートアップは、仮説に基づいて実用最小限の製品（MVP：Minimum Viable Product）を作り、顧客の反応を見ながら短期間で仮説検証と改良を繰り返す新規事業開発の手法です。新規事業の成功確率を高めつつ、開発コストと時間の無駄を抑えることを狙います。（自作問題）",
+   "related_terms": [
+    "リーンスタートアップ",
+    "MVP"
+   ],
+   "related_page_id": "S-03-10",
+   "tags": [
+    "新規事業"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-023",
+   "chapter_id": "S-04",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "V社の技術部門は、優れた技術を持ちながら、それを事業の収益に結び付けられずにいる。そこで、技術戦略の立案や技術開発への投資判断、研究成果の事業化までを一貫してマネジメントする活動に取り組むことにした。この活動を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "MOT（技術経営）"
+    },
+    {
+     "id": "b",
+     "text": "SCM"
+    },
+    {
+     "id": "c",
+     "text": "CRM"
+    },
+    {
+     "id": "d",
+     "text": "BPR"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "MOT（Management of Technology、技術経営）は、技術に立脚する事業を行う企業が、技術開発への投資判断から研究成果の事業化までを一貫してマネジメントし、技術を継続的な収益や成長に結び付けるための経営手法です。（自作問題）",
+   "related_terms": [
+    "MOT"
+   ],
+   "related_page_id": "S-04-01",
+   "tags": [
+    "技術戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-024",
+   "chapter_id": "S-04",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "W社は、横軸に時間、縦軸に市場・製品・技術を配置した図を作成し、将来にわたる技術開発の道筋と、それによって実現する製品・サービスの展開時期を関係者間で共有できるようにした。この図の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "PERT図"
+    },
+    {
+     "id": "b",
+     "text": "技術ロードマップ"
+    },
+    {
+     "id": "c",
+     "text": "E-R図"
+    },
+    {
+     "id": "d",
+     "text": "アローダイアグラム"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "技術ロードマップは、横軸に時間、縦軸に市場・製品・技術などを配置し、研究開発成果が将来どのように製品化・事業化されていくかの道筋を示した図です。関係者間で技術開発の方向性を共有するために用いられます。（自作問題）",
+   "related_terms": [
+    "技術ロードマップ"
+   ],
+   "related_page_id": "S-04-02",
+   "tags": [
+    "技術戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-025",
+   "chapter_id": "S-05",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "X社は、工場内の設備にセンサーを取り付けて稼働状況をリアルタイムに収集し、蓄積された大量のデータをAIで分析することで、故障の予兆を検知し保守作業のタイミングを最適化する仕組みを構築した。この事例に関わる技術の組合せとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "IoT・ビッグデータ・AI"
+    },
+    {
+     "id": "b",
+     "text": "ブロックチェーン・フィンテック"
+    },
+    {
+     "id": "c",
+     "text": "EDI・EC"
+    },
+    {
+     "id": "d",
+     "text": "RPA・BPR"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "設問の事例は、センサーによるデータ収集（IoT）、蓄積された大量データ（ビッグデータ）、故障予兆の検知（AIによる分析）を組み合わせた典型的な活用例です。IoT・ビッグデータ・AIは相互に関連し合い、データ駆動型の業務改善を実現する代表的な技術群です。（自作問題）",
+   "related_terms": [
+    "IoT",
+    "ビッグデータ",
+    "AI"
+   ],
+   "related_page_id": "S-05-01",
+   "tags": [
+    "IoT",
+    "AI"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-026",
+   "chapter_id": "S-05",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "Y社は、複数の仕入先・製造拠点・販売拠点にまたがる需給計画や在庫情報を一元的に管理し、原材料の調達から製品が消費者に届くまでの一連の流れ全体を最適化する取り組みを進めている。この取り組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "CRM（顧客関係管理）"
+    },
+    {
+     "id": "b",
+     "text": "SCM（サプライチェーンマネジメント）"
+    },
+    {
+     "id": "c",
+     "text": "ERP（統合基幹業務システム）"
+    },
+    {
+     "id": "d",
+     "text": "BPR（業務プロセス改革）"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "SCM（サプライチェーンマネジメント）は、原材料の調達から製造・物流・販売を経て消費者に届くまでの一連の供給連鎖（サプライチェーン）全体の情報を統合的に管理し、在庫の適正化やリードタイムの短縮を図る取り組みです。（自作問題）",
+   "related_terms": [
+    "SCM"
+   ],
+   "related_page_id": "S-05-04",
+   "tags": [
+    "SCM"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-027",
+   "chapter_id": "S-05",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "Z社は、多数のIoTデバイスが同時に接続される次世代通信サービスを見据え、高速・大容量、超低遅延、多数同時接続という特徴を持つ移動通信システムの導入を検討している。この移動通信システムとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "4G"
+    },
+    {
+     "id": "b",
+     "text": "5G"
+    },
+    {
+     "id": "c",
+     "text": "Wi-Fi 6"
+    },
+    {
+     "id": "d",
+     "text": "LPWA"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "5G（第5世代移動通信システム）は、高速・大容量、超低遅延、多数同時接続という3つの特徴を持つ移動通信システムで、多数のIoTデバイスが同時に接続される社会の実現を支える技術として位置付けられています。（自作問題）",
+   "related_terms": [
+    "5G"
+   ],
+   "related_page_id": "S-05-08",
+   "tags": [
+    "通信技術"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-028",
+   "chapter_id": "S-05",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "AA社は、複数の物流拠点における在庫状況や配送状況をリアルタイムに可視化し、需要予測に基づいて発注量を自動調整することで、欠品と過剰在庫の両方を削減する取り組みを進めている。この取り組みが対象とする領域として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SCM（サプライチェーンマネジメント）"
+    },
+    {
+     "id": "b",
+     "text": "CRM（顧客関係管理）"
+    },
+    {
+     "id": "c",
+     "text": "MOT（技術経営）"
+    },
+    {
+     "id": "d",
+     "text": "BSC（バランススコアカード）"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "在庫状況や配送状況の可視化、需要予測に基づく発注量の自動調整は、供給連鎖全体を最適化するSCM（サプライチェーンマネジメント）の代表的な取り組みです。欠品と過剰在庫を同時に削減することは、SCMが目指す典型的な効果です。（自作問題）",
+   "related_terms": [
+    "SCM"
+   ],
+   "related_page_id": "S-05-12",
+   "tags": [
+    "SCM"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-029",
+   "chapter_id": "S-05",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "BB社の経理部門では、これまで担当者が手作業で行っていた請求書データの入力や、複数の会計システム間でのデータ転記作業を、ソフトウェアのロボットに代行させることで、作業時間を大幅に削減した。この取り組みで導入した技術として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "RPA（ロボティックプロセスオートメーション）"
+    },
+    {
+     "id": "b",
+     "text": "産業用ロボット"
+    },
+    {
+     "id": "c",
+     "text": "AIチャットボット"
+    },
+    {
+     "id": "d",
+     "text": "クラウドコンピューティング"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "RPA（Robotic Process Automation）は、これまで人間が手作業で行っていた定型的なPC操作（データ入力・転記など）を、ソフトウェアのロボットに代行させることで自動化・効率化する技術です。物理的な産業用ロボットとは異なる概念です。（自作問題）",
+   "related_terms": [
+    "RPA"
+   ],
+   "related_page_id": "S-05-13",
+   "tags": [
+    "RPA"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-030",
+   "chapter_id": "S-06",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "CC社は、経営戦略の実現に向けて、全社の情報システムをどのように整備・活用していくかを定める中長期的な計画を策定した。この計画に関する記述のうち、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "情報システム戦略は、経営戦略とは独立に、IT部門が主導して技術動向のみに基づいて策定する"
+    },
+    {
+     "id": "b",
+     "text": "情報システム戦略は、経営戦略に基づいて策定され、経営目標達成に向けた情報システムの利用方針を定める"
+    },
+    {
+     "id": "c",
+     "text": "情報システム戦略は、システム開発が完了した後に、運用ルールとして事後的に定めるものである"
+    },
+    {
+     "id": "d",
+     "text": "情報システム戦略は、個々のシステム開発プロジェクトの詳細な設計仕様を定めるものである"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "情報システム戦略は、企業の経営戦略に基づいて策定され、経営目標の達成に向けて情報システムをどのように整備・活用していくかの方針を定める中長期的な計画です。経営戦略と整合していることが重要で、システムの詳細設計とは異なる上位の概念です。（自作問題）",
+   "related_terms": [
+    "情報システム戦略"
+   ],
+   "related_page_id": "S-06-01",
+   "tags": [
+    "情報システム戦略"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-031",
+   "chapter_id": "S-06",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "DD社は、部門ごとに独自のやり方で行われていた受注処理業務について、ITを活用して業務の流れを見直し、処理時間の短縮とミスの削減を実現した。このように、業務プロセス自体を分析・見直しして改善する取り組みを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "BPR（ビジネスプロセスリエンジニアリング）"
+    },
+    {
+     "id": "b",
+     "text": "SLA（サービスレベル合意書）"
+    },
+    {
+     "id": "c",
+     "text": "RFP（提案依頼書）"
+    },
+    {
+     "id": "d",
+     "text": "ITIL"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "BPR（Business Process Reengineering）は、既存の業務プロセスを抜本的に見直し、ITなどを活用して再設計することで、業務の効率化や品質向上を図る取り組みです。継続的な改善を行うBPM（ビジネスプロセスマネジメント）と対比して語られることもあります。（自作問題）",
+   "related_terms": [
+    "BPR"
+   ],
+   "related_page_id": "S-06-02",
+   "tags": [
+    "業務改善"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-032",
+   "chapter_id": "S-06",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "EE社は、自社で情報システムの運用を行う人材が不足しているため、システムの運用・保守業務を専門の外部企業に委託することにした。この取り組みを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "アウトソーシング"
+    },
+    {
+     "id": "b",
+     "text": "インソーシング"
+    },
+    {
+     "id": "c",
+     "text": "オフショアリング（自社内での海外拠点活用）"
+    },
+    {
+     "id": "d",
+     "text": "M&A"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "アウトソーシングは、自社が行っていた業務の一部または全部を、専門性を持つ外部の企業に委託することです。人材不足の解消やコスト削減、コア業務への集中などを目的として活用されます。（自作問題）",
+   "related_terms": [
+    "アウトソーシング"
+   ],
+   "related_page_id": "S-06-05",
+   "tags": [
+    "IT調達"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-033",
+   "chapter_id": "S-06",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "FF社のシステム開発プロジェクトでは、「注文データを1秒以内に処理できること」という要件と、「発注ボタンを押すと注文が確定すること」という要件をそれぞれ定義した。前者に該当する要件の種類として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "機能要件"
+    },
+    {
+     "id": "b",
+     "text": "非機能要件"
+    },
+    {
+     "id": "c",
+     "text": "業務要件"
+    },
+    {
+     "id": "d",
+     "text": "運用要件"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "非機能要件は、性能・信頼性・セキュリティなど、システムが「何をするか」ではなく「どのように動作するか」に関する要件です。「1秒以内に処理できること」という性能要件は非機能要件に該当し、「発注ボタンを押すと注文が確定する」という機能そのものを定めた要件（機能要件）とは区別されます。（自作問題）",
+   "related_terms": [
+    "非機能要件"
+   ],
+   "related_page_id": "S-06-06",
+   "tags": [
+    "要件定義"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-034",
+   "chapter_id": "S-07",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "GG社は、新しい情報システムの導入を検討するに当たり、まず自社の業務課題や導入の目的を整理し、システム化の範囲や概算予算、スケジュールなどの全体像を明らかにする作業を最初に行った。この作業の段階として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "システム化計画"
+    },
+    {
+     "id": "b",
+     "text": "システム設計"
+    },
+    {
+     "id": "c",
+     "text": "システムテスト"
+    },
+    {
+     "id": "d",
+     "text": "運用・保守"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "システム化計画は、情報システム導入の最も上流の段階で、業務課題や導入目的の整理、システム化の範囲、概算予算、スケジュールなど全体像を明らかにする工程です。この計画を踏まえて、詳細な要件定義や設計に進みます。（自作問題）",
+   "related_terms": [
+    "システム化計画"
+   ],
+   "related_page_id": "S-07-01",
+   "tags": [
+    "システム開発"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-S-035",
+   "chapter_id": "S-07",
+   "category": "strategy",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "HH社は、新システムの導入に当たり、システムの導入目的や実現したい機能の概要を整理した文書をベンダー企業に提示し、具体的な提案書と見積りの提出を求めることにした。この文書として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "RFI（情報提供依頼書）"
+    },
+    {
+     "id": "b",
+     "text": "RFP（提案依頼書）"
+    },
+    {
+     "id": "c",
+     "text": "SLA（サービスレベル合意書）"
+    },
+    {
+     "id": "d",
+     "text": "見積書"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "RFP（Request For Proposal、提案依頼書）は、発注者がベンダー企業に対してシステムの導入目的や機能概要などを示し、具体的な提案書の提出を求める文書です。技術的な情報収集を目的とするRFI（情報提供依頼書）とは段階・目的が異なります。（自作問題）",
+   "related_terms": [
+    "RFP"
+   ],
+   "related_page_id": "S-07-02",
+   "tags": [
+    "IT調達"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-001",
+   "chapter_id": "M-01",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "A社のシステム開発プロジェクトでは、要件定義、外部設計、内部設計、プログラミング、テストという一連の工程を順番に進め、前の工程が完了してから次の工程に着手するという方針で開発を行っている。この開発モデルとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "アジャイル開発"
+    },
+    {
+     "id": "b",
+     "text": "ウォーターフォールモデル"
+    },
+    {
+     "id": "c",
+     "text": "プロトタイピングモデル"
+    },
+    {
+     "id": "d",
+     "text": "スパイラルモデル"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "ウォーターフォールモデルは、要件定義から設計・プログラミング・テストまでの工程を上流から下流へ順番に進め、原則として前工程の完了を前提に次工程に進む開発モデルです。計画通りに進めやすい一方、後工程での仕様変更が難しいという特徴があります。（自作問題）",
+   "related_terms": [
+    "ウォーターフォールモデル"
+   ],
+   "related_page_id": "M-01-01",
+   "tags": [
+    "システム開発プロセス"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-002",
+   "chapter_id": "M-01",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "B社の開発チームは、1〜4週間程度の短い期間（スプリント）を単位として、優先度の高い機能から実装とレビューを繰り返しながら開発を進めている。この開発手法の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ウォーターフォールモデル"
+    },
+    {
+     "id": "b",
+     "text": "スクラム（アジャイル開発）"
+    },
+    {
+     "id": "c",
+     "text": "V字モデル"
+    },
+    {
+     "id": "d",
+     "text": "CMMI"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "スクラムは、アジャイル開発の代表的な手法の一つで、スプリントと呼ばれる短い開発サイクルを繰り返し、優先度の高い機能から順に開発・レビューを行うことで、変化に柔軟に対応しながら開発を進める手法です。（自作問題）",
+   "related_terms": [
+    "スクラム",
+    "アジャイル開発"
+   ],
+   "related_page_id": "M-01-03",
+   "tags": [
+    "アジャイル開発"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-003",
+   "chapter_id": "M-01",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "C社の開発プロジェクトでは、プログラムの各モジュールを個別に検証したあと、複数のモジュールを組み合わせてインタフェースを検証し、最後にシステム全体を業務要件に照らして検証するという段階を踏んでいる。この3段階のテストを工程の早い順に並べたものとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "単体テスト → 結合テスト → システムテスト"
+    },
+    {
+     "id": "b",
+     "text": "結合テスト → 単体テスト → システムテスト"
+    },
+    {
+     "id": "c",
+     "text": "システムテスト → 結合テスト → 単体テスト"
+    },
+    {
+     "id": "d",
+     "text": "単体テスト → システムテスト → 結合テスト"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "テストは一般に、個々のモジュールを検証する単体テスト、モジュール間のインタフェースを検証する結合テスト、業務要件に照らしてシステム全体を検証するシステムテストの順に、小さい単位から大きい単位へと段階的に進めます。（自作問題）",
+   "related_terms": [
+    "単体テスト",
+    "結合テスト",
+    "システムテスト"
+   ],
+   "related_page_id": "M-01-05",
+   "tags": [
+    "テスト手法"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-004",
+   "chapter_id": "M-02",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "D社は、自社のソフトウェア開発組織の成熟度を客観的に評価し、プロセスの標準化・定量的管理・継続的改善という段階を踏んで組織能力を向上させるための国際的なモデルを導入した。このモデルとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "CMMI（能力成熟度モデル統合）"
+    },
+    {
+     "id": "b",
+     "text": "ITIL"
+    },
+    {
+     "id": "c",
+     "text": "PMBOK"
+    },
+    {
+     "id": "d",
+     "text": "ISMS"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "CMMI（Capability Maturity Model Integration）は、ソフトウェア開発組織のプロセス成熟度を5段階で評価し、プロセスの標準化・定量的管理・継続的改善を通じて組織の能力を段階的に高めるための国際的なモデルです。（自作問題）",
+   "related_terms": [
+    "CMMI"
+   ],
+   "related_page_id": "M-02-01",
+   "tags": [
+    "ソフトウェアライフサイクル"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-005",
+   "chapter_id": "M-02",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "E社では、開発チームと運用チームがこれまで別々に業務を行っていたため、リリースのたびに連携不足によるトラブルが発生していた。そこで両チームが密に連携し、自動化ツールを活用して機能追加や修正を迅速かつ継続的にリリースできる体制に変更した。この取り組みを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "DevOps"
+    },
+    {
+     "id": "b",
+     "text": "ウォーターフォールモデル"
+    },
+    {
+     "id": "c",
+     "text": "CMMI"
+    },
+    {
+     "id": "d",
+     "text": "ペアプログラミング"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "DevOpsは、開発（Development）と運用（Operations）のチームが密接に連携し、自動化ツールなどを活用して機能の追加・修正を迅速かつ継続的にリリースできるようにする開発文化・手法です。連携不足によるリリーストラブルの解消に有効です。（自作問題）",
+   "related_terms": [
+    "DevOps"
+   ],
+   "related_page_id": "M-02-03",
+   "tags": [
+    "DevOps"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-006",
+   "chapter_id": "M-02",
+   "category": "management",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "あるシステムは、平均故障間隔（MTBF）が180時間、平均修理時間（MTTR）が20時間である。このシステムの稼働率は幾らか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "0.80"
+    },
+    {
+     "id": "b",
+     "text": "0.85"
+    },
+    {
+     "id": "c",
+     "text": "0.90"
+    },
+    {
+     "id": "d",
+     "text": "0.95"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "稼働率＝MTBF÷（MTBF＋MTTR）で求めます。180÷（180＋20）＝180÷200＝0.9となります。稼働率は、システムが正常に稼働している時間の割合を示す信頼性指標です。（自作問題）",
+   "related_terms": [
+    "稼働率",
+    "MTBF",
+    "MTTR"
+   ],
+   "related_page_id": "M-02-04",
+   "tags": [
+    "可用性指標"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-007",
+   "chapter_id": "M-03",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "F社では、プロジェクトマネジメントを行うに当たり、スコープ・スケジュール・コスト・品質・リスクなど10の知識エリアに整理された国際的な標準知識体系を参考にしている。この知識体系として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "PMBOK"
+    },
+    {
+     "id": "b",
+     "text": "ITIL"
+    },
+    {
+     "id": "c",
+     "text": "CMMI"
+    },
+    {
+     "id": "d",
+     "text": "COBIT"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "PMBOK（Project Management Body of Knowledge）は、プロジェクトマネジメントに関する知識を、スコープ・スケジュール・コスト・品質・リスクなどの知識エリアに体系的に整理した国際的な標準知識体系です。（自作問題）",
+   "related_terms": [
+    "PMBOK"
+   ],
+   "related_page_id": "M-03-01",
+   "tags": [
+    "プロジェクトマネジメント"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-008",
+   "chapter_id": "M-03",
+   "category": "management",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "あるプロジェクトの作業は、作業Aが3日、作業Bが5日、作業Aの後に作業Cが4日、作業Bの後に作業Dが2日かかり、作業CとDが完了した後に最終作業Eが3日かかる。作業Aと作業Bは同時に開始でき、作業全体が完了するまでの最短日数は何日か。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "7日"
+    },
+    {
+     "id": "b",
+     "text": "8日"
+    },
+    {
+     "id": "c",
+     "text": "10日"
+    },
+    {
+     "id": "d",
+     "text": "12日"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "経路は「A(3)→C(4)→E(3)＝10日」と「B(5)→D(2)→E(3)＝10日」の2つがあり、いずれも10日で並んで最長（クリティカルパス）となるため、プロジェクト全体の最短所要日数は10日です。（自作問題）",
+   "related_terms": [
+    "クリティカルパス",
+    "PERT図"
+   ],
+   "related_page_id": "M-03-02",
+   "tags": [
+    "スケジュール管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-009",
+   "chapter_id": "M-03",
+   "category": "management",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "あるプロジェクトについて、計画時点でのコスト（PV）が100万円、実際にかかったコスト（AC）が90万円、出来高（EV）が80万円であった。このプロジェクトの状況として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "コストは予算内に収まっており、進捗も計画どおりである"
+    },
+    {
+     "id": "b",
+     "text": "コストは予算内に収まっているが、進捗は計画より遅れている"
+    },
+    {
+     "id": "c",
+     "text": "コストは予算を超過しており、進捗も計画より遅れている"
+    },
+    {
+     "id": "d",
+     "text": "コストは予算を超過しているが、進捗は計画より進んでいる"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "コスト差異（CV）＝EV－AC＝80－90＝－10万円で、マイナスのため出来高に対して実コストが超過（予算超過）を示します。スケジュール差異（SV）＝EV－PV＝80－100＝－20万円で、マイナスのため出来高が計画を下回る（進捗遅れ）を示します。したがって、コストは予算を超過しており、進捗も計画より遅れている状態です。（自作問題）",
+   "related_terms": [
+    "EVM",
+    "PV",
+    "EV",
+    "AC"
+   ],
+   "related_page_id": "M-03-03",
+   "tags": [
+    "EVM"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-010",
+   "chapter_id": "M-03",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "G社のプロジェクトマネージャは、開発の初期段階で発生し得る問題（要員の離脱、要件の変更など）を洗い出し、それぞれの発生確率と影響度を評価した上で、対応策をあらかじめ検討しておくことにした。この一連の活動を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "リスクマネジメント"
+    },
+    {
+     "id": "b",
+     "text": "品質マネジメント"
+    },
+    {
+     "id": "c",
+     "text": "調達マネジメント"
+    },
+    {
+     "id": "d",
+     "text": "コミュニケーションマネジメント"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "リスクマネジメントは、プロジェクトの遂行に影響を与え得るリスクを洗い出し、発生確率と影響度を評価した上で、回避・低減・移転・受容などの対応策を検討・実施する一連の活動です。（自作問題）",
+   "related_terms": [
+    "リスクマネジメント"
+   ],
+   "related_page_id": "M-03-04",
+   "tags": [
+    "リスク管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-011",
+   "chapter_id": "M-03",
+   "category": "management",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "あるシステム開発の見積りで、必要な作業工数が合計120人日と算出された。この作業を8人で担当する場合、他の条件を考慮しないとき、作業完了までに必要な日数は何日か。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "10日"
+    },
+    {
+     "id": "b",
+     "text": "12日"
+    },
+    {
+     "id": "c",
+     "text": "15日"
+    },
+    {
+     "id": "d",
+     "text": "20日"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "必要日数＝総工数（人日）÷要員数で求めます。120人日÷8人＝15日となります。プロジェクトの計算問題では、この「人日」の考え方を基準に工数・要員数・期間の関係を整理することが基本になります。（自作問題）",
+   "related_terms": [
+    "工数計算",
+    "人日"
+   ],
+   "related_page_id": "M-03-05",
+   "tags": [
+    "計算問題"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-012",
+   "chapter_id": "M-03",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "H社のプロジェクト計画書には、「要件定義完了」「基本設計完了」「システムテスト完了」といった、プロジェクトの重要な区切りとなる時点が明記されている。このような、プロジェクトの進捗管理上重要な節目となる時点を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "マイルストーン"
+    },
+    {
+     "id": "b",
+     "text": "クリティカルパス"
+    },
+    {
+     "id": "c",
+     "text": "スコープ"
+    },
+    {
+     "id": "d",
+     "text": "ベースライン"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "マイルストーンは、プロジェクトの進捗管理上、重要な区切りとなる時点（要件定義完了、設計完了など）を指します。プロジェクトの節目ごとの達成状況を確認し、スケジュール管理に活用します。（自作問題）",
+   "related_terms": [
+    "マイルストーン"
+   ],
+   "related_page_id": "M-03-06",
+   "tags": [
+    "スケジュール管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-013",
+   "chapter_id": "M-04",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "I社は、ITサービスの企画・設計・移行・運用・改善までの一連のライフサイクルを対象に、サービスマネジメントのベストプラクティスを体系化したフレームワークを参考にして、サービスデスクの運用体制を整備した。このフレームワークとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ITIL"
+    },
+    {
+     "id": "b",
+     "text": "PMBOK"
+    },
+    {
+     "id": "c",
+     "text": "CMMI"
+    },
+    {
+     "id": "d",
+     "text": "COBIT"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ITIL（Information Technology Infrastructure Library）は、ITサービスの企画・設計・移行・運用・改善までのライフサイクル全体を対象に、サービスマネジメントのベストプラクティスを体系化したフレームワークです。（自作問題）",
+   "related_terms": [
+    "ITIL"
+   ],
+   "related_page_id": "M-04-01",
+   "tags": [
+    "ITサービスマネジメント"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-014",
+   "chapter_id": "M-04",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "J社は、クラウドサービスの提供事業者との間で、「月間稼働率99.9％以上」「障害発生時の復旧目標時間4時間以内」などのサービス水準を明記した合意文書を取り交わした。この文書として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SLA（サービスレベル合意書）"
+    },
+    {
+     "id": "b",
+     "text": "RFP（提案依頼書）"
+    },
+    {
+     "id": "c",
+     "text": "NDA（秘密保持契約書）"
+    },
+    {
+     "id": "d",
+     "text": "検収書"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "SLA（Service Level Agreement、サービスレベル合意書）は、サービス提供者と利用者の間で、稼働率や復旧目標時間などのサービス水準について合意した文書です。合意した水準を継続的に維持・改善する活動をSLM（サービスレベルマネジメント）と呼びます。（自作問題）",
+   "related_terms": [
+    "SLA"
+   ],
+   "related_page_id": "M-04-02",
+   "tags": [
+    "SLA"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-015",
+   "chapter_id": "M-04",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "K社のサービスデスクでは、利用者からの問合せに対してまず暫定的な回避策を提供してサービスを復旧させ、その後、根本原因を特定して恒久的な対策を講じるという2段階の対応を行っている。このうち、根本原因を特定して恒久対策を検討するプロセスとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "インシデント管理"
+    },
+    {
+     "id": "b",
+     "text": "問題管理"
+    },
+    {
+     "id": "c",
+     "text": "変更管理"
+    },
+    {
+     "id": "d",
+     "text": "リリース管理"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "インシデント管理は、サービスを迅速に復旧させることを目的とし、暫定的な回避策の提供までを担います。問題管理は、インシデントの根本原因を特定し、再発防止のための恒久対策を検討するプロセスで、両者は目的が異なります。（自作問題）",
+   "related_terms": [
+    "問題管理"
+   ],
+   "related_page_id": "M-04-03",
+   "tags": [
+    "ITサービスマネジメント"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-016",
+   "chapter_id": "M-04",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "L社は、大規模災害によって本社のデータセンターが被災した場合に備え、遠隔地にバックアップセンターを設置し、業務データを定期的に複製・保管する体制を整えた。このような、災害時にシステムやデータを復旧させるための備えを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ディザスタリカバリ（DR）"
+    },
+    {
+     "id": "b",
+     "text": "フェールセーフ"
+    },
+    {
+     "id": "c",
+     "text": "ロードバランシング"
+    },
+    {
+     "id": "d",
+     "text": "クラスタリング"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ディザスタリカバリ（DR）は、地震などの災害によってシステムが被災した場合に備え、遠隔地にバックアップセンターを設置してデータを複製・保管するなど、システムを迅速に復旧させるための備えや対策を指します。事業継続計画（BCP）の一部として位置付けられます。（自作問題）",
+   "related_terms": [
+    "ディザスタリカバリ",
+    "BCP"
+   ],
+   "related_page_id": "M-04-05",
+   "tags": [
+    "事業継続"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-017",
+   "chapter_id": "M-05",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "M社は、情報システムに係るリスクへの対応が適切に行われているかどうかを、独立した第三者的な立場の担当者が評価し、その結果を経営者に報告する仕組みを設けている。この活動の目的として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "システム開発の要件を明確にすること"
+    },
+    {
+     "id": "b",
+     "text": "情報システムに係るリスクへの対応が適切かどうかを評価し、組織体の目標達成に寄与すること"
+    },
+    {
+     "id": "c",
+     "text": "プロジェクトの進捗やコストを管理すること"
+    },
+    {
+     "id": "d",
+     "text": "施設や設備を企画・管理・活用すること"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "システム監査の目的は、情報システムに係るリスクへの対応が適切に行われているかを、独立した立場の監査人が評価し、その結果を通じて組織体の目標達成に寄与することです。開発の要件定義やプロジェクト管理そのものとは異なる活動です。（自作問題）",
+   "related_terms": [
+    "システム監査"
+   ],
+   "related_page_id": "M-05-01",
+   "tags": [
+    "システム監査"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-018",
+   "chapter_id": "M-05",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "N社は、財務報告の信頼性を確保するために、業務プロセスに組み込まれた統制活動が有効に機能しているかを自ら評価し、その結果を有価証券報告書とあわせて開示している。この取り組みの根拠となる制度として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "個人情報保護法"
+    },
+    {
+     "id": "b",
+     "text": "J-SOX法（内部統制報告制度）"
+    },
+    {
+     "id": "c",
+     "text": "不正競争防止法"
+    },
+    {
+     "id": "d",
+     "text": "製造物責任法"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "J-SOX法（金融商品取引法に基づく内部統制報告制度）は、上場企業に対して、財務報告に係る内部統制の有効性を自ら評価し、その結果を内部統制報告書として開示することを求める制度です。財務報告の信頼性確保を目的としています。（自作問題）",
+   "related_terms": [
+    "内部統制",
+    "J-SOX法"
+   ],
+   "related_page_id": "M-05-02",
+   "tags": [
+    "内部統制"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-019",
+   "chapter_id": "M-05",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "O社の経営者は、ITが経営戦略に沿って効果的・効率的に活用されているかを評価し、必要に応じて方向付けを行う責任を負っている。このような、経営者がIT投資・活用を統制・監督する仕組みを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ITガバナンス"
+    },
+    {
+     "id": "b",
+     "text": "ITサービスマネジメント"
+    },
+    {
+     "id": "c",
+     "text": "システム監査"
+    },
+    {
+     "id": "d",
+     "text": "プロジェクトマネジメント"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ITガバナンスは、経営者が主体となって、ITが経営戦略に沿って効果的・効率的に活用されているかを評価し、必要な方向付けを行う統治の仕組みです。ITの現在と将来の活用状況を、経営の観点から統制・監督する点が特徴です。（自作問題）",
+   "related_terms": [
+    "ITガバナンス"
+   ],
+   "related_page_id": "M-05-03",
+   "tags": [
+    "ITガバナンス"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-M-020",
+   "chapter_id": "M-05",
+   "category": "management",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "P社は、情報資産を洗い出してリスクを評価した上で、組織的・人的・物理的・技術的な対策を計画・実施・点検・改善するPDCAサイクルを継続的に回す仕組みを構築し、第三者機関の認証を取得した。この仕組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ISMS（情報セキュリティマネジメントシステム）"
+    },
+    {
+     "id": "b",
+     "text": "ITIL"
+    },
+    {
+     "id": "c",
+     "text": "CMMI"
+    },
+    {
+     "id": "d",
+     "text": "SLA"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ISMS（情報セキュリティマネジメントシステム）は、情報資産のリスクを評価した上で、組織的・人的・物理的・技術的な対策をPDCAサイクルで継続的に運用する仕組みです。第三者機関による認証制度（ISMS認証）も設けられています。（自作問題）",
+   "related_terms": [
+    "ISMS"
+   ],
+   "related_page_id": "M-05-04",
+   "tags": [
+    "情報セキュリティマネジメント"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-001",
+   "chapter_id": "T-01",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "2進数の00101101を10進数に変換した値として、正しいものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "43"
+    },
+    {
+     "id": "b",
+     "text": "45"
+    },
+    {
+     "id": "c",
+     "text": "53"
+    },
+    {
+     "id": "d",
+     "text": "91"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "00101101は、右から順に2の0乗〜2の7乗の位を割り当てて計算します。1＋4＋8＋32＝45となります（1の位:1、4の位:1、8の位:1、32の位:1が立っている）。（自作問題）",
+   "related_terms": [
+    "2進数"
+   ],
+   "related_page_id": "T-01-01",
+   "tags": [
+    "基数変換"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-002",
+   "chapter_id": "T-01",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "ある入力A、Bに対して、AとBの両方が1のときだけ出力が1になり、それ以外は0になる論理演算はどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "OR（論理和）"
+    },
+    {
+     "id": "b",
+     "text": "AND（論理積）"
+    },
+    {
+     "id": "c",
+     "text": "NOT（否定）"
+    },
+    {
+     "id": "d",
+     "text": "XOR（排他的論理和）"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "AND（論理積）は、すべての入力が1のときにだけ出力が1になる論理演算です。OR（論理和）はいずれか一方が1なら出力が1、XOR（排他的論理和）は入力が異なるときに出力が1になる演算で、それぞれ動作が異なります。（自作問題）",
+   "related_terms": [
+    "AND",
+    "論理演算"
+   ],
+   "related_page_id": "T-01-02",
+   "tags": [
+    "論理演算"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-003",
+   "chapter_id": "T-01",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "あるファイルの容量は2,048KBである。このファイルは何MBか。ここで、1MB＝1,024KBとする。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "1MB"
+    },
+    {
+     "id": "b",
+     "text": "2MB"
+    },
+    {
+     "id": "c",
+     "text": "4MB"
+    },
+    {
+     "id": "d",
+     "text": "20MB"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "2,048KB÷1,024KB/MB＝2MBとなります。情報量の単位はキロ（K）・メガ（M）・ギガ（G）・テラ（T）の順に1,024倍（2進接頭語）ずつ大きくなっていきます。（自作問題）",
+   "related_terms": [
+    "情報量の単位"
+   ],
+   "related_page_id": "T-01-03",
+   "tags": [
+    "情報量の単位"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-004",
+   "chapter_id": "T-01",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "赤玉3個、白玉2個が入った袋から玉を1個取り出すとき、それが赤玉である確率はいくらか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "1/5"
+    },
+    {
+     "id": "b",
+     "text": "2/5"
+    },
+    {
+     "id": "c",
+     "text": "3/5"
+    },
+    {
+     "id": "d",
+     "text": "4/5"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "全体は3＋2＝5個で、赤玉は3個なので、赤玉を取り出す確率は3/5となります。確率＝求める事象の場合の数÷全体の場合の数で求めます。（自作問題）",
+   "related_terms": [
+    "確率"
+   ],
+   "related_page_id": "T-01-04",
+   "tags": [
+    "確率"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-005",
+   "chapter_id": "T-01",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "Q社は、大量の正解付きデータ（画像と「犬」「猫」のラベル）をAIに学習させることで、新しい画像が「犬」か「猫」かを判定できるモデルを構築した。この学習方法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "教師あり学習"
+    },
+    {
+     "id": "b",
+     "text": "教師なし学習"
+    },
+    {
+     "id": "c",
+     "text": "強化学習"
+    },
+    {
+     "id": "d",
+     "text": "転移学習"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "教師あり学習は、正解ラベルが付与された学習データを用いて、未知のデータを分類・予測できるモデルを構築する機械学習の手法です。正解ラベルのないデータからパターンを見つける教師なし学習とは異なります。（自作問題）",
+   "related_terms": [
+    "教師あり学習"
+   ],
+   "related_page_id": "T-01-05",
+   "tags": [
+    "AI・機械学習"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-006",
+   "chapter_id": "T-02",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "あるアルゴリズムの流れ図には、条件を満たす間だけ同じ処理を繰り返す部分と、条件によって処理を分岐させる部分がある。アルゴリズムの基本的な構造である「順次」「選択」「繰返し」のうち、条件を満たす間だけ処理を繰り返す構造はどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "順次"
+    },
+    {
+     "id": "b",
+     "text": "選択"
+    },
+    {
+     "id": "c",
+     "text": "繰返し"
+    },
+    {
+     "id": "d",
+     "text": "再帰"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "アルゴリズムの基本構造のうち、「繰返し」（ループ）は、条件を満たす間だけ同じ処理を繰り返す構造です。「順次」は上から順に処理を実行する構造、「選択」は条件によって処理を分岐させる構造です。（自作問題）",
+   "related_terms": [
+    "繰返し構造"
+   ],
+   "related_page_id": "T-02-01",
+   "tags": [
+    "アルゴリズム"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-007",
+   "chapter_id": "T-02",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "R社の在庫管理システムでは、後から入荷した商品を先に取り出して出荷する「後入れ先出し」の仕組みを実装したい。このデータ構造として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "キュー"
+    },
+    {
+     "id": "b",
+     "text": "スタック"
+    },
+    {
+     "id": "c",
+     "text": "木構造"
+    },
+    {
+     "id": "d",
+     "text": "連結リスト"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "スタックは、後から入れたデータを先に取り出す「LIFO（Last In First Out、後入れ先出し）」の考え方に基づくデータ構造です。先に入れたデータを先に取り出す「FIFO（先入れ先出し）」の仕組みにはキューが適しています。（自作問題）",
+   "related_terms": [
+    "スタック"
+   ],
+   "related_page_id": "T-02-03",
+   "tags": [
+    "データ構造"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-008",
+   "chapter_id": "T-02",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "S社の開発チームは、データとそのデータを操作する手続き（メソッド）を一つの単位（オブジェクト）としてまとめ、継承やカプセル化といった仕組みを活用してプログラムを設計する手法を採用した。この設計手法として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "構造化プログラミング"
+    },
+    {
+     "id": "b",
+     "text": "オブジェクト指向プログラミング"
+    },
+    {
+     "id": "c",
+     "text": "関数型プログラミング"
+    },
+    {
+     "id": "d",
+     "text": "アセンブリ言語によるプログラミング"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "オブジェクト指向プログラミングは、データと手続き（メソッド）を一つの単位（オブジェクト）としてまとめ、継承・カプセル化・多態性（ポリモーフィズム）などの仕組みを活用してプログラムを設計する手法です。（自作問題）",
+   "related_terms": [
+    "オブジェクト指向"
+   ],
+   "related_page_id": "T-02-04",
+   "tags": [
+    "プログラミング言語"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-009",
+   "chapter_id": "T-02",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "配列{5, 2, 4, 1}に対して、隣り合う要素を比較し、大小関係が逆であれば入れ替えるという操作を、配列の先頭から末尾まで繰り返し行うことで並べ替えるアルゴリズムはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "バブルソート"
+    },
+    {
+     "id": "b",
+     "text": "二分探索法"
+    },
+    {
+     "id": "c",
+     "text": "線形探索法"
+    },
+    {
+     "id": "d",
+     "text": "ハッシュ法"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "バブルソートは、隣り合う要素を比較し、大小関係が逆であれば入れ替えるという操作を繰り返しながら配列全体を並べ替える整列アルゴリズムです。実装が単純である一方、要素数が多いと処理に時間がかかります。（自作問題）",
+   "related_terms": [
+    "バブルソート"
+   ],
+   "related_page_id": "T-02-05",
+   "tags": [
+    "整列アルゴリズム"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-010",
+   "chapter_id": "T-03",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "PCの中枢部品であるCPUは、演算を行う部分と、命令を解釈してほかの装置に指示を出す部分から構成されている。このうち、命令を解釈してほかの装置に指示を出す部分の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "演算装置"
+    },
+    {
+     "id": "b",
+     "text": "制御装置"
+    },
+    {
+     "id": "c",
+     "text": "主記憶装置"
+    },
+    {
+     "id": "d",
+     "text": "補助記憶装置"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "CPUは主に演算装置と制御装置から構成されます。演算装置は四則演算や論理演算を行い、制御装置は命令を解釈し、演算装置や記憶装置、入出力装置に対して指示を出す役割を担います。（自作問題）",
+   "related_terms": [
+    "制御装置",
+    "CPU"
+   ],
+   "related_page_id": "T-03-01",
+   "tags": [
+    "CPU"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-011",
+   "chapter_id": "T-03",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "T社のPCには、電源を切ると記憶内容が消えてしまうメモリと、電源を切っても記憶内容が保持されるメモリの両方が搭載されている。このうち、電源を切ると記憶内容が消えるメモリとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ROM"
+    },
+    {
+     "id": "b",
+     "text": "DRAM（主記憶装置）"
+    },
+    {
+     "id": "c",
+     "text": "SSD"
+    },
+    {
+     "id": "d",
+     "text": "HDD"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "DRAM（Dynamic RAM）は、主記憶装置として使われる揮発性メモリで、電源を切ると記憶内容が失われます。ROMやSSD、HDDは電源を切っても記憶内容が保持される不揮発性の記憶装置・媒体です。（自作問題）",
+   "related_terms": [
+    "DRAM",
+    "揮発性メモリ"
+   ],
+   "related_page_id": "T-03-02",
+   "tags": [
+    "メモリ"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-012",
+   "chapter_id": "T-04",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "U社の業務システムは、利用者が操作するPC側の処理と、データを一元管理するコンピュータ側の処理を分担させる構成を採用している。この構成として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "クライアントサーバシステム"
+    },
+    {
+     "id": "b",
+     "text": "デュアルシステム"
+    },
+    {
+     "id": "c",
+     "text": "スタンドアロンシステム"
+    },
+    {
+     "id": "d",
+     "text": "P2P（ピアツーピア）システム"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "クライアントサーバシステムは、利用者が操作するクライアント（PCなど）と、データやサービスを一元的に提供するサーバとで役割を分担するシステム構成です。業務システムで広く採用されています。（自作問題）",
+   "related_terms": [
+    "クライアントサーバシステム"
+   ],
+   "related_page_id": "T-04-01",
+   "tags": [
+    "システム構成"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-013",
+   "chapter_id": "T-04",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "V社は、物理的なサーバ1台の上に、ソフトウェアの技術を用いて複数の独立したサーバ環境を作り出し、それぞれに別々のOSやアプリケーションを稼働させることで、ハードウェアの利用効率を高めている。この技術として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "クラスタリング"
+    },
+    {
+     "id": "b",
+     "text": "仮想化"
+    },
+    {
+     "id": "c",
+     "text": "ミラーリング"
+    },
+    {
+     "id": "d",
+     "text": "ロードバランシング"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "仮想化は、1台の物理的なサーバ上にソフトウェア的に複数の独立したサーバ環境（仮想マシン）を作り出す技術です。ハードウェアの利用効率を高め、クラウドコンピューティングの基盤技術としても広く使われています。（自作問題）",
+   "related_terms": [
+    "仮想化"
+   ],
+   "related_page_id": "T-04-02",
+   "tags": [
+    "クラウド・仮想化"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-014",
+   "chapter_id": "T-04",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "稼働率0.9のサーバを2台用意し、少なくとも1台が稼働していればシステム全体として稼働しているとみなす構成（並列構成）にしたとき、システム全体の稼働率として、正しいものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "0.81"
+    },
+    {
+     "id": "b",
+     "text": "0.90"
+    },
+    {
+     "id": "c",
+     "text": "0.95"
+    },
+    {
+     "id": "d",
+     "text": "0.99"
+    }
+   ],
+   "correct_answer": "d",
+   "explanation": "並列構成（少なくとも1台が稼働）の稼働率は、1－（両方とも故障している確率）で求めます。1台の故障率は1－0.9＝0.1なので、両方とも故障している確率は0.1×0.1＝0.01。したがって全体の稼働率は1－0.01＝0.99となります。（自作問題）",
+   "related_terms": [
+    "稼働率",
+    "RASIS"
+   ],
+   "related_page_id": "T-04-03",
+   "tags": [
+    "信頼性指標"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-015",
+   "chapter_id": "T-04",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "W社のWebサービスは、アクセス集中時にも安定してサービスを提供するために、複数台のサーバに処理を振り分ける装置を導入している。この装置の役割として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "特定の1台のサーバに処理を集約し、他のサーバは待機させる"
+    },
+    {
+     "id": "b",
+     "text": "複数のサーバに処理の負荷を分散させ、特定のサーバへの負荷集中を防ぐ"
+    },
+    {
+     "id": "c",
+     "text": "サーバ間のデータを常に同一内容に複製する"
+    },
+    {
+     "id": "d",
+     "text": "外部からの不正アクセスを検知し遮断する"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "ロードバランサー（負荷分散装置）は、複数のサーバに処理の負荷を分散させることで、特定のサーバへの負荷集中を防ぎ、アクセス集中時にもサービスを安定して提供できるようにする装置です。（自作問題）",
+   "related_terms": [
+    "ロードバランサー"
+   ],
+   "related_page_id": "T-04-06",
+   "tags": [
+    "負荷分散"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-016",
+   "chapter_id": "T-04",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "容量1Tバイトの HDD を3台使用してRAID5を構成したとき、実際に利用可能な記憶容量は何Tバイトか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "1Tバイト"
+    },
+    {
+     "id": "b",
+     "text": "2Tバイト"
+    },
+    {
+     "id": "c",
+     "text": "3Tバイト"
+    },
+    {
+     "id": "d",
+     "text": "4Tバイト"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "RAID5は、複数台のHDDのうち1台分の容量をパリティ情報の記録に使用するため、実効容量は「台数－1」台分になります。3台×1Tバイト－1台分（1Tバイト）＝2Tバイトが実効容量です。（自作問題）",
+   "related_terms": [
+    "RAID5"
+   ],
+   "related_page_id": "T-04-07",
+   "tags": [
+    "RAID"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-017",
+   "chapter_id": "T-05",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "PCにインストールされているソフトウェアのうち、ハードウェアとアプリケーションソフトウェアの間に立って、ファイル管理やメモリ管理、周辺機器の制御などを行う基本ソフトウェアの名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "OS（オペレーティングシステム）"
+    },
+    {
+     "id": "b",
+     "text": "ミドルウェア"
+    },
+    {
+     "id": "c",
+     "text": "デバイスドライバ"
+    },
+    {
+     "id": "d",
+     "text": "ファームウェア"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "OS（オペレーティングシステム）は、ハードウェアとアプリケーションソフトウェアの間に立ち、ファイル管理・メモリ管理・周辺機器の制御など、コンピュータ全体を管理する基本ソフトウェアです。（自作問題）",
+   "related_terms": [
+    "OS"
+   ],
+   "related_page_id": "T-05-01",
+   "tags": [
+    "OS"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-018",
+   "chapter_id": "T-05",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "X社は、ソースコードが公開されており、ライセンス条件に従えば無償で利用・改変・再配布ができるソフトウェアを積極的に活用してコストを削減している。このようなソフトウェアを表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "OSS（オープンソースソフトウェア）"
+    },
+    {
+     "id": "b",
+     "text": "フリーウェア"
+    },
+    {
+     "id": "c",
+     "text": "シェアウェア"
+    },
+    {
+     "id": "d",
+     "text": "ファームウェア"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "OSS（オープンソースソフトウェア）は、ソースコードが公開されており、ライセンス条件を守れば無償で利用・改変・再配布ができるソフトウェアです。無償だが改変を許可しない場合があるフリーウェアとは異なる概念です。（自作問題）",
+   "related_terms": [
+    "OSS"
+   ],
+   "related_page_id": "T-05-03",
+   "tags": [
+    "OSS"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-019",
+   "chapter_id": "T-05",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "Y社のアプリケーションは、複数の処理の流れ（スレッド）を同時に実行することで、一つの処理の待ち時間を利用して別の処理を進め、全体としての応答性能を高めている。この仕組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "マルチスレッド"
+    },
+    {
+     "id": "b",
+     "text": "デュアルシステム"
+    },
+    {
+     "id": "c",
+     "text": "ミラーリング"
+    },
+    {
+     "id": "d",
+     "text": "スプーリング"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "マルチスレッドは、一つのプログラムの中で複数の処理の流れ（スレッド）を同時に実行する仕組みで、ある処理の待ち時間を利用して別の処理を進めることができ、応答性能の向上に寄与します。（自作問題）",
+   "related_terms": [
+    "マルチスレッド"
+   ],
+   "related_page_id": "T-05-06",
+   "tags": [
+    "OS"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-020",
+   "chapter_id": "T-06",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "Z社は、工場内の温度や湿度をリアルタイムに計測する機器と、計測値に応じて空調を自動的に調整する機器をネットワークに接続し、遠隔から状態を監視・制御できるようにした。このうち、状態を計測する機器の役割を担うものとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "センサー"
+    },
+    {
+     "id": "b",
+     "text": "アクチュエータ"
+    },
+    {
+     "id": "c",
+     "text": "ルータ"
+    },
+    {
+     "id": "d",
+     "text": "ゲートウェイ"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "センサーは、温度・湿度・光・圧力などの物理量を計測し、電気信号などに変換してコンピュータに取り込む機器です。アクチュエータは、計測値などに基づいてモーターやバルブなどを動作させ、対象を物理的に制御する機器で、役割が異なります。（自作問題）",
+   "related_terms": [
+    "センサー",
+    "IoT"
+   ],
+   "related_page_id": "T-06-02",
+   "tags": [
+    "IoT"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-021",
+   "chapter_id": "T-07",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "AA社は、自社のスマートフォンアプリについて、年齢や身体的特徴、利用環境によらず、できるだけ多くの人が同じように使いやすいデザインを目指して画面設計を見直した。この考え方として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ユニバーサルデザイン"
+    },
+    {
+     "id": "b",
+     "text": "レスポンシブデザイン"
+    },
+    {
+     "id": "c",
+     "text": "フラットデザイン"
+    },
+    {
+     "id": "d",
+     "text": "マテリアルデザイン"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ユニバーサルデザインは、年齢や身体的特徴、利用環境によらず、できるだけ多くの人が等しく使いやすいように製品や環境をデザインする考え方です。UX/UIデザインにおいてアクセシビリティを高める重要な原則の一つです。（自作問題）",
+   "related_terms": [
+    "ユニバーサルデザイン"
+   ],
+   "related_page_id": "T-07-02",
+   "tags": [
+    "UX/UIデザイン"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-022",
+   "chapter_id": "T-08",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "横640ドット、縦480ドットの画像を、1ドット当たり8ビットの色情報（256色）で表現するとき、この画像のデータ量は何KBか。ここで、1KB＝1,024バイトとする。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "150KB"
+    },
+    {
+     "id": "b",
+     "text": "300KB"
+    },
+    {
+     "id": "c",
+     "text": "600KB"
+    },
+    {
+     "id": "d",
+     "text": "1,200KB"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "総ドット数＝640×480＝307,200ドット。1ドット8ビット＝1バイトなので、データ量は307,200バイト。1,024バイト＝1KBで割ると、307,200÷1,024＝300KBとなります。（自作問題）",
+   "related_terms": [
+    "画像データ量計算"
+   ],
+   "related_page_id": "T-08-01",
+   "tags": [
+    "画像データ"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-023",
+   "chapter_id": "T-08",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "BB社は、動画配信サービスの通信量を削減するために、映像データの冗長な情報を取り除いてファイルサイズを小さくする処理を行っている。この処理を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "サンプリング"
+    },
+    {
+     "id": "b",
+     "text": "圧縮"
+    },
+    {
+     "id": "c",
+     "text": "量子化"
+    },
+    {
+     "id": "d",
+     "text": "符号化"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "圧縮は、データの冗長な情報を取り除くなどして、ファイルサイズを小さくする処理です。動画や音声の配信では、通信量や保存容量を抑えるために圧縮技術（MP4、MP3など）が広く使われています。（自作問題）",
+   "related_terms": [
+    "圧縮"
+   ],
+   "related_page_id": "T-08-02",
+   "tags": [
+    "音声・動画データ"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-024",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "CC社は、顧客情報や注文情報を表形式で管理し、それらの表同士を関連付けて扱うデータベース管理システムを導入した。このように、データを行と列から成る表の形式で管理し、表同士の関係によってデータを扱うデータベースの種類として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "階層型データベース"
+    },
+    {
+     "id": "b",
+     "text": "関係データベース"
+    },
+    {
+     "id": "c",
+     "text": "ネットワーク型データベース"
+    },
+    {
+     "id": "d",
+     "text": "NoSQLデータベース"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "関係データベース（リレーショナルデータベース）は、データを行（レコード）と列（フィールド）から成る表（テーブル）の形式で管理し、表同士をキーで関連付けて扱うデータベースです。DBMS（データベース管理システム）によって管理・操作されます。（自作問題）",
+   "related_terms": [
+    "関係データベース"
+   ],
+   "related_page_id": "T-09-01",
+   "tags": [
+    "データベース"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-025",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "DD社の\"社員\"表には、社員番号・氏名・部署コードの列があり、社員番号によって各行（レコード）を一意に識別できる。この社員番号のように、表の中の各レコードを一意に識別するための項目を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "外部キー"
+    },
+    {
+     "id": "b",
+     "text": "主キー"
+    },
+    {
+     "id": "c",
+     "text": "インデックス"
+    },
+    {
+     "id": "d",
+     "text": "ビュー"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "主キーは、表の中の各レコードを一意に識別するための項目（列）です。他の表の主キーを参照して関連付けに使う項目は外部キーと呼ばれ、主キーとは役割が異なります。（自作問題）",
+   "related_terms": [
+    "主キー"
+   ],
+   "related_page_id": "T-09-02",
+   "tags": [
+    "関係データベース"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-026",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "EE社のシステム設計者は、\"顧客\"と\"注文\"という実体（エンティティ）の間に「1人の顧客が複数の注文を行う」という関係があることを、図に矩形と菱形を用いて視覚的に表現した。この図の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "E-R図"
+    },
+    {
+     "id": "b",
+     "text": "PERT図"
+    },
+    {
+     "id": "c",
+     "text": "アローダイアグラム"
+    },
+    {
+     "id": "d",
+     "text": "UML図"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "E-R図（Entity-Relationship Diagram）は、データベース設計において、実体（エンティティ）とその間の関係（リレーションシップ）を図示したものです。データベースの構造を設計する際の基本的な表記法として使われます。（自作問題）",
+   "related_terms": [
+    "E-R図"
+   ],
+   "related_page_id": "T-09-03",
+   "tags": [
+    "データベース設計"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-027",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "FF社のデータベース担当者は、\"社員\"表から部署コードが\"A01\"である社員の氏名を抽出したい。この目的に用いるSQL文の命令として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "INSERT文"
+    },
+    {
+     "id": "b",
+     "text": "SELECT文"
+    },
+    {
+     "id": "c",
+     "text": "UPDATE文"
+    },
+    {
+     "id": "d",
+     "text": "DELETE文"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "SELECT文は、条件を指定してデータベースの表からデータを抽出（検索）するためのSQL文です。INSERT文はデータの追加、UPDATE文はデータの更新、DELETE文はデータの削除に使われ、それぞれ役割が異なります。（自作問題）",
+   "related_terms": [
+    "SELECT文",
+    "SQL"
+   ],
+   "related_page_id": "T-09-04",
+   "tags": [
+    "SQL"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-028",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "GG社の\"受注\"表には、受注番号・顧客名・顧客住所・商品名・商品単価・数量が1つの表にまとめられており、同じ顧客が複数回受注するたびに顧客名と住所が重複して記録されている。このようなデータの冗長性を排除し、更新時の不整合を防ぐために表を分割する処理を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "正規化"
+    },
+    {
+     "id": "b",
+     "text": "インデックス化"
+    },
+    {
+     "id": "c",
+     "text": "仮想化"
+    },
+    {
+     "id": "d",
+     "text": "暗号化"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "正規化は、関係データベースにおいて、データの重複（冗長性）を排除し、更新時の不整合を防ぐために、表を適切に分割・整理する設計手法です。第1正規形から第3正規形まで段階的に整理を進めます。（自作問題）",
+   "related_terms": [
+    "正規化"
+   ],
+   "related_page_id": "T-09-05",
+   "tags": [
+    "正規化"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-029",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "HH社は、SNSに投稿される大量のテキストデータのように、あらかじめ決まった表形式では扱いにくい多様なデータを柔軟に格納・処理するために、関係データベースとは異なる形式のデータベースを採用した。このデータベースの種類として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "NoSQLデータベース"
+    },
+    {
+     "id": "b",
+     "text": "関係データベース"
+    },
+    {
+     "id": "c",
+     "text": "階層型データベース"
+    },
+    {
+     "id": "d",
+     "text": "分散型台帳（ブロックチェーン）"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "NoSQLデータベースは、あらかじめ決まった表形式（スキーマ）に縛られず、多様な形式のデータを柔軟に格納・処理できるデータベースです。SNSの投稿データやログデータなど、非構造化・半構造化データの扱いに適しています。（自作問題）",
+   "related_terms": [
+    "NoSQL"
+   ],
+   "related_page_id": "T-09-06",
+   "tags": [
+    "NoSQL"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-030",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "II社は、各部門の販売実績データを長期間にわたり蓄積し、経営者が多角的な視点でデータを分析して意思決定に活用できるようにする仕組みを構築した。この仕組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "データウェアハウス（DWH）"
+    },
+    {
+     "id": "b",
+     "text": "OLTP（オンライントランザクション処理）"
+    },
+    {
+     "id": "c",
+     "text": "RAID"
+    },
+    {
+     "id": "d",
+     "text": "ファイアウォール"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "データウェアハウス（DWH）は、複数の業務システムから蓄積した大量のデータを長期間保持し、経営者の意思決定支援（BI：ビジネスインテリジェンス）のための多角的な分析（OLAPなど）に活用するための仕組みです。（自作問題）",
+   "related_terms": [
+    "データウェアハウス"
+   ],
+   "related_page_id": "T-09-07",
+   "tags": [
+    "データウェアハウス"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-031",
+   "chapter_id": "T-09",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "JJ社のデータベース担当者は、\"顧客\"表の検索処理に時間がかかっていることに気づき、頻繁に検索条件として使われる\"顧客番号\"列に対して、目的のデータを素早く見つけられるようにするための仕組みを設定した。この仕組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "インデックス"
+    },
+    {
+     "id": "b",
+     "text": "ビュー"
+    },
+    {
+     "id": "c",
+     "text": "トリガー"
+    },
+    {
+     "id": "d",
+     "text": "ストアドプロシージャ"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "インデックス（索引）は、表の特定の列に対して設定することで、検索処理を高速化する仕組みです。書籍の索引のように、目的のデータの位置を素早く特定できるようにします。（自作問題）",
+   "related_terms": [
+    "インデックス"
+   ],
+   "related_page_id": "T-09-09",
+   "tags": [
+    "インデックス"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-032",
+   "chapter_id": "T-10",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "KK社の本社ビル内にある複数のPCとプリンタを、同一の建物内に限定してケーブルや無線でつなぎ、データを共有できるようにしたネットワークとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "LAN（構内通信網）"
+    },
+    {
+     "id": "b",
+     "text": "WAN（広域通信網）"
+    },
+    {
+     "id": "c",
+     "text": "インターネット"
+    },
+    {
+     "id": "d",
+     "text": "VPN"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "LAN（Local Area Network、構内通信網）は、同一の建物や敷地内など、比較的狭い範囲のコンピュータやプリンタなどをケーブルや無線で接続したネットワークです。地理的に離れた拠点間を結ぶWANとは規模が異なります。（自作問題）",
+   "related_terms": [
+    "LAN"
+   ],
+   "related_page_id": "T-10-01",
+   "tags": [
+    "ネットワークの基礎"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-033",
+   "chapter_id": "T-10",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "LL社の社内ネットワークでは、コネクション型で信頼性の高いデータ転送を行うプロトコルと、コネクションレス型で速度を重視するプロトコルを、用途に応じて使い分けている。このうち、信頼性を重視するプロトコルとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "UDP"
+    },
+    {
+     "id": "b",
+     "text": "TCP"
+    },
+    {
+     "id": "c",
+     "text": "HTTP"
+    },
+    {
+     "id": "d",
+     "text": "DHCP"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "TCPは、コネクション型で通信の信頼性を重視したプロトコルで、データの到達確認や再送制御を行います。UDPはコネクションレス型で速度を重視し、信頼性よりリアルタイム性が求められる通信に使われます。（自作問題）",
+   "related_terms": [
+    "TCP"
+   ],
+   "related_page_id": "T-10-02",
+   "tags": [
+    "TCP/IP"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-034",
+   "chapter_id": "T-10",
+   "category": "technology",
+   "difficulty": 3,
+   "source": "original_longform",
+   "question_text": "サブネットマスクが255.255.255.0であるIPv4ネットワークにおいて、ホスト部として使用できるビット数は何ビットか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "6ビット"
+    },
+    {
+     "id": "b",
+     "text": "8ビット"
+    },
+    {
+     "id": "c",
+     "text": "16ビット"
+    },
+    {
+     "id": "d",
+     "text": "24ビット"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "IPv4アドレスは全体で32ビットです。サブネットマスク255.255.255.0は先頭24ビットがネットワーク部であることを示すため、残りの32－24＝8ビットがホスト部として使用できます。（自作問題）",
+   "related_terms": [
+    "サブネットマスク"
+   ],
+   "related_page_id": "T-10-03",
+   "tags": [
+    "IPアドレス"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-035",
+   "chapter_id": "T-10",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "MM社は、無線LANのアクセスポイントに接続する際、通信内容を暗号化して盗聴を防ぐためのセキュリティ規格を設定している。現在広く使われている、WPA2やその後継であるWPA3などの規格が担う役割として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "無線LANの通信を暗号化し、盗聴や不正アクセスを防ぐ"
+    },
+    {
+     "id": "b",
+     "text": "無線LANの電波到達距離を延長する"
+    },
+    {
+     "id": "c",
+     "text": "複数のアクセスポイントを自動的に切り替える"
+    },
+    {
+     "id": "d",
+     "text": "無線LANの通信速度を向上させる"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "WPA2やWPA3は無線LANのセキュリティ規格で、アクセスポイントと端末間の通信を暗号化し、盗聴や不正アクセスを防ぐ役割を担います。通信速度や電波到達距離の向上を目的とした規格ではありません。（自作問題）",
+   "related_terms": [
+    "WPA2",
+    "無線LAN"
+   ],
+   "related_page_id": "T-10-04",
+   "tags": [
+    "無線LAN"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-036",
+   "chapter_id": "T-10",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "NN社の従業員は、社外にいながらメールサーバに接続し、複数の端末から同じメールボックスの内容を常に同期して閲覧できる仕組みを利用している。このように、メールをサーバ上に保持したまま複数端末で同期的に扱うプロトコルとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SMTP"
+    },
+    {
+     "id": "b",
+     "text": "POP3"
+    },
+    {
+     "id": "c",
+     "text": "IMAP4"
+    },
+    {
+     "id": "d",
+     "text": "FTP"
+    }
+   ],
+   "correct_answer": "c",
+   "explanation": "IMAP4は、メールをメールサーバ上に保持したまま、複数の端末から同期的にアクセス・閲覧できるプロトコルです。POP3はメールを端末にダウンロードして管理する方式で、複数端末間での同期には向きません。SMTPはメール送信用のプロトコルです。（自作問題）",
+   "related_terms": [
+    "IMAP4"
+   ],
+   "related_page_id": "T-10-05",
+   "tags": [
+    "メールプロトコル"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-037",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "OO社は、情報資産を「許可された者だけがアクセスできる」「正確な状態が維持される」「必要なときに利用できる」という3つの観点で管理している。この3つの観点を表す情報セキュリティの用語の組合せとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "機密性・完全性・可用性"
+    },
+    {
+     "id": "b",
+     "text": "真正性・責任追跡性・信頼性"
+    },
+    {
+     "id": "c",
+     "text": "機密性・可用性・保守性"
+    },
+    {
+     "id": "d",
+     "text": "完全性・信頼性・移植性"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "情報セキュリティの3要素は、許可された者だけがアクセスできる「機密性」、情報が正確で改ざんされていない「完全性」、必要なときに利用できる「可用性」です。この3要素をバランスよく確保することが情報セキュリティ管理の基本です。（自作問題）",
+   "related_terms": [
+    "機密性",
+    "完全性",
+    "可用性"
+   ],
+   "related_page_id": "T-11-01",
+   "tags": [
+    "情報セキュリティ"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-038",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "PP社の従業員は、取引先を装った電子メールに記載されたリンクをクリックし、偽のログイン画面に自社のIDとパスワードを入力してしまった。この攻撃の手口として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "フィッシング"
+    },
+    {
+     "id": "b",
+     "text": "SQLインジェクション"
+    },
+    {
+     "id": "c",
+     "text": "DDoS攻撃"
+    },
+    {
+     "id": "d",
+     "text": "総当たり攻撃（ブルートフォース攻撃）"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "フィッシングは、実在の企業や取引先を装った偽のメールやWebサイトへ誘導し、IDやパスワード、クレジットカード情報などを不正に入手する攻撃手口です。設問のように偽のログイン画面に情報を入力させる手口は典型的なフィッシング攻撃です。（自作問題）",
+   "related_terms": [
+    "フィッシング"
+   ],
+   "related_page_id": "T-11-02",
+   "tags": [
+    "脅威の種類"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-039",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "QQ社は、通信データの暗号化と復号に同一の鍵を使う方式を採用しているが、通信相手が増えるたびに管理すべき鍵の数が急増するという課題を抱えている。この暗号化方式として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "公開鍵暗号方式"
+    },
+    {
+     "id": "b",
+     "text": "共通鍵暗号方式"
+    },
+    {
+     "id": "c",
+     "text": "ハイブリッド暗号方式"
+    },
+    {
+     "id": "d",
+     "text": "ハッシュ関数"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "共通鍵暗号方式は、暗号化と復号に同一の鍵を使う方式で、処理速度は速いものの、通信相手ごとに異なる鍵を安全に共有・管理する必要があり、相手が増えるほど鍵管理の負担が増大します。暗号化鍵と復号鍵が異なる公開鍵暗号方式とは、この点が対照的です。（自作問題）",
+   "related_terms": [
+    "共通鍵暗号方式"
+   ],
+   "related_page_id": "T-11-03",
+   "tags": [
+    "暗号化"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-040",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "RR社のWebサイトは、利用者のブラウザとサーバ間の通信を暗号化するとともに、サイト運営者の身元を証明する電子証明書を導入し、利用者が偽サイトと見分けやすいようにしている。この仕組みの中心となる技術として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "SSL/TLS"
+    },
+    {
+     "id": "b",
+     "text": "WPA2"
+    },
+    {
+     "id": "c",
+     "text": "IDS"
+    },
+    {
+     "id": "d",
+     "text": "VPN"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "SSL/TLSは、Webブラウザとサーバ間の通信を暗号化するとともに、電子証明書によってサイト運営者の身元を保証する仕組みです。PKI（公開鍵基盤）の仕組みを利用して、なりすましサイトの判別や通信の盗聴・改ざん防止に役立てられます。（自作問題）",
+   "related_terms": [
+    "SSL/TLS"
+   ],
+   "related_page_id": "T-11-04",
+   "tags": [
+    "暗号化・認証技術"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-041",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "SS社は、一度のログインで複数の異なる業務システムやクラウドサービスを利用できるようにする仕組みを導入し、従業員がシステムごとに個別のIDとパスワードを覚える負担を軽減した。この仕組みとして、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "多要素認証"
+    },
+    {
+     "id": "b",
+     "text": "シングルサインオン（SSO）"
+    },
+    {
+     "id": "c",
+     "text": "チャレンジレスポンス認証"
+    },
+    {
+     "id": "d",
+     "text": "バイオメトリクス認証"
+    }
+   ],
+   "correct_answer": "b",
+   "explanation": "シングルサインオン（SSO）は、一度の認証（ログイン）で、複数の異なるシステムやサービスを利用できるようにする仕組みです。個々のシステムごとにIDとパスワードを入力する手間を減らし、利便性を高めます。（自作問題）",
+   "related_terms": [
+    "シングルサインオン"
+   ],
+   "related_page_id": "T-11-05",
+   "tags": [
+    "認証技術"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-042",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "TT社は、インターネットと社内ネットワークの間に、外部に公開するWebサーバなどを配置する緩衝地帯を設け、万が一そのサーバが攻撃を受けても、社内ネットワークまで被害が及びにくい構成にしている。この緩衝地帯の名称として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "DMZ（非武装地帯）"
+    },
+    {
+     "id": "b",
+     "text": "VPN"
+    },
+    {
+     "id": "c",
+     "text": "VLAN"
+    },
+    {
+     "id": "d",
+     "text": "プロキシサーバ"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "DMZ（DeMilitarized Zone、非武装地帯）は、インターネットと社内ネットワークの中間に設ける緩衝地帯で、外部に公開するサーバをここに配置することで、そのサーバが攻撃を受けても社内ネットワークへの被害の波及を防ぎやすくします。（自作問題）",
+   "related_terms": [
+    "DMZ"
+   ],
+   "related_page_id": "T-11-06",
+   "tags": [
+    "ネットワークセキュリティ"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-043",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "UU社は、情報セキュリティ対策の運用体制を客観的に評価してもらうため、情報セキュリティマネジメントシステムの国際規格に基づく第三者認証を取得した。この認証制度として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "ISMS認証（ISO/IEC 27001）"
+    },
+    {
+     "id": "b",
+     "text": "プライバシーマーク"
+    },
+    {
+     "id": "c",
+     "text": "ISO 9001"
+    },
+    {
+     "id": "d",
+     "text": "CMMI"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "ISMS認証（ISO/IEC 27001）は、組織の情報セキュリティマネジメントシステムが国際規格に適合し、適切に運用されていることを第三者機関が認証する制度です。個人情報保護の観点に特化したプライバシーマークとは対象範囲が異なります。（自作問題）",
+   "related_terms": [
+    "ISMS認証"
+   ],
+   "related_page_id": "T-11-07",
+   "tags": [
+    "セキュリティ対策制度"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-044",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "VV社は、保有する情報資産を洗い出し、それぞれについて「発生確率」と「発生した場合の影響度」を評価した上で、優先的に対策すべきリスクを絞り込む作業を行った。この作業として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "リスクアセスメント"
+    },
+    {
+     "id": "b",
+     "text": "リスク移転"
+    },
+    {
+     "id": "c",
+     "text": "リスク保有"
+    },
+    {
+     "id": "d",
+     "text": "リスク回避"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "リスクアセスメントは、情報資産に対するリスクを洗い出し、発生確率と影響度を評価して、優先的に対応すべきリスクを特定する一連の活動です。この結果を踏まえて、リスク低減・回避・移転・保有といった対応策を選択します。（自作問題）",
+   "related_terms": [
+    "リスクアセスメント"
+   ],
+   "related_page_id": "T-11-15",
+   "tags": [
+    "リスク管理"
+   ],
+   "is_real_past": false
+  },
+  {
+   "question_id": "LF-T-045",
+   "chapter_id": "T-11",
+   "category": "technology",
+   "difficulty": 2,
+   "source": "original_longform",
+   "question_text": "WW社は、特定の企業を狙って、業務に関係があるように見せかけたメールを送りつけ、長期間にわたって内部への侵入や情報の窃取を試みる執拗な攻撃を受けていることが判明した。このような攻撃を表す用語として、最も適切なものはどれか。",
+   "choices": [
+    {
+     "id": "a",
+     "text": "標的型攻撃（APT）"
+    },
+    {
+     "id": "b",
+     "text": "DDoS攻撃"
+    },
+    {
+     "id": "c",
+     "text": "ゼロデイ攻撃"
+    },
+    {
+     "id": "d",
+     "text": "総当たり攻撃"
+    }
+   ],
+   "correct_answer": "a",
+   "explanation": "標的型攻撃（APT：Advanced Persistent Threat）は、特定の組織を狙い、業務に関係があるように偽装したメールなどを用いて侵入し、長期間にわたって執拗に情報窃取などを試みる攻撃です。不特定多数を狙う攻撃とは異なり、対象を絞り込んで周到に行われる点が特徴です。（自作問題）",
+   "related_terms": [
+    "標的型攻撃",
+    "APT"
+   ],
+   "related_page_id": "T-11-16",
+   "tags": [
+    "標的型攻撃"
+   ],
+   "is_real_past": false
+  }
+ ]
+}
