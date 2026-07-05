@@ -81,6 +81,7 @@ export async function loadChapters() {
  * - questions_extra3.json  : 節5問体制（Phase C・節summary_points厳守生成 379問）
  * - questions_extra4.json  : 本番同等化・長文事例/計算問題（節あたり1問を新規自前執筆 100問）
  * - questions_past2.json   : AI予想問題（R02秋・R03春・R04春の出題傾向を基に生成）
+ * - questions_past_r04_real.json: 実過去問（令和4年度 IPA公開問題・原文ママ）
  * - questions_past_r05.json: AI予想問題（R05の出題傾向を基に生成）
  * - questions_past_r05_real.json: 実過去問（令和5年度 IPA公開問題・原文ママ）
  * - questions_past_r06.json: AI予想問題（R06の出題傾向を基に生成）
@@ -109,6 +110,7 @@ export async function loadQuestions() {
     './data/questions_past2.json',
     './data/questions_past_r02a.json',
     './data/questions_past_r04s.json',
+    './data/questions_past_r04_real.json',
     './data/questions_past_r05.json',
     './data/questions_past_r05_real.json',
     './data/questions_past_r06.json',

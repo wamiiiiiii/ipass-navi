@@ -99,8 +99,15 @@
 //   節（related_page_id）ごとに上位5問へ選別・重複排除し869問に整理（questions.json/extra1/2/3、
 //   questions_past2/r02a/r04s/r05/r06.json）。加えて、既存AI予想問題にほぼ皆無だった
 //   100字以上の長文・事例・計算問題を100問自前執筆し追加（questions_extra4.json）。
-const CACHE_NAME = 'ipass-navi-v38';
-const DATA_CACHE_NAME = 'ipass-navi-data-v38';
+// v39 (app-version 1.13.0): 本番同等化 第5弾。実過去問に令和4年度 IPA公開問題 全100問を追加
+//   （questions_past_r04_real.json。既存のAI予想問題 questions_past_r04s.json とは別ファイル）。
+//   図表・擬似言語問題14問を切り出し（img/past_r04/）。正解はIPA解答例PDFと100/100一致を確認。
+//   これで実過去問がR4・R5・R6・R7・R8の計500問に。
+// v40 (app-version 1.13.1): 問題演習でスクロールした状態のまま次の問題・解説へ進むと
+//   スクロール位置が引き継がれる不具合を修正。renderQuestionScreen/renderExplanationScreen
+//   の描画後に window.scrollTo(0,0) でトップへ戻す（textbook.js と同じパターン）。
+const CACHE_NAME = 'ipass-navi-v40';
+const DATA_CACHE_NAME = 'ipass-navi-data-v40';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -148,6 +155,7 @@ const DATA_FILES = [
   './data/questions_past2.json',
   './data/questions_past_r02a.json',
   './data/questions_past_r04s.json',
+  './data/questions_past_r04_real.json',
   './data/questions_past_r05.json',
   './data/questions_past_r05_real.json',
   './data/questions_past_r06.json',
@@ -219,6 +227,21 @@ const DATA_FILES = [
   './img/past_r05/q076.png',
   './img/past_r05/q077.png',
   './img/past_r05/q086.png',
+  // 実過去問（令和4年度）の図表画像
+  './img/past_r04/q011.png',
+  './img/past_r04/q015.png',
+  './img/past_r04/q028.png',
+  './img/past_r04/q032.png',
+  './img/past_r04/q043.png',
+  './img/past_r04/q050.png',
+  './img/past_r04/q059.png',
+  './img/past_r04/q065.png',
+  './img/past_r04/q078.png',
+  './img/past_r04/q079.png',
+  './img/past_r04/q090.png',
+  './img/past_r04/q096.png',
+  './img/past_r04/q097.png',
+  './img/past_r04/q098.png',
 ];
 
 // ===================================================

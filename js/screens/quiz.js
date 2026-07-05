@@ -402,6 +402,7 @@ const PAST_YEAR_OPTIONS = [
   { source: 'past_R07',        label: '令和7年度 公開問題（実過去問）', count: 100 },
   { source: 'past_R06',        label: '令和6年度 公開問題（実過去問）', count: 100 },
   { source: 'past_R05',        label: '令和5年度 公開問題（実過去問）', count: 100 },
+  { source: 'past_R04',        label: '令和4年度 公開問題（実過去問）', count: 100 },
   // 以下はAI予想問題：各年度の出題傾向を基にAIが生成した問題。
   // 本物の過去問ではないため「公開問題」とは表記しない（実試験より短文）
   { source: 'past_R06_spring', label: 'AI予想問題（令和6年度傾向）', count: 100 },
@@ -1300,6 +1301,8 @@ function renderQuestionScreen(container) {
     screen.appendChild(judgeRow);
 
     renderInto(container, [screen]);
+    // 前の問題のスクロール位置を引き継がないよう、描画後にトップへ戻す
+    requestAnimationFrame(() => window.scrollTo(0, 0));
     return;
   }
 
@@ -1426,6 +1429,8 @@ function renderQuestionScreen(container) {
   }
 
   renderInto(container, [screen]);
+  // 前の問題のスクロール位置を引き継がないよう、描画後にトップへ戻す
+  requestAnimationFrame(() => window.scrollTo(0, 0));
 }
 
 /**
@@ -1699,6 +1704,8 @@ function renderExplanationScreen(container) {
   screen.appendChild(nextBtn);
 
   renderInto(container, [screen]);
+  // 問題画面でスクロールしていても、解説画面はトップから読めるようにする
+  requestAnimationFrame(() => window.scrollTo(0, 0));
 }
 
 // ===================================================
