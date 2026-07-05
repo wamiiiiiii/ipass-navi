@@ -106,8 +106,12 @@
 // v40 (app-version 1.13.1): 問題演習でスクロールした状態のまま次の問題・解説へ進むと
 //   スクロール位置が引き継がれる不具合を修正。renderQuestionScreen/renderExplanationScreen
 //   の描画後に window.scrollTo(0,0) でトップへ戻す（textbook.js と同じパターン）。
-const CACHE_NAME = 'ipass-navi-v40';
-const DATA_CACHE_NAME = 'ipass-navi-data-v40';
+// v41 (app-version 1.14.0): 本番同等化 第6弾。実過去問に令和3年度 IPA公開問題 全100問を追加
+//   （questions_past_r03_real.json）。図表5問を切り出し（img/past_r03/）、テキスト組合せの
+//   4問は画像化せずテキスト選択肢に変換。正解はIPA解答例PDFと100/100一致を確認。
+//   これで実過去問がR3・R4・R5・R6・R7・R8の計600問に。
+const CACHE_NAME = 'ipass-navi-v41';
+const DATA_CACHE_NAME = 'ipass-navi-data-v41';
 
 // アプリシェル（UIリソース）：初回インストール時にキャッシュするファイルリスト
 const APP_SHELL_FILES = [
@@ -154,6 +158,7 @@ const DATA_FILES = [
   './data/questions_extra4.json',
   './data/questions_past2.json',
   './data/questions_past_r02a.json',
+  './data/questions_past_r03_real.json',
   './data/questions_past_r04s.json',
   './data/questions_past_r04_real.json',
   './data/questions_past_r05.json',
@@ -242,6 +247,12 @@ const DATA_FILES = [
   './img/past_r04/q096.png',
   './img/past_r04/q097.png',
   './img/past_r04/q098.png',
+  // 実過去問（令和3年度）の図表画像
+  './img/past_r03/q028.png',
+  './img/past_r03/q050.png',
+  './img/past_r03/q070.png',
+  './img/past_r03/q074.png',
+  './img/past_r03/q095.png',
 ];
 
 // ===================================================
